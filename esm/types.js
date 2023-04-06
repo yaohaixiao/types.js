@@ -49,7 +49,7 @@ import isWeakMap from './isWeakMap'
 import isWeakSet from './isWeakSet'
 import isXML from './isXML'
 
-const types = {
+const Types = {
   is: _type,
   isArray: isArray,
   isArrayLike: isArrayLike,
@@ -103,4 +103,4 @@ const types = {
   isXML: isXML
 }
 
-export default types
+export default Types
