@@ -1,0 +1,23 @@
+{
+  "name": "@yaohaixiao/types.js",
+  "version": "0.1.0",
+  "description": "_typeof.js 专注于检测数据类型的 JavaScript 工具库。",
+  "main": "types.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yaohaixiao/types.js.git"
+  },
+  "keywords": [
+    "typeof",
+    "JavaScript"
+  ],
+  "author": "Robert Yao",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yaohaixiao/types.js/issues"
+  },
+  "homepage": "https://github.com/yaohaixiao/types.js#readme"
+}
