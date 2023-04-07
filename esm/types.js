@@ -1,6 +1,7 @@
 import _type from './_type'
 import isArray from './isArray'
 import isArrayLike from './isArrayLike'
+import isArrayLikeObject from './isArrayLikeObject'
 import isArguments from './isArgumants'
 import isArrayBuffer from './isArrayBuffer'
 import isInt8Array from './isInt8Array'
@@ -19,6 +20,7 @@ import isConstructor from './isConstructor'
 import isDataView from './isDataView'
 import isDate from './isDate'
 import isElement from './isElement'
+import isEmail from './isEmail'
 import isEmpty from './isEmpty'
 import isEmptyObject from './isEmptyObject'
 import isError from './isError'
@@ -29,78 +31,95 @@ import isHex from './isHex'
 import isHTMLCollection from './isHTMLCollection'
 import isInfinite from './isInfinite'
 import isInteger from './isInteger'
+import isIPAddress from './isIPAddress'
 import isJSON from './isJSON'
+import isLength from './isLength'
 import isMap from './isMap'
 import isNativeFunction from './isNativeFunction'
 import isNull from './isNull'
 import isNumber from './isNumber'
 import isNumeric from './isNumeric'
 import isObject from './isObject'
+import isObjectLike from './isObjectLike'
 import isOdd from './isOdd'
+import isPhoneNumber from './isPhoneNumber'
 import isPlainObject from './isPlainObject'
+import isPrototype from './isPrototype'
 import isRegExp from './isRegExp'
 import isSet from './isSet'
 import isString from './isString'
 import isSymbol from './isSymbol'
 import isTextNode from './isTextNode'
+import isTypedArray from './isTypedArray'
 import isUndefined from './isUndefined'
+import isURL from './isURL'
 import isValue from './isValue'
+import isVNode from './isVNode'
 import isWeakMap from './isWeakMap'
 import isWeakSet from './isWeakSet'
 import isXML from './isXML'
 
 const Types = {
   is: _type,
-  isArray: isArray,
-  isArrayLike: isArrayLike,
-  isArguments: isArguments,
-  isArrayBuffer: isArrayBuffer,
-  isInt8Array: isInt8Array,
-  isUint8Array: isUint8Array,
-  isUint8ClampedArray: isUint8ClampedArray,
-  isInt16Array: isInt16Array,
-  isUint16Array: isUint16Array,
-  isInt32Array: isInt32Array,
-  isUint32Array: isUint32Array,
-  isFloat32Array: isFloat32Array,
-  isFloat64Array: isFloat64Array,
-  isBase64: isBase64,
-  isBlank: isBlank,
-  isBoolean: isBoolean,
-  isConstructor: isConstructor,
-  isDataView: isDataView,
-  isDate: isDate,
-  isElement: isElement,
-  isEmpty: isEmpty,
-  isEmptyObject: isEmptyObject,
-  isError: isError,
-  isEven: isEven,
-  isFloat: isFloat,
-  isFunction: isFunction,
-  isHash: isPlainObject,
-  isHex: isHex,
-  isHTMLCollection: isHTMLCollection,
-  isInfinite: isInfinite,
-  isInteger: isInteger,
-  isJSON: isJSON,
-  isMap: isMap,
-  isNativeFunction: isNativeFunction,
-  isNull: isNull,
-  isNumber: isNumber,
-  isNumeric: isNumeric,
-  isObject: isObject,
-  isOdd: isOdd,
-  isPlainObject: isPlainObject,
-  isRegExp: isRegExp,
-  isSet: isSet,
-  isString: isString,
-  isSymbol: isSymbol,
-  isTextNode: isTextNode,
-  isUndefined: isUndefined,
-  isValue: isValue,
-  isWeakMap: isWeakMap,
-  isWeakSet: isWeakSet,
-  isXML: isXML
+  isArray,
+  isArrayLike,
+  isArrayLikeObject,
+  isArguments,
+  isArrayBuffer,
+  isInt8Array,
+  isUint8Array,
+  isUint8ClampedArray,
+  isInt16Array,
+  isUint16Array,
+  isInt32Array,
+  isUint32Array,
+  isFloat32Array,
+  isFloat64Array,
+  isBase64,
+  isBlank,
+  isBoolean,
+  isConstructor,
+  isDataView,
+  isDate,
+  isElement,
+  isEmail,
+  isEmpty,
+  isEmptyObject,
+  isError,
+  isEven,
+  isFloat,
+  isFunction,
+  isHex,
+  isHTMLCollection,
+  isInfinite,
+  isInteger,
+  isIPAddress,
+  isJSON,
+  isLength,
+  isMap,
+  isNativeFunction,
+  isNull,
+  isNumber,
+  isNumeric,
+  isObject,
+  isObjectLike,
+  isOdd,
+  isPhoneNumber,
+  isPlainObject,
+  isPrototype,
+  isRegExp,
+  isSet,
+  isString,
+  isSymbol,
+  isTextNode,
+  isTypedArray,
+  isUndefined,
+  isURL,
+  isValue,
+  isVNode,
+  isWeakMap,
+  isWeakSet,
+  isXML
 }
 
 export default Types
