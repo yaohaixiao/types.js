@@ -9,15 +9,9 @@ import { TYPES } from './enum'
  * @returns {boolean} 'val' 是一个数字返回 true，否则返回false
  */
 const isNumeric = (val) => {
-  // isNumeric is limited to strings and numbers
-  // (primitives or objects) that can be coerced
-  // to finite numbers (gh-2662)
   const type = _type(val)
 
   return (type === TYPES.NUMBER || type === TYPES.STRING) &&
-    // parseFloat NaNs numeric-cast false positives ("")
-    // ...but misinterprets leading-number strings, particularly hex literals ("0x...")
-    // subtraction forces infinities to NaN
     !isNaN(val - parseFloat(val))
 }
 

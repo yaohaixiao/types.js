@@ -1,4 +1,3 @@
-import _type from './_type'
 import isObject from './isObject'
 import hasOwn from './hasOwn'
 import { TYPES } from './enum'
@@ -22,12 +21,10 @@ const isPlainObject = (val) => {
 
   proto = val.prototype
 
-  // Objects with no prototype (e.g., `Object.create( null )`) are plain
   if (!proto) {
     return true
   }
 
-  // Objects with prototype are plain if they were constructed by a global Object function
   Ctor = hasOwn(proto, 'constructor') && proto.constructor
 
   return typeof Ctor === TYPES.FUNCTION && toString.call(Ctor) === {}.hasOwnProperty.toString.call(Object)
