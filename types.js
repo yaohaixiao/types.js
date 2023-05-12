@@ -1,4 +1,4 @@
-import _type from './_type'
+import is from './is'
 import isArray from './isArray'
 import isArrayLike from './isArrayLike'
 import isArrayLikeObject from './isArrayLikeObject'
@@ -60,7 +60,7 @@ import isWeakSet from './isWeakSet'
 import isXML from './isXML'
 
 const Types = {
-  is: _type,
+  is,
   isArray,
   isArrayLike,
   isArrayLikeObject,
