@@ -1,23 +1,89 @@
 {
   "name": "@yaohaixiao/types.js",
-  "version": "0.1.0",
-  "description": "_typeof.js 专注于检测数据类型的 JavaScript 工具库。",
-  "main": "types.js",
+  "version": "0.2.0",
+  "description": "types.js - 专注于检测 JavaScript 数据类型的工具库。",
+  "main": "types.min.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "gulp start",
+    "build:lib": "rollup -c build/rollup.config.js --bundleConfigAsCjs",
+    "build:docs": "gulp build",
+    "build": "npm run build:lib && npm run build:docs",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
+    "lint": "eslint",
+    "lint:fix": "npm run lint --cache --fix",
+    "prettier:check": "npx prettier --check \"esm/**/*.js\"",
+    "prettier:write": "npx prettier --write \"esm/**/*.js\"",
+    "test:unit": "jest --config jest.config.js",
+    "test": "npm run lint:fix && npm run prettier:write && npm run test:unit",
+    "watch": "gulp watch",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/yaohaixiao/types.js.git"
   },
   "keywords": [
-    "typeof",
-    "JavaScript"
+    "JavaScript",
+    "types",
+    "types.js"
   ],
   "author": "Robert Yao",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/yaohaixiao/types.js/issues"
   },
-  "homepage": "https://github.com/yaohaixiao/types.js#readme"
+  "homepage": "https://github.com/yaohaixiao/types.js#readme",
+  "devDependencies": {
+    "@babel/core": "^7.21.0",
+    "@babel/preset-env": "^7.14.8",
+    "@commitlint/cli": "^17.4.4",
+    "@commitlint/config-conventional": "^17.4.4",
+    "@rollup/plugin-commonjs": "^25.0.2",
+    "@rollup/plugin-node-resolve": "^15.1.0",
+    "@rollup/plugin-terser": "^0.4.3",
+    "@yaohaixiao/delegate.js": "^1.9.1",
+    "babel-jest": "^29.5.0",
+    "commitlint": "^17.4.4",
+    "conventional-changelog-cli": "^2.2.2",
+    "eslint": "^8.34.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-import-resolver-jest": "^3.0.2",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-prettier": "^4.2.1",
+    "gulp": "^4.0.2",
+    "gulp-clean": "^0.4.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-connect": "^5.7.0",
+    "gulp-cssmin": "^0.2.0",
+    "gulp-eslint": "^6.0.0",
+    "gulp-less": "^5.0.0",
+    "gulp-livereload": "^4.0.2",
+    "gulp-open": "^3.0.1",
+    "gulp-prettier": "^4.0.0",
+    "gulp-pug": "^5.0.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-run": "^1.7.1",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-uglify": "^3.0.2",
+    "gulp-watch": "^5.0.1",
+    "husky": "^8.0.3",
+    "jest": "^29.5.0",
+    "jest-environment-jsdom": "^29.5.0",
+    "jest-html-reporter": "^3.7.0",
+    "less-plugin-autoprefix": "^2.0.0",
+    "lint-staged": "^13.1.2",
+    "os": "^0.1.2",
+    "prettier": "^2.8.4",
+    "rollup": "^3.25.2"
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged",
+    "commit-msg": "commitlint"
+  },
+  "lint-staged": {
+    "src/**/*.js": [
+      "npm run lint:fix",
+      "npm run prettier:write"
+    ]
+  }
 }
