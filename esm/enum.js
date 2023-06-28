@@ -34,8 +34,10 @@ export const TYPES = {
 }
 
 export const OBJECTS = {
+  ARGUMENTS: '[object Arguments]',
   ARRAY: '[object Array]',
   ARRAY_BUFFER: '[object ArrayBuffer]',
+  NODE_LIST: '[object NodeList]',
   INT8_ARRAY: '[object Int8Array]',
   UNIT8_ARRAY: '[object Uint8Array]',
   UNIT8_CLAMPED_ARRAY: '[object Uint8ClampedArray]',

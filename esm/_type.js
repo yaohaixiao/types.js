@@ -9,6 +9,7 @@ import { TYPES, OBJECTS } from './enum'
  */
 const _type = (val) => {
   const type = Object.prototype.toString.apply(val)
+  let nodeType
 
   /* ===== 原始值类型（Primitive data types） ===== */
   if (typeof val === TYPES.BOOLEAN) {
@@ -89,29 +90,24 @@ const _type = (val) => {
     /* ===== 其它类型（Others） ===== */
     // 检测是否为一个 DOM
   } else if (val.nodeName) {
+    nodeType = val.nodeType
+
     // 检测是否为 Element 节点
-    if (val.nodeType === 1) {
+    if (nodeType === 1) {
       return TYPES.ELEMENT
-    } else if (val.nodeType === 3) {
+    } else if (nodeType === 3) {
       // 检测是否为 Text 节点
       return /\S/.test(val.nodeValue) ? TYPES.TEXT : TYPES.WHITESPACE
     }
-  } else if (
-    typeof val === TYPES.OBJECT &&
-    typeof val.length === TYPES.NUMBER &&
-    val.length > 0
-  ) {
-    // 检测是否为 Arguments 类型
-    if ('callee' in val) {
-      return TYPES.ARGUMENTS
-    } else if ('item' in val) {
-      // 检测是否为 NodeList 类型
-      return TYPES.COLLECTION
-    }
+  } else if (type === OBJECTS.ARGUMENTS) {
+    return TYPES.ARGUMENTS
+  } else if (type === OBJECTS.NODE_LIST) {
+    // 检测是否为 NodeList 类型
+    return TYPES.COLLECTION
   }
 
   // 其它标准的数据类型
-  return typeof val
+  return type
 }
 
 export default _type
