@@ -6,7 +6,7 @@ import { TYPES } from './enum'
  * ========================================================================
  * @method isMap
  * @param {*} val - 要检测的数据
- * @returns {boolean} 'val' 是 Map 类型返回 true，否则返回 false
+ * @returns {Boolean} 'val' 是 Map 类型返回 true，否则返回 false
  */
 const isMap = (val) => {
   return _type(val) === TYPES.MAP

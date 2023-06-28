@@ -1,44 +1,25 @@
 section.section
   header.section__header
-    h3#method-isHex.section__h3 isHex([type])
+    h3#method-isHex.section__h3 isHex(val)
   div.section__content
     h4.section__h4 Description
-    p 获取 DOM 元素（$el）全部或者指定 type 类型的事件处理器相关的（数组）数据。
+    p isFloat(val) 方法用来检测测试数据的(数值)是否为 16 进制数值。
     h4.section__h4 Parameters
-    h5.section__h4 type
+    h5.section__h4 val
     dl.section__dl
       dt.section__dt Type：
       dd.section__dd String
-    p （可选）设置 type 时获取特定的事件类型（type），默认获取所有类型的事件处理器。
+    p （必须）val 待检测的数据。
     h4.section__h4 Returns
     dl.section__dl
       dt.section__dt Type：
-      dd.section__dd Array。
-    p 返回已绑定的事件类型的数组（去除名称重复的事件）。
+      dd.section__dd Boolean。
+    p true - 表示检测数据(数值)为16 进制数值，false 则表示不是。
     pre.section__pre
       code.section__code.
-        const handler = function(evt) {
-          const $li = evt.delegateTarget
-          const $textarea = document.querySelector('#log-textarea')
+        import Types from '@yaohaixiao/types.js/esm/types'
 
-          $textarea.value += `你点击的 li 节点的 id 为 ${$li.id}\r`
-        }
-
-        const $emitter = delegate('#list')
-
-        // 绑定事件
-        $emitter.click('li', handler)
-
-        // 获取已绑定的所有类型的事件处理器
-        $emitter.getListeners('click')
-        // => [
-        //   {
-        //     options,
-        //     selector,
-        //     type,
-        //     fn,
-        //     data,
-        //     context,
-        //     capture
-        //   }
-        // ]
+        Types.isHex('#ffffff'); // -> true
+        Types.isHex('f3f3f3'); // -> true
+        Types.isHex('#h1f1f1'); // -> false
+        Types.isHex('sdadfa'); // -> false

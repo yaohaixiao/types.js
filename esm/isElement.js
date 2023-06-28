@@ -6,7 +6,7 @@ import { TYPES } from './enum'
  * ========================================================================
  * @method isElement
  * @param {*} val - 要检测的数据
- * @returns {boolean} 'val' 为 HTML 元素节点返回 true，否则返回 false
+ * @returns {Boolean} 'val' 为 HTML 元素节点返回 true，否则返回 false
  */
 const isElement = (val) => {
   return _type(val) === TYPES.ELEMENT

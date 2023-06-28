@@ -1,38 +1,35 @@
 section.section
   header.section__header
-    h3#method-isFunction.section__h3 isFunction(evt)
+    h3#method-isFunction.section__h3 isFunction(val)
   div.section__content
     h4.section__h4 Description
-    p 返回触发事件的 charCode。
+    p isFunction(val) 方法用来检测测试数据是否为 Function 类型。
     h4.section__h4 Parameters
-    h5.section__h4 evt
+    h5.section__h4 val
     dl.section__dl
       dt.section__dt Type：
-      dd.section__dd Event
-    p （必须）事件对象。
+      dd.section__dd Any
+    p （必须）val 待检测的数据。
     h4.section__h4 Returns
     dl.section__dl
       dt.section__dt Type：
-      dd.section__dd Number。
-    p 返回事件的 charCode。
+      dd.section__dd Boolean。
+    p true - 表示检测数据是 Function 类型，false 则表示不是。
     pre.section__pre
       code.section__code.
-        &lt;form id="form" name="form" class="form"&gt;
-          &lt;div class="field"&gt;
-            &lt;label for="user"&gt;用户名：&lt;/label&gt;
-            &lt;input id="user" name="user" type="text" class="input" /&gt;
-          &lt;/div&gt;
-          &lt;div class="field"&gt;
-            &lt;label for="password"&gt;密 码：&lt;/label&gt;
-            &lt;input id="password" name="password" type="password" class="input" /&gt;
-          &lt;/div&gt;
-        &lt;/form&gt;
+        import Types from '@yaohaixiao/types.js/esm/types'
 
-        const $emitter = delegate('#form')
-        const showLog = function (evt) {
-          const charCode = $emitter.getCharCode(evt)
+        const empty = () => {}
 
-          console.log(`当前按键的 charCode 为：${charCode}`)
-        }
+        Types.isFunction(Math); // -> false
 
-        $emitter.on('.input', 'keydown', showLog)
+        Types.isFunction(empty); // -> true
+        Types.isFunction(parseInt); // -> true
+        Types.isFunction(Array); // -> true
+        Types.isFunction(Boolean); // -> true
+        Types.isFunction(Date); // -> true
+        Types.isFunction(Number); // -> true
+        Types.isFunction(Object); // -> true
+        Types.isFunction(RegExp); // -> true
+        Types.isFunction(String); // -> true
+        Types.isFunction(new Function()) // -> true

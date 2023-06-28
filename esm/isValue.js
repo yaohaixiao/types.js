@@ -14,11 +14,9 @@ const isValue = (val) => {
   switch (type) {
     case TYPES.NUMBER:
       return isFinite(val)
-
     case TYPES.NULL:
     case TYPES.UNDEFINED:
       return false
-
     default:
       return !!type
   }

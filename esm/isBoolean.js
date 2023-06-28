@@ -6,7 +6,7 @@ import { TYPES } from './enum'
  * ========================================================================
  * @method isBoolean
  * @param {*} val - 要检测的数据
- * @returns {boolean} 'val' 是 Boolean 类型则返回 true，否则返回 false
+ * @returns {Boolean} 'val' 是 Boolean 类型则返回 true，否则返回 false
  */
 const isBoolean = (val) => {
   return _type(val) === TYPES.BOOLEAN

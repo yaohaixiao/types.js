@@ -5,7 +5,7 @@
   "main": "types.min.js",
   "scripts": {
     "start": "gulp start",
-    "build:lib": "rollup -c build/rollup.config.js --bundleConfigAsCjs",
+    "build:lib": "npm run prettier:write && rollup -c build/rollup.config.js --bundleConfigAsCjs",
     "build:docs": "gulp build",
     "build": "npm run build:lib && npm run build:docs",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
@@ -41,7 +41,7 @@
     "@rollup/plugin-commonjs": "^25.0.2",
     "@rollup/plugin-node-resolve": "^15.1.0",
     "@rollup/plugin-terser": "^0.4.3",
-    "@yaohaixiao/delegate.js": "^1.9.1",
+    "@yaohaixiao/delegate.js": "^1.9.3",
     "babel-jest": "^29.5.0",
     "commitlint": "^17.4.4",
     "conventional-changelog-cli": "^2.2.2",

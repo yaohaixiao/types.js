@@ -61,6 +61,8 @@ npm i -S @yaohaixiao/types.js --registry=https://npm.pkg.github.com
 
 ```js
 const Types = require('@yaohaixiao/types.js')
+
+Types.is([]) // -> array
 ```
 
 ### ES6 模块中调用
@@ -69,10 +71,11 @@ const Types = require('@yaohaixiao/types.js')
 // 调用 Types 对象
 import Types from '@yaohaixiao/types.js/esm/types'
 
+Types.is([]) // -> array
+
 // 调用特定方法
 import isArray from '@yaohaixiao/types.js/esm/isArray'
 
-Types.is([]) // -> array
 isArray([]) // -> true
 ```
 

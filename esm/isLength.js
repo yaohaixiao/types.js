@@ -3,7 +3,7 @@ import isNumber from './isNumber'
  * 检测测试数据是否为有效 length 值
  * =============================================================
  * @method isLength
- * @param val
+ * @param {Number} val
  * @returns {boolean}
  */
 const isLength = (val) => {

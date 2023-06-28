@@ -6,7 +6,7 @@ import { TYPES } from './enum'
  * ========================================================================
  * @method isArrayBuffer
  * @param {*} val
- * @return {boolean}
+ * @return {Boolean}
  */
 function isArrayBuffer(val) {
   return _type(val) === TYPES.ARRAY_BUFFER

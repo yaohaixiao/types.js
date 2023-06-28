@@ -1,57 +1,41 @@
 section.section
   header.section__header
-    h3#method-isTypedArray.section__h3 isTypedArray(evt)
+    h3#method-isTypedArray.section__h3 isTypedArray(val)
   div.section__content
     h4.section__h4 Description
-    p 终止事件在传播过程的捕获或冒泡的事件流。
+    p isTypedArray(val) 方法用来检测测试数据是否为 TypedArray 类型。
     h4.section__h4 Parameters
-    h5.section__h4 evt
+    h5.section__h4 val
     dl.section__dl
       dt.section__dt Type：
-      dd.section__dd Event
-    p （必须）事件对象。
+      dd.section__dd Any
+    p （必须）val 待检测的数据。
     h4.section__h4 Returns
     dl.section__dl
       dt.section__dt Type：
-      dd.section__dd Emitter。
-    p 返回 Emitter 对象（实例）。
+      dd.section__dd Boolean。
+    p true - 表示检测数据是 TypedArray 类型，false 则表示不是。
     pre.section__pre
       code.section__code.
-        &lt;ul id="list" class="list"&gt;
-          &lt;li class="item" id="item-home"&gt;
-            &lt;span&gt;Home&lt;/span&gt;
-            &lt;span class="item-remove" data-id="home"&gt;删除&lt;/a&gt;
-          &lt;/li&gt;
-          &lt;li class="item" id="item-support"&gt;
-            &lt;span&gt;Support&lt;/span&gt;
-            &lt;span class="item-remove" data-id="support"&gt;删除&lt;/a&gt;
-          &lt;/li&gt;
-          &lt;li class="item" id="item-faqs"&gt;
-            &lt;span&gt;FAQs&lt;/span&gt;
-            &lt;span class="item-remove" data-id="faqs"&gt;删除&lt;/a&gt;
-          &lt;/li&gt;
-        &lt;/ul&gt;
+        import Types from '@yaohaixiao/types.js/esm/types'
 
-        const $emitter = delegate('#list')
-        const removeItem = function (evt) {
-          const $removeButton = evt.delegateTarget
-          const id = parseInt($removeButton.getAttribute('data-id'), 10)
-          const $textarea = document.querySelector('#log-textarea')
+        const numbers = [ 2, 4 ]
 
-          // 阻止事件冒泡，不触发执行 showLog() 回调函数
-          $emitter.stopPropagation(evt)
-
-          // ...省略删除的逻辑
-
-          $textarea.value += `你删除的 li 节点的 id 为 item-${id}\r`
-        }
-        const showLog = function (evt) {
-          const $li = evt.delegateTarget
-          const $textarea = document.querySelector('#log-textarea')
-
-          $textarea.value += `你点击的 li 节点的 id 为 ${$li.id}\r`
+        function test(){
+            Types.isTypedArray( arguments ); // -> false
         }
 
-        // 点击删除，只会删除点击行，但不会触发事件冒泡，触发点击 .item 的事件处理函数执行
-        $emitter.on('.item-remove', 'click', removeItem)
-        $emitter.on('.item', 'click', showLog)
+        test();
+
+        Types.isTypedArray( numbers ); // -> false
+        Types.isTypedArray( new Array() ); // -> false
+
+        Types.isTypedArray(new Int8Array()) // -> true
+        Types.isTypedArray(new Int16Array()) // -> true
+        Types.isTypedArray(new Int32Array()) // -> true
+        Types.isTypedArray(new Float32Array()) // -> true
+        Types.isTypedArray(new Float64Array()) // -> true
+        Types.isTypedArray(new Uint8ClampedArray()) // -> true
+        Types.isTypedArray(new Uint8Array()) // -> true
+        Types.isTypedArray(new Uint16Array()) // -> true
+        Types.isTypedArray(new Uint32Array()) // -> true

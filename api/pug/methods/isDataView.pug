@@ -1,25 +1,26 @@
 section.section
   header.section__header
-    h3#method-isDataView.section__h3 isDataView()
+    h3#method-isDataView.section__h3 isDataView(val)
   div.section__content
     h4.section__h4 Description
-    p 解除 DOM 元素（$el）全部包括子元素的所有事件处理器。
+    p isDataView(val) 方法用来检测测试数据是否为 DataView 类型。
+    h4.section__h4 Parameters
+    h5.section__h4 val
+    dl.section__dl
+      dt.section__dt Type：
+      dd.section__dd Any
+    p （必须）val 待检测的数据。
     h4.section__h4 Returns
     dl.section__dl
       dt.section__dt Type：
-      dd.section__dd Emitter。
-    p 返回 Emitter 对象（实例）。
+      dd.section__dd Boolean。
+    p true - 表示检测数据是 DataView 类型，false 则表示不是。
     pre.section__pre
       code.section__code.
-        const handler = function(evt) {
-          const $li = evt.delegateTarget
-          const $textarea = document.querySelector('#log-textarea')
+        import Types from '@yaohaixiao/types.js/esm/types'
 
-          $textarea.value += `你点击的 li 节点的 id 为 ${$li.id}\r`
-        }
+        const buffer = new ArrayBuffer(8);
+        const dv = new DataView(buffer);
 
-        const $emitter = delegate('#list')
-
-        // 解除所有绑定事件
-        $emitter.destroy()
-        // => 点击 li 元素将不会执行 handler 事件处理器
+        Types.isDataView(buffer); // -> false
+        Types.isDataView(dv); // -> true

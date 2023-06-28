@@ -1,805 +1,587 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="keywords" content="JavaScript,typeof,types.js"><meta name="description" content="types.js 专注于检测 JavaScript 数据类型的工具库。"><title>delegate.js | 一个轻量级的 JavaScript 事件委托库。</title><link rel="preload" href="css/docs.min.css" as="style"><link rel="preload" href="js/docs.min.js" as="script"><link href="css/docs.min.css" rel="stylesheet" type="text/css"></head><body><div class="docs" id="docs"><aside class="aside" id="aside"><header class="aside__header"><h2 class="aside__h2">API Docs</h2></header><nav class="aside__nav"><h3 class="aside__h3">Methods</h3><ul class="aside__list"><li class="aside__item"><a class="aside__anchor" href="#method-is">is()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isArguments">isArguments()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isArray">isArray()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isArrayBuffer">isArrayBuffer()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isArrayLike">isArrayLike()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isArrayLikeObject">isArrayLikeObject()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isBase64">isBase64()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isBlank">isBlank()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isBoolean">isBoolean()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isConstructor">isConstructor()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isDataView">isDataView()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isDate">isDate()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isElement">isElement()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isEmail">isEmail()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isEmpty">isEmpty()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isEmptyObject">isEmptyObject()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isError">isError()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isEven">isEven()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isFloat">isFloat()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isFloat32Array">isFloat32Array()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isFloat64Array">isFloat64Array()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isFunction">isFunction()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isHex">isHex()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isHTMLCollection">isHTMLCollection()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isInfinite">isInfinite()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isInt8Array">isInt8Array()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isInt16Array">isInt16Array()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isInt32Array">isInt32Array()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isInteger">isInteger()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isIPAddress">isIPAddress()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isJSON">isJSON()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isLength">isLength()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isMap">isMap()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isNativeFunction">isNativeFunction()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isNull">isNull()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isNumber">isNumber()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isNumeric">isNumeric()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isObject">isObject()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isObjectLike">isObjectLike()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isOdd">isOdd()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isPhoneNumber">isPhoneNumber()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isPlainObject">isPlainObject()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isPrototype">isPrototype()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isRegExp">isRegExp()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isSet">isSet()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isString">isString()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isSymbol">isSymbol()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isTextNode">isTextNode()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isTypedArray">isTypedArray()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isUint8Array">isUint8Array()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isUint8ClampedArray">isUint8ClampedArray()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isUint16Array">isUint16Array()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isUint32Array">isUint32Array()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isUndefined">isUndefined()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isURL">isURL()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isValue">isValue()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isVNode">isVNode()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isWeakMap">isWeakMap()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isWeakSet">isWeakSet()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isXML">isXML()</a></li></ul></nav></aside><main class="main" id="main"><div class="main__header" id="header"><h1 class="main__h1"><strong class="main__name">types.</strong>js</h1><p class="main__tagline">types.js - 专注于检测 JavaScript 数据类型的工具库。</p></div><div class="main__cdn" id="cdn"><pre class="main__pre"><code>&lt;script src="https://cdn.jsdelivr.net/gh/yaohaixiao/types.js/dist/types.min.js"&gt;&lt;/script&gt;</code></pre></div><div class="main__download" id="download"><a class="main__button" href="https://github.com/yaohaixiao/types.js/archive/refs/heads/main.zip" target="_blank">Download Zip</a></div><section class="section" id="methods"><header class="section__header"><h2 class="section__title">Methods</h2></header><section class="section"><header class="section__header"><h3 class="section__h3" id="method-is">is(selector, fn[, data, context, once = false])</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>绑定 change 代理事件。</p><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">1.7.0</dd></dl><h4 class="section__h4">Parameters</h4><h5 class="section__h4">selector</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">String</dd></dl><p>（必须）通过 selector 选择器判定是否触发指定事件类型的事件处理器。</p><h5 class="section__h4">fn</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Function</dd></dl><p>（必须）fn 为事件处理器回调函数。</p><h5 class="section__h4">data</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object</dd></dl><p>（可选）给事件处理器回调函数传递的数据。</p><h5 class="section__h4">context</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object | Boolean</dd></dl><p>（可选）事件处理器回调函数的 this 上下文指向：</p><ul><li>当设置为 true 时，则事件处理器回调函数的 this 上下文指向为 data 对象；</li><li>如未指定 context，则事件处理器回调函数的 this 上下文指向为 Emitter 对象；</li></ul><h5 class="section__h4">once</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean</dd></dl><dl class="section__dl"><dt class="section__dt">Default：</dt><dd class="section__dd">false</dd></dl><p>（可选）once 指定事件处理器回调函数是否仅执行一次。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Emitter 对象。</dd></dl><p>Emitter 对象。</p><pre class="section__pre"><code class="section__code">const handler = function(evt) {
-  const $target = evt.delegateTarget
-  console.log(`触发事件的 delegateTarget DOM 元素的 id 是：${$target.id}`)
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="keywords" content="JavaScript,typeof,types.js"><meta name="description" content="types.js 专注于检测 JavaScript 数据类型的工具库。"><title>delegate.js | 一个轻量级的 JavaScript 事件委托库。</title><link rel="preload" href="css/docs.min.css" as="style"><link rel="preload" href="js/docs.min.js" as="script"><link href="css/docs.min.css" rel="stylesheet" type="text/css"></head><body><div class="docs" id="docs"><aside class="aside" id="aside"><header class="aside__header"><h2 class="aside__h2">API Docs</h2></header><nav class="aside__nav"><h3 class="aside__h3">Methods</h3><ul class="aside__list"><li class="aside__item"><a class="aside__anchor" href="#method-is">is()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isArguments">isArguments()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isArray">isArray()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isArrayBuffer">isArrayBuffer()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isArrayLike">isArrayLike()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isArrayLikeObject">isArrayLikeObject()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isBase64">isBase64()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isBlank">isBlank()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isBoolean">isBoolean()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isConstructor">isConstructor()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isDataView">isDataView()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isDate">isDate()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isElement">isElement()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isEmail">isEmail()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isEmpty">isEmpty()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isEmptyObject">isEmptyObject()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isError">isError()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isEven">isEven()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isFloat">isFloat()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isFloat32Array">isFloat32Array()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isFloat64Array">isFloat64Array()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isFunction">isFunction()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isHex">isHex()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isHTMLCollection">isHTMLCollection()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isInfinite">isInfinite()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isInt8Array">isInt8Array()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isInt16Array">isInt16Array()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isInt32Array">isInt32Array()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isInteger">isInteger()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isIPAddress">isIPAddress()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isJSON">isJSON()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isLength">isLength()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isMap">isMap()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isNativeFunction">isNativeFunction()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isNull">isNull()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isNumber">isNumber()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isNumeric">isNumeric()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isObject">isObject()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isObjectLike">isObjectLike()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isOdd">isOdd()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isPhoneNumber">isPhoneNumber()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isPlainObject">isPlainObject()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isPrototype">isPrototype()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isRegExp">isRegExp()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isSet">isSet()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isString">isString()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isSymbol">isSymbol()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isTextNode">isTextNode()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isTypedArray">isTypedArray()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isUint8Array">isUint8Array()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isUint8ClampedArray">isUint8ClampedArray()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isUint16Array">isUint16Array()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isUint32Array">isUint32Array()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isUndefined">isUndefined()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isURL">isURL()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isValue">isValue()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isVNode">isVNode()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isWeakMap">isWeakMap()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isWeakSet">isWeakSet()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isXML">isXML()</a></li></ul></nav></aside><main class="main" id="main"><div class="main__header" id="header"><h1 class="main__h1"><strong class="main__name">types.</strong>js</h1><p class="main__tagline">types.js - 专注于检测 JavaScript 数据类型的工具库。</p></div><div class="main__cdn" id="cdn"><pre class="main__pre"><code>&lt;script src="https://cdn.jsdelivr.net/gh/yaohaixiao/types.js/types.min.js"&gt;&lt;/script&gt;</code></pre></div><div class="main__download" id="download"><a class="main__button" href="https://github.com/yaohaixiao/types.js/archive/refs/heads/main.zip" target="_blank">Download Zip</a></div><section class="section" id="methods"><header class="section__header"><h2 class="section__title">Methods</h2></header><section class="section"><header class="section__header"><h3 class="section__h3" id="method-is">is(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>is(val) 方法返回检测 val 数据类型的字符串（名称）。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">String。</dd></dl><p>数据类型的字符串（名称）。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
+
+let Example
+
+Types.is('types.js') // -> string
+Types.is(2023) // -> number
+Types.is(true) // -> boolean
+Types.is(Example) // -> undefined
+Types.is(null) // -> null
+
+Types.is(new Set()) // -> set
+Types.is(new WeakSet() // -> weakset
+Types.is(new Map() // -> map
+Types.is(new WeakMap() // -> weakmap
+Types.is(Symbol()) // -> symbol
+
+Types.is([]) // -> array
+Types.is(new ArrayBuffer(8)) // -> arraybuffer
+Types.is(new Int8Array([])) // -> int8array</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isArguments">isArguments(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isArguments(val) 方法用来检测测试数据是否为 arguments 对象。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 arguments 对象，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
+
+Types.isArguments([]); // -> false
+
+function test(){
+  Types.isArguments(arguments); // -> true
 }
 
-const $emitter = delegate('#form')
-
-// 绑定 change 代理事件
-$emitter.change('.input', handler)</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isArguments">isArguments(selector, fn[, data, context, once = false])</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>绑定 click 代理事件，其调用方法和 on() 类似。</p><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">1.4.0</dd></dl><h4 class="section__h4">Parameters</h4><h5 class="section__h4">selector</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">String</dd></dl><p>（必须）通过 selector 选择器判定是否触发指定事件类型的事件处理器。</p><h5 class="section__h4">fn</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Function</dd></dl><p>（必须）fn 为事件处理器回调函数。</p><h5 class="section__h4">data</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object</dd></dl><p>（可选）给事件处理器回调函数传递的数据。</p><h5 class="section__h4">context</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object | Boolean</dd></dl><p>（可选）事件处理器回调函数的 this 上下文指向：</p><ul><li>当设置为 true 时，则事件处理器回调函数的 this 上下文指向为 data 对象；</li><li>如未指定 context，则事件处理器回调函数的 this 上下文指向为 Emitter 对象；</li></ul><h5 class="section__h4">once</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean</dd></dl><dl class="section__dl"><dt class="section__dt">Default：</dt><dd class="section__dd">false</dd></dl><p>（可选）once 指定事件处理器回调函数是否仅执行一次。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Emitter 对象。</dd></dl><p>Emitter 对象。</p><pre class="section__pre"><code class="section__code">const handler = function(evt) {
-  const $target = evt.delegateTarget
-  console.log(`触发事件的 delegateTarget DOM 元素的 id 是：${$target.id}`)
+const check = () => {
+  // 箭头函数没有 arguments 对象
+  Types.isArguments(arguments); // -> false
 }
 
-const $emitter = delegate('#list')
+test()
+check()</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isArray">isArray(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isArray(val) 方法用来检测测试数据是否为 Array （数组）类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 Array 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
 
-// 绑定 click 代理事件
-$emitter.click('.item', handler)</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isArray">isArray(selector, fn[, data, context, once = false])</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>绑定 compositionend 代理事件。</p><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">1.7.0</dd></dl><h4 class="section__h4">Parameters</h4><h5 class="section__h4">selector</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">String</dd></dl><p>（必须）通过 selector 选择器判定是否触发指定事件类型的事件处理器。</p><h5 class="section__h4">fn</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Function</dd></dl><p>（必须）fn 为事件处理器回调函数。</p><h5 class="section__h4">data</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object</dd></dl><p>（可选）给事件处理器回调函数传递的数据。</p><h5 class="section__h4">context</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object | Boolean</dd></dl><p>（可选）事件处理器回调函数的 this 上下文指向：</p><ul><li>当设置为 true 时，则事件处理器回调函数的 this 上下文指向为 data 对象；</li><li>如未指定 context，则事件处理器回调函数的 this 上下文指向为 Emitter 对象；</li></ul><h5 class="section__h4">once</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean</dd></dl><dl class="section__dl"><dt class="section__dt">Default：</dt><dd class="section__dd">false</dd></dl><p>（可选）once 指定事件处理器回调函数是否仅执行一次。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Emitter 对象。</dd></dl><p>Emitter 对象。</p><pre class="section__pre"><code class="section__code">const handler = function(evt) {
-  const $target = evt.delegateTarget
-  console.log(`触发事件的 delegateTarget DOM 元素的 id 是：${$target.id}`)
+Types.isArray([]) // -> true
+Types.isArray(new Array()) // -> true
+Types.isArray('this is string could split it into array'.split(' ')) // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isArrayBuffer">isArrayBuffer(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isArrayBuffer(val) 方法用来检测测试数据是否为 ArrayBuffer 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 ArrayBuffer 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
+
+Types.isArrayBuffer([]); // -> false
+Types.isArrayBuffer(new ArrayBuffer(8)); // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isArrayLike">isArrayLike(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isArrayLike(val) 方法用来检测测试数据是否为类似 Array 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是类似 Array 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
+
+// arguments 对象也是类似数组类型的数据
+function sum(a, b){
+    Types.isArrayLike(arguments); // -> true
+    return a + b;
 }
 
-const $emitter = delegate('#form')
+sum(5, 6);
 
-// 绑定 compositionend 代理事件
-$emitter.compositionend('.input', handler)</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isArrayBuffer">isArrayBuffer(selector, fn[, data, context, once = false])</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>绑定 compositionstart 代理事件。</p><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">1.7.0</dd></dl><h4 class="section__h4">Parameters</h4><h5 class="section__h4">selector</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">String</dd></dl><p>（必须）通过 selector 选择器判定是否触发指定事件类型的事件处理器。</p><h5 class="section__h4">fn</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Function</dd></dl><p>（必须）fn 为事件处理器回调函数。</p><h5 class="section__h4">data</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object</dd></dl><p>（可选）给事件处理器回调函数传递的数据。</p><h5 class="section__h4">context</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object | Boolean</dd></dl><p>（可选）事件处理器回调函数的 this 上下文指向：</p><ul><li>当设置为 true 时，则事件处理器回调函数的 this 上下文指向为 data 对象；</li><li>如未指定 context，则事件处理器回调函数的 this 上下文指向为 Emitter 对象；</li></ul><h5 class="section__h4">once</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean</dd></dl><dl class="section__dl"><dt class="section__dt">Default：</dt><dd class="section__dd">false</dd></dl><p>（可选）once 指定事件处理器回调函数是否仅执行一次。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Emitter 对象。</dd></dl><p>Emitter 对象。</p><pre class="section__pre"><code class="section__code">const handler = function(evt) {
-  const $target = evt.delegateTarget
-  console.log(`触发事件的 delegateTarget DOM 元素的 id 是：${$target.id}`)
+Types.isArrayLike([1, 2, 3, 4, 5]); // -> true
+
+// HTMLNodeList 是类似数组类型的数据
+Types.isArrayLike(document.getElementsByTagName('li')); // -> true
+
+Types.isArrayLike( new Int8Array() ); // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isArrayLikeObject">isArrayLikeObject(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isArrayLikeObject(val) 方法用来检测测试数据是否为 ArrayLike 的对象数据。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object | Array</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 ArrayLike 的对象数据，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
+
+const arr = [1, 2, 3]
+const empty = () => {}
+
+function test(){
+  Types.isArrayLikeObject(arguments); // -> true
 }
 
-const $emitter = delegate('#form')
+test()
 
-// 绑定 compositionstart 代理事件
-$emitter.compositionstart('.input', handler)</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isArrayLike">isArrayLike(selector, fn[, data, context, once = false])</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>绑定 compositionupdate 代理事件。</p><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">1.7.0</dd></dl><h4 class="section__h4">Parameters</h4><h5 class="section__h4">selector</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">String</dd></dl><p>（必须）通过 selector 选择器判定是否触发指定事件类型的事件处理器。</p><h5 class="section__h4">fn</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Function</dd></dl><p>（必须）fn 为事件处理器回调函数。</p><h5 class="section__h4">data</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object</dd></dl><p>（可选）给事件处理器回调函数传递的数据。</p><h5 class="section__h4">context</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object | Boolean</dd></dl><p>（可选）事件处理器回调函数的 this 上下文指向：</p><ul><li>当设置为 true 时，则事件处理器回调函数的 this 上下文指向为 data 对象；</li><li>如未指定 context，则事件处理器回调函数的 this 上下文指向为 Emitter 对象；</li></ul><h5 class="section__h4">once</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean</dd></dl><dl class="section__dl"><dt class="section__dt">Default：</dt><dd class="section__dd">false</dd></dl><p>（可选）once 指定事件处理器回调函数是否仅执行一次。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Emitter 对象。</dd></dl><p>Emitter 对象。</p><pre class="section__pre"><code class="section__code">const handler = function(evt) {
-  const $target = evt.delegateTarget
-  console.log(`触发事件的 delegateTarget DOM 元素的 id 是：${$target.id}`)
+Types.isArrayLikeObject(arr); // -> true
+Types.isArrayLikeObject(empty); // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isBase64">isBase64(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isBase64(val) 方法用来检测测试数据是否为 Base64 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">String</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 Base64 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
+
+Types.isBase64('a2V5MT12YWx1ZTEma2V5Mj12YWx1ZTI'); // -> true
+Types.isBase64('asdadf'); // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isBlank">isBlank(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isBlank(val) 方法用来检测测试数据是否只包含空格。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">String</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
+
+Types.isBlank('  '); // -> true
+Types.isBlank(new String()); // -> false
+Types.isBlank(''); // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isBoolean">isBoolean(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isBoolean(val) 方法用来检测测试数据是否为 Boolean 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 Boolean 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
+
+let projects;
+
+Types.isBoolean(!!0); // -> true
+Types.isBoolean(1); // -> false
+Types.isBoolean(false); // -> true
+Types.isBoolean(true); // -> true
+Types.isBoolean(Boolean('1')); // -> true
+Types.isBoolean(new Boolean('')); // -> false
+Types.isBoolean(''); // -> false
+Types.isBoolean(null); // -> false
+Types.isBoolean(NaN); // -> false
+Types.isBoolean(projects); // -> false
+Types.isBoolean(!!projects); // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isConstructor">isConstructor(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isConstructor(val) 方法用来检测测试数据是否为构造函数。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Function</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是构造函数，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
+
+const fn = function(){};
+const ff = class {};
+const f = () => console.log('no constructable');
+
+Types.isConstructor(fn); // -> true
+Types.isConstructor(ff); // -> true
+Types.isConstructor(f); // -> false
+Types.isConstructor(Math); // -> false
+Types.isConstructor(Boolean); // -> true
+Types.isConstructor(Array); // -> true
+Types.isConstructor(Function); // -> true
+Types.isConstructor(Date); // -> true
+Types.isConstructor(RegExp); // -> true
+Types.isConstructor(Object); // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isDataView">isDataView(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isDataView(val) 方法用来检测测试数据是否为 DataView 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 DataView 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
+
+const buffer = new ArrayBuffer(8);
+const dv = new DataView(buffer);
+
+Types.isDataView(buffer); // -> false
+Types.isDataView(dv); // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isDate">isDate(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isDate(val) 方法用来检测测试数据是否为 Date 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 Date 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
+
+const time = new Date();
+
+Types.isDate(time); // -> true
+Types.isDate('2017-07-06'); // -> false
+Types.isDate(time.getFullYear()); // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isElement">isElement(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isElement(val) 方法用来检测测试数据是否为 HTMLElement (元素节点)类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 HTMLElement (元素节点)类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
+
+const tagDiv = document.createElement('div')
+const fragment = document.createDocumentFragment()
+const textNode = document.createTextNode('text')
+
+Types.isElement(tagDiv); // -> true
+Types.isElement(fragment); // -> false
+Types.isElement(textNode); // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isEmail">isEmail(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isEmail(val) 方法用来检测测试数据是否为合法的 Email 格式。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">String</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是合法的 Email 格式，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
+
+Types.isEmail('hx@11.com') // => true
+Types.isEmail('hx#11.com') // => false
+Types.isEmail('hx@11.') // => false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isEmpty">isEmpty(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isEmpty(val) 方法用来检测测试数据是否为空字符串。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">String</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据为空字符串，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
+
+Types.isEmpty(''); // -> true
+Types.isEmpty(String()); // -> true
+Types.isEmpty(new String()); // -> false
+Types.isEmpty(' '); // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isEmptyObject">isEmptyObject(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isEmptyObject(val) 方法用来检测测试数据是否为空（单体）对象。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据为空（单体）对象，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
+
+function Person(name,age){
+   this.name = name;
+   this.age = age;
 }
 
-const $emitter = delegate('#form')
+Types.isEmptyObject({}); // -> true
+Types.isEmptyObject([]); // true
+Types.isEmptyObject(Person); // true
+Types.isEmptyObject(new Object()); // true
+Types.isEmptyObject(new Boolean()); // true
+Types.isEmptyObject(new Function('alert(\'function\')')); // true
+Types.isEmptyObject(new Array()); // true
+Types.isEmptyObject(new Date('2017-12-11')); // true
+Types.isEmptyObject(new RegExp('\s+','ig')); // true
+Types.isEmptyObject(null); // true
+Types.isEmptyObject(new String()); // true
+Types.isEmptyObject(new String('string')); // false
+Types.isEmptyObject({name:'robert'}); // -> false
+Types.isEmptyObject(new Person('robert',30)); // false
+Types.isEmptyObject(['']); // false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isError">isError(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isError(val) 方法用来检测测试数据是否为 Error 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据为 Error 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
 
-// 绑定 contextmenu 代理事件
-$emitter.compositionupdate('.input', handler)</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isArrayLikeObject">isArrayLikeObject(selector, fn[, data, context, once = false])</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>绑定 contextmenu 代理事件。</p><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">1.7.0</dd></dl><h4 class="section__h4">Parameters</h4><h5 class="section__h4">selector</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">String</dd></dl><p>（必须）通过 selector 选择器判定是否触发指定事件类型的事件处理器。</p><h5 class="section__h4">fn</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Function</dd></dl><p>（必须）fn 为事件处理器回调函数。</p><h5 class="section__h4">data</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object</dd></dl><p>（可选）给事件处理器回调函数传递的数据。</p><h5 class="section__h4">context</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object | Boolean</dd></dl><p>（可选）事件处理器回调函数的 this 上下文指向：</p><ul><li>当设置为 true 时，则事件处理器回调函数的 this 上下文指向为 data 对象；</li><li>如未指定 context，则事件处理器回调函数的 this 上下文指向为 Emitter 对象；</li></ul><h5 class="section__h4">once</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean</dd></dl><dl class="section__dl"><dt class="section__dt">Default：</dt><dd class="section__dd">false</dd></dl><p>（可选）once 指定事件处理器回调函数是否仅执行一次。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Emitter 对象。</dd></dl><p>Emitter 对象。</p><pre class="section__pre"><code class="section__code">const handler = function(evt) {
-  const $target = evt.relatedTarget
-  console.log(`当前事件的 relatedTarget 是：${$target}`)
+Types.isError({}); // -> false
+Types.isError(new Error()); // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isEven">isEven(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isEven(val) 方法用来检测测试数据的(数值)是否为偶数。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Number</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据(数值)为偶数，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
+
+Types.isEven(2); // -> true
+Types.isEven('2'); // -> false
+
+Types.isEven(3); // -> false
+Types.isEven(2.2); // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isFloat">isFloat(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isFloat(val) 方法用来检测测试数据的(数值)是否为浮点数。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Number</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据(数值)为浮点数，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
+
+Types.isFloat(2.4); // -> true
+Types.isFloat(Number("3.4556645445E7")); // -> true
+Types.isFloat(Number("3.4556645445E10")); // -> false
+Types.isFloat(2); // -> false
+Types.isFloat(0xffffff); // -> false
+Types.isFloat(NaN); // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isFloat32Array">isFloat32Array(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isFloat32Array(val) 方法用来检测测试数据是否为 Float32Array 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 Float32Array 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
+
+const numbers = [ 2, 4 ]
+
+function test(){
+    Types.isFloat32Array( arguments ); // -> false
 }
 
-const $emitter = delegate('#list')
+test();
 
-// 类选择器
-$emitter.contextmenu('.item', handler)</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isBase64">isBase64(selector, fn[, data, context, once = false])</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>绑定 copy 代理事件。</p><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">1.7.0</dd></dl><h4 class="section__h4">Parameters</h4><h5 class="section__h4">selector</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">String</dd></dl><p>（必须）通过 selector 选择器判定是否触发指定事件类型的事件处理器。</p><h5 class="section__h4">fn</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Function</dd></dl><p>（必须）fn 为事件处理器回调函数。</p><h5 class="section__h4">data</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object</dd></dl><p>（可选）给事件处理器回调函数传递的数据。</p><h5 class="section__h4">context</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object | Boolean</dd></dl><p>（可选）事件处理器回调函数的 this 上下文指向：</p><ul><li>当设置为 true 时，则事件处理器回调函数的 this 上下文指向为 data 对象；</li><li>如未指定 context，则事件处理器回调函数的 this 上下文指向为 Emitter 对象；</li></ul><h5 class="section__h4">once</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean</dd></dl><dl class="section__dl"><dt class="section__dt">Default：</dt><dd class="section__dd">false</dd></dl><p>（可选）once 指定事件处理器回调函数是否仅执行一次。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Emitter 对象。</dd></dl><p>Emitter 对象。</p><pre class="section__pre"><code class="section__code">const handler = function(evt) {
-  const $target = evt.delegateTarget
-  console.log(`触发事件的 delegateTarget DOM 元素的 id 是：${$target.id}`)
+Types.isFloat32Array( numbers ); // -> false
+Types.isFloat32Array( new Array() ); // -> false
+
+Types.isFloat32Array(new Float32Array()) => true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isFloat64Array">isFloat64Array(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isFloat64Array(val) 方法用来检测测试数据是否为 Float64Array 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 Float64Array 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
+
+const numbers = [ 2, 4 ]
+
+function test(){
+    Types.isFloat64Array( arguments ); // -> false
 }
 
-const $emitter = delegate('#list')
+test();
 
-// 绑定 copy 代理事件
-$emitter.copy('.item', handler)</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isBlank">isBlank(type[, detail = null, bubbles = true, cancelable = true])</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>创建自定义事件（CustomerEvent）。</p><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">1.8.0</dd></dl><h4 class="section__h4">Parameters</h4><h5 class="section__h4">type</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">String</dd></dl><p>（必须）事件类型（名称）。</p><h5 class="section__h4">detail</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object</dd></dl><dl class="section__dl"><dt class="section__dt">Default：</dt><dd class="section__dd">null</dd></dl><p>（可选）传递给自定义事件的数据，默认为 null。</p><h5 class="section__h4">bubbles</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean</dd></dl><dl class="section__dl"><dt class="section__dt">Default：</dt><dd class="section__dd">true</dd></dl><p>（可选）是否支持冒泡，默认为 true。</p><h5 class="section__h4">cancelable</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean</dd></dl><dl class="section__dl"><dt class="section__dt">Default：</dt><dd class="section__dd">true</dd></dl><p>（可选）是否可以取消，默认为 true。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">CustomerEvent。</dd></dl><p>CustomerEvent 实例。</p><pre class="section__pre"><code class="section__code">&lt;div id="nav" class="nav"&gt;
-  &lt;a id="service" class="anchor" href="https://www.yaohaixiao.com/serivce"&gt;Service&lt;/a&gt;
-  &lt;a id="help" class="anchor" href="https://www.yaohaixiao.com/help"&gt;Help&lt;/a&gt;
-&lt;/div&gt;
+Types.isFloat64Array( numbers ); // -> false
+Types.isFloat64Array( new Array() ); // -> false
 
-const $nav = document.querySelector('#nav')
-const $service = document.querySelector('#serivce')
-const $emitter = delegate($nav)
-const logEvent = $emitter.createEvent('log', {
-  name: 'Yao',
-  hi() {
-    console.log('hi！！！')
+Types.isFloat64Array(new Float64Array()) => true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isFunction">isFunction(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isFunction(val) 方法用来检测测试数据是否为 Function 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 Function 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
+
+const empty = () => {}
+
+Types.isFunction(Math); // -> false
+
+Types.isFunction(empty); // -> true
+Types.isFunction(parseInt); // -> true
+Types.isFunction(Array); // -> true
+Types.isFunction(Boolean); // -> true
+Types.isFunction(Date); // -> true
+Types.isFunction(Number); // -> true
+Types.isFunction(Object); // -> true
+Types.isFunction(RegExp); // -> true
+Types.isFunction(String); // -> true
+Types.isFunction(new Function()) // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isHex">isHex(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isFloat(val) 方法用来检测测试数据的(数值)是否为 16 进制数值。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">String</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据(数值)为16 进制数值，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
+
+Types.isHex('#ffffff'); // -> true
+Types.isHex('f3f3f3'); // -> true
+Types.isHex('#h1f1f1'); // -> false
+Types.isHex('sdadfa'); // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isHTMLCollection">isHTMLCollection(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isHTMLCollection(val) 方法用来检测测试数据是否为 HTMLNodeList (元素集合)类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 HTMLNodeList (元素集合)类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
+
+const $json = document.getElementById('isJSON')
+const $options = document.getElementsByTagName('li')
+
+Types.isHTMLCollection($json); // -> false
+Types.isHTMLCollection($options); // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isInfinite">isInfinite(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isInfinite(val) 方法用来检测测试数据的(数值)是否为正无穷或者负无穷。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Number</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据(数值)为正无穷或者负无穷，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
+
+Types.isInfinite(2.4); // -> false
+Types.isInfinite(Infinity); // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isInt8Array">isInt8Array(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isInt8Array(val) 方法用来检测测试数据是否为 Int8Array 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 Int8Array 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
+
+const numbers = [ 2, 4 ]
+
+function test(){
+    Types.isInt8Array( arguments ); // -> false
+}
+
+test();
+
+Types.isInt8Array( numbers ); // -> false
+Types.isInt8Array( new Array() ); // -> false
+
+Types.isInt8Array(new Int8Array()) => true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isInt16Array">isInt16Array(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isInt16Array(val) 方法用来检测测试数据是否为 Int16Array 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 Int16Array 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
+
+const numbers = [ 2, 4 ]
+
+function test(){
+    Types.isInt16Array( arguments ); // -> false
+}
+
+test();
+
+Types.isInt16Array( numbers ); // -> false
+Types.isInt16Array( new Array() ); // -> false
+
+Types.isInt16Array(new Int16Array()) => true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isInt32Array">isInt32Array(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isInt32Array(val) 方法用来检测测试数据是否为 Int32Array 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 Int32Array 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
+
+const numbers = [ 2, 4 ]
+
+function test(){
+    Types.isInt32Array( arguments ); // -> false
+}
+
+test();
+
+Types.isInt32Array( numbers ); // -> false
+Types.isInt32Array( new Array() ); // -> false
+
+Types.isInt32Array(new Int32Array()) => true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isInteger">isInteger(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isInteger(val) 方法用来检测测试数据的(数值)是否为整数。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Number</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据(数值)为整数，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
+
+Types.isInteger(2.4); // -> false
+Types.isInteger(2); // -> true
+Types.isInteger(0xffffff); // -> true
+Types.isInteger(NaN); // -> false
+Types.isInteger(Number("3.4556645445E7")); // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isIPAddress">isIPAddress(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isIPAddress(val) 方法用来检测测试数据是否为合法的 IP 地址格式。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">String</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是合法的 IP 地址格式，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
+
+// IPv4
+Types.isIPAddress('126.11.15.33') // -> true
+Types.isIPAddress('126.11.15.255') // -> false
+Types.isIPAddress('126.11.15.256') // -> false
+
+// IPv6
+Types.isIPAddress('FC00:0000:130F:0000:0000:09C0:876A:130B') // -> true
+Types.isIPAddress('FC00:0000:130F:0000:0000:09C0:876A') // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isJSON">isJSON(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isJSON(val) 方法用来检测测试数据是否为合法的 JSON 格式。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">String</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是合法的 JSON 格式，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
+
+Types.isJSON("\"this is a JSON string.\""); // -> true
+Types.isJSON("[\"1\",\"2\",3]"); // -> true
+Types.isJSON("3"); // -> true
+Types.isJSON("{\"prop\":\"JSON\"}"); // -> true
+Types.isJSON({prop:'JSON'}); // -> false
+Types.isJSON("{prop:'JSON'}"); // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isLength">isLength(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isLength(val) 方法用来检测测试数据是否为有效 length 值。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Number</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是有效 length 值，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
+
+// True
+Types.isLength(256) // -> true
+Types.isLength(0x00ff11) // -> true
+Types.isLength(9007199254740991) // -> true
+
+// False
+Types.isLength(9007199254740992) // -> false
+Types.isLength(Infinity) // -> false
+Types.isLength(-1) // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isMap">isMap(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isMap(val) 方法用来检测测试数据是否为 Map 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 Map 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
+
+const map = new Map([
+    ['name', 'Robert'],
+    ['Gender', 'Male']
+]);
+
+Types.is(map) // -> 'map'
+
+Types.isMap(map); // -> true
+Types.isMap(['name','robert']) // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isNativeFunction">isNativeFunction(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isNativeFunction(val) 方法用来检测测试数据是否为 JavaScript 内置函数。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Function</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 JavaScript 内置函数，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
+
+const fn = function(){};
+const ff = class {};
+const f = () => console.log('no constructable');
+
+Types.isNativeFunction(fn); // -> false
+Types.isNativeFunction(ff); // -> false
+Types.isNativeFunction(f); // -> false
+
+Types.isNativeFunction(Math); // -> true
+Types.isNativeFunction(Boolean); // -> true
+Types.isNativeFunction(Array); // -> true
+Types.isNativeFunction(Function); // -> true
+Types.isNativeFunction(Date); // -> true
+Types.isNativeFunction(RegExp); // -> true
+Types.isNativeFunction(Object); // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isNull">isNull(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isNull(val) 方法用来检测测试数据是否为 null。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 null，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
+
+Types.isNull(null); // -> true
+Types.isNull({}); // -> false
+Types.isNull(projects); // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isNumber">isNumber(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isNumber(val) 方法用来检测测试数据是否为 Number 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 Number 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
+
+Types.isNumber(2); // -> true
+Types.isNumber(2.4); // -> true
+Types.isNumber(0xffffff); // -> true
+Types.isNumber(NaN); // -> true
+Types.isNumber('33'); // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isNumeric">isNumeric(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isNumeric(val) 方法用来检测测试数据是否为数字(只能是 number 类型或者 '123123' 这样的数字字符串)。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Number | String</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是数字(只能是 number 类型或者 '123123' 这样的数字字符串)，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
+
+Types.isNumeric(2); // -> true
+Types.isNumeric(2.4); // -> true
+Types.isNumeric(0xffffff); // -> true
+Types.isNumeric('33'); // -> true
+Types.isNumeric('0xffffff'); // -> true
+Types.isNumeric(NaN); // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isObject">isObject(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isObject(val) 方法用来检测测试数据是否为 Object 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 Object 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
+
+Types.isObject({}) // => true
+Types.isObject(null) // => true
+Types.isObject(Object) // => true
+Types.isObject(new Object()) // => true
+Types.isObject([]) // => true
+Types.isObject(() => {}) // => true
+
+Types.isObject(null) // => false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isObjectLike">isObjectLike(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isObjectLike(val) 方法用来检测测试数据是否为类似 Object 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是类似 Object 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
+
+// True
+Types.isObject(function empty(){}); // -> true
+Types.isObject({}); // -> true
+Types.isObject(Object.create(null)); // -> true
+Types.isObject(Object.create({})); // -> true
+Types.isObject(new Function()); // -> true
+
+// False
+Types.isObject([]); // -> false
+Types.isObject(null); // -> false
+Types.isObject(document.getElementById('wrap')); // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isOdd">isOdd(vaL)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isOdd(val) 方法用来检测测试数据的(数值)是否为奇数。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Number</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据(数值)为奇数，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
+
+Types.isOdd(3); // -> true
+
+Types.isOdd('3'); // -> false
+Types.isOdd(2); // -> false
+Types.isOdd(3.1); // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isPhoneNumber">isPhoneNumber(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isPhoneNumber(val) 方法用来检测测试数据是否为合法的电话号码格式。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">String</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是合法的电话号码格式，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
+
+Types.isPhoneNumber('(123) 456-7890')
+Types.isPhoneNumber('(123)456-7890')
+Types.isPhoneNumber('139-456-7890')
+Types.isPhoneNumber('139.456.7890')
+Types.isPhoneNumber('1304567890')
+Types.isPhoneNumber('+31636363634')
+Types.isPhoneNumber('075-63546725')
+Types.isPhoneNumber('+86 027 84923296')</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isPlainObject">isPlainObject(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isPlainObject(val) 方法用来检测测试数据是否为普通对象。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是普通对象，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
+
+Types.isPlainObject({}); // -> true
+Types.isPlainObject(Object.create(null)); // -> true
+Types.isPlainObject(function empty(){}); // -> false
+Types.isPlainObject([]); // -> false
+Types.isPlainObject(null); // -> false
+Types.isPlainObject(document.getElementById('wrap')); // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isPrototype">isPrototype(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isPrototype(val) 方法用来检测测试数据是否为构造函数。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是构造函数，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
+
+const Yao= {
+  age: 40
+}
+
+Types.isPrototype(Object) => false
+Types.isPrototype(Object.prototype) => true
+Types.isPrototype(Yao.__proto__) => true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isRegExp">isRegExp(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isRegExp(val) 方法用来检测测试数据是否为 RegExp (正则表达式)类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 RegExp (正则表达式)类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
+
+const pattern = new RegExp('\s+','ig')
+
+Types.isRegExp(pattern); // -> true
+Types.isRegExp(/\s+/ig); // -> true
+
+Types.isRegExp('/\s+/ig'); // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isSet">isSet(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isSet(val) 方法用来检测测试数据是否为 Set 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 Set 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
+
+const mySet = new Set([1,2,3,4]);
+
+Types.is(mySet) // -> 'set'
+Types.isSet(mySet); // -> true
+
+Types.isSet([1,2,3,4]) // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isString">isString(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isString(val) 方法用来检测测试数据是否为 String 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 String 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
+
+const text = document.createTextNode('text')
+
+Types.isString('string'); // -> true
+Types.isString(String('string')); // -> true
+Types.isString(new String('string')); // -> false
+Types.isString(text); // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isSymbol">isSymbol(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isSymbol(val) 方法用来检测测试数据是否为 Symbol 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 Symbol 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
+
+const sym = Symbol('foo');
+const symObj = Object(sym);
+
+Types.is(sym) // -> 'symbol'
+Types.isSymbol(sym); // -> true
+
+Types.is(symObj) // -> 'object'
+Types.isSymbol(symObj); // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isTextNode">isTextNode(evt)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isTextNode(val) 方法用来检测测试数据是否为 HTMLTextNode (文本节点)类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 HTMLTextNode (文本节点)类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
+
+const tagDiv = document.createElement('div')
+const textNode = document.createTextNode('text')
+
+Types.isTextNode(tagDiv); // -> false
+Types.isTextNode(textNode); // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isTypedArray">isTypedArray(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isTypedArray(val) 方法用来检测测试数据是否为 TypedArray 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 TypedArray 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
+
+const numbers = [ 2, 4 ]
+
+function test(){
+    Types.isTypedArray( arguments ); // -> false
+}
+
+test();
+
+Types.isTypedArray( numbers ); // -> false
+Types.isTypedArray( new Array() ); // -> false
+
+Types.isTypedArray(new Int8Array()) // -> true
+Types.isTypedArray(new Int16Array()) // -> true
+Types.isTypedArray(new Int32Array()) // -> true
+Types.isTypedArray(new Float32Array()) // -> true
+Types.isTypedArray(new Float64Array()) // -> true
+Types.isTypedArray(new Uint8ClampedArray()) // -> true
+Types.isTypedArray(new Uint8Array()) // -> true
+Types.isTypedArray(new Uint16Array()) // -> true
+Types.isTypedArray(new Uint32Array()) // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isUint8Array">isUint8Array(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isUint8Array(val) 方法用来检测测试数据是否为 Uint8Array 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 Uint8Array 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
+
+const numbers = [ 2, 4 ]
+
+function test(){
+    Types.isUint32Array( arguments ); // -> false
+}
+
+test();
+
+Types.isUint32Array( numbers ); // -> false
+Types.isUint32Array( [] ); // -> false
+Types.isUint32Array( new Array() ); // -> false
+
+Types.isUint32Array( new Uint8Array() ); // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isUint8ClampedArray">isUint8ClampedArray(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isUint8ClampedArray(val) 方法用来检测测试数据是否为 Uint8ClampedArray 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 Uint8ClampedArray 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
+
+const numbers = [ 2, 4 ]
+
+function test(){
+    Types.isUint32Array( arguments ); // -> false
+}
+
+test();
+
+Types.isUint32Array( numbers ); // -> false
+Types.isUint32Array( [] ); // -> false
+Types.isUint32Array( new Array() ); // -> false
+
+Types.isUint32Array( new Uint8ClampedArray() ); // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isUint16Array">isUint16Array(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isUint16Array(val) 方法用来检测测试数据是否为 Uint16Array 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 Uint16Array 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
+
+const numbers = [ 2, 4 ]
+
+function test(){
+    Types.isUint32Array( arguments ); // -> false
+}
+
+test();
+
+Types.isUint32Array( numbers ); // -> false
+Types.isUint32Array( [] ); // -> false
+Types.isUint32Array( new Array() ); // -> false
+
+Types.isUint32Array( new Uint16Array() ); // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isUint32Array">isUint32Array(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isUint32Array(val) 方法用来检测测试数据是否为 Uint32Array 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 Uint32Array 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
+
+const numbers = [ 2, 4 ]
+
+function test(){
+    Types.isUint32Array( arguments ); // -> false
+}
+
+test();
+
+Types.isUint32Array( numbers ); // -> false
+Types.isUint32Array( [] ); // -> false
+Types.isUint32Array( new Array() ); // -> false
+
+Types.isUint32Array( new Uint32Array() ); // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isUndefined">isUndefined(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isUndefined(val) 方法用来检测测试数据是否为 undefined。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 undefined，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
+
+const projects;
+
+Types.isUndefined(projects); // -> true
+Types.isUndefined([]); // -> false
+Types.isUndefined(''); // -> false
+Types.isUndefined(0); // -> false
+Types.isUndefined(NaN); // -> false
+Types.isUndefined({}); // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isURL">isURL(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isURL(val) 方法用来检测测试数据是否为合法的 URL 格式。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">String</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是合法的 URL 格式，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
+
+Types.isURL('http://localhost') -> false
+Types.isURL('https://10.20.34.256') -> true
+Types.isURL('https://www.yaohaixiao.com') -> true
+Types.isURL('https://www.yaohaixiao.com:8083') -> true
+Types.isURL('https://www.yaohaixiao.com:8083/blog') -> true
+Types.isURL('https://www.yaohaixiao.com:8083/blog#top') -> true
+Types.isURL('https://www.yaohaixiao.com:8083/blog?page=2') -> true
+Types.isURL('https://www.yaohaixiao.com:8083/blog?page=2#top') -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isValue">isValue(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isValue(val) 方法用来检测测试数据是否有效的数据（非null、undefined或者正负无穷数值）。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是否有效的数据（非null、undefined或者正负无穷数值），false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
+
+const projects;
+
+Types.isValue(projects); // -> false
+Types.isValue(function empty(){}); // -> true
+Types.isValue(/\s+/ig); // -> true
+Types.isValue([]); // -> true
+Types.isValue(''); // -> true
+Types.isValue(0); // -> true
+Types.isValue(NaN); // -> false
+Types.isValue( null ); // -> false
+Types.isValue({}); // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isVNode">isVNode(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isVNode(val) 方法用来检测测试数据是否为 VNode (VUE虚拟节点)类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 VNode (VUE虚拟节点)类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">&lt;template&gt;
+   &lt;dev-header ref="header"&gt;&lt;/dev-header&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+import Types from '@yaohaixiao/types.js/esm/types'
+
+export default {
+  name: 'PageHeader',
+  mounted() {
+    const $header = this.$refs.header
+
+    Types.isVNode($header) // -> true
   }
-})
-
-const logHandler = function(evt) {
-  console.log('detail', evt.detail)
-  console.log('type', evt.type)
-}
-
-// 或者
-$service.dispatchEvent(logEvent)</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isBoolean">isBoolean(selector, fn[, data, context, once = false])</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>绑定 cut 代理事件。</p><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">1.7.0</dd></dl><h4 class="section__h4">Parameters</h4><h5 class="section__h4">selector</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">String</dd></dl><p>（必须）通过 selector 选择器判定是否触发指定事件类型的事件处理器。</p><h5 class="section__h4">fn</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Function</dd></dl><p>（必须）fn 为事件处理器回调函数。</p><h5 class="section__h4">data</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object</dd></dl><p>（可选）给事件处理器回调函数传递的数据。</p><h5 class="section__h4">context</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object | Boolean</dd></dl><p>（可选）事件处理器回调函数的 this 上下文指向：</p><ul><li>当设置为 true 时，则事件处理器回调函数的 this 上下文指向为 data 对象；</li><li>如未指定 context，则事件处理器回调函数的 this 上下文指向为 Emitter 对象；</li></ul><h5 class="section__h4">once</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean</dd></dl><dl class="section__dl"><dt class="section__dt">Default：</dt><dd class="section__dd">false</dd></dl><p>（可选）once 指定事件处理器回调函数是否仅执行一次。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Emitter 对象。</dd></dl><p>Emitter 对象。</p><pre class="section__pre"><code class="section__code">const handler = function(evt) {
-  const $target = evt.delegateTarget
-  console.log(`触发事件的 delegateTarget DOM 元素的 id 是：${$target.id}`)
-}
-
-const $emitter = delegate('#form')
-
-// 绑定 cut 代理事件
-$emitter.cut('.textarea', handler)</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isConstructor">isConstructor(selector, fn[, data, context, once = false])</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>绑定 dbclick 代理事件。</p><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">1.7.0</dd></dl><h4 class="section__h4">Parameters</h4><h5 class="section__h4">selector</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">String</dd></dl><p>（必须）通过 selector 选择器判定是否触发指定事件类型的事件处理器。</p><h5 class="section__h4">fn</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Function</dd></dl><p>（必须）fn 为事件处理器回调函数。</p><h5 class="section__h4">data</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object</dd></dl><p>（可选）给事件处理器回调函数传递的数据。</p><h5 class="section__h4">context</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object | Boolean</dd></dl><p>（可选）事件处理器回调函数的 this 上下文指向：</p><ul><li>当设置为 true 时，则事件处理器回调函数的 this 上下文指向为 data 对象；</li><li>如未指定 context，则事件处理器回调函数的 this 上下文指向为 Emitter 对象；</li></ul><h5 class="section__h4">once</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean</dd></dl><dl class="section__dl"><dt class="section__dt">Default：</dt><dd class="section__dd">false</dd></dl><p>（可选）once 指定事件处理器回调函数是否仅执行一次。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Emitter 对象。</dd></dl><p>Emitter 对象。</p><pre class="section__pre"><code class="section__code">const handler = function(evt) {
-  const $target = evt.delegateTarget
-  console.log(`触发事件的 delegateTarget DOM 元素的 id 是：${$target.id}`)
-}
-
-const $emitter = delegate('#list')
-
-// 绑定 click 代理事件
-$emitter.dbclick('.item', handler)</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isDataView">isDataView()</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>解除 DOM 元素（$el）全部包括子元素的所有事件处理器。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Emitter。</dd></dl><p>返回 Emitter 对象（实例）。</p><pre class="section__pre"><code class="section__code">const handler = function(evt) {
-  const $li = evt.delegateTarget
-  const $textarea = document.querySelector('#log-textarea')
-
-  $textarea.value += `你点击的 li 节点的 id 为 ${$li.id}\r`
-}
-
-const $emitter = delegate('#list')
-
-// 解除所有绑定事件
-$emitter.destroy()
-// => 点击 li 元素将不会执行 handler 事件处理器</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isDate">isDate(selector, fn[, data, context, once = false])</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>绑定 drag 代理事件。</p><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">1.7.0</dd></dl><h4 class="section__h4">Parameters</h4><h5 class="section__h4">selector</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">String</dd></dl><p>（必须）通过 selector 选择器判定是否触发指定事件类型的事件处理器。</p><h5 class="section__h4">fn</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Function</dd></dl><p>（必须）fn 为事件处理器回调函数。</p><h5 class="section__h4">data</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object</dd></dl><p>（可选）给事件处理器回调函数传递的数据。</p><h5 class="section__h4">context</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object | Boolean</dd></dl><p>（可选）事件处理器回调函数的 this 上下文指向：</p><ul><li>当设置为 true 时，则事件处理器回调函数的 this 上下文指向为 data 对象；</li><li>如未指定 context，则事件处理器回调函数的 this 上下文指向为 Emitter 对象；</li></ul><h5 class="section__h4">once</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean</dd></dl><dl class="section__dl"><dt class="section__dt">Default：</dt><dd class="section__dd">false</dd></dl><p>（可选）once 指定事件处理器回调函数是否仅执行一次。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Emitter 对象。</dd></dl><p>Emitter 对象。</p><pre class="section__pre"><code class="section__code">const handler = function(evt) {
-  const $target = evt.relatedTarget
-  console.log(`当前事件的 relatedTarget 是：${$target}`)
-}
-
-const $emitter = delegate('#list')
-
-// 类选择器
-$emitter.drag('.item', handler)</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isElement">isElement(selector, fn[, data, context, once = false])</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>绑定 dragend 代理事件。</p><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">1.7.0</dd></dl><h4 class="section__h4">Parameters</h4><h5 class="section__h4">selector</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">String</dd></dl><p>（必须）通过 selector 选择器判定是否触发指定事件类型的事件处理器。</p><h5 class="section__h4">fn</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Function</dd></dl><p>（必须）fn 为事件处理器回调函数。</p><h5 class="section__h4">data</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object</dd></dl><p>（可选）给事件处理器回调函数传递的数据。</p><h5 class="section__h4">context</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object | Boolean</dd></dl><p>（可选）事件处理器回调函数的 this 上下文指向：</p><ul><li>当设置为 true 时，则事件处理器回调函数的 this 上下文指向为 data 对象；</li><li>如未指定 context，则事件处理器回调函数的 this 上下文指向为 Emitter 对象；</li></ul><h5 class="section__h4">once</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean</dd></dl><dl class="section__dl"><dt class="section__dt">Default：</dt><dd class="section__dd">false</dd></dl><p>（可选）once 指定事件处理器回调函数是否仅执行一次。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Emitter 对象。</dd></dl><p>Emitter 对象。</p><pre class="section__pre"><code class="section__code">const handler = function(evt) {
-  const $target = evt.relatedTarget
-  console.log(`当前事件的 relatedTarget 是：${$target}`)
-}
-
-const $emitter = delegate('#list')
-
-// 类选择器
-$emitter.dragend('.item', handler)</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isEmail">isEmail(selector, fn[, data, context, once = false])</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>绑定 dragenter 代理事件。</p><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">1.7.0</dd></dl><h4 class="section__h4">Parameters</h4><h5 class="section__h4">selector</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">String</dd></dl><p>（必须）通过 selector 选择器判定是否触发指定事件类型的事件处理器。</p><h5 class="section__h4">fn</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Function</dd></dl><p>（必须）fn 为事件处理器回调函数。</p><h5 class="section__h4">data</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object</dd></dl><p>（可选）给事件处理器回调函数传递的数据。</p><h5 class="section__h4">context</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object | Boolean</dd></dl><p>（可选）事件处理器回调函数的 this 上下文指向：</p><ul><li>当设置为 true 时，则事件处理器回调函数的 this 上下文指向为 data 对象；</li><li>如未指定 context，则事件处理器回调函数的 this 上下文指向为 Emitter 对象；</li></ul><h5 class="section__h4">once</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean</dd></dl><dl class="section__dl"><dt class="section__dt">Default：</dt><dd class="section__dd">false</dd></dl><p>（可选）once 指定事件处理器回调函数是否仅执行一次。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Emitter 对象。</dd></dl><p>Emitter 对象。</p><pre class="section__pre"><code class="section__code">const handler = function(evt) {
-  const $target = evt.relatedTarget
-  console.log(`当前事件的 relatedTarget 是：${$target}`)
-}
-
-const $emitter = delegate('#list')
-
-// 类选择器
-$emitter.dragenter('.item', handler)</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isEmpty">isEmpty(selector, fn[, data, context, once = false])</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>绑定 dragleave 代理事件。</p><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">1.7.0</dd></dl><h4 class="section__h4">Parameters</h4><h5 class="section__h4">selector</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">String</dd></dl><p>（必须）通过 selector 选择器判定是否触发指定事件类型的事件处理器。</p><h5 class="section__h4">fn</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Function</dd></dl><p>（必须）fn 为事件处理器回调函数。</p><h5 class="section__h4">data</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object</dd></dl><p>（可选）给事件处理器回调函数传递的数据。</p><h5 class="section__h4">context</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object | Boolean</dd></dl><p>（可选）事件处理器回调函数的 this 上下文指向：</p><ul><li>当设置为 true 时，则事件处理器回调函数的 this 上下文指向为 data 对象；</li><li>如未指定 context，则事件处理器回调函数的 this 上下文指向为 Emitter 对象；</li></ul><h5 class="section__h4">once</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean</dd></dl><dl class="section__dl"><dt class="section__dt">Default：</dt><dd class="section__dd">false</dd></dl><p>（可选）once 指定事件处理器回调函数是否仅执行一次。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Emitter 对象。</dd></dl><p>Emitter 对象。</p><pre class="section__pre"><code class="section__code">const handler = function(evt) {
-  const $target = evt.relatedTarget
-  console.log(`当前事件的 relatedTarget 是：${$target}`)
-}
-
-const $emitter = delegate('#list')
-
-// 类选择器
-$emitter.dragleave('.item', handler)</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isEmptyObject">isEmptyObject(selector, fn[, data, context, once = false])</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>绑定 dragover 代理事件。</p><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">1.7.0</dd></dl><h4 class="section__h4">Parameters</h4><h5 class="section__h4">selector</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">String</dd></dl><p>（必须）通过 selector 选择器判定是否触发指定事件类型的事件处理器。</p><h5 class="section__h4">fn</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Function</dd></dl><p>（必须）fn 为事件处理器回调函数。</p><h5 class="section__h4">data</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object</dd></dl><p>（可选）给事件处理器回调函数传递的数据。</p><h5 class="section__h4">context</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object | Boolean</dd></dl><p>（可选）事件处理器回调函数的 this 上下文指向：</p><ul><li>当设置为 true 时，则事件处理器回调函数的 this 上下文指向为 data 对象；</li><li>如未指定 context，则事件处理器回调函数的 this 上下文指向为 Emitter 对象；</li></ul><h5 class="section__h4">once</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean</dd></dl><dl class="section__dl"><dt class="section__dt">Default：</dt><dd class="section__dd">false</dd></dl><p>（可选）once 指定事件处理器回调函数是否仅执行一次。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Emitter 对象。</dd></dl><p>Emitter 对象。</p><pre class="section__pre"><code class="section__code">const handler = function(evt) {
-  const $target = evt.relatedTarget
-  console.log(`当前事件的 relatedTarget 是：${$target}`)
-}
-
-const $emitter = delegate('#list')
-
-// 类选择器
-$emitter.dragover('.item', handler)</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isError">isError(selector, fn[, data, context, once = false])</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>绑定 dragstart 代理事件。</p><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">1.7.0</dd></dl><h4 class="section__h4">Parameters</h4><h5 class="section__h4">selector</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">String</dd></dl><p>（必须）通过 selector 选择器判定是否触发指定事件类型的事件处理器。</p><h5 class="section__h4">fn</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Function</dd></dl><p>（必须）fn 为事件处理器回调函数。</p><h5 class="section__h4">data</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object</dd></dl><p>（可选）给事件处理器回调函数传递的数据。</p><h5 class="section__h4">context</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object | Boolean</dd></dl><p>（可选）事件处理器回调函数的 this 上下文指向：</p><ul><li>当设置为 true 时，则事件处理器回调函数的 this 上下文指向为 data 对象；</li><li>如未指定 context，则事件处理器回调函数的 this 上下文指向为 Emitter 对象；</li></ul><h5 class="section__h4">once</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean</dd></dl><dl class="section__dl"><dt class="section__dt">Default：</dt><dd class="section__dd">false</dd></dl><p>（可选）once 指定事件处理器回调函数是否仅执行一次。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Emitter 对象。</dd></dl><p>Emitter 对象。</p><pre class="section__pre"><code class="section__code">const handler = function(evt) {
-  const $target = evt.relatedTarget
-  console.log(`当前事件的 relatedTarget 是：${$target}`)
-}
-
-const $emitter = delegate('#list')
-
-// 类选择器
-$emitter.dragstart('.item', handler)</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isEven">isEven(selector, fn[, data, context, once = false])</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>绑定 drop 代理事件。</p><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">1.4.0</dd></dl><h4 class="section__h4">Parameters</h4><h5 class="section__h4">selector</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">String</dd></dl><p>（必须）通过 selector 选择器判定是否触发指定事件类型的事件处理器。</p><h5 class="section__h4">fn</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Function</dd></dl><p>（必须）fn 为事件处理器回调函数。</p><h5 class="section__h4">data</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object</dd></dl><p>（可选）给事件处理器回调函数传递的数据。</p><h5 class="section__h4">context</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object | Boolean</dd></dl><p>（可选）事件处理器回调函数的 this 上下文指向：</p><ul><li>当设置为 true 时，则事件处理器回调函数的 this 上下文指向为 data 对象；</li><li>如未指定 context，则事件处理器回调函数的 this 上下文指向为 Emitter 对象；</li></ul><h5 class="section__h4">once</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean</dd></dl><dl class="section__dl"><dt class="section__dt">Default：</dt><dd class="section__dd">false</dd></dl><p>（可选）once 指定事件处理器回调函数是否仅执行一次。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Emitter 对象。</dd></dl><p>Emitter 对象。</p><pre class="section__pre"><code class="section__code">const handler = function(evt) {
-  const $target = evt.relatedTarget
-  console.log(`当前事件的 relatedTarget 是：${$target}`)
-}
-
-const $emitter = delegate('#list')
-
-// 类选择器
-$emitter.drop('.item', handler)</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isFloat">isFloat(selector, fn[, data, context, once = false])</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>绑定 error 代理事件。</p><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">1.7.0</dd></dl><h4 class="section__h4">Parameters</h4><h5 class="section__h4">selector</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">String</dd></dl><p>（必须）通过 selector 选择器判定是否触发指定事件类型的事件处理器。</p><h5 class="section__h4">fn</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Function</dd></dl><p>（必须）fn 为事件处理器回调函数。</p><h5 class="section__h4">data</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object</dd></dl><p>（可选）给事件处理器回调函数传递的数据。</p><h5 class="section__h4">context</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object | Boolean</dd></dl><p>（可选）事件处理器回调函数的 this 上下文指向：</p><ul><li>当设置为 true 时，则事件处理器回调函数的 this 上下文指向为 data 对象；</li><li>如未指定 context，则事件处理器回调函数的 this 上下文指向为 Emitter 对象；</li></ul><h5 class="section__h4">once</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean</dd></dl><dl class="section__dl"><dt class="section__dt">Default：</dt><dd class="section__dd">false</dd></dl><p>（可选）once 指定事件处理器回调函数是否仅执行一次。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Emitter 对象。</dd></dl><p>Emitter 对象。</p><pre class="section__pre"><code class="section__code">const handler = function(evt) {
-  const $target = evt.delegateTarget
-  console.log(`触发事件的 delegateTarget DOM 元素的 id 是：${$target.id}`)
-}
-
-const $emitter = delegate('#albums')
-
-// 绑定 error 代理事件
-$emitter.error('.image', handler)</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isFloat32Array">isFloat32Array(selector, fn[, data, context, once = false])</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>focusin() 方法用来绑定 focusin（IE） 或者 focus（其它） 代理事件处理器。</p><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">1.4.0</dd></dl><h4 class="section__h4">Parameters</h4><h5 class="section__h4">selector</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">String</dd></dl><p>（必须）通过 selector 选择器判定是否触发指定事件类型的事件处理器。</p><h5 class="section__h4">fn</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Function</dd></dl><p>（必须）fn 为事件处理器回调函数。</p><h5 class="section__h4">data</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object</dd></dl><p>（可选）给事件处理器回调函数传递的数据。</p><h5 class="section__h4">context</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object | Boolean</dd></dl><p>（可选）事件处理器回调函数的 this 上下文指向：</p><ul><li>当设置为 true 时，则事件处理器回调函数的 this 上下文指向为 data 对象；</li><li>如未指定 context，则事件处理器回调函数的 this 上下文指向为 Emitter 对象；</li></ul><h5 class="section__h4">once</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean</dd></dl><dl class="section__dl"><dt class="section__dt">Default：</dt><dd class="section__dd">false</dd></dl><p>（可选）once 指定事件处理器回调函数是否仅执行一次。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Emitter 对象。</dd></dl><p>Emitter 对象。</p><pre class="section__pre"><code class="section__code">const handler = function(evt) {
-  const $input = evt.delegateTarget
-  console.log(`输入框当前值为：${$input.value}`)
-}
-
-const $emitter = delegate('.options-input')
-
-// 类选择器
-$emitter.focusin('.options-input__inner', handler)</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isFloat64Array">isFloat64Array(selector, fn[, data, context, once = false])</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>focusout() 方法用来绑定 focusout（IE） 或者 blur（其它） 代理事件处理器。</p><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">1.4.0</dd></dl><h4 class="section__h4">Parameters</h4><h5 class="section__h4">selector</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">String</dd></dl><p>（必须）通过 selector 选择器判定是否触发指定事件类型的事件处理器。</p><h5 class="section__h4">fn</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Function</dd></dl><p>（必须）fn 为事件处理器回调函数。</p><h5 class="section__h4">data</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object</dd></dl><p>（可选）给事件处理器回调函数传递的数据。</p><h5 class="section__h4">context</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object | Boolean</dd></dl><p>（可选）事件处理器回调函数的 this 上下文指向：</p><ul><li>当设置为 true 时，则事件处理器回调函数的 this 上下文指向为 data 对象；</li><li>如未指定 context，则事件处理器回调函数的 this 上下文指向为 Emitter 对象；</li></ul><h5 class="section__h4">once</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean</dd></dl><dl class="section__dl"><dt class="section__dt">Default：</dt><dd class="section__dd">false</dd></dl><p>（可选）once 指定事件处理器回调函数是否仅执行一次。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Emitter 对象。</dd></dl><p>Emitter 对象。</p><pre class="section__pre"><code class="section__code">const handler = function(evt) {
-  const $input = evt.delegateTarget
-  console.log(`输入框当前值为：${$input.value}`)
-}
-
-const $emitter = delegate('.options-input')
-
-// 类选择器
-$emitter.focusout('.options-input__inner', handler)</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isFunction">isFunction(evt)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>返回触发事件的 charCode。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">evt</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Event</dd></dl><p>（必须）事件对象。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Number。</dd></dl><p>返回事件的 charCode。</p><pre class="section__pre"><code class="section__code">&lt;form id="form" name="form" class="form"&gt;
-  &lt;div class="field"&gt;
-    &lt;label for="user"&gt;用户名：&lt;/label&gt;
-    &lt;input id="user" name="user" type="text" class="input" /&gt;
-  &lt;/div&gt;
-  &lt;div class="field"&gt;
-    &lt;label for="password"&gt;密 码：&lt;/label&gt;
-    &lt;input id="password" name="password" type="password" class="input" /&gt;
-  &lt;/div&gt;
-&lt;/form&gt;
-
-const $emitter = delegate('#form')
-const showLog = function (evt) {
-  const charCode = $emitter.getCharCode(evt)
-
-  console.log(`当前按键的 charCode 为：${charCode}`)
-}
-
-$emitter.on('.input', 'keydown', showLog)</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isHex">isHex([type])</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>获取 DOM 元素（$el）全部或者指定 type 类型的事件处理器相关的（数组）数据。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">type</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">String</dd></dl><p>（可选）设置 type 时获取特定的事件类型（type），默认获取所有类型的事件处理器。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Array。</dd></dl><p>返回已绑定的事件类型的数组（去除名称重复的事件）。</p><pre class="section__pre"><code class="section__code">const handler = function(evt) {
-  const $li = evt.delegateTarget
-  const $textarea = document.querySelector('#log-textarea')
-
-  $textarea.value += `你点击的 li 节点的 id 为 ${$li.id}\r`
-}
-
-const $emitter = delegate('#list')
-
-// 绑定事件
-$emitter.click('li', handler)
-
-// 获取已绑定的所有类型的事件处理器
-$emitter.getListeners('click')
-// => [
-//   {
-//     options,
-//     selector,
-//     type,
-//     fn,
-//     data,
-//     context,
-//     capture
-//   }
-// ]</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isHTMLCollection">isHTMLCollection(evt)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>获取事件触发时的 pageX 值。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">evt</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Event</dd></dl><p>（必须）事件对象。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Number。</dd></dl><p>返回事件触发时的 pageX 值。</p><pre class="section__pre"><code class="section__code">const $emitter = delegate('#list')
-const showLog = function (evt) {
-  const pageX = $emitter.getPageX(evt)
-
-  console.log(`pageX 为：${pageX}`)
-}
-
-$emitter.on('.item', 'click', showLog)</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isInfinite">isInfinite(evt)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>获取事件触发时的 pageX 和 pageY 数组数据。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">evt</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Event</dd></dl><p>（必须）事件对象。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Array。</dd></dl><p>返回事件触发时的数组数据：[pageX, pageY]。</p><pre class="section__pre"><code class="section__code">const $emitter = delegate('#list')
-const showLog = function (evt) {
-  const pageXY = $emitter.getPageXY(evt)
-
-  console.log(`pageX 为：${pageXY[0]}`)
-  console.log(`pageY 为：${pageXY[1]}`)
-}
-
-$emitter.on('.item', 'click', showLog)</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isInt8Array">isInt8Array(evt)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>获取事件触发时的 pageY 值。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">evt</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Event</dd></dl><p>（必须）事件对象。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Number。</dd></dl><p>返回事件触发时的 pageY 值。</p><pre class="section__pre"><code class="section__code">const $emitter = delegate('#list')
-const showLog = function (evt) {
-  const pageY = $emitter.getPageY(evt)
-
-  console.log(`pageY 为：${pageY}`)
-}
-
-$emitter.on('.item', 'click', showLog)</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isInt16Array">isInt16Array(evt)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>返回触发事件的 relatedTarget DOM 元素。</p><p>说明：MouseEvent.relatedTarget 只读属性是鼠标事件的次要目标（如果有）。相关的鼠标事件有：</p><ul><li>mouseenter</li><li>mouseleave</li><li>mouseover</li><li>mouseout</li><li>dragenter</li><li>dragleave</li></ul><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">1.1.0</dd></dl><h4 class="section__h4">Parameters</h4><h5 class="section__h4">evt</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Event</dd></dl><p>（必须）事件对象。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">HTMLElement。</dd></dl><p>Event 对象的 relatedTarget DOM 元素。</p><pre class="section__pre"><code class="section__code">&lt;ul id="list" class="list"&gt;
-  &lt;li class="item" id="item-home"&gt;
-    &lt;span&gt;Home&lt;/span&gt;
-    &lt;a href="/sitemap#home" class="remove" data-id="home"&gt;删除&lt;/a&gt;
-  &lt;/li&gt;
-  &lt;li class="item" id="item-support"&gt;
-    &lt;span&gt;Support&lt;/span&gt;
-    &lt;a href="/sitemap#support" class="remove" data-id="support"&gt;删除&lt;/a&gt;
-  &lt;/li&gt;
-  &lt;li class="item" id="item-faqs"&gt;
-    &lt;span&gt;FAQs&lt;/span&gt;
-    &lt;a href="/sitemap#support" class="remove" data-id="faqs"&gt;删除&lt;/a&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-const $emitter = delegate('#list')
-const showLog = function (evt) {
-  const relatedTarget = $emitter.getRelatedTarget(evt)
-
-  console.log(`当前触发事件的 relatedTarget 为：${relatedTarget}`)
-}
-
-$emitter.on('.remove', 'mouseenter', showLog)</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isInt32Array">isInt32Array(evt)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>返回触发事件的 target DOM 元素。</p><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">1.1.0</dd></dl><h4 class="section__h4">Parameters</h4><h5 class="section__h4">evt</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Event</dd></dl><p>（必须）事件对象。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">HTMLElement。</dd></dl><p>Event 对象的 target DOM 元素。</p><pre class="section__pre"><code class="section__code">&lt;ul id="list" class="list"&gt;
-  &lt;li class="item" id="item-home"&gt;
-    &lt;span&gt;Home&lt;/span&gt;
-    &lt;a href="/sitemap#home" class="remove" data-id="home"&gt;删除&lt;/a&gt;
-  &lt;/li&gt;
-  &lt;li class="item" id="item-support"&gt;
-    &lt;span&gt;Support&lt;/span&gt;
-    &lt;a href="/sitemap#support" class="remove" data-id="support"&gt;删除&lt;/a&gt;
-  &lt;/li&gt;
-  &lt;li class="item" id="item-faqs"&gt;
-    &lt;span&gt;FAQs&lt;/span&gt;
-    &lt;a href="/sitemap#support" class="remove" data-id="faqs"&gt;删除&lt;/a&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-const $emitter = delegate('#list')
-const showLog = function (evt) {
-  const target = $emitter.getTarget(evt)
-
-  console.log(`当前触发事件的 target 为：${target}`)
-}
-
-$emitter.on('.remove', 'click', showLog)</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isInteger">isInteger()</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>返回已绑定的事件类型的数组（去除名称重复的事件）。</p><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">1.5.0</dd></dl><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Array。</dd></dl><p>返回已绑定事件类型的数组。</p><pre class="section__pre"><code class="section__code">const handler = function(evt) {
-  const $li = evt.delegateTarget
-  const $textarea = document.querySelector('#log-textarea')
-
-  $textarea.value += `你点击的 li 节点的 id 为 ${$li.id}\r`
-}
-
-const $emitter = delegate('#list')
-
-// 绑定事件
-$emitter.on('item', 'click', handler)
-$emitter.click('.remove', handler)
-$emitter.mouseenter('.item', handler)
-
-const types = $emitter.getTypes()
-
-console.log(type)
-// 会去除重复的 click 事件
-// => ['click', 'mouseenter']</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isIPAddress">isIPAddress([type])</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>判断是否已经（指定类型的）绑定事件。</p><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">1.4.0</dd></dl><h4 class="section__h4">Parameters</h4><h5 class="section__h4">type</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">String</dd></dl><p>（可选）事件名称:</p><ul><li>指定 type，则判断是否绑定 type 类型事件；</li><li>未指定 type，则判断是否绑定任意类型的事件；</li></ul><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>返回是否绑定（type类型的）事件处理器。</p><pre class="section__pre"><code class="section__code">const handler = function(evt) {
-  const $li = evt.delegateTarget
-  const $textarea = document.querySelector('#log-textarea')
-
-  $textarea.value += `你点击的 li 节点的 id 为 ${$li.id}\r`
-}
-
-const $emitter = delegate('#list')
-
-// 绑定事件
-$emitter.on('li', 'click', handler)
-
-$emitter.hasEvent()
-// -> true
-
-$emitter.hasEvent('focus')
-// => false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isJSON">isJSON(selector, fn[, data, context, once = false])</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>绑定 input 代理事件。</p><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">1.7.0</dd></dl><h4 class="section__h4">Parameters</h4><h5 class="section__h4">selector</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">String</dd></dl><p>（必须）通过 selector 选择器判定是否触发指定事件类型的事件处理器。</p><h5 class="section__h4">fn</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Function</dd></dl><p>（必须）fn 为事件处理器回调函数。</p><h5 class="section__h4">data</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object</dd></dl><p>（可选）给事件处理器回调函数传递的数据。</p><h5 class="section__h4">context</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object | Boolean</dd></dl><p>（可选）事件处理器回调函数的 this 上下文指向：</p><ul><li>当设置为 true 时，则事件处理器回调函数的 this 上下文指向为 data 对象；</li><li>如未指定 context，则事件处理器回调函数的 this 上下文指向为 Emitter 对象；</li></ul><h5 class="section__h4">once</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean</dd></dl><dl class="section__dl"><dt class="section__dt">Default：</dt><dd class="section__dd">false</dd></dl><p>（可选）once 指定事件处理器回调函数是否仅执行一次。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Emitter 对象。</dd></dl><p>Emitter 对象。</p><pre class="section__pre"><code class="section__code">const handler = function(evt) {
-  const $target = evt.delegateTarget
-  console.log(`触发事件的 delegateTarget DOM 元素的 id 是：${$target.id}`)
-}
-
-const $emitter = delegate('#form')
-
-// 绑定 input 代理事件
-$emitter.input('.input', handler)</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isMap">isMap(selector, fn[, data, context, once = false])</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>绑定 keydown 代理事件。</p><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">1.7.0</dd></dl><h4 class="section__h4">Parameters</h4><h5 class="section__h4">selector</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">String</dd></dl><p>（必须）通过 selector 选择器判定是否触发指定事件类型的事件处理器。</p><h5 class="section__h4">fn</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Function</dd></dl><p>（必须）fn 为事件处理器回调函数。</p><h5 class="section__h4">data</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object</dd></dl><p>（可选）给事件处理器回调函数传递的数据。</p><h5 class="section__h4">context</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object | Boolean</dd></dl><p>（可选）事件处理器回调函数的 this 上下文指向：</p><ul><li>当设置为 true 时，则事件处理器回调函数的 this 上下文指向为 data 对象；</li><li>如未指定 context，则事件处理器回调函数的 this 上下文指向为 Emitter 对象；</li></ul><h5 class="section__h4">once</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean</dd></dl><dl class="section__dl"><dt class="section__dt">Default：</dt><dd class="section__dd">false</dd></dl><p>（可选）once 指定事件处理器回调函数是否仅执行一次。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Emitter 对象。</dd></dl><p>Emitter 对象。</p><pre class="section__pre"><code class="section__code">const handler = function(evt) {
-  const $target = evt.delegateTarget
-  console.log(`触发事件的 delegateTarget DOM 元素的 id 是：${$target.id}`)
-}
-
-const $emitter = delegate('#form')
-
-// 绑定 keydown 代理事件
-$emitter.keydown('.input', handler)</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-keyup">keyup(selector, fn[, data, context, once = false])</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>绑定 keyup 代理事件。</p><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">1.7.0</dd></dl><h4 class="section__h4">Parameters</h4><h5 class="section__h4">selector</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">String</dd></dl><p>（必须）通过 selector 选择器判定是否触发指定事件类型的事件处理器。</p><h5 class="section__h4">fn</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Function</dd></dl><p>（必须）fn 为事件处理器回调函数。</p><h5 class="section__h4">data</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object</dd></dl><p>（可选）给事件处理器回调函数传递的数据。</p><h5 class="section__h4">context</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object | Boolean</dd></dl><p>（可选）事件处理器回调函数的 this 上下文指向：</p><ul><li>当设置为 true 时，则事件处理器回调函数的 this 上下文指向为 data 对象；</li><li>如未指定 context，则事件处理器回调函数的 this 上下文指向为 Emitter 对象；</li></ul><h5 class="section__h4">once</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean</dd></dl><dl class="section__dl"><dt class="section__dt">Default：</dt><dd class="section__dd">false</dd></dl><p>（可选）once 指定事件处理器回调函数是否仅执行一次。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Emitter 对象。</dd></dl><p>Emitter 对象。</p><pre class="section__pre"><code class="section__code">const handler = function(evt) {
-  const $target = evt.delegateTarget
-  console.log(`触发事件的 delegateTarget DOM 元素的 id 是：${$target.id}`)
-}
-
-const $emitter = delegate('#form')
-
-// 绑定 keyup 代理事件
-$emitter.keyup('.input', handler)</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isNativeFunction">isNativeFunction(selector, fn[, data, context, once = false])</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>绑定 mousedown 代理事件。</p><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">1.7.0</dd></dl><h4 class="section__h4">Parameters</h4><h5 class="section__h4">selector</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">String</dd></dl><p>（必须）通过 selector 选择器判定是否触发指定事件类型的事件处理器。</p><h5 class="section__h4">fn</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Function</dd></dl><p>（必须）fn 为事件处理器回调函数。</p><h5 class="section__h4">data</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object</dd></dl><p>（可选）给事件处理器回调函数传递的数据。</p><h5 class="section__h4">context</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object | Boolean</dd></dl><p>（可选）事件处理器回调函数的 this 上下文指向：</p><ul><li>当设置为 true 时，则事件处理器回调函数的 this 上下文指向为 data 对象；</li><li>如未指定 context，则事件处理器回调函数的 this 上下文指向为 Emitter 对象；</li></ul><h5 class="section__h4">once</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean</dd></dl><dl class="section__dl"><dt class="section__dt">Default：</dt><dd class="section__dd">false</dd></dl><p>（可选）once 指定事件处理器回调函数是否仅执行一次。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Emitter 对象。</dd></dl><p>Emitter 对象。</p><pre class="section__pre"><code class="section__code">const handler = function(evt) {
-  const $target = evt.relatedTarget
-  console.log(`当前事件的 relatedTarget 是：${$target}`)
-}
-
-const $emitter = delegate('#list')
-
-// 类选择器
-$emitter.mousedown('.item', handler)</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isNull">isNull(selector, fn[, data, context, once = false])</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>绑定 mouseenter。</p><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">1.4.0</dd></dl><h4 class="section__h4">Parameters</h4><h5 class="section__h4">selector</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">String</dd></dl><p>（必须）通过 selector 选择器判定是否触发指定事件类型的事件处理器。</p><h5 class="section__h4">fn</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Function</dd></dl><p>（必须）fn 为事件处理器回调函数。</p><h5 class="section__h4">data</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object</dd></dl><p>（可选）给事件处理器回调函数传递的数据。</p><h5 class="section__h4">context</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object | Boolean</dd></dl><p>（可选）事件处理器回调函数的 this 上下文指向：</p><ul><li>当设置为 true 时，则事件处理器回调函数的 this 上下文指向为 data 对象；</li><li>如未指定 context，则事件处理器回调函数的 this 上下文指向为 Emitter 对象；</li></ul><h5 class="section__h4">once</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean</dd></dl><dl class="section__dl"><dt class="section__dt">Default：</dt><dd class="section__dd">false</dd></dl><p>（可选）once 指定事件处理器回调函数是否仅执行一次。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Emitter 对象。</dd></dl><p>Emitter 对象。</p><pre class="section__pre"><code class="section__code">const handler = function(evt) {
-  const $target = evt.relatedTarget
-  console.log(`当前事件的 relatedTarget 是：${$target}`)
-}
-
-const $emitter = delegate('#list')
-
-// 类选择器
-$emitter.mouseenter('.item', handler)</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isNumber">isNumber(selector, fn[, data, context, once = false])</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>绑定 mouseleave 代理事件。</p><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">1.4.0</dd></dl><h4 class="section__h4">Parameters</h4><h5 class="section__h4">selector</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">String</dd></dl><p>（必须）通过 selector 选择器判定是否触发指定事件类型的事件处理器。</p><h5 class="section__h4">fn</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Function</dd></dl><p>（必须）fn 为事件处理器回调函数。</p><h5 class="section__h4">data</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object</dd></dl><p>（可选）给事件处理器回调函数传递的数据。</p><h5 class="section__h4">context</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object | Boolean</dd></dl><p>（可选）事件处理器回调函数的 this 上下文指向：</p><ul><li>当设置为 true 时，则事件处理器回调函数的 this 上下文指向为 data 对象；</li><li>如未指定 context，则事件处理器回调函数的 this 上下文指向为 Emitter 对象；</li></ul><h5 class="section__h4">once</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean</dd></dl><dl class="section__dl"><dt class="section__dt">Default：</dt><dd class="section__dd">false</dd></dl><p>（可选）once 指定事件处理器回调函数是否仅执行一次。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Emitter 对象。</dd></dl><p>Emitter 对象。</p><pre class="section__pre"><code class="section__code">const handler = function(evt) {
-  const $target = evt.relatedTarget
-  console.log(`当前事件的 relatedTarget 是：${$target}`)
-}
-
-const $emitter = delegate('#list')
-
-// 类选择器
-$emitter.mouseleave('.item', handler)</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isNumeric">isNumeric(selector, fn[, data, context, once = false])</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>绑定 mouseover 代理事件。</p><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">1.7.0</dd></dl><h4 class="section__h4">Parameters</h4><h5 class="section__h4">selector</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">String</dd></dl><p>（必须）通过 selector 选择器判定是否触发指定事件类型的事件处理器。</p><h5 class="section__h4">fn</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Function</dd></dl><p>（必须）fn 为事件处理器回调函数。</p><h5 class="section__h4">data</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object</dd></dl><p>（可选）给事件处理器回调函数传递的数据。</p><h5 class="section__h4">context</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object | Boolean</dd></dl><p>（可选）事件处理器回调函数的 this 上下文指向：</p><ul><li>当设置为 true 时，则事件处理器回调函数的 this 上下文指向为 data 对象；</li><li>如未指定 context，则事件处理器回调函数的 this 上下文指向为 Emitter 对象；</li></ul><h5 class="section__h4">once</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean</dd></dl><dl class="section__dl"><dt class="section__dt">Default：</dt><dd class="section__dd">false</dd></dl><p>（可选）once 指定事件处理器回调函数是否仅执行一次。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Emitter 对象。</dd></dl><p>Emitter 对象。</p><pre class="section__pre"><code class="section__code">const handler = function(evt) {
-  const $target = evt.relatedTarget
-  console.log(`当前事件的 relatedTarget 是：${$target}`)
-}
-
-const $emitter = delegate('#list')
-
-// 类选择器
-$emitter.mouseover('.item', handler)</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isObject">isObject(selector, fn[, data, context, once = false])</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>绑定 mouseout 代理事件。</p><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">1.7.0</dd></dl><h4 class="section__h4">Parameters</h4><h5 class="section__h4">selector</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">String</dd></dl><p>（必须）通过 selector 选择器判定是否触发指定事件类型的事件处理器。</p><h5 class="section__h4">fn</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Function</dd></dl><p>（必须）fn 为事件处理器回调函数。</p><h5 class="section__h4">data</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object</dd></dl><p>（可选）给事件处理器回调函数传递的数据。</p><h5 class="section__h4">context</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object | Boolean</dd></dl><p>（可选）事件处理器回调函数的 this 上下文指向：</p><ul><li>当设置为 true 时，则事件处理器回调函数的 this 上下文指向为 data 对象；</li><li>如未指定 context，则事件处理器回调函数的 this 上下文指向为 Emitter 对象；</li></ul><h5 class="section__h4">once</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean</dd></dl><dl class="section__dl"><dt class="section__dt">Default：</dt><dd class="section__dd">false</dd></dl><p>（可选）once 指定事件处理器回调函数是否仅执行一次。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Emitter 对象。</dd></dl><p>Emitter 对象。</p><pre class="section__pre"><code class="section__code">const handler = function(evt) {
-  const $target = evt.relatedTarget
-  console.log(`当前事件的 relatedTarget 是：${$target}`)
-}
-
-const $emitter = delegate('#list')
-
-// 类选择器
-$emitter.mouseout('.item', handler)</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isObjectLike">isObjectLike(selector, fn[, data, context, once = false])</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>绑定 mouseover 代理事件。</p><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">1.7.0</dd></dl><h4 class="section__h4">Parameters</h4><h5 class="section__h4">selector</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">String</dd></dl><p>（必须）通过 selector 选择器判定是否触发指定事件类型的事件处理器。</p><h5 class="section__h4">fn</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Function</dd></dl><p>（必须）fn 为事件处理器回调函数。</p><h5 class="section__h4">data</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object</dd></dl><p>（可选）给事件处理器回调函数传递的数据。</p><h5 class="section__h4">context</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object | Boolean</dd></dl><p>（可选）事件处理器回调函数的 this 上下文指向：</p><ul><li>当设置为 true 时，则事件处理器回调函数的 this 上下文指向为 data 对象；</li><li>如未指定 context，则事件处理器回调函数的 this 上下文指向为 Emitter 对象；</li></ul><h5 class="section__h4">once</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean</dd></dl><dl class="section__dl"><dt class="section__dt">Default：</dt><dd class="section__dd">false</dd></dl><p>（可选）once 指定事件处理器回调函数是否仅执行一次。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Emitter 对象。</dd></dl><p>Emitter 对象。</p><pre class="section__pre"><code class="section__code">const handler = function(evt) {
-  const $target = evt.relatedTarget
-  console.log(`当前事件的 relatedTarget 是：${$target}`)
 }
+&lt;/script&gt;</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isWeakMap">isWeakMap(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isWeakMap(val) 方法用来检测测试数据是否为 WeakMap 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 WeakMap 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
 
-const $emitter = delegate('#list')
+const map = new Map([
+    ['name', 'Robert'],
+    ['Gender', 'Male']
+])
+const weakmap = new WeakMap({},'Robert')
 
-// 类选择器
-$emitter.mouseover('.item', handler)</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isOdd">isOdd(selector, fn[, data, context, once = false])</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>绑定 mouseup 代理事件。</p><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">1.7.0</dd></dl><h4 class="section__h4">Parameters</h4><h5 class="section__h4">selector</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">String</dd></dl><p>（必须）通过 selector 选择器判定是否触发指定事件类型的事件处理器。</p><h5 class="section__h4">fn</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Function</dd></dl><p>（必须）fn 为事件处理器回调函数。</p><h5 class="section__h4">data</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object</dd></dl><p>（可选）给事件处理器回调函数传递的数据。</p><h5 class="section__h4">context</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object | Boolean</dd></dl><p>（可选）事件处理器回调函数的 this 上下文指向：</p><ul><li>当设置为 true 时，则事件处理器回调函数的 this 上下文指向为 data 对象；</li><li>如未指定 context，则事件处理器回调函数的 this 上下文指向为 Emitter 对象；</li></ul><h5 class="section__h4">once</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean</dd></dl><dl class="section__dl"><dt class="section__dt">Default：</dt><dd class="section__dd">false</dd></dl><p>（可选）once 指定事件处理器回调函数是否仅执行一次。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Emitter 对象。</dd></dl><p>Emitter 对象。</p><pre class="section__pre"><code class="section__code">const handler = function(evt) {
-  const $target = evt.relatedTarget
-  console.log(`当前事件的 relatedTarget 是：${$target}`)
-}
-
-const $emitter = delegate('#list')
-
-// 类选择器
-$emitter.mouseup('.item', handler)</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isPhoneNumber">isPhoneNumber(type[, fn])</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>off() 方法用来接触绑定的事件代理处理器。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">type</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">String</dd></dl><p>（必须）type 指定需要接触绑定的事件类型，不指定则解绑 $el 上绑定的所有事件处理器。</p><pre class="section__pre"><code class="section__code">const handler = function(evt) {
-  const $li = evt.delegateTarget
-  console.log(`你点击的 li 节点的 id 为 ${$li.id}`)
-}
-
-const callback = function(evt) {
-  const $li = evt.delegateTarget
-  console.log(`你双击的 li 节点的 id 为 ${$li.id}`)
-}
-
-const fn = function(evt) {
-  const $li = evt.delegateTarget
-  console.log(`你鼠标划过的 li 节点的 id 为 ${$li.id}`)
-}
-
-const $emitter = delegate('#list')
-
-// 绑定了
-$emitter.on('.item', 'click', handler)
-$emitter.on('.item', 'click', fn)
-$emitter.on('.item', 'dbclick', callback)
-$emitter.on('.item', 'mouserenter', fn)
-
-// 解除 click 事件绑定的 handler 事件处理器
-$emitter.off($list, 'click', callback)
-
-// 解除 #list 绑定的所有事件处理器
-$emitter.off($list)</code></pre><h5 class="section__h4">fn</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Function</dd></dl><p>（可选）fn 指定需要接触绑定的事件处理器回调函数，如果不指定则接触 $el 绑定的所有指定 type 的事件处理器。</p><pre class="section__pre"><code class="section__code">const handler = function(evt) {
-  const $li = evt.delegateTarget
-  console.log(`你点击的 li 节点的 id 为 ${$li.id}`)
-}
-
-const callback = function(evt) {
-  const $li = evt.delegateTarget
-  console.log(`你双击的 li 节点的 id 为 ${$li.id}`)
-}
-
-const fn = function(evt) {
-  const $li = evt.delegateTarget
-  console.log(`你鼠标划过的 li 节点的 id 为 ${$li.id}`)
-}
-
-const $emitter = delegate('#list')
-
-// 绑定了
-$emitter.on('.item', 'click', handler)
-$emitter.on('.item', 'click', fn)
-$emitter.on('.item', 'click', callback)
-
-// 解除 click 事件绑定的 handler 事件处理器
-$emitter.off($list, 'click', callback)
-
-// 解除所有 click 事件处理器
-$emitter.off($list, 'click')</code></pre><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Emitter 对象。</dd></dl><p>Emitter 对象。</p></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isPlainObject">isPlainObject(selector, type, fn[, data, context, once = false])</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>on() 方法用来绑定事件代理处理器。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">selector</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">String</dd></dl><p>（必须）通过 selector 选择器判定是否触发指定事件类型的事件处理器。</p><pre class="section__pre"><code class="section__code">const handler = function(evt) {
-  const $li = evt.delegateTarget
-  console.log(`你点击的 li 节点的 id 为 ${$li.id}`)
-}
-
-const $emitter = delegate('.list')
-
-// 类选择器
-$emitter.on('.item', 'click', handler)
-
-// 标签选择择器
-$emitter.on('li', 'click', handler)
-
-// 子类选择器
-$emitter.on('li > span', 'click', handler)</code></pre><h5 class="section__h4">type</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">String</dd></dl><p>（必须）type 用以设置触发的事件类型。</p><h5 class="section__h4">fn</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Function</dd></dl><p>（必须）fn 为事件处理器回调函数。</p><h5 class="section__h4">data</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object</dd></dl><p>（可选）给事件处理器回调函数传递的数据。</p><pre class="section__pre"><code class="section__code">const handler = function(evt, data) {
-  console.log('data', data)
-  // => { user: 'Robert' }
-}
-
-// 使用 DOM 节点选择器
-const $emitter = delegate('#list')
-
-$emitter.on('li', 'click', handler, { user: 'Robert' })</code></pre><h5 class="section__h4">context</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object | Boolean</dd></dl><p>（可选）事件处理器回调函数的 this 上下文指向：</p><ul><li>当设置为 true 时，则事件处理器回调函数的 this 上下文指向为 data 对象；</li><li>如未指定 context，则事件处理器回调函数的 this 上下文指向为 Emitter 对象；</li></ul><h5 class="section__h4">once</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean</dd></dl><dl class="section__dl"><dt class="section__dt">Default：</dt><dd class="section__dd">false</dd></dl><p>（可选）once 指定事件处理器回调函数是否仅执行一次。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Emitter 对象。</dd></dl><p>Emitter 对象。</p></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isPrototype">isPrototype(selector, type, fn[, data, context])</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>once() 方法用来绑定事件代理处理器，仅触发一次。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">selector</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">String</dd></dl><p>（必须）通过 selector 选择器判定是否触发指定事件类型的事件处理器。</p><pre class="section__pre"><code class="section__code">const handler = function(evt) {
-  const $li = evt.delegateTarget
-  console.log(`你点击的 li 节点的 id 为 ${$li.id}`)
-}
-
-const $emitter = delegate('.list')
-
-// 类选择器
-$emitter.once('.item', 'click', handler)
-
-// 标签选择择器
-$emitter.once('li', 'click', handler)
-
-// 子类选择器
-$emitter.once('li > span', 'click', handler)</code></pre><h5 class="section__h4">type</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">String</dd></dl><p>（必须）type 用以设置触发的事件类型。</p><h5 class="section__h4">fn</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Function</dd></dl><p>（必须）fn 为事件处理器回调函数。</p><h5 class="section__h4">data</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object</dd></dl><p>（可选）给事件处理器回调函数传递的数据。</p><h5 class="section__h4">context</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object | Boolean</dd></dl><p>（可选）事件处理器回调函数的 this 上下文指向：</p><ul><li>当设置为 true 时，则事件处理器回调函数的 this 上下文指向为 data 对象；</li><li>如未指定 context，则事件处理器回调函数的 this 上下文指向为 Emitter 对象；</li></ul><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Emitter 对象。</dd></dl><p>Emitter 对象。</p></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isRegExp">isRegExp(selector, fn[, data, context, once = false])</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>绑定 paste 代理事件。</p><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">1.7.0</dd></dl><h4 class="section__h4">Parameters</h4><h5 class="section__h4">selector</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">String</dd></dl><p>（必须）通过 selector 选择器判定是否触发指定事件类型的事件处理器。</p><h5 class="section__h4">fn</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Function</dd></dl><p>（必须）fn 为事件处理器回调函数。</p><h5 class="section__h4">data</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object</dd></dl><p>（可选）给事件处理器回调函数传递的数据。</p><h5 class="section__h4">context</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object | Boolean</dd></dl><p>（可选）事件处理器回调函数的 this 上下文指向：</p><ul><li>当设置为 true 时，则事件处理器回调函数的 this 上下文指向为 data 对象；</li><li>如未指定 context，则事件处理器回调函数的 this 上下文指向为 Emitter 对象；</li></ul><h5 class="section__h4">once</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean</dd></dl><dl class="section__dl"><dt class="section__dt">Default：</dt><dd class="section__dd">false</dd></dl><p>（可选）once 指定事件处理器回调函数是否仅执行一次。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Emitter 对象。</dd></dl><p>Emitter 对象。</p><pre class="section__pre"><code class="section__code">const handler = function(evt) {
-  const $target = evt.delegateTarget
-  console.log(`触发事件的 delegateTarget DOM 元素的 id 是：${$target.id}`)
-}
-
-const $emitter = delegate('#form')
-
-// 绑定 paste 代理事件
-$emitter.paste('.input', handler)</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isSet">isSet(evt)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>阻止触发绑定事件 DOM 元素的默认行为。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">evt</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Event</dd></dl><p>（必须）事件对象。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Emitter。</dd></dl><p>返回 Emitter 对象（实例）。</p><pre class="section__pre"><code class="section__code">&lt;ul id="list" class="list"&gt;
-  &lt;li class="item"&gt;
-    &lt;a href="/home" class="nav"&gt;Home&lt;/a&gt;
-  &lt;/li&gt;
-  &lt;li class="item"&gt;
-    &lt;a href="/support" class="nav"&gt;Support&lt;/a&gt;
-  &lt;/li&gt;
-  &lt;li class="item"&gt;
-    &lt;a href="/faqs" class="nav"&gt;FAQs&lt;/a&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-const handler = function(evt) {
-  const $link = evt.delegateTarget
-  const $textarea = document.querySelector('#log-textarea')
-
-  // preventDefault() 方法会阻止点击链接后默认跳转页面的行为发生
-  $emitter.preventDefault(evt)
-
-  $textarea.value += `你点击了导航菜单 ${$link.innerHTML},但它不会跳转到${$link.href}页面\r`
-}
-
-const $emitter = delegate('#list')
-
-// 点击导航菜单，不会跳转页面
-$emitter.on('a.nav', 'click', handler)
-// => 点击 li 元素将不会执行 handler 事件处理器</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isString">isString(type[, recurse])</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>清除 DOM 元素（$el）全部或者指定 type 类型的事件处理器。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">type</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">String</dd></dl><p>（必须）事件类型（名称）。</p><h5 class="section__h4">recurse</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean</dd></dl><dl class="section__dl"><dt class="section__dt">Default：</dt><dd class="section__dd">false</dd></dl><p>（可选）是否递归清理 DOM 元素下所有子节点绑定的事件处理器，默认值：false - 仅清理当前 DOM 元素的事件处理器，true - 同事递归清理 DOM 元素下所有子节点绑定的事件处理器。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Emitter。</dd></dl><p>返回 Emitter 对象（实例）。</p><pre class="section__pre"><code class="section__code">const handler = function(evt) {
-  const $li = evt.delegateTarget
-  const $textarea = document.querySelector('#log-textarea')
-
-  $textarea.value += `你点击的 li 节点的 id 为 ${$li.id}\r`
-}
-
-const $emitter = delegate('#list')
-
-// 绑定事件
-$emitter.on('li', 'click', handler)
-
-// 获取已绑定的所有类型的事件处理器
-$emitter.getListeners()
-
-// 获取所有 click 事件处理器
-$emitter.getListeners('click')
-// => [{
-// options,
-// selector,
-// type,
-// fn,
-// data,
-// context,
-// capture
-// }]
-
-// 清除绑定的所有 click 事件处理器
-$emitter.purge('click')
-
-// 清除 $options 元素所有 click 事件处理器
-// 同时也清除其子节点绑定的所有类型事件处理器
-$emitter.purge('click', true)</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isSymbol">isSymbol(evt)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>停止事件（阻止默认行为和阻止事件的捕获或冒泡）。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">evt</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Event</dd></dl><p>（必须）事件对象。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Emitter。</dd></dl><p>返回 Emitter 对象（实例）。</p><pre class="section__pre"><code class="section__code">&lt;ul id="list" class="list"&gt;
-  &lt;li class="item" id="item-home"&gt;
-    &lt;span&gt;Home&lt;/span&gt;
-    &lt;span class="item-remove" data-id="home"&gt;删除&lt;/a&gt;
-  &lt;/li&gt;
-  &lt;li class="item" id="item-support"&gt;
-    &lt;span&gt;Support&lt;/span&gt;
-    &lt;span class="item-remove" data-id="support"&gt;删除&lt;/a&gt;
-  &lt;/li&gt;
-  &lt;li class="item" id="item-faqs"&gt;
-    &lt;span&gt;FAQs&lt;/span&gt;
-    &lt;span class="item-remove" data-id="faqs"&gt;删除&lt;/a&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-const $emitter = delegate('#list')
-const removeItem = function (evt) {
-  const $removeButton = evt.delegateTarget
-  const id = $removeButton.getAttribute('data-id')
-  const $textarea = document.querySelector('#log-textarea')
-
-  // 阻止事件冒泡，不触发执行 showLog() 回调函数
-  // 同时阻止点击链接跳转到 /sitemap 页面
-  $emitter.stopEvent(evt)
+Types.is(weakmap) // -> 'weakmap'
 
-  // ...省略删除的逻辑
+Types.isWeakMap(weakmap) // -> true
+Types.isWeakMap(map) // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isWeakSet">isWeakSet(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isWeakSet(val) 方法用来检测测试数据是否为 WeakSet 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 WeakSet 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
 
-  $textarea.value += `你删除的 li 节点的 id 为 item-${id}\r`
-}
-const showLog = function (evt) {
-  const $li = evt.delegateTarget
-  const $textarea = document.querySelector('#log-textarea')
-
-  $textarea.value += `你点击的 li 节点的 id 为 ${$li.id}\r`
-}
-
-// 点击删除，只会删除行，不会跳转页面，也不会触发事件冒泡，触发执行 showLog() 回调函数
-$emitter.on('.item-remove', 'click', removeItem)
-$emitter.on('.item', 'click', showLog)</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isTextNode">isTextNode(evt)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>阻止监听同一事件的其他事件监听器被调用，并且阻止默认行为和事件冒泡。</p><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">1.8.0</dd></dl><h4 class="section__h4">Parameters</h4><h5 class="section__h4">evt</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Event</dd></dl><p>（必须）事件对象。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Emitter。</dd></dl><p>返回 Emitter 对象（实例）。</p><pre class="section__pre"><code class="section__code">&lt;ul id="list" class="list"&gt;
-  &lt;li class="item" id="item-home"&gt;
-    &lt;span&gt;Home&lt;/span&gt;
-    &lt;span class="item-remove" data-id="home"&gt;删除&lt;/a&gt;
-  &lt;/li&gt;
-  &lt;li class="item" id="item-support"&gt;
-    &lt;span&gt;Support&lt;/span&gt;
-    &lt;span class="item-remove" data-id="support"&gt;删除&lt;/a&gt;
-  &lt;/li&gt;
-  &lt;li class="item" id="item-faqs"&gt;
-    &lt;span&gt;FAQs&lt;/span&gt;
-    &lt;span class="item-remove" data-id="faqs"&gt;删除&lt;/a&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-let logged = false
-let styled = false
-const $list = document.querySelector('#list')
-const $support = document.querySelector('#item-support')
-const $link = document.querySelector('a[data-id="support"]')
-const $emitter = delegate($support)
-const logHandler = function(evt) {
-  logged = true
-  console.log(evt.target)
-}
-const styleHandler = function(evt) {
-  styled = true
-  $list.classList.add('checked')
-}
-const serviceHandler = function(evt) {
-  alert(evt.target)
-  $emitter.stopImmediate(evt)
-}
-const removeHandler = function(evt) {
-  const $target = evt.target
-
-  $target.parentNode.removeChild($target)
-}
-
-$list.addEventListener('click', logHandler)
-$list.addEventListener('click', styleHandler)
-
-$emitter.on('.remove', 'click', serviceHandler)
-$emitter.on('.remove', 'click', removeHandler)
-
-// 不会触发 removeHandler，不会删除一行
-// 不会冒泡触发父节点 $list 上绑定的 click 事件
-trigger('click', '.remove')
-// -> logged = false
-// -> styled = false
-// document.querySelectorAll('.item').length = 3</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isTypedArray">isTypedArray(evt)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>终止事件在传播过程的捕获或冒泡的事件流。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">evt</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Event</dd></dl><p>（必须）事件对象。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Emitter。</dd></dl><p>返回 Emitter 对象（实例）。</p><pre class="section__pre"><code class="section__code">&lt;ul id="list" class="list"&gt;
-  &lt;li class="item" id="item-home"&gt;
-    &lt;span&gt;Home&lt;/span&gt;
-    &lt;span class="item-remove" data-id="home"&gt;删除&lt;/a&gt;
-  &lt;/li&gt;
-  &lt;li class="item" id="item-support"&gt;
-    &lt;span&gt;Support&lt;/span&gt;
-    &lt;span class="item-remove" data-id="support"&gt;删除&lt;/a&gt;
-  &lt;/li&gt;
-  &lt;li class="item" id="item-faqs"&gt;
-    &lt;span&gt;FAQs&lt;/span&gt;
-    &lt;span class="item-remove" data-id="faqs"&gt;删除&lt;/a&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-const $emitter = delegate('#list')
-const removeItem = function (evt) {
-  const $removeButton = evt.delegateTarget
-  const id = parseInt($removeButton.getAttribute('data-id'), 10)
-  const $textarea = document.querySelector('#log-textarea')
-
-  // 阻止事件冒泡，不触发执行 showLog() 回调函数
-  $emitter.stopPropagation(evt)
-
-  // ...省略删除的逻辑
-
-  $textarea.value += `你删除的 li 节点的 id 为 item-${id}\r`
-}
-const showLog = function (evt) {
-  const $li = evt.delegateTarget
-  const $textarea = document.querySelector('#log-textarea')
-
-  $textarea.value += `你点击的 li 节点的 id 为 ${$li.id}\r`
-}
-
-// 点击删除，只会删除点击行，但不会触发事件冒泡，触发点击 .item 的事件处理函数执行
-$emitter.on('.item-remove', 'click', removeItem)
-$emitter.on('.item', 'click', showLog)</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isUint8Array">isUint8Array(type, selector)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>trigger() 方法用作手动触（自定义）事件。 trigger() 方法也可以用来手动触发内置的事件，例如 click, mouseenter 等事件，不过通常使用 trigger() 来手动触发用户自定义事件。</p><p>另外，选择器 selector 的匹配使用 document.querySelector() 方法，因此仅事件触发一次。</p><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">1.6.0</dd></dl><h4 class="section__h4">Parameters</h4><h5 class="section__h4">type</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">String</dd></dl><p>（必须）事件类型（名称）。</p><h5 class="section__h4">selector</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">String</dd></dl><p>（必须）通过 selector 选择器判定是否触发指定事件类型的事件处理器。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Emitter。</dd></dl><p>返回 Emitter 对象（实例）。</p><pre class="section__pre"><code class="section__code">&lt;ul id="list" class="list"&gt;
-  &lt;li class="item"&gt;
-    &lt;a href="/home" class="nav"&gt;Home&lt;/a&gt;
-  &lt;/li&gt;
-  &lt;li class="item"&gt;
-    &lt;a href="/support" class="nav"&gt;Support&lt;/a&gt;
-  &lt;/li&gt;
-  &lt;li class="item"&gt;
-    &lt;a href="/faqs" class="nav"&gt;FAQs&lt;/a&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-const $list = document.querySelector('#list')
-const $emitter = delegate($list)
-const itemHandler = function(evt) {
-  // 其它逻辑
-  console.log(evt.type + ':' + evt.delegateTarget)
-}
-
-const navHandler = function(evt) {
-  // 其它逻辑
-  $emitter.stopEvent(evt)
-  console.log(evt.type + ':' + evt.delegateTarget)
-}
-
-// 绑定 alert 自定义事件
-$emitter.on('.item', 'alert', itemHandler)
-$emitter.on('.nav', 'log', navHandler)
+const weakset = new WeakSet([
+    {'name': 'Robert'},
+    window
+]);
+const set = new Set([1,2,3]);
 
-// 触发 $list 下匹配 '.item' 元素手动触发 alert 自定义事件
-$emitter.trigger('alert', '.item')
-// 可以使用伪类选择器，更精确的匹配元素
-$emitter.trigger('alert', '.item:last-child')
+Types.is(weakset) // -> 'weakset'
 
-// 触发 $list 下匹配 '.remove' 元素手动触发 alert 自定义事件
-$emitter.trigger('alert', '.nav')
-$emitter.trigger('alert', '.nav:nth-child(1)')</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isUint8ClampedArray">isUint8ClampedArray(selector, fn[, data, context, once = false])</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>绑定 wheel 代理事件。</p><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">1.7.0</dd></dl><h4 class="section__h4">Parameters</h4><h5 class="section__h4">selector</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">String</dd></dl><p>（必须）通过 selector 选择器判定是否触发指定事件类型的事件处理器。</p><h5 class="section__h4">fn</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Function</dd></dl><p>（必须）fn 为事件处理器回调函数。</p><h5 class="section__h4">data</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object</dd></dl><p>（可选）给事件处理器回调函数传递的数据。</p><h5 class="section__h4">context</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object | Boolean</dd></dl><p>（可选）事件处理器回调函数的 this 上下文指向：</p><ul><li>当设置为 true 时，则事件处理器回调函数的 this 上下文指向为 data 对象；</li><li>如未指定 context，则事件处理器回调函数的 this 上下文指向为 Emitter 对象；</li></ul><h5 class="section__h4">once</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean</dd></dl><dl class="section__dl"><dt class="section__dt">Default：</dt><dd class="section__dd">false</dd></dl><p>（可选）once 指定事件处理器回调函数是否仅执行一次。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Emitter 对象。</dd></dl><p>Emitter 对象。</p><pre class="section__pre"><code class="section__code">const handler = function(evt) {
-  const $target = evt.relatedTarget
-  console.log(`当前事件的 relatedTarget 是：${$target}`)
-}
-
-const $emitter = delegate('#list')
-
-// 类选择器
-$emitter.wheel('.item', handler)</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isUint16Array">isUint16Array(selector, fn[, data, context, once = false])</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>绑定 wheel 代理事件。</p><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">1.7.0</dd></dl><h4 class="section__h4">Parameters</h4><h5 class="section__h4">selector</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">String</dd></dl><p>（必须）通过 selector 选择器判定是否触发指定事件类型的事件处理器。</p><h5 class="section__h4">fn</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Function</dd></dl><p>（必须）fn 为事件处理器回调函数。</p><h5 class="section__h4">data</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object</dd></dl><p>（可选）给事件处理器回调函数传递的数据。</p><h5 class="section__h4">context</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object | Boolean</dd></dl><p>（可选）事件处理器回调函数的 this 上下文指向：</p><ul><li>当设置为 true 时，则事件处理器回调函数的 this 上下文指向为 data 对象；</li><li>如未指定 context，则事件处理器回调函数的 this 上下文指向为 Emitter 对象；</li></ul><h5 class="section__h4">once</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean</dd></dl><dl class="section__dl"><dt class="section__dt">Default：</dt><dd class="section__dd">false</dd></dl><p>（可选）once 指定事件处理器回调函数是否仅执行一次。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Emitter 对象。</dd></dl><p>Emitter 对象。</p><pre class="section__pre"><code class="section__code">const handler = function(evt) {
-  const $target = evt.relatedTarget
-  console.log(`当前事件的 relatedTarget 是：${$target}`)
-}
-
-const $emitter = delegate('#list')
-
-// 类选择器
-$emitter.wheel('.item', handler)</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isUint32Array">isUint32Array(selector, fn[, data, context, once = false])</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>绑定 wheel 代理事件。</p><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">1.7.0</dd></dl><h4 class="section__h4">Parameters</h4><h5 class="section__h4">selector</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">String</dd></dl><p>（必须）通过 selector 选择器判定是否触发指定事件类型的事件处理器。</p><h5 class="section__h4">fn</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Function</dd></dl><p>（必须）fn 为事件处理器回调函数。</p><h5 class="section__h4">data</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object</dd></dl><p>（可选）给事件处理器回调函数传递的数据。</p><h5 class="section__h4">context</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object | Boolean</dd></dl><p>（可选）事件处理器回调函数的 this 上下文指向：</p><ul><li>当设置为 true 时，则事件处理器回调函数的 this 上下文指向为 data 对象；</li><li>如未指定 context，则事件处理器回调函数的 this 上下文指向为 Emitter 对象；</li></ul><h5 class="section__h4">once</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean</dd></dl><dl class="section__dl"><dt class="section__dt">Default：</dt><dd class="section__dd">false</dd></dl><p>（可选）once 指定事件处理器回调函数是否仅执行一次。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Emitter 对象。</dd></dl><p>Emitter 对象。</p><pre class="section__pre"><code class="section__code">const handler = function(evt) {
-  const $target = evt.relatedTarget
-  console.log(`当前事件的 relatedTarget 是：${$target}`)
-}
-
-const $emitter = delegate('#list')
-
-// 类选择器
-$emitter.wheel('.item', handler)</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isUndefined">isUndefined(selector, fn[, data, context, once = false])</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>绑定 wheel 代理事件。</p><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">1.7.0</dd></dl><h4 class="section__h4">Parameters</h4><h5 class="section__h4">selector</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">String</dd></dl><p>（必须）通过 selector 选择器判定是否触发指定事件类型的事件处理器。</p><h5 class="section__h4">fn</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Function</dd></dl><p>（必须）fn 为事件处理器回调函数。</p><h5 class="section__h4">data</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object</dd></dl><p>（可选）给事件处理器回调函数传递的数据。</p><h5 class="section__h4">context</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object | Boolean</dd></dl><p>（可选）事件处理器回调函数的 this 上下文指向：</p><ul><li>当设置为 true 时，则事件处理器回调函数的 this 上下文指向为 data 对象；</li><li>如未指定 context，则事件处理器回调函数的 this 上下文指向为 Emitter 对象；</li></ul><h5 class="section__h4">once</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean</dd></dl><dl class="section__dl"><dt class="section__dt">Default：</dt><dd class="section__dd">false</dd></dl><p>（可选）once 指定事件处理器回调函数是否仅执行一次。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Emitter 对象。</dd></dl><p>Emitter 对象。</p><pre class="section__pre"><code class="section__code">const handler = function(evt) {
-  const $target = evt.relatedTarget
-  console.log(`当前事件的 relatedTarget 是：${$target}`)
-}
-
-const $emitter = delegate('#list')
-
-// 类选择器
-$emitter.wheel('.item', handler)</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isURL">isURL(selector, fn[, data, context, once = false])</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>绑定 wheel 代理事件。</p><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">1.7.0</dd></dl><h4 class="section__h4">Parameters</h4><h5 class="section__h4">selector</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">String</dd></dl><p>（必须）通过 selector 选择器判定是否触发指定事件类型的事件处理器。</p><h5 class="section__h4">fn</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Function</dd></dl><p>（必须）fn 为事件处理器回调函数。</p><h5 class="section__h4">data</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object</dd></dl><p>（可选）给事件处理器回调函数传递的数据。</p><h5 class="section__h4">context</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object | Boolean</dd></dl><p>（可选）事件处理器回调函数的 this 上下文指向：</p><ul><li>当设置为 true 时，则事件处理器回调函数的 this 上下文指向为 data 对象；</li><li>如未指定 context，则事件处理器回调函数的 this 上下文指向为 Emitter 对象；</li></ul><h5 class="section__h4">once</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean</dd></dl><dl class="section__dl"><dt class="section__dt">Default：</dt><dd class="section__dd">false</dd></dl><p>（可选）once 指定事件处理器回调函数是否仅执行一次。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Emitter 对象。</dd></dl><p>Emitter 对象。</p><pre class="section__pre"><code class="section__code">const handler = function(evt) {
-  const $target = evt.relatedTarget
-  console.log(`当前事件的 relatedTarget 是：${$target}`)
-}
+Types.isWeakSet(weakset); // -> true
+Types.isWeakSet(set) // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isXML">isXML(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isXML(val) 方法用来检测测试数据是否为合法的 XML 格式。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是合法的 XML 格式，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
+import jsdom from 'jsdom'
+import xmldom from 'xmldom'
 
-const $emitter = delegate('#list')
-
-// 类选择器
-$emitter.wheel('.item', handler)</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isValue">isValue(selector, fn[, data, context, once = false])</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>绑定 wheel 代理事件。</p><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">1.7.0</dd></dl><h4 class="section__h4">Parameters</h4><h5 class="section__h4">selector</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">String</dd></dl><p>（必须）通过 selector 选择器判定是否触发指定事件类型的事件处理器。</p><h5 class="section__h4">fn</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Function</dd></dl><p>（必须）fn 为事件处理器回调函数。</p><h5 class="section__h4">data</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object</dd></dl><p>（可选）给事件处理器回调函数传递的数据。</p><h5 class="section__h4">context</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object | Boolean</dd></dl><p>（可选）事件处理器回调函数的 this 上下文指向：</p><ul><li>当设置为 true 时，则事件处理器回调函数的 this 上下文指向为 data 对象；</li><li>如未指定 context，则事件处理器回调函数的 this 上下文指向为 Emitter 对象；</li></ul><h5 class="section__h4">once</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean</dd></dl><dl class="section__dl"><dt class="section__dt">Default：</dt><dd class="section__dd">false</dd></dl><p>（可选）once 指定事件处理器回调函数是否仅执行一次。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Emitter 对象。</dd></dl><p>Emitter 对象。</p><pre class="section__pre"><code class="section__code">const handler = function(evt) {
-  const $target = evt.relatedTarget
-  console.log(`当前事件的 relatedTarget 是：${$target}`)
-}
-
-const $emitter = delegate('#list')
-
-// 类选择器
-$emitter.wheel('.item', handler)</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isVNode">isVNode(selector, fn[, data, context, once = false])</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>绑定 wheel 代理事件。</p><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">1.7.0</dd></dl><h4 class="section__h4">Parameters</h4><h5 class="section__h4">selector</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">String</dd></dl><p>（必须）通过 selector 选择器判定是否触发指定事件类型的事件处理器。</p><h5 class="section__h4">fn</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Function</dd></dl><p>（必须）fn 为事件处理器回调函数。</p><h5 class="section__h4">data</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object</dd></dl><p>（可选）给事件处理器回调函数传递的数据。</p><h5 class="section__h4">context</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object | Boolean</dd></dl><p>（可选）事件处理器回调函数的 this 上下文指向：</p><ul><li>当设置为 true 时，则事件处理器回调函数的 this 上下文指向为 data 对象；</li><li>如未指定 context，则事件处理器回调函数的 this 上下文指向为 Emitter 对象；</li></ul><h5 class="section__h4">once</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean</dd></dl><dl class="section__dl"><dt class="section__dt">Default：</dt><dd class="section__dd">false</dd></dl><p>（可选）once 指定事件处理器回调函数是否仅执行一次。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Emitter 对象。</dd></dl><p>Emitter 对象。</p><pre class="section__pre"><code class="section__code">const handler = function(evt) {
-  const $target = evt.relatedTarget
-  console.log(`当前事件的 relatedTarget 是：${$target}`)
-}
-
-const $emitter = delegate('#list')
-
-// 类选择器
-$emitter.wheel('.item', handler)</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isWeakMap">isVNode(selector, fn[, data, context, once = false])</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>绑定 wheel 代理事件。</p><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">1.7.0</dd></dl><h4 class="section__h4">Parameters</h4><h5 class="section__h4">selector</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">String</dd></dl><p>（必须）通过 selector 选择器判定是否触发指定事件类型的事件处理器。</p><h5 class="section__h4">fn</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Function</dd></dl><p>（必须）fn 为事件处理器回调函数。</p><h5 class="section__h4">data</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object</dd></dl><p>（可选）给事件处理器回调函数传递的数据。</p><h5 class="section__h4">context</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object | Boolean</dd></dl><p>（可选）事件处理器回调函数的 this 上下文指向：</p><ul><li>当设置为 true 时，则事件处理器回调函数的 this 上下文指向为 data 对象；</li><li>如未指定 context，则事件处理器回调函数的 this 上下文指向为 Emitter 对象；</li></ul><h5 class="section__h4">once</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean</dd></dl><dl class="section__dl"><dt class="section__dt">Default：</dt><dd class="section__dd">false</dd></dl><p>（可选）once 指定事件处理器回调函数是否仅执行一次。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Emitter 对象。</dd></dl><p>Emitter 对象。</p><pre class="section__pre"><code class="section__code">const handler = function(evt) {
-  const $target = evt.relatedTarget
-  console.log(`当前事件的 relatedTarget 是：${$target}`)
-}
-
-const $emitter = delegate('#list')
-
-// 类选择器
-$emitter.wheel('.item', handler)</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isWeakSet">isWeakSet(selector, fn[, data, context, once = false])</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>绑定 change 代理事件。</p><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">1.7.0</dd></dl><h4 class="section__h4">Parameters</h4><h5 class="section__h4">selector</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">String</dd></dl><p>（必须）通过 selector 选择器判定是否触发指定事件类型的事件处理器。</p><h5 class="section__h4">fn</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Function</dd></dl><p>（必须）fn 为事件处理器回调函数。</p><h5 class="section__h4">data</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object</dd></dl><p>（可选）给事件处理器回调函数传递的数据。</p><h5 class="section__h4">context</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object | Boolean</dd></dl><p>（可选）事件处理器回调函数的 this 上下文指向：</p><ul><li>当设置为 true 时，则事件处理器回调函数的 this 上下文指向为 data 对象；</li><li>如未指定 context，则事件处理器回调函数的 this 上下文指向为 Emitter 对象；</li></ul><h5 class="section__h4">once</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean</dd></dl><dl class="section__dl"><dt class="section__dt">Default：</dt><dd class="section__dd">false</dd></dl><p>（可选）once 指定事件处理器回调函数是否仅执行一次。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Emitter 对象。</dd></dl><p>Emitter 对象。</p><pre class="section__pre"><code class="section__code">const handler = function(evt) {
-  const $target = evt.delegateTarget
-  console.log(`触发事件的 delegateTarget DOM 元素的 id 是：${$target.id}`)
-}
-
-const $emitter = delegate('#form')
-
-// 绑定 change 代理事件
-$emitter.change('.input', handler)</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isXML">isXML(selector, fn[, data, context, once = false])</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>绑定 change 代理事件。</p><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">1.7.0</dd></dl><h4 class="section__h4">Parameters</h4><h5 class="section__h4">selector</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">String</dd></dl><p>（必须）通过 selector 选择器判定是否触发指定事件类型的事件处理器。</p><h5 class="section__h4">fn</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Function</dd></dl><p>（必须）fn 为事件处理器回调函数。</p><h5 class="section__h4">data</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object</dd></dl><p>（可选）给事件处理器回调函数传递的数据。</p><h5 class="section__h4">context</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object | Boolean</dd></dl><p>（可选）事件处理器回调函数的 this 上下文指向：</p><ul><li>当设置为 true 时，则事件处理器回调函数的 this 上下文指向为 data 对象；</li><li>如未指定 context，则事件处理器回调函数的 this 上下文指向为 Emitter 对象；</li></ul><h5 class="section__h4">once</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean</dd></dl><dl class="section__dl"><dt class="section__dt">Default：</dt><dd class="section__dd">false</dd></dl><p>（可选）once 指定事件处理器回调函数是否仅执行一次。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Emitter 对象。</dd></dl><p>Emitter 对象。</p><pre class="section__pre"><code class="section__code">const handler = function(evt) {
-  const $target = evt.delegateTarget
-  console.log(`触发事件的 delegateTarget DOM 元素的 id 是：${$target.id}`)
-}
+const { DOMParser } = xmldom;
+const { JSDOM } = jsdom;
 
-const $emitter = delegate('#form')
+const HTML = new JSDOM('&lt;html&gt;&lt;head&gt;&lt;title&gt;isXML&lt;/title&gt;&lt;/head&gt;&lt;body&gt;&lt;p&gt;p1&lt;/p&gt;&lt;p&gt;p2&lt;/p&gt;&lt;p&gt;p3&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;');
+const XML = new DOMParser().parseFromString(
+    '&lt;xml xmlns="a" xmlns:c="./lite"&gt;\n'+
+        '\t&lt;child&gt;test&lt;/child&gt;\n'+
+        '\t&lt;child&gt;&lt;/child&gt;\n'+
+        '\t&lt;child/&gt;\n'+
+    '&lt;/xml&gt;','text/xml');
 
-// 绑定 change 代理事件
-$emitter.change('.input', handler)</code></pre></div></section></section><div class="main__footer" id="footer"><p>Copyright &copy; 2023 <a href="https://github.com/yaohaixiao">Robert Yao</a>, all right reserved.</p><p>Code licensed under&nbsp;<a href="http://opensource.org/licenses/mit-license.html">MIT License</a> · Documentation licensed under
+Types.isXML(XML); // -> true
+Types.isXML(HTML); // -> false</code></pre></div></section></section><div class="main__footer" id="footer"><p>Copyright &copy; 2023 <a href="https://github.com/yaohaixiao">Robert Yao</a>, all right reserved.</p><p>Code licensed under&nbsp;<a href="http://opensource.org/licenses/mit-license.html">MIT License</a> · Documentation licensed under
 <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a></p><p><a href="https://github.com/yaohaixiao/types.js">View on GitHub</a> ·
-<a href="https://github.com/yaohaixiao/types.js/issues">Issues</a></p></div></main></div><div class="arrows"><div class="arrows__up" id="arrow-up"><svg class="arrows__icon" xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 1024 1024"><path d="M494.784 261.696c0.832-0.448 1.536-1.216 2.368-1.536a38.72 38.72 0 0 1 46.08 8.256l277.824 302.272a41.92 41.92 0 0 1-1.536 58.048 39.104 39.104 0 0 1-56.448-1.6L513.728 355.904 260.736 626.048a39.104 39.104 0 0 1-56.448 1.088 41.6 41.6 0 0 1-1.088-57.984L483.84 269.696c0.512-0.512 1.344-0.768 1.92-1.408l1.088-1.344c2.368-2.496 5.312-3.648 8-5.248z"></path></svg></div><div class="arrows__down" id="arrow-down"><svg class="arrows__icon" xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 1024 1024"><path d="M494.784 762.304c0.832 0.448 1.536 1.216 2.368 1.536 15.232 7.488 33.92 4.992 46.08-8.256l277.824-302.272a41.92 41.92 0 0 0-1.536-58.048 39.104 39.104 0 0 0-56.448 1.6l-249.344 271.232-252.992-270.144a39.104 39.104 0 0 0-56.448-1.088 41.6 41.6 0 0 0-1.088 57.984l280.576 299.456c0.512 0.512 1.344 0.768 1.92 1.408l1.088 1.344c2.368 2.496 5.312 3.648 8 5.248z"></path></svg></div></div><script src="js/docs.min.js"></script></body></html>
+<a href="https://github.com/yaohaixiao/types.js/issues">Issues</a></p></div></main></div><div class="arrows" id="arrows"><div class="arrows__up" id="arrows__up"><svg class="arrows__icon" xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 1024 1024"><path d="M494.784 261.696c0.832-0.448 1.536-1.216 2.368-1.536a38.72 38.72 0 0 1 46.08 8.256l277.824 302.272a41.92 41.92 0 0 1-1.536 58.048 39.104 39.104 0 0 1-56.448-1.6L513.728 355.904 260.736 626.048a39.104 39.104 0 0 1-56.448 1.088 41.6 41.6 0 0 1-1.088-57.984L483.84 269.696c0.512-0.512 1.344-0.768 1.92-1.408l1.088-1.344c2.368-2.496 5.312-3.648 8-5.248z"></path></svg></div><div class="arrows__down" id="arrows__down"><svg class="arrows__icon" xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 1024 1024"><path d="M494.784 762.304c0.832 0.448 1.536 1.216 2.368 1.536 15.232 7.488 33.92 4.992 46.08-8.256l277.824-302.272a41.92 41.92 0 0 0-1.536-58.048 39.104 39.104 0 0 0-56.448 1.6l-249.344 271.232-252.992-270.144a39.104 39.104 0 0 0-56.448-1.088 41.6 41.6 0 0 0-1.088 57.984l280.576 299.456c0.512 0.512 1.344 0.768 1.92 1.408l1.088 1.344c2.368 2.496 5.312 3.648 8 5.248z"></path></svg></div></div><script src="js/docs.min.js"></script></body></html>

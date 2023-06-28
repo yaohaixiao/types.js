@@ -1,35 +1,26 @@
 section.section
   header.section__header
-    h3#method-isInteger.section__h3 isInteger()
+    h3#method-isInteger.section__h3 isInteger(val)
   div.section__content
     h4.section__h4 Description
-    p 返回已绑定的事件类型的数组（去除名称重复的事件）。
+    p isInteger(val) 方法用来检测测试数据的(数值)是否为整数。
+    h4.section__h4 Parameters
+    h5.section__h4 val
     dl.section__dl
-      dt.section__dt Since：
-      dd.section__dd 1.5.0
+      dt.section__dt Type：
+      dd.section__dd Number
+    p （必须）val 待检测的数据。
     h4.section__h4 Returns
     dl.section__dl
       dt.section__dt Type：
-      dd.section__dd Array。
-    p 返回已绑定事件类型的数组。
+      dd.section__dd Boolean。
+    p true - 表示检测数据(数值)为整数，false 则表示不是。
     pre.section__pre
       code.section__code.
-        const handler = function(evt) {
-          const $li = evt.delegateTarget
-          const $textarea = document.querySelector('#log-textarea')
+        import Types from '@yaohaixiao/types.js/esm/types'
 
-          $textarea.value += `你点击的 li 节点的 id 为 ${$li.id}\r`
-        }
-
-        const $emitter = delegate('#list')
-
-        // 绑定事件
-        $emitter.on('item', 'click', handler)
-        $emitter.click('.remove', handler)
-        $emitter.mouseenter('.item', handler)
-
-        const types = $emitter.getTypes()
-
-        console.log(type)
-        // 会去除重复的 click 事件
-        // => ['click', 'mouseenter']
+        Types.isInteger(2.4); // -> false
+        Types.isInteger(2); // -> true
+        Types.isInteger(0xffffff); // -> true
+        Types.isInteger(NaN); // -> false
+        Types.isInteger(Number("3.4556645445E7")); // -> false

@@ -6,7 +6,7 @@ import { TYPES } from './enum'
  * ========================================================================
  * @method isError
  * @param {*} val - 要检测的数据
- * @returns {boolean} 'val' 是 Error 类型返回 true，否则返回 false
+ * @returns {Boolean} 'val' 是 Error 类型返回 true，否则返回 false
  */
 const isError = (val) => {
   return _type(val) === TYPES.ERROR

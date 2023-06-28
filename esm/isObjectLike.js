@@ -1,12 +1,14 @@
+import isObject from './isObject'
+
 /**
  * 检测测试数据是否为类似 Object 类型
  * ========================================================================
  * @method isObjectLike
- * @param val
+ * @param {Object} val
  * @returns {boolean}
  */
 const isObjectLike = (val) => {
-  return typeof val === 'object' && val !== null
+  return isObject(val) && val !== null
 }
 
 export default isObjectLike

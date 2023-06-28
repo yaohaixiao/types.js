@@ -1,60 +1,27 @@
 section.section
   header.section__header
-    h3#method-isString.section__h3 isString(type[, recurse])
+    h3#method-isString.section__h3 isString(val)
   div.section__content
     h4.section__h4 Description
-    p 清除 DOM 元素（$el）全部或者指定 type 类型的事件处理器。
+    p isString(val) 方法用来检测测试数据是否为 String 类型。
     h4.section__h4 Parameters
-    h5.section__h4 type
+    h5.section__h4 val
     dl.section__dl
       dt.section__dt Type：
-      dd.section__dd String
-    p （必须）事件类型（名称）。
-    h5.section__h4 recurse
-    dl.section__dl
-      dt.section__dt Type：
-      dd.section__dd Boolean
-    dl.section__dl
-      dt.section__dt Default：
-      dd.section__dd false
-    p （可选）是否递归清理 DOM 元素下所有子节点绑定的事件处理器，默认值：false - 仅清理当前 DOM 元素的事件处理器，true - 同事递归清理 DOM 元素下所有子节点绑定的事件处理器。
+      dd.section__dd Any
+    p （必须）val 待检测的数据。
     h4.section__h4 Returns
     dl.section__dl
       dt.section__dt Type：
-      dd.section__dd Emitter。
-    p 返回 Emitter 对象（实例）。
+      dd.section__dd Boolean。
+    p true - 表示检测数据是 String 类型，false 则表示不是。
     pre.section__pre
       code.section__code.
-        const handler = function(evt) {
-          const $li = evt.delegateTarget
-          const $textarea = document.querySelector('#log-textarea')
+        import Types from '@yaohaixiao/types.js/esm/types'
 
-          $textarea.value += `你点击的 li 节点的 id 为 ${$li.id}\r`
-        }
+        const text = document.createTextNode('text')
 
-        const $emitter = delegate('#list')
-
-        // 绑定事件
-        $emitter.on('li', 'click', handler)
-
-        // 获取已绑定的所有类型的事件处理器
-        $emitter.getListeners()
-
-        // 获取所有 click 事件处理器
-        $emitter.getListeners('click')
-        // => [{
-        // options,
-        // selector,
-        // type,
-        // fn,
-        // data,
-        // context,
-        // capture
-        // }]
-
-        // 清除绑定的所有 click 事件处理器
-        $emitter.purge('click')
-
-        // 清除 $options 元素所有 click 事件处理器
-        // 同时也清除其子节点绑定的所有类型事件处理器
-        $emitter.purge('click', true)
+        Types.isString('string'); // -> true
+        Types.isString(String('string')); // -> true
+        Types.isString(new String('string')); // -> false
+        Types.isString(text); // -> false

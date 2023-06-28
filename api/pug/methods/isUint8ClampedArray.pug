@@ -1,57 +1,34 @@
 section.section
   header.section__header
-    h3#method-isUint8ClampedArray.section__h3 isUint8ClampedArray(selector, fn[, data, context, once = false])
+    h3#method-isUint8ClampedArray.section__h3 isUint8ClampedArray(val)
   div.section__content
     h4.section__h4 Description
-    p 绑定 wheel 代理事件。
-    dl.section__dl
-      dt.section__dt Since：
-      dd.section__dd 1.7.0
+    p isUint8ClampedArray(val) 方法用来检测测试数据是否为 Uint8ClampedArray 类型。
     h4.section__h4 Parameters
-    h5.section__h4 selector
+    h5.section__h4 val
     dl.section__dl
       dt.section__dt Type：
-      dd.section__dd String
-    p （必须）通过 selector 选择器判定是否触发指定事件类型的事件处理器。
-    h5.section__h4 fn
-    dl.section__dl
-      dt.section__dt Type：
-      dd.section__dd Function
-    p （必须）fn 为事件处理器回调函数。
-    h5.section__h4 data
-    dl.section__dl
-      dt.section__dt Type：
-      dd.section__dd Object
-    p （可选）给事件处理器回调函数传递的数据。
-    h5.section__h4 context
-    dl.section__dl
-      dt.section__dt Type：
-      dd.section__dd Object | Boolean
-    p （可选）事件处理器回调函数的 this 上下文指向：
-    ul
-      li 当设置为 true 时，则事件处理器回调函数的 this 上下文指向为 data 对象；
-      li 如未指定 context，则事件处理器回调函数的 this 上下文指向为 Emitter 对象；
-    h5.section__h4 once
-    dl.section__dl
-      dt.section__dt Type：
-      dd.section__dd Boolean
-    dl.section__dl
-      dt.section__dt Default：
-      dd.section__dd false
-    p （可选）once 指定事件处理器回调函数是否仅执行一次。
+      dd.section__dd Any
+    p （必须）val 待检测的数据。
     h4.section__h4 Returns
     dl.section__dl
       dt.section__dt Type：
-      dd.section__dd Emitter 对象。
-    p Emitter 对象。
+      dd.section__dd Boolean。
+    p true - 表示检测数据是 Uint8ClampedArray 类型，false 则表示不是。
     pre.section__pre
       code.section__code.
-        const handler = function(evt) {
-          const $target = evt.relatedTarget
-          console.log(`当前事件的 relatedTarget 是：${$target}`)
+        import Types from '@yaohaixiao/types.js/esm/types'
+
+        const numbers = [ 2, 4 ]
+
+        function test(){
+            Types.isUint32Array( arguments ); // -> false
         }
 
-        const $emitter = delegate('#list')
+        test();
 
-        // 类选择器
-        $emitter.wheel('.item', handler)
+        Types.isUint32Array( numbers ); // -> false
+        Types.isUint32Array( [] ); // -> false
+        Types.isUint32Array( new Array() ); // -> false
+
+        Types.isUint32Array( new Uint8ClampedArray() ); // -> true

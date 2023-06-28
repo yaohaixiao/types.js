@@ -1,4 +1,3 @@
-import _type from './_type'
 import isFunction from './isFunction'
 import { TYPES } from './enum'
 
@@ -10,13 +9,9 @@ import { TYPES } from './enum'
  * @returns {boolean} 'val' 为对象返回 true，否则返回 false
  */
 const isObject = (val) => {
-  const type = _type(val)
+  const type = typeof val
 
-  return (
-    (val &&
-      (type === TYPES.OBJECT || type === TYPES.FUNCTION || isFunction(val))) ||
-    false
-  )
+  return (val && (type === TYPES.OBJECT || isFunction(val))) || false
 }
 
 export default isObject

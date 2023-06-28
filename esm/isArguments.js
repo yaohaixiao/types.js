@@ -6,7 +6,7 @@ import { TYPES } from './enum'
  * ========================================================================
  * @method isArguments
  * @param {*} val
- * @return {boolean}
+ * @return {Boolean}
  */
 function isArguments(val) {
   return _type(val) === TYPES.ARGUMENTS

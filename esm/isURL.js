@@ -1,3 +1,5 @@
+import isString from './isString'
+
 /**
  * 判断字符串是否为有效的 URL 地址
  * ========================================================================
@@ -16,7 +18,7 @@ const isURL = (str) => {
     'i'
   ) // fragment locator
 
-  return !!pattern.test(str)
+  return isString(str) && !!pattern.test(str)
 }
 
 export default isURL

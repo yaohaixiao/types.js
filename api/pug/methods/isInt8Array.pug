@@ -1,27 +1,33 @@
 section.section
   header.section__header
-    h3#method-isInt8Array.section__h3 isInt8Array(evt)
+    h3#method-isInt8Array.section__h3 isInt8Array(val)
   div.section__content
     h4.section__h4 Description
-    p 获取事件触发时的 pageY 值。
+    p isInt8Array(val) 方法用来检测测试数据是否为 Int8Array 类型。
     h4.section__h4 Parameters
-    h5.section__h4 evt
+    h5.section__h4 val
     dl.section__dl
       dt.section__dt Type：
-      dd.section__dd Event
-    p （必须）事件对象。
+      dd.section__dd Any
+    p （必须）val 待检测的数据。
     h4.section__h4 Returns
     dl.section__dl
       dt.section__dt Type：
-      dd.section__dd Number。
-    p 返回事件触发时的 pageY 值。
+      dd.section__dd Boolean。
+    p true - 表示检测数据是 Int8Array 类型，false 则表示不是。
     pre.section__pre
       code.section__code.
-        const $emitter = delegate('#list')
-        const showLog = function (evt) {
-          const pageY = $emitter.getPageY(evt)
+        import Types from '@yaohaixiao/types.js/esm/types'
 
-          console.log(`pageY 为：${pageY}`)
+        const numbers = [ 2, 4 ]
+
+        function test(){
+            Types.isInt8Array( arguments ); // -> false
         }
 
-        $emitter.on('.item', 'click', showLog)
+        test();
+
+        Types.isInt8Array( numbers ); // -> false
+        Types.isInt8Array( new Array() ); // -> false
+
+        Types.isInt8Array(new Int8Array()) => true

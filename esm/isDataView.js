@@ -6,7 +6,7 @@ import { TYPES } from './enum'
  * ========================================================================
  * @method isDataView
  * @param {*} val
- * @return {boolean}
+ * @return {Boolean}
  */
 const isDataView = (val) => {
   return _type(val) === TYPES.DATA_VIEW

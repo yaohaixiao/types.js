@@ -1,3 +1,5 @@
+import isString from './isString'
+
 /**
  * 检测是否为电话号码
  * ========================================================================
@@ -15,8 +17,8 @@
  * isPhoneNumber('075-63546725')
  */
 const isPhoneNumber = (str) => {
-  const pattern = /^\+?\(?\d{3}\)?[-\s.]?\d{3}[-\s.]?\d{4,6}$/im
-  return pattern.test(str)
+  const pattern = /^\+?\(?(\d{2,3})?\)?[-\s.]?\d{3}[-\s.]?\d{4,6}$/im
+  return isString(str) && pattern.test(str)
 }
 
 export default isPhoneNumber

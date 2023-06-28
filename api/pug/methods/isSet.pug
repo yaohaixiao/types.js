@@ -1,46 +1,27 @@
 section.section
   header.section__header
-    h3#method-isSet.section__h3 isSet(evt)
+    h3#method-isSet.section__h3 isSet(val)
   div.section__content
     h4.section__h4 Description
-    p 阻止触发绑定事件 DOM 元素的默认行为。
+    p isSet(val) 方法用来检测测试数据是否为 Set 类型。
     h4.section__h4 Parameters
-    h5.section__h4 evt
+    h5.section__h4 val
     dl.section__dl
       dt.section__dt Type：
-      dd.section__dd Event
-    p （必须）事件对象。
+      dd.section__dd Any
+    p （必须）val 待检测的数据。
     h4.section__h4 Returns
     dl.section__dl
       dt.section__dt Type：
-      dd.section__dd Emitter。
-    p 返回 Emitter 对象（实例）。
+      dd.section__dd Boolean。
+    p true - 表示检测数据是 Set 类型，false 则表示不是。
     pre.section__pre
       code.section__code.
-        &lt;ul id="list" class="list"&gt;
-          &lt;li class="item"&gt;
-            &lt;a href="/home" class="nav"&gt;Home&lt;/a&gt;
-          &lt;/li&gt;
-          &lt;li class="item"&gt;
-            &lt;a href="/support" class="nav"&gt;Support&lt;/a&gt;
-          &lt;/li&gt;
-          &lt;li class="item"&gt;
-            &lt;a href="/faqs" class="nav"&gt;FAQs&lt;/a&gt;
-          &lt;/li&gt;
-        &lt;/ul&gt;
+        import Types from '@yaohaixiao/types.js/esm/types'
 
-        const handler = function(evt) {
-          const $link = evt.delegateTarget
-          const $textarea = document.querySelector('#log-textarea')
+        const mySet = new Set([1,2,3,4]);
 
-          // preventDefault() 方法会阻止点击链接后默认跳转页面的行为发生
-          $emitter.preventDefault(evt)
+        Types.is(mySet) // -> 'set'
+        Types.isSet(mySet); // -> true
 
-          $textarea.value += `你点击了导航菜单 ${$link.innerHTML},但它不会跳转到${$link.href}页面\r`
-        }
-
-        const $emitter = delegate('#list')
-
-        // 点击导航菜单，不会跳转页面
-        $emitter.on('a.nav', 'click', handler)
-        // => 点击 li 元素将不会执行 handler 事件处理器
+        Types.isSet([1,2,3,4]) // -> false

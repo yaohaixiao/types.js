@@ -7,7 +7,7 @@ import { TYPES } from './enum'
  * ========================================================================
  * @method isArrayLike
  * @param {*} val - 要检测是的数据
- * @returns {boolean} 'val' 是 array、arguments 或者 HTMLNodeList 类型返回 true，否则返回 false
+ * @returns {Boolean} 'val' 是 array、arguments 或者 HTMLNodeList 类型返回 true，否则返回 false
  */
 const isArrayLike = (val) => {
   const type = _type(val)

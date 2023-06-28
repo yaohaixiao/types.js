@@ -1,68 +1,24 @@
 section.section
   header.section__header
-    h3#method-isBlank.section__h3 isBlank(type[, detail = null, bubbles = true, cancelable = true])
+    h3#method-isBlank.section__h3 isBlank(val)
   div.section__content
     h4.section__h4 Description
-    p 创建自定义事件（CustomerEvent）。
-    dl.section__dl
-      dt.section__dt Since：
-      dd.section__dd 1.8.0
+    p isBlank(val) 方法用来检测测试数据是否只包含空格。
     h4.section__h4 Parameters
-    h5.section__h4 type
+    h5.section__h4 val
     dl.section__dl
       dt.section__dt Type：
       dd.section__dd String
-    p （必须）事件类型（名称）。
-    h5.section__h4 detail
-    dl.section__dl
-      dt.section__dt Type：
-      dd.section__dd Object
-    dl.section__dl
-      dt.section__dt Default：
-      dd.section__dd null
-    p （可选）传递给自定义事件的数据，默认为 null。
-    h5.section__h4 bubbles
-    dl.section__dl
-      dt.section__dt Type：
-      dd.section__dd Boolean
-    dl.section__dl
-      dt.section__dt Default：
-      dd.section__dd true
-    p （可选）是否支持冒泡，默认为 true。
-    h5.section__h4 cancelable
-    dl.section__dl
-      dt.section__dt Type：
-      dd.section__dd Boolean
-    dl.section__dl
-      dt.section__dt Default：
-      dd.section__dd true
-    p （可选）是否可以取消，默认为 true。
+    p （必须）val 待检测的数据。
     h4.section__h4 Returns
     dl.section__dl
       dt.section__dt Type：
-      dd.section__dd CustomerEvent。
-    p CustomerEvent 实例。
+      dd.section__dd Boolean。
+    p true - 表示检测数据是，false 则表示不是。
     pre.section__pre
       code.section__code.
-        &lt;div id="nav" class="nav"&gt;
-          &lt;a id="service" class="anchor" href="https://www.yaohaixiao.com/serivce"&gt;Service&lt;/a&gt;
-          &lt;a id="help" class="anchor" href="https://www.yaohaixiao.com/help"&gt;Help&lt;/a&gt;
-        &lt;/div&gt;
+        import Types from '@yaohaixiao/types.js/esm/types'
 
-        const $nav = document.querySelector('#nav')
-        const $service = document.querySelector('#serivce')
-        const $emitter = delegate($nav)
-        const logEvent = $emitter.createEvent('log', {
-          name: 'Yao',
-          hi() {
-            console.log('hi！！！')
-          }
-        })
-
-        const logHandler = function(evt) {
-          console.log('detail', evt.detail)
-          console.log('type', evt.type)
-        }
-
-        // 或者
-        $service.dispatchEvent(logEvent)
+        Types.isBlank('  '); // -> true
+        Types.isBlank(new String()); // -> false
+        Types.isBlank(''); // -> true

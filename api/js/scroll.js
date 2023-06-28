@@ -5,12 +5,14 @@
 
   const $aside = document.querySelector('#aside')
   const $main = document.querySelector('#main')
-  const $up = document.querySelector('#arrow-up')
-  const $down = document.querySelector('#arrow-down')
+  const $arrows = document.querySelector('#arrows')
   const minTop = 0
   const maxTop = $main.scrollHeight
 
   const updateButtons = (scrollTop) => {
+    const $up = $arrows.querySelector('.arrows__up')
+    const $down = $arrows.querySelector('.arrows__down')
+
     if (scrollTop <= minTop) {
       $up.classList.add('hide')
     } else if (scrollTop >= maxTop) {
@@ -115,15 +117,16 @@
 
   const setup = () => {
     // eslint-disable-next-line no-undef
-    const $emitter = delegate($aside)
+    const $asideEmitter = delegate($aside)
+    const $arrowsEmitter = delegate($arrows)
 
     updateButtons($main.scrollTop)
     syncNav()
 
-    $emitter.click('.aside__anchor', scrollToAnchor)
+    $asideEmitter.click('.aside__anchor', scrollToAnchor)
 
-    $up.addEventListener('click', scrollToTop)
-    $down.addEventListener('click', scrollToBottom)
+    $arrowsEmitter.click('.arrows__up', scrollToTop)
+    $arrowsEmitter.click('.arrows__down', scrollToBottom)
   }
 
   setup()

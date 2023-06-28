@@ -1,45 +1,34 @@
 section.section
   header.section__header
-    h3#method-isInt32Array.section__h3 isInt32Array(evt)
+    h3#method-isInt32Array.section__h3 isInt32Array(val)
   div.section__content
     h4.section__h4 Description
-    p 返回触发事件的 target DOM 元素。
-    dl.section__dl
-      dt.section__dt Since：
-      dd.section__dd 1.1.0
+    p isInt32Array(val) 方法用来检测测试数据是否为 Int32Array 类型。
     h4.section__h4 Parameters
-    h5.section__h4 evt
+    h5.section__h4 val
     dl.section__dl
       dt.section__dt Type：
-      dd.section__dd Event
-    p （必须）事件对象。
+      dd.section__dd Any
+    p （必须）val 待检测的数据。
     h4.section__h4 Returns
     dl.section__dl
       dt.section__dt Type：
-      dd.section__dd HTMLElement。
-    p Event 对象的 target DOM 元素。
+      dd.section__dd Boolean。
+    p true - 表示检测数据是 Int32Array 类型，false 则表示不是。
     pre.section__pre
       code.section__code.
-        &lt;ul id="list" class="list"&gt;
-          &lt;li class="item" id="item-home"&gt;
-            &lt;span&gt;Home&lt;/span&gt;
-            &lt;a href="/sitemap#home" class="remove" data-id="home"&gt;删除&lt;/a&gt;
-          &lt;/li&gt;
-          &lt;li class="item" id="item-support"&gt;
-            &lt;span&gt;Support&lt;/span&gt;
-            &lt;a href="/sitemap#support" class="remove" data-id="support"&gt;删除&lt;/a&gt;
-          &lt;/li&gt;
-          &lt;li class="item" id="item-faqs"&gt;
-            &lt;span&gt;FAQs&lt;/span&gt;
-            &lt;a href="/sitemap#support" class="remove" data-id="faqs"&gt;删除&lt;/a&gt;
-          &lt;/li&gt;
-        &lt;/ul&gt;
+        import Types from '@yaohaixiao/types.js/esm/types'
 
-        const $emitter = delegate('#list')
-        const showLog = function (evt) {
-          const target = $emitter.getTarget(evt)
+        const numbers = [ 2, 4 ]
 
-          console.log(`当前触发事件的 target 为：${target}`)
+        function test(){
+            Types.isInt32Array( arguments ); // -> false
         }
 
-        $emitter.on('.remove', 'click', showLog)
+        test();
+
+        Types.isInt32Array( numbers ); // -> false
+        Types.isInt32Array( new Array() ); // -> false
+
+        Types.isInt32Array(new Int32Array()) => true
+
