@@ -83,7 +83,7 @@ isArray([]) // -> true
 ## [API Documentation](https://yaohaixiao.github.io/types.js/)
 
 
-### [is(val)](https://yaohaixiao.github.io/types.js/#is)
+### [is(val)](https://yaohaixiao.github.io/types.js/#method-is)
 
 is(val) 方法返回检测数据的数据类型字符串：
 
@@ -164,7 +164,7 @@ Types.is(document.createTextNode('text')); // -> 'textnode'
 Types.is(document.getElementsByTagName('script')); // -> 'collection'
 ```
 
-### [isArray](https://yaohaixiao.github.io/types.js/#isArray)
+### [isArray](https://yaohaixiao.github.io/types.js/#method-isArray)
 
 isArray ( val ) 方法用来检测测试数据的数据类型是否为 Array （数组）类型。
 
@@ -204,7 +204,7 @@ Types.isArray({0:1,1:2}); // -> false
 Types.isArray( new Int8Array() ); // -> false
 ```
 
-### [isArrayLike](https://yaohaixiao.github.io/types.js/#isArrayLike)
+### [isArrayLike](https://yaohaixiao.github.io/types.js/#method-isArrayLike)
 
 isArrayLike ( val ) 方法用来检测测试数据的数据类型是否为类似数组（array、arguments 对象或者 HTMLNodeList 对象）类型。
 
@@ -241,7 +241,7 @@ sum(5, 6);
 Types.isArrayLike( new Int8Array() ); // -> false
 ```
 
-### [isArguments](https://yaohaixiao.github.io/types.js/#isArguments)
+### [isArguments](https://yaohaixiao.github.io/types.js/#method-isArguments)
 
 isArguments ( val ) 方法用来检测测试数据是否为 arguments 对象。
 
@@ -271,7 +271,7 @@ function test(){
 test();
 ```
 
-### [isArrayBuffer](https://yaohaixiao.github.io/types.js/#isArrayBuffer)
+### [isArrayBuffer](https://yaohaixiao.github.io/types.js/#method-isArrayBuffer)
 
 isArrayBuffer ( val ) 方法用来检测测试数据是否为 ArrayBuffer 类型。
 
@@ -298,7 +298,7 @@ Types.isArrayBuffer(new ArrayBuffer(8)); // -> true
 ```
 
 
-### [isInt8Array](https://yaohaixiao.github.io/types.js/#isInt8Array)
+### [isInt8Array](https://yaohaixiao.github.io/types.js/#method-isInt8Array)
 
 isInt8Array ( val )方法用来检测测试数据是否为 Int8Array 类型。
 
@@ -330,7 +330,7 @@ test(); // -> false
 Types.isInt8Array( new Int8Array() ); // -> true
 ```
 
-### [isUint8Array](https://yaohaixiao.github.io/types.js/#isUint8Array)
+### [isUint8Array](https://yaohaixiao.github.io/types.js/#method-isUint8Array)
 
 isUint8Array ( val )方法用来检测测试数据是否为 Uint8Array 类型。
 
@@ -362,7 +362,7 @@ test(); // -> false
 Types.isInt8Array( new Uint8Array() ); // -> true
 ```
 
-### [isUint8ClampedArray](https://yaohaixiao.github.io/types.js/#isUint8ClampedArray)
+### [isUint8ClampedArray](https://yaohaixiao.github.io/types.js/#method-isUint8ClampedArray)
 
 isUint8ClampedArray ( val )方法用来检测测试数据是否为 Uint8ClampedArray 类型。
 
@@ -394,7 +394,7 @@ test(); // -> false
 Types.isUint8ClampedArray( new Uint8ClampedArray() ); // -> true
 ```
 
-### [isInt16Array](https://yaohaixiao.github.io/types.js/#isInt16Array)
+### [isInt16Array](https://yaohaixiao.github.io/types.js/#method-isInt16Array)
 
 isInt16Array ( val )方法用来检测测试数据是否为 Int16Array 类型。
 
@@ -426,7 +426,7 @@ test(); // -> false
 Types.isInt16Array( new Int16Array() ); // -> true
 ```
 
-### [isUint16Array](https://yaohaixiao.github.io/types.js/#isUint16Array)
+### [isUint16Array](https://yaohaixiao.github.io/types.js/#method-isUint16Array)
 
 isUint16Array ( val )方法用来检测测试数据是否为 Uint16Array 类型。
 
@@ -458,7 +458,7 @@ test(); // -> false
 Types.isUint16Array( new Uint16Array() ); // -> true
 ```
 
-### [isInt32Array](https://yaohaixiao.github.io/types.js/#isInt32Array)
+### [isInt32Array](https://yaohaixiao.github.io/types.js/#method-isInt32Array)
 
 isInt32Array ( val )方法用来检测测试数据是否为 Int32Array 类型。
 
@@ -490,7 +490,7 @@ test(); // -> false
 Types.isInt32Array( new Int32Array() ); // -> true
 ```
 
-### [isUint32Array](https://yaohaixiao.github.io/types.js/#isUint32Array)
+### [isUint32Array](https://yaohaixiao.github.io/types.js/#method-isUint32Array)
 
 isUint32Array ( val )方法用来检测测试数据是否为 Uint32Array 类型。
 
@@ -522,7 +522,7 @@ test(); // -> false
 Types.isUint32Array( new Uint32Array() ); // -> true
 ```
 
-### [isFloat32Array](https://yaohaixiao.github.io/types.js/#isFloat32Array)
+### [isFloat32Array](https://yaohaixiao.github.io/types.js/#method-isFloat32Array)
 
 isFloat32Array ( val )方法用来检测测试数据是否为 Float32Array 类型。
 
@@ -554,7 +554,7 @@ test(); // -> false
 Types.isFloat32Array( new Float32Array() ); // -> true
 ```
 
-### [isFloat64Array](https://yaohaixiao.github.io/types.js/#isFloat64Array)
+### [isFloat64Array](https://yaohaixiao.github.io/types.js/#method-isFloat64Array)
 
 isFloat64Array ( val )方法用来检测测试数据是否为 Float64Array 类型。
 
@@ -586,7 +586,7 @@ test(); // -> false
 Types.isFloat64Array( new Float64Array() ); // -> true
 ```
 
-### [isBase64](https://yaohaixiao.github.io/types.js/#isBase64)
+### [isBase64](https://yaohaixiao.github.io/types.js/#method-isBase64)
 
 isBase64 ( val )方法用来检测测试数据是否为一个基于 base64 编码的字符串。
 
@@ -612,7 +612,7 @@ Types.isBase64('a2V5MT12YWx1ZTEma2V5Mj12YWx1ZTI'); // -> true
 Types.isBase64('asdadf'); // -> false
 ```
 
-### [isBlank](https://yaohaixiao.github.io/types.js/#isBlank)
+### [isBlank](https://yaohaixiao.github.io/types.js/#method-isBlank)
 
 isBlank ( val )方法用来检测测试数据是否只包空格。
 
@@ -639,7 +639,7 @@ Types.isBlank(new String()); // -> false
 Types.isBlank(''); // -> true
 ```
 
-### [isBoolean](https://yaohaixiao.github.io/types.js/#isBoolean)
+### [isBoolean](https://yaohaixiao.github.io/types.js/#method-isBoolean)
 
 isBoolean ( obj )方法用来检测测试数据是否为 Boolean 类型
 
@@ -675,7 +675,7 @@ Types.isBoolean(NaN); // -> false
 Types.isBoolean(projects); // -> false
 ```
 
-### [isConstructor](https://yaohaixiao.github.io/types.js/#isConstructor)
+### [isConstructor](https://yaohaixiao.github.io/types.js/#method-isConstructor)
 
 isConstructor ( fn ) 方法用来检测测试函数是否为构造函数
 
@@ -712,7 +712,7 @@ Types.isConstructor(RegExp); // -> true
 Types.isConstructor(Object); // -> true
 ```
 
-### [isDataView](https://yaohaixiao.github.io/types.js/#isDataView)
+### [isDataView](https://yaohaixiao.github.io/types.js/#method-isDataView)
 
 isDataView ( val ) 方法用来检测测试数据是否为 DataView 类型。
 
@@ -741,7 +741,7 @@ Types.isDataView(buffer); // -> false
 Types.isDataView(dv); // -> true
 ```
 
-### [isDate](https://yaohaixiao.github.io/types.js/#isDate)
+### [isDate](https://yaohaixiao.github.io/types.js/#method-isDate)
 
 isDate ( val )方法用来检测测试数据的数据类型是否为 Date 类型。
 
@@ -770,7 +770,7 @@ Types.isDate('2017-07-06'); // -> false
 Types.isDate(time.getFullYear()); // -> false
 ```
 
-### [isElement](https://yaohaixiao.github.io/types.js/#isElement)
+### [isElement](https://yaohaixiao.github.io/types.js/#method-isElement)
 
 isElement ( val )方法用来检测测试数据的数据类型是否为 HTML 元素节点。
 
@@ -799,7 +799,7 @@ Types.isElement(wrap); // -> true
 Types.isElement(text); // -> false
 ```
 
-### [isEmpty](https://yaohaixiao.github.io/types.js/#isEmpty)
+### [isEmpty](https://yaohaixiao.github.io/types.js/#method-isEmpty)
 
 isEmpty ( val )方法用来检测测试数据是否为空字符串。
 
@@ -827,7 +827,7 @@ Types.isEmpty(new String()); // -> false
 Types.isEmpty(' '); // -> false
 ```
 
-### [isEmptyObject](https://yaohaixiao.github.io/types.js/#isEmptyObject)
+### [isEmptyObject](https://yaohaixiao.github.io/types.js/#method-isEmptyObject)
 
 isEmptyObject ( val )方法用来检测测试数据是否为空（单体）对象。
 
@@ -871,7 +871,7 @@ Types.isEmptyObject(new Person('robert',30)); // false
 Types.isEmptyObject(['']); // false
 ```
 
-### [isError](https://yaohaixiao.github.io/types.js/#isError)
+### [isError](https://yaohaixiao.github.io/types.js/#method-isError)
 
 isError ( val )方法用来检测测试数据是否为 Error 类型。
 
@@ -897,7 +897,7 @@ Types.isError({}); // -> false
 Types.isError(new Error()); // -> true
 ```
 
-### [isEven](https://yaohaixiao.github.io/types.js/#isEven)
+### [isEven](https://yaohaixiao.github.io/types.js/#method-isEven)
 
 isEven ( val )方法用来检测测试数据的数据类型是否为偶数。
 
@@ -924,7 +924,7 @@ Types.isEven(3); // -> false
 Types.isEven(2.2); // -> false
 ```
 
-### [isFloat](https://yaohaixiao.github.io/types.js/#isFloat)
+### [isFloat](https://yaohaixiao.github.io/types.js/#method-isFloat)
 
 isFloat ( val )方法用来检测测试数据是否为浮点数。
 
@@ -954,7 +954,7 @@ Types.isFloat(0xffffff); // -> false
 Types.isFloat(NaN); // -> false
 ```
 
-### [isFunction](https://yaohaixiao.github.io/types.js/#isFunction)
+### [isFunction](https://yaohaixiao.github.io/types.js/#method-isFunction)
 
 isFunction ( val )方法用来检测测试数据是否为 Function 类型。
 
@@ -988,7 +988,7 @@ Types.isFunction(RegExp); // -> true
 Types.isFunction(String); // -> true
 ```
 
-### [isHash](https://yaohaixiao.github.io/types.js/#isHash)
+### [isHash](https://yaohaixiao.github.io/types.js/#method-isHash)
 
 isHash ( val ) 方法用来检测测试数据是普通对象（它是方法 [isPlainObject](https://yaohaixiao.github.io/types.js/#isPlainObject) 的别名）。
 
@@ -1018,7 +1018,7 @@ Types.isHash(null); // -> false
 Types.isHash(document.getElementById('wrap')); // -> false
 ```
 
-### [isHex](https://yaohaixiao.github.io/types.js/#isHex)
+### [isHex](https://yaohaixiao.github.io/types.js/#method-isHex)
 
 isHex ( val )方法用来检测测试数据是否为 16 进制编码的字符串。
 
@@ -1046,7 +1046,7 @@ Types.isHex('#h1f1f1'); // -> false
 Types.isHex('sdadfa'); // -> false
 ```
 
-### [isHTMLCollection](https://yaohaixiao.github.io/types.js/#isHTMLCollection)
+### [isHTMLCollection](https://yaohaixiao.github.io/types.js/#method-isHTMLCollection)
 
 isHTMLCollection ( val )方法用来检测数据的是否为 HTMLNodeList 对象。
 
@@ -1072,7 +1072,7 @@ Types.isHTMLCollection(document.getElementById('isJSON')); // -> false
 Types.isHTMLCollection(document.getElementsByTagName('li')); // -> true
 ```
 
-### [isInfinite](https://yaohaixiao.github.io/types.js/#isInfinite)
+### [isInfinite](https://yaohaixiao.github.io/types.js/#method-isInfinite)
 
 isInfinite ( val ) 方法用来检测测试数据的数据是正无穷或者负无穷。
 
@@ -1098,7 +1098,7 @@ Types.isInfinite(2.4); // -> false
 Types.isInfinite(Infinity); // -> true
 ```
 
-### [isInteger](https://yaohaixiao.github.io/types.js/#isInteger)
+### [isInteger](https://yaohaixiao.github.io/types.js/#method-isInteger)
 
 isInteger ( val )方法用来检测测试数据是否为整数。
 
@@ -1127,7 +1127,7 @@ Types.isInteger(NaN); // -> false
 Types.isInteger(Number("3.4556645445E7")); // -> false
 ```
 
-### [isJSON](https://yaohaixiao.github.io/types.js/#isJSON)
+### [isJSON](https://yaohaixiao.github.io/types.js/#method-isJSON)
 
 isJSON ( val )方法用来检测测试数据是否为 JSON 格式字符串数据。
 
@@ -1157,7 +1157,7 @@ Types.isJSON({prop:'JSON'}); // -> false
 Types.isJSON("{prop:'JSON'}"); // -> false
 ```
 
-### [isMap](https://yaohaixiao.github.io/types.js/#isMap)
+### [isMap](https://yaohaixiao.github.io/types.js/#method-isMap)
 
 isMap ( val )方法用来检测测试数据是否为 Map 类型。
 
@@ -1190,7 +1190,7 @@ Types.isMap(map); // -> true
 Types.isMap(['name','robert']) // -> false
 ```
 
-### [isNativeFunction](https://yaohaixiao.github.io/types.js/#isNativeFunction)
+### [isNativeFunction](https://yaohaixiao.github.io/types.js/#method-isNativeFunction)
 
 isNativeFunction ( fn ) 方法用来检测测试函数是否为系统内置函数
 
@@ -1227,7 +1227,7 @@ Types.isNativeFunction(RegExp); // -> true
 Types.isNativeFunction(Object); // -> true
 ```
 
-### [isNull](https://yaohaixiao.github.io/types.js/#isNull)
+### [isNull](https://yaohaixiao.github.io/types.js/#method-isNull)
 
 isNull ( val )方法用来检测测试数据是否为 null。
 
@@ -1255,7 +1255,7 @@ Types.isNull({}); // -> false
 Types.isNull(projects); // -> false
 ```
 
-### [isNumber](https://yaohaixiao.github.io/types.js/#isNumber)
+### [isNumber](https://yaohaixiao.github.io/types.js/#method-isNumber)
 
 isNumber ( obj )方法用来检测测试数据是否为 Number 类型。
 
@@ -1284,7 +1284,7 @@ Types.isNumber(NaN); // -> true
 Types.isNumber('33'); // -> false
 ```
 
-### [isNumeric](https://yaohaixiao.github.io/types.js/#isNumeric)
+### [isNumeric](https://yaohaixiao.github.io/types.js/#method-isNumeric)
 
 isNumeric ( val )方法用来检测测试数据是否是一个数字（只能是 number 类型或者 '123123' 这样的数字字符串）。
 
@@ -1314,7 +1314,7 @@ Types.isNumeric('0xffffff'); // -> true
 Types.isNumeric(NaN); // -> false
 ```
 
-### [isObject](https://yaohaixiao.github.io/types.js/#isObject)
+### [isObject](https://yaohaixiao.github.io/types.js/#method-isObject)
 
 isObject ( val )方法用来检测测试数据是否为对象。使用 isObject() 方法测试单体对象和函数都返回值都是 true。
 
@@ -1349,7 +1349,7 @@ Types.isObject(null); // -> false
 Types.isObject(document.getElementById('wrap')); // -> false
 ```
 
-### [isOdd](https://yaohaixiao.github.io/types.js/#isOdd)
+### [isOdd](https://yaohaixiao.github.io/types.js/#method-isOdd)
 
 isOdd ( val )方法用来检测测试数据的数据类型是否为奇数。
 
@@ -1376,7 +1376,7 @@ Types.isOdd(2); // -> false
 Types.isOdd(3.1); // -> false
 ```
 
-### [isPlainObject](https://yaohaixiao.github.io/types.js/#isPlainObject)
+### [isPlainObject](https://yaohaixiao.github.io/types.js/#method-isPlainObject)
 
 isPlainObject ( val )方法用来检测测试数据是否为普通对象。
 
@@ -1406,7 +1406,7 @@ Types.isPlainObject(null); // -> false
 Types.isPlainObject(document.getElementById('wrap')); // -> false
 ```
 
-### [isRegExp](https://yaohaixiao.github.io/types.js/#isRegExp)
+### [isRegExp](https://yaohaixiao.github.io/types.js/#method-isRegExp)
 
 isRegExp ( val )方法用来检测测试数据是否为正则表达式。
 
@@ -1432,7 +1432,7 @@ Types.isRegExp(new RegExp('\s+','ig')); // -> true
 Types.isRegExp(/\s+/ig); // -> true
 ```
 
-### [isSet](https://yaohaixiao.github.io/types.js/#isSet)
+### [isSet](https://yaohaixiao.github.io/types.js/#method-isSet)
 
 isSet ( val )方法用来检测测试数据是否为 isSet 类型。
 
@@ -1462,7 +1462,7 @@ Types.isSet(mySet); // -> true
 Types.isSet([1,2,3,4]) // -> false
 ```
 
-### [isString](https://yaohaixiao.github.io/types.js/#isString)
+### [isString](https://yaohaixiao.github.io/types.js/#method-isString)
 
 isString ( val )方法用来检测测试数据是否为字符串。
 
@@ -1489,7 +1489,7 @@ Types.isString(String('string')); // -> true
 Types.isString(new String('string')); // -> false
 ```
 
-### [isSymbol](https://yaohaixiao.github.io/types.js/#isSymbol)
+### [isSymbol](https://yaohaixiao.github.io/types.js/#method-isSymbol)
 
 isSymbol ( val )方法用来检测测试数据是否为 Symbol 类型。
 
@@ -1521,7 +1521,7 @@ Types.is(symObj) // -> 'object'
 Types.isSymbol(symObj); // -> false
 ```
 
-### [isTextNode](https://yaohaixiao.github.io/types.js/#isTextNode)
+### [isTextNode](https://yaohaixiao.github.io/types.js/#method-isTextNode)
 
 isTextNode ( val )方法用来检测测试数据是否为文本节点。
 
@@ -1547,7 +1547,7 @@ Types.isTextNode(document.createElement('p')); // -> false
 Types.isTextNode(document.createTextNode('p')); // -> true
 ```
 
-### [isUndefined](https://yaohaixiao.github.io/types.js/#isUndefined)
+### [isUndefined](https://yaohaixiao.github.io/types.js/#method-isUndefined)
 
 isUndefined ( val )方法用来检测测试数据是否 undefined（未定义）。
 
@@ -1579,7 +1579,7 @@ Types.isUndefined(NaN); // -> false
 Types.isUndefined({}); // -> false
 ```
 
-### [isValue](https://yaohaixiao.github.io/types.js/#isValue)
+### [isValue](https://yaohaixiao.github.io/types.js/#method-isValue)
 
 isValue ( val )方法用来检测测试数据是否为有效的数据。
 
@@ -1614,7 +1614,7 @@ Types.isValue( null ); // -> false
 Types.isValue({}); // -> true
 ```
 
-### [isWeakMap](https://yaohaixiao.github.io/types.js/#isWeakMap)
+### [isWeakMap](https://yaohaixiao.github.io/types.js/#method-isWeakMap)
 
 isWeakMap ( val )方法用来检测测试数据是否为 WeakMap 类型。
 
@@ -1649,7 +1649,7 @@ Types.isWeakMap(weakmap); // -> true
 Types.isWeakMap(map); // -> false
 ```
 
-### [isWeakSet](https://yaohaixiao.github.io/types.js/#isWeakSet)
+### [isWeakSet](https://yaohaixiao.github.io/types.js/#method-isWeakSet)
 
 isWeakSet ( val )方法用来检测测试数据是否为 WeakSet 类型。
 
@@ -1684,7 +1684,7 @@ Types.isWeakSet(weakset); // -> true
 Types.isWeakSet(set) // -> false
 ```
 
-### [isXML](https://yaohaixiao.github.io/types.js/#isXML)
+### [isXML](https://yaohaixiao.github.io/types.js/#method-isXML)
 
 isValue ( obj )方法返回检测数据的是否为 XML 格式数据。
 
