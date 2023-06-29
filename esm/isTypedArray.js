@@ -7,7 +7,8 @@ import _type from './_type'
  */
 const isTypedArray = (val) => {
   const type = _type(val)
-  const isTyped = /^(Float(?:32|64)|(Int|Uint)(?:8|16|32)|Uint8Clamped)Array$/i
+  const isTyped =
+    /^(?:Float(?:32|64)|(Int|Uint)(?:8|16|32)|Uint8Clamped)Array$/i
   return isTyped.test(type)
 }
 

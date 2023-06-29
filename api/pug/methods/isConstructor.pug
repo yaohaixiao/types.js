@@ -8,7 +8,7 @@ section.section
     h5.section__h4 val
     dl.section__dl
       dt.section__dt Type：
-      dd.section__dd Function
+      dd.section__dd Function | Object
     p （必须）val 待检测的数据。
     h4.section__h4 Returns
     dl.section__dl
@@ -21,11 +21,11 @@ section.section
 
         const fn = function(){};
         const ff = class {};
-        const f = () => console.log('no constructable');
 
         Types.isConstructor(fn); // -> true
         Types.isConstructor(ff); // -> true
-        Types.isConstructor(f); // -> false
+        Types.isConstructor(console.log); // -> false
+
         Types.isConstructor(Math); // -> false
         Types.isConstructor(Boolean); // -> true
         Types.isConstructor(Array); // -> true
