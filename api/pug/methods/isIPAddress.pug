@@ -21,10 +21,15 @@ section.section
 
         // IPv4
         Types.isIPAddress('126.11.15.33') // -> true
+        Types.isIPAddress('255.255.255.255') // -> true
         Types.isIPAddress('126.11.15.255') // -> false
         Types.isIPAddress('126.11.15.256') // -> false
+        Types.isIPAddress('126.11.15.a56') // -> false
+        Types.isIPAddress('126.11.15.') // -> false
 
         // IPv6
         Types.isIPAddress('FC00:0000:130F:0000:0000:09C0:876A:130B') // -> true
+        Types.isIPAddress('FC00:0000:130F:0000:0000:09C0:876A:130') // -> true
         Types.isIPAddress('FC00:0000:130F:0000:0000:09C0:876A') // -> false
+        Types.isIPAddress('FC00:0000:130F:0000:0000:09C0:876A:X130') // -> false
 

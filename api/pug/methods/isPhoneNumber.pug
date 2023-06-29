@@ -19,11 +19,21 @@ section.section
       code.section__code.
         import Types from '@yaohaixiao/types.js/esm/types'
 
-        Types.isPhoneNumber('(123) 456-7890')
-        Types.isPhoneNumber('(123)456-7890')
-        Types.isPhoneNumber('139-456-7890')
-        Types.isPhoneNumber('139.456.7890')
-        Types.isPhoneNumber('1304567890')
-        Types.isPhoneNumber('+31636363634')
-        Types.isPhoneNumber('075-63546725')
-        Types.isPhoneNumber('+86 027 84923296')
+        // 移动电话号码
+        Types.isPhoneNumber(13901030304) // -> false
+        Types.isPhoneNumber('1390103030a') // => false
+
+        Types.isPhoneNumber('+86 13901030304') // -> true
+        Types.isPhoneNumber('13901030304') // -> true
+        Types.isPhoneNumber('139-010-30304') // -> true
+        Types.isPhoneNumber('139.010.30304') // -> true
+
+        // 固定电话号码
+        Types.isPhoneNumber('+86 84923296') // -> true
+        Types.isPhoneNumber('027 84923296') // -> true
+        Types.isPhoneNumber('(027) 84923296') // -> true
+        Types.isPhoneNumber('(027)84923296') // -> true
+        Types.isPhoneNumber('027-84923296') // -> true
+        Types.isPhoneNumber('027.84923296') // -> true
+        Types.isPhoneNumber('027 849-23296') // -> true
+        Types.isPhoneNumber('027-849-23296') // -> true

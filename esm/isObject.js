@@ -11,7 +11,7 @@ import { TYPES } from './enum'
 const isObject = (val) => {
   const type = typeof val
 
-  return (val && (type === TYPES.OBJECT || isFunction(val))) || false
+  return val && (type === TYPES.OBJECT || isFunction(val))
 }
 
 export default isObject

@@ -32,6 +32,15 @@ describe('is() 方法：', () => {
       expect(is(2023)).toBe('number')
     })
 
+    it('is(NaN), 返回：number', () => {
+      expect(is(NaN)).toBe('number')
+    })
+
+    it('is(Infinity), 返回：number', () => {
+      expect(is(Infinity)).toBe('number')
+      expect(is(-Infinity)).toBe('number')
+    })
+
     it('is(true), 返回：boolean', () => {
       expect(is(true)).toBe('boolean')
     })
@@ -68,13 +77,42 @@ describe('is() 方法：', () => {
   })
 
   describe('判断 Object 相关类型：', () => {
-    it('is(() => {})), 返回：function', () => {
+    it('is({}), 返回：object', () => {
+      expect(is({})).toBe('object')
+    })
+
+    it('is(new Object()), 返回：object', () => {
+      const o = new Object()
+      expect(is(o)).toBe('object')
+    })
+
+    it('is(Object.create(null)), 返回：object', () => {
+      const o = Object.create(null)
+      expect(is(o)).toBe('object')
+    })
+
+    it('is(new String()), 返回：object', () => {
+      const str = new String()
+      expect(is(str)).toBe('object')
+    })
+
+    it(`is(new Number()), 返回：object`, () => {
+      const num = new Number()
+      expect(is(num)).toBe('object')
+    })
+
+    it(`is(new Boolean()), 返回：object`, () => {
+      const bool = new Boolean()
+      expect(is(bool)).toBe('object')
+    })
+
+    it('is(() => {}), 返回：function', () => {
       const fn = () => {};
 
       expect(is(fn)).toBe('function')
     })
 
-    it('is(() => {})), 返回：function', () => {
+    it('function(arg) {is(arguments)}), 返回：function', () => {
       let args
 
       function test(age){
@@ -99,12 +137,6 @@ describe('is() 方法：', () => {
       expect(is($list)).toBe('element')
     })
 
-    it(`is(document.querySelector('#list')), 返回：element`, () => {
-      const $list = document.querySelector('#list');
-
-      expect(is($list)).toBe('element')
-    })
-
     it(`is(document.querySelectorAll('.item')), 返回：collection`, () => {
       const $items = document.querySelectorAll('.item');
 
@@ -115,12 +147,6 @@ describe('is() 方法：', () => {
       const $text = document.createTextNode('text');
 
       expect(is($text)).toBe('text')
-    })
-
-    it(`is(document.createTextNode('')), 返回：whitespace`, () => {
-      const $text = document.createTextNode('');
-
-      expect(is($text)).toBe('whitespace')
     })
 
     it(`is(/\s/ig)), 返回：regexp`, () => {
@@ -136,10 +162,6 @@ describe('is() 方法：', () => {
 
     it(`is(new Error('error'))), 返回：error`, () => {
       expect(is(new Error('error'))).toBe('error')
-    })
-
-    it(`is(new FormData()), 返回：[object FormData]`, () => {
-      expect(is(new FormData())).toBe('[object FormData]')
     })
   })
 
@@ -186,6 +208,13 @@ describe('is() 方法：', () => {
 
     it('is(new Float64Array([])), 返回：float64array', () => {
       expect(is(new Float64Array([]))).toBe('float64array')
+    })
+  })
+
+  describe('判断其它类型:', () => {
+    it(`is(new FormData()), 返回：[object FormData]`, () => {
+      const data = new FormData()
+      expect(is(data)).toBe('[object FormData]')
     })
   })
 })

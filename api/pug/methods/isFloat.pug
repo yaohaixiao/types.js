@@ -19,9 +19,11 @@ section.section
       code.section__code.
         import Types from '@yaohaixiao/types.js/esm/types'
 
-        Types.isFloat(2.4); // -> true
+        Types.isFloat(.1); // -> true
+        Types.isFloat(1.01); // -> true
         Types.isFloat(Number("3.4556645445E7")); // -> true
         Types.isFloat(Number("3.4556645445E10")); // -> false
-        Types.isFloat(2); // -> false
+        Types.isFloat(2.0); // -> false
         Types.isFloat(0xffffff); // -> false
         Types.isFloat(NaN); // -> false
+        Types.isFloat(Infinity); // -> false

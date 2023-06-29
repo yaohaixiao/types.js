@@ -19,9 +19,8 @@ section.section
       code.section__code.
         import Types from '@yaohaixiao/types.js/esm/types'
         import jsdom from 'jsdom'
-        import xmldom from 'xmldom'
+        import { DOMParser } from 'xmldom'
 
-        const { DOMParser } = xmldom;
         const { JSDOM } = jsdom;
 
         const HTML = new JSDOM('&lt;html&gt;&lt;head&gt;&lt;title&gt;isXML&lt;/title&gt;&lt;/head&gt;&lt;body&gt;&lt;p&gt;p1&lt;/p&gt;&lt;p&gt;p2&lt;/p&gt;&lt;p&gt;p3&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;');
@@ -33,4 +32,6 @@ section.section
             '&lt;/xml&gt;','text/xml');
 
         Types.isXML(XML); // -> true
+
+        Types.isXML('html') // -> false
         Types.isXML(HTML); // -> false

@@ -9,13 +9,15 @@ import isUndefined from './isUndefined'
  * @returns {Boolean}
  */
 const hasOwn = (obj, prop) => {
-  if (obj.hasOwnProperty) {
-    return obj.hasOwnProperty.call(prop)
-  } else {
-    return (
-      !isUndefined(obj[prop]) && obj.constructor.prototype[prop] !== obj[prop]
-    )
+  const hasOwnProperty = Object.prototype.hasOwnProperty
+
+  if (hasOwnProperty) {
+    return hasOwnProperty.call(obj, prop)
   }
+
+  return (
+    !isUndefined(obj[prop]) && obj.constructor.prototype[prop] !== obj[prop]
+  )
 }
 
 export default hasOwn

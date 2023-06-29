@@ -29,13 +29,12 @@ section.section
         Types.isEmptyObject(Person); // true
         Types.isEmptyObject(new Object()); // true
         Types.isEmptyObject(new Boolean()); // true
-        Types.isEmptyObject(new Function('alert(\'function\')')); // true
         Types.isEmptyObject(new Array()); // true
         Types.isEmptyObject(new Date('2017-12-11')); // true
         Types.isEmptyObject(new RegExp('\s+','ig')); // true
-        Types.isEmptyObject(null); // true
         Types.isEmptyObject(new String()); // true
-        Types.isEmptyObject(new String('string')); // false
+        Types.isEmptyObject(new Function()); // false
+        Types.isEmptyObject(['']); // false
+        Types.isEmptyObject(null); // false
         Types.isEmptyObject({name:'robert'}); // -> false
         Types.isEmptyObject(new Person('robert',30)); // false
-        Types.isEmptyObject(['']); // false

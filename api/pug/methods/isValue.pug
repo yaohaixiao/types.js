@@ -3,7 +3,7 @@ section.section
     h3#method-isValue.section__h3 isValue(val)
   div.section__content
     h4.section__h4 Description
-    p isValue(val) 方法用来检测测试数据是否有效的数据（非null、undefined或者正负无穷数值）。
+    p isValue(val) 方法用来检测测试数据是否有效的数据（非null、undefined、NaN或者正负无穷数值）。
     h4.section__h4 Parameters
     h5.section__h4 val
     dl.section__dl
@@ -19,14 +19,29 @@ section.section
       code.section__code.
         import Types from '@yaohaixiao/types.js/esm/types'
 
-        const projects;
+        const fn = () => {}
+        let projects
+        function empty(){}
 
+        // 非有效数据
         Types.isValue(projects); // -> false
-        Types.isValue(function empty(){}); // -> true
-        Types.isValue(/\s+/ig); // -> true
-        Types.isValue([]); // -> true
-        Types.isValue(''); // -> true
-        Types.isValue(0); // -> true
         Types.isValue(NaN); // -> false
-        Types.isValue( null ); // -> false
+        Types.isValue(null); // -> false
+        Types.isValue(Infinity) // -> false
+        Types.isValue(-Infinity) // -> false
+
+        // 有效数据
+        Types.isValue(0); // -> true
+        Types.isValue(''); // -> true
+        Types.isValue(false); // -> true
+        Types.isValue([]); // -> true
         Types.isValue({}); // -> true
+        Types.isValue(/\s+/ig); // -> true
+        Types.isValue(new Date()); // -> true
+        Types.isValue(empty); // -> true
+        Types.isValue(fn); // -> true
+
+
+
+
+

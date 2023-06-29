@@ -20,22 +20,27 @@ section.section
         import Types from '@yaohaixiao/types.js/esm/types'
 
         const numbers = [ 2, 4 ]
+        let args
 
-        function test(){
-            Types.isTypedArray( arguments ); // -> false
+        function test(str) {
+          args = arguments
+          return str
         }
 
-        test();
+        test('str')
 
+        Types.isTypedArray( args ); // -> false
         Types.isTypedArray( numbers ); // -> false
         Types.isTypedArray( new Array() ); // -> false
 
-        Types.isTypedArray(new Int8Array()) // -> true
-        Types.isTypedArray(new Int16Array()) // -> true
-        Types.isTypedArray(new Int32Array()) // -> true
-        Types.isTypedArray(new Float32Array()) // -> true
-        Types.isTypedArray(new Float64Array()) // -> true
-        Types.isTypedArray(new Uint8ClampedArray()) // -> true
-        Types.isTypedArray(new Uint8Array()) // -> true
-        Types.isTypedArray(new Uint16Array()) // -> true
-        Types.isTypedArray(new Uint32Array()) // -> true
+        Types.isTypedArray(new Int8Array([])) // -> true
+        Types.isTypedArray(new Int16Array([])) // -> true
+        Types.isTypedArray(new Int32Array([])) // -> true
+
+        Types.isTypedArray(new Uint8ClampedArray([])) // -> true
+        Types.isTypedArray(new Uint8Array([])) // -> true
+        Types.isTypedArray(new Uint16Array([])) // -> true
+        Types.isTypedArray(new Uint32Array([])) // -> true
+
+        Types.isTypedArray(new Float32Array([])) // -> true
+        Types.isTypedArray(new Float64Array([])) // -> true

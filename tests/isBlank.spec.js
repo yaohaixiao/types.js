@@ -10,6 +10,7 @@ describe('isBlank() 方法：', () => {
   })
 
   it(`isBlank(new String()), 返回：false`, () => {
-    expect(isBlank(new String())).toBe(false)
+    const str = new String()
+    expect(isBlank(str)).toBe(false)
   })
 })

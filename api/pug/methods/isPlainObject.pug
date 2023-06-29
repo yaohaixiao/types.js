@@ -19,9 +19,29 @@ section.section
       code.section__code.
         import Types from '@yaohaixiao/types.js/esm/types'
 
+        let udf
+
+        // 基础类型
+        Types.isPlainObject(2); // -> false
+        Types.isPlainObject('str'); // -> false
+        Types.isPlainObject(false); // -> false
+        Types.isPlainObject(null); // -> false
+        Types.isPlainObject(udf); // -> false
+
+        // 引用类型
+        Types.isPlainObject(new Function()) // -> false
+        Types.isPlainObject(function(){}) // -> false
+        Types.isPlainObject(() => {}) // -> false
+        Types.isPlainObject(class{}) // -> false
+
+        Types.isPlainObject(new class{}) // -> true
         Types.isPlainObject({}); // -> true
         Types.isPlainObject(Object.create(null)); // -> true
-        Types.isPlainObject(function empty(){}); // -> false
-        Types.isPlainObject([]); // -> false
-        Types.isPlainObject(null); // -> false
-        Types.isPlainObject(document.getElementById('wrap')); // -> false
+        Types.isPlainObject(new Object()); // -> true
+        Types.isPlainObject([]); // -> true
+        Types.isPlainObject(/s+/ig) // -> true
+        Types.isPlainObject(new String()) // -> true
+        Types.isPlainObject(new Number()) // -> true
+        Types.isPlainObject(new Boolean()) // -> true
+        Types.isPlainObject(new Array()) // -> true
+        Types.isPlainObject(new Date()) // -> true

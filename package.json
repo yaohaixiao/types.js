@@ -1,6 +1,6 @@
 {
   "name": "@yaohaixiao/types.js",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "description": "types.js - 专注于检测 JavaScript 数据类型的工具库。",
   "main": "types.min.js",
   "scripts": {
@@ -70,11 +70,13 @@
     "jest": "^29.5.0",
     "jest-environment-jsdom": "^29.5.0",
     "jest-html-reporter": "^3.7.0",
+    "jsdom": "^22.1.0",
     "less-plugin-autoprefix": "^2.0.0",
     "lint-staged": "^13.1.2",
     "os": "^0.1.2",
     "prettier": "^2.8.4",
-    "rollup": "^3.25.2"
+    "rollup": "^3.25.2",
+    "xmldom": "^0.6.0"
   },
   "gitHooks": {
     "pre-commit": "lint-staged",

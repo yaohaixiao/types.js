@@ -16,6 +16,7 @@ const isEmptyObject = (obj) => {
   }
 
   for (prop in obj) {
+    /* istanbul ignore else */
     if (hasOwn(obj, prop)) {
       return false
     }

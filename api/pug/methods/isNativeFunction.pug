@@ -26,11 +26,15 @@ section.section
         Types.isNativeFunction(fn); // -> false
         Types.isNativeFunction(ff); // -> false
         Types.isNativeFunction(f); // -> false
+        Types.isNativeFunction(document.domain) // -> false
 
-        Types.isNativeFunction(Math); // -> true
         Types.isNativeFunction(Boolean); // -> true
-        Types.isNativeFunction(Array); // -> true
-        Types.isNativeFunction(Function); // -> true
-        Types.isNativeFunction(Date); // -> true
-        Types.isNativeFunction(RegExp); // -> true
+        Types.isNativeFunction(String); // -> true
+        Types.isNativeFunction(Number); // -> true
         Types.isNativeFunction(Object); // -> true
+        Types.isNativeFunction(Data); // -> true
+        Types.isNativeFunction(RegExp); // -> true
+        Types.isNativeFunction(Error); // -> true
+        Types.isNativeFunction(Math.floor); // -> true
+        Types.isNativeFunction(console.log); // -> true
+        Types.isNativeFunction(alert); // -> true

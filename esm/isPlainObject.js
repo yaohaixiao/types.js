@@ -15,7 +15,7 @@ const isPlainObject = (val) => {
   let Ctor
 
   // Detect obvious negatives
-  if (!val || !isObject(val)) {
+  if (!isObject(val)) {
     return false
   }
 

@@ -4,7 +4,7 @@ import isString from './isString'
  * 检测是否为正确的 Email 邮箱地址格式
  * ========================================================================
  * @method isEmail
- * @param val
+ * @param {String} val
  * @returns {boolean}
  */
 const isEmail = (val) => {

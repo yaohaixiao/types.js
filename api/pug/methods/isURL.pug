@@ -19,11 +19,28 @@ section.section
       code.section__code.
         import Types from '@yaohaixiao/types.js/esm/types'
 
+        // IP 访问
+        Types.isURL('http://127.0.0.1') // -> true
+        Types.isURL('https://127.0.0') // -> false
+        Types.isURL('https://127.0.0.') // -> false
+
+        Types.isURL('http://127.0.0.1:8080') // -> true
+        Types.isURL('http://127.0.0.1:8080#top') // -> true
+        Types.isURL('http://127.0.0.1:8080?id=22') // -> true
+        Types.isURL('http://127.0.0.1/console') // -> true
+        Types.isURL('http://127.0.0.1:8080/workbench/?id=2#projects') // -> true
+
+        // 域名访问
         Types.isURL('http://localhost') -> false
-        Types.isURL('https://10.20.34.256') -> true
+        Types.isURL('ftp://www.yaohaixiao.com') -> false
+
+        Types.isURL('http://www.yaohaixiao.') -> false
+        Types.isURL('http://www.yaohaixiao.c') -> false
+        Types.isURL('http://www.yaohaixiao.c1') -> false
+
+        Types.isURL('https://www.yaohaixiao.cn') -> true
         Types.isURL('https://www.yaohaixiao.com') -> true
         Types.isURL('https://www.yaohaixiao.com:8083') -> true
-        Types.isURL('https://www.yaohaixiao.com:8083/blog') -> true
-        Types.isURL('https://www.yaohaixiao.com:8083/blog#top') -> true
-        Types.isURL('https://www.yaohaixiao.com:8083/blog?page=2') -> true
+        Types.isURL('https://www.yaohaixiao.com/blog#top') -> true
+        Types.isURL('https://www.yaohaixiao.com/blog/?page=2') -> true
         Types.isURL('https://www.yaohaixiao.com:8083/blog?page=2#top') -> true

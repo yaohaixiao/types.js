@@ -20,9 +20,28 @@ section.section
         import Types from '@yaohaixiao/types.js/esm/types'
 
         const Yao= {
-          age: 40
+          age: 40,
+          career: 'programmer'
         }
 
-        Types.isPrototype(Object) => false
-        Types.isPrototype(Object.prototype) => true
-        Types.isPrototype(Yao.__proto__) => true
+        const Programmer = function(name, age) {
+          this.name = name
+          this.age = age
+          this.isDead = false
+
+          return this
+        }
+
+        Programmer.prototype.career = 'programmer'
+        Programmer.prototype.getWorkDone = function() {
+          this.isDead = true
+          return this
+        }
+
+        Types.isPrototype(null) // => false
+
+        Types.isPrototype(Object) // => false
+        Types.isPrototype(Object.prototype) // => true
+
+        Types.isPrototype(Programmer) // => false
+        Types.isPrototype(Yao.__proto__) // => true

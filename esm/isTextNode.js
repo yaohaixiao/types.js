@@ -10,7 +10,7 @@ import { TYPES } from './enum'
  */
 const isTextNode = (val) => {
   const type = _type(val)
-  return type === TYPES.TEXT || type === TYPES.WHITESPACE
+  return type === TYPES.TEXT
 }
 
 export default isTextNode

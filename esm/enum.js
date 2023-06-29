@@ -15,7 +15,6 @@ export const TYPES = {
   FUNCTION: 'function',
   ELEMENT: 'element',
   TEXT: 'text',
-  WHITESPACE: 'whitespace',
   REGEXP: 'regexp',
   SYMBOL: 'symbol',
   SET: 'set',
@@ -34,10 +33,15 @@ export const TYPES = {
 }
 
 export const OBJECTS = {
+  STRING: '[object String]',
+  NUMBER: '[object Number]',
+  BOOLEAN: '[object Boolean]',
+  NULL: '[object Null]',
+  UNDEFINED: '[object Undefined]',
+  OBJECT: '[object Object]',
   ARGUMENTS: '[object Arguments]',
   ARRAY: '[object Array]',
   ARRAY_BUFFER: '[object ArrayBuffer]',
-  NODE_LIST: '[object NodeList]',
   INT8_ARRAY: '[object Int8Array]',
   UNIT8_ARRAY: '[object Uint8Array]',
   UNIT8_CLAMPED_ARRAY: '[object Uint8ClampedArray]',
@@ -56,5 +60,7 @@ export const OBJECTS = {
   WEAK_SET: '[object WeakSet]',
   MAP: '[object Map]',
   WEAK_MAP: '[object WeakMap]',
-  SYMBOL: '[object Symbol]'
+  SYMBOL: '[object Symbol]',
+  NODE_LIST: '[object NodeList]',
+  TEXT_NODE: '[object Text]'
 }

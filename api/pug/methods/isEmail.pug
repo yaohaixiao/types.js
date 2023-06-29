@@ -19,6 +19,22 @@ section.section
       code.section__code.
         import Types from '@yaohaixiao/types.js/esm/types'
 
-        Types.isEmail('hx@11.com') // => true
-        Types.isEmail('hx#11.com') // => false
-        Types.isEmail('hx@11.') // => false
+        Types.isEmail('yaohaixiao@gmail.com') // => true
+        Types.isEmail('yaohaixiao@gmail.c') // => true
+        Types.isEmail('haixiao-yao@gmail.com') // => true
+        Types.isEmail('haixiao_yao@gmail.com') // => true
+        Types.isEmail('haixiao&yao@gmail.com') // => true
+        Types.isEmail('haixiao~yao@gmail.com') // => true
+        Types.isEmail('haixiao+yao@gmail.com') // => true
+        Types.isEmail('haixiao^yao@gmail.com') // => true
+        Types.isEmail('haixiao%yao@gmail.com') // => true
+        Types.isEmail('haixiao$yao@gmail.com') // => true
+        Types.isEmail('haixiao.yao@gmail.com') // => true
+        Types.isEmail('haixiao/yao@gmail.com') // => true
+        Types.isEmail('haixiao#yao@gmail.com') // => true
+        Types.isEmail('yao{haixiao@gmail.com') // => true
+        Types.isEmail('yao|haixiao@gmail.com') // => true
+        Types.isEmail('yao}haixiao@gmail.com') // => true
+        Types.isEmail('yaohaixiao#gmail.com') // => false
+        Types.isEmail('yao\haixiao@gmail.com') // => false
+        Types.isEmail('yao[haixiao@gmail.com') // => false
