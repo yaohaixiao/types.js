@@ -1,3 +1,12 @@
+# [0.3.0](https://github.com/yaohaixiao/types.js/compare/0.2.2...0.3.0) (2023-06-29)
+
+
+### Features
+
+* 完成全部代码的单测，完善 API 文档的示例代码 ([e71f32e](https://github.com/yaohaixiao/types.js/commit/e71f32ea7b83639d1fd16001f762047fdd5eb28d))
+
+
+
 ## [0.2.2](https://github.com/yaohaixiao/types.js/compare/0.2.1...0.2.2) (2023-06-29)
 
 
