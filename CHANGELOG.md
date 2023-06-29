@@ -1,3 +1,12 @@
+## [0.2.2](https://github.com/yaohaixiao/types.js/compare/0.2.1...0.2.2) (2023-06-29)
+
+
+### Bug Fixes
+
+* 修复 isConstructor() 方法中判断 isFunction 的逻辑错误问题 ([f60843e](https://github.com/yaohaixiao/types.js/commit/f60843e62e627462d0ad86248d4e2a8fb87d2f06))
+
+
+
 ## [0.2.1](https://github.com/yaohaixiao/types.js/compare/0.2.0...0.2.1) (2023-06-28)
 
 
