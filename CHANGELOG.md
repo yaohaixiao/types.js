@@ -1,3 +1,12 @@
+# [0.5.0](https://github.com/yaohaixiao/types.js/compare/0.4.0...0.5.0) (2023-06-30)
+
+
+### Features
+
+* 添加 isEmptyArray() 和 isHTML() 方法，并进一步完善单测 ([f10e27b](https://github.com/yaohaixiao/types.js/commit/f10e27b21ec2b509a684e464f67113fc8e1cede2))
+
+
+
 # [0.4.0](https://github.com/yaohaixiao/types.js/compare/0.3.0...0.4.0) (2023-06-30)
 
 
