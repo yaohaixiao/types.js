@@ -27,6 +27,7 @@ import isError from './isError'
 import isEven from './isEven'
 import isFloat from './isFloat'
 import isFunction from './isFunction'
+import isHash from './isHash'
 import isHex from './isHex'
 import isHTMLCollection from './isHTMLCollection'
 import isInfinite from './isInfinite'
@@ -89,6 +90,7 @@ const Types = {
   isEven,
   isFloat,
   isFunction,
+  isHash,
   isHex,
   isHTMLCollection,
   isInfinite,

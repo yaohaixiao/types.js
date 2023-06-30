@@ -18,9 +18,11 @@ section.section
     pre.section__pre
       code.section__code.
         import Types from '@yaohaixiao/types.js/esm/types'
+        // 或者单独引用 isDataView() 方法
+        // import isDataView from '@yaohaixiao/types.js/esm/isDataView'
 
-        const buffer = new ArrayBuffer(8);
-        const dv = new DataView(buffer);
+        const buffer = new ArrayBuffer(8)
+        const dv = new DataView(buffer)
 
-        Types.isDataView(buffer); // -> false
-        Types.isDataView(dv); // -> true
+        Types.isDataView(buffer) // -> false
+        Types.isDataView(dv) // -> true

@@ -18,18 +18,20 @@ section.section
     pre.section__pre
       code.section__code.
         import Types from '@yaohaixiao/types.js/esm/types'
+        // 或者单独引用 isConstructor() 方法
+        // import isConstructor from '@yaohaixiao/types.js/esm/isConstructor'
 
         const fn = function(){};
         const ff = class {};
 
-        Types.isConstructor(fn); // -> true
-        Types.isConstructor(ff); // -> true
-        Types.isConstructor(console.log); // -> false
+        Types.isConstructor(fn) // -> true
+        Types.isConstructor(ff) // -> true
+        Types.isConstructor(console.log) // -> false
 
-        Types.isConstructor(Math); // -> false
-        Types.isConstructor(Boolean); // -> true
-        Types.isConstructor(Array); // -> true
-        Types.isConstructor(Function); // -> true
-        Types.isConstructor(Date); // -> true
-        Types.isConstructor(RegExp); // -> true
-        Types.isConstructor(Object); // -> true
+        Types.isConstructor(Math) // -> false
+        Types.isConstructor(Boolean) // -> true
+        Types.isConstructor(Array) // -> true
+        Types.isConstructor(Function) // -> true
+        Types.isConstructor(Date) // -> true
+        Types.isConstructor(RegExp) // -> true
+        Types.isConstructor(Object) // -> true

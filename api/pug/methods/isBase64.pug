@@ -18,6 +18,8 @@ section.section
     pre.section__pre
       code.section__code.
         import Types from '@yaohaixiao/types.js/esm/types'
+        // 或者单独引用 isBase64() 方法
+        // import isBase64 from '@yaohaixiao/types.js/esm/isBase64'
 
-        Types.isBase64('Z29vZA=='); // -> true
-        Types.isBase64('aXNCYXNlNjQ=2'); // -> false
+        Types.isBase64('Z29vZA==') // -> true
+        Types.isBase64('aXNCYXNlNjQ=2') // -> false

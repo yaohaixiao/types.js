@@ -18,17 +18,26 @@ section.section
     pre.section__pre
       code.section__code.
         import Types from '@yaohaixiao/types.js/esm/types'
+        // 或者单独引用 isArguments() 方法
+        // import isArguments from '@yaohaixiao/types.js/esm/isArguments'
 
-        Types.isArguments([]); // -> false
-
-        function test(){
-          Types.isArguments(arguments); // -> true
-        }
-
-        const check = () => {
+        let argsOne
+        let argsTwo
+        const check = (b) => {
           // 箭头函数没有 arguments 对象
-          Types.isArguments(arguments); // -> false
+          argsTwo = arguments
+
+          return b === 'check'
         }
 
-        test()
-        check()
+        function test(a){
+          argsOne = arguments
+
+          return a === 'test'
+        }
+
+        test('test')
+        check('check')
+
+        Types.isArguments(argsOne) // -> true
+        Types.isArguments(argsTwo) // -> false

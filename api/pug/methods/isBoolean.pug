@@ -18,17 +18,19 @@ section.section
     pre.section__pre
       code.section__code.
         import Types from '@yaohaixiao/types.js/esm/types'
+        // 或者单独引用 isBoolean() 方法
+        // import isBoolean from '@yaohaixiao/types.js/esm/isBoolean'
 
-        let projects;
+        let projects
 
-        Types.isBoolean(!!0); // -> true
-        Types.isBoolean(1); // -> false
-        Types.isBoolean(false); // -> true
-        Types.isBoolean(true); // -> true
-        Types.isBoolean(Boolean('1')); // -> true
-        Types.isBoolean(new Boolean('')); // -> false
-        Types.isBoolean(''); // -> false
-        Types.isBoolean(null); // -> false
-        Types.isBoolean(NaN); // -> false
-        Types.isBoolean(projects); // -> false
-        Types.isBoolean(!!projects); // -> true
+        Types.isBoolean(!!0) // -> true
+        Types.isBoolean(1) // -> false
+        Types.isBoolean(false) // -> true
+        Types.isBoolean(true) // -> true
+        Types.isBoolean(Boolean('1')) // -> true
+        Types.isBoolean(new Boolean('')) // -> false
+        Types.isBoolean('') // -> false
+        Types.isBoolean(null) // -> false
+        Types.isBoolean(NaN) // -> false
+        Types.isBoolean(projects) // -> false
+        Types.isBoolean(!!projects) // -> true

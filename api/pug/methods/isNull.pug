@@ -18,7 +18,9 @@ section.section
     pre.section__pre
       code.section__code.
         import Types from '@yaohaixiao/types.js/esm/types'
+        // 或者单独引用 isNull() 方法
+        // import isNull from '@yaohaixiao/types.js/esm/isNull'
 
-        Types.isNull(null); // -> true
-        Types.isNull({}); // -> false
-        Types.isNull(projects); // -> false
+        Types.isNull(null) // -> true
+        Types.isNull({}) // -> false
+        Types.isNull(projects) // -> false

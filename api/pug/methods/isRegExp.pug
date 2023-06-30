@@ -18,10 +18,12 @@ section.section
     pre.section__pre
       code.section__code.
         import Types from '@yaohaixiao/types.js/esm/types'
+        // 或者单独引用 isRegExp() 方法
+        // import isRegExp from '@yaohaixiao/types.js/esm/isRegExp'
 
         const pattern = new RegExp('\s+','ig')
 
-        Types.isRegExp(pattern); // -> true
-        Types.isRegExp(/\s+/ig); // -> true
+        Types.isRegExp(pattern) // -> true
+        Types.isRegExp(/\s+/ig) // -> true
 
-        Types.isRegExp('/\s+/ig'); // -> false
+        Types.isRegExp('/\s+/ig') // -> false

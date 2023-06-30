@@ -18,6 +18,8 @@ section.section
     pre.section__pre
       code.section__code.
         import Types from '@yaohaixiao/types.js/esm/types'
+        // 或者单独引用 isInfinite() 方法
+        // import isInfinite from '@yaohaixiao/types.js/esm/isInfinite'
 
-        Types.isInfinite(2.4); // -> false
-        Types.isInfinite(Infinity); // -> true
+        Types.isInfinite(2.4) // -> false
+        Types.isInfinite(Infinity) // -> true

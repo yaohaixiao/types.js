@@ -18,17 +18,20 @@ section.section
     pre.section__pre
       code.section__code.
         import Types from '@yaohaixiao/types.js/esm/types'
+        // 或者单独引用 isUint8ClampedArray() 方法
+        // import isUint8ClampedArray from '@yaohaixiao/types.js/esm/isUint8ClampedArray'
 
         const numbers = [ 2, 4 ]
+        let args
 
-        function test(){
-            Types.isUint32Array( arguments ); // -> false
+        function test(a){
+          args = arguments
+          return a === 'test'
         }
 
-        test();
+        test()
 
-        Types.isUint32Array( numbers ); // -> false
-        Types.isUint32Array( [] ); // -> false
-        Types.isUint32Array( new Array() ); // -> false
-
-        Types.isUint32Array( new Uint8ClampedArray() ); // -> true
+        Types.isUint8ClampedArray(numbers) // -> false
+        Types.isUint8ClampedArray(new Array(32)) // -> false
+        Types.isUint8ClampedArray(args) // -> false
+        Types.isUint8ClampedArray(new Uint8ClampedArray()) // -> true

@@ -18,23 +18,25 @@ section.section
     pre.section__pre
       code.section__code.
         import Types from '@yaohaixiao/types.js/esm/types'
+        // 或者单独引用 isEmptyObject() 方法
+        // import isEmptyObject from '@yaohaixiao/types.js/esm/isEmptyObject'
 
         function Person(name,age){
            this.name = name;
            this.age = age;
         }
 
-        Types.isEmptyObject({}); // -> true
-        Types.isEmptyObject([]); // true
-        Types.isEmptyObject(Person); // true
-        Types.isEmptyObject(new Object()); // true
-        Types.isEmptyObject(new Boolean()); // true
-        Types.isEmptyObject(new Array()); // true
-        Types.isEmptyObject(new Date('2017-12-11')); // true
-        Types.isEmptyObject(new RegExp('\s+','ig')); // true
-        Types.isEmptyObject(new String()); // true
-        Types.isEmptyObject(new Function()); // false
-        Types.isEmptyObject(['']); // false
-        Types.isEmptyObject(null); // false
-        Types.isEmptyObject({name:'robert'}); // -> false
-        Types.isEmptyObject(new Person('robert',30)); // false
+        Types.isEmptyObject({}) // -> true
+        Types.isEmptyObject([]) // true
+        Types.isEmptyObject(Person) // true
+        Types.isEmptyObject(new Object()) // true
+        Types.isEmptyObject(new Boolean()) // true
+        Types.isEmptyObject(new Array()) // true
+        Types.isEmptyObject(new Date('2017-12-11')) // true
+        Types.isEmptyObject(new RegExp('\s+','ig')) // true
+        Types.isEmptyObject(new String()) // true
+        Types.isEmptyObject(new Function()) // false
+        Types.isEmptyObject(['']) // false
+        Types.isEmptyObject(null) // false
+        Types.isEmptyObject({name:'type.js'}) // -> false
+        Types.isEmptyObject(new Person('yaohaixiao',30)) // false

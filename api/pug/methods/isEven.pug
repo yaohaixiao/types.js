@@ -18,10 +18,12 @@ section.section
     pre.section__pre
       code.section__code.
         import Types from '@yaohaixiao/types.js/esm/types'
+        // 或者单独引用 isEven() 方法
+        // import isEven from '@yaohaixiao/types.js/esm/isEven'
 
-        Types.isEven(2); // -> true
-        Types.isEven(2.0); // -> true
-        Types.isEven('2'); // -> false
+        Types.isEven(2) // -> true
+        Types.isEven(2.0) // -> true
+        Types.isEven('2') // -> false
 
-        Types.isEven(3); // -> false
-        Types.isEven(2.2); // -> false
+        Types.isEven(3) // -> false
+        Types.isEven(2.2) // -> false

@@ -18,7 +18,9 @@ section.section
     pre.section__pre
       code.section__code.
         import Types from '@yaohaixiao/types.js/esm/types'
+        // 或者单独引用 isBlank() 方法
+        // import isBlank from '@yaohaixiao/types.js/esm/isBlank'
 
-        Types.isBlank('  '); // -> true
-        Types.isBlank(new String()); // -> false
-        Types.isBlank(''); // -> true
+        Types.isBlank('  ') // -> true
+        Types.isBlank(new String()) // -> false
+        Types.isBlank('') // -> true

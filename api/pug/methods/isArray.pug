@@ -18,7 +18,25 @@ section.section
     pre.section__pre
       code.section__code.
         import Types from '@yaohaixiao/types.js/esm/types'
+        // 或者单独引用 isArguments() 方法
+        // import isArray from '@yaohaixiao/types.js/esm/isArray'
 
+        let args
+
+        function sum (a, b){
+          args = arguments
+          return a + b
+        }
+
+        // True
         Types.isArray([]) // -> true
         Types.isArray(new Array()) // -> true
         Types.isArray('this is string could split it into array'.split(' ')) // -> true
+
+        // False
+        // 虽然  arguments 对象看起来也像数组，但是它也不是数组
+        Types.isArray(args) // -> false
+        // 虽然 HTMLNodeList 的看起来像数组，但它并不是数组
+        Types.isArray(document.getElementsByTagName('li')) // -> false
+        Types.isArray({0:1,1:2}) // -> false
+        Types.isArray( new Int8Array() ) // -> false

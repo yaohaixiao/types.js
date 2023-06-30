@@ -18,6 +18,8 @@ section.section
     pre.section__pre
       code.section__code.
         import Types from '@yaohaixiao/types.js/esm/types'
+        // 或者单独引用 isArrayBuffer() 方法
+        // import isArrayBuffer from '@yaohaixiao/types.js/esm/isArrayBuffer'
 
-        Types.isArrayBuffer([]); // -> false
-        Types.isArrayBuffer(new ArrayBuffer(8)); // -> true
+        Types.isArrayBuffer([]) // -> false
+        Types.isArrayBuffer(new ArrayBuffer(8)) // -> true

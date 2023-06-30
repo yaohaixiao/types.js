@@ -18,15 +18,17 @@ section.section
     pre.section__pre
       code.section__code.
         import Types from '@yaohaixiao/types.js/esm/types'
+        // 或者单独引用 isObjectLike() 方法
+        // import isObjectLike from '@yaohaixiao/types.js/esm/isObjectLike'
 
         // True
-        Types.isObject(function empty(){}); // -> true
-        Types.isObject({}); // -> true
-        Types.isObject(Object.create(null)); // -> true
-        Types.isObject(Object.create({})); // -> true
-        Types.isObject(new Function()); // -> true
+        Types.isObjectLike(function empty(){}) // -> true
+        Types.isObjectLike({}) // -> true
+        Types.isObjectLike(Object.create(null)) // -> true
+        Types.isObjectLike(Object.create({})) // -> true
+        Types.isObjectLike(new Function()) // -> true
 
         // False
-        Types.isObject([]); // -> false
-        Types.isObject(null); // -> false
-        Types.isObject(document.getElementById('wrap')); // -> false
+        Types.isObjectLike([]) // -> false
+        Types.isObjectLike(null) // -> false
+        Types.isObjectLike(document.getElementById('wrap')) // -> false

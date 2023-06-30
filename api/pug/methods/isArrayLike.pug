@@ -18,18 +18,21 @@ section.section
     pre.section__pre
       code.section__code.
         import Types from '@yaohaixiao/types.js/esm/types'
+        // 或者单独引用 isArrayLike() 方法
+        // import isArrayLike from '@yaohaixiao/types.js/esm/isArrayLike'
 
-        // arguments 对象也是类似数组类型的数据
+        let args
+
         function sum(a, b){
-            Types.isArrayLike(arguments); // -> true
-            return a + b;
+            args = arguments // -> true
+            return a + b
         }
 
-        sum(5, 6);
+        sum(5, 6)
 
-        Types.isArrayLike([1, 2, 3, 4, 5]); // -> true
-
+        Types.isArrayLike([1, 2, 3, 4, 5]) // -> true
+        // arguments 对象是类似数组类型的数据
+        Types.isArrayLike(args) // -> true
         // HTMLNodeList 是类似数组类型的数据
-        Types.isArrayLike(document.getElementsByTagName('li')); // -> true
-
-        Types.isArrayLike( new Int8Array() ); // -> false
+        Types.isArrayLike(document.getElementsByTagName('li')) // -> true
+        Types.isArrayLike( new Int8Array() ) // -> false

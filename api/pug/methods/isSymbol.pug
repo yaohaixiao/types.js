@@ -18,12 +18,14 @@ section.section
     pre.section__pre
       code.section__code.
         import Types from '@yaohaixiao/types.js/esm/types'
+        // 或者单独引用 isSymbol() 方法
+        // import isSymbol from '@yaohaixiao/types.js/esm/isSymbol'
 
-        const sym = Symbol('foo');
-        const symObj = Object(sym);
+        const sym = Symbol('foo')
+        const symObj = Object(sym)
 
         Types.is(sym) // -> 'symbol'
-        Types.isSymbol(sym); // -> true
+        Types.isSymbol(sym) // -> true
 
         Types.is(symObj) // -> 'object'
-        Types.isSymbol(symObj); // -> false
+        Types.isSymbol(symObj) // -> false

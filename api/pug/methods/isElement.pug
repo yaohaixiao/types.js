@@ -18,11 +18,13 @@ section.section
     pre.section__pre
       code.section__code.
         import Types from '@yaohaixiao/types.js/esm/types'
+        // 或者单独引用 isElement() 方法
+        // import isElement from '@yaohaixiao/types.js/esm/isElement'
 
         const tagDiv = document.createElement('div')
         const fragment = document.createDocumentFragment()
         const textNode = document.createTextNode('text')
 
-        Types.isElement(tagDiv); // -> true
-        Types.isElement(fragment); // -> false
-        Types.isElement(textNode); // -> false
+        Types.isElement(tagDiv) // -> true
+        Types.isElement(fragment) // -> false
+        Types.isElement(textNode) // -> false

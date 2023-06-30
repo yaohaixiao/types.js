@@ -18,10 +18,12 @@ section.section
     pre.section__pre
       code.section__code.
         import Types from '@yaohaixiao/types.js/esm/types'
+        // 或者单独引用 isSet() 方法
+        // import isSet from '@yaohaixiao/types.js/esm/isSet'
 
-        const mySet = new Set([1,2,3,4]);
+        const mySet = new Set([1,2,3,4])
 
         Types.is(mySet) // -> 'set'
-        Types.isSet(mySet); // -> true
+        Types.isSet(mySet) // -> true
 
         Types.isSet([1,2,3,4]) // -> false

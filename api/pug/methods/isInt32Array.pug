@@ -18,17 +18,21 @@ section.section
     pre.section__pre
       code.section__code.
         import Types from '@yaohaixiao/types.js/esm/types'
+        // 或者单独引用 isInt32Array() 方法
+        // import isInt32Array from '@yaohaixiao/types.js/esm/isInt32Array'
 
         const numbers = [ 2, 4 ]
+        let args
 
-        function test(){
-            Types.isInt32Array( arguments ); // -> false
+        function test(a){
+          args = arguments
+          return a === 'test'
         }
 
-        test();
+        test()
 
-        Types.isInt32Array( numbers ); // -> false
-        Types.isInt32Array( new Array() ); // -> false
-
+        Types.isInt32Array(numbers) // -> false
+        Types.isInt32Array(new Array(32)) // -> false
+        Types.isInt32Array(args) // -> false
         Types.isInt32Array(new Int32Array()) => true
 

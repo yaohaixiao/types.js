@@ -18,8 +18,10 @@ section.section
     pre.section__pre
       code.section__code.
         import Types from '@yaohaixiao/types.js/esm/types'
+        // 或者单独引用 isEmpty() 方法
+        // import isEmpty from '@yaohaixiao/types.js/esm/isEmpty'
 
-        Types.isEmpty(''); // -> true
-        Types.isEmpty(String()); // -> true
-        Types.isEmpty(new String()); // -> false
-        Types.isEmpty(' '); // -> false
+        Types.isEmpty('') // -> true
+        Types.isEmpty(String()) // -> true
+        Types.isEmpty(new String()) // -> false
+        Types.isEmpty(' ') // -> false

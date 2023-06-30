@@ -18,16 +18,9 @@ section.section
     pre.section__pre
       code.section__code.
         import Types from '@yaohaixiao/types.js/esm/types'
+        // 或者单独引用 isInt8Array() 方法
+        // import isInt8Array from '@yaohaixiao/types.js/esm/isInt8Array'
 
-        const numbers = [ 2, 4 ]
-
-        function test(){
-            Types.isInt8Array( arguments ); // -> false
-        }
-
-        test();
-
-        Types.isInt8Array( numbers ); // -> false
-        Types.isInt8Array( new Array() ); // -> false
-
-        Types.isInt8Array(new Int8Array()) => true
+        Types.isInt8Array([]) // -> false
+        Types.isInt8Array(new Array(8)) // -> false
+        Types.isInt8Array(new Int8Array([])) // -> true

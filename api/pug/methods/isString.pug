@@ -18,10 +18,12 @@ section.section
     pre.section__pre
       code.section__code.
         import Types from '@yaohaixiao/types.js/esm/types'
+        // 或者单独引用 isString() 方法
+        // import isString from '@yaohaixiao/types.js/esm/isString'
 
         const text = document.createTextNode('text')
 
-        Types.isString('string'); // -> true
-        Types.isString(String('string')); // -> true
-        Types.isString(new String('string')); // -> false
-        Types.isString(text); // -> false
+        Types.isString('string') // -> true
+        Types.isString(String('string')) // -> true
+        Types.isString(new String('string')) // -> false
+        Types.isString(text) // -> false

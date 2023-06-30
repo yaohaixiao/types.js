@@ -18,21 +18,62 @@ section.section
     pre.section__pre
       code.section__code.
         import Types from '@yaohaixiao/types.js/esm/types'
+        // 或者单独引用 is() 方法
+        // import is from '@yaohaixiao/types.js/esm/is'
 
         let Example
+        let args
+        const buffer = new ArrayBuffer(8)
+        const dv = new DataView(buffer)
 
+        function test(age){
+          args = arguments
+          return age
+        }
+
+        test(40)
+
+        // 基础值类型
         Types.is('types.js') // -> string
         Types.is(2023) // -> number
         Types.is(true) // -> boolean
-        Types.is(Example) // -> undefined
         Types.is(null) // -> null
+        Types.is(Example) // -> undefined
 
+        // Set/WeakSet/Map/WeakMap/Symbol
         Types.is(new Set()) // -> set
-        Types.is(new WeakSet() // -> weakset
-        Types.is(new Map() // -> map
-        Types.is(new WeakMap() // -> weakmap
+        Types.is(new WeakSet()) // -> weakset
+        Types.is(new Map()) // -> map
+        Types.is(new WeakMap()) // -> weakmap
         Types.is(Symbol()) // -> symbol
 
+        // Object 对象相关
+        Types.is({}) // -> object
+        Types.is(new Object()) // -> object
+        Types.is(Object.create(null)) // -> object
+        Types.is(new String()) // -> object
+        Types.is(new Number()) // -> object
+        Types.is(new Boolean()) // -> object
+        Types.is(new Error()) // -> error
+        Types.is(new Date()) // -> data
+        Types.is(new RegExp('/s/')) // -> regexp
+        Types.is(/\s+/ig) // -> regexp
+        Types.is(() => {}) // -> function
+        Types.is(args) // -> arguments
+        Types.is(dv) // -> dataview
+        Types.is(document.querySelector('#list')) // -> element
+        Types.is(document.querySelectorAll('.item')) // -> coolection
+        Types.is(document.createTextNode('text')) // -> text
+
+        // Array 相关
         Types.is([]) // -> array
-        Types.is(new ArrayBuffer(8)) // -> arraybuffer
+        Types.is(new ArrayBuffer(8)) // -> arraybubber
         Types.is(new Int8Array([])) // -> int8array
+        Types.is(new Int16Array([])) // -> int16array
+        Types.is(new Int32Array([])) // -> int32array
+        Types.is(new Uint8Array([])) // -> uint8array
+        Types.is(new Uint8ClampedArray([])) // -> uint8clampedarray
+        Types.is(new Uint16Array([])) // -> uint16array
+        Types.is(new Uint32Array([])) // -> uint32array
+        Types.is(new Float32Array([])) // -> float32array
+        Types.is(new Float64Array([])) // -> float64array

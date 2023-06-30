@@ -18,9 +18,11 @@ section.section
     pre.section__pre
       code.section__code.
         import Types from '@yaohaixiao/types.js/esm/types'
+        // 或者单独引用 isNumber() 方法
+        // import isNumber from '@yaohaixiao/types.js/esm/isNumber'
 
-        Types.isNumber(2); // -> true
-        Types.isNumber(2.4); // -> true
-        Types.isNumber(0xffffff); // -> true
-        Types.isNumber(NaN); // -> true
-        Types.isNumber('33'); // -> false
+        Types.isNumber(2) // -> true
+        Types.isNumber(2.4) // -> true
+        Types.isNumber(0xffffff) // -> true
+        Types.isNumber(NaN) // -> true
+        Types.isNumber('33') // -> false

@@ -18,10 +18,12 @@ section.section
     pre.section__pre
       code.section__code.
         import Types from '@yaohaixiao/types.js/esm/types'
+        // 或者单独引用 isNumeric() 方法
+        // import isNumeric from '@yaohaixiao/types.js/esm/isNumeric'
 
-        Types.isNumeric(2); // -> true
-        Types.isNumeric(2.4); // -> true
-        Types.isNumeric(0xffffff); // -> true
-        Types.isNumeric('33'); // -> true
-        Types.isNumeric('0xffffff'); // -> true
-        Types.isNumeric(NaN); // -> false
+        Types.isNumeric(2) // -> true
+        Types.isNumeric(2.4) // -> true
+        Types.isNumeric(0xffffff) // -> true
+        Types.isNumeric('33') // -> true
+        Types.isNumeric('0xffffff') // -> true
+        Types.isNumeric(NaN) // -> false

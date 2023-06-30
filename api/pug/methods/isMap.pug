@@ -18,13 +18,15 @@ section.section
     pre.section__pre
       code.section__code.
         import Types from '@yaohaixiao/types.js/esm/types'
+        // 或者单独引用 isMap() 方法
+        // import isMap from '@yaohaixiao/types.js/esm/isMap'
 
         const map = new Map([
             ['name', 'Robert'],
             ['Gender', 'Male']
-        ]);
+        ])
 
         Types.is(map) // -> 'map'
 
-        Types.isMap(map); // -> true
+        Types.isMap(map) // -> true
         Types.isMap(['name','robert']) // -> false

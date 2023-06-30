@@ -18,6 +18,8 @@ section.section
     pre.section__pre
       code.section__code.
         import Types from '@yaohaixiao/types.js/esm/types'
+        // 或者单独引用 isEmail() 方法
+        // import isEmail from '@yaohaixiao/types.js/esm/isEmail'
 
         Types.isEmail('yaohaixiao@gmail.com') // => true
         Types.isEmail('yaohaixiao@gmail.c') // => true

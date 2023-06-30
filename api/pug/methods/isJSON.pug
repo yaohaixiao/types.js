@@ -18,27 +18,29 @@ section.section
     pre.section__pre
       code.section__code.
         import Types from '@yaohaixiao/types.js/esm/types'
+        // 或者单独引用 isJSON() 方法
+        // import isJSON from '@yaohaixiao/types.js/esm/isJSON'
 
         // String
-        Types.isJSON(''); // -> false
-        Types.isJSON(""); // -> false
-        Types.isJSON("json"); // -> true
+        Types.isJSON('') // -> false
+        Types.isJSON("") // -> false
+        Types.isJSON("json") // -> true
 
         // Number
-        Types.isJSON(3); // -> false
-        Types.isJSON("3"); // -> true
+        Types.isJSON(3) // -> false
+        Types.isJSON("3") // -> true
 
         // Boolean
-        Types.isJSON(false); // -> false
-        Types.isJSON("false"); // -> true
+        Types.isJSON(false) // -> false
+        Types.isJSON("false") // -> true
 
         // Object
-        Types.isJSON(null); // -> false
-        Types.isJSON("null"); // -> true
+        Types.isJSON(null) // -> false
+        Types.isJSON("null") // -> true
 
-        Types.isJSON({ prop: 'JSON' }); // -> false
-        Types.isJSON("{\"prop\":\"JSON\"}"); // -> true
+        Types.isJSON({ prop: 'JSON' }) // -> false
+        Types.isJSON("{\"prop\":\"JSON\"}") // -> true
 
         // Array
-        Types.isJSON([1, 2, 3]; // -> false
-        Types.isJSON("[1, 2, 3]"; // -> true
+        Types.isJSON([1, 2, 3]) // -> false
+        Types.isJSON("[1, 2, 3]") // -> true

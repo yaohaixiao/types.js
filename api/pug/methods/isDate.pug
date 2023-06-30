@@ -18,9 +18,11 @@ section.section
     pre.section__pre
       code.section__code.
         import Types from '@yaohaixiao/types.js/esm/types'
+        // 或者单独引用 isDate() 方法
+        // import isDate from '@yaohaixiao/types.js/esm/isDate'
 
-        const time = new Date();
+        const time = new Date()
 
-        Types.isDate(time); // -> true
-        Types.isDate('2017-07-06'); // -> false
-        Types.isDate(time.getFullYear()); // -> false
+        Types.isDate(time) // -> true
+        Types.isDate('2017-07-06') // -> false
+        Types.isDate(time.getFullYear()) // -> false

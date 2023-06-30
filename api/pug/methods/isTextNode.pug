@@ -18,9 +18,11 @@ section.section
     pre.section__pre
       code.section__code.
         import Types from '@yaohaixiao/types.js/esm/types'
+        // 或者单独引用 isTextNode() 方法
+        // import isTextNode from '@yaohaixiao/types.js/esm/isTextNode'
 
         const tagDiv = document.createElement('div')
         const textNode = document.createTextNode('text')
 
-        Types.isTextNode(tagDiv); // -> false
-        Types.isTextNode(textNode); // -> true
+        Types.isTextNode(tagDiv) // -> false
+        Types.isTextNode(textNode) // -> true

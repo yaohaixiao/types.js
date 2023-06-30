@@ -76,7 +76,7 @@ describe('is() 方法：', () => {
     })
   })
 
-  describe('判断 Object 相关类型：', () => {
+  describe('判断 Object 相关：', () => {
     it('is({}), 返回：object', () => {
       expect(is({})).toBe('object')
     })
@@ -116,7 +116,7 @@ describe('is() 方法：', () => {
       let args
 
       function test(age){
-        args = is(arguments); // -> true
+        args = is(arguments); // -> arguments
         return age
       }
 
@@ -149,7 +149,11 @@ describe('is() 方法：', () => {
       expect(is($text)).toBe('text')
     })
 
-    it(`is(/\s/ig)), 返回：regexp`, () => {
+    it(`is(new RegExp('/\s/')), 返回：regexp`, () => {
+      expect(is(new RegExp('/s/'))).toBe('regexp')
+    })
+
+    it(`is(/\s+/ig)), 返回：regexp`, () => {
       expect(is(/\s/ig)).toBe('regexp')
     })
 
@@ -165,7 +169,7 @@ describe('is() 方法：', () => {
     })
   })
 
-  describe('判断 Array 相关类型：', () => {
+  describe('判断 Array 相关：', () => {
     it('is([]), 返回：array', () => {
       expect(is([])).toBe('array')
     })

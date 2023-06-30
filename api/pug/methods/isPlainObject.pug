@@ -18,15 +18,17 @@ section.section
     pre.section__pre
       code.section__code.
         import Types from '@yaohaixiao/types.js/esm/types'
+        // 或者单独引用 isPlainObject() 方法
+        // import isPlainObject from '@yaohaixiao/types.js/esm/isPlainObject'
 
         let udf
 
         // 基础类型
-        Types.isPlainObject(2); // -> false
-        Types.isPlainObject('str'); // -> false
-        Types.isPlainObject(false); // -> false
-        Types.isPlainObject(null); // -> false
-        Types.isPlainObject(udf); // -> false
+        Types.isPlainObject(2) // -> false
+        Types.isPlainObject('str') // -> false
+        Types.isPlainObject(false) // -> false
+        Types.isPlainObject(null) // -> false
+        Types.isPlainObject(udf) // -> false
 
         // 引用类型
         Types.isPlainObject(new Function()) // -> false
@@ -35,10 +37,10 @@ section.section
         Types.isPlainObject(class{}) // -> false
 
         Types.isPlainObject(new class{}) // -> true
-        Types.isPlainObject({}); // -> true
-        Types.isPlainObject(Object.create(null)); // -> true
-        Types.isPlainObject(new Object()); // -> true
-        Types.isPlainObject([]); // -> true
+        Types.isPlainObject({}) // -> true
+        Types.isPlainObject(Object.create(null)) // -> true
+        Types.isPlainObject(new Object()) // -> true
+        Types.isPlainObject([]) // -> true
         Types.isPlainObject(/s+/ig) // -> true
         Types.isPlainObject(new String()) // -> true
         Types.isPlainObject(new Number()) // -> true

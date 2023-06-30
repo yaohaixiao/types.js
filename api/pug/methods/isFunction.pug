@@ -18,18 +18,20 @@ section.section
     pre.section__pre
       code.section__code.
         import Types from '@yaohaixiao/types.js/esm/types'
+        // 或者单独引用 isFunction() 方法
+        // import isFunction from '@yaohaixiao/types.js/esm/isFunction'
 
         const empty = () => {}
 
-        Types.isFunction(Math); // -> false
+        Types.isFunction(Math) // -> false
 
-        Types.isFunction(empty); // -> true
-        Types.isFunction(parseInt); // -> true
-        Types.isFunction(Array); // -> true
-        Types.isFunction(Boolean); // -> true
-        Types.isFunction(Date); // -> true
-        Types.isFunction(Number); // -> true
-        Types.isFunction(Object); // -> true
-        Types.isFunction(RegExp); // -> true
-        Types.isFunction(String); // -> true
+        Types.isFunction(empty) // -> true
+        Types.isFunction(parseInt) // -> true
+        Types.isFunction(Array) // -> true
+        Types.isFunction(Boolean) // -> true
+        Types.isFunction(Date) // -> true
+        Types.isFunction(Number) // -> true
+        Types.isFunction(Object) // -> true
+        Types.isFunction(RegExp) // -> true
+        Types.isFunction(String) // -> true
         Types.isFunction(new Function()) // -> true

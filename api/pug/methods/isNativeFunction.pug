@@ -18,23 +18,25 @@ section.section
     pre.section__pre
       code.section__code.
         import Types from '@yaohaixiao/types.js/esm/types'
+        // 或者单独引用 isNativeFunction() 方法
+        // import isNativeFunction from '@yaohaixiao/types.js/esm/isNativeFunction'
 
         const fn = function(){};
         const ff = class {};
-        const f = () => console.log('no constructable');
+        const f = () => console.log('no constructable')
 
-        Types.isNativeFunction(fn); // -> false
-        Types.isNativeFunction(ff); // -> false
-        Types.isNativeFunction(f); // -> false
+        Types.isNativeFunction(fn) // -> false
+        Types.isNativeFunction(ff) // -> false
+        Types.isNativeFunction(f) // -> false
         Types.isNativeFunction(document.domain) // -> false
 
-        Types.isNativeFunction(Boolean); // -> true
-        Types.isNativeFunction(String); // -> true
-        Types.isNativeFunction(Number); // -> true
-        Types.isNativeFunction(Object); // -> true
-        Types.isNativeFunction(Data); // -> true
-        Types.isNativeFunction(RegExp); // -> true
-        Types.isNativeFunction(Error); // -> true
-        Types.isNativeFunction(Math.floor); // -> true
-        Types.isNativeFunction(console.log); // -> true
-        Types.isNativeFunction(alert); // -> true
+        Types.isNativeFunction(Boolean) // -> true
+        Types.isNativeFunction(String) // -> true
+        Types.isNativeFunction(Number) // -> true
+        Types.isNativeFunction(Object) // -> true
+        Types.isNativeFunction(Data) // -> true
+        Types.isNativeFunction(RegExp) // -> true
+        Types.isNativeFunction(Error) // -> true
+        Types.isNativeFunction(Math.floor) // -> true
+        Types.isNativeFunction(console.log) // -> true
+        Types.isNativeFunction(alert) // -> true

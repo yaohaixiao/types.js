@@ -18,9 +18,11 @@ section.section
     pre.section__pre
       code.section__code.
         import Types from '@yaohaixiao/types.js/esm/types'
+        // 或者单独引用 isHTMLCollection() 方法
+        // import isHTMLCollection from '@yaohaixiao/types.js/esm/isHTMLCollection'
 
         const $json = document.getElementById('isJSON')
         const $options = document.getElementsByTagName('li')
 
-        Types.isHTMLCollection($json); // -> false
-        Types.isHTMLCollection($options); // -> true
+        Types.isHTMLCollection($json) // -> false
+        Types.isHTMLCollection($options) // -> true

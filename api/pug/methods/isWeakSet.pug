@@ -18,14 +18,16 @@ section.section
     pre.section__pre
       code.section__code.
         import Types from '@yaohaixiao/types.js/esm/types'
+        // 或者单独引用 isWeakSet() 方法
+        // import isWeakSet from '@yaohaixiao/types.js/esm/isWeakSet'
 
         const weakset = new WeakSet([
             {'name': 'Robert'},
             window
-        ]);
-        const set = new Set([1,2,3]);
+        ])
+        const set = new Set([1,2,3])
 
         Types.is(weakset) // -> 'weakset'
 
-        Types.isWeakSet(weakset); // -> true
+        Types.isWeakSet(weakset) // -> true
         Types.isWeakSet(set) // -> false

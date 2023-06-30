@@ -18,15 +18,20 @@ section.section
     pre.section__pre
       code.section__code.
         import Types from '@yaohaixiao/types.js/esm/types'
+        // 或者单独引用 isArrayLikeObject() 方法
+        // import isArrayLikeObject from '@yaohaixiao/types.js/esm/isArrayLikeObject'
 
         const arr = [1, 2, 3]
         const empty = () => {}
+        let args
 
-        function test(){
-          Types.isArrayLikeObject(arguments); // -> true
+        function test(a){
+          args = arguments
+          return a === 'test'
         }
 
         test()
 
-        Types.isArrayLikeObject(arr); // -> true
-        Types.isArrayLikeObject(empty); // -> false
+        Types.isArrayLikeObject(arr) // -> true
+        Types.isArrayLikeObject(empty) // -> false
+        Types.isArrayLikeObject(args) // -> true

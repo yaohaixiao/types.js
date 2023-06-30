@@ -18,8 +18,10 @@ section.section
     pre.section__pre
       code.section__code.
         import Types from '@yaohaixiao/types.js/esm/types'
+        // 或者单独引用 isHex() 方法
+        // import isHex from '@yaohaixiao/types.js/esm/isHex'
 
-        Types.isHex('#ffffff'); // -> true
-        Types.isHex('f3f3f3'); // -> true
-        Types.isHex('#h1f1f1'); // -> false
-        Types.isHex('h1f1x1'); // -> false
+        Types.isHex('#ffffff') // -> true
+        Types.isHex('f3f3f3') // -> true
+        Types.isHex('#h1f1f1') // -> false
+        Types.isHex('h1f1x1') // -> false

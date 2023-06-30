@@ -18,12 +18,14 @@ section.section
     pre.section__pre
       code.section__code.
         import Types from '@yaohaixiao/types.js/esm/types'
+        // 或者单独引用 isUndefined() 方法
+        // import isUndefined from '@yaohaixiao/types.js/esm/isUndefined'
 
-        const projects;
+        let projects
 
-        Types.isUndefined(projects); // -> true
-        Types.isUndefined([]); // -> false
-        Types.isUndefined(''); // -> false
-        Types.isUndefined(0); // -> false
-        Types.isUndefined(NaN); // -> false
-        Types.isUndefined({}); // -> false
+        Types.isUndefined(projects) // -> true
+        Types.isUndefined([]) // -> false
+        Types.isUndefined('') // -> false
+        Types.isUndefined(0) // -> false
+        Types.isUndefined(NaN) // -> false
+        Types.isUndefined({}) // -> false

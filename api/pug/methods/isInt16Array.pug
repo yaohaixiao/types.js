@@ -18,16 +18,20 @@ section.section
     pre.section__pre
       code.section__code.
         import Types from '@yaohaixiao/types.js/esm/types'
+        // 或者单独引用 isInt16Array() 方法
+        // import isInt16Array from '@yaohaixiao/types.js/esm/isInt16Array'
 
         const numbers = [ 2, 4 ]
+        let args
 
-        function test(){
-            Types.isInt16Array( arguments ); // -> false
+        function test(a){
+          args = arguments
+          return a === 'test'
         }
 
-        test();
+        test()
 
-        Types.isInt16Array( numbers ); // -> false
-        Types.isInt16Array( new Array() ); // -> false
-
+        Types.isInt16Array(numbers) // -> false
+        Types.isInt16Array(new Array(16)) // -> false
+        Types.isInt16Array(args) // -> false
         Types.isInt16Array(new Int16Array()) => true
