@@ -82,7 +82,7 @@ isArray([]) // -> true
 
 ## [API Documentation](https://yaohaixiao.github.io/types.js/)
 
-types.js 提供了很多使用的数据类型判断的方法，以下是一些常用的 API 示例，完整 API 文档请查阅：[https://yaohaixiao.github.io/types.js/](https://yaohaixiao.github.io/types.js/)。
+types.js 提供了很多实用的数据类型判断的方法，以下是一些常用的 API 示例，完整 API 文档请查阅：[https://yaohaixiao.github.io/types.js/](https://yaohaixiao.github.io/types.js/)。
 
 
 ### [is(val)](https://yaohaixiao.github.io/types.js/#method-is)
