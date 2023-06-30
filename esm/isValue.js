@@ -1,12 +1,12 @@
 import _type from './_type'
-import { TYPES } from './enum'
+import TYPES from './enum/types'
 
 /**
  * 检测测试数据是否为有效的数据
  *
  * @method isValue
  * @param {*} val - 要检测的数据
- * @returns {boolean} 'val' 是有效的数据返回 true，否则返回 false
+ * @returns {Boolean} 'val' 是有效的数据返回 true，否则返回 false
  */
 const isValue = (val) => {
   const type = _type(val)

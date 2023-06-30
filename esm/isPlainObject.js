@@ -1,13 +1,13 @@
 import isObject from './isObject'
 import hasOwn from './hasOwn'
-import { TYPES } from './enum'
+import TYPES from './enum/types'
 
 /**
  * 检测测试数据是否为普通对象
  * ========================================================================
  * @method isPlainObject
  * @param {Object} val - 要检测的数据
- * @returns {boolean} 'val' 是普通对象返回 true，否则返回 false
+ * @returns {Boolean} 'val' 是普通对象返回 true，否则返回 false
  */
 const isPlainObject = (val) => {
   const toString = Object.prototype.toString

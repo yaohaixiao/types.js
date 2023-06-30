@@ -5,7 +5,7 @@ import isObject from './isObject'
  * ========================================================================
  * @method isObjectLike
  * @param {Object} val
- * @returns {boolean}
+ * @returns {Boolean}
  */
 const isObjectLike = (val) => {
   return isObject(val) && val !== null

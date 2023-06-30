@@ -21,11 +21,25 @@ section.section
         // 或者单独引用 isObject() 方法
         // import isObject from '@yaohaixiao/types.js/esm/isObject'
 
+        const $list = document.getElementById('list')
+
+        // True
         Types.isObject({}) // => true
-        Types.isObject(null) // => true
         Types.isObject(Object) // => true
         Types.isObject(new Object()) // => true
+        Types.isObject(Object.create(null)) // => true
         Types.isObject([]) // => true
         Types.isObject(() => {}) // => true
+        Types.isObject(class {}) // => true
+        Types.isObject($list) // => true
 
+        // False
+        Types.isObject('null') // => false
+        Types.isObject(1) // => false
+        Types.isObject(false) // => false
+        Types.isObject(Symbol('ok')) // => false
+        Types.isObject($list) // => false
+
+        // 针对 null，type.js 认为不是一个有效对象
+        // 以避免将 null 作为普通对象操作导致的错误
         Types.isObject(null) // => false

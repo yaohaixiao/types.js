@@ -12,10 +12,13 @@ const hasOwn = (obj, prop) => {
   const hasOwnProperty = Object.prototype.hasOwnProperty
 
   if (hasOwnProperty) {
+    // 不建议直接实用对象从原型链继承的 hasOwnProperty() 方法
+    // 所以采用直接调用 Object.prototype.hasOwnProperty() 方法
     return hasOwnProperty.call(obj, prop)
   }
 
   return (
+    // 从对象构造函数的原型链继承的同名属性不算 obj 自身的属性
     !isUndefined(obj[prop]) && obj.constructor.prototype[prop] !== obj[prop]
   )
 }

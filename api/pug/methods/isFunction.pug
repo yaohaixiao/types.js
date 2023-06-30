@@ -21,11 +21,14 @@ section.section
         // 或者单独引用 isFunction() 方法
         // import isFunction from '@yaohaixiao/types.js/esm/isFunction'
 
-        const empty = () => {}
+        const blank = () => {}
+        const fn = new Function()
 
-        Types.isFunction(Math) // -> false
+        function empty(){}
 
         Types.isFunction(empty) // -> true
+        Types.isFunction(blank) // -> true
+        Types.isFunction(fn) // -> true
         Types.isFunction(parseInt) // -> true
         Types.isFunction(Array) // -> true
         Types.isFunction(Boolean) // -> true
@@ -34,4 +37,6 @@ section.section
         Types.isFunction(Object) // -> true
         Types.isFunction(RegExp) // -> true
         Types.isFunction(String) // -> true
-        Types.isFunction(new Function()) // -> true
+
+        Types.isFunction(Math) // -> false
+        Types.isFunction(console) // -> false

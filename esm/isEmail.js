@@ -5,7 +5,7 @@ import isString from './isString'
  * ========================================================================
  * @method isEmail
  * @param {String} val
- * @returns {boolean}
+ * @returns {Boolean}
  */
 const isEmail = (val) => {
   const pattern =

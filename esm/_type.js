@@ -1,4 +1,5 @@
-import { TYPES, OBJECTS } from './enum'
+import TYPES from './enum/types'
+import OBJECTS from './enum/objects'
 
 /**
  * 检测数据类型，返回检测数据类型的字符串
@@ -37,7 +38,10 @@ const _type = (val) => {
     case OBJECTS.UNDEFINED:
       // 检测是否为 Undefined
       return TYPES.UNDEFINED
-    /* ===== ES6 对象 ( Map, WeakMap, Set, WeakSet, Symbol ) ===== */
+    case OBJECTS.SYMBOL:
+      // 检测是否为 Symbol 类型
+      return TYPES.SYMBOL
+    /* ===== ES6 对象 ( Map, WeakMap, Set, WeakSet ) ===== */
     case OBJECTS.SET:
       // 检测是否为 Set 类型
       return TYPES.SET
@@ -50,9 +54,6 @@ const _type = (val) => {
     case OBJECTS.WEAK_MAP:
       // 检测是否为 WeakMap 类型
       return TYPES.WEAK_MAP
-    case OBJECTS.SYMBOL:
-      // 检测是否为 Symbol 类型
-      return TYPES.SYMBOL
     /* ===== 引用类型（Reference data types） ===== */
     case OBJECTS.FUNCTION:
       // 检测是否为 Function 类型

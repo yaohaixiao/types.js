@@ -21,6 +21,13 @@ section.section
         // 或者单独引用 isNull() 方法
         // import isNull from '@yaohaixiao/types.js/esm/isNull'
 
-        Types.isNull(null) // -> true
+        let project
+
+        Types.isNull('') // -> false
         Types.isNull({}) // -> false
-        Types.isNull(projects) // -> false
+        Types.isNull(project) // -> false
+        Types.isNull(0) // -> false
+        Types.isNull(false) // -> false
+        Types.isNull(Object.create(null)) // -> false
+
+        Types.isNull(null) // -> true

@@ -5,7 +5,7 @@ import isFunction from './isFunction'
  * ========================================================================
  * @method isPrototype
  * @param {Function|Object} val
- * @returns {boolean}
+ * @returns {Boolean}
  */
 const isPrototype = (val) => {
   const OP = Object.prototype

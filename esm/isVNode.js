@@ -1,17 +1,14 @@
 import hasOwn from './hasOwn'
+import isObject from './isObject'
 
 /**
  * 判断是否未 VNode 对象
  * =============================================================
- * @param node
- * @returns {boolean}
+ * @param {Object} node
+ * @returns {Boolean}
  */
 const isVNode = (node) => {
-  return (
-    node !== null &&
-    typeof node === 'object' &&
-    hasOwn(node, 'componentOptions')
-  )
+  return node !== null && isObject(node) && hasOwn(node, 'componentOptions')
 }
 
 export default isVNode

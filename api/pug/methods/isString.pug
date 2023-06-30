@@ -23,7 +23,10 @@ section.section
 
         const text = document.createTextNode('text')
 
-        Types.isString('string') // -> true
-        Types.isString(String('string')) // -> true
-        Types.isString(new String('string')) // -> false
+        Types.isString('') // -> true
+        Types.isString(String(2)) // -> true
+        Types.isString(2 + '0') // -> true
+
+        Types.isString(2) // -> false
+        Types.isString(new String()) // -> false
         Types.isString(text) // -> false

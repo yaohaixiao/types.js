@@ -3,7 +3,7 @@
  * ========================================================================
  * @method isXML
  * @param {*} val
- * @returns {boolean}
+ * @returns {Boolean}
  */
 const isXML = (val) => {
   const documentElement = val && (val.ownerDocument || val).documentElement

@@ -1,0 +1,46 @@
+section.section
+  header.section__header
+    h3#method-isHTML.section__h3 isHTML(val)
+  div.section__content
+    h4.section__h4 Description
+    p isHTML(val) 方法用来检测测试数据是否为合法的 HTML 代码。
+    h4.section__h4 Parameters
+    h5.section__h4 val
+    dl.section__dl
+      dt.section__dt Type：
+      dd.section__dd String
+    p （必须）val 待检测的数据。
+    h4.section__h4 Returns
+    dl.section__dl
+      dt.section__dt Type：
+      dd.section__dd Boolean。
+    p true - 表示检测数据为合法的 HTML 代码，false 则表示不是。
+    pre.section__pre
+      code.section__code.
+        import Types from '@yaohaixiao/types.js/esm/types'
+        // 或者单独引用 isHTML() 方法
+        // import isHTML from '@yaohaixiao/types.js/esm/isHTML'
+
+        // 包含 doctype 标签：
+        Types.isHTML('&lt;!doctype html&gt;') // -&gt; true
+        Types.isHTML('\n\n&lt;!doctype html&gt;&lt;html&gt;') // -&gt; true
+
+        // 包含：&lt;html&gt;，&lt;body&gt; 或者 &lt;x-*&gt; 标签：
+        Types.isHTML('&lt;html&gt;') // -&gt; true
+        Types.isHTML('&lt;html&gt;&lt;/html&gt;') // -&gt; true
+        Types.isHTML('&lt;html lang="en"&gt;&lt;/html&gt;') // -&gt; true
+        Types.isHTML('&lt;html&gt;&lt;body&gt;&lt;/html&gt;') // -&gt; true
+        Types.isHTML('&lt;html&gt;&lt;body class="no-js"&gt;&lt;/html&gt;') // -&gt; true
+        Types.isHTML('&lt;x-unicorn&gt;') // -&gt; true
+
+        // 包含任何合法的 HTML 标签：
+        Types.isHTML('&lt;p&gt;foo&lt;/p&gt;') // -&gt; true
+        Types.isHTML('&lt;a href="#"&gt;foo&lt;/a&gt;') // -&gt; true
+        Types.isHTML('&lt;br /&gt;') // -&gt; true
+
+        // 无法匹配 XML 标签：
+        Types.isHTML('&lt;attribute&gt;address&lt;/attribute&gt;') // -&gt; false
+        Types.isHTML('&lt;address&gt;Wuhan City&lt;/address&gt;') // -&gt; false
+        Types.isHTML('&lt;age&gt;20&lt;/age&gt;') // -&gt; false
+        Types.isHTML('&lt;gender&gt;mail&lt;/gender&gt;') // -&gt; false
+        Types.isHTML('&lt;career&gt;programmer&lt;/career&gt;') // -&gt; false

@@ -23,14 +23,17 @@ section.section
 
         let projects
 
-        Types.isBoolean(!!0) // -> true
+        // False
         Types.isBoolean(1) // -> false
-        Types.isBoolean(false) // -> true
-        Types.isBoolean(true) // -> true
-        Types.isBoolean(Boolean('1')) // -> true
-        Types.isBoolean(new Boolean('')) // -> false
         Types.isBoolean('') // -> false
         Types.isBoolean(null) // -> false
         Types.isBoolean(NaN) // -> false
         Types.isBoolean(projects) // -> false
+
+        // True
+        Types.isBoolean(!!0) // -> true
+        Types.isBoolean(false) // -> true
+        Types.isBoolean(true) // -> true
+        Types.isBoolean(Boolean('1')) // -> true
+        Types.isBoolean(new Boolean('')) // -> false
         Types.isBoolean(!!projects) // -> true

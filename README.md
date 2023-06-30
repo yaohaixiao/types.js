@@ -1,4 +1,4 @@
-# Types.js
+# types.js
 
 [![npm version](https://img.shields.io/npm/v/@yaohaixiao/types.js)](https://www.npmjs.com/package/@yaohaixiao/types.js)
 [![Github file size](https://img.shields.io/github/size/yaohaixiao/types.js/types.min.js.svg)](https://github.com/yaohaixiao/types.js/blob/master/types.min.js)
@@ -7,7 +7,7 @@
 [![npm downloads](https://img.shields.io/npm/dm/@yaohaixiao/types.js)](https://npmcharts.com/compare/@yaohaixiao/types.js?minimal=true)
 [![MIT License](https://img.shields.io/github/license/yaohaixiao/types.js.svg)](https://github.com/yaohaixiao/types.js/blob/master/LICENSE)
 
-Types.js 专注于检测 JavaScript 数据类型的工具库。
+types.js 专注于检测 JavaScript 数据类型的工具库。
 
 ## 项目初衷
 
@@ -94,11 +94,11 @@ is(val) 方法返回检测数据的数据类型字符串：
 * 'boolean' - 布尔值
 * 'null' - 空值
 * 'undefined' - 未定义
+* 'symbol' - 符号
 * 'set' - Set
 * 'weakset' - WeakSet
 * 'map' - Map
 * 'weakmap' - WeakMap
-* 'symbol' - 数组
 * 'array' - 数组
 * 'arraybuffer' - 固定长度的二进制数据缓冲区
 * 'int8array' - int8array 数组
@@ -159,13 +159,13 @@ Types.is(2023) // -> number
 Types.is(true) // -> boolean
 Types.is(null) // -> null
 Types.is(Example) // -> undefined
+Types.is(Symbol()) // -> symbol
 
-// Set/WeakSet/Map/WeakMap/Symbol
+// Set/WeakSet/Map/WeakMap
 Types.is(new Set()) // -> set
 Types.is(new WeakSet()) // -> weakset
 Types.is(new Map()) // -> map
 Types.is(new WeakMap()) // -> weakmap
-Types.is(Symbol()) // -> symbol
 
 // Object 对象相关
 Types.is({}) // -> object
@@ -226,17 +226,27 @@ import Types from '@yaohaixiao/types.js/esm/types'
 // 或者单独引用 isObject() 方法
 // import isObject from '@yaohaixiao/types.js/esm/isObject'
 
+const $list = document.getElementById('list')
+
 // True
-Types.isObject(function empty(){}) // -> true
-Types.isObject({}) // -> true
-Types.isObject(Object.create(null)) // -> true
-Types.isObject(Object.create({})) // -> true
-Types.isObject(new Function()) // -> true
+Types.isObject({}) // => true
+Types.isObject(Object) // => true
+Types.isObject(new Object()) // => true
+Types.isObject(Object.create(null)) // => true
+Types.isObject([]) // => true
+Types.isObject(() => {}) // => true
+Types.isObject(class {}) // => true
+Types.isObject($list) // => true
 
 // False
-Types.isObject([]) // -> false
-Types.isObject(null) // -> false
-Types.isObject(document.getElementById('wrap')) // -> false
+Types.isObject('null') // => false
+Types.isObject(1) // => false
+Types.isObject(false) // => false
+Types.isObject(Symbol('ok')) // => false
+
+// 针对 null，type.js 认为不是一个有效对象
+// 以避免将 null 作为普通对象操作导致的错误
+Types.isObject(null) // => false
 ```
 
 
@@ -266,16 +276,25 @@ import Types from '@yaohaixiao/types.js/esm/types'
 // 或者单独引用 isFunction() 方法
 // import isFunction from '@yaohaixiao/types.js/esm/isFunction'
 
-Types.isFunction(function empty(){}) // -> true
+const blank = () => {}
+const fn = new Fucntion()
+
+function empty(){}
+
+Types.isFunction(empty) // -> true
+Types.isFunction(blank) // -> true
+Types.isFunction(fn) // -> true
 Types.isFunction(parseInt) // -> true
 Types.isFunction(Array) // -> true
 Types.isFunction(Boolean) // -> true
 Types.isFunction(Date) // -> true
-Types.isFunction(Math) // -> false
 Types.isFunction(Number) // -> true
 Types.isFunction(Object) // -> true
 Types.isFunction(RegExp) // -> true
 Types.isFunction(String) // -> true
+
+Types.isFunction(Math) // -> false
+Types.isFunction(console) // -> false
 ```
 
 
@@ -305,6 +324,7 @@ import Types from '@yaohaixiao/types.js/esm/types'
 // 或者单独引用 isArray() 方法
 // import isArray from '@yaohaixiao/types.js/esm/isArray'
 
+const LooksLike = { '0':1, '1':2, length: 2 }
 let args
 
 function sum (a, b){
@@ -312,20 +332,18 @@ function sum (a, b){
   return a + b
 }
 
-sum(3, 4)
-
 // True
 Types.isArray([]) // -> true
 Types.isArray(new Array()) // -> true
-Types.isArray('this is string could split it into array'.split(' ')) // -> true
+Types.isArray('type.js'.split('')) // -> true
 
 // False
 // 虽然  arguments 对象看起来也像数组，但是它也不是数组
 Types.isArray(args) // -> false
 // 虽然 HTMLNodeList 的看起来像数组，但它并不是数组
 Types.isArray(document.getElementsByTagName('li')) // -> false
-Types.isArray({0:1,1:2}) // -> false
-Types.isArray( new Int8Array() ) // -> false
+Types.isArray(LooksLike) // -> false
+Types.isArray(new Int8Array()) // -> false
 ```
 
 
@@ -355,14 +373,17 @@ import Types from '@yaohaixiao/types.js/esm/types'
 // 或者单独引用 isNumber() 方法
 // import isNumber from '@yaohaixiao/types.js/esm/isNumber'
 
-Types.isNumber(2) // -> true
-Types.isNumber(2.4) // -> true
+Types.isNumber(0) // -> true
 Types.isNumber(.4) // -> true
+Types.isNumber(3.4E2) // -> true
 Types.isNumber(0xffffff) // -> true
 Types.isNumber(NaN) // -> true
 Types.isNumber(Infinity) // -> true
 Types.isNumber(-Infinity) // -> true
-Types.isNumber('33') // -> false
+
+Types.isNumber('2') // -> false
+Types.isNumber(2 + '1') // -> false
+Types.isNumber(new Number()) // -> false
 ```
 
 
@@ -392,9 +413,15 @@ import Types from '@yaohaixiao/types.js/esm/types'
 // 或者单独引用 isString() 方法
 // import isString from '@yaohaixiao/types.js/esm/isString'
 
-Types.isString('string') // -> true
-Types.isString(String('string')) // -> true
-Types.isString(new String('string')) // -> false
+const text = document.createTextNode('text')
+
+Types.isString('') // -> true
+Types.isString(String(2)) // -> true
+Types.isString(2 + '0') // -> true
+
+Types.isString(2) // -> false
+Types.isString(new String()) // -> false
+Types.isString(text) // -> false
 ```
 
 
@@ -424,19 +451,22 @@ import Types from '@yaohaixiao/types.js/esm/types'
 // 或者单独引用 isBoolean() 方法
 // import isBoolean from '@yaohaixiao/types.js/esm/isBoolean'
 
-let projects
+let project
 
-Types.isBoolean(!!0) // -> true
+// False
 Types.isBoolean(1) // -> false
+Types.isBoolean('') // -> false
+Types.isBoolean(null) // -> false
+Types.isBoolean(NaN) // -> false
+Types.isBoolean(project) // -> false
+
+// True
+Types.isBoolean(!!0) // -> true
 Types.isBoolean(false) // -> true
 Types.isBoolean(true) // -> true
 Types.isBoolean(Boolean('1')) // -> true
 Types.isBoolean(new Boolean('')) // -> false
-Types.isBoolean('') // -> false
-Types.isBoolean(null) // -> false
-Types.isBoolean(NaN) // -> false
-Types.isBoolean(projects) // -> false
-Types.isBoolean(!!projects) // -> true
+Types.isBoolean(!!project) // -> true
 ```
 
 
@@ -466,11 +496,17 @@ import Types from '@yaohaixiao/types.js/esm/types'
 // 或者单独引用 isNull() 方法
 // import isNull from '@yaohaixiao/types.js/esm/isNull'
 
-let projects
+let project
+
+Types.isNull('') // -> false
+Types.isNull({}) // -> false
+Types.isNull(project) // -> false
+Types.isNull(0) // -> false
+Types.isNull(false) // -> false
+Types.isNull(Object.create(null)) // -> false
 
 Types.isNull(null) // -> true
-Types.isNull({}) // -> false
-Types.isNull(projects) // -> false
+
 ```
 
 
@@ -500,14 +536,53 @@ import Types from '@yaohaixiao/types.js/esm/types'
 // 或者单独引用 isUndefined() 方法
 // import isUndefined from '@yaohaixiao/types.js/esm/isUndefined'
 
-let projects
+let project
 
-Types.isUndefined(projects) // -> true
+Types.isUndefined(project) // -> true
+
 Types.isUndefined([]) // -> false
 Types.isUndefined('') // -> false
 Types.isUndefined(0) // -> false
 Types.isUndefined(NaN) // -> false
 Types.isUndefined({}) // -> false
+Types.isUndefined(false) // -> false
+```
+
+
+### [isSymbol](https://yaohaixiao.github.io/types.js/#method-isSymbol)
+
+isSymbol(val) 方法用来检测测试数据是否为 Symbol 类型。
+
+#### Parameters
+
+##### val
+
+Type: `Any`
+Default: ``
+
+必选，要检测的数据。
+
+#### Returns
+
+Type: `Boolean`
+
+'val' 是 Symbol 类型返回 true，否则返回 false。
+
+#### Example
+
+```js
+import Types from '@yaohaixiao/types.js/esm/types'
+// 或者单独引用 isSymbol() 方法
+// import isSymbol from '@yaohaixiao/types.js/esm/isSymbol'
+
+const sym = Symbol('foo')
+const symObj = Object(sym)
+
+Types.is(sym) // -> 'symbol'
+Types.isSymbol(sym) // -> true
+
+Types.is(symObj) // -> 'object'
+Types.isSymbol(symObj) // -> false
 ```
 
 
@@ -1139,6 +1214,58 @@ Types.isHex('sdadfa') // -> false
 ```
 
 
+### [isHTML](https://yaohaixiao.github.io/types.js/#method-isHTML)
+
+isHTML(val) 方法用来检测测试数据是否为合法的 HTML 代码。
+
+#### Parameters
+
+##### val
+
+Type: `String`
+Default: ``
+
+必选，要检测的数据。
+
+#### Returns
+
+Type: `Boolean`
+
+true - 表示检测数据为合法的 HTML 代码，false 则表示不是。
+
+#### Example
+
+```js
+import Types from '@yaohaixiao/types.js/esm/types'
+// 或者单独引用 isHTML() 方法
+// import isHTML from '@yaohaixiao/types.js/esm/isHTML'
+
+// 包含 doctype 标签：
+Types.isHTML('<!doctype html>') // -> true
+Types.isHTML('\n\n<!doctype html><html>') // -> true
+
+// 包含：<html>，<body> 或者 <x-*> 标签：
+Types.isHTML('<html>') // -> true
+Types.isHTML('<html></html>') // -> true
+Types.isHTML('<html lang="en"></html>') // -> true
+Types.isHTML('<html><body></html>') // -> true
+Types.isHTML('<html><body class="no-js"></html>') // -> true
+Types.isHTML('<x-unicorn>') // -> true
+
+// 包含任何合法的 HTML 标签：
+Types.isHTML('<p>foo</p>') // -> true
+Types.isHTML('<a href="#">foo</a>') // -> true
+Types.isHTML('<br />') // -> true
+
+// 无法匹配 XML 标签：
+Types.isHTML('<attribute>address</attribute>') // -> false
+Types.isHTML('<address>Wuhan City</address>') // -> false
+Types.isHTML('<age>20</age>') // -> false
+Types.isHTML('<gender>mail</gender>') // -> false
+Types.isHTML('<career>programmer</career>') // -> false
+```
+
+
 ### [isHTMLCollection](https://yaohaixiao.github.io/types.js/#method-isHTMLCollection)
 
 isHTMLCollection(val) 方法用来检测数据的是否为 HTMLNodeList 对象。
@@ -1554,43 +1681,6 @@ Types.is(mySet) // -> 'set'
 
 Types.isSet(mySet) // -> true
 Types.isSet([1,2,3,4]) // -> false
-```
-
-
-### [isSymbol](https://yaohaixiao.github.io/types.js/#method-isSymbol)
-
-isSymbol(val) 方法用来检测测试数据是否为 Symbol 类型。
-
-#### Parameters
-
-##### val
-
-Type: `Any`
-Default: ``
-
-必选，要检测的数据。
-
-#### Returns
-
-Type: `Boolean`
-
-'val' 是 Symbol 类型返回 true，否则返回 false。
-
-#### Example
-
-```js
-import Types from '@yaohaixiao/types.js/esm/types'
-// 或者单独引用 isSymbol() 方法
-// import isSymbol from '@yaohaixiao/types.js/esm/isSymbol'
-
-const sym = Symbol('foo')
-const symObj = Object(sym)
-
-Types.is(sym) // -> 'symbol'
-Types.isSymbol(sym) // -> true
-
-Types.is(symObj) // -> 'object'
-Types.isSymbol(symObj) // -> false
 ```
 
 

@@ -1,5 +1,5 @@
 import _type from './_type'
-import { TYPES } from './enum'
+import TYPES from './enum/types'
 
 /**
  * 检测测试数据是否为 Map 类型

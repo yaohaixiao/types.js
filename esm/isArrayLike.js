@@ -1,5 +1,5 @@
 import _type from './_type'
-import { TYPES } from './enum'
+import TYPES from './enum/types'
 
 /**
  * 检测测试数据的数据类型是否为类似数组（array、arguments 对象或者

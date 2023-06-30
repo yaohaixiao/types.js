@@ -22,6 +22,7 @@ import isDate from './isDate'
 import isElement from './isElement'
 import isEmail from './isEmail'
 import isEmpty from './isEmpty'
+import isEmptyArray from './isEmptyArray'
 import isEmptyObject from './isEmptyObject'
 import isError from './isError'
 import isEven from './isEven'
@@ -85,6 +86,7 @@ const Types = {
   isElement,
   isEmail,
   isEmpty,
+  isEmptyArray,
   isEmptyObject,
   isError,
   isEven,

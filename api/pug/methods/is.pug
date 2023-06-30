@@ -39,13 +39,13 @@ section.section
         Types.is(true) // -> boolean
         Types.is(null) // -> null
         Types.is(Example) // -> undefined
+        Types.is(Symbol()) // -> symbol
 
-        // Set/WeakSet/Map/WeakMap/Symbol
+        // Set/WeakSet/Map/WeakMap
         Types.is(new Set()) // -> set
         Types.is(new WeakSet()) // -> weakset
         Types.is(new Map()) // -> map
         Types.is(new WeakMap()) // -> weakmap
-        Types.is(Symbol()) // -> symbol
 
         // Object 对象相关
         Types.is({}) // -> object

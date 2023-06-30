@@ -1,0 +1,36 @@
+// 能够识别的数据类型名称枚举值
+const TYPES = {
+  BOOLEAN: 'boolean',
+  NULL: 'null',
+  UNDEFINED: 'undefined',
+  NUMBER: 'number',
+  STRING: 'string',
+  OBJECT: 'object',
+  ARRAY: 'array',
+  ARRAY_BUFFER: 'arraybuffer',
+  DATA_VIEW: 'dataview',
+  DATE: 'date',
+  ERROR: 'error',
+  ARGUMENTS: 'arguments',
+  COLLECTION: 'collection',
+  FUNCTION: 'function',
+  ELEMENT: 'element',
+  TEXT: 'text',
+  REGEXP: 'regexp',
+  SYMBOL: 'symbol',
+  SET: 'set',
+  WEAK_SET: 'weakset',
+  MAP: 'map',
+  WEAK_MAP: 'weakmap',
+  INT8_ARRAY: 'int8array',
+  UNIT8_ARRAY: 'uint8array',
+  UNIT8_CLAMPED_ARRAY: 'uint8clampedarray',
+  INT16_ARRAY: 'int16array',
+  UNIT16_ARRAY: 'uint16array',
+  INT32_ARRAY: 'int32array',
+  UNIT32_ARRAY: 'uint32array',
+  FLOAT32_ARRAY: 'float32array',
+  FLOAT64_ARRAY: 'float64array'
+}
+
+export default TYPES

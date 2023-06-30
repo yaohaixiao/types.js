@@ -5,7 +5,7 @@ import isString from './isString'
  * ========================================================================
  * @method isURL
  * @param {String} str - 要检测的字符串
- * @returns {boolean}
+ * @returns {Boolean}
  */
 const isURL = (str) => {
   let pattern = new RegExp(
@@ -14,7 +14,7 @@ const isURL = (str) => {
       '((\\d{1,3}\\.){3}\\d{1,3}))' + // OR ip (v4) address
       '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*' + // port and path
       '(\\?[;&a-z\\d%_.~+=-]*)?' + // query string
-      '(\\#[-a-z\\d_]*)?$',
+      '(\\#[-a-z\\d_]*)?$', // hash
     'i'
   ) // fragment locator
 

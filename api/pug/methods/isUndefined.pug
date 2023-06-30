@@ -24,8 +24,10 @@ section.section
         let projects
 
         Types.isUndefined(projects) // -> true
+
         Types.isUndefined([]) // -> false
         Types.isUndefined('') // -> false
         Types.isUndefined(0) // -> false
         Types.isUndefined(NaN) // -> false
         Types.isUndefined({}) // -> false
+        Types.isUndefined(null) // -> false

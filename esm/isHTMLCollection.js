@@ -1,5 +1,5 @@
 import _type from './_type'
-import { TYPES } from './enum'
+import TYPES from './enum/types'
 
 /**
  * 检测数据的是否为 HTMLNodeList 对象

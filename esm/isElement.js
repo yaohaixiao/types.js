@@ -1,5 +1,5 @@
 import _type from './_type'
-import { TYPES } from './enum'
+import TYPES from './enum/types'
 
 /**
  * 检测测试数据的数据类型是否为 HTML 元素节点。
