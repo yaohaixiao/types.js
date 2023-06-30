@@ -1,3 +1,12 @@
+# [0.4.0](https://github.com/yaohaixiao/types.js/compare/0.3.0...0.4.0) (2023-06-30)
+
+
+### Features
+
+* 添加 isHash() 方法，并添加完善 API 文档 和 README.md ([f889fd9](https://github.com/yaohaixiao/types.js/commit/f889fd9a17db5f850f51ad1090f0c74e2676a893))
+
+
+
 # [0.3.0](https://github.com/yaohaixiao/types.js/compare/0.2.2...0.3.0) (2023-06-29)
 
 
