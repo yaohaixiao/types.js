@@ -21,9 +21,15 @@ section.section
         // 或者单独引用 isRegExp() 方法
         // import isRegExp from '@yaohaixiao/types.js/esm/isRegExp'
 
-        const pattern = new RegExp('\s+','ig')
+        const patternOne = new RegExp('\\s+','ig')
+        const patternTwo = /\s+/ig
+        const patternStr = '/\\s+/ig'
 
-        Types.isRegExp(pattern) // -> true
-        Types.isRegExp(/\s+/ig) // -> true
+        Types.is(patternOne) // -> 'regexp'
+        Types.isRegExp(patternOne) // -> true
 
-        Types.isRegExp('/\s+/ig') // -> false
+        Types.is(patternTwo) // -> 'regexp'
+        Types.isRegExp(patternTwo) // -> true
+
+        Types.is(patternStr) // -> 'string'
+        Types.isRegExp(patternStr) // -> false

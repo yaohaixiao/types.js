@@ -1,6 +1,13 @@
 import isHTML from 'esm/isHTML'
 
 describe('isHTML() 方法：', () => {
+  it('非字符串：', () => {
+    expect(isHTML(1)).toBe(false)
+    expect(isHTML(null)).toBe(false)
+    expect(isHTML([])).toBe(false)
+    expect(isHTML({})).toBe(false)
+  })
+
   it('包含 doctype 标签：', () => {
     expect(isHTML('<!doctype html>')).toBe(true)
     expect(isHTML('\n\n<!doctype html><html>')).toBe(true)

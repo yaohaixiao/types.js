@@ -25,6 +25,10 @@ describe('isOdd() 方法：', () => {
     expect(isOdd(3)).toBe(true)
   })
 
+  it(`isEven(3.0), 返回：true`, () => {
+    expect(isOdd(3.0)).toBe(true)
+  })
+
   it(`isEven(0x000011), 返回：true`, () => {
     expect(isOdd(0x000011)).toBe(true)
   })

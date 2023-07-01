@@ -768,7 +768,7 @@ isBase64(val) 方法用来检测测试数据是否为一个基于 base64 编码�
 
 ##### val
 
-Type: `Any`
+Type: `String`
 Default: ``
 
 必选，要检测的数据。
@@ -799,7 +799,7 @@ isBlank(val) 方法用来检测测试数据是否只包空格。
 
 ##### val
 
-Type: `Any`
+Type: `String`
 Default: ``
 
 必选，要检测的数据。
@@ -1022,7 +1022,7 @@ isEmpty(val) 方法用来检测测试数据是否为空字符串。
 
 ##### val
 
-Type: `Any`
+Type: `String`
 Default: ``
 
 必选，要检测的数据。
@@ -1042,6 +1042,7 @@ import Types from '@yaohaixiao/types.js/esm/types'
 
 Types.isEmpty('') // -> true
 Types.isEmpty(String()) // -> true
+
 Types.isEmpty(new String()) // -> false
 Types.isEmpty(' ') // -> false
 ```
@@ -1087,6 +1088,7 @@ Types.isEmptyObject(new Array()) // true
 Types.isEmptyObject(new Date('2017-12-11')) // true
 Types.isEmptyObject(new RegExp('\s+','ig')) // true
 Types.isEmptyObject(new String()) // true
+
 Types.isEmptyObject(new Function()) // false
 Types.isEmptyObject(['']) // false
 Types.isEmptyObject(null) // false
@@ -1121,7 +1123,9 @@ import Types from '@yaohaixiao/types.js/esm/types'
 // 或者单独引用 isError() 方法
 // import isError from '@yaohaixiao/types.js/esm/isError'
 
-Types.isError({}) // -> false
+const error = function Error(){}
+
+Types.isError(new error()) // -> false
 Types.isError(new Error()) // -> true
 ```
 
@@ -1134,7 +1138,7 @@ isEven(val) 方法用来检测测试数据的数据类型是否为偶数。
 
 ##### val
 
-Type: `Any`
+Type: `Number`
 Default: ``
 
 必选，要检测的数据。
@@ -1166,7 +1170,7 @@ isFloat(val) 方法用来检测测试数据是否为浮点数。
 
 ##### val
 
-Type: `Any`
+Type: `Number`
 Default: ``
 
 必选，要检测的数据。
@@ -1186,6 +1190,7 @@ import Types from '@yaohaixiao/types.js/esm/types'
 
 Types.isFloat(2.4) // -> true
 Types.isFloat(Number("3.4556645445E7")) // -> true
+
 Types.isFloat(Number("3.4556645445E10")) // -> false
 Types.isFloat(2.0) // -> false
 Types.isFloat(0xffffff) // -> false
@@ -1205,7 +1210,7 @@ isHash(val) 方法用来检测测试数据是普通对象（它是方法 [isPlai
 
 ##### val
 
-Type: `Any`
+Type: `Object`
 Default: ``
 
 必选，要检测的数据。
@@ -1260,7 +1265,7 @@ isHex(val) 方法用来检测测试数据是否为 16 进制编码的字符串�
 
 ##### val
 
-Type: `Any`
+Type: `String`
 Default: ``
 
 必选，要检测的数据。
@@ -1367,8 +1372,31 @@ import Types from '@yaohaixiao/types.js/esm/types'
 // 或者单独引用 isHTMLCollection() 方法
 // import isHTMLCollection from '@yaohaixiao/types.js/esm/isHTMLCollection'
 
-Types.isHTMLCollection(document.getElementById('isJSON')) // -> false
-Types.isHTMLCollection(document.getElementsByTagName('li')) // -> true
+const $list = document.getElementById('list')
+const $div = document.createElement('div')
+const $text = document.createTextNode('text')
+const $items = document.querySelectorAll('.item')
+const $fragment = document.createDocumentFragment()
+
+Types.is($list) // -> 'element'
+Types.isElement($list) // -> true
+Types.isHTMLCollection($list) // -> false
+
+Types.is($div) // -> 'element'
+Types.isElement($div) // -> true
+Types.isHTMLCollection($div) // -> false
+
+Types.is($text) // -> 'text'
+Types.isElement($text) // -> false
+Types.isHTMLCollection($text) // -> false
+
+Types.is($items) // -> 'collection'
+Types.isElement($items) // -> false
+Types.isHTMLCollection($items) // -> true
+
+Types.is($fragment) // -> 'fragment'
+Types.isElement($fragment) // -> false
+Types.isHTMLCollection($items) // -> false
 ```
 
 
@@ -1380,7 +1408,7 @@ isInfinite(val) 方法用来检测测试数据的数据是正无穷或者负无�
 
 ##### val
 
-Type: `Any`
+Type: `Number`
 Default: ``
 
 必选，要检测的数据。
@@ -1399,7 +1427,9 @@ import Types from '@yaohaixiao/types.js/esm/types'
 // import isInfinite from '@yaohaixiao/types.js/esm/isInfinite'
 
 Types.isInfinite(2.4) // -> false
+
 Types.isInfinite(Infinity) // -> true
+Types.isInfinite(-Infinity) // -> true
 ```
 
 
@@ -1430,11 +1460,20 @@ import Types from '@yaohaixiao/types.js/esm/types'
 // import isInteger from '@yaohaixiao/types.js/esm/isInteger'
 
 Types.isInteger(2.4) // -> false
+Types.isInteger(3.4234E3) // -> false
+Types.isInteger('1') // -> false
+Types.isInteger(Number('3.4556645445E7')) // -> false
+Types.isInteger(NaN) // -> false
+Types.isInteger(Infinity) // -> false
+Types.isInteger(-Infinity) // -> false
+
 Types.isInteger(2) // -> true
 Types.isInteger(2.0) // -> true
+Types.isInteger(3.4234E4) // -> true
 Types.isInteger(0xffffff) // -> true
-Types.isInteger(NaN) // -> false
-Types.isInteger(Number("3.4556645445E7")) // -> false
+Types.isInteger(Number('1')) // -> true
+Types.isInteger(parseInt('1.0', 10)) // -> true
+Types.isInteger(Math.ceil(2.6)) // -> true
 ```
 
 
@@ -1522,9 +1561,9 @@ const map = new Map([
 ])
 
 Types.is(map) // -> 'map'
-
 Types.isMap(map) // -> true
-Types.isMap(['name','robert']) // -> false
+
+Types.isMap(['name', 'Robert']) // -> false
 ```
 
 
@@ -1560,6 +1599,7 @@ const f = () => console.log('no constructable')
 Types.isNativeFunction(fn) // -> false
 Types.isNativeFunction(ff) // -> false
 Types.isNativeFunction(f) // -> false
+
 Types.isNativeFunction(Math) // -> true
 Types.isNativeFunction(Boolean) // -> true
 Types.isNativeFunction(Array) // -> true
@@ -1599,9 +1639,13 @@ import Types from '@yaohaixiao/types.js/esm/types'
 Types.isNumeric(2) // -> true
 Types.isNumeric(2.4) // -> true
 Types.isNumeric(0xffffff) // -> true
+Types.isNumeric(3.1415926E8) // -> true
 Types.isNumeric('33') // -> true
 Types.isNumeric('0xffffff') // -> true
+
 Types.isNumeric(NaN) // -> false
+Types.isNumeric(Infinity) // -> false
+Types.isNumeric(-Infinity) // -> false
 ```
 
 
@@ -1613,7 +1657,7 @@ isOdd(val) 方法用来检测测试数据的数据类型是否为奇数。
 
 ##### val
 
-Type: `Any`
+Type: `Number`
 Default: ``
 
 必选，要检测的数据。
@@ -1633,8 +1677,15 @@ import Types from '@yaohaixiao/types.js/esm/types'
 
 Types.isOdd(3) // -> true
 Types.isOdd(3.0) // -> true
-Types.isOdd(2) // -> false
-Types.isOdd(3.1) // -> false
+Types.isOdd(3.01E2) // -> true
+Types.isOdd(0x000011) // -> true
+
+Types.isOdd(2.0) // -> false
+Types.isOdd('2') // -> false
+Types.isOdd(3.01E3) // -> false
+Types.isOdd(0x000010) // -> false
+Types.isOdd(NaN) // -> false
+Types.isOdd(Infinity) // -> false
 ```
 
 
@@ -1719,8 +1770,18 @@ import Types from '@yaohaixiao/types.js/esm/types'
 // 或者单独引用 isRegExp() 方法
 // import isRegExp from '@yaohaixiao/types.js/esm/isRegExp'
 
-Types.isRegExp(new RegExp('\s+','ig')) // -> true
-Types.isRegExp(/\s+/ig) // -> true
+const patternOne = new RegExp('\\s+','ig')
+const patternTwo = /\s+/ig
+const patternStr = '/\\s+/ig'
+
+Types.is(patternOne) // -> 'regexp'
+Types.isRegExp(patternOne) // -> true
+
+Types.is(patternTwo) // -> 'regexp'
+Types.isRegExp(patternTwo) // -> true
+
+Types.is(patternStr) // -> 'string'
+Types.isRegExp(patternStr) // -> false
 ```
 
 
@@ -1750,12 +1811,14 @@ import Types from '@yaohaixiao/types.js/esm/types'
 // 或者单独引用 isSet() 方法
 // import isSet from '@yaohaixiao/types.js/esm/isSet'
 
-const mySet = new Set([1,2,3,4])
+const set = new Set([1, 2, 3, 4])
+const arr = [1, 2, 3, 4]
 
-Types.is(mySet) // -> 'set'
+Types.is(set) // -> 'set'
+Types.isSet(set) // -> true
 
-Types.isSet(mySet) // -> true
-Types.isSet([1,2,3,4]) // -> false
+Types.is(arr) // -> 'array'
+Types.isSet(arr) // -> false
 ```
 
 
@@ -1785,8 +1848,31 @@ import Types from '@yaohaixiao/types.js/esm/types'
 // 或者单独引用 isTextNode() 方法
 // import isTextNode from '@yaohaixiao/types.js/esm/isTextNode'
 
-Types.isTextNode(document.createElement('p')) // -> false
-Types.isTextNode(document.createTextNode('p')) // -> true
+const $list = document.getElementById('list')
+const $div = document.createElement('div')
+const $fragment = document.createDocumentFragment()
+const $items = document.querySelectorAll('.item')
+const $text = document.createTextNode('text')
+
+Types.is($list) // -> 'element'
+Types.isElement($list) // -> true
+Types.isTextNode($list) // -> false
+
+Types.is($div) // -> 'element'
+Types.isElement($div) // -> true
+Types.isTextNode($div) // -> false
+
+Types.is($fragment) // -> 'fragment'
+Types.isFragment($fragment) // -> true
+Types.isTextNode($fragment) // -> false
+
+Types.is($items) // -> 'collection'
+Types.isHTMLCollection($items) // -> true
+Types.isTextNode($items) // -> false
+
+Types.is($text) // -> 'collection'
+Types.isElement($text) // -> false
+Types.isTextNode($text) // -> true
 ```
 
 
@@ -1818,15 +1904,23 @@ import Types from '@yaohaixiao/types.js/esm/types'
 
 let projects
 
+// 非有效数据
 Types.isValue(projects) // -> false
-Types.isValue(function empty(){}) // -> true
-Types.isValue(/\s+/ig) // -> true
-Types.isValue([]) // -> true
-Types.isValue('') // -> true
-Types.isValue(0) // -> true
 Types.isValue(NaN) // -> false
-Types.isValue( null ) // -> false
+Types.isValue(null) // -> false
+Types.isValue(Infinity) // -> false
+Types.isValue(-Infinity) // -> false
+
+// 有效数据
+Types.isValue(0) // -> true
+Types.isValue('') // -> true
+Types.isValue(false) // -> true
+Types.isValue([]) // -> true
 Types.isValue({}) // -> true
+Types.isValue(/\s+/ig) // -> true
+Types.isValue(new Date()) // -> true
+Types.isValue(empty) // -> true
+Types.isValue(fn) // -> true
 ```
 
 
@@ -1861,11 +1955,14 @@ const map = new Map([
     ['Gender', 'Male']
 ])
 
-const weakmap = new WeakMap({},'Robert')
+const weakmap = new WeakMap()
+
+weakmap.set({}, 37)
 
 Types.is(weakmap) // -> 'weakmap'
-
 Types.isWeakMap(weakmap) // -> true
+
+Types.is(map) // -> 'map'
 Types.isWeakMap(map) // -> false
 ```
 
@@ -1896,17 +1993,18 @@ import Types from '@yaohaixiao/types.js/esm/types'
 // 或者单独引用 isWeakSet() 方法
 // import isWeakSet from '@yaohaixiao/types.js/esm/isWeakSet'
 
-const weakset = new WeakSet([
-    {'name': 'Robert'},
-    window
-])
+const set = new Set([1, 2, 3, 4])
+const weakset = new WeakSet()
 
-const set = new Set([1,2,3])
+weakset.add({name: 'Robert'})
+
+Types.is(set) // -> 'set'
+Types.isSet(set) // -> true
+Types.isWeakSet(set) // -> false
 
 Types.is(weakset) // -> 'weakset'
-
+Types.isSet(weakset) // -> false
 Types.isWeakSet(weakset) // -> true
-Types.isWeakSet(set) // -> false
 ```
 
 

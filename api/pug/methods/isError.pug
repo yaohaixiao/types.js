@@ -21,6 +21,8 @@ section.section
         // 或者单独引用 isError() 方法
         // import isError from '@yaohaixiao/types.js/esm/isError'
 
-        Types.isError({}) // -> false
+        const error = function Error(){}
+
+        Types.isError(new error()) // -> false
         Types.isError(new Error()) // -> true
 

@@ -118,6 +118,7 @@
   const setup = () => {
     // eslint-disable-next-line no-undef
     const $asideEmitter = delegate($aside)
+    // eslint-disable-next-line no-undef
     const $arrowsEmitter = delegate($arrows)
 
     updateButtons($main.scrollTop)

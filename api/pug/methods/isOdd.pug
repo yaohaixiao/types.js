@@ -22,13 +22,13 @@ section.section
         // import isOdd from '@yaohaixiao/types.js/esm/isOdd'
 
         Types.isOdd(3) // -> true
+        Types.isOdd(3.0) // -> true
         Types.isOdd(3.01E2) // -> true
         Types.isOdd(0x000011) // -> true
 
+        Types.isOdd(2.0) // -> false
+        Types.isOdd('2') // -> false
         Types.isOdd(3.01E3) // -> false
         Types.isOdd(0x000010) // -> false
         Types.isOdd(NaN) // -> false
         Types.isOdd(Infinity) // -> false
-        Types.isOdd('3') // -> false
-        Types.isOdd(2) // -> false
-        Types.isOdd(2.0) // -> false

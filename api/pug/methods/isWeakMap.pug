@@ -25,9 +25,13 @@ section.section
             ['name', 'Robert'],
             ['Gender', 'Male']
         ])
-        const weakmap = new WeakMap({},'Robert')
+
+        const weakmap = new WeakMap()
+
+        weakmap.set({}, 37)
 
         Types.is(weakmap) // -> 'weakmap'
-
         Types.isWeakMap(weakmap) // -> true
+
+        Types.is(map) // -> 'map'
         Types.isWeakMap(map) // -> false

@@ -21,8 +21,20 @@ section.section
         // 或者单独引用 isInteger() 方法
         // import isInteger from '@yaohaixiao/types.js/esm/isInteger'
 
+        // False
         Types.isInteger(2.4) // -> false
-        Types.isInteger(2) // -> true
-        Types.isInteger(0xffffff) // -> true
+        Types.isInteger(3.4234E3) // -> false
+        Types.isInteger('1') // -> false
+        Types.isInteger(Number('3.4556645445E7')) // -> false
         Types.isInteger(NaN) // -> false
-        Types.isInteger(Number("3.4556645445E7")) // -> false
+        Types.isInteger(Infinity) // -> false
+        Types.isInteger(-Infinity) // -> false
+
+        // True
+        Types.isInteger(2) // -> true
+        Types.isInteger(2.0) // -> true
+        Types.isInteger(3.4234E4) // -> true
+        Types.isInteger(0xffffff) // -> true
+        Types.isInteger(Number('1')) // -> true
+        Types.isInteger(parseInt('1.0', 10)) // -> true
+        Types.isInteger(Math.ceil(2.6)) // -> true

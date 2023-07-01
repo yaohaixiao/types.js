@@ -21,8 +21,28 @@ section.section
         // 或者单独引用 isTextNode() 方法
         // import isTextNode from '@yaohaixiao/types.js/esm/isTextNode'
 
-        const tagDiv = document.createElement('div')
-        const textNode = document.createTextNode('text')
+        const $list = document.getElementById('list')
+        const $div = document.createElement('div')
+        const $fragment = document.createDocumentFragment()
+        const $items = document.querySelectorAll('.item')
+        const $text = document.createTextNode('text')
 
-        Types.isTextNode(tagDiv) // -> false
-        Types.isTextNode(textNode) // -> true
+        Types.is($list) // -> 'element'
+        Types.isElement($list) // -> true
+        Types.isTextNode($list) // -> false
+
+        Types.is($div) // -> 'element'
+        Types.isElement($div) // -> true
+        Types.isTextNode($div) // -> false
+
+        Types.is($fragment) // -> 'fragment'
+        Types.isFragment($fragment) // -> true
+        Types.isTextNode($fragment) // -> false
+
+        Types.is($items) // -> 'collection'
+        Types.isHTMLCollection($items) // -> true
+        Types.isTextNode($items) // -> false
+
+        Types.is($text) // -> 'collection'
+        Types.isElement($text) // -> false
+        Types.isTextNode($text) // -> true

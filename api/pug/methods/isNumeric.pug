@@ -23,7 +23,12 @@ section.section
 
         Types.isNumeric(2) // -> true
         Types.isNumeric(2.4) // -> true
+        Types.isNumeric(-2) // -> true
         Types.isNumeric(0xffffff) // -> true
+        Types.isNumeric(3.1415926E8) // -> true
         Types.isNumeric('33') // -> true
         Types.isNumeric('0xffffff') // -> true
+
         Types.isNumeric(NaN) // -> false
+        Types.isNumeric(Infinity) // -> false
+        Types.isNumeric(-Infinity) // -> false

@@ -21,8 +21,28 @@ section.section
         // 或者单独引用 isHTMLCollection() 方法
         // import isHTMLCollection from '@yaohaixiao/types.js/esm/isHTMLCollection'
 
-        const $json = document.getElementById('isJSON')
-        const $options = document.getElementsByTagName('li')
+        const $list = document.getElementById('list')
+        const $div = document.createElement('div')
+        const $text = document.createTextNode('text')
+        const $items = document.querySelectorAll('.item')
+        const $fragment = document.createDocumentFragment()
 
-        Types.isHTMLCollection($json) // -> false
-        Types.isHTMLCollection($options) // -> true
+        Types.is($list) // -> 'element'
+        Types.isElement($list) // -> true
+        Types.isHTMLCollection($list) // -> false
+
+        Types.is($div) // -> 'element'
+        Types.isElement($div) // -> true
+        Types.isHTMLCollection($div) // -> false
+
+        Types.is($text) // -> 'text'
+        Types.isElement($text) // -> false
+        Types.isHTMLCollection($text) // -> false
+
+        Types.is($items) // -> 'collection'
+        Types.isElement($items) // -> false
+        Types.isHTMLCollection($items) // -> true
+
+        Types.is($fragment) // -> 'fragment'
+        Types.isElement($fragment) // -> false
+        Types.isHTMLCollection($items) // -> false
