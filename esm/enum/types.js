@@ -1,6 +1,7 @@
 // 能够识别的数据类型名称枚举值
 const TYPES = {
   BOOLEAN: 'boolean',
+  BIG_INT: 'bigint',
   NULL: 'null',
   UNDEFINED: 'undefined',
   NUMBER: 'number',
@@ -12,9 +13,10 @@ const TYPES = {
   DATE: 'date',
   ERROR: 'error',
   ARGUMENTS: 'arguments',
-  COLLECTION: 'collection',
   FUNCTION: 'function',
   ELEMENT: 'element',
+  FRAGMENT: 'fragment',
+  COLLECTION: 'collection',
   TEXT: 'text',
   REGEXP: 'regexp',
   SYMBOL: 'symbol',
@@ -30,7 +32,9 @@ const TYPES = {
   INT32_ARRAY: 'int32array',
   UNIT32_ARRAY: 'uint32array',
   FLOAT32_ARRAY: 'float32array',
-  FLOAT64_ARRAY: 'float64array'
+  FLOAT64_ARRAY: 'float64array',
+  BIG_INT64_ARRAY: 'bigint64array',
+  BIG_UINT64_ARRAY: 'biguint64array'
 }
 
 export default TYPES

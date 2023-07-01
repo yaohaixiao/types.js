@@ -16,9 +16,8 @@ types.js 专注于检测 JavaScript 数据类型的工具库。
 ## 特点
 
 - 支持 UMD 规范，同时也提供 ES6 模块调用；
-- 支持创建和绑定自定义事件，并且可以手动触发自定义事件；
 - 原生 JavaScript 编写，无任何依赖；
-- 采用 jQuery 链式调用语法，调用语法简洁方便；
+- 丰富的数据类型检测方法，且调用方面简单；
 - 文件体积小(Gzip：3KB)，加载速度快；
 
 ## Browsers support
@@ -95,6 +94,7 @@ is(val) 方法返回检测数据的数据类型字符串：
 * 'null' - 空值
 * 'undefined' - 未定义
 * 'symbol' - 符号
+* 'bigint' - 任意大的整数
 * 'set' - Set
 * 'weakset' - WeakSet
 * 'map' - Map
@@ -110,16 +110,19 @@ is(val) 方法返回检测数据的数据类型字符串：
 * 'uint32array' - uint32array 数组
 * 'float32array' - float32array 数组
 * 'float64array' - float64array 数组
+* 'bigint64array' - bigint64array 数组
+* 'biguint64array' - biguint64array 数组
 * 'object' - 对象
 * 'arguments' - （函数的）参数对象
-* 'collection' - HTML NodeList 对象
 * 'dataview' - DataView 视图
 * 'date' - 日期
 * 'error' - 错误
 * 'function' - 函数
 * 'regexp' - 正则表达式对象
 * 'element' - HTML 元素节点
+* 'collection' - HTML NodeList 对象
 * 'text' - HTML 文本节点
+* 'fragment' - DocumentFragment 文档碎片
 
 #### Parameters
 
@@ -160,6 +163,7 @@ Types.is(true) // -> boolean
 Types.is(null) // -> null
 Types.is(Example) // -> undefined
 Types.is(Symbol()) // -> symbol
+Types.is(BigInt(42)) // -> bigint
 
 // Set/WeakSet/Map/WeakMap
 Types.is(new Set()) // -> set
@@ -184,6 +188,7 @@ Types.is(dv) // -> dataview
 Types.is(document.querySelector('#list')) // -> element
 Types.is(document.querySelectorAll('.item')) // -> coolection
 Types.is(document.createTextNode('text')) // -> text
+Types.is(document.createDocumentFragment()) // -> fragment
 
 // Array 相关
 Types.is([]) // -> array
@@ -197,6 +202,8 @@ Types.is(new Uint16Array([])) // -> uint16array
 Types.is(new Uint32Array([])) // -> uint32array
 Types.is(new Float32Array([])) // -> float32array
 Types.is(new Float64Array([])) // -> float64array
+Types.is(new BigInt64Array(64)) // -> bigint64array
+Types.is(new BigUint64Array(64)) // -> biguint64array
 ```
 
 
@@ -586,6 +593,46 @@ Types.isSymbol(symObj) // -> false
 ```
 
 
+### [isBigInt](https://yaohaixiao.github.io/types.js/#method-isBigInt)
+
+isBigInt(obj) 方法用来检测测试数据是否为 BigInt 类型。
+
+#### Since
+
+0.6.0
+
+#### Parameters
+
+##### val
+
+Type: `Any`
+Default: ``
+
+必选，要检测的数据。
+
+#### Returns
+
+Type: `Boolean`
+
+'val' 是 BigInt 类型返回 true，否则返回 false。
+
+#### Example
+
+```js
+import Types from '@yaohaixiao/types.js/esm/types'
+// 或者单独引用 isBigInt() 方法
+// import isBigInt from '@yaohaixiao/types.js/esm/isBigInt'
+
+const MAX_SAFE_INTEGER = 9007199254740991
+const bigint = BigInt(MAX_SAFE_INTEGER + 1)
+
+Type.is(bigint) // -> 'bigint'
+
+Types.isBigInt(MAX_SAFE_INTEGER) // -> false
+Types.isBigInt(bigint) // -> true
+```
+
+
 ### [isArguments](https://yaohaixiao.github.io/types.js/#method-isArguments)
 
 isArguments(val) 方法用来检测测试数据是否为 arguments 对象。
@@ -612,26 +659,25 @@ import Types from '@yaohaixiao/types.js/esm/types'
 // 或者单独引用 isArguments() 方法
 // import isArguments from '@yaohaixiao/types.js/esm/isArguments'
 
-let argsOne
-let argsTwo
-const check = (b) => {
-  // 箭头函数没有 arguments 对象
-  argsTwo = arguments
+const argsLike = { '0': 3, '1': 4, length: 2 }
+const $items = document.querySelectorAll('.item')
+let args
 
-  return b === 'check'
+function sum(a, b){
+  args = arguments
+
+  return a + b
 }
 
-function test(a){
-  argsOne = arguments
+sum(3, 5)
 
-  return a === 'test'
-}
+Types.isArguments(argsLike) // -> false
+Types.isArguments([]) // -> false
+Types.isArguments(items) // -> false
 
-test('test')
-check('check')
+Types.is(args) // -> 'arguments'
+Types.isArguments(args) // -> true
 
-Types.isArguments(argsOne) // -> true
-Types.isArguments(argsTwo) // -> false
 ```
 
 
@@ -702,11 +748,15 @@ function sum(a, b){
 sum(5, 6)
 
 Types.isArrayLike([1, 2, 3, 4, 5]) // -> true
+
 // arguments 对象是类似数组类型的数据
 Types.isArrayLike(args) // -> true
+
 // HTMLNodeList 是类似数组类型的数据
 Types.isArrayLike(document.getElementsByTagName('li')) // -> true
-Types.isArrayLike( new Int8Array() ) // -> false
+
+Types.isArrayLike({ '0': 1, '1': 2, length: 2 }) // -> false
+Types.isArrayLike( new Int8Array([]) ) // -> false
 ```
 
 
@@ -841,6 +891,7 @@ import Types from '@yaohaixiao/types.js/esm/types'
 // 或者单独引用 isEmail() 方法
 // import isEmail from '@yaohaixiao/types.js/esm/isEmail'
 
+// True
 Types.isEmail('yaohaixiao@gmail.com') // => true
 Types.isEmail('yaohaixiao@gmail.c') // => true
 Types.isEmail('haixiao-yao@gmail.com') // => true
@@ -857,6 +908,8 @@ Types.isEmail('haixiao#yao@gmail.com') // => true
 Types.isEmail('yao{haixiao@gmail.com') // => true
 Types.isEmail('yao|haixiao@gmail.com') // => true
 Types.isEmail('yao}haixiao@gmail.com') // => true
+
+// False
 Types.isEmail('yaohaixiao#gmail.com') // => false
 Types.isEmail('yao\haixiao@gmail.com') // => false
 Types.isEmail('yao[haixiao@gmail.com') // => false
@@ -903,6 +956,7 @@ Types.isEmptyObject(new Array()) // true
 Types.isEmptyObject(new Date('2017-12-11')) // true
 Types.isEmptyObject(new RegExp('\s+','ig')) // true
 Types.isEmptyObject(new String()) // true
+
 Types.isEmptyObject(new Function()) // false
 Types.isEmptyObject(['']) // false
 Types.isEmptyObject(null) // false
@@ -937,13 +991,26 @@ import Types from '@yaohaixiao/types.js/esm/types'
 // 或者单独引用 isElement() 方法
 // import isElement from '@yaohaixiao/types.js/esm/isElement'
 
-const tagDiv = document.createElement('div')
-const fragment = document.createDocumentFragment()
-const textNode = document.createTextNode('text')
+const $list = document.getElementById('list')
+const $div = document.createElement('div')
+const $text = document.createTextNode('text')
+const $items = document.querySelectorAll('.item')
+const $fragment = document.createDocumentFragment()
 
-Types.isElement(tagDiv) // -> true
-Types.isElement(fragment) // -> false
-Types.isElement(textNode) // -> false
+Types.is($list) // -> 'element'
+Types.isElement($list) // -> true
+
+Types.is($div) // -> 'element'
+Types.isElement($div) // -> true
+
+Types.is($text) // -> 'text'
+Types.isElement($text) // -> false
+
+Types.is($items) // -> 'collection'
+Types.isElement($items) // -> false
+
+Types.is($fragment) // -> 'collection'
+Types.isElement($fragment) // -> false
 ```
 
 
@@ -1130,6 +1197,10 @@ Types.isFloat(NaN) // -> false
 
 isHash(val) 方法用来检测测试数据是普通对象（它是方法 [isPlainObject](https://yaohaixiao.github.io/types.js/#isPlainObject) 的别名）。
 
+#### Since
+
+0.4.0
+
 #### Parameters
 
 ##### val
@@ -1217,6 +1288,10 @@ Types.isHex('sdadfa') // -> false
 ### [isHTML](https://yaohaixiao.github.io/types.js/#method-isHTML)
 
 isHTML(val) 方法用来检测测试数据是否为合法的 HTML 代码。
+
+#### Since
+
+0.5.0
 
 #### Parameters
 

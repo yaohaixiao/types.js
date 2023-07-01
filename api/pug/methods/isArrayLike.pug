@@ -31,8 +31,12 @@ section.section
         sum(5, 6)
 
         Types.isArrayLike([1, 2, 3, 4, 5]) // -> true
+
         // arguments 对象是类似数组类型的数据
         Types.isArrayLike(args) // -> true
+
         // HTMLNodeList 是类似数组类型的数据
         Types.isArrayLike(document.getElementsByTagName('li')) // -> true
+
+        Types.isArrayLike({ '0': 1, '1': 2, length: 2 }) // -> false
         Types.isArrayLike( new Int8Array() ) // -> false

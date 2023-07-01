@@ -1,5 +1,8 @@
 // Object.prototype.toString() 输出的类型名称枚举值
 const OBJECTS = {
+  BIG_INT: '[object BigInt]',
+  BIG_INT64_ARRAY: '[object BigInt64Array]',
+  BIG_UINT64_ARRAY: '[object BigUint64Array]',
   STRING: '[object String]',
   NUMBER: '[object Number]',
   BOOLEAN: '[object Boolean]',
@@ -29,6 +32,7 @@ const OBJECTS = {
   WEAK_MAP: '[object WeakMap]',
   SYMBOL: '[object Symbol]',
   NODE_LIST: '[object NodeList]',
+  FRAGMENT: '[object DocumentFragment]',
   TEXT_NODE: '[object Text]'
 }
 

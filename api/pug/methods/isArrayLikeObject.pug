@@ -21,17 +21,22 @@ section.section
         // 或者单独引用 isArrayLikeObject() 方法
         // import isArrayLikeObject from '@yaohaixiao/types.js/esm/isArrayLikeObject'
 
-        const arr = [1, 2, 3]
-        const empty = () => {}
+        const $items = document.querySelectorAll('.item')
+        const obj = { '0': 1, '1': 2, length: 2 }
         let args
-
-        function test(a){
+        function getAge(age) {
           args = arguments
-          return a === 'test'
+          return age + 18
         }
 
-        test()
+        getAge(30)
 
-        Types.isArrayLikeObject(arr) // -> true
-        Types.isArrayLikeObject(empty) // -> false
+        Types.isArrayLikeObject([]) // -> true
+
+        Types.is($items) // -> 'collection'
+        Types.isArrayLikeObject($items) // -> true
+
         Types.isArrayLikeObject(args) // -> true
+
+        Types.isArrayLikeObject(obj) // -> false
+        Types.isArrayLikeObject({}) // -> false

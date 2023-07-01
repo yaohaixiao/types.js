@@ -13,6 +13,9 @@ import isInt32Array from './isInt32Array'
 import isUint32Array from './isUint32Array'
 import isFloat32Array from './isFloat32Array'
 import isFloat64Array from './isFloat64Array'
+import isBigInt64Array from './isBigInt64Array'
+import isBigUint64Array from './isBigUint64Array'
+import isBigInt from './isBigInt'
 import isBase64 from './isBase64'
 import isBlank from './isBlank'
 import isBoolean from './isBoolean'
@@ -27,6 +30,7 @@ import isEmptyObject from './isEmptyObject'
 import isError from './isError'
 import isEven from './isEven'
 import isFloat from './isFloat'
+import isFragment from './isFragment'
 import isFunction from './isFunction'
 import isHash from './isHash'
 import isHex from './isHex'
@@ -77,6 +81,9 @@ const Types = {
   isUint32Array,
   isFloat32Array,
   isFloat64Array,
+  isBigInt64Array,
+  isBigUint64Array,
+  isBigInt,
   isBase64,
   isBlank,
   isBoolean,
@@ -91,6 +98,7 @@ const Types = {
   isError,
   isEven,
   isFloat,
+  isFragment,
   isFunction,
   isHash,
   isHex,

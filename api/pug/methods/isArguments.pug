@@ -21,23 +21,21 @@ section.section
         // 或者单独引用 isArguments() 方法
         // import isArguments from '@yaohaixiao/types.js/esm/isArguments'
 
-        let argsOne
-        let argsTwo
-        const check = (b) => {
-          // 箭头函数没有 arguments 对象
-          argsTwo = arguments
+        const argsLike = { '0': 3, '1': 4, length: 2 }
+        const $items = document.querySelectorAll('.item')
+        let args
 
-          return b === 'check'
+        function sum(a, b){
+          args = arguments
+
+          return a + b
         }
 
-        function test(a){
-          argsOne = arguments
+        sum(3, 5)
 
-          return a === 'test'
-        }
+        Types.isArguments(argsLike) // -> false
+        Types.isArguments([]) // -> false
+        Types.isArguments(items) // -> false
 
-        test('test')
-        check('check')
-
-        Types.isArguments(argsOne) // -> true
-        Types.isArguments(argsTwo) // -> false
+        Types.is(args) // -> 'arguments'
+        Types.isArguments(args) // -> true

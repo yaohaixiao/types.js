@@ -52,6 +52,12 @@ describe('is() 方法：', () => {
     it('is(null), 返回：null', () => {
       expect(is(null)).toBe('null')
     })
+
+    it('is(BigInt(MAX_SAFE_INTEGER)), 返回：bigint', () => {
+      const MAX_SAFE_INTEGER = 9007199254740991
+      const bigint = BigInt(MAX_SAFE_INTEGER)
+      expect(is(bigint)).toBe('bigint')
+    })
   })
 
   describe('判断 Set/WeakSet/Map/WeakMap/Symbol 内置对象：', () => {
@@ -107,7 +113,8 @@ describe('is() 方法：', () => {
     })
 
     it('is(() => {}), 返回：function', () => {
-      const fn = () => {};
+      const fn = () => {
+      }
 
       expect(is(fn)).toBe('function')
     })
@@ -115,8 +122,8 @@ describe('is() 方法：', () => {
     it('function(arg) {is(arguments)}), 返回：function', () => {
       let args
 
-      function test(age){
-        args = is(arguments); // -> arguments
+      function test(age) {
+        args = is(arguments) // -> arguments
         return age
       }
 
@@ -126,40 +133,46 @@ describe('is() 方法：', () => {
     })
 
     it('is(new Date()), 返回：date', () => {
-      const time = new Date();
+      const time = new Date()
 
       expect(is(time)).toBe('date')
     })
 
     it(`is(document.querySelector('#list')), 返回：element`, () => {
-      const $list = document.querySelector('#list');
+      const $list = document.querySelector('#list')
 
       expect(is($list)).toBe('element')
     })
 
     it(`is(document.querySelectorAll('.item')), 返回：collection`, () => {
-      const $items = document.querySelectorAll('.item');
+      const $items = document.querySelectorAll('.item')
 
       expect(is($items)).toBe('collection')
     })
 
     it(`is(document.createTextNode('text')), 返回：text`, () => {
-      const $text = document.createTextNode('text');
+      const $text = document.createTextNode('text')
 
       expect(is($text)).toBe('text')
     })
 
-    it(`is(new RegExp('/\s/')), 返回：regexp`, () => {
+    it(`is(document.createDocumentFragment()), 返回：fragment`, () => {
+      const $fragment = document.createDocumentFragment()
+
+      expect(is($fragment)).toBe('fragment')
+    })
+
+    it(`is(new RegExp('/s/')), 返回：regexp`, () => {
       expect(is(new RegExp('/s/'))).toBe('regexp')
     })
 
-    it(`is(/\s+/ig)), 返回：regexp`, () => {
-      expect(is(/\s/ig)).toBe('regexp')
+    it(`is(/\\s+/ig)), 返回：regexp`, () => {
+      expect(is(/\s+/ig)).toBe('regexp')
     })
 
     it('is(new DataView(buffer)), 返回：dataview', () => {
-      const buffer = new ArrayBuffer(8);
-      const dv = new DataView(buffer);
+      const buffer = new ArrayBuffer(8)
+      const dv = new DataView(buffer)
 
       expect(is(dv)).toBe('dataview')
     })
@@ -212,6 +225,14 @@ describe('is() 方法：', () => {
 
     it('is(new Float64Array([])), 返回：float64array', () => {
       expect(is(new Float64Array([]))).toBe('float64array')
+    })
+
+    it('is(new BigInt64Array(64)), 返回：bigint64array', () => {
+      expect(is(new BigInt64Array(64))).toBe('bigint64array')
+    })
+
+    it('is(new BigUint64Array(64)), 返回：biguint64array', () => {
+      expect(is(new BigUint64Array(64))).toBe('biguint64array')
     })
   })
 

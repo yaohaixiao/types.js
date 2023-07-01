@@ -20,6 +20,8 @@ const _type = (val) => {
         return TYPES.STRING
       }
       return TYPES.OBJECT
+    case OBJECTS.BIG_INT:
+      return TYPES.BIG_INT
     case OBJECTS.NUMBER:
       // 检测是否为 Number 类型
       if (_typeof === 'number') {
@@ -80,6 +82,10 @@ const _type = (val) => {
     // Int - 整数
     // Uint - 无符号整数
     // Float - IEEE754 浮点数 )
+    case OBJECTS.BIG_INT64_ARRAY:
+      return TYPES.BIG_INT64_ARRAY
+    case OBJECTS.BIG_UINT64_ARRAY:
+      return TYPES.BIG_UINT64_ARRAY
     case OBJECTS.INT8_ARRAY:
       return TYPES.INT8_ARRAY
     case OBJECTS.INT16_ARRAY:
@@ -108,6 +114,9 @@ const _type = (val) => {
     case OBJECTS.TEXT_NODE:
       // 检测是否为 Text 节点
       return TYPES.TEXT
+    case OBJECTS.FRAGMENT:
+      // 检测是否为 DocumentFragment 文档碎片
+      return TYPES.FRAGMENT
     case OBJECTS.OBJECT:
       return TYPES.OBJECT
     default:

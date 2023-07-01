@@ -40,6 +40,7 @@ section.section
         Types.is(null) // -> null
         Types.is(Example) // -> undefined
         Types.is(Symbol()) // -> symbol
+        Types.is(BigInt(42)) // -> bigint
 
         // Set/WeakSet/Map/WeakMap
         Types.is(new Set()) // -> set
@@ -62,8 +63,9 @@ section.section
         Types.is(args) // -> arguments
         Types.is(dv) // -> dataview
         Types.is(document.querySelector('#list')) // -> element
-        Types.is(document.querySelectorAll('.item')) // -> coolection
+        Types.is(document.querySelectorAll('.item')) // -> collection
         Types.is(document.createTextNode('text')) // -> text
+        Types.is(document.createDocumentFragment()) // -> fragment
 
         // Array 相关
         Types.is([]) // -> array
@@ -77,3 +79,5 @@ section.section
         Types.is(new Uint32Array([])) // -> uint32array
         Types.is(new Float32Array([])) // -> float32array
         Types.is(new Float64Array([])) // -> float64array
+        Types.is(new BigInt64Array(64)) // -> bigint64array
+        Types.is(new BigUint64Array(64)) // -> biguint64array

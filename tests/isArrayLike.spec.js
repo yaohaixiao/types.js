@@ -2,6 +2,8 @@
  * @jest-environment jsdom
  */
 import isArrayLike from 'esm/isArrayLike'
+import is from '../esm/is'
+import isArrayLikeObject from '../esm/isArrayLikeObject'
 
 describe('isArrayLike() 方法：', () => {
   // Set up our document body
@@ -41,6 +43,12 @@ describe('isArrayLike() 方法：', () => {
   it(`isArrayLike(document.querySelectorAll('.item')), 返回：true`, () => {
     const $items = document.querySelectorAll('.item')
     expect(isArrayLike($items)).toBe(true)
+  })
+
+  it(`isArrayLike({ '0': 1, '1': 2, length: 2 }), 返回：false`, () => {
+    const o = { '0': 1, '1': 2, length: 2 }
+    expect(is(o)).toBe('object')
+    expect(isArrayLike(o)).toBe(false)
   })
 
   it(`isArrayLike(new Int8Array([])), 返回：false`, () => {
