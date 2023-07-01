@@ -1,3 +1,12 @@
+# [0.6.0](https://github.com/yaohaixiao/types.js/compare/0.5.0...0.6.0) (2023-07-01)
+
+
+### Features
+
+* 添加 isBigInt()、isBigInt64Array()、isBigUint64Array()和isFragment() 方法 ([60c2023](https://github.com/yaohaixiao/types.js/commit/60c2023220742330df0a30e527e4ea273dee150e))
+
+
+
 # [0.5.0](https://github.com/yaohaixiao/types.js/compare/0.4.0...0.5.0) (2023-06-30)
 
 
