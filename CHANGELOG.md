@@ -1,3 +1,12 @@
+# [1.0.0](https://github.com/yaohaixiao/types.js/compare/0.6.0...1.0.0) (2023-07-02)
+
+
+### Features
+
+* 发布 1.0.0 版本 ([3b742b5](https://github.com/yaohaixiao/types.js/commit/3b742b52ff1e498f7170fc5095f46907caea9c0b))
+
+
+
 # [0.6.0](https://github.com/yaohaixiao/types.js/compare/0.5.0...0.6.0) (2023-07-01)
 
 
