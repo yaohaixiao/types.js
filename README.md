@@ -105,9 +105,6 @@ import Types from '@yaohaixiao/types.js/string'
 import Types from '@yaohaixiao/types.js/number'
 import Types from '@yaohaixiao/types.js/object'
 
-// 调用 lang 方法模块（type.core.min.js）中的所有方法
-import Types from '@yaohaixiao/types.js/lang'
-
 Types.is([]) // -> array
 Types.isArray([]) // -> true
 
