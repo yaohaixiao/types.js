@@ -11,10 +11,8 @@ const less = require('gulp-less')
 const LessAutoPrefix = require('less-plugin-autoprefix')
 const autoprefixer = new LessAutoPrefix({ browsers: ['last 2 versions'] })
 const cssmin = require('gulp-cssmin')
-const concat = require('gulp-concat')
 const rename = require('gulp-rename')
 const sourcemaps = require('gulp-sourcemaps')
-const uglify = require('gulp-uglify')
 const run = require('gulp-run')
 const watch = require('gulp-watch')
 
@@ -22,18 +20,34 @@ const SOURCE_PATH = [ 'esm/**/*.js']
 
 /* ==================== 清理相关 gulp 任务 ==================== */
 const cleanHtml = () => {
-  return gulp.src('docs/**/index.html').pipe(clean())
+  return gulp
+    .src('docs/**/index.html', {
+      allowEmpty: true
+    })
+    .pipe(clean())
 }
 
 const cleanStyle = () => {
-  return gulp.src('docs/css/*.css').pipe(clean())
+  return gulp
+    .src('docs/css/*.css', {
+      allowEmpty: true
+    })
+    .pipe(clean())
 }
 
 const cleanScript = () => {
-  return gulp.src('docs/js/*.js').pipe(clean())
+  return gulp
+    .src('docs/js/docs.min.js', {
+      allowEmpty: true
+    })
+    .pipe(clean())
 }
 
-const cleanDocs = gulp.parallel(cleanHtml, cleanStyle, cleanScript)
+const cleanDocs = gulp.parallel(
+  cleanHtml,
+  cleanStyle,
+  cleanScript
+)
 
 /* ==================== 代码规范校验相关的 gulp 任务 ==================== */
 const lint = () => {
@@ -45,7 +59,11 @@ const lint = () => {
 }
 
 const check = () => {
-  return gulp.src(SOURCE_PATH).pipe(prettier.check({ editorconfig: true }))
+  return gulp
+    .src(SOURCE_PATH)
+    .pipe(prettier.check({
+      editorconfig: true
+    }))
 }
 
 const test = gulp.series(lint, check)
@@ -87,15 +105,13 @@ const minifyStyle = () => {
 }
 
 const buildSource = () => {
-  return run('npm run build:lib').exec()
+  return run('npm run build:lib')
+    .exec()
 }
 
 const buildScript = () => {
-  return gulp
-    .src(['types.min.js', 'node_modules/@yaohaixiao/delegate.js/delegate.min.js', 'api/js/scroll.js'])
-    .pipe(concat('docs.min.js'))
-    .pipe(uglify())
-    .pipe(gulp.dest('docs/js'))
+  return run('npm run build:api')
+    .exec()
 }
 
 const buildDocs = gulp.series(
@@ -140,11 +156,18 @@ const reload = () => {
   return connect.reload()
 }
 
-const start = gulp.series(build, connectDocs, openDocs)
+const start = gulp.series(
+  build,
+  connectDocs,
+  openDocs
+)
 
 /* ==================== 检测变更相关的 gulp 任务 ==================== */
 const watchSource = () => {
-  return watch('esm/**/*.js', gulp.series(lint, buildSource))
+  return watch('esm/**/*.js', gulp.series(
+    lint,
+    buildSource
+  ))
 }
 
 const watchApi = () => {
@@ -157,7 +180,11 @@ const watchDocs = () => {
   }).pipe(reload())
 }
 
-const watchAll = gulp.parallel(watchSource, watchApi, watchDocs)
+const watchAll = gulp.parallel(
+  watchSource,
+  watchApi,
+  watchDocs
+)
 
 // 公开的 gulp 任务
 module.exports.start = start
