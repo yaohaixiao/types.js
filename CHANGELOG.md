@@ -1,3 +1,12 @@
+## [1.0.1](https://github.com/yaohaixiao/types.js/compare/1.0.0...1.0.1) (2023-07-02)
+
+
+### Bug Fixes
+
+* 修复 isTypedArray() 方法无法正确判断 BigInt64Array 和 BigUint64Array 类型的问题 ([47bc1f3](https://github.com/yaohaixiao/types.js/commit/47bc1f34db9e556b8b23ddd24a352e5fd8b2f57c))
+
+
+
 # [1.0.0](https://github.com/yaohaixiao/types.js/compare/0.6.0...1.0.0) (2023-07-02)
 
 
