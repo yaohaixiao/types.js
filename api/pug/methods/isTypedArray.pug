@@ -46,3 +46,6 @@ section.section
 
         Types.isTypedArray(new Float32Array([])) // -> true
         Types.isTypedArray(new Float64Array([])) // -> true
+
+        Types.isTypedArray(new BigInt64Array(42)) // -> true
+        Types.isTypedArray(new BigUint64Array(42)) // -> true
