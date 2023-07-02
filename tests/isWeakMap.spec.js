@@ -1,6 +1,6 @@
-import isWeakMap from 'esm/isWeakMap'
-import isMap from 'esm/isMap'
-import is from 'esm/is'
+import isWeakMap from '../isWeakMap'
+import isMap from '../isMap'
+import is from '../is'
 
 describe('isWeakMap() 方法：', () => {
   it(`isWeakMap(new Map([])), 返回：false`, () => {

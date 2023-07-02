@@ -1,4 +1,4 @@
-import isHTML from 'esm/isHTML'
+import isHTML from '../isHTML'
 
 describe('isHTML() 方法：', () => {
   it('非字符串：', () => {

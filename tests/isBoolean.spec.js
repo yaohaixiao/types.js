@@ -1,4 +1,4 @@
-import isBoolean from 'esm/isBoolean'
+import isBoolean from '../isBoolean'
 
 describe('isBoolean() 方法：', () => {
   it(`isBoolean(1), 返回：false`, () => {

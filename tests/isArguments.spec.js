@@ -1,8 +1,8 @@
 /**
  * @jest-environment jsdom
  */
-import isArguments from 'esm/isArguments'
-import is from 'esm/is'
+import isArguments from '../isArguments'
+import is from '../is'
 describe('isArguments() 方法：', () => {
   // Set up our document body
   document.body.innerHTML =

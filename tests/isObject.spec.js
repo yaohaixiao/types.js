@@ -1,7 +1,7 @@
 /**
  * @jest-environment jsdom
  */
-import isObject from 'esm/isObject'
+import isObject from '../isObject'
 
 describe('isObject() 方法：', () => {
   // Set up our document body

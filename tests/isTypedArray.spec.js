@@ -1,4 +1,4 @@
-import isTypedArray from 'esm/isTypedArray'
+import isTypedArray from '../isTypedArray'
 
 describe('isTypedArray() 方法：', () => {
   it(`isTypedArray(arguments), 返回：false`, () => {

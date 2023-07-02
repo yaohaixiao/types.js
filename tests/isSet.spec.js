@@ -1,5 +1,5 @@
-import isSet from 'esm/isSet'
-import is from 'esm/is'
+import isSet from '../isSet'
+import is from '../is'
 
 describe('isSet() 方法：', () => {
   it(`isSet(new Set([1, 2, 3, 4])), 返回：true`, () => {

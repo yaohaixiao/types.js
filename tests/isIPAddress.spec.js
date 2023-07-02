@@ -1,4 +1,4 @@
-import isIPAddress from 'esm/isIPAddress'
+import isIPAddress from '../isIPAddress'
 
 describe('isIPAddress() 方法：', () => {
   describe('IPv4：', () => {

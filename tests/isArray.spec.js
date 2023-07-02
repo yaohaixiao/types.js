@@ -1,7 +1,7 @@
 /**
  * @jest-environment jsdom
  */
-import isArray from '../esm/isArray'
+import isArray from '../isArray'
 
 describe('isArray() 方法：', () => {
   // Set up our document body

@@ -1,4 +1,4 @@
-import isOdd from 'esm/isOdd'
+import isOdd from '../isOdd'
 
 describe('isOdd() 方法：', () => {
   it(`isOdd(2), 返回：false`, () => {

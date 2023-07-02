@@ -1,5 +1,5 @@
-import isMap from 'esm/isMap'
-import is from 'esm/is'
+import isMap from '../isMap'
+import is from '../is'
 
 describe('isMap() 方法：', () => {
   it(`isMap(new Map([])), 返回：true`, () => {

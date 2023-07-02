@@ -1,7 +1,7 @@
 /**
  * @jest-environment jsdom
  */
-import isString from 'esm/isString'
+import isString from '../isString'
 
 describe('isString() 方法：', () => {
   it(`isString(''), 返回：true`, () => {

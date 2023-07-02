@@ -1,4 +1,4 @@
-import isNumber from 'esm/isNumber'
+import isNumber from '../isNumber'
 
 describe('isNumber() 方法：', () => {
   it(`isNumber(0), 返回：true`, () => {

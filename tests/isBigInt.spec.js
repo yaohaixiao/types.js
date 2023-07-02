@@ -1,5 +1,5 @@
-import isBigInt from 'esm/isBigInt'
-import is from 'esm/is'
+import isBigInt from '../isBigInt'
+import is from '../is'
 describe('isBigInt() 方法：', () => {
   const MAX_SAFE_INTEGER = 9007199254740991
   const bigint = BigInt(9007199254740992)

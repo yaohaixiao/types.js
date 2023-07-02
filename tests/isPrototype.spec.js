@@ -1,4 +1,4 @@
-import isPrototype from 'esm/isPrototype'
+import isPrototype from '../isPrototype'
 
 describe('isPrototype() 方法：', () => {
   const Yao= {

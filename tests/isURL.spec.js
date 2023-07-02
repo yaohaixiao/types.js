@@ -1,4 +1,4 @@
-import isURL from 'esm/isURL'
+import isURL from '../isURL'
 
 describe('isURL() 方法：', () => {
   describe('IP 访问：', () => {

@@ -6,13 +6,12 @@
  */
 module.exports = {
   moduleFileExtensions: ['js'],
-  testMatch: ['**/tests/**/*.spec.(js)'],
+  testMatch: ['**/tests/*.spec.(js)'],
   transform: {
-    '^.+\\.js$': '<rootDir>/node_modules/babel-jest'
+    '^.+\\.js$': './node_modules/babel-jest'
   },
   moduleNameMapper: {
-    '^@/(.*)$': '<rootDir>/$1',
-    '^esm/(.*)$': '<rootDir>/esm/$1'
+    '^@/(.*)$': '<rootDir>/$1'
   },
   collectCoverage: true,
   coverageDirectory: 'report/coverage',
@@ -22,7 +21,7 @@ module.exports = {
       './node_modules/jest-html-reporter',
       {
         pageTitle: 'types.js 单测报告',
-        outputPath: 'report/unit-test/index.html',
+        outputPath: './report/unit-test/index.html',
         includeFailureMsg: true
       }
     ]

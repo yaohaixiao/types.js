@@ -13,7 +13,7 @@ const PLUGIN_CONFIG = [
 export default [
   // For full functions module
   {
-    input: 'esm/types.js',
+    input: 'types.js',
     output: {
       name: 'Types',
       file: './types.min.js',
@@ -23,7 +23,17 @@ export default [
     plugins: PLUGIN_CONFIG
   },
   {
-    input: 'esm/types.js',
+    input: 'lang/index.js',
+    output: {
+      name: 'Types',
+      file: './types.core.min.js',
+      format: 'umd',
+      sourcemap: true
+    },
+    plugins: PLUGIN_CONFIG
+  },
+  {
+    input: 'types.js',
     output: {
       name: 'Types',
       file: './docs/js/types.min.js',

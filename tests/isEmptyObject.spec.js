@@ -1,4 +1,4 @@
-import isEmptyObject from 'esm/isEmptyObject'
+import isEmptyObject from '../isEmptyObject'
 
 describe('isEmptyObject() 方法：', () => {
   function Person(name,age){

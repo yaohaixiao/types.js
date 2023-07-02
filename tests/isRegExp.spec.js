@@ -1,5 +1,5 @@
-import isRegExp from 'esm/isRegExp'
-import is from 'esm/is'
+import isRegExp from '../isRegExp'
+import is from '../is'
 
 describe('isRegExp() 方法：', () => {
   it(`isRegExp(new RegExp('\\s+','ig')), 返回：true`, () => {

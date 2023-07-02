@@ -1,4 +1,4 @@
-import isJSON from 'esm/isJSON'
+import isJSON from '../isJSON'
 
 describe('isJSON() 方法：', () => {
   it(`isJSON(''), 返回：false`, () => {

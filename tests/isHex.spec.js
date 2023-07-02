@@ -1,4 +1,4 @@
-import isHex from 'esm/isHex'
+import isHex from '../isHex'
 
 describe('isHex() 方法：', () => {
   it(`isHex('#ffffff'), 返回：true`, () => {

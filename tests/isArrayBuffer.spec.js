@@ -1,5 +1,5 @@
-import isArrayBuffer from '../esm/isArrayBuffer'
-import is from '../esm/is'
+import isArrayBuffer from '../isArrayBuffer'
+import is from '../is'
 
 describe('isArrayBuffer() 方法：', () => {
   it(`isArrayBuffer([]), 返回：false`, () => {

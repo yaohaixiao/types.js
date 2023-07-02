@@ -1,4 +1,4 @@
-import isEven from 'esm/isEven'
+import isEven from '../isEven'
 
 describe('isEven() 方法：', () => {
   it(`isEven(2), 返回：true`, () => {

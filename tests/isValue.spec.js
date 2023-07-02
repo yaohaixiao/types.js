@@ -1,4 +1,4 @@
-import isValue from 'esm/isValue'
+import isValue from '../isValue'
 
 describe('isValue() 方法：', () => {
   describe('非有效数据：', () => {

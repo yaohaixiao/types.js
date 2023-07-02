@@ -1,4 +1,4 @@
-import isNull from 'esm/isNull'
+import isNull from '../isNull'
 describe('isNull() 方法：', () => {
   it(`isNull(''), 返回：false`, () => {
     expect(isNull('')).toBe(false)

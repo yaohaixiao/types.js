@@ -1,7 +1,7 @@
 /**
  * @jest-environment jsdom
  */
-import isNativeFunction from 'esm/isNativeFunction'
+import isNativeFunction from '../isNativeFunction'
 
 describe('isNativeFunction() 方法：', () => {
   const fn = function () {}

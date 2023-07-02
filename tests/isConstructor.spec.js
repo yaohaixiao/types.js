@@ -1,4 +1,4 @@
-import isConstructor from 'esm/isConstructor'
+import isConstructor from '../isConstructor'
 
 describe('isConstructor() 方法：', () => {
   describe('自定义（构造）函数：', () => {

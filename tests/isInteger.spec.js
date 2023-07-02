@@ -1,4 +1,4 @@
-import isInteger from 'esm/isInteger'
+import isInteger from '../isInteger'
 
 describe('isInteger() 方法：', () => {
   it(`isInteger(2.4), 返回：false`, () => {

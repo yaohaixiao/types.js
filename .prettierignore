@@ -26,4 +26,4 @@ screenshot
 .eslintcache
 
 .husky
-/types.min.js
+*.min.js

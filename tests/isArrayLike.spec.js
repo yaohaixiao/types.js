@@ -1,9 +1,9 @@
 /**
  * @jest-environment jsdom
  */
-import isArrayLike from 'esm/isArrayLike'
-import is from '../esm/is'
-import isArrayLikeObject from '../esm/isArrayLikeObject'
+import isArrayLike from '../isArrayLike'
+import is from '../is'
+import isArrayLikeObject from '../isArrayLikeObject'
 
 describe('isArrayLike() 方法：', () => {
   // Set up our document body

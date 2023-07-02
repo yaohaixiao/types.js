@@ -1,71 +1,86 @@
 section#methods.section
   header.section__header
-    h2.section__title Methods
+    h2.section__title Base
   include is
-  include isArguments
+  include isValue
+  header.section__header
+    h2.section__title Primitive Values
+  include isBigInt
+  include isBoolean
+  include isNull
+  include isNumber
+  include isString
+  include isSymbol
+  include isUndefined
+  header.section__header
+    h2.section__title Keyed Collections
+  include isMap
+  include isSet
+  include isWeakMap
+  include isWeakSet
+  header.section__header
+    h2.section__title Array
   include isArray
-  include isArrayBuffer
+  include isArguments
   include isArrayLike
   include isArrayLikeObject
-  include isBase64
-  include isBigInt
-  include isBigInt64Array
-  include isBigUint64Array
-  include isBlank
-  include isBoolean
-  include isConstructor
-  include isDataView
-  include isDate
-  include isElement
-  include isEmail
-  include isEmpty
   include isEmptyArray
-  include isEmptyObject
-  include isError
-  include isEven
-  include isFloat
-  include isFragment
-  include isFloat32Array
-  include isFloat64Array
-  include isFunction
-  include isHash
-  include isHex
-  include isHTML
-  include isHTMLCollection
-  include isInfinite
+  header.section__header
+    h2.section__title Typed Arrays
+  include isTypedArray
+  include isArrayBuffer
   include isInt8Array
   include isInt16Array
   include isInt32Array
-  include isInteger
-  include isIPAddress
-  include isJSON
-  include isLength
-  include isMap
-  include isNativeFunction
-  include isNull
-  include isNumber
-  include isNumeric
-  include isObject
-  include isObjectLike
-  include isOdd
-  include isPhoneNumber
-  include isPlainObject
-  include isPrototype
-  include isRegExp
-  include isSet
-  include isString
-  include isSymbol
-  include isTextNode
-  include isTypedArray
   include isUint8Array
   include isUint8ClampedArray
   include isUint16Array
   include isUint32Array
-  include isUndefined
-  include isURL
-  include isValue
+  include isFloat32Array
+  include isFloat64Array
+  include isBigInt64Array
+  include isBigUint64Array
+  header.section__header
+    h2.section__title Object
+  include isObject
+  include isObjectLike
+  include isEmptyObject
+  include isHash
+  include isPlainObject
+  include isPrototype
+  include isDate
+  include isDataView
+  include isError
+  include isRegExp
+  include isElement
+  include isFragment
+  include isHTMLCollection
+  include isTextNode
   include isVNode
-  include isWeakMap
-  include isWeakSet
+  header.section__header
+    h2.section__title Function
+  include isFunction
+  include isConstructor
+  include isNativeFunction
+  header.section__header
+    h2.section__title Number
+  include isNumeric
+  include isInteger
+  include isFloat
+  include isEven
+  include isOdd
+  include isInfinite
+  include isLength
+  header.section__header
+    h2.section__title String
+  include isBase64
+  include isBlank
+  include isEmpty
+  include isHex
+  include isPhoneNumber
+  include isIPAddress
+  include isURL
+  include isEmail
+  include isJSON
+  include isHTML
   include isXML
-

@@ -1,4 +1,4 @@
-import isPhoneNumber from 'esm/isPhoneNumber'
+import isPhoneNumber from '../isPhoneNumber'
 
 describe('isPhoneNumber() 方法：', () => {
   describe('移动电话号码：', () => {

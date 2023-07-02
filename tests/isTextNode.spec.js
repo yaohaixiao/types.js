@@ -1,11 +1,11 @@
 /**
  * @jest-environment jsdom
  */
-import isTextNode from 'esm/isTextNode'
-import isElement from 'esm/isElement'
-import isFragment from 'esm/isFragment'
-import isHTMLCollection from 'esm/isHTMLCollection'
-import is from 'esm/is'
+import isTextNode from '../isTextNode'
+import isElement from '../isElement'
+import isFragment from '../isFragment'
+import isHTMLCollection from '../isHTMLCollection'
+import is from '../is'
 
 describe('isTextNode() 方法：', () => {
   // Set up our document body

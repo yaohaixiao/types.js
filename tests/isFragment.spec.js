@@ -1,9 +1,9 @@
 /**
  * @jest-environment jsdom
  */
-import isFragment from 'esm/isFragment'
-import isElement from 'esm/isElement'
-import is from 'esm/is'
+import isFragment from '../isFragment'
+import isElement from '../isElement'
+import is from '../is'
 
 describe('is() 方法：', () => {
   // Set up our document body

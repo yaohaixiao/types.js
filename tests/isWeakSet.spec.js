@@ -1,6 +1,6 @@
-import isWeakSet from 'esm/isWeakSet'
-import isSet from 'esm/isSet'
-import is from 'esm/is'
+import isWeakSet from '../isWeakSet'
+import isSet from '../isSet'
+import is from '../is'
 
 describe('isWeakSet() 方法：', () => {
   it(`isWeakSet(new Set([1, 2, 3, 4])), 返回：false`, () => {

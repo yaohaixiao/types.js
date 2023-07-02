@@ -1,4 +1,4 @@
-import isInfinite from 'esm/isInfinite'
+import isInfinite from '../isInfinite'
 
 describe('isInfinite() 方法：', () => {
   it(`isInfinite(2.4), 返回：false`, () => {

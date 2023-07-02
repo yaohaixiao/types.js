@@ -1,4 +1,4 @@
-import isPlainObject from 'esm/isPlainObject'
+import isPlainObject from '../isPlainObject'
 
 describe('isPlainObject() 方法：', () => {
   describe('基础数据类型：', () => {

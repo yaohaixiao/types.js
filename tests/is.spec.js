@@ -1,7 +1,7 @@
 /**
  * @jest-environment jsdom
  */
-import is from 'esm/is'
+import is from '../is'
 
 describe('is() 方法：', () => {
   // Set up our document body

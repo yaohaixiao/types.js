@@ -1,4 +1,4 @@
-import isUndefined from 'esm/isUndefined'
+import isUndefined from '../isUndefined'
 
 describe('isUndefined() 方法：', () => {
   it(`isUndefined(undefined), 返回：true`, () => {

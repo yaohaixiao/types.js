@@ -1,4 +1,4 @@
-import isFloat from 'esm/isFloat'
+import isFloat from '../isFloat'
 
 describe('isFloat() 方法：', () => {
   it(`isFloat(.1), 返回：true)`, () => {

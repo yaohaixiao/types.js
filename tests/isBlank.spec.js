@@ -1,4 +1,4 @@
-import isBlank from 'esm/isBlank'
+import isBlank from '../isBlank'
 
 describe('isBlank() 方法：', () => {
   it(`isBlank('  '), 返回：true`, () => {

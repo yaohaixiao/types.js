@@ -1,4 +1,4 @@
-import isBase64 from 'esm/isBase64'
+import isBase64 from '../isBase64'
 
 describe('isBase64() 方法：', () => {
   it(`isBase64('Z29vZA=='), 返回：true`, () => {

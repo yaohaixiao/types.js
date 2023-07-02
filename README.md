@@ -54,6 +54,7 @@ npm i -S @yaohaixiao/types.js --registry=https://npm.pkg.github.com
 
 ```html
 <script src="/path/to/types.min.js"></script>
+<script src="/path/to/types.core.min.js"></script>
 ```
 
 ### Node.js 中调用
@@ -68,12 +69,50 @@ Types.is([]) // -> array
 
 ```js
 // 调用 Types 对象
-import Types from '@yaohaixiao/types.js/esm/types'
+import Types from '@yaohaixiao/types.js/types'
 
 Types.is([]) // -> array
+Types.isArray([]) // -> true
+
+// 如果不希望一次加载所有方法，可以考虑 lang 模块
+// 即 type.core.min.js 中的所有方法：
+// is,
+// isValue,
+// isObject,
+// isHash,
+// isArray,
+// isArrayLike,
+// isFunction,
+// isConstructor,
+// isNull,
+// isNumber,
+// isNumeric,
+// isFloat,
+// isInteger,
+// isString,
+// isBigInt,
+// isBoolean,
+// isUndefined,
+// isSet,
+// isMap,
+// isSymbol,
+// isDate,
+// isElement,
+// isEmpty
+import Types from '@yaohaixiao/types.js/lang'
+// 另外有 string, number 和 object 模块(具体包含方法，见 API 文档)
+import Types from '@yaohaixiao/types.js/string'
+import Types from '@yaohaixiao/types.js/number'
+import Types from '@yaohaixiao/types.js/object'
+
+// 调用 lang 方法模块（type.core.min.js）中的所有方法
+import Types from '@yaohaixiao/types.js/lang'
+
+Types.is([]) // -> array
+Types.isArray([]) // -> true
 
 // 调用特定方法
-import isArray from '@yaohaixiao/types.js/esm/isArray'
+import isArray from '@yaohaixiao/types.js/isArray'
 
 isArray([]) // -> true
 ```
@@ -140,9 +179,9 @@ Type: `Boolean`
 #### Example
 
 ```js
-import Types from '@yaohaixiao/types.js/esm/types'
+import Types from '@yaohaixiao/types.js/types'
 // 或者单独引用 is() 方法
-// import is from '@yaohaixiao/types.js/esm/is'
+// import is from '@yaohaixiao/types.js/is'
 
 let Example
 let args
@@ -207,6 +246,54 @@ Types.is(new BigUint64Array(64)) // -> biguint64array
 ```
 
 
+### [isValue](https://yaohaixiao.github.io/types.js/#method-isValue)
+
+isValue(val) 方法用来检测测试数据是否为有效的数据。
+
+#### Parameters
+
+##### val
+
+Type: `Any`
+Default: ``
+
+必选，要检测的数据。
+
+#### Returns
+
+Type: `Boolean`
+
+'val' 是有效的数据返回 true，否则返回 false。
+
+#### Example
+
+```js
+import Types from '@yaohaixiao/types.js/types'
+// 或者单独引用 isValue() 方法
+// import isValue from '@yaohaixiao/types.js/isValue'
+
+let projects
+
+// 非有效数据
+Types.isValue(projects) // -> false
+Types.isValue(NaN) // -> false
+Types.isValue(null) // -> false
+Types.isValue(Infinity) // -> false
+Types.isValue(-Infinity) // -> false
+
+// 有效数据
+Types.isValue(0) // -> true
+Types.isValue('') // -> true
+Types.isValue(false) // -> true
+Types.isValue([]) // -> true
+Types.isValue({}) // -> true
+Types.isValue(/\s+/ig) // -> true
+Types.isValue(new Date()) // -> true
+Types.isValue(empty) // -> true
+Types.isValue(fn) // -> true
+```
+
+
 ### [isObject](https://yaohaixiao.github.io/types.js/#method-isObject)
 
 isObject(val) 方法用来检测测试数据是否为对象。使用 isObject() 方法测试单体对象和函数都返回值都是 true。
@@ -229,9 +316,9 @@ Type: `Boolean`
 #### Example
 
 ```js
-import Types from '@yaohaixiao/types.js/esm/types'
+import Types from '@yaohaixiao/types.js/types'
 // 或者单独引用 isObject() 方法
-// import isObject from '@yaohaixiao/types.js/esm/isObject'
+// import isObject from '@yaohaixiao/types.js/isObject'
 
 const $list = document.getElementById('list')
 
@@ -279,9 +366,9 @@ Type: `Boolean`
 #### Example
 
 ```js
-import Types from '@yaohaixiao/types.js/esm/types'
+import Types from '@yaohaixiao/types.js/types'
 // 或者单独引用 isFunction() 方法
-// import isFunction from '@yaohaixiao/types.js/esm/isFunction'
+// import isFunction from '@yaohaixiao/types.js/isFunction'
 
 const blank = () => {}
 const fn = new Fucntion()
@@ -327,9 +414,9 @@ Type: `Boolean`
 #### Example
 
 ```js
-import Types from '@yaohaixiao/types.js/esm/types'
+import Types from '@yaohaixiao/types.js/types'
 // 或者单独引用 isArray() 方法
-// import isArray from '@yaohaixiao/types.js/esm/isArray'
+// import isArray from '@yaohaixiao/types.js/isArray'
 
 const LooksLike = { '0':1, '1':2, length: 2 }
 let args
@@ -376,9 +463,9 @@ Type: `Boolean`
 #### Example
 
 ```js
-import Types from '@yaohaixiao/types.js/esm/types'
+import Types from '@yaohaixiao/types.js/types'
 // 或者单独引用 isNumber() 方法
-// import isNumber from '@yaohaixiao/types.js/esm/isNumber'
+// import isNumber from '@yaohaixiao/types.js/isNumber'
 
 Types.isNumber(0) // -> true
 Types.isNumber(.4) // -> true
@@ -416,9 +503,9 @@ Type: `Boolean`
 #### Example
 
 ```js
-import Types from '@yaohaixiao/types.js/esm/types'
+import Types from '@yaohaixiao/types.js/types'
 // 或者单独引用 isString() 方法
-// import isString from '@yaohaixiao/types.js/esm/isString'
+// import isString from '@yaohaixiao/types.js/isString'
 
 const text = document.createTextNode('text')
 
@@ -454,9 +541,9 @@ Type: `Boolean`
 #### Example
 
 ```js
-import Types from '@yaohaixiao/types.js/esm/types'
+import Types from '@yaohaixiao/types.js/types'
 // 或者单独引用 isBoolean() 方法
-// import isBoolean from '@yaohaixiao/types.js/esm/isBoolean'
+// import isBoolean from '@yaohaixiao/types.js/isBoolean'
 
 let project
 
@@ -499,9 +586,9 @@ Type: `Boolean`
 #### Example
 
 ```js
-import Types from '@yaohaixiao/types.js/esm/types'
+import Types from '@yaohaixiao/types.js/types'
 // 或者单独引用 isNull() 方法
-// import isNull from '@yaohaixiao/types.js/esm/isNull'
+// import isNull from '@yaohaixiao/types.js/isNull'
 
 let project
 
@@ -539,9 +626,9 @@ Type: `Boolean`
 #### Example
 
 ```js
-import Types from '@yaohaixiao/types.js/esm/types'
+import Types from '@yaohaixiao/types.js/types'
 // 或者单独引用 isUndefined() 方法
-// import isUndefined from '@yaohaixiao/types.js/esm/isUndefined'
+// import isUndefined from '@yaohaixiao/types.js/isUndefined'
 
 let project
 
@@ -578,9 +665,9 @@ Type: `Boolean`
 #### Example
 
 ```js
-import Types from '@yaohaixiao/types.js/esm/types'
+import Types from '@yaohaixiao/types.js/types'
 // 或者单独引用 isSymbol() 方法
-// import isSymbol from '@yaohaixiao/types.js/esm/isSymbol'
+// import isSymbol from '@yaohaixiao/types.js/isSymbol'
 
 const sym = Symbol('foo')
 const symObj = Object(sym)
@@ -619,9 +706,9 @@ Type: `Boolean`
 #### Example
 
 ```js
-import Types from '@yaohaixiao/types.js/esm/types'
+import Types from '@yaohaixiao/types.js/types'
 // 或者单独引用 isBigInt() 方法
-// import isBigInt from '@yaohaixiao/types.js/esm/isBigInt'
+// import isBigInt from '@yaohaixiao/types.js/isBigInt'
 
 const MAX_SAFE_INTEGER = 9007199254740991
 const bigint = BigInt(MAX_SAFE_INTEGER + 1)
@@ -630,6 +717,166 @@ Type.is(bigint) // -> 'bigint'
 
 Types.isBigInt(MAX_SAFE_INTEGER) // -> false
 Types.isBigInt(bigint) // -> true
+```
+
+
+### [isMap](https://yaohaixiao.github.io/types.js/#method-isMap)
+
+isMap(val) 方法用来检测测试数据是否为 Map 类型。
+
+#### Parameters
+
+##### val
+
+Type: `Any`
+Default: ``
+
+必选，要检测的数据。
+
+#### Returns
+
+Type: `Boolean`
+
+'val' 是 Map 类型返回 true，否则返回 false。
+
+#### Example
+
+```js
+import Types from '@yaohaixiao/types.js/types'
+// 或者单独引用 isMap() 方法
+// import isMap from '@yaohaixiao/types.js/isMap'
+
+const map = new Map([
+    ['name', 'Robert'],
+    ['Gender', 'Male']
+])
+
+Types.is(map) // -> 'map'
+Types.isMap(map) // -> true
+
+Types.isMap(['name', 'Robert']) // -> false
+```
+
+
+
+### [isSet](https://yaohaixiao.github.io/types.js/#method-isSet)
+
+isSet(val) 方法用来检测测试数据是否为 isSet 类型。
+
+#### Parameters
+
+##### val
+
+Type: `Any`
+Default: ``
+
+必选，要检测的数据。
+
+#### Returns
+
+Type: `Boolean`
+
+'val' 是 isSet 类型返回 true，否则返回 false。
+
+#### Example
+
+```js
+import Types from '@yaohaixiao/types.js/types'
+// 或者单独引用 isSet() 方法
+// import isSet from '@yaohaixiao/types.js/isSet'
+
+const set = new Set([1, 2, 3, 4])
+const arr = [1, 2, 3, 4]
+
+Types.is(set) // -> 'set'
+Types.isSet(set) // -> true
+
+Types.is(arr) // -> 'array'
+Types.isSet(arr) // -> false
+```
+
+
+### [isWeakMap](https://yaohaixiao.github.io/types.js/#method-isWeakMap)
+
+isWeakMap(val) 方法用来检测测试数据是否为 WeakMap 类型。
+
+#### Parameters
+
+##### val
+
+Type: `Any`
+Default: ``
+
+必选，要检测的数据。
+
+#### Returns
+
+Type: `Boolean`
+
+'val' 是 WeakMap 类型返回 true，否则返回 false。
+
+#### Example
+
+```js
+import Types from '@yaohaixiao/types.js/types'
+// 或者单独引用 isWeakMap() 方法
+// import isWeakMap from '@yaohaixiao/types.js/isWeakMap'
+
+const map = new Map([
+    ['name', 'Robert'],
+    ['Gender', 'Male']
+])
+
+const weakmap = new WeakMap()
+
+weakmap.set({}, 37)
+
+Types.is(weakmap) // -> 'weakmap'
+Types.isWeakMap(weakmap) // -> true
+
+Types.is(map) // -> 'map'
+Types.isWeakMap(map) // -> false
+```
+
+
+### [isWeakSet](https://yaohaixiao.github.io/types.js/#method-isWeakSet)
+
+isWeakSet(val) 方法用来检测测试数据是否为 WeakSet 类型。
+
+#### Parameters
+
+##### val
+
+Type: `Any`
+Default: ``
+
+必选，要检测的数据。
+
+#### Returns
+
+Type: `Boolean`
+
+'val' 是 WeakSet 类型返回 true，否则返回 false。
+
+#### Example
+
+```js
+import Types from '@yaohaixiao/types.js/types'
+// 或者单独引用 isWeakSet() 方法
+// import isWeakSet from '@yaohaixiao/types.js/isWeakSet'
+
+const set = new Set([1, 2, 3, 4])
+const weakset = new WeakSet()
+
+weakset.add({name: 'Robert'})
+
+Types.is(set) // -> 'set'
+Types.isSet(set) // -> true
+Types.isWeakSet(set) // -> false
+
+Types.is(weakset) // -> 'weakset'
+Types.isSet(weakset) // -> false
+Types.isWeakSet(weakset) // -> true
 ```
 
 
@@ -655,9 +902,9 @@ Type: `Boolean`
 #### Example
 
 ```js
-import Types from '@yaohaixiao/types.js/esm/types'
+import Types from '@yaohaixiao/types.js/types'
 // 或者单独引用 isArguments() 方法
-// import isArguments from '@yaohaixiao/types.js/esm/isArguments'
+// import isArguments from '@yaohaixiao/types.js/isArguments'
 
 const argsLike = { '0': 3, '1': 4, length: 2 }
 const $items = document.querySelectorAll('.item')
@@ -678,37 +925,6 @@ Types.isArguments(items) // -> false
 Types.is(args) // -> 'arguments'
 Types.isArguments(args) // -> true
 
-```
-
-
-### [isArrayBuffer](https://yaohaixiao.github.io/types.js/#method-isArrayBuffer)
-
-isArrayBuffer(val) 方法用来检测测试数据是否为 ArrayBuffer 类型。
-
-#### Parameters
-
-##### val
-
-Type: `Any`
-Default: ``
-
-必选，要检测的数据。
-
-#### Returns
-
-Type: `Boolean`
-
-'val' 是 ArrayBuffer 类型返回 true，否则返回 false
-
-#### Example
-
-```js
-import Types from '@yaohaixiao/types.js/esm/types'
-// 或者单独引用 isArrayBuffer() 方法
-// import isArrayBuffer from '@yaohaixiao/types.js/esm/isArrayBuffer'
-
-Types.isArrayBuffer([]) // -> false
-Types.isArrayBuffer(new ArrayBuffer(8)) // -> true
 ```
 
 
@@ -734,9 +950,9 @@ Type: `Boolean`
 #### Example
 
 ```js
-import Types from '@yaohaixiao/types.js/esm/types'
+import Types from '@yaohaixiao/types.js/types'
 // 或者单独引用 isArrayLike() 方法
-// import isArrayLike from '@yaohaixiao/types.js/esm/isArrayLike'
+// import isArrayLike from '@yaohaixiao/types.js/isArrayLike'
 
 let args
 
@@ -760,214 +976,9 @@ Types.isArrayLike( new Int8Array([]) ) // -> false
 ```
 
 
-### [isBase64](https://yaohaixiao.github.io/types.js/#method-isBase64)
+### [isArrayBuffer](https://yaohaixiao.github.io/types.js/#method-isArrayBuffer)
 
-isBase64(val) 方法用来检测测试数据是否为一个基于 base64 编码的字符串。
-
-#### Parameters
-
-##### val
-
-Type: `String`
-Default: ``
-
-必选，要检测的数据。
-
-#### Returns
-
-Type: `Boolean`
-
-'val' 是 base64 编码的字符串返回 true，否则返回 false。
-
-#### Example
-
-```js
-import Types from '@yaohaixiao/types.js/esm/types'
-// 或者单独引用 isBase64() 方法
-// import isBase64 from '@yaohaixiao/types.js/esm/isBase64'
-
-Types.isBase64('Z29vZA==') // -> true
-Types.isBase64('aXNCYXNlNjQ=2') // -> false
-```
-
-
-### [isBlank](https://yaohaixiao.github.io/types.js/#method-isBlank)
-
-isBlank(val) 方法用来检测测试数据是否只包空格。
-
-#### Parameters
-
-##### val
-
-Type: `String`
-Default: ``
-
-必选，要检测的数据。
-
-#### Returns
-
-Type: `Boolean`
-
-'val' 只包含空格返回 true，否则返回 false。
-
-#### Example
-
-```js
-import Types from '@yaohaixiao/types.js/esm/types'
-// 或者单独引用 isBlank() 方法
-// import isBlank from '@yaohaixiao/types.js/esm/isBlank'
-
-Types.isBlank('  ') // -> true
-Types.isBlank(new String()) // -> false
-Types.isBlank('') // -> true
-```
-
-
-### [isConstructor](https://yaohaixiao.github.io/types.js/#method-isConstructor)
-
-isConstructor(fn) 方法用来检测测试函数是否为构造函数
-
-#### Parameters
-
-##### val
-
-Type: `Function`
-
-必选，要测试的（构造）函数。
-
-#### Returns
-
-Type: `Boolean`
-
-fn 是构造函数返回 true，否则返回 false。
-
-#### Example
-
-```js
-import Types from '@yaohaixiao/types.js/esm/types'
-// 或者单独引用 isConstructor() 方法
-// import isConstructor from '@yaohaixiao/types.js/esm/isConstructor'
-
-const fn = function(){}
-const ff = class {}
-
-Types.isConstructor(fn) // -> true
-Types.isConstructor(ff) // -> true
-Types.isConstructor(console.log) // -> false
-
-Types.isConstructor(Math) // -> false
-Types.isConstructor(Boolean) // -> true
-Types.isConstructor(Array) // -> true
-Types.isConstructor(Function) // -> true
-Types.isConstructor(Date) // -> true
-Types.isConstructor(RegExp) // -> true
-Types.isConstructor(Object) // -> true
-```
-
-
-### [isEmail](https://yaohaixiao.github.io/types.js/#method-isEmail)
-
-isEmail(val) 方法用来检测测试数据是否为合法的 Email 格式。
-
-#### Parameters
-
-##### val
-
-Type: `String`
-Default: ``
-
-必选，要检测的数据。
-
-#### Returns
-
-Type: `Boolean`
-
-'val' 是 Boolean 类型返回 true，否则返回 false
-
-#### Example
-
-```js
-import Types from '@yaohaixiao/types.js/esm/types'
-// 或者单独引用 isEmail() 方法
-// import isEmail from '@yaohaixiao/types.js/esm/isEmail'
-
-// True
-Types.isEmail('yaohaixiao@gmail.com') // => true
-Types.isEmail('yaohaixiao@gmail.c') // => true
-Types.isEmail('haixiao-yao@gmail.com') // => true
-Types.isEmail('haixiao_yao@gmail.com') // => true
-Types.isEmail('haixiao&yao@gmail.com') // => true
-Types.isEmail('haixiao~yao@gmail.com') // => true
-Types.isEmail('haixiao+yao@gmail.com') // => true
-Types.isEmail('haixiao^yao@gmail.com') // => true
-Types.isEmail('haixiao%yao@gmail.com') // => true
-Types.isEmail('haixiao$yao@gmail.com') // => true
-Types.isEmail('haixiao.yao@gmail.com') // => true
-Types.isEmail('haixiao/yao@gmail.com') // => true
-Types.isEmail('haixiao#yao@gmail.com') // => true
-Types.isEmail('yao{haixiao@gmail.com') // => true
-Types.isEmail('yao|haixiao@gmail.com') // => true
-Types.isEmail('yao}haixiao@gmail.com') // => true
-
-// False
-Types.isEmail('yaohaixiao#gmail.com') // => false
-Types.isEmail('yao\haixiao@gmail.com') // => false
-Types.isEmail('yao[haixiao@gmail.com') // => false
-```
-
-
-### [isEmptyObject](https://yaohaixiao.github.io/types.js/#method-isEmptyObject)
-
-isEmptyObject(val) 方法用来检测测试数据是否为空（单体）对象。
-
-#### Parameters
-
-##### val
-
-Type: `Object`
-Default: ``
-
-必选，要检测的数据。
-
-#### Returns
-
-Type: `Boolean`
-
-'val' 为空（单体）对象，返回 true，否则返回 false
-
-#### Example
-
-```js
-import Types from '@yaohaixiao/types.js/esm/types'
-// 或者单独引用 isEmptyObject() 方法
-// import isEmptyObject from '@yaohaixiao/types.js/esm/isEmptyObject'
-
-function Person(name,age){
-  this.name = name
-  this.age = age
-}
-
-Types.isEmptyObject({}) // -> true
-Types.isEmptyObject([]) // true
-Types.isEmptyObject(Person) // true
-Types.isEmptyObject(new Object()) // true
-Types.isEmptyObject(new Boolean()) // true
-Types.isEmptyObject(new Array()) // true
-Types.isEmptyObject(new Date('2017-12-11')) // true
-Types.isEmptyObject(new RegExp('\s+','ig')) // true
-Types.isEmptyObject(new String()) // true
-
-Types.isEmptyObject(new Function()) // false
-Types.isEmptyObject(['']) // false
-Types.isEmptyObject(null) // false
-Types.isEmptyObject({name:'type.js'}) // -> false
-Types.isEmptyObject(new Person('yaohaixiao',30)) // false
-```
-
-
-### [isElement](https://yaohaixiao.github.io/types.js/#method-isElement)
-
-isElement(val) 方法用来检测测试数据的数据类型是否为 HTML 元素节点。
+isArrayBuffer(val) 方法用来检测测试数据是否为 ArrayBuffer 类型。
 
 #### Parameters
 
@@ -982,70 +993,18 @@ Default: ``
 
 Type: `Boolean`
 
-'val' 为 HTML 元素节点返回 true，否则返回 false。
+'val' 是 ArrayBuffer 类型返回 true，否则返回 false
 
 #### Example
 
 ```js
-import Types from '@yaohaixiao/types.js/esm/types'
-// 或者单独引用 isElement() 方法
-// import isElement from '@yaohaixiao/types.js/esm/isElement'
+import Types from '@yaohaixiao/types.js/types'
+// 或者单独引用 isArrayBuffer() 方法
+// import isArrayBuffer from '@yaohaixiao/types.js/isArrayBuffer'
 
-const $list = document.getElementById('list')
-const $div = document.createElement('div')
-const $text = document.createTextNode('text')
-const $items = document.querySelectorAll('.item')
-const $fragment = document.createDocumentFragment()
-
-Types.is($list) // -> 'element'
-Types.isElement($list) // -> true
-
-Types.is($div) // -> 'element'
-Types.isElement($div) // -> true
-
-Types.is($text) // -> 'text'
-Types.isElement($text) // -> false
-
-Types.is($items) // -> 'collection'
-Types.isElement($items) // -> false
-
-Types.is($fragment) // -> 'collection'
-Types.isElement($fragment) // -> false
-```
-
-
-### [isEmpty](https://yaohaixiao.github.io/types.js/#method-isEmpty)
-
-isEmpty(val) 方法用来检测测试数据是否为空字符串。
-
-#### Parameters
-
-##### val
-
-Type: `String`
-Default: ``
-
-必选，要检测的数据。
-
-#### Returns
-
-Type: `Boolean`
-
-'val' 是空字符串返回 true，否则返回 false。
-
-#### Example
-
-```js
-import Types from '@yaohaixiao/types.js/esm/types'
-// 或者单独引用 isEmpty() 方法
-// import isEmpty from '@yaohaixiao/types.js/esm/isEmpty'
-
-Types.isEmpty('') // -> true
-Types.isEmpty(String()) // -> true
-
-Types.isEmpty(new String()) // -> false
-Types.isEmpty(' ') // -> false
-```
+Types.isArrayBuffer([]) // -> false
+Types.isArrayBuffer(new ArrayBuffer(8)) // -> true
+``
 
 
 ### [isEmptyObject](https://yaohaixiao.github.io/types.js/#method-isEmptyObject)
@@ -1070,9 +1029,9 @@ Type: `Boolean`
 #### Example
 
 ```js
-import Types from '@yaohaixiao/types.js/esm/types'
+import Types from '@yaohaixiao/types.js/types'
 // 或者单独引用 isEmptyObject() 方法
-// import isEmptyObject from '@yaohaixiao/types.js/esm/isEmptyObject'
+// import isEmptyObject from '@yaohaixiao/types.js/isEmptyObject'
 
 function Person(name,age){
   this.name = name
@@ -1094,107 +1053,6 @@ Types.isEmptyObject(['']) // false
 Types.isEmptyObject(null) // false
 Types.isEmptyObject({name:'type.js'}) // -> false
 Types.isEmptyObject(new Person('yaohaixiao',30)) // false
-```
-
-
-### [isError](https://yaohaixiao.github.io/types.js/#method-isError)
-
-isError(val) 方法用来检测测试数据是否为 Error 类型。
-
-#### Parameters
-
-##### val
-
-Type: `Any`
-Default: ``
-
-必选，要检测的数据。
-
-#### Returns
-
-Type: `Boolean`
-
-'val' 是 Error 类型返回 true，否则返回 false。
-
-#### Example
-
-```js
-import Types from '@yaohaixiao/types.js/esm/types'
-// 或者单独引用 isError() 方法
-// import isError from '@yaohaixiao/types.js/esm/isError'
-
-const error = function Error(){}
-
-Types.isError(new error()) // -> false
-Types.isError(new Error()) // -> true
-```
-
-
-### [isEven](https://yaohaixiao.github.io/types.js/#method-isEven)
-
-isEven(val) 方法用来检测测试数据的数据类型是否为偶数。
-
-#### Parameters
-
-##### val
-
-Type: `Number`
-Default: ``
-
-必选，要检测的数据。
-
-#### Returns
-
-Type: `Boolean`
-
-'val' 是偶数返回 true，否则返回 false。
-
-#### Example
-
-```js
-import Types from '@yaohaixiao/types.js/esm/types'
-// 或者单独引用 isEven() 方法
-// import isEven from '@yaohaixiao/types.js/esm/isEven'
-
-Types.isEven(2) // -> true
-Types.isEven(3) // -> false
-Types.isEven(2.2) // -> false
-```
-
-
-### [isFloat](https://yaohaixiao.github.io/types.js/#method-isFloat)
-
-isFloat(val) 方法用来检测测试数据是否为浮点数。
-
-#### Parameters
-
-##### val
-
-Type: `Number`
-Default: ``
-
-必选，要检测的数据。
-
-#### Returns
-
-Type: `Boolean`
-
-'val' 是浮点数返回 true，否则返回 false。
-
-#### Example
-
-```js
-import Types from '@yaohaixiao/types.js/esm/types'
-// 或者单独引用 isFloat() 方法
-// import isFloat from '@yaohaixiao/types.js/esm/isFloat'
-
-Types.isFloat(2.4) // -> true
-Types.isFloat(Number("3.4556645445E7")) // -> true
-
-Types.isFloat(Number("3.4556645445E10")) // -> false
-Types.isFloat(2.0) // -> false
-Types.isFloat(0xffffff) // -> false
-Types.isFloat(NaN) // -> false
 ```
 
 
@@ -1224,9 +1082,9 @@ Type: `Boolean`
 #### Example
 
 ```js
-import Types from '@yaohaixiao/types.js/esm/types'
+import Types from '@yaohaixiao/types.js/types'
 // 或者单独引用 isHash() 方法
-// import isHash from '@yaohaixiao/types.js/esm/isHash'
+// import isHash from '@yaohaixiao/types.js/isHash'
 
 let udf
 
@@ -1256,16 +1114,15 @@ Types.isHash(new Array()) // -> true
 Types.isHash(new Date()) // -> true
 ```
 
+### [isPlainObject](https://yaohaixiao.github.io/types.js/#method-isPlainObject)
 
-### [isHex](https://yaohaixiao.github.io/types.js/#method-isHex)
-
-isHex(val) 方法用来检测测试数据是否为 16 进制编码的字符串。
+isPlainObject(val) 方法用来检测测试数据是否为普通对象。
 
 #### Parameters
 
 ##### val
 
-Type: `String`
+Type: `Object`
 Default: ``
 
 必选，要检测的数据。
@@ -1274,35 +1131,53 @@ Default: ``
 
 Type: `Boolean`
 
-'val' 是 16 进制编码的字符串返回 true，否则返回 false。
+'val' 是普通对象返回 true，否则返回 false。
 
 #### Example
 
 ```js
-import Types from '@yaohaixiao/types.js/esm/types'
-// 或者单独引用 isHex() 方法
-// import isHex from '@yaohaixiao/types.js/esm/isHex'
+import Types from '@yaohaixiao/types.js/types'
+// 或者单独引用 isPlainObject() 方法
+// import isPlainObject from '@yaohaixiao/types.js/isPlainObject'
 
-Types.isHex('#ffffff') // -> true
-Types.isHex('f3f3f3') // -> true
-Types.isHex('#h1f1f1') // -> false
-Types.isHex('sdadfa') // -> false
+let udf
+
+// 基础类型
+Types.isPlainObject(2) // -> false
+Types.isPlainObject('str') // -> false
+Types.isPlainObject(false) // -> false
+Types.isPlainObject(null) // -> false
+Types.isPlainObject(udf) // -> false
+
+// 引用类型
+Types.isPlainObject(new Function()) // -> false
+Types.isPlainObject(function(){}) // -> false
+Types.isPlainObject(() => {}) // -> false
+Types.isPlainObject(class{}) // -> false
+
+Types.isPlainObject(new class{}) // -> true
+Types.isPlainObject({}) // -> true
+Types.isPlainObject(Object.create(null)) // -> true
+Types.isPlainObject(new Object()) // -> true
+Types.isPlainObject([]) // -> true
+Types.isPlainObject(/s+/ig) // -> true
+Types.isPlainObject(new String()) // -> true
+Types.isPlainObject(new Number()) // -> true
+Types.isPlainObject(new Boolean()) // -> true
+Types.isPlainObject(new Array()) // -> true
+Types.isPlainObject(new Date()) // -> true
 ```
 
 
-### [isHTML](https://yaohaixiao.github.io/types.js/#method-isHTML)
+### [isError](https://yaohaixiao.github.io/types.js/#method-isError)
 
-isHTML(val) 方法用来检测测试数据是否为合法的 HTML 代码。
-
-#### Since
-
-0.5.0
+isError(val) 方法用来检测测试数据是否为 Error 类型。
 
 #### Parameters
 
 ##### val
 
-Type: `String`
+Type: `Any`
 Default: ``
 
 必选，要检测的数据。
@@ -1311,38 +1186,163 @@ Default: ``
 
 Type: `Boolean`
 
-true - 表示检测数据为合法的 HTML 代码，false 则表示不是。
+'val' 是 Error 类型返回 true，否则返回 false。
 
 #### Example
 
 ```js
-import Types from '@yaohaixiao/types.js/esm/types'
-// 或者单独引用 isHTML() 方法
-// import isHTML from '@yaohaixiao/types.js/esm/isHTML'
+import Types from '@yaohaixiao/types.js/types'
+// 或者单独引用 isError() 方法
+// import isError from '@yaohaixiao/types.js/isError'
 
-// 包含 doctype 标签：
-Types.isHTML('<!doctype html>') // -> true
-Types.isHTML('\n\n<!doctype html><html>') // -> true
+const error = function Error(){}
 
-// 包含：<html>，<body> 或者 <x-*> 标签：
-Types.isHTML('<html>') // -> true
-Types.isHTML('<html></html>') // -> true
-Types.isHTML('<html lang="en"></html>') // -> true
-Types.isHTML('<html><body></html>') // -> true
-Types.isHTML('<html><body class="no-js"></html>') // -> true
-Types.isHTML('<x-unicorn>') // -> true
+Types.isError(new error()) // -> false
+Types.isError(new Error()) // -> true
+```
 
-// 包含任何合法的 HTML 标签：
-Types.isHTML('<p>foo</p>') // -> true
-Types.isHTML('<a href="#">foo</a>') // -> true
-Types.isHTML('<br />') // -> true
 
-// 无法匹配 XML 标签：
-Types.isHTML('<attribute>address</attribute>') // -> false
-Types.isHTML('<address>Wuhan City</address>') // -> false
-Types.isHTML('<age>20</age>') // -> false
-Types.isHTML('<gender>mail</gender>') // -> false
-Types.isHTML('<career>programmer</career>') // -> false
+### [isRegExp](https://yaohaixiao.github.io/types.js/#method-isRegExp)
+
+isRegExp(val) 方法用来检测测试数据是否为正则表达式。
+
+#### Parameters
+
+##### val
+
+Type: `Any`
+Default: ``
+
+必选，要检测的数据。
+
+#### Returns
+
+Type: `Boolean`
+
+'val' 是正则表达式返回 true，否则返回 false。
+
+#### Example
+
+```js
+import Types from '@yaohaixiao/types.js/types'
+// 或者单独引用 isRegExp() 方法
+// import isRegExp from '@yaohaixiao/types.js/isRegExp'
+
+const patternOne = new RegExp('\\s+','ig')
+const patternTwo = /\s+/ig
+const patternStr = '/\\s+/ig'
+
+Types.is(patternOne) // -> 'regexp'
+Types.isRegExp(patternOne) // -> true
+
+Types.is(patternTwo) // -> 'regexp'
+Types.isRegExp(patternTwo) // -> true
+
+Types.is(patternStr) // -> 'string'
+Types.isRegExp(patternStr) // -> false
+```
+
+
+### [isElement](https://yaohaixiao.github.io/types.js/#method-isElement)
+
+isElement(val) 方法用来检测测试数据的数据类型是否为 HTML 元素节点。
+
+#### Parameters
+
+##### val
+
+Type: `Any`
+Default: ``
+
+必选，要检测的数据。
+
+#### Returns
+
+Type: `Boolean`
+
+'val' 为 HTML 元素节点返回 true，否则返回 false。
+
+#### Example
+
+```js
+import Types from '@yaohaixiao/types.js/types'
+// 或者单独引用 isElement() 方法
+// import isElement from '@yaohaixiao/types.js/isElement'
+
+const $list = document.getElementById('list')
+const $div = document.createElement('div')
+const $text = document.createTextNode('text')
+const $items = document.querySelectorAll('.item')
+const $fragment = document.createDocumentFragment()
+
+Types.is($list) // -> 'element'
+Types.isElement($list) // -> true
+
+Types.is($div) // -> 'element'
+Types.isElement($div) // -> true
+
+Types.is($text) // -> 'text'
+Types.isElement($text) // -> false
+
+Types.is($items) // -> 'collection'
+Types.isElement($items) // -> false
+
+Types.is($fragment) // -> 'collection'
+Types.isElement($fragment) // -> false
+```
+
+
+### [isTextNode](https://yaohaixiao.github.io/types.js/#method-isTextNode)
+
+isTextNode(val) 方法用来检测测试数据是否为文本节点。
+
+#### Parameters
+
+##### val
+
+Type: `Any`
+Default: ``
+
+必选，要检测的数据。
+
+#### Returns
+
+Type: `Boolean`
+
+'val' 是文本节点返回 true，否则返回 false。
+
+#### Example
+
+```js
+import Types from '@yaohaixiao/types.js/types'
+// 或者单独引用 isTextNode() 方法
+// import isTextNode from '@yaohaixiao/types.js/isTextNode'
+
+const $list = document.getElementById('list')
+const $div = document.createElement('div')
+const $fragment = document.createDocumentFragment()
+const $items = document.querySelectorAll('.item')
+const $text = document.createTextNode('text')
+
+Types.is($list) // -> 'element'
+Types.isElement($list) // -> true
+Types.isTextNode($list) // -> false
+
+Types.is($div) // -> 'element'
+Types.isElement($div) // -> true
+Types.isTextNode($div) // -> false
+
+Types.is($fragment) // -> 'fragment'
+Types.isFragment($fragment) // -> true
+Types.isTextNode($fragment) // -> false
+
+Types.is($items) // -> 'collection'
+Types.isHTMLCollection($items) // -> true
+Types.isTextNode($items) // -> false
+
+Types.is($text) // -> 'collection'
+Types.isElement($text) // -> false
+Types.isTextNode($text) // -> true
 ```
 
 
@@ -1368,9 +1368,9 @@ Type: `Boolean`
 #### Example
 
 ```js
-import Types from '@yaohaixiao/types.js/esm/types'
+import Types from '@yaohaixiao/types.js/types'
 // 或者单独引用 isHTMLCollection() 方法
-// import isHTMLCollection from '@yaohaixiao/types.js/esm/isHTMLCollection'
+// import isHTMLCollection from '@yaohaixiao/types.js/isHTMLCollection'
 
 const $list = document.getElementById('list')
 const $div = document.createElement('div')
@@ -1400,170 +1400,45 @@ Types.isHTMLCollection($items) // -> false
 ```
 
 
-### [isInfinite](https://yaohaixiao.github.io/types.js/#method-isInfinite)
+### [isConstructor](https://yaohaixiao.github.io/types.js/#method-isConstructor)
 
-isInfinite(val) 方法用来检测测试数据的数据是正无穷或者负无穷。
-
-#### Parameters
-
-##### val
-
-Type: `Number`
-Default: ``
-
-必选，要检测的数据。
-
-#### Returns
-
-Type: `Boolean`
-
-'val' 是正无穷或者负无穷返回 true，否则返回 false。
-
-#### Example
-
-```js
-import Types from '@yaohaixiao/types.js/esm/types'
-// 或者单独引用 isInfinite() 方法
-// import isInfinite from '@yaohaixiao/types.js/esm/isInfinite'
-
-Types.isInfinite(2.4) // -> false
-
-Types.isInfinite(Infinity) // -> true
-Types.isInfinite(-Infinity) // -> true
-```
-
-
-### [isInteger](https://yaohaixiao.github.io/types.js/#method-isInteger)
-
-isInteger(val) 方法用来检测测试数据是否为整数。
+isConstructor(fn) 方法用来检测测试函数是否为构造函数
 
 #### Parameters
 
 ##### val
 
-Type: `Any`
-Default: ``
+Type: `Function`
 
-必选，要检测的数据。
-
-#### Returns
-
-Type: `Boolean`
-
-'val' 是整数返回 true，否则返回 false。
-
-#### Example
-
-```js
-import Types from '@yaohaixiao/types.js/esm/types'
-// 或者单独引用 isInteger() 方法
-// import isInteger from '@yaohaixiao/types.js/esm/isInteger'
-
-Types.isInteger(2.4) // -> false
-Types.isInteger(3.4234E3) // -> false
-Types.isInteger('1') // -> false
-Types.isInteger(Number('3.4556645445E7')) // -> false
-Types.isInteger(NaN) // -> false
-Types.isInteger(Infinity) // -> false
-Types.isInteger(-Infinity) // -> false
-
-Types.isInteger(2) // -> true
-Types.isInteger(2.0) // -> true
-Types.isInteger(3.4234E4) // -> true
-Types.isInteger(0xffffff) // -> true
-Types.isInteger(Number('1')) // -> true
-Types.isInteger(parseInt('1.0', 10)) // -> true
-Types.isInteger(Math.ceil(2.6)) // -> true
-```
-
-
-### [isJSON](https://yaohaixiao.github.io/types.js/#method-isJSON)
-
-isJSON(val) 方法用来检测测试数据是否为 JSON 格式字符串数据。
-
-#### Parameters
-
-##### val
-
-Type: `Any`
-Default: ``
-
-必选，要检测的数据。
+必选，要测试的（构造）函数。
 
 #### Returns
 
 Type: `Boolean`
 
-'val' 是 JSON 格式字符串数据返回 true，否则返回 false。
+fn 是构造函数返回 true，否则返回 false。
 
 #### Example
 
 ```js
-import Types from '@yaohaixiao/types.js/esm/types'
-// 或者单独引用 isJSON() 方法
-// import isJSON from '@yaohaixiao/types.js/esm/isJSON'
+import Types from '@yaohaixiao/types.js/types'
+// 或者单独引用 isConstructor() 方法
+// import isConstructor from '@yaohaixiao/types.js/isConstructor'
 
-// String
-Types.isJSON('') // -> false
-Types.isJSON("") // -> false
-Types.isJSON("json") // -> true
+const fn = function(){}
+const ff = class {}
 
-// Number
-Types.isJSON(3) // -> false
-Types.isJSON("3") // -> true
+Types.isConstructor(fn) // -> true
+Types.isConstructor(ff) // -> true
+Types.isConstructor(console.log) // -> false
 
-// Boolean
-Types.isJSON(false) // -> false
-Types.isJSON("false") // -> true
-
-// Object
-Types.isJSON(null) // -> false
-Types.isJSON("null") // -> true
-
-Types.isJSON({ prop: 'JSON' }) // -> false
-Types.isJSON("{\"prop\":\"JSON\"}") // -> true
-
-// Array
-Types.isJSON([1, 2, 3]) // -> false
-Types.isJSON("[1, 2, 3]") // -> true
-```
-
-
-### [isMap](https://yaohaixiao.github.io/types.js/#method-isMap)
-
-isMap(val) 方法用来检测测试数据是否为 Map 类型。
-
-#### Parameters
-
-##### val
-
-Type: `Any`
-Default: ``
-
-必选，要检测的数据。
-
-#### Returns
-
-Type: `Boolean`
-
-'val' 是 Map 类型返回 true，否则返回 false。
-
-#### Example
-
-```js
-import Types from '@yaohaixiao/types.js/esm/types'
-// 或者单独引用 isMap() 方法
-// import isMap from '@yaohaixiao/types.js/esm/isMap'
-
-const map = new Map([
-    ['name', 'Robert'],
-    ['Gender', 'Male']
-])
-
-Types.is(map) // -> 'map'
-Types.isMap(map) // -> true
-
-Types.isMap(['name', 'Robert']) // -> false
+Types.isConstructor(Math) // -> false
+Types.isConstructor(Boolean) // -> true
+Types.isConstructor(Array) // -> true
+Types.isConstructor(Function) // -> true
+Types.isConstructor(Date) // -> true
+Types.isConstructor(RegExp) // -> true
+Types.isConstructor(Object) // -> true
 ```
 
 
@@ -1588,9 +1463,9 @@ fn 是系统内置函数返回 true，否则返回 false。
 #### Example
 
 ```js
-import Types from '@yaohaixiao/types.js/esm/types'
+import Types from '@yaohaixiao/types.js/types'
 // 或者单独引用 isNativeFunction() 方法
-// import isNativeFunction from '@yaohaixiao/types.js/esm/isNativeFunction'
+// import isNativeFunction from '@yaohaixiao/types.js/isNativeFunction'
 
 const fn = function(){}
 const ff = class {}
@@ -1632,9 +1507,9 @@ Type: `Boolean`
 #### Example
 
 ```js
-import Types from '@yaohaixiao/types.js/esm/types'
+import Types from '@yaohaixiao/types.js/types'
 // 或者单独引用 isNumeric() 方法
-// import isNumeric from '@yaohaixiao/types.js/esm/isNumeric'
+// import isNumeric from '@yaohaixiao/types.js/isNumeric'
 
 Types.isNumeric(2) // -> true
 Types.isNumeric(2.4) // -> true
@@ -1646,6 +1521,118 @@ Types.isNumeric('0xffffff') // -> true
 Types.isNumeric(NaN) // -> false
 Types.isNumeric(Infinity) // -> false
 Types.isNumeric(-Infinity) // -> false
+```
+
+
+### [isInteger](https://yaohaixiao.github.io/types.js/#method-isInteger)
+
+isInteger(val) 方法用来检测测试数据是否为整数。
+
+#### Parameters
+
+##### val
+
+Type: `Any`
+Default: ``
+
+必选，要检测的数据。
+
+#### Returns
+
+Type: `Boolean`
+
+'val' 是整数返回 true，否则返回 false。
+
+#### Example
+
+```js
+import Types from '@yaohaixiao/types.js/types'
+// 或者单独引用 isInteger() 方法
+// import isInteger from '@yaohaixiao/types.js/isInteger'
+
+Types.isInteger(2.4) // -> false
+Types.isInteger(3.4234E3) // -> false
+Types.isInteger('1') // -> false
+Types.isInteger(Number('3.4556645445E7')) // -> false
+Types.isInteger(NaN) // -> false
+Types.isInteger(Infinity) // -> false
+Types.isInteger(-Infinity) // -> false
+
+Types.isInteger(2) // -> true
+Types.isInteger(2.0) // -> true
+Types.isInteger(3.4234E4) // -> true
+Types.isInteger(0xffffff) // -> true
+Types.isInteger(Number('1')) // -> true
+Types.isInteger(parseInt('1.0', 10)) // -> true
+Types.isInteger(Math.ceil(2.6)) // -> true
+```
+
+
+### [isFloat](https://yaohaixiao.github.io/types.js/#method-isFloat)
+
+isFloat(val) 方法用来检测测试数据是否为浮点数。
+
+#### Parameters
+
+##### val
+
+Type: `Number`
+Default: ``
+
+必选，要检测的数据。
+
+#### Returns
+
+Type: `Boolean`
+
+'val' 是浮点数返回 true，否则返回 false。
+
+#### Example
+
+```js
+import Types from '@yaohaixiao/types.js/types'
+// 或者单独引用 isFloat() 方法
+// import isFloat from '@yaohaixiao/types.js/isFloat'
+
+Types.isFloat(2.4) // -> true
+Types.isFloat(Number("3.4556645445E7")) // -> true
+
+Types.isFloat(Number("3.4556645445E10")) // -> false
+Types.isFloat(2.0) // -> false
+Types.isFloat(0xffffff) // -> false
+Types.isFloat(NaN) // -> false
+```
+
+
+### [isEven](https://yaohaixiao.github.io/types.js/#method-isEven)
+
+isEven(val) 方法用来检测测试数据的数据类型是否为偶数。
+
+#### Parameters
+
+##### val
+
+Type: `Number`
+Default: ``
+
+必选，要检测的数据。
+
+#### Returns
+
+Type: `Boolean`
+
+'val' 是偶数返回 true，否则返回 false。
+
+#### Example
+
+```js
+import Types from '@yaohaixiao/types.js/types'
+// 或者单独引用 isEven() 方法
+// import isEven from '@yaohaixiao/types.js/isEven'
+
+Types.isEven(2) // -> true
+Types.isEven(3) // -> false
+Types.isEven(2.2) // -> false
 ```
 
 
@@ -1671,9 +1658,9 @@ Type: `Boolean`
 #### Example
 
 ```js
-import Types from '@yaohaixiao/types.js/esm/types'
+import Types from '@yaohaixiao/types.js/types'
 // 或者单独引用 isOdd() 方法
-// import isOdd from '@yaohaixiao/types.js/esm/isOdd'
+// import isOdd from '@yaohaixiao/types.js/isOdd'
 
 Types.isOdd(3) // -> true
 Types.isOdd(3.0) // -> true
@@ -1689,15 +1676,15 @@ Types.isOdd(Infinity) // -> false
 ```
 
 
-### [isPlainObject](https://yaohaixiao.github.io/types.js/#method-isPlainObject)
+### [isInfinite](https://yaohaixiao.github.io/types.js/#method-isInfinite)
 
-isPlainObject(val) 方法用来检测测试数据是否为普通对象。
+isInfinite(val) 方法用来检测测试数据的数据是正无穷或者负无穷。
 
 #### Parameters
 
 ##### val
 
-Type: `Object`
+Type: `Number`
 Default: ``
 
 必选，要检测的数据。
@@ -1706,47 +1693,262 @@ Default: ``
 
 Type: `Boolean`
 
-'val' 是普通对象返回 true，否则返回 false。
+'val' 是正无穷或者负无穷返回 true，否则返回 false。
 
 #### Example
 
 ```js
-import Types from '@yaohaixiao/types.js/esm/types'
-// 或者单独引用 isPlainObject() 方法
-// import isPlainObject from '@yaohaixiao/types.js/esm/isPlainObject'
+import Types from '@yaohaixiao/types.js/types'
+// 或者单独引用 isInfinite() 方法
+// import isInfinite from '@yaohaixiao/types.js/isInfinite'
 
-let udf
+Types.isInfinite(2.4) // -> false
 
-// 基础类型
-Types.isPlainObject(2) // -> false
-Types.isPlainObject('str') // -> false
-Types.isPlainObject(false) // -> false
-Types.isPlainObject(null) // -> false
-Types.isPlainObject(udf) // -> false
-
-// 引用类型
-Types.isPlainObject(new Function()) // -> false
-Types.isPlainObject(function(){}) // -> false
-Types.isPlainObject(() => {}) // -> false
-Types.isPlainObject(class{}) // -> false
-
-Types.isPlainObject(new class{}) // -> true
-Types.isPlainObject({}) // -> true
-Types.isPlainObject(Object.create(null)) // -> true
-Types.isPlainObject(new Object()) // -> true
-Types.isPlainObject([]) // -> true
-Types.isPlainObject(/s+/ig) // -> true
-Types.isPlainObject(new String()) // -> true
-Types.isPlainObject(new Number()) // -> true
-Types.isPlainObject(new Boolean()) // -> true
-Types.isPlainObject(new Array()) // -> true
-Types.isPlainObject(new Date()) // -> true
+Types.isInfinite(Infinity) // -> true
+Types.isInfinite(-Infinity) // -> true
 ```
 
 
-### [isRegExp](https://yaohaixiao.github.io/types.js/#method-isRegExp)
+### [isBase64](https://yaohaixiao.github.io/types.js/#method-isBase64)
 
-isRegExp(val) 方法用来检测测试数据是否为正则表达式。
+isBase64(val) 方法用来检测测试数据是否为一个基于 base64 编码的字符串。
+
+#### Parameters
+
+##### val
+
+Type: `String`
+Default: ``
+
+必选，要检测的数据。
+
+#### Returns
+
+Type: `Boolean`
+
+'val' 是 base64 编码的字符串返回 true，否则返回 false。
+
+#### Example
+
+```js
+import Types from '@yaohaixiao/types.js/types'
+// 或者单独引用 isBase64() 方法
+// import isBase64 from '@yaohaixiao/types.js/isBase64'
+
+Types.isBase64('Z29vZA==') // -> true
+Types.isBase64('aXNCYXNlNjQ=2') // -> false
+```
+
+
+### [isBlank](https://yaohaixiao.github.io/types.js/#method-isBlank)
+
+isBlank(val) 方法用来检测测试数据是否只包空格。
+
+#### Parameters
+
+##### val
+
+Type: `String`
+Default: ``
+
+必选，要检测的数据。
+
+#### Returns
+
+Type: `Boolean`
+
+'val' 只包含空格返回 true，否则返回 false。
+
+#### Example
+
+```js
+import Types from '@yaohaixiao/types.js/types'
+// 或者单独引用 isBlank() 方法
+// import isBlank from '@yaohaixiao/types.js/isBlank'
+
+Types.isBlank('  ') // -> true
+Types.isBlank(new String()) // -> false
+Types.isBlank('') // -> true
+```
+
+
+### [isEmpty](https://yaohaixiao.github.io/types.js/#method-isEmpty)
+
+isEmpty(val) 方法用来检测测试数据是否为空字符串。
+
+#### Parameters
+
+##### val
+
+Type: `String`
+Default: ``
+
+必选，要检测的数据。
+
+#### Returns
+
+Type: `Boolean`
+
+'val' 是空字符串返回 true，否则返回 false。
+
+#### Example
+
+```js
+import Types from '@yaohaixiao/types.js/types'
+// 或者单独引用 isEmpty() 方法
+// import isEmpty from '@yaohaixiao/types.js/isEmpty'
+
+Types.isEmpty('') // -> true
+Types.isEmpty(String()) // -> true
+
+Types.isEmpty(new String()) // -> false
+Types.isEmpty(' ') // -> false
+```
+
+
+### [isHex](https://yaohaixiao.github.io/types.js/#method-isHex)
+
+isHex(val) 方法用来检测测试数据是否为 16 进制编码的字符串。
+
+#### Parameters
+
+##### val
+
+Type: `String`
+Default: ``
+
+必选，要检测的数据。
+
+#### Returns
+
+Type: `Boolean`
+
+'val' 是 16 进制编码的字符串返回 true，否则返回 false。
+
+#### Example
+
+```js
+import Types from '@yaohaixiao/types.js/types'
+// 或者单独引用 isHex() 方法
+// import isHex from '@yaohaixiao/types.js/isHex'
+
+Types.isHex('#ffffff') // -> true
+Types.isHex('f3f3f3') // -> true
+Types.isHex('#h1f1f1') // -> false
+Types.isHex('sdadfa') // -> false
+```
+
+
+### [isHTML](https://yaohaixiao.github.io/types.js/#method-isHTML)
+
+isHTML(val) 方法用来检测测试数据是否为合法的 HTML 代码。
+
+#### Since
+
+0.5.0
+
+#### Parameters
+
+##### val
+
+Type: `String`
+Default: ``
+
+必选，要检测的数据。
+
+#### Returns
+
+Type: `Boolean`
+
+true - 表示检测数据为合法的 HTML 代码，false 则表示不是。
+
+#### Example
+
+```js
+import Types from '@yaohaixiao/types.js/types'
+// 或者单独引用 isHTML() 方法
+// import isHTML from '@yaohaixiao/types.js/isHTML'
+
+// 包含 doctype 标签：
+Types.isHTML('<!doctype html>') // -> true
+Types.isHTML('\n\n<!doctype html><html>') // -> true
+
+// 包含：<html>，<body> 或者 <x-*> 标签：
+Types.isHTML('<html>') // -> true
+Types.isHTML('<html></html>') // -> true
+Types.isHTML('<html lang="en"></html>') // -> true
+Types.isHTML('<html><body></html>') // -> true
+Types.isHTML('<html><body class="no-js"></html>') // -> true
+Types.isHTML('<x-unicorn>') // -> true
+
+// 包含任何合法的 HTML 标签：
+Types.isHTML('<p>foo</p>') // -> true
+Types.isHTML('<a href="#">foo</a>') // -> true
+Types.isHTML('<br />') // -> true
+
+// 无法匹配 XML 标签：
+Types.isHTML('<attribute>address</attribute>') // -> false
+Types.isHTML('<address>Wuhan City</address>') // -> false
+Types.isHTML('<age>20</age>') // -> false
+Types.isHTML('<gender>mail</gender>') // -> false
+Types.isHTML('<career>programmer</career>') // -> false
+```
+
+
+### [isEmail](https://yaohaixiao.github.io/types.js/#method-isEmail)
+
+isEmail(val) 方法用来检测测试数据是否为合法的 Email 格式。
+
+#### Parameters
+
+##### val
+
+Type: `String`
+Default: ``
+
+必选，要检测的数据。
+
+#### Returns
+
+Type: `Boolean`
+
+'val' 是 Boolean 类型返回 true，否则返回 false
+
+#### Example
+
+```js
+import Types from '@yaohaixiao/types.js/types'
+// 或者单独引用 isEmail() 方法
+// import isEmail from '@yaohaixiao/types.js/isEmail'
+
+// True
+Types.isEmail('yaohaixiao@gmail.com') // => true
+Types.isEmail('yaohaixiao@gmail.c') // => true
+Types.isEmail('haixiao-yao@gmail.com') // => true
+Types.isEmail('haixiao_yao@gmail.com') // => true
+Types.isEmail('haixiao&yao@gmail.com') // => true
+Types.isEmail('haixiao~yao@gmail.com') // => true
+Types.isEmail('haixiao+yao@gmail.com') // => true
+Types.isEmail('haixiao^yao@gmail.com') // => true
+Types.isEmail('haixiao%yao@gmail.com') // => true
+Types.isEmail('haixiao$yao@gmail.com') // => true
+Types.isEmail('haixiao.yao@gmail.com') // => true
+Types.isEmail('haixiao/yao@gmail.com') // => true
+Types.isEmail('haixiao#yao@gmail.com') // => true
+Types.isEmail('yao{haixiao@gmail.com') // => true
+Types.isEmail('yao|haixiao@gmail.com') // => true
+Types.isEmail('yao}haixiao@gmail.com') // => true
+
+// False
+Types.isEmail('yaohaixiao#gmail.com') // => false
+Types.isEmail('yao\haixiao@gmail.com') // => false
+Types.isEmail('yao[haixiao@gmail.com') // => false
+```
+
+
+### [isJSON](https://yaohaixiao.github.io/types.js/#method-isJSON)
+
+isJSON(val) 方法用来检测测试数据是否为 JSON 格式字符串数据。
 
 #### Parameters
 
@@ -1761,250 +1963,38 @@ Default: ``
 
 Type: `Boolean`
 
-'val' 是正则表达式返回 true，否则返回 false。
+'val' 是 JSON 格式字符串数据返回 true，否则返回 false。
 
 #### Example
 
 ```js
-import Types from '@yaohaixiao/types.js/esm/types'
-// 或者单独引用 isRegExp() 方法
-// import isRegExp from '@yaohaixiao/types.js/esm/isRegExp'
-
-const patternOne = new RegExp('\\s+','ig')
-const patternTwo = /\s+/ig
-const patternStr = '/\\s+/ig'
-
-Types.is(patternOne) // -> 'regexp'
-Types.isRegExp(patternOne) // -> true
-
-Types.is(patternTwo) // -> 'regexp'
-Types.isRegExp(patternTwo) // -> true
-
-Types.is(patternStr) // -> 'string'
-Types.isRegExp(patternStr) // -> false
-```
-
-
-### [isSet](https://yaohaixiao.github.io/types.js/#method-isSet)
-
-isSet(val) 方法用来检测测试数据是否为 isSet 类型。
-
-#### Parameters
-
-##### val
-
-Type: `Any`
-Default: ``
-
-必选，要检测的数据。
-
-#### Returns
-
-Type: `Boolean`
-
-'val' 是 isSet 类型返回 true，否则返回 false。
-
-#### Example
-
-```js
-import Types from '@yaohaixiao/types.js/esm/types'
-// 或者单独引用 isSet() 方法
-// import isSet from '@yaohaixiao/types.js/esm/isSet'
-
-const set = new Set([1, 2, 3, 4])
-const arr = [1, 2, 3, 4]
-
-Types.is(set) // -> 'set'
-Types.isSet(set) // -> true
-
-Types.is(arr) // -> 'array'
-Types.isSet(arr) // -> false
-```
-
-
-### [isTextNode](https://yaohaixiao.github.io/types.js/#method-isTextNode)
-
-isTextNode(val) 方法用来检测测试数据是否为文本节点。
-
-#### Parameters
-
-##### val
-
-Type: `Any`
-Default: ``
-
-必选，要检测的数据。
-
-#### Returns
-
-Type: `Boolean`
-
-'val' 是文本节点返回 true，否则返回 false。
-
-#### Example
-
-```js
-import Types from '@yaohaixiao/types.js/esm/types'
-// 或者单独引用 isTextNode() 方法
-// import isTextNode from '@yaohaixiao/types.js/esm/isTextNode'
-
-const $list = document.getElementById('list')
-const $div = document.createElement('div')
-const $fragment = document.createDocumentFragment()
-const $items = document.querySelectorAll('.item')
-const $text = document.createTextNode('text')
-
-Types.is($list) // -> 'element'
-Types.isElement($list) // -> true
-Types.isTextNode($list) // -> false
-
-Types.is($div) // -> 'element'
-Types.isElement($div) // -> true
-Types.isTextNode($div) // -> false
-
-Types.is($fragment) // -> 'fragment'
-Types.isFragment($fragment) // -> true
-Types.isTextNode($fragment) // -> false
-
-Types.is($items) // -> 'collection'
-Types.isHTMLCollection($items) // -> true
-Types.isTextNode($items) // -> false
-
-Types.is($text) // -> 'collection'
-Types.isElement($text) // -> false
-Types.isTextNode($text) // -> true
-```
-
-
-### [isValue](https://yaohaixiao.github.io/types.js/#method-isValue)
-
-isValue(val) 方法用来检测测试数据是否为有效的数据。
-
-#### Parameters
-
-##### val
-
-Type: `Any`
-Default: ``
-
-必选，要检测的数据。
-
-#### Returns
-
-Type: `Boolean`
-
-'val' 是有效的数据返回 true，否则返回 false。
-
-#### Example
-
-```js
-import Types from '@yaohaixiao/types.js/esm/types'
-// 或者单独引用 isValue() 方法
-// import isValue from '@yaohaixiao/types.js/esm/isValue'
-
-let projects
-
-// 非有效数据
-Types.isValue(projects) // -> false
-Types.isValue(NaN) // -> false
-Types.isValue(null) // -> false
-Types.isValue(Infinity) // -> false
-Types.isValue(-Infinity) // -> false
-
-// 有效数据
-Types.isValue(0) // -> true
-Types.isValue('') // -> true
-Types.isValue(false) // -> true
-Types.isValue([]) // -> true
-Types.isValue({}) // -> true
-Types.isValue(/\s+/ig) // -> true
-Types.isValue(new Date()) // -> true
-Types.isValue(empty) // -> true
-Types.isValue(fn) // -> true
-```
-
-
-### [isWeakMap](https://yaohaixiao.github.io/types.js/#method-isWeakMap)
-
-isWeakMap(val) 方法用来检测测试数据是否为 WeakMap 类型。
-
-#### Parameters
-
-##### val
-
-Type: `Any`
-Default: ``
-
-必选，要检测的数据。
-
-#### Returns
-
-Type: `Boolean`
-
-'val' 是 WeakMap 类型返回 true，否则返回 false。
-
-#### Example
-
-```js
-import Types from '@yaohaixiao/types.js/esm/types'
-// 或者单独引用 isWeakMap() 方法
-// import isWeakMap from '@yaohaixiao/types.js/esm/isWeakMap'
-
-const map = new Map([
-    ['name', 'Robert'],
-    ['Gender', 'Male']
-])
-
-const weakmap = new WeakMap()
-
-weakmap.set({}, 37)
-
-Types.is(weakmap) // -> 'weakmap'
-Types.isWeakMap(weakmap) // -> true
-
-Types.is(map) // -> 'map'
-Types.isWeakMap(map) // -> false
-```
-
-
-### [isWeakSet](https://yaohaixiao.github.io/types.js/#method-isWeakSet)
-
-isWeakSet(val) 方法用来检测测试数据是否为 WeakSet 类型。
-
-#### Parameters
-
-##### val
-
-Type: `Any`
-Default: ``
-
-必选，要检测的数据。
-
-#### Returns
-
-Type: `Boolean`
-
-'val' 是 WeakSet 类型返回 true，否则返回 false。
-
-#### Example
-
-```js
-import Types from '@yaohaixiao/types.js/esm/types'
-// 或者单独引用 isWeakSet() 方法
-// import isWeakSet from '@yaohaixiao/types.js/esm/isWeakSet'
-
-const set = new Set([1, 2, 3, 4])
-const weakset = new WeakSet()
-
-weakset.add({name: 'Robert'})
-
-Types.is(set) // -> 'set'
-Types.isSet(set) // -> true
-Types.isWeakSet(set) // -> false
-
-Types.is(weakset) // -> 'weakset'
-Types.isSet(weakset) // -> false
-Types.isWeakSet(weakset) // -> true
+import Types from '@yaohaixiao/types.js/types'
+// 或者单独引用 isJSON() 方法
+// import isJSON from '@yaohaixiao/types.js/isJSON'
+
+// String
+Types.isJSON('') // -> false
+Types.isJSON("") // -> false
+Types.isJSON("json") // -> true
+
+// Number
+Types.isJSON(3) // -> false
+Types.isJSON("3") // -> true
+
+// Boolean
+Types.isJSON(false) // -> false
+Types.isJSON("false") // -> true
+
+// Object
+Types.isJSON(null) // -> false
+Types.isJSON("null") // -> true
+
+Types.isJSON({ prop: 'JSON' }) // -> false
+Types.isJSON("{\"prop\":\"JSON\"}") // -> true
+
+// Array
+Types.isJSON([1, 2, 3]) // -> false
+Types.isJSON("[1, 2, 3]") // -> true
 ```
 
 
@@ -2030,9 +2020,9 @@ Type: `Boolean`
 #### Example
 
 ```js
-import Types from '@yaohaixiao/types.js/esm/types'
+import Types from '@yaohaixiao/types.js/types'
 // 或者单独引用 isXML() 方法
-// import isXML from '@yaohaixiao/types.js/esm/isXML'
+// import isXML from '@yaohaixiao/types.js/isXML'
 
 const jsdom = require("jsdom")
 const { JSDOM } = jsdom

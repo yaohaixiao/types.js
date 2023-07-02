@@ -1,4 +1,4 @@
-import isXML from 'esm/isXML'
+import isXML from '../isXML'
 import jsdom from 'jsdom'
 import { DOMParser } from 'xmldom'
 

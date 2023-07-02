@@ -1,4 +1,4 @@
-import isError from 'esm/isError'
+import isError from '../isError'
 
 describe('isError() 方法：', () => {
   it(`isError(new function Error(){}), 返回：false`, () => {

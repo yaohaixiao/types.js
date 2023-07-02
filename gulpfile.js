@@ -2,8 +2,6 @@ const path = require('path')
 const gulp = require('gulp')
 const clean = require('gulp-clean')
 const connect = require('gulp-connect')
-const eslint = require('gulp-eslint')
-const prettier = require('gulp-prettier')
 const os = require('os')
 const open = require('gulp-open')
 const pug = require('gulp-pug')
@@ -15,8 +13,6 @@ const rename = require('gulp-rename')
 const sourcemaps = require('gulp-sourcemaps')
 const run = require('gulp-run')
 const watch = require('gulp-watch')
-
-const SOURCE_PATH = [ 'esm/**/*.js']
 
 /* ==================== 清理相关 gulp 任务 ==================== */
 const cleanHtml = () => {
@@ -43,27 +39,15 @@ const cleanScript = () => {
     .pipe(clean())
 }
 
-const cleanDocs = gulp.parallel(
-  cleanHtml,
-  cleanStyle,
-  cleanScript
-)
+const cleanDocs = gulp.parallel(cleanHtml, cleanStyle, cleanScript)
 
 /* ==================== 代码规范校验相关的 gulp 任务 ==================== */
 const lint = () => {
-  return gulp
-    .src(SOURCE_PATH)
-    .pipe(eslint())
-    .pipe(eslint.format())
-    .pipe(eslint.failOnError())
+  return run('npm run lint:fix').exec()
 }
 
 const check = () => {
-  return gulp
-    .src(SOURCE_PATH)
-    .pipe(prettier.check({
-      editorconfig: true
-    }))
+  return run('npm run prettier:write').exec()
 }
 
 const test = gulp.series(lint, check)
@@ -105,13 +89,11 @@ const minifyStyle = () => {
 }
 
 const buildSource = () => {
-  return run('npm run build:lib')
-    .exec()
+  return run('npm run build:lib').exec()
 }
 
 const buildScript = () => {
-  return run('npm run build:api')
-    .exec()
+  return run('npm run build:api').exec()
 }
 
 const buildDocs = gulp.series(
@@ -156,35 +138,24 @@ const reload = () => {
   return connect.reload()
 }
 
-const start = gulp.series(
-  build,
-  connectDocs,
-  openDocs
-)
+const start = gulp.series(build, connectDocs, openDocs)
 
 /* ==================== 检测变更相关的 gulp 任务 ==================== */
 const watchSource = () => {
-  return watch('esm/**/*.js', gulp.series(
-    lint,
-    buildSource
-  ))
+  return watch('../*.js', gulp.series(lint, buildSource))
 }
 
 const watchApi = () => {
-  return watch(['types.min.js', 'api/**/*.*'], gulp.series(buildDocs))
+  return watch(['../types.min.js', '../api/**/*.*'], gulp.series(buildDocs))
 }
 
 const watchDocs = () => {
-  return watch('docs/**/*.*', {
+  return watch('../docs/**/*.*', {
     ignoreInitial: false
   }).pipe(reload())
 }
 
-const watchAll = gulp.parallel(
-  watchSource,
-  watchApi,
-  watchDocs
-)
+const watchAll = gulp.parallel(watchSource, watchApi, watchDocs)
 
 // 公开的 gulp 任务
 module.exports.start = start

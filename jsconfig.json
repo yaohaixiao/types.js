@@ -3,12 +3,12 @@
     "baseUrl": "./",
     "paths": {
       "@/*": [
-        "src/*"
+        "./*"
       ]
     }
   },
   "exclude": [
-    "node_modules",
+    "./node_modules",
     "docs"
   ]
 }

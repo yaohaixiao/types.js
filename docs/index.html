@@ -1,6 +1,6 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="keywords" content="JavaScript,typeof,types.js"><meta name="description" content="types.js 专注于检测 JavaScript 数据类型的工具库。"><link rel="shortcut icon" href="./favicon.ico"><link rel="preload" href="css/docs.min.css" as="style"><link rel="preload" href="js/types.min.js" as="script"><link rel="preload" href="js/docs.min.js" as="script"><title>types.js | 专注于检测 JavaScript 数据类型的工具库</title><link href="css/docs.min.css" rel="stylesheet" type="text/css"></head><body><div class="docs" id="docs"><aside class="aside" id="aside"><header class="aside__header"><h2 class="aside__h2">API Documentation</h2></header><nav class="aside__nav"><h3 class="aside__h3">Methods</h3><ul class="aside__list"><li class="aside__item"><a class="aside__anchor" href="#method-is">Types.is()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isArguments">Types.isArguments()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isArray">Types.isArray()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isArrayBuffer">Types.isArrayBuffer()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isArrayLike">Types.isArrayLike()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isArrayLikeObject">Types.isArrayLikeObject()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isBase64">Types.isBase64()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isBigInt">Types.isBigInt()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isBigInt64Array">Types.isBigInt64Array()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isBigUint64Array">Types.isBigUint64Array()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isBlank">Types.isBlank()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isBoolean">Types.isBoolean()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isConstructor">Types.isConstructor()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isDataView">Types.isDataView()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isDate">Types.isDate()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isElement">Types.isElement()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isEmail">Types.isEmail()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isEmpty">Types.isEmpty()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isEmptyArray">Types.isEmptyArray()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isEmptyObject">Types.isEmptyObject()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isError">Types.isError()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isEven">Types.isEven()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isFloat">Types.isFloat()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isFragment">Types.isFragment()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isFloat32Array">Types.isFloat32Array()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isFloat64Array">Types.isFloat64Array()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isFunction">Types.isFunction()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isHash">Types.isHash()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isHex">Types.isHex()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isHTML">Types.isHTML()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isHTMLCollection">Types.isHTMLCollection()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isInfinite">Types.isInfinite()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isInt8Array">Types.isInt8Array()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isInt16Array">Types.isInt16Array()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isInt32Array">Types.isInt32Array()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isInteger">Types.isInteger()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isIPAddress">Types.isIPAddress()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isJSON">Types.isJSON()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isLength">Types.isLength()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isMap">Types.isMap()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isNativeFunction">Types.isNativeFunction()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isNull">Types.isNull()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isNumber">Types.isNumber()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isNumeric">Types.isNumeric()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isObject">Types.isObject()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isObjectLike">Types.isObjectLike()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isOdd">Types.isOdd()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isPhoneNumber">Types.isPhoneNumber()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isPlainObject">Types.isPlainObject()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isPrototype">Types.isPrototype()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isRegExp">Types.isRegExp()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isSet">Types.isSet()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isString">Types.isString()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isSymbol">Types.isSymbol()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isTextNode">Types.isTextNode()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isTypedArray">Types.isTypedArray()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isUint8Array">Types.isUint8Array()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isUint8ClampedArray">Types.isUint8ClampedArray()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isUint16Array">Types.isUint16Array()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isUint32Array">Types.isUint32Array()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isUndefined">Types.isUndefined()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isURL">Types.isURL()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isValue">Types.isValue()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isVNode">Types.isVNode()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isWeakMap">Types.isWeakMap()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isWeakSet">Types.isWeakSet()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isXML">Types.isXML()</a></li></ul></nav></aside><main class="main" id="main"><div class="main__header" id="header"><h1 class="main__h1"><strong class="main__name">types.</strong>js</h1><p class="main__tagline">types.js - 专注于检测 JavaScript 数据类型的工具库。</p></div><div class="main__cdn" id="cdn"><pre class="main__pre"><code>&lt;script src="https://cdn.jsdelivr.net/gh/yaohaixiao/types.js/types.min.js"&gt;&lt;/script&gt;</code></pre></div><div class="main__download" id="download"><a class="main__button" href="https://github.com/yaohaixiao/types.js/archive/refs/heads/main.zip" target="_blank">Download Zip</a></div><section class="section" id="methods"><header class="section__header"><h2 class="section__title">Methods</h2></header><section class="section"><header class="section__header"><h3 class="section__h3" id="method-is">is(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>is(val) 方法返回检测 val 数据类型的字符串（名称）。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">String。</dd></dl><p>数据类型的字符串（名称）。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="keywords" content="JavaScript,typeof,types.js"><meta name="description" content="types.js 专注于检测 JavaScript 数据类型的工具库。"><link rel="shortcut icon" href="./favicon.ico"><link rel="preload" href="css/docs.min.css" as="style"><link rel="preload" href="js/types.min.js" as="script"><link rel="preload" href="js/docs.min.js" as="script"><title>types.js | 专注于检测 JavaScript 数据类型的工具库</title><link href="css/docs.min.css" rel="stylesheet" type="text/css"></head><body><div class="docs" id="docs"><aside class="aside" id="aside"><header class="aside__header"><h2 class="aside__h2">API Documentation</h2></header><nav class="aside__nav"><h3 class="aside__h3">Base</h3><ul class="aside__list"><li class="aside__item"><a class="aside__anchor" href="#method-is">Types.is()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isValue">Types.isValue()</a></li></ul><h3 class="aside__h3">Primitive Values</h3><ul class="aside__list"><li class="aside__item"><a class="aside__anchor" href="#method-isBigInt">Types.isBigInt()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isBoolean">Types.isBoolean()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isNull">Types.isNull()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isNumber">Types.isNumber()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isString">Types.isString()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isSymbol">Types.isSymbol()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isUndefined">Types.isUndefined()</a></li></ul><h3 class="aside__h3">Keyed Collections</h3><ul class="aside__list"><li class="aside__item"><a class="aside__anchor" href="#method-isMap">Types.isMap()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isSet">Types.isSet()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isWeakMap">Types.isWeakMap()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isWeakSet">Types.isWeakSet()</a></li></ul><h3 class="aside__h3">Array</h3><ul class="aside__list"><li class="aside__item"><a class="aside__anchor" href="#method-isArray">Types.isArray()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isArguments">Types.isArguments()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isArrayLike">Types.isArrayLike()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isArrayLikeObject">Types.isArrayLikeObject()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isEmptyArray">Types.isEmptyArray()</a></li></ul><h3 class="aside__h3">Typed Arrays</h3><ul class="aside__list"><li class="aside__item"><a class="aside__anchor" href="#method-isTypedArray">Types.isTypedArray()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isArrayBuffer">Types.isArrayBuffer()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isInt8Array">Types.isInt8Array()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isInt16Array">Types.isInt16Array()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isInt32Array">Types.isInt32Array()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isUint8Array">Types.isUint8Array()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isUint8ClampedArray">Types.isUint8ClampedArray()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isUint16Array">Types.isUint16Array()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isUint32Array">Types.isUint32Array()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isFloat32Array">Types.isFloat32Array()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isFloat64Array">Types.isFloat64Array()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isBigInt64Array">Types.isBigInt64Array()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isBigUint64Array">Types.isBigUint64Array()</a></li></ul><h3 class="aside__h3">Object</h3><ul class="aside__list"><li class="aside__item"><a class="aside__anchor" href="#method-isObject">Types.isObject()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isObjectLike">Types.isObjectLike()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isEmptyObject">Types.isEmptyObject()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isHash">Types.isHash()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isPlainObject">Types.isPlainObject()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isPrototype">Types.isPrototype()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isDate">Types.isDate()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isDataView">Types.isDataView()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isError">Types.isError()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isRegExp">Types.isRegExp()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isElement">Types.isElement()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isHTMLCollection">Types.isHTMLCollection()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isFragment">Types.isFragment()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isTextNode">Types.isTextNode()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isVNode">Types.isVNode()</a></li></ul><h3 class="aside__h3">Function</h3><ul class="aside__list"><li class="aside__item"><a class="aside__anchor" href="#method-isFunction">Types.isFunction()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isConstructor">Types.isConstructor()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isNativeFunction">Types.isNativeFunction()</a></li></ul><h3 class="aside__h3">Number</h3><ul class="aside__list"><li class="aside__item"><a class="aside__anchor" href="#method-isNumeric">Types.isNumeric()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isInteger">Types.isInteger()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isFloat">Types.isFloat()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isEven">Types.isEven()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isOdd">Types.isOdd()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isInfinite">Types.isInfinite()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isLength">Types.isLength()</a></li></ul><h3 class="aside__h3">String</h3><ul class="aside__list"><li class="aside__item"><a class="aside__anchor" href="#method-isBase64">Types.isBase64()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isBlank">Types.isBlank()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isEmpty">Types.isEmpty()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isHex">Types.isHex()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isPhoneNumber">Types.isPhoneNumber()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isIPAddress">Types.isIPAddress()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isURL">Types.isURL()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isEmail">Types.isEmail()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isJSON">Types.isJSON()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isHTML">Types.isHTML()</a></li><li class="aside__item"><a class="aside__anchor" href="#method-isXML">Types.isXML()</a></li></ul></nav></aside><main class="main" id="main"><div class="main__header" id="header"><h1 class="main__h1"><strong class="main__name">types.</strong>js</h1><p class="main__tagline">types.js - 专注于检测 JavaScript 数据类型的工具库。</p></div><div class="main__cdn" id="cdn"><pre class="main__pre"><code>&lt;script src="https://cdn.jsdelivr.net/gh/yaohaixiao/types.js/types.min.js"&gt;&lt;/script&gt;</code></pre></div><div class="main__download" id="download"><a class="main__button" href="https://github.com/yaohaixiao/types.js/archive/refs/heads/main.zip" target="_blank">Download Zip</a></div><section class="section" id="methods"><header class="section__header"><h2 class="section__title">Base</h2></header><section class="section"><header class="section__header"><h3 class="section__h3" id="method-is">is(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>is(val) 方法返回检测 val 数据类型的字符串（名称）。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">String。</dd></dl><p>数据类型的字符串（名称）。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/types'
 // 或者单独引用 is() 方法
-// import is from '@yaohaixiao/types.js/esm/is'
+// import is from '@yaohaixiao/types.js/is'
 
 let Example
 let args
@@ -61,30 +61,182 @@ Types.is(new Uint32Array([])) // -> uint32array
 Types.is(new Float32Array([])) // -> float32array
 Types.is(new Float64Array([])) // -> float64array
 Types.is(new BigInt64Array(64)) // -> bigint64array
-Types.is(new BigUint64Array(64)) // -> biguint64array</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isArguments">isArguments(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isArguments(val) 方法用来检测测试数据是否为 arguments 对象。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 arguments 对象，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
+Types.is(new BigUint64Array(64)) // -> biguint64array</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isValue">isValue(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isValue(val) 方法用来检测测试数据是否有效的数据（非null、undefined、NaN或者正负无穷数值）。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是否有效的数据（非null、undefined或者正负无穷数值），false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/types'
+// 或者单独引用 isValue() 方法
+// import isValue from '@yaohaixiao/types.js/isValue'
+
+const fn = () => {}
+let projects
+function empty(){}
+
+// 非有效数据
+Types.isValue(projects) // -> false
+Types.isValue(NaN) // -> false
+Types.isValue(null) // -> false
+Types.isValue(Infinity) // -> false
+Types.isValue(-Infinity) // -> false
+
+// 有效数据
+Types.isValue(0) // -> true
+Types.isValue('') // -> true
+Types.isValue(false) // -> true
+Types.isValue([]) // -> true
+Types.isValue({}) // -> true
+Types.isValue(/\s+/ig) // -> true
+Types.isValue(new Date()) // -> true
+Types.isValue(empty) // -> true
+Types.isValue(fn) // -> true</code></pre></div></section><header class="section__header"><h2 class="section__title">Primitive Values</h2></header><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isBigInt">isBigInt(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isBigInt(val) 方法用来检测测试数据是否为 BigInt 类型。</p><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">0.6.0</dd></dl><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 BigInt 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/types'
+// 或者单独引用 isBigInt() 方法
+// import isBigInt from '@yaohaixiao/types.js/isBigInt'
+
+const MAX_SAFE_INTEGER = 9007199254740991
+const bigint = BigInt(MAX_SAFE_INTEGER + 1)
+
+Type.is(bigint) // -> 'bigint'
+
+Types.isBigInt(MAX_SAFE_INTEGER) // -> false
+Types.isBigInt(bigint) // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isBoolean">isBoolean(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isBoolean(val) 方法用来检测测试数据是否为 Boolean 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 Boolean 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/types'
+// 或者单独引用 isBoolean() 方法
+// import isBoolean from '@yaohaixiao/types.js/isBoolean'
+
+let projects
+
+// False
+Types.isBoolean(1) // -> false
+Types.isBoolean('') // -> false
+Types.isBoolean(null) // -> false
+Types.isBoolean(NaN) // -> false
+Types.isBoolean(projects) // -> false
+
+// True
+Types.isBoolean(!!0) // -> true
+Types.isBoolean(false) // -> true
+Types.isBoolean(true) // -> true
+Types.isBoolean(Boolean('1')) // -> true
+Types.isBoolean(new Boolean('')) // -> false
+Types.isBoolean(!!projects) // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isNull">isNull(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isNull(val) 方法用来检测测试数据是否为 null。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 null，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/types'
+// 或者单独引用 isNull() 方法
+// import isNull from '@yaohaixiao/types.js/isNull'
+
+let project
+
+Types.isNull('') // -> false
+Types.isNull({}) // -> false
+Types.isNull(project) // -> false
+Types.isNull(0) // -> false
+Types.isNull(false) // -> false
+Types.isNull(Object.create(null)) // -> false
+
+Types.isNull(null) // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isNumber">isNumber(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isNumber(val) 方法用来检测测试数据是否为 Number 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 Number 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/types'
+// 或者单独引用 isNumber() 方法
+// import isNumber from '@yaohaixiao/types.js/isNumber'
+
+// True
+Types.isNumber(0) // -> true
+Types.isNumber(.4) // -> true
+Types.isNumber(3.4E2) // -> true
+Types.isNumber(0xffffff) // -> true
+Types.isNumber(NaN) // -> true
+Types.isNumber(Infinity) // -> true
+Types.isNumber(-Infinity) // -> true
+
+// False
+Types.isNumber('2') // -> false
+Types.isNumber(2 + '1') // -> false
+Types.isNumber(new Number()) // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isString">isString(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isString(val) 方法用来检测测试数据是否为 String 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 String 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/types'
+// 或者单独引用 isString() 方法
+// import isString from '@yaohaixiao/types.js/isString'
+
+const text = document.createTextNode('text')
+
+Types.isString('') // -> true
+Types.isString(String(2)) // -> true
+Types.isString(2 + '0') // -> true
+
+Types.isString(2) // -> false
+Types.isString(new String()) // -> false
+Types.isString(text) // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isSymbol">isSymbol(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isSymbol(val) 方法用来检测测试数据是否为 Symbol 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 Symbol 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/types'
+// 或者单独引用 isSymbol() 方法
+// import isSymbol from '@yaohaixiao/types.js/isSymbol'
+
+const sym = Symbol('foo')
+const symObj = Object(sym)
+
+Types.is(sym) // -> 'symbol'
+Types.isSymbol(sym) // -> true
+
+Types.is(symObj) // -> 'object'
+Types.isSymbol(symObj) // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isUndefined">isUndefined(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isUndefined(val) 方法用来检测测试数据是否为 undefined。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 undefined，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/types'
+// 或者单独引用 isUndefined() 方法
+// import isUndefined from '@yaohaixiao/types.js/isUndefined'
+
+let projects
+
+Types.isUndefined(projects) // -> true
+
+Types.isUndefined([]) // -> false
+Types.isUndefined('') // -> false
+Types.isUndefined(0) // -> false
+Types.isUndefined(NaN) // -> false
+Types.isUndefined({}) // -> false
+Types.isUndefined(null) // -> false</code></pre></div></section><header class="section__header"><h2 class="section__title">Keyed Collections</h2></header><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isMap">isMap(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isMap(val) 方法用来检测测试数据是否为 Map 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 Map 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/types'
+// 或者单独引用 isMap() 方法
+// import isMap from '@yaohaixiao/types.js/isMap'
+
+const map = new Map([
+    ['name', 'Robert'],
+    ['Gender', 'Male']
+])
+
+Types.is(map) // -> 'map'
+
+Types.isMap(map) // -> true
+Types.isMap(['name','robert']) // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isSet">isSet(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isSet(val) 方法用来检测测试数据是否为 Set 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 Set 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/types'
+// 或者单独引用 isSet() 方法
+// import isSet from '@yaohaixiao/types.js/isSet'
+
+const set = new Set([1, 2, 3, 4])
+const arr = [1, 2, 3, 4]
+
+Types.is(set) // -> 'set'
+Types.isSet(set) // -> true
+
+Types.is(arr) // -> 'array'
+Types.isSet(arr) // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isWeakMap">isWeakMap(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isWeakMap(val) 方法用来检测测试数据是否为 WeakMap 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 WeakMap 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/types'
+// 或者单独引用 isWeakMap() 方法
+// import isWeakMap from '@yaohaixiao/types.js/isWeakMap'
+
+const map = new Map([
+    ['name', 'Robert'],
+    ['Gender', 'Male']
+])
+
+const weakmap = new WeakMap()
+
+weakmap.set({}, 37)
+
+Types.is(weakmap) // -> 'weakmap'
+Types.isWeakMap(weakmap) // -> true
+
+Types.is(map) // -> 'map'
+Types.isWeakMap(map) // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isWeakSet">isWeakSet(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isWeakSet(val) 方法用来检测测试数据是否为 WeakSet 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 WeakSet 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/types'
+// 或者单独引用 isWeakSet() 方法
+// import isWeakSet from '@yaohaixiao/types.js/isWeakSet'
+
+const set = new Set([1, 2, 3, 4])
+const weakset = new WeakSet()
+
+weakset.add({name: 'Robert'})
+
+Types.is(set) // -> 'set'
+Types.isSet(set) // -> true
+Types.isWeakSet(set) // -> false
+
+Types.is(weakset) // -> 'weakset'
+Types.isSet(weakset) // -> false
+Types.isWeakSet(weakset) // -> true</code></pre></div></section><header class="section__header"><h2 class="section__title">Array</h2></header><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isArray">isArray(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isArray(val) 方法用来检测测试数据是否为 Array （数组）类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 Array 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/types'
 // 或者单独引用 isArguments() 方法
-// import isArguments from '@yaohaixiao/types.js/esm/isArguments'
-
-const argsLike = { '0': 3, '1': 4, length: 2 }
-const $items = document.querySelectorAll('.item')
-let args
-
-function sum(a, b){
-  args = arguments
-
-  return a + b
-}
-
-sum(3, 5)
-
-Types.isArguments(argsLike) // -> false
-Types.isArguments([]) // -> false
-Types.isArguments(items) // -> false
-
-Types.is(args) // -> 'arguments'
-Types.isArguments(args) // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isArray">isArray(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isArray(val) 方法用来检测测试数据是否为 Array （数组）类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 Array 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
-// 或者单独引用 isArguments() 方法
-// import isArray from '@yaohaixiao/types.js/esm/isArray'
+// import isArray from '@yaohaixiao/types.js/isArray'
 
 const LooksLike = { '0':1, '1':2, length: 2 }
 let args
@@ -105,14 +257,30 @@ Types.isArray(args) // -> false
 // 虽然 HTMLNodeList 的看起来像数组，但它并不是数组
 Types.isArray(document.getElementsByTagName('li')) // -> false
 Types.isArray(LooksLike) // -> false
-Types.isArray(new Int8Array()) // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isArrayBuffer">isArrayBuffer(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isArrayBuffer(val) 方法用来检测测试数据是否为 ArrayBuffer 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 ArrayBuffer 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
-// 或者单独引用 isArrayBuffer() 方法
-// import isArrayBuffer from '@yaohaixiao/types.js/esm/isArrayBuffer'
+Types.isArray(new Int8Array()) // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isArguments">isArguments(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isArguments(val) 方法用来检测测试数据是否为 arguments 对象。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 arguments 对象，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/types'
+// 或者单独引用 isArguments() 方法
+// import isArguments from '@yaohaixiao/types.js/isArguments'
 
-Types.isArrayBuffer([]) // -> false
-Types.isArrayBuffer(new ArrayBuffer(8)) // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isArrayLike">isArrayLike(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isArrayLike(val) 方法用来检测测试数据是否为类似 Array 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是类似 Array 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
+const argsLike = { '0': 3, '1': 4, length: 2 }
+const $items = document.querySelectorAll('.item')
+let args
+
+function sum(a, b){
+  args = arguments
+
+  return a + b
+}
+
+sum(3, 5)
+
+Types.isArguments(argsLike) // -> false
+Types.isArguments([]) // -> false
+Types.isArguments(items) // -> false
+
+Types.is(args) // -> 'arguments'
+Types.isArguments(args) // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isArrayLike">isArrayLike(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isArrayLike(val) 方法用来检测测试数据是否为类似 Array 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是类似 Array 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/types'
 // 或者单独引用 isArrayLike() 方法
-// import isArrayLike from '@yaohaixiao/types.js/esm/isArrayLike'
+// import isArrayLike from '@yaohaixiao/types.js/isArrayLike'
 
 let args
 
@@ -132,9 +300,9 @@ Types.isArrayLike(args) // -> true
 Types.isArrayLike(document.getElementsByTagName('li')) // -> true
 
 Types.isArrayLike({ '0': 1, '1': 2, length: 2 }) // -> false
-Types.isArrayLike( new Int8Array() ) // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isArrayLikeObject">isArrayLikeObject(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isArrayLikeObject(val) 方法用来检测测试数据是否为 ArrayLike 的对象数据。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object | Array</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 ArrayLike 的对象数据，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
+Types.isArrayLike( new Int8Array() ) // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isArrayLikeObject">isArrayLikeObject(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isArrayLikeObject(val) 方法用来检测测试数据是否为 ArrayLike 的对象数据。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object | Array</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 ArrayLike 的对象数据，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/types'
 // 或者单独引用 isArrayLikeObject() 方法
-// import isArrayLikeObject from '@yaohaixiao/types.js/esm/isArrayLikeObject'
+// import isArrayLikeObject from '@yaohaixiao/types.js/isArrayLikeObject'
 
 const $items = document.querySelectorAll('.item')
 const obj = { '0': 1, '1': 2, length: 2 }
@@ -154,24 +322,192 @@ Types.isArrayLikeObject($items) // -> true
 Types.isArrayLikeObject(args) // -> true
 
 Types.isArrayLikeObject(obj) // -> false
-Types.isArrayLikeObject({}) // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isBase64">isBase64(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isBase64(val) 方法用来检测测试数据是否为 Base64 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">String</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 Base64 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
-// 或者单独引用 isBase64() 方法
-// import isBase64 from '@yaohaixiao/types.js/esm/isBase64'
+Types.isArrayLikeObject({}) // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isEmptyArray">isEmptyArray(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isEmptyArray(val) 方法用来检测测试数据是否为空字符串。</p><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">0.6.0</dd></dl><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Array</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据为空字数组，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/types'
+// 或者单独引用 isEmptyArray() 方法
+// import isEmptyArray from '@yaohaixiao/types.js/isEmptyArray'
 
-Types.isBase64('Z29vZA==') // -> true
-Types.isBase64('aXNCYXNlNjQ=2') // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isBigInt">isBigInt(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isBigInt(val) 方法用来检测测试数据是否为 BigInt 类型。</p><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">0.6.0</dd></dl><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 BigInt 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
-// 或者单独引用 isBigInt() 方法
-// import isBigInt from '@yaohaixiao/types.js/esm/isBigInt'
+Types.isEmptyArray([]) // -> true
+Types.isEmptyArray(['']) // -> true
+Types.isEmptyArray(new Array()) // -> true
 
-const MAX_SAFE_INTEGER = 9007199254740991
-const bigint = BigInt(MAX_SAFE_INTEGER + 1)
+Types.isEmptyArray(new Array(8)) // -> false</code></pre></div></section><header class="section__header"><h2 class="section__title">Typed Arrays</h2></header><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isTypedArray">isTypedArray(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isTypedArray(val) 方法用来检测测试数据是否为 TypedArray 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 TypedArray 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/types'
+// 或者单独引用 isTypedArray() 方法
+// import isTypedArray from '@yaohaixiao/types.js/isTypedArray'
 
-Type.is(bigint) // -> 'bigint'
+const numbers = [ 2, 4 ]
+let args
 
-Types.isBigInt(MAX_SAFE_INTEGER) // -> false
-Types.isBigInt(bigint) // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isBigInt64Array">isBigInt64Array(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isBigInt64Array(val) 方法用来检测测试数据是否为 BigInt64Array 类型。</p><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">0.6.0</dd></dl><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 BigInt64Array 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
+function test(str) {
+  args = arguments
+  return str
+}
+
+test('str')
+
+Types.isTypedArray( args ) // -> false
+Types.isTypedArray( numbers ) // -> false
+Types.isTypedArray( new Array() ) // -> false
+
+Types.isTypedArray(new Int8Array([])) // -> true
+Types.isTypedArray(new Int16Array([])) // -> true
+Types.isTypedArray(new Int32Array([])) // -> true
+
+Types.isTypedArray(new Uint8ClampedArray([])) // -> true
+Types.isTypedArray(new Uint8Array([])) // -> true
+Types.isTypedArray(new Uint16Array([])) // -> true
+Types.isTypedArray(new Uint32Array([])) // -> true
+
+Types.isTypedArray(new Float32Array([])) // -> true
+Types.isTypedArray(new Float64Array([])) // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isArrayBuffer">isArrayBuffer(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isArrayBuffer(val) 方法用来检测测试数据是否为 ArrayBuffer 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 ArrayBuffer 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/types'
+// 或者单独引用 isArrayBuffer() 方法
+// import isArrayBuffer from '@yaohaixiao/types.js/isArrayBuffer'
+
+Types.isArrayBuffer([]) // -> false
+Types.isArrayBuffer(new ArrayBuffer(8)) // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isInt8Array">isInt8Array(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isInt8Array(val) 方法用来检测测试数据是否为 Int8Array 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 Int8Array 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/types'
+// 或者单独引用 isInt8Array() 方法
+// import isInt8Array from '@yaohaixiao/types.js/isInt8Array'
+
+Types.isInt8Array([]) // -> false
+Types.isInt8Array(new Array(8)) // -> false
+Types.isInt8Array(new Int8Array([])) // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isInt16Array">isInt16Array(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isInt16Array(val) 方法用来检测测试数据是否为 Int16Array 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 Int16Array 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/types'
+// 或者单独引用 isInt16Array() 方法
+// import isInt16Array from '@yaohaixiao/types.js/isInt16Array'
+
+const numbers = [ 2, 4 ]
+let args
+
+function test(a){
+  args = arguments
+  return a === 'test'
+}
+
+test()
+
+Types.isInt16Array(numbers) // -> false
+Types.isInt16Array(new Array(16)) // -> false
+Types.isInt16Array(args) // -> false
+Types.isInt16Array(new Int16Array()) => true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isInt32Array">isInt32Array(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isInt32Array(val) 方法用来检测测试数据是否为 Int32Array 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 Int32Array 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/types'
+// 或者单独引用 isInt32Array() 方法
+// import isInt32Array from '@yaohaixiao/types.js/isInt32Array'
+
+const numbers = [ 2, 4 ]
+let args
+
+function test(a){
+  args = arguments
+  return a === 'test'
+}
+
+test()
+
+Types.isInt32Array(numbers) // -> false
+Types.isInt32Array(new Array(32)) // -> false
+Types.isInt32Array(args) // -> false
+Types.isInt32Array(new Int32Array()) => true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isUint8Array">isUint8Array(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isUint8Array(val) 方法用来检测测试数据是否为 Uint8Array 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 Uint8Array 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/types'
+// 或者单独引用 isUint8Array() 方法
+// import isUint8Array from '@yaohaixiao/types.js/isUint8Array'
+
+const numbers = [ 2, 4 ]
+let args
+
+function test(a){
+  args = arguments
+  return a === 'test'
+}
+
+test()
+
+Types.isUint8Array(numbers) // -> false
+Types.isUint8Array(new Array(32)) // -> false
+Types.isUint8Array(args) // -> false
+Types.isUint8Array(new Uint8Array()) // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isUint8ClampedArray">isUint8ClampedArray(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isUint8ClampedArray(val) 方法用来检测测试数据是否为 Uint8ClampedArray 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 Uint8ClampedArray 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/types'
+// 或者单独引用 isUint8ClampedArray() 方法
+// import isUint8ClampedArray from '@yaohaixiao/types.js/isUint8ClampedArray'
+
+const numbers = [ 2, 4 ]
+let args
+
+function test(a){
+  args = arguments
+  return a === 'test'
+}
+
+test()
+
+Types.isUint8ClampedArray(numbers) // -> false
+Types.isUint8ClampedArray(new Array(32)) // -> false
+Types.isUint8ClampedArray(args) // -> false
+Types.isUint8ClampedArray(new Uint8ClampedArray()) // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isUint16Array">isUint16Array(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isUint16Array(val) 方法用来检测测试数据是否为 Uint16Array 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 Uint16Array 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/types'
+// 或者单独引用 isUint16Array() 方法
+// import isUint16Array from '@yaohaixiao/types.js/isUint16Array'
+
+const numbers = [ 2, 4 ]
+let args
+
+function test(a){
+  args = arguments
+  return a === 'test'
+}
+
+test()
+
+Types.isUint16Array(numbers) // -> false
+Types.isUint16Array(new Array(32)) // -> false
+Types.isUint16Array(args) // -> false
+Types.isUint16Array(new Uint16Array()) // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isUint32Array">isUint32Array(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isUint32Array(val) 方法用来检测测试数据是否为 Uint32Array 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 Uint32Array 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/types'
+// 或者单独引用 isUint32Array() 方法
+// import isUint32Array from '@yaohaixiao/types.js/isUint32Array'
+
+const numbers = [ 2, 4 ]
+let args
+
+function test(a){
+  args = arguments
+  return a === 'test'
+}
+
+test()
+
+Types.isUint32Array(numbers) // -> false
+Types.isUint32Array(new Array(32)) // -> false
+Types.isUint32Array(args) // -> false
+Types.isUint32Array(new Uint32Array()) // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isFloat32Array">isFloat32Array(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isFloat32Array(val) 方法用来检测测试数据是否为 Float32Array 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 Float32Array 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/types'
+// 或者单独引用 isFloat32Array() 方法
+// import isFloat32Array from '@yaohaixiao/types.js/isFloat32Array'
+
+const numbers = [ 2, 4 ]
+let args
+
+function test(a){
+  args = arguments
+  return a === 'test'
+}
+
+test()
+
+Types.isFloat32Array(numbers) // -> false
+Types.isFloat32Array(new Array(32)) // -> false
+Types.isFloat32Array(args) // -> false
+Types.isFloat32Array(new Float32Array()) => true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isFloat64Array">isFloat64Array(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isFloat64Array(val) 方法用来检测测试数据是否为 Float64Array 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 Float64Array 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/types'
+// 或者单独引用 isFloat64Array() 方法
+// import isFloat64Array from '@yaohaixiao/types.js/isFloat64Array'
+
+const numbers = [ 2, 4 ]
+let args
+
+function test(a){
+  args = arguments
+  return a === 'test'
+}
+
+test()
+
+Types.isFloat64Array(numbers) // -> false
+Types.isFloat64Array(new Array(32)) // -> false
+Types.isFloat64Array(args) // -> false
+Types.isFloat64Array(new Float64Array()) => true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isBigInt64Array">isBigInt64Array(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isBigInt64Array(val) 方法用来检测测试数据是否为 BigInt64Array 类型。</p><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">0.6.0</dd></dl><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 BigInt64Array 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/types'
 // 或者单独引用 isBigInt64Array() 方法
-// import isBigInt64Array from '@yaohaixiao/types.js/esm/isBigInt64Array'
+// import isBigInt64Array from '@yaohaixiao/types.js/isBigInt64Array'
 
 const arr = [9007199254740992]
 cong bigint64 = new BigInt64Array(42)
@@ -179,9 +515,9 @@ cong bigint64 = new BigInt64Array(42)
 Type.is(bigint) // -> 'bigint64array'
 
 Types.isBigInt64Array(arr) // -> false
-Types.isBigInt64Array(bigint64) // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isBigUint64Array">isBigUint64Array(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isBigUint64Array(val) 方法用来检测测试数据是否为 BigUint64Array 类型。</p><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">0.6.0</dd></dl><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 BigUint64Array 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
+Types.isBigInt64Array(bigint64) // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isBigUint64Array">isBigUint64Array(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isBigUint64Array(val) 方法用来检测测试数据是否为 BigUint64Array 类型。</p><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">0.6.0</dd></dl><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 BigUint64Array 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/types'
 // 或者单独引用 isBigUint64Array() 方法
-// import isBigUint64Array from '@yaohaixiao/types.js/esm/isBigUint64Array'
+// import isBigUint64Array from '@yaohaixiao/types.js/isBigUint64Array'
 
 const arr = [9007199254740992]
 cong bigint64 = new BigInt64Array(42)
@@ -189,128 +525,48 @@ cong bigint64 = new BigInt64Array(42)
 Type.is(bigint) // -> 'bigint64array'
 
 Types.isBigUint64Array(arr) // -> false
-Types.isBigUint64Array(bigint64) // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isBlank">isBlank(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isBlank(val) 方法用来检测测试数据是否只包含空格。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">String</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
-// 或者单独引用 isBlank() 方法
-// import isBlank from '@yaohaixiao/types.js/esm/isBlank'
-
-Types.isBlank('  ') // -> true
-Types.isBlank(new String()) // -> false
-Types.isBlank('') // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isBoolean">isBoolean(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isBoolean(val) 方法用来检测测试数据是否为 Boolean 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 Boolean 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
-// 或者单独引用 isBoolean() 方法
-// import isBoolean from '@yaohaixiao/types.js/esm/isBoolean'
-
-let projects
-
-// False
-Types.isBoolean(1) // -> false
-Types.isBoolean('') // -> false
-Types.isBoolean(null) // -> false
-Types.isBoolean(NaN) // -> false
-Types.isBoolean(projects) // -> false
-
-// True
-Types.isBoolean(!!0) // -> true
-Types.isBoolean(false) // -> true
-Types.isBoolean(true) // -> true
-Types.isBoolean(Boolean('1')) // -> true
-Types.isBoolean(new Boolean('')) // -> false
-Types.isBoolean(!!projects) // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isConstructor">isConstructor(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isConstructor(val) 方法用来检测测试数据是否为构造函数。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Function | Object</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是构造函数，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
-// 或者单独引用 isConstructor() 方法
-// import isConstructor from '@yaohaixiao/types.js/esm/isConstructor'
-
-const fn = function(){};
-const ff = class {};
-
-Types.isConstructor(fn) // -> true
-Types.isConstructor(ff) // -> true
-Types.isConstructor(console.log) // -> false
-
-Types.isConstructor(Math) // -> false
-Types.isConstructor(Boolean) // -> true
-Types.isConstructor(Array) // -> true
-Types.isConstructor(Function) // -> true
-Types.isConstructor(Date) // -> true
-Types.isConstructor(RegExp) // -> true
-Types.isConstructor(Object) // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isDataView">isDataView(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isDataView(val) 方法用来检测测试数据是否为 DataView 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 DataView 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
-// 或者单独引用 isDataView() 方法
-// import isDataView from '@yaohaixiao/types.js/esm/isDataView'
-
-const buffer = new ArrayBuffer(8)
-const dv = new DataView(buffer)
-
-Types.isDataView(buffer) // -> false
-Types.isDataView(dv) // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isDate">isDate(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isDate(val) 方法用来检测测试数据是否为 Date 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 Date 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
-// 或者单独引用 isDate() 方法
-// import isDate from '@yaohaixiao/types.js/esm/isDate'
-
-const time = new Date()
-
-Types.isDate(time) // -> true
-Types.isDate('2017-07-06') // -> false
-Types.isDate(time.getFullYear()) // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isElement">isElement(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isElement(val) 方法用来检测测试数据是否为 HTMLElement (元素节点)类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 HTMLElement (元素节点)类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
-// 或者单独引用 isElement() 方法
-// import isElement from '@yaohaixiao/types.js/esm/isElement'
+Types.isBigUint64Array(bigint64) // -> true</code></pre></div></section><header class="section__header"><h2 class="section__title">Object</h2></header><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isObject">isObject(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isObject(val) 方法用来检测测试数据是否为 Object 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 Object 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/types'
+// 或者单独引用 isObject() 方法
+// import isObject from '@yaohaixiao/types.js/isObject'
 
 const $list = document.getElementById('list')
-const $div = document.createElement('div')
-const $text = document.createTextNode('text')
-const $items = document.querySelectorAll('.item')
-const $fragment = document.createDocumentFragment()
 
-Types.is($list) // -> 'element'
-Types.isElement($list) // -> true
+// True
+Types.isObject({}) // => true
+Types.isObject(Object) // => true
+Types.isObject(new Object()) // => true
+Types.isObject(Object.create(null)) // => true
+Types.isObject([]) // => true
+Types.isObject(() => {}) // => true
+Types.isObject(class {}) // => true
+Types.isObject($list) // => true
 
-Types.is($div) // -> 'element'
-Types.isElement($div) // -> true
+// False
+Types.isObject('null') // => false
+Types.isObject(1) // => false
+Types.isObject(false) // => false
+Types.isObject(Symbol('ok')) // => false
+Types.isObject($list) // => false
 
-Types.is($text) // -> 'text'
-Types.isElement($text) // -> false
+// 针对 null，type.js 认为不是一个有效对象
+// 以避免将 null 作为普通对象操作导致的错误
+Types.isObject(null) // => false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isObjectLike">isObjectLike(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isObjectLike(val) 方法用来检测测试数据是否为类似 Object 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是类似 Object 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/types'
+// 或者单独引用 isObjectLike() 方法
+// import isObjectLike from '@yaohaixiao/types.js/isObjectLike'
 
-Types.is($items) // -> 'collection'
-Types.isElement($items) // -> false
+// True
+Types.isObjectLike(function empty(){}) // -> true
+Types.isObjectLike({}) // -> true
+Types.isObjectLike(Object.create(null)) // -> true
+Types.isObjectLike(Object.create({})) // -> true
+Types.isObjectLike(new Function()) // -> true
 
-Types.is($fragment) // -> 'collection'
-Types.isElement($fragment) // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isEmail">isEmail(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isEmail(val) 方法用来检测测试数据是否为合法的 Email 格式。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">String</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是合法的 Email 格式，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
-// 或者单独引用 isEmail() 方法
-// import isEmail from '@yaohaixiao/types.js/esm/isEmail'
-
-Types.isEmail('yaohaixiao@gmail.com') // => true
-Types.isEmail('yaohaixiao@gmail.c') // => true
-Types.isEmail('haixiao-yao@gmail.com') // => true
-Types.isEmail('haixiao_yao@gmail.com') // => true
-Types.isEmail('haixiao&yao@gmail.com') // => true
-Types.isEmail('haixiao~yao@gmail.com') // => true
-Types.isEmail('haixiao+yao@gmail.com') // => true
-Types.isEmail('haixiao^yao@gmail.com') // => true
-Types.isEmail('haixiao%yao@gmail.com') // => true
-Types.isEmail('haixiao$yao@gmail.com') // => true
-Types.isEmail('haixiao.yao@gmail.com') // => true
-Types.isEmail('haixiao/yao@gmail.com') // => true
-Types.isEmail('haixiao#yao@gmail.com') // => true
-Types.isEmail('yao{haixiao@gmail.com') // => true
-Types.isEmail('yao|haixiao@gmail.com') // => true
-Types.isEmail('yao}haixiao@gmail.com') // => true
-
-Types.isEmail('yaohaixiao#gmail.com') // => false
-Types.isEmail('yao\haixiao@gmail.com') // => false
-Types.isEmail('yao[haixiao@gmail.com') // => false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isEmpty">isEmpty(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isEmpty(val) 方法用来检测测试数据是否为空字符串。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">String</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据为空字符串，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
-// 或者单独引用 isEmpty() 方法
-// import isEmpty from '@yaohaixiao/types.js/esm/isEmpty'
-
-Types.isEmpty('') // -> true
-Types.isEmpty(String()) // -> true
-Types.isEmpty(new String()) // -> false
-Types.isEmpty(' ') // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isEmptyArray">isEmptyArray(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isEmptyArray(val) 方法用来检测测试数据是否为空字符串。</p><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">0.6.0</dd></dl><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Array</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据为空字数组，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
-// 或者单独引用 isEmptyArray() 方法
-// import isEmptyArray from '@yaohaixiao/types.js/esm/isEmptyArray'
-
-Types.isEmptyArray([]) // -> true
-Types.isEmptyArray(['']) // -> true
-Types.isEmptyArray(new Array()) // -> true
-
-Types.isEmptyArray(new Array(8)) // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isEmptyObject">isEmptyObject(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isEmptyObject(val) 方法用来检测测试数据是否为空（单体）对象。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据为空（单体）对象，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
+// False
+Types.isObjectLike([]) // -> false
+Types.isObjectLike(null) // -> false
+Types.isObjectLike(document.getElementById('wrap')) // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isEmptyObject">isEmptyObject(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isEmptyObject(val) 方法用来检测测试数据是否为空（单体）对象。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据为空（单体）对象，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/types'
 // 或者单独引用 isEmptyObject() 方法
-// import isEmptyObject from '@yaohaixiao/types.js/esm/isEmptyObject'
+// import isEmptyObject from '@yaohaixiao/types.js/isEmptyObject'
 
 function Person(name,age){
    this.name = name;
@@ -331,120 +587,9 @@ Types.isEmptyObject(new Function()) // false
 Types.isEmptyObject(['']) // false
 Types.isEmptyObject(null) // false
 Types.isEmptyObject({name:'type.js'}) // -> false
-Types.isEmptyObject(new Person('yaohaixiao',30)) // false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isError">isError(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isError(val) 方法用来检测测试数据是否为 Error 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据为 Error 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
-// 或者单独引用 isError() 方法
-// import isError from '@yaohaixiao/types.js/esm/isError'
-
-const error = function Error(){}
-
-Types.isError(new error()) // -> false
-Types.isError(new Error()) // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isEven">isEven(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isEven(val) 方法用来检测测试数据的(数值)是否为偶数。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Number</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据(数值)为偶数，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
-// 或者单独引用 isEven() 方法
-// import isEven from '@yaohaixiao/types.js/esm/isEven'
-
-Types.isEven(2) // -> true
-Types.isEven(2.0) // -> true
-Types.isEven('2') // -> false
-
-Types.isEven(3) // -> false
-Types.isEven(2.2) // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isFloat">isFloat(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isFloat(val) 方法用来检测测试数据的(数值)是否为浮点数。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Number</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据(数值)为浮点数，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
-// 或者单独引用 isFloat() 方法
-// import isFloat from '@yaohaixiao/types.js/esm/isFloat'
-
-Types.isFloat(.1) // -> true
-Types.isFloat(1.01) // -> true
-Types.isFloat(Number("3.4556645445E7")) // -> true
-Types.isFloat(Number("3.4556645445E10")) // -> false
-Types.isFloat(2.0) // -> false
-Types.isFloat(0xffffff) // -> false
-Types.isFloat(NaN) // -> false
-Types.isFloat(Infinity) // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isElement">isFragment(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isFragment(val) 方法用来检测测试数据是否为 DocumentFragment 文档碎片。</p><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">0.6.0</dd></dl><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 DocumentFragment 文档碎片，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
-// 或者单独引用 isFragment() 方法
-// import isFragment from '@yaohaixiao/types.js/esm/isFragment'
-
-const $list = document.getElementById('list')
-const $div = document.createElement('div')
-const $text = document.createTextNode('text')
-const $items = document.querySelectorAll('.item')
-const $fragment = document.createDocumentFragment()
-
-Types.is($list) // -> 'element'
-Types.isElement($list) // -> true
-Types.isFragment($list) // -> false
-
-Types.is($div) // -> 'element'
-Types.isElement($div) // -> true
-Types.isFragment($div) // -> false
-
-Types.is($text) // -> 'text'
-Types.isElement($text) // -> false
-Types.isFragment($text) // -> false
-
-Types.is($items) // -> 'collection'
-Types.isElement($items) // -> false
-Types.isFragment($items) // -> false
-
-Types.is($fragment) // -> 'fragment'
-Types.isElement($fragment) // -> false
-Types.isFragment($items) // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isFloat32Array">isFloat32Array(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isFloat32Array(val) 方法用来检测测试数据是否为 Float32Array 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 Float32Array 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
-// 或者单独引用 isFloat32Array() 方法
-// import isFloat32Array from '@yaohaixiao/types.js/esm/isFloat32Array'
-
-const numbers = [ 2, 4 ]
-let args
-
-function test(a){
-  args = arguments
-  return a === 'test'
-}
-
-test()
-
-Types.isFloat32Array(numbers) // -> false
-Types.isFloat32Array(new Array(32)) // -> false
-Types.isFloat32Array(args) // -> false
-Types.isFloat32Array(new Float32Array()) => true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isFloat64Array">isFloat64Array(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isFloat64Array(val) 方法用来检测测试数据是否为 Float64Array 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 Float64Array 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
-// 或者单独引用 isFloat64Array() 方法
-// import isFloat64Array from '@yaohaixiao/types.js/esm/isFloat64Array'
-
-const numbers = [ 2, 4 ]
-let args
-
-function test(a){
-  args = arguments
-  return a === 'test'
-}
-
-test()
-
-Types.isFloat64Array(numbers) // -> false
-Types.isFloat64Array(new Array(32)) // -> false
-Types.isFloat64Array(args) // -> false
-Types.isFloat64Array(new Float64Array()) => true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isFunction">isFunction(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isFunction(val) 方法用来检测测试数据是否为 Function 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 Function 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
-// 或者单独引用 isFunction() 方法
-// import isFunction from '@yaohaixiao/types.js/esm/isFunction'
-
-const blank = () => {}
-const fn = new Function()
-
-function empty(){}
-
-Types.isFunction(empty) // -> true
-Types.isFunction(blank) // -> true
-Types.isFunction(fn) // -> true
-Types.isFunction(parseInt) // -> true
-Types.isFunction(Array) // -> true
-Types.isFunction(Boolean) // -> true
-Types.isFunction(Date) // -> true
-Types.isFunction(Number) // -> true
-Types.isFunction(Object) // -> true
-Types.isFunction(RegExp) // -> true
-Types.isFunction(String) // -> true
-
-Types.isFunction(Math) // -> false
-Types.isFunction(console) // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isHash">isHash(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isHash(val) 方法（isPlainObject()方法的别名）用来检测测试数据是否为普通对象。</p><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">0.4.0</dd></dl><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是普通对象，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
+Types.isEmptyObject(new Person('yaohaixiao',30)) // false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isHash">isHash(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isHash(val) 方法（isPlainObject()方法的别名）用来检测测试数据是否为普通对象。</p><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">0.4.0</dd></dl><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是普通对象，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/types'
 // 或者单独引用 isHash() 方法
-// import isHash from '@yaohaixiao/types.js/esm/isHash'
+// import isHash from '@yaohaixiao/types.js/isHash'
 
 let udf
 
@@ -471,342 +616,9 @@ Types.isHash(new String()) // -> true
 Types.isHash(new Number()) // -> true
 Types.isHash(new Boolean()) // -> true
 Types.isHash(new Array()) // -> true
-Types.isHash(new Date()) // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isHex">isHex(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isHex(val) 方法用来检测测试数据的(数值)是否为 16 进制数值。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">String</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据(数值)为16 进制数值，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
-// 或者单独引用 isHex() 方法
-// import isHex from '@yaohaixiao/types.js/esm/isHex'
-
-Types.isHex('#ffffff') // -> true
-Types.isHex('f3f3f3') // -> true
-Types.isHex('#h1f1f1') // -> false
-Types.isHex('h1f1x1') // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isHTML">isHTML(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isHTML(val) 方法用来检测测试数据是否为合法的 HTML 代码。</p><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">0.5.0</dd></dl><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">String</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据为合法的 HTML 代码，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
-// 或者单独引用 isHTML() 方法
-// import isHTML from '@yaohaixiao/types.js/esm/isHTML'
-
-// 包含 doctype 标签：
-Types.isHTML('&lt;!doctype html&gt;') // -&gt; true
-Types.isHTML('\n\n&lt;!doctype html&gt;&lt;html&gt;') // -&gt; true
-
-// 包含：&lt;html&gt;，&lt;body&gt; 或者 &lt;x-*&gt; 标签：
-Types.isHTML('&lt;html&gt;') // -&gt; true
-Types.isHTML('&lt;html&gt;&lt;/html&gt;') // -&gt; true
-Types.isHTML('&lt;html lang="en"&gt;&lt;/html&gt;') // -&gt; true
-Types.isHTML('&lt;html&gt;&lt;body&gt;&lt;/html&gt;') // -&gt; true
-Types.isHTML('&lt;html&gt;&lt;body class="no-js"&gt;&lt;/html&gt;') // -&gt; true
-Types.isHTML('&lt;x-unicorn&gt;') // -&gt; true
-
-// 包含任何合法的 HTML 标签：
-Types.isHTML('&lt;p&gt;foo&lt;/p&gt;') // -&gt; true
-Types.isHTML('&lt;a href="#"&gt;foo&lt;/a&gt;') // -&gt; true
-Types.isHTML('&lt;br /&gt;') // -&gt; true
-
-// 无法匹配 XML 标签：
-Types.isHTML('&lt;attribute&gt;address&lt;/attribute&gt;') // -&gt; false
-Types.isHTML('&lt;address&gt;Wuhan City&lt;/address&gt;') // -&gt; false
-Types.isHTML('&lt;age&gt;20&lt;/age&gt;') // -&gt; false
-Types.isHTML('&lt;gender&gt;mail&lt;/gender&gt;') // -&gt; false
-Types.isHTML('&lt;career&gt;programmer&lt;/career&gt;') // -&gt; false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isHTMLCollection">isHTMLCollection(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isHTMLCollection(val) 方法用来检测测试数据是否为 HTMLNodeList (元素集合)类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 HTMLNodeList (元素集合)类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
-// 或者单独引用 isHTMLCollection() 方法
-// import isHTMLCollection from '@yaohaixiao/types.js/esm/isHTMLCollection'
-
-const $list = document.getElementById('list')
-const $div = document.createElement('div')
-const $text = document.createTextNode('text')
-const $items = document.querySelectorAll('.item')
-const $fragment = document.createDocumentFragment()
-
-Types.is($list) // -> 'element'
-Types.isElement($list) // -> true
-Types.isHTMLCollection($list) // -> false
-
-Types.is($div) // -> 'element'
-Types.isElement($div) // -> true
-Types.isHTMLCollection($div) // -> false
-
-Types.is($text) // -> 'text'
-Types.isElement($text) // -> false
-Types.isHTMLCollection($text) // -> false
-
-Types.is($items) // -> 'collection'
-Types.isElement($items) // -> false
-Types.isHTMLCollection($items) // -> true
-
-Types.is($fragment) // -> 'fragment'
-Types.isElement($fragment) // -> false
-Types.isHTMLCollection($items) // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isInfinite">isInfinite(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isInfinite(val) 方法用来检测测试数据的(数值)是否为正无穷或者负无穷。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Number</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据(数值)为正无穷或者负无穷，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
-// 或者单独引用 isInfinite() 方法
-// import isInfinite from '@yaohaixiao/types.js/esm/isInfinite'
-
-Types.isInfinite(2.4) // -> false
-
-Types.isInfinite(Infinity) // -> true
-Types.isInfinite(-Infinity) // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isInt8Array">isInt8Array(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isInt8Array(val) 方法用来检测测试数据是否为 Int8Array 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 Int8Array 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
-// 或者单独引用 isInt8Array() 方法
-// import isInt8Array from '@yaohaixiao/types.js/esm/isInt8Array'
-
-Types.isInt8Array([]) // -> false
-Types.isInt8Array(new Array(8)) // -> false
-Types.isInt8Array(new Int8Array([])) // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isInt16Array">isInt16Array(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isInt16Array(val) 方法用来检测测试数据是否为 Int16Array 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 Int16Array 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
-// 或者单独引用 isInt16Array() 方法
-// import isInt16Array from '@yaohaixiao/types.js/esm/isInt16Array'
-
-const numbers = [ 2, 4 ]
-let args
-
-function test(a){
-  args = arguments
-  return a === 'test'
-}
-
-test()
-
-Types.isInt16Array(numbers) // -> false
-Types.isInt16Array(new Array(16)) // -> false
-Types.isInt16Array(args) // -> false
-Types.isInt16Array(new Int16Array()) => true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isInt32Array">isInt32Array(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isInt32Array(val) 方法用来检测测试数据是否为 Int32Array 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 Int32Array 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
-// 或者单独引用 isInt32Array() 方法
-// import isInt32Array from '@yaohaixiao/types.js/esm/isInt32Array'
-
-const numbers = [ 2, 4 ]
-let args
-
-function test(a){
-  args = arguments
-  return a === 'test'
-}
-
-test()
-
-Types.isInt32Array(numbers) // -> false
-Types.isInt32Array(new Array(32)) // -> false
-Types.isInt32Array(args) // -> false
-Types.isInt32Array(new Int32Array()) => true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isInteger">isInteger(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isInteger(val) 方法用来检测测试数据的(数值)是否为整数。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Number</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据(数值)为整数，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
-// 或者单独引用 isInteger() 方法
-// import isInteger from '@yaohaixiao/types.js/esm/isInteger'
-
-// False
-Types.isInteger(2.4) // -> false
-Types.isInteger(3.4234E3) // -> false
-Types.isInteger('1') // -> false
-Types.isInteger(Number('3.4556645445E7')) // -> false
-Types.isInteger(NaN) // -> false
-Types.isInteger(Infinity) // -> false
-Types.isInteger(-Infinity) // -> false
-
-// True
-Types.isInteger(2) // -> true
-Types.isInteger(2.0) // -> true
-Types.isInteger(3.4234E4) // -> true
-Types.isInteger(0xffffff) // -> true
-Types.isInteger(Number('1')) // -> true
-Types.isInteger(parseInt('1.0', 10)) // -> true
-Types.isInteger(Math.ceil(2.6)) // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isIPAddress">isIPAddress(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isIPAddress(val) 方法用来检测测试数据是否为合法的 IP 地址格式。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">String</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是合法的 IP 地址格式，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
-// 或者单独引用 isIPAddress() 方法
-// import isIPAddress from '@yaohaixiao/types.js/esm/isIPAddress'
-
-// IPv4
-Types.isIPAddress('126.11.15.33') // -> true
-Types.isIPAddress('255.255.255.255') // -> true
-Types.isIPAddress('126.11.15.255') // -> false
-Types.isIPAddress('126.11.15.256') // -> false
-Types.isIPAddress('126.11.15.a56') // -> false
-Types.isIPAddress('126.11.15.') // -> false
-
-// IPv6
-Types.isIPAddress('FC00:0000:130F:0000:0000:09C0:876A:130B') // -> true
-Types.isIPAddress('FC00:0000:130F:0000:0000:09C0:876A:130') // -> true
-Types.isIPAddress('FC00:0000:130F:0000:0000:09C0:876A') // -> false
-Types.isIPAddress('FC00:0000:130F:0000:0000:09C0:876A:X130') // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isJSON">isJSON(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isJSON(val) 方法用来检测测试数据是否为合法的 JSON 格式。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">String</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是合法的 JSON 格式，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
-// 或者单独引用 isJSON() 方法
-// import isJSON from '@yaohaixiao/types.js/esm/isJSON'
-
-// String
-Types.isJSON('') // -> false
-Types.isJSON("") // -> false
-Types.isJSON("json") // -> true
-
-// Number
-Types.isJSON(3) // -> false
-Types.isJSON("3") // -> true
-
-// Boolean
-Types.isJSON(false) // -> false
-Types.isJSON("false") // -> true
-
-// Object
-Types.isJSON(null) // -> false
-Types.isJSON("null") // -> true
-
-Types.isJSON({ prop: 'JSON' }) // -> false
-Types.isJSON("{\"prop\":\"JSON\"}") // -> true
-
-// Array
-Types.isJSON([1, 2, 3]) // -> false
-Types.isJSON("[1, 2, 3]") // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isLength">isLength(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isLength(val) 方法用来检测测试数据是否为有效 length 值。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Number</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是有效 length 值，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
-// 或者单独引用 isLength() 方法
-// import isLength from '@yaohaixiao/types.js/esm/isLength'
-
-// True
-Types.isLength(256) // -> true
-Types.isLength(0x00ff11) // -> true
-Types.isLength(9007199254740991) // -> true
-
-// False
-Types.isLength(9007199254740992) // -> false
-Types.isLength(Infinity) // -> false
-Types.isLength(-1) // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isMap">isMap(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isMap(val) 方法用来检测测试数据是否为 Map 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 Map 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
-// 或者单独引用 isMap() 方法
-// import isMap from '@yaohaixiao/types.js/esm/isMap'
-
-const map = new Map([
-    ['name', 'Robert'],
-    ['Gender', 'Male']
-])
-
-Types.is(map) // -> 'map'
-
-Types.isMap(map) // -> true
-Types.isMap(['name','robert']) // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isNativeFunction">isNativeFunction(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isNativeFunction(val) 方法用来检测测试数据是否为 JavaScript 内置函数。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Function</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 JavaScript 内置函数，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
-// 或者单独引用 isNativeFunction() 方法
-// import isNativeFunction from '@yaohaixiao/types.js/esm/isNativeFunction'
-
-const fn = function(){};
-const ff = class {};
-const f = () => console.log('no constructable')
-
-Types.isNativeFunction(fn) // -> false
-Types.isNativeFunction(ff) // -> false
-Types.isNativeFunction(f) // -> false
-Types.isNativeFunction(document.domain) // -> false
-
-Types.isNativeFunction(Boolean) // -> true
-Types.isNativeFunction(String) // -> true
-Types.isNativeFunction(Number) // -> true
-Types.isNativeFunction(Object) // -> true
-Types.isNativeFunction(Data) // -> true
-Types.isNativeFunction(RegExp) // -> true
-Types.isNativeFunction(Error) // -> true
-Types.isNativeFunction(Math.floor) // -> true
-Types.isNativeFunction(console.log) // -> true
-Types.isNativeFunction(alert) // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isNull">isNull(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isNull(val) 方法用来检测测试数据是否为 null。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 null，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
-// 或者单独引用 isNull() 方法
-// import isNull from '@yaohaixiao/types.js/esm/isNull'
-
-let project
-
-Types.isNull('') // -> false
-Types.isNull({}) // -> false
-Types.isNull(project) // -> false
-Types.isNull(0) // -> false
-Types.isNull(false) // -> false
-Types.isNull(Object.create(null)) // -> false
-
-Types.isNull(null) // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isNumber">isNumber(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isNumber(val) 方法用来检测测试数据是否为 Number 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 Number 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
-// 或者单独引用 isNumber() 方法
-// import isNumber from '@yaohaixiao/types.js/esm/isNumber'
-
-// True
-Types.isNumber(0) // -> true
-Types.isNumber(.4) // -> true
-Types.isNumber(3.4E2) // -> true
-Types.isNumber(0xffffff) // -> true
-Types.isNumber(NaN) // -> true
-Types.isNumber(Infinity) // -> true
-Types.isNumber(-Infinity) // -> true
-
-// False
-Types.isNumber('2') // -> false
-Types.isNumber(2 + '1') // -> false
-Types.isNumber(new Number()) // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isNumeric">isNumeric(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isNumeric(val) 方法用来检测测试数据是否为数字(只能是 number 类型或者 '123123' 这样的数字字符串)。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Number | String</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是数字(只能是 number 类型或者 '123123' 这样的数字字符串)，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
-// 或者单独引用 isNumeric() 方法
-// import isNumeric from '@yaohaixiao/types.js/esm/isNumeric'
-
-Types.isNumeric(2) // -> true
-Types.isNumeric(2.4) // -> true
-Types.isNumeric(-2) // -> true
-Types.isNumeric(0xffffff) // -> true
-Types.isNumeric(3.1415926E8) // -> true
-Types.isNumeric('33') // -> true
-Types.isNumeric('0xffffff') // -> true
-
-Types.isNumeric(NaN) // -> false
-Types.isNumeric(Infinity) // -> false
-Types.isNumeric(-Infinity) // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isObject">isObject(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isObject(val) 方法用来检测测试数据是否为 Object 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 Object 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
-// 或者单独引用 isObject() 方法
-// import isObject from '@yaohaixiao/types.js/esm/isObject'
-
-const $list = document.getElementById('list')
-
-// True
-Types.isObject({}) // => true
-Types.isObject(Object) // => true
-Types.isObject(new Object()) // => true
-Types.isObject(Object.create(null)) // => true
-Types.isObject([]) // => true
-Types.isObject(() => {}) // => true
-Types.isObject(class {}) // => true
-Types.isObject($list) // => true
-
-// False
-Types.isObject('null') // => false
-Types.isObject(1) // => false
-Types.isObject(false) // => false
-Types.isObject(Symbol('ok')) // => false
-Types.isObject($list) // => false
-
-// 针对 null，type.js 认为不是一个有效对象
-// 以避免将 null 作为普通对象操作导致的错误
-Types.isObject(null) // => false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isObjectLike">isObjectLike(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isObjectLike(val) 方法用来检测测试数据是否为类似 Object 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是类似 Object 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
-// 或者单独引用 isObjectLike() 方法
-// import isObjectLike from '@yaohaixiao/types.js/esm/isObjectLike'
-
-// True
-Types.isObjectLike(function empty(){}) // -> true
-Types.isObjectLike({}) // -> true
-Types.isObjectLike(Object.create(null)) // -> true
-Types.isObjectLike(Object.create({})) // -> true
-Types.isObjectLike(new Function()) // -> true
-
-// False
-Types.isObjectLike([]) // -> false
-Types.isObjectLike(null) // -> false
-Types.isObjectLike(document.getElementById('wrap')) // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isOdd">isOdd(vaL)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isOdd(val) 方法用来检测测试数据的(数值)是否为奇数。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Number</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据(数值)为奇数，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
-// 或者单独引用 isOdd() 方法
-// import isOdd from '@yaohaixiao/types.js/esm/isOdd'
-
-Types.isOdd(3) // -> true
-Types.isOdd(3.0) // -> true
-Types.isOdd(3.01E2) // -> true
-Types.isOdd(0x000011) // -> true
-
-Types.isOdd(2.0) // -> false
-Types.isOdd('2') // -> false
-Types.isOdd(3.01E3) // -> false
-Types.isOdd(0x000010) // -> false
-Types.isOdd(NaN) // -> false
-Types.isOdd(Infinity) // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isPhoneNumber">isPhoneNumber(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isPhoneNumber(val) 方法用来检测测试数据是否为合法的电话号码格式。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">String</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是合法的电话号码格式，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
-// 或者单独引用 isPhoneNumber() 方法
-// import isPhoneNumber from '@yaohaixiao/types.js/esm/isPhoneNumber'
-
-// 移动电话号码
-Types.isPhoneNumber(13901030304) // -> false
-Types.isPhoneNumber('1390103030a') // => false
-
-Types.isPhoneNumber('+86 13901030304') // -> true
-Types.isPhoneNumber('13901030304') // -> true
-Types.isPhoneNumber('139-010-30304') // -> true
-Types.isPhoneNumber('139.010.30304') // -> true
-
-// 固定电话号码
-Types.isPhoneNumber('+86 84923296') // -> true
-Types.isPhoneNumber('027 84923296') // -> true
-Types.isPhoneNumber('(027) 84923296') // -> true
-Types.isPhoneNumber('(027)84923296') // -> true
-Types.isPhoneNumber('027-84923296') // -> true
-Types.isPhoneNumber('027.84923296') // -> true
-Types.isPhoneNumber('027 849-23296') // -> true
-Types.isPhoneNumber('027-849-23296') // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isPlainObject">isPlainObject(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isPlainObject(val) 方法用来检测测试数据是否为普通对象。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是普通对象，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
+Types.isHash(new Date()) // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isPlainObject">isPlainObject(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isPlainObject(val) 方法用来检测测试数据是否为普通对象。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是普通对象，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/types'
 // 或者单独引用 isPlainObject() 方法
-// import isPlainObject from '@yaohaixiao/types.js/esm/isPlainObject'
+// import isPlainObject from '@yaohaixiao/types.js/isPlainObject'
 
 let udf
 
@@ -833,9 +645,9 @@ Types.isPlainObject(new String()) // -> true
 Types.isPlainObject(new Number()) // -> true
 Types.isPlainObject(new Boolean()) // -> true
 Types.isPlainObject(new Array()) // -> true
-Types.isPlainObject(new Date()) // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isPrototype">isPrototype(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isPrototype(val) 方法用来检测测试数据是否为构造函数。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是构造函数，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
+Types.isPlainObject(new Date()) // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isPrototype">isPrototype(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isPrototype(val) 方法用来检测测试数据是否为构造函数。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是构造函数，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/types'
 // 或者单独引用 isPrototype() 方法
-// import isPrototype from '@yaohaixiao/types.js/esm/isPrototype'
+// import isPrototype from '@yaohaixiao/types.js/isPrototype'
 
 const Yao= {
   age: 40,
@@ -862,9 +674,32 @@ Types.isPrototype(Object) // => false
 Types.isPrototype(Object.prototype) // => true
 
 Types.isPrototype(Programmer) // => false
-Types.isPrototype(Yao.__proto__) // => true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isRegExp">isRegExp(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isRegExp(val) 方法用来检测测试数据是否为 RegExp (正则表达式)类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 RegExp (正则表达式)类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
+Types.isPrototype(Yao.__proto__) // => true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isDate">isDate(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isDate(val) 方法用来检测测试数据是否为 Date 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 Date 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/types'
+// 或者单独引用 isDate() 方法
+// import isDate from '@yaohaixiao/types.js/isDate'
+
+const time = new Date()
+
+Types.isDate(time) // -> true
+Types.isDate('2017-07-06') // -> false
+Types.isDate(time.getFullYear()) // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isDataView">isDataView(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isDataView(val) 方法用来检测测试数据是否为 DataView 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 DataView 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/types'
+// 或者单独引用 isDataView() 方法
+// import isDataView from '@yaohaixiao/types.js/isDataView'
+
+const buffer = new ArrayBuffer(8)
+const dv = new DataView(buffer)
+
+Types.isDataView(buffer) // -> false
+Types.isDataView(dv) // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isError">isError(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isError(val) 方法用来检测测试数据是否为 Error 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据为 Error 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/types'
+// 或者单独引用 isError() 方法
+// import isError from '@yaohaixiao/types.js/isError'
+
+const error = function Error(){}
+
+Types.isError(new error()) // -> false
+Types.isError(new Error()) // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isRegExp">isRegExp(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isRegExp(val) 方法用来检测测试数据是否为 RegExp (正则表达式)类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 RegExp (正则表达式)类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/types'
 // 或者单独引用 isRegExp() 方法
-// import isRegExp from '@yaohaixiao/types.js/esm/isRegExp'
+// import isRegExp from '@yaohaixiao/types.js/isRegExp'
 
 const patternOne = new RegExp('\\s+','ig')
 const patternTwo = /\s+/ig
@@ -877,43 +712,88 @@ Types.is(patternTwo) // -> 'regexp'
 Types.isRegExp(patternTwo) // -> true
 
 Types.is(patternStr) // -> 'string'
-Types.isRegExp(patternStr) // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isSet">isSet(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isSet(val) 方法用来检测测试数据是否为 Set 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 Set 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
-// 或者单独引用 isSet() 方法
-// import isSet from '@yaohaixiao/types.js/esm/isSet'
+Types.isRegExp(patternStr) // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isElement">isElement(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isElement(val) 方法用来检测测试数据是否为 HTMLElement (元素节点)类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 HTMLElement (元素节点)类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/types'
+// 或者单独引用 isElement() 方法
+// import isElement from '@yaohaixiao/types.js/isElement'
 
-const set = new Set([1, 2, 3, 4])
-const arr = [1, 2, 3, 4]
+const $list = document.getElementById('list')
+const $div = document.createElement('div')
+const $text = document.createTextNode('text')
+const $items = document.querySelectorAll('.item')
+const $fragment = document.createDocumentFragment()
 
-Types.is(set) // -> 'set'
-Types.isSet(set) // -> true
+Types.is($list) // -> 'element'
+Types.isElement($list) // -> true
 
-Types.is(arr) // -> 'array'
-Types.isSet(arr) // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isString">isString(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isString(val) 方法用来检测测试数据是否为 String 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 String 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
-// 或者单独引用 isString() 方法
-// import isString from '@yaohaixiao/types.js/esm/isString'
+Types.is($div) // -> 'element'
+Types.isElement($div) // -> true
 
-const text = document.createTextNode('text')
+Types.is($text) // -> 'text'
+Types.isElement($text) // -> false
 
-Types.isString('') // -> true
-Types.isString(String(2)) // -> true
-Types.isString(2 + '0') // -> true
+Types.is($items) // -> 'collection'
+Types.isElement($items) // -> false
 
-Types.isString(2) // -> false
-Types.isString(new String()) // -> false
-Types.isString(text) // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isSymbol">isSymbol(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isSymbol(val) 方法用来检测测试数据是否为 Symbol 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 Symbol 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
-// 或者单独引用 isSymbol() 方法
-// import isSymbol from '@yaohaixiao/types.js/esm/isSymbol'
+Types.is($fragment) // -> 'collection'
+Types.isElement($fragment) // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isElement">isFragment(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isFragment(val) 方法用来检测测试数据是否为 DocumentFragment 文档碎片。</p><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">0.6.0</dd></dl><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 DocumentFragment 文档碎片，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/types'
+// 或者单独引用 isFragment() 方法
+// import isFragment from '@yaohaixiao/types.js/isFragment'
 
-const sym = Symbol('foo')
-const symObj = Object(sym)
+const $list = document.getElementById('list')
+const $div = document.createElement('div')
+const $text = document.createTextNode('text')
+const $items = document.querySelectorAll('.item')
+const $fragment = document.createDocumentFragment()
 
-Types.is(sym) // -> 'symbol'
-Types.isSymbol(sym) // -> true
+Types.is($list) // -> 'element'
+Types.isElement($list) // -> true
+Types.isFragment($list) // -> false
 
-Types.is(symObj) // -> 'object'
-Types.isSymbol(symObj) // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isTextNode">isTextNode(evt)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isTextNode(val) 方法用来检测测试数据是否为 HTMLTextNode (文本节点)类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 HTMLTextNode (文本节点)类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
+Types.is($div) // -> 'element'
+Types.isElement($div) // -> true
+Types.isFragment($div) // -> false
+
+Types.is($text) // -> 'text'
+Types.isElement($text) // -> false
+Types.isFragment($text) // -> false
+
+Types.is($items) // -> 'collection'
+Types.isElement($items) // -> false
+Types.isFragment($items) // -> false
+
+Types.is($fragment) // -> 'fragment'
+Types.isElement($fragment) // -> false
+Types.isFragment($items) // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isHTMLCollection">isHTMLCollection(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isHTMLCollection(val) 方法用来检测测试数据是否为 HTMLNodeList (元素集合)类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 HTMLNodeList (元素集合)类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/types'
+// 或者单独引用 isHTMLCollection() 方法
+// import isHTMLCollection from '@yaohaixiao/types.js/isHTMLCollection'
+
+const $list = document.getElementById('list')
+const $div = document.createElement('div')
+const $text = document.createTextNode('text')
+const $items = document.querySelectorAll('.item')
+const $fragment = document.createDocumentFragment()
+
+Types.is($list) // -> 'element'
+Types.isElement($list) // -> true
+Types.isHTMLCollection($list) // -> false
+
+Types.is($div) // -> 'element'
+Types.isElement($div) // -> true
+Types.isHTMLCollection($div) // -> false
+
+Types.is($text) // -> 'text'
+Types.isElement($text) // -> false
+Types.isHTMLCollection($text) // -> false
+
+Types.is($items) // -> 'collection'
+Types.isElement($items) // -> false
+Types.isHTMLCollection($items) // -> true
+
+Types.is($fragment) // -> 'fragment'
+Types.isElement($fragment) // -> false
+Types.isHTMLCollection($items) // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isTextNode">isTextNode(evt)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isTextNode(val) 方法用来检测测试数据是否为 HTMLTextNode (文本节点)类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 HTMLTextNode (文本节点)类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/types'
 // 或者单独引用 isTextNode() 方法
-// import isTextNode from '@yaohaixiao/types.js/esm/isTextNode'
+// import isTextNode from '@yaohaixiao/types.js/isTextNode'
 
 const $list = document.getElementById('list')
 const $div = document.createElement('div')
@@ -939,118 +819,236 @@ Types.isTextNode($items) // -> false
 
 Types.is($text) // -> 'collection'
 Types.isElement($text) // -> false
-Types.isTextNode($text) // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isTypedArray">isTypedArray(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isTypedArray(val) 方法用来检测测试数据是否为 TypedArray 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 TypedArray 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
-// 或者单独引用 isTypedArray() 方法
-// import isTypedArray from '@yaohaixiao/types.js/esm/isTypedArray'
+Types.isTextNode($text) // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isVNode">isVNode(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isVNode(val) 方法用来检测测试数据是否为 VNode (VUE虚拟节点)类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 VNode (VUE虚拟节点)类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">&lt;template&gt;
+   &lt;dev-header ref="header"&gt;&lt;/dev-header&gt;
+&lt;/template&gt;
 
-const numbers = [ 2, 4 ]
-let args
+&lt;script&gt;
+import Types from '@yaohaixiao/types.js/types'
+// 或者单独引用 isVNode() 方法
+// import isVNode from '@yaohaixiao/types.js/isVNode'
 
-function test(str) {
-  args = arguments
-  return str
+export default {
+  name: 'PageHeader',
+  mounted() {
+    const $header = this.$refs.header
+
+    Types.isVNode($header) // -> true
+  }
 }
+&lt;/script&gt;</code></pre></div></section><header class="section__header"><h2 class="section__title">Function</h2></header><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isFunction">isFunction(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isFunction(val) 方法用来检测测试数据是否为 Function 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 Function 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/types'
+// 或者单独引用 isFunction() 方法
+// import isFunction from '@yaohaixiao/types.js/isFunction'
 
-test('str')
+const blank = () => {}
+const fn = new Function()
 
-Types.isTypedArray( args ) // -> false
-Types.isTypedArray( numbers ) // -> false
-Types.isTypedArray( new Array() ) // -> false
+function empty(){}
 
-Types.isTypedArray(new Int8Array([])) // -> true
-Types.isTypedArray(new Int16Array([])) // -> true
-Types.isTypedArray(new Int32Array([])) // -> true
+Types.isFunction(empty) // -> true
+Types.isFunction(blank) // -> true
+Types.isFunction(fn) // -> true
+Types.isFunction(parseInt) // -> true
+Types.isFunction(Array) // -> true
+Types.isFunction(Boolean) // -> true
+Types.isFunction(Date) // -> true
+Types.isFunction(Number) // -> true
+Types.isFunction(Object) // -> true
+Types.isFunction(RegExp) // -> true
+Types.isFunction(String) // -> true
 
-Types.isTypedArray(new Uint8ClampedArray([])) // -> true
-Types.isTypedArray(new Uint8Array([])) // -> true
-Types.isTypedArray(new Uint16Array([])) // -> true
-Types.isTypedArray(new Uint32Array([])) // -> true
+Types.isFunction(Math) // -> false
+Types.isFunction(console) // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isConstructor">isConstructor(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isConstructor(val) 方法用来检测测试数据是否为构造函数。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Function | Object</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是构造函数，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/types'
+// 或者单独引用 isConstructor() 方法
+// import isConstructor from '@yaohaixiao/types.js/isConstructor'
 
-Types.isTypedArray(new Float32Array([])) // -> true
-Types.isTypedArray(new Float64Array([])) // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isUint8Array">isUint8Array(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isUint8Array(val) 方法用来检测测试数据是否为 Uint8Array 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 Uint8Array 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
-// 或者单独引用 isUint8Array() 方法
-// import isUint8Array from '@yaohaixiao/types.js/esm/isUint8Array'
+const fn = function(){};
+const ff = class {};
 
-const numbers = [ 2, 4 ]
-let args
+Types.isConstructor(fn) // -> true
+Types.isConstructor(ff) // -> true
+Types.isConstructor(console.log) // -> false
 
-function test(a){
-  args = arguments
-  return a === 'test'
-}
+Types.isConstructor(Math) // -> false
+Types.isConstructor(Boolean) // -> true
+Types.isConstructor(Array) // -> true
+Types.isConstructor(Function) // -> true
+Types.isConstructor(Date) // -> true
+Types.isConstructor(RegExp) // -> true
+Types.isConstructor(Object) // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isNativeFunction">isNativeFunction(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isNativeFunction(val) 方法用来检测测试数据是否为 JavaScript 内置函数。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Function</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 JavaScript 内置函数，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/types'
+// 或者单独引用 isNativeFunction() 方法
+// import isNativeFunction from '@yaohaixiao/types.js/isNativeFunction'
 
-test()
+const fn = function(){};
+const ff = class {};
+const f = () => console.log('no constructable')
 
-Types.isUint8Array(numbers) // -> false
-Types.isUint8Array(new Array(32)) // -> false
-Types.isUint8Array(args) // -> false
-Types.isUint8Array(new Uint8Array()) // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isUint8ClampedArray">isUint8ClampedArray(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isUint8ClampedArray(val) 方法用来检测测试数据是否为 Uint8ClampedArray 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 Uint8ClampedArray 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
-// 或者单独引用 isUint8ClampedArray() 方法
-// import isUint8ClampedArray from '@yaohaixiao/types.js/esm/isUint8ClampedArray'
+Types.isNativeFunction(fn) // -> false
+Types.isNativeFunction(ff) // -> false
+Types.isNativeFunction(f) // -> false
+Types.isNativeFunction(document.domain) // -> false
 
-const numbers = [ 2, 4 ]
-let args
+Types.isNativeFunction(Boolean) // -> true
+Types.isNativeFunction(String) // -> true
+Types.isNativeFunction(Number) // -> true
+Types.isNativeFunction(Object) // -> true
+Types.isNativeFunction(Data) // -> true
+Types.isNativeFunction(RegExp) // -> true
+Types.isNativeFunction(Error) // -> true
+Types.isNativeFunction(Math.floor) // -> true
+Types.isNativeFunction(console.log) // -> true
+Types.isNativeFunction(alert) // -> true</code></pre></div></section><header class="section__header"><h2 class="section__title">Number</h2></header><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isNumeric">isNumeric(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isNumeric(val) 方法用来检测测试数据是否为数字(只能是 number 类型或者 '123123' 这样的数字字符串)。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Number | String</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是数字(只能是 number 类型或者 '123123' 这样的数字字符串)，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/types'
+// 或者单独引用 isNumeric() 方法
+// import isNumeric from '@yaohaixiao/types.js/isNumeric'
 
-function test(a){
-  args = arguments
-  return a === 'test'
-}
+Types.isNumeric(2) // -> true
+Types.isNumeric(2.4) // -> true
+Types.isNumeric(-2) // -> true
+Types.isNumeric(0xffffff) // -> true
+Types.isNumeric(3.1415926E8) // -> true
+Types.isNumeric('33') // -> true
+Types.isNumeric('0xffffff') // -> true
 
-test()
+Types.isNumeric(NaN) // -> false
+Types.isNumeric(Infinity) // -> false
+Types.isNumeric(-Infinity) // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isInteger">isInteger(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isInteger(val) 方法用来检测测试数据的(数值)是否为整数。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Number</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据(数值)为整数，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/types'
+// 或者单独引用 isInteger() 方法
+// import isInteger from '@yaohaixiao/types.js/isInteger'
 
-Types.isUint8ClampedArray(numbers) // -> false
-Types.isUint8ClampedArray(new Array(32)) // -> false
-Types.isUint8ClampedArray(args) // -> false
-Types.isUint8ClampedArray(new Uint8ClampedArray()) // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isUint16Array">isUint16Array(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isUint16Array(val) 方法用来检测测试数据是否为 Uint16Array 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 Uint16Array 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
-// 或者单独引用 isUint16Array() 方法
-// import isUint16Array from '@yaohaixiao/types.js/esm/isUint16Array'
+// False
+Types.isInteger(2.4) // -> false
+Types.isInteger(3.4234E3) // -> false
+Types.isInteger('1') // -> false
+Types.isInteger(Number('3.4556645445E7')) // -> false
+Types.isInteger(NaN) // -> false
+Types.isInteger(Infinity) // -> false
+Types.isInteger(-Infinity) // -> false
 
-const numbers = [ 2, 4 ]
-let args
+// True
+Types.isInteger(2) // -> true
+Types.isInteger(2.0) // -> true
+Types.isInteger(3.4234E4) // -> true
+Types.isInteger(0xffffff) // -> true
+Types.isInteger(Number('1')) // -> true
+Types.isInteger(parseInt('1.0', 10)) // -> true
+Types.isInteger(Math.ceil(2.6)) // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isFloat">isFloat(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isFloat(val) 方法用来检测测试数据的(数值)是否为浮点数。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Number</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据(数值)为浮点数，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/types'
+// 或者单独引用 isFloat() 方法
+// import isFloat from '@yaohaixiao/types.js/isFloat'
 
-function test(a){
-  args = arguments
-  return a === 'test'
-}
+Types.isFloat(.1) // -> true
+Types.isFloat(1.01) // -> true
+Types.isFloat(Number("3.4556645445E7")) // -> true
+Types.isFloat(Number("3.4556645445E10")) // -> false
+Types.isFloat(2.0) // -> false
+Types.isFloat(0xffffff) // -> false
+Types.isFloat(NaN) // -> false
+Types.isFloat(Infinity) // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isEven">isEven(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isEven(val) 方法用来检测测试数据的(数值)是否为偶数。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Number</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据(数值)为偶数，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/types'
+// 或者单独引用 isEven() 方法
+// import isEven from '@yaohaixiao/types.js/isEven'
 
-test()
+Types.isEven(2) // -> true
+Types.isEven(2.0) // -> true
+Types.isEven('2') // -> false
 
-Types.isUint16Array(numbers) // -> false
-Types.isUint16Array(new Array(32)) // -> false
-Types.isUint16Array(args) // -> false
-Types.isUint16Array(new Uint16Array()) // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isUint32Array">isUint32Array(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isUint32Array(val) 方法用来检测测试数据是否为 Uint32Array 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 Uint32Array 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
-// 或者单独引用 isUint32Array() 方法
-// import isUint32Array from '@yaohaixiao/types.js/esm/isUint32Array'
+Types.isEven(3) // -> false
+Types.isEven(2.2) // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isOdd">isOdd(vaL)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isOdd(val) 方法用来检测测试数据的(数值)是否为奇数。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Number</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据(数值)为奇数，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/types'
+// 或者单独引用 isOdd() 方法
+// import isOdd from '@yaohaixiao/types.js/isOdd'
 
-const numbers = [ 2, 4 ]
-let args
+Types.isOdd(3) // -> true
+Types.isOdd(3.0) // -> true
+Types.isOdd(3.01E2) // -> true
+Types.isOdd(0x000011) // -> true
 
-function test(a){
-  args = arguments
-  return a === 'test'
-}
+Types.isOdd(2.0) // -> false
+Types.isOdd('2') // -> false
+Types.isOdd(3.01E3) // -> false
+Types.isOdd(0x000010) // -> false
+Types.isOdd(NaN) // -> false
+Types.isOdd(Infinity) // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isInfinite">isInfinite(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isInfinite(val) 方法用来检测测试数据的(数值)是否为正无穷或者负无穷。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Number</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据(数值)为正无穷或者负无穷，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/types'
+// 或者单独引用 isInfinite() 方法
+// import isInfinite from '@yaohaixiao/types.js/isInfinite'
 
-test()
+Types.isInfinite(2.4) // -> false
 
-Types.isUint32Array(numbers) // -> false
-Types.isUint32Array(new Array(32)) // -> false
-Types.isUint32Array(args) // -> false
-Types.isUint32Array(new Uint32Array()) // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isUndefined">isUndefined(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isUndefined(val) 方法用来检测测试数据是否为 undefined。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 undefined，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
-// 或者单独引用 isUndefined() 方法
-// import isUndefined from '@yaohaixiao/types.js/esm/isUndefined'
+Types.isInfinite(Infinity) // -> true
+Types.isInfinite(-Infinity) // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isLength">isLength(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isLength(val) 方法用来检测测试数据是否为有效 length 值。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Number</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是有效 length 值，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/types'
+// 或者单独引用 isLength() 方法
+// import isLength from '@yaohaixiao/types.js/isLength'
 
-let projects
+// True
+Types.isLength(256) // -> true
+Types.isLength(0x00ff11) // -> true
+Types.isLength(9007199254740991) // -> true
 
-Types.isUndefined(projects) // -> true
+// False
+Types.isLength(9007199254740992) // -> false
+Types.isLength(Infinity) // -> false
+Types.isLength(-1) // -> false</code></pre></div></section><header class="section__header"><h2 class="section__title">String</h2></header><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isBase64">isBase64(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isBase64(val) 方法用来检测测试数据是否为 Base64 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">String</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 Base64 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/types'
+// 或者单独引用 isBase64() 方法
+// import isBase64 from '@yaohaixiao/types.js/isBase64'
 
-Types.isUndefined([]) // -> false
-Types.isUndefined('') // -> false
-Types.isUndefined(0) // -> false
-Types.isUndefined(NaN) // -> false
-Types.isUndefined({}) // -> false
-Types.isUndefined(null) // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isURL">isURL(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isURL(val) 方法用来检测测试数据是否为合法的 URL 格式。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">String</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是合法的 URL 格式，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
+Types.isBase64('Z29vZA==') // -> true
+Types.isBase64('aXNCYXNlNjQ=2') // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isBlank">isBlank(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isBlank(val) 方法用来检测测试数据是否只包含空格。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">String</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/types'
+// 或者单独引用 isBlank() 方法
+// import isBlank from '@yaohaixiao/types.js/isBlank'
+
+Types.isBlank('  ') // -> true
+Types.isBlank(new String()) // -> false
+Types.isBlank('') // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isEmpty">isEmpty(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isEmpty(val) 方法用来检测测试数据是否为空字符串。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">String</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据为空字符串，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/types'
+// 或者单独引用 isEmpty() 方法
+// import isEmpty from '@yaohaixiao/types.js/isEmpty'
+
+Types.isEmpty('') // -> true
+Types.isEmpty(String()) // -> true
+Types.isEmpty(new String()) // -> false
+Types.isEmpty(' ') // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isHex">isHex(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isHex(val) 方法用来检测测试数据的(数值)是否为 16 进制数值。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">String</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据(数值)为16 进制数值，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/types'
+// 或者单独引用 isHex() 方法
+// import isHex from '@yaohaixiao/types.js/isHex'
+
+Types.isHex('#ffffff') // -> true
+Types.isHex('f3f3f3') // -> true
+Types.isHex('#h1f1f1') // -> false
+Types.isHex('h1f1x1') // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isPhoneNumber">isPhoneNumber(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isPhoneNumber(val) 方法用来检测测试数据是否为合法的电话号码格式。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">String</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是合法的电话号码格式，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/types'
+// 或者单独引用 isPhoneNumber() 方法
+// import isPhoneNumber from '@yaohaixiao/types.js/isPhoneNumber'
+
+// 移动电话号码
+Types.isPhoneNumber(13901030304) // -> false
+Types.isPhoneNumber('1390103030a') // => false
+
+Types.isPhoneNumber('+86 13901030304') // -> true
+Types.isPhoneNumber('13901030304') // -> true
+Types.isPhoneNumber('139-010-30304') // -> true
+Types.isPhoneNumber('139.010.30304') // -> true
+
+// 固定电话号码
+Types.isPhoneNumber('+86 84923296') // -> true
+Types.isPhoneNumber('027 84923296') // -> true
+Types.isPhoneNumber('(027) 84923296') // -> true
+Types.isPhoneNumber('(027)84923296') // -> true
+Types.isPhoneNumber('027-84923296') // -> true
+Types.isPhoneNumber('027.84923296') // -> true
+Types.isPhoneNumber('027 849-23296') // -> true
+Types.isPhoneNumber('027-849-23296') // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isIPAddress">isIPAddress(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isIPAddress(val) 方法用来检测测试数据是否为合法的 IP 地址格式。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">String</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是合法的 IP 地址格式，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/types'
+// 或者单独引用 isIPAddress() 方法
+// import isIPAddress from '@yaohaixiao/types.js/isIPAddress'
+
+// IPv4
+Types.isIPAddress('126.11.15.33') // -> true
+Types.isIPAddress('255.255.255.255') // -> true
+Types.isIPAddress('126.11.15.255') // -> false
+Types.isIPAddress('126.11.15.256') // -> false
+Types.isIPAddress('126.11.15.a56') // -> false
+Types.isIPAddress('126.11.15.') // -> false
+
+// IPv6
+Types.isIPAddress('FC00:0000:130F:0000:0000:09C0:876A:130B') // -> true
+Types.isIPAddress('FC00:0000:130F:0000:0000:09C0:876A:130') // -> true
+Types.isIPAddress('FC00:0000:130F:0000:0000:09C0:876A') // -> false
+Types.isIPAddress('FC00:0000:130F:0000:0000:09C0:876A:X130') // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isURL">isURL(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isURL(val) 方法用来检测测试数据是否为合法的 URL 格式。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">String</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是合法的 URL 格式，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/types'
 // 或者单独引用 isURL() 方法
-// import isURL from '@yaohaixiao/types.js/esm/isURL'
+// import isURL from '@yaohaixiao/types.js/isURL'
 
 // IP 访问
 Types.isURL('http://127.0.0.1') // -> true
@@ -1076,82 +1074,84 @@ Types.isURL('https://www.yaohaixiao.com') -> true
 Types.isURL('https://www.yaohaixiao.com:8083') -> true
 Types.isURL('https://www.yaohaixiao.com/blog#top') -> true
 Types.isURL('https://www.yaohaixiao.com/blog/?page=2') -> true
-Types.isURL('https://www.yaohaixiao.com:8083/blog?page=2#top') -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isValue">isValue(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isValue(val) 方法用来检测测试数据是否有效的数据（非null、undefined、NaN或者正负无穷数值）。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是否有效的数据（非null、undefined或者正负无穷数值），false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
-// 或者单独引用 isValue() 方法
-// import isValue from '@yaohaixiao/types.js/esm/isValue'
+Types.isURL('https://www.yaohaixiao.com:8083/blog?page=2#top') -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isEmail">isEmail(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isEmail(val) 方法用来检测测试数据是否为合法的 Email 格式。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">String</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是合法的 Email 格式，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/types'
+// 或者单独引用 isEmail() 方法
+// import isEmail from '@yaohaixiao/types.js/isEmail'
 
-const fn = () => {}
-let projects
-function empty(){}
+Types.isEmail('yaohaixiao@gmail.com') // => true
+Types.isEmail('yaohaixiao@gmail.c') // => true
+Types.isEmail('haixiao-yao@gmail.com') // => true
+Types.isEmail('haixiao_yao@gmail.com') // => true
+Types.isEmail('haixiao&yao@gmail.com') // => true
+Types.isEmail('haixiao~yao@gmail.com') // => true
+Types.isEmail('haixiao+yao@gmail.com') // => true
+Types.isEmail('haixiao^yao@gmail.com') // => true
+Types.isEmail('haixiao%yao@gmail.com') // => true
+Types.isEmail('haixiao$yao@gmail.com') // => true
+Types.isEmail('haixiao.yao@gmail.com') // => true
+Types.isEmail('haixiao/yao@gmail.com') // => true
+Types.isEmail('haixiao#yao@gmail.com') // => true
+Types.isEmail('yao{haixiao@gmail.com') // => true
+Types.isEmail('yao|haixiao@gmail.com') // => true
+Types.isEmail('yao}haixiao@gmail.com') // => true
 
-// 非有效数据
-Types.isValue(projects) // -> false
-Types.isValue(NaN) // -> false
-Types.isValue(null) // -> false
-Types.isValue(Infinity) // -> false
-Types.isValue(-Infinity) // -> false
+Types.isEmail('yaohaixiao#gmail.com') // => false
+Types.isEmail('yao\haixiao@gmail.com') // => false
+Types.isEmail('yao[haixiao@gmail.com') // => false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isJSON">isJSON(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isJSON(val) 方法用来检测测试数据是否为合法的 JSON 格式。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">String</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是合法的 JSON 格式，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/types'
+// 或者单独引用 isJSON() 方法
+// import isJSON from '@yaohaixiao/types.js/isJSON'
 
-// 有效数据
-Types.isValue(0) // -> true
-Types.isValue('') // -> true
-Types.isValue(false) // -> true
-Types.isValue([]) // -> true
-Types.isValue({}) // -> true
-Types.isValue(/\s+/ig) // -> true
-Types.isValue(new Date()) // -> true
-Types.isValue(empty) // -> true
-Types.isValue(fn) // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isVNode">isVNode(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isVNode(val) 方法用来检测测试数据是否为 VNode (VUE虚拟节点)类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 VNode (VUE虚拟节点)类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">&lt;template&gt;
-   &lt;dev-header ref="header"&gt;&lt;/dev-header&gt;
-&lt;/template&gt;
+// String
+Types.isJSON('') // -> false
+Types.isJSON("") // -> false
+Types.isJSON("json") // -> true
 
-&lt;script&gt;
-import Types from '@yaohaixiao/types.js/esm/types'
-// 或者单独引用 isVNode() 方法
-// import isVNode from '@yaohaixiao/types.js/esm/isVNode'
+// Number
+Types.isJSON(3) // -> false
+Types.isJSON("3") // -> true
 
-export default {
-  name: 'PageHeader',
-  mounted() {
-    const $header = this.$refs.header
+// Boolean
+Types.isJSON(false) // -> false
+Types.isJSON("false") // -> true
 
-    Types.isVNode($header) // -> true
-  }
-}
-&lt;/script&gt;</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isWeakMap">isWeakMap(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isWeakMap(val) 方法用来检测测试数据是否为 WeakMap 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 WeakMap 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
-// 或者单独引用 isWeakMap() 方法
-// import isWeakMap from '@yaohaixiao/types.js/esm/isWeakMap'
+// Object
+Types.isJSON(null) // -> false
+Types.isJSON("null") // -> true
 
-const map = new Map([
-    ['name', 'Robert'],
-    ['Gender', 'Male']
-])
+Types.isJSON({ prop: 'JSON' }) // -> false
+Types.isJSON("{\"prop\":\"JSON\"}") // -> true
 
-const weakmap = new WeakMap()
+// Array
+Types.isJSON([1, 2, 3]) // -> false
+Types.isJSON("[1, 2, 3]") // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isHTML">isHTML(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isHTML(val) 方法用来检测测试数据是否为合法的 HTML 代码。</p><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">0.5.0</dd></dl><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">String</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据为合法的 HTML 代码，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/types'
+// 或者单独引用 isHTML() 方法
+// import isHTML from '@yaohaixiao/types.js/isHTML'
 
-weakmap.set({}, 37)
+// 包含 doctype 标签：
+Types.isHTML('&lt;!doctype html&gt;') // -&gt; true
+Types.isHTML('\n\n&lt;!doctype html&gt;&lt;html&gt;') // -&gt; true
 
-Types.is(weakmap) // -> 'weakmap'
-Types.isWeakMap(weakmap) // -> true
+// 包含：&lt;html&gt;，&lt;body&gt; 或者 &lt;x-*&gt; 标签：
+Types.isHTML('&lt;html&gt;') // -&gt; true
+Types.isHTML('&lt;html&gt;&lt;/html&gt;') // -&gt; true
+Types.isHTML('&lt;html lang="en"&gt;&lt;/html&gt;') // -&gt; true
+Types.isHTML('&lt;html&gt;&lt;body&gt;&lt;/html&gt;') // -&gt; true
+Types.isHTML('&lt;html&gt;&lt;body class="no-js"&gt;&lt;/html&gt;') // -&gt; true
+Types.isHTML('&lt;x-unicorn&gt;') // -&gt; true
 
-Types.is(map) // -> 'map'
-Types.isWeakMap(map) // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isWeakSet">isWeakSet(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isWeakSet(val) 方法用来检测测试数据是否为 WeakSet 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 WeakSet 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
-// 或者单独引用 isWeakSet() 方法
-// import isWeakSet from '@yaohaixiao/types.js/esm/isWeakSet'
+// 包含任何合法的 HTML 标签：
+Types.isHTML('&lt;p&gt;foo&lt;/p&gt;') // -&gt; true
+Types.isHTML('&lt;a href="#"&gt;foo&lt;/a&gt;') // -&gt; true
+Types.isHTML('&lt;br /&gt;') // -&gt; true
 
-const set = new Set([1, 2, 3, 4])
-const weakset = new WeakSet()
-
-weakset.add({name: 'Robert'})
-
-Types.is(set) // -> 'set'
-Types.isSet(set) // -> true
-Types.isWeakSet(set) // -> false
-
-Types.is(weakset) // -> 'weakset'
-Types.isSet(weakset) // -> false
-Types.isWeakSet(weakset) // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isXML">isXML(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isXML(val) 方法用来检测测试数据是否为合法的 XML 格式。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是合法的 XML 格式，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/esm/types'
+// 无法匹配 XML 标签：
+Types.isHTML('&lt;attribute&gt;address&lt;/attribute&gt;') // -&gt; false
+Types.isHTML('&lt;address&gt;Wuhan City&lt;/address&gt;') // -&gt; false
+Types.isHTML('&lt;age&gt;20&lt;/age&gt;') // -&gt; false
+Types.isHTML('&lt;gender&gt;mail&lt;/gender&gt;') // -&gt; false
+Types.isHTML('&lt;career&gt;programmer&lt;/career&gt;') // -&gt; false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isXML">isXML(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isXML(val) 方法用来检测测试数据是否为合法的 XML 格式。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是合法的 XML 格式，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/types'
 // 或者单独引用 isXML() 方法
-// import isXML from '@yaohaixiao/types.js/esm/isXML'
+// import isXML from '@yaohaixiao/types.js/isXML'
 
 import jsdom from 'jsdom'
 import { DOMParser } from 'xmldom'
@@ -1171,4 +1171,4 @@ Types.isXML(XML) // -> true
 Types.isXML('html') // -> false
 Types.isXML(HTML) // -> false</code></pre></div></section></section><div class="main__footer" id="footer"><p>Copyright &copy; 2023 <a href="https://github.com/yaohaixiao">Robert Yao</a>, all right reserved.</p><p>Code licensed under&nbsp;<a href="http://opensource.org/licenses/mit-license.html">MIT License</a> · Documentation licensed under
 <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a></p><p><a href="https://github.com/yaohaixiao/types.js">View on GitHub</a> ·
-<a href="https://github.com/yaohaixiao/types.js/issues">Issues</a></p></div></main></div><div class="buttons" id="buttons"><div class="buttons__item up"><svg class="buttons__icon" xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 1024 1024"><path d="M494.784 261.696c0.832-0.448 1.536-1.216 2.368-1.536a38.72 38.72 0 0 1 46.08 8.256l277.824 302.272a41.92 41.92 0 0 1-1.536 58.048 39.104 39.104 0 0 1-56.448-1.6L513.728 355.904 260.736 626.048a39.104 39.104 0 0 1-56.448 1.088 41.6 41.6 0 0 1-1.088-57.984L483.84 269.696c0.512-0.512 1.344-0.768 1.92-1.408l1.088-1.344c2.368-2.496 5.312-3.648 8-5.248z"></path></svg></div><div class="buttons__item home"><a class="buttons__anchor" href="http://www.yaohaixiao.com/"><svg class="buttons__icon" xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 26 28"><path d="M22 15.5v7.5c0 0.547-0.453 1-1 1h-6v-6h-4v6h-6c-0.547 0-1-0.453-1-1v-7.5c0-0.031 0.016-0.063 0.016-0.094l8.984-7.406 8.984 7.406c0.016 0.031 0.016 0.063 0.016 0.094zM25.484 14.422l-0.969 1.156c-0.078 0.094-0.203 0.156-0.328 0.172h-0.047c-0.125 0-0.234-0.031-0.328-0.109l-10.813-9.016-10.813 9.016c-0.109 0.078-0.234 0.125-0.375 0.109-0.125-0.016-0.25-0.078-0.328-0.172l-0.969-1.156c-0.172-0.203-0.141-0.531 0.063-0.703l11.234-9.359c0.656-0.547 1.719-0.547 2.375 0l3.813 3.187v-3.047c0-0.281 0.219-0.5 0.5-0.5h3c0.281 0 0.5 0.219 0.5 0.5v6.375l3.422 2.844c0.203 0.172 0.234 0.5 0.063 0.703z"></path></svg></a></div><div class="buttons__item github"><a class="buttons__anchor" href="https://github.com/yaohaixiao/types.js"><svg class="buttons__icon" xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 24 28"><path d="M12 2c6.625 0 12 5.375 12 12 0 5.297-3.437 9.797-8.203 11.391-0.609 0.109-0.828-0.266-0.828-0.578 0-0.391 0.016-1.687 0.016-3.297 0-1.125-0.375-1.844-0.812-2.219 2.672-0.297 5.484-1.313 5.484-5.922 0-1.313-0.469-2.375-1.234-3.219 0.125-0.313 0.531-1.531-0.125-3.187-1-0.313-3.297 1.234-3.297 1.234-0.953-0.266-1.984-0.406-3-0.406s-2.047 0.141-3 0.406c0 0-2.297-1.547-3.297-1.234-0.656 1.656-0.25 2.875-0.125 3.187-0.766 0.844-1.234 1.906-1.234 3.219 0 4.594 2.797 5.625 5.469 5.922-0.344 0.313-0.656 0.844-0.766 1.609-0.688 0.313-2.438 0.844-3.484-1-0.656-1.141-1.844-1.234-1.844-1.234-1.172-0.016-0.078 0.734-0.078 0.734 0.781 0.359 1.328 1.75 1.328 1.75 0.703 2.141 4.047 1.422 4.047 1.422 0 1 0.016 1.937 0.016 2.234 0 0.313-0.219 0.688-0.828 0.578-4.766-1.594-8.203-6.094-8.203-11.391 0-6.625 5.375-12 12-12zM4.547 19.234c0.031-0.063-0.016-0.141-0.109-0.187-0.094-0.031-0.172-0.016-0.203 0.031-0.031 0.063 0.016 0.141 0.109 0.187 0.078 0.047 0.172 0.031 0.203-0.031zM5.031 19.766c0.063-0.047 0.047-0.156-0.031-0.25-0.078-0.078-0.187-0.109-0.25-0.047-0.063 0.047-0.047 0.156 0.031 0.25 0.078 0.078 0.187 0.109 0.25 0.047zM5.5 20.469c0.078-0.063 0.078-0.187 0-0.297-0.063-0.109-0.187-0.156-0.266-0.094-0.078 0.047-0.078 0.172 0 0.281s0.203 0.156 0.266 0.109zM6.156 21.125c0.063-0.063 0.031-0.203-0.063-0.297-0.109-0.109-0.25-0.125-0.313-0.047-0.078 0.063-0.047 0.203 0.063 0.297 0.109 0.109 0.25 0.125 0.313 0.047zM7.047 21.516c0.031-0.094-0.063-0.203-0.203-0.25-0.125-0.031-0.266 0.016-0.297 0.109s0.063 0.203 0.203 0.234c0.125 0.047 0.266 0 0.297-0.094zM8.031 21.594c0-0.109-0.125-0.187-0.266-0.172-0.141 0-0.25 0.078-0.25 0.172 0 0.109 0.109 0.187 0.266 0.172 0.141 0 0.25-0.078 0.25-0.172zM8.937 21.438c-0.016-0.094-0.141-0.156-0.281-0.141-0.141 0.031-0.234 0.125-0.219 0.234 0.016 0.094 0.141 0.156 0.281 0.125s0.234-0.125 0.219-0.219z"></path></svg></a></div><div class="buttons__item tags"><a class="buttons__anchor" href="https://github.com/yaohaixiao/types.js/tags"><svg class="buttons__icon" xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 30 28"><path d="M7 7c0-1.109-0.891-2-2-2s-2 0.891-2 2 0.891 2 2 2 2-0.891 2-2zM23.672 16c0 0.531-0.219 1.047-0.578 1.406l-7.672 7.688c-0.375 0.359-0.891 0.578-1.422 0.578s-1.047-0.219-1.406-0.578l-11.172-11.188c-0.797-0.781-1.422-2.297-1.422-3.406v-6.5c0-1.094 0.906-2 2-2h6.5c1.109 0 2.625 0.625 3.422 1.422l11.172 11.156c0.359 0.375 0.578 0.891 0.578 1.422zM29.672 16c0 0.531-0.219 1.047-0.578 1.406l-7.672 7.688c-0.375 0.359-0.891 0.578-1.422 0.578-0.812 0-1.219-0.375-1.75-0.922l7.344-7.344c0.359-0.359 0.578-0.875 0.578-1.406s-0.219-1.047-0.578-1.422l-11.172-11.156c-0.797-0.797-2.312-1.422-3.422-1.422h3.5c1.109 0 2.625 0.625 3.422 1.422l11.172 11.156c0.359 0.375 0.578 0.891 0.578 1.422z"></path></svg></a></div><div class="buttons__item issues"><a class="buttons__anchor" href="https://github.com/yaohaixiao/types.js/issues"><svg class="buttons__icon" xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 26 28"><path d="M25.5 15c0 0.547-0.453 1-1 1h-3.5c0 1.953-0.422 3.422-1.047 4.531l3.25 3.266c0.391 0.391 0.391 1.016 0 1.406-0.187 0.203-0.453 0.297-0.703 0.297s-0.516-0.094-0.703-0.297l-3.094-3.078s-2.047 1.875-4.703 1.875v-14h-2v14c-2.828 0-4.891-2.063-4.891-2.063l-2.859 3.234c-0.203 0.219-0.469 0.328-0.75 0.328-0.234 0-0.469-0.078-0.672-0.25-0.406-0.375-0.438-1-0.078-1.422l3.156-3.547c-0.547-1.078-0.906-2.469-0.906-4.281h-3.5c-0.547 0-1-0.453-1-1s0.453-1 1-1h3.5v-4.594l-2.703-2.703c-0.391-0.391-0.391-1.016 0-1.406s1.016-0.391 1.406 0l2.703 2.703h13.188l2.703-2.703c0.391-0.391 1.016-0.391 1.406 0s0.391 1.016 0 1.406l-2.703 2.703v4.594h3.5c0.547 0 1 0.453 1 1zM18 6h-10c0-2.766 2.234-5 5-5s5 2.234 5 5z"></path></svg></a></div><div class="buttons__item down"><svg class="buttons__icon" xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 1024 1024"><path d="M494.784 762.304c0.832 0.448 1.536 1.216 2.368 1.536 15.232 7.488 33.92 4.992 46.08-8.256l277.824-302.272a41.92 41.92 0 0 0-1.536-58.048 39.104 39.104 0 0 0-56.448 1.6l-249.344 271.232-252.992-270.144a39.104 39.104 0 0 0-56.448-1.088 41.6 41.6 0 0 0-1.088 57.984l280.576 299.456c0.512 0.512 1.344 0.768 1.92 1.408l1.088 1.344c2.368 2.496 5.312 3.648 8 5.248z"></path></svg></div></div><script src="js/types.min.js"></script><script src="js/docs.min.js"></script></body></html>
+<a href="https://github.com/yaohaixiao/types.js/issues">Issues</a></p></div></main></div><div class="buttons" id="buttons"><div class="buttons__item up"><svg class="buttons__icon" xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 1024 1024"><path d="M494.784 261.696c0.832-0.448 1.536-1.216 2.368-1.536a38.72 38.72 0 0 1 46.08 8.256l277.824 302.272a41.92 41.92 0 0 1-1.536 58.048 39.104 39.104 0 0 1-56.448-1.6L513.728 355.904 260.736 626.048a39.104 39.104 0 0 1-56.448 1.088 41.6 41.6 0 0 1-1.088-57.984L483.84 269.696c0.512-0.512 1.344-0.768 1.92-1.408l1.088-1.344c2.368-2.496 5.312-3.648 8-5.248z"></path></svg></div><div class="buttons__item homepage"><a class="buttons__anchor" href="http://www.yaohaixiao.com/"><svg class="buttons__icon" xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 26 28"><path d="M22 15.5v7.5c0 0.547-0.453 1-1 1h-6v-6h-4v6h-6c-0.547 0-1-0.453-1-1v-7.5c0-0.031 0.016-0.063 0.016-0.094l8.984-7.406 8.984 7.406c0.016 0.031 0.016 0.063 0.016 0.094zM25.484 14.422l-0.969 1.156c-0.078 0.094-0.203 0.156-0.328 0.172h-0.047c-0.125 0-0.234-0.031-0.328-0.109l-10.813-9.016-10.813 9.016c-0.109 0.078-0.234 0.125-0.375 0.109-0.125-0.016-0.25-0.078-0.328-0.172l-0.969-1.156c-0.172-0.203-0.141-0.531 0.063-0.703l11.234-9.359c0.656-0.547 1.719-0.547 2.375 0l3.813 3.187v-3.047c0-0.281 0.219-0.5 0.5-0.5h3c0.281 0 0.5 0.219 0.5 0.5v6.375l3.422 2.844c0.203 0.172 0.234 0.5 0.063 0.703z"></path></svg></a></div><div class="buttons__item github"><a class="buttons__anchor" href="https://github.com/yaohaixiao/types.js"><svg class="buttons__icon" xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 24 28"><path d="M12 2c6.625 0 12 5.375 12 12 0 5.297-3.437 9.797-8.203 11.391-0.609 0.109-0.828-0.266-0.828-0.578 0-0.391 0.016-1.687 0.016-3.297 0-1.125-0.375-1.844-0.812-2.219 2.672-0.297 5.484-1.313 5.484-5.922 0-1.313-0.469-2.375-1.234-3.219 0.125-0.313 0.531-1.531-0.125-3.187-1-0.313-3.297 1.234-3.297 1.234-0.953-0.266-1.984-0.406-3-0.406s-2.047 0.141-3 0.406c0 0-2.297-1.547-3.297-1.234-0.656 1.656-0.25 2.875-0.125 3.187-0.766 0.844-1.234 1.906-1.234 3.219 0 4.594 2.797 5.625 5.469 5.922-0.344 0.313-0.656 0.844-0.766 1.609-0.688 0.313-2.438 0.844-3.484-1-0.656-1.141-1.844-1.234-1.844-1.234-1.172-0.016-0.078 0.734-0.078 0.734 0.781 0.359 1.328 1.75 1.328 1.75 0.703 2.141 4.047 1.422 4.047 1.422 0 1 0.016 1.937 0.016 2.234 0 0.313-0.219 0.688-0.828 0.578-4.766-1.594-8.203-6.094-8.203-11.391 0-6.625 5.375-12 12-12zM4.547 19.234c0.031-0.063-0.016-0.141-0.109-0.187-0.094-0.031-0.172-0.016-0.203 0.031-0.031 0.063 0.016 0.141 0.109 0.187 0.078 0.047 0.172 0.031 0.203-0.031zM5.031 19.766c0.063-0.047 0.047-0.156-0.031-0.25-0.078-0.078-0.187-0.109-0.25-0.047-0.063 0.047-0.047 0.156 0.031 0.25 0.078 0.078 0.187 0.109 0.25 0.047zM5.5 20.469c0.078-0.063 0.078-0.187 0-0.297-0.063-0.109-0.187-0.156-0.266-0.094-0.078 0.047-0.078 0.172 0 0.281s0.203 0.156 0.266 0.109zM6.156 21.125c0.063-0.063 0.031-0.203-0.063-0.297-0.109-0.109-0.25-0.125-0.313-0.047-0.078 0.063-0.047 0.203 0.063 0.297 0.109 0.109 0.25 0.125 0.313 0.047zM7.047 21.516c0.031-0.094-0.063-0.203-0.203-0.25-0.125-0.031-0.266 0.016-0.297 0.109s0.063 0.203 0.203 0.234c0.125 0.047 0.266 0 0.297-0.094zM8.031 21.594c0-0.109-0.125-0.187-0.266-0.172-0.141 0-0.25 0.078-0.25 0.172 0 0.109 0.109 0.187 0.266 0.172 0.141 0 0.25-0.078 0.25-0.172zM8.937 21.438c-0.016-0.094-0.141-0.156-0.281-0.141-0.141 0.031-0.234 0.125-0.219 0.234 0.016 0.094 0.141 0.156 0.281 0.125s0.234-0.125 0.219-0.219z"></path></svg></a></div><div class="buttons__item tags"><a class="buttons__anchor" href="https://github.com/yaohaixiao/types.js/tags"><svg class="buttons__icon" xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 30 28"><path d="M7 7c0-1.109-0.891-2-2-2s-2 0.891-2 2 0.891 2 2 2 2-0.891 2-2zM23.672 16c0 0.531-0.219 1.047-0.578 1.406l-7.672 7.688c-0.375 0.359-0.891 0.578-1.422 0.578s-1.047-0.219-1.406-0.578l-11.172-11.188c-0.797-0.781-1.422-2.297-1.422-3.406v-6.5c0-1.094 0.906-2 2-2h6.5c1.109 0 2.625 0.625 3.422 1.422l11.172 11.156c0.359 0.375 0.578 0.891 0.578 1.422zM29.672 16c0 0.531-0.219 1.047-0.578 1.406l-7.672 7.688c-0.375 0.359-0.891 0.578-1.422 0.578-0.812 0-1.219-0.375-1.75-0.922l7.344-7.344c0.359-0.359 0.578-0.875 0.578-1.406s-0.219-1.047-0.578-1.422l-11.172-11.156c-0.797-0.797-2.312-1.422-3.422-1.422h3.5c1.109 0 2.625 0.625 3.422 1.422l11.172 11.156c0.359 0.375 0.578 0.891 0.578 1.422z"></path></svg></a></div><div class="buttons__item issues"><a class="buttons__anchor" href="https://github.com/yaohaixiao/types.js/issues"><svg class="buttons__icon" xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 26 28"><path d="M25.5 15c0 0.547-0.453 1-1 1h-3.5c0 1.953-0.422 3.422-1.047 4.531l3.25 3.266c0.391 0.391 0.391 1.016 0 1.406-0.187 0.203-0.453 0.297-0.703 0.297s-0.516-0.094-0.703-0.297l-3.094-3.078s-2.047 1.875-4.703 1.875v-14h-2v14c-2.828 0-4.891-2.063-4.891-2.063l-2.859 3.234c-0.203 0.219-0.469 0.328-0.75 0.328-0.234 0-0.469-0.078-0.672-0.25-0.406-0.375-0.438-1-0.078-1.422l3.156-3.547c-0.547-1.078-0.906-2.469-0.906-4.281h-3.5c-0.547 0-1-0.453-1-1s0.453-1 1-1h3.5v-4.594l-2.703-2.703c-0.391-0.391-0.391-1.016 0-1.406s1.016-0.391 1.406 0l2.703 2.703h13.188l2.703-2.703c0.391-0.391 1.016-0.391 1.406 0s0.391 1.016 0 1.406l-2.703 2.703v4.594h3.5c0.547 0 1 0.453 1 1zM18 6h-10c0-2.766 2.234-5 5-5s5 2.234 5 5z"></path></svg></a></div><div class="buttons__item down"><svg class="buttons__icon" xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 1024 1024"><path d="M494.784 762.304c0.832 0.448 1.536 1.216 2.368 1.536 15.232 7.488 33.92 4.992 46.08-8.256l277.824-302.272a41.92 41.92 0 0 0-1.536-58.048 39.104 39.104 0 0 0-56.448 1.6l-249.344 271.232-252.992-270.144a39.104 39.104 0 0 0-56.448-1.088 41.6 41.6 0 0 0-1.088 57.984l280.576 299.456c0.512 0.512 1.344 0.768 1.92 1.408l1.088 1.344c2.368 2.496 5.312 3.648 8 5.248z"></path></svg></div></div><script src="js/types.min.js"></script><script src="js/docs.min.js"></script></body></html>

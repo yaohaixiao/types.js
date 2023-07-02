@@ -1,4 +1,4 @@
-import isEmail from 'esm/isEmail'
+import isEmail from '../isEmail'
 
 describe('isEmail() 方法：', () => {
   it(`isEmail('yaohaixiao@gmail.com'), 返回：true)`, () => {
