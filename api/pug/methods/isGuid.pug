@@ -1,0 +1,34 @@
+section.section
+  header.section__header
+    h3#method-isGuid.section__h3 isGuid(val)
+  div.section__content
+    h4.section__h4 Description
+    p isGuid(val) 方法用来检测测试数据的是否为 guid 格式字符串。
+    h4.section__h4 Parameters
+    h5.section__h4 val
+    dl.section__dl
+      dt.section__dt Type：
+      dd.section__dd String
+    p （必须）val 待检测的数据。
+    h4.section__h4 Returns
+    dl.section__dl
+      dt.section__dt Type：
+      dd.section__dd Boolean。
+    p true - 表示检测数据(数值)为 guid 格式字符串，false 则表示不是。
+    pre.section__pre
+      code.section__code.
+        import Types from '@yaohaixiao/types.js/types'
+        // 或者单独引用 isGuid() 方法
+        // import isGuid from '@yaohaixiao/types.js/isGuid'
+
+        Types.isGuid('#ffffff') // -> false
+        Types.isGuid(2) // -> false
+        Types.isGuid('C8021B0-423D-475D-BECF-63ED5ED34563') // -> false
+
+        // 大写字母
+        Types.isGuid('{3C8021B0-423D-475D-BECF-63ED5ED34563}') // -> true
+        Types.isGuid('3C8021B0-423D-475D-BECF-63ED5ED34563') // -> true
+
+        // 小写字母
+        Types.isGuid('{3c8021b0-423d-475d-becf-63ed5ed34563}') // -> true
+        Types.isGuid('3c8021b0-423d-475d-becf-63ed5ed34563') // -> true

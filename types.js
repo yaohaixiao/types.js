@@ -32,6 +32,7 @@ import isEven from './isEven'
 import isFloat from './isFloat'
 import isFragment from './isFragment'
 import isFunction from './isFunction'
+import isGuid from './isGuid'
 import isHash from './isHash'
 import isHex from './isHex'
 import isHTMLCollection from './isHTMLCollection'
@@ -100,6 +101,7 @@ const Types = {
   isFloat,
   isFragment,
   isFunction,
+  isGuid,
   isHash,
   isHex,
   isHTMLCollection,
