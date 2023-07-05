@@ -1,3 +1,12 @@
+# [1.2.0](https://github.com/yaohaixiao/types.js/compare/1.1.0...1.2.0) (2023-07-05)
+
+
+### Features
+
+* 添加 isChinese() 方法 ([b3cce4e](https://github.com/yaohaixiao/types.js/commit/b3cce4e302e8ea15c4a2e0fa7eea140dd035ee9a))
+
+
+
 ## [1.0.1](https://github.com/yaohaixiao/types.js/compare/1.0.0...1.0.1) (2023-07-02)
 
 
