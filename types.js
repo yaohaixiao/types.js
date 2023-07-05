@@ -49,6 +49,7 @@ import isNumeric from './isNumeric'
 import isObject from './isObject'
 import isObjectLike from './isObjectLike'
 import isOdd from './isOdd'
+import isChinese from './isChinese'
 import isPhoneNumber from './isPhoneNumber'
 import isPlainObject from './isPlainObject'
 import isPrototype from './isPrototype'
@@ -118,6 +119,7 @@ const Types = {
   isObject,
   isObjectLike,
   isOdd,
+  isChinese,
   isPhoneNumber,
   isPlainObject,
   isPrototype,

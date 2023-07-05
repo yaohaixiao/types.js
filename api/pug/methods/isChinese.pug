@@ -1,0 +1,58 @@
+section.section
+  header.section__header
+    h3#method-isChinese.section__h3 isChinese(str)
+  div.section__content
+    h4.section__h4 Description
+    p isChinese(str) 方法用来检测测试数据(字符串)是否为中文字符。
+    ul
+      li
+        a(href="https://en.wikipedia.org/wiki/CJK_Compatibility_Ideographs") 兼容象形文字符：[0xf900, 0xfaff];
+      li
+        a(href="https://en.wikipedia.org/wiki/CJK_Compatibility_Ideographs_Supplement") 兼容表意文字增补字符：[0x2f800, 0x2fa1f];
+    p 只是看上去像汉字，因此在 isChinese() 方法中也没有纳入到汉字字符。
+    h4.section__h4 Parameters
+    h5.section__h4 str
+    dl.section__dl
+      dt.section__dt Type：
+      dd.section__dd String
+    p （必须）val 待检测的数据。
+    h5.section__h4 includePunctuation
+    dl.section__dl
+      dt.section__dt Type：
+      dd.section__dd Boolean
+    p （可选）是否包含标点符号：默认值：true
+    h4.section__h4 Returns
+    dl.section__dl
+      dt.section__dt Type：
+      dd.section__dd Boolean。
+    p true - 表示检测数据为中文字符，false 则表示不是。
+    pre.section__pre
+      code.section__code.
+        import Types from '@yaohaixiao/types.js/types'
+        // 或者单独引用 isChinese() 方法
+        // import isChinese from '@yaohaixiao/types.js/isChinese'
+
+        let chinese
+
+        // 非字符串
+        Types.isChinese(null) // -> false
+        Types.isChinese(chinese) // -> false
+        Types.isChinese({}) // -> false
+        Types.isChinese([]) // -> false
+        Types.isChinese(Symbol('symbol')) // -> false
+
+        // Ascii 字符
+        Types.isChinese(12) // -> false
+        Types.isChinese('chinese') // -> false
+        Types.isChinese('+=*/') // -> false
+
+        // 汉字字符
+        Types.isChinese('汉字字符：尅靈') // -> true
+        Types.isChinese('扩展字符：㐥𠁜𪝹𫞺𫡡𭀔𭍓') // -> true
+
+        // 标点符号
+        Types.isChinese('标点符号：。，、；：×·—…（）『』【】《》？！‘’“”～') // -> true
+        Types.isChinese('标点符号：。，、；：×·—…（）『』【】《》？！‘’“”～') // -> true
+
+        // 不包含标点符号，则以下检测无法通过
+        Types.isChinese('标点符号：。，、；：×·—…（）『』【】《》？！‘’“”～', false) // -> false

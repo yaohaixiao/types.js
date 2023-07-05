@@ -3,6 +3,7 @@ import isString from '../isString'
 import isBase64 from '../isBase64'
 import isBlank from '../isBlank'
 import isEmpty from '../isEmpty'
+import isChinese from '@/isChinese'
 import isGuid from '@/isGuid'
 import isHex from '../isHex'
 import isPhoneNumber from '../isPhoneNumber'
@@ -19,6 +20,7 @@ const StringTypes = {
   isBase64,
   isBlank,
   isEmpty,
+  isChinese,
   isGuid,
   isHex,
   isPhoneNumber,
