@@ -2,12 +2,21 @@ import isString from './isString'
 /**
  * 检测字符串是否为中文字符
  * ========================================================================
- * 中文字符包含以下内容：
+ * Wiki 介绍中文字符包含以下内容：
+ *
  * 1. 中文汉字
- * 2. 象形文字扩展
- * 3. 中日韩兼容象形文字
- * 4. 中日韩兼容表意文字增补
+ * 2. 象形文字扩展 A-H
+ * 3. 兼容象形文字符
+ * 4. 兼容表意文字增补字符
  * 5. 中文标点符号
+ * 6. 兼容标点符号
+ *
+ * 其中：
+ *
+ * 兼容象形文字符：[0xf900, 0xfaff],（https://en.wikipedia.org/wiki/CJK_Compatibility_Ideographs）和
+ * 兼容表意文字增补字符：[0x2f800, 0x2fa1f]（https://en.wikipedia.org/wiki/CJK_Compatibility_Ideographs_Supplement）
+ *
+ * 只是看上去像汉字，因此在 isChinese() 方法中也没有纳入到汉字字符
  * ========================================================================
  * @method isChinese
  * @param {String} str - （必须）检测字符串
@@ -19,10 +28,15 @@ const isChinese = (str, includePunctuation = true) => {
   const toRegExp = (range) => {
     const pattern = range
       .map((range) => {
-        if (range[0] === range[1]) {
-          return `\\u{${range[0].toString(16)}}`
+        const rangeStart = range[0]
+        const rangeEnd = range[1]
+        const hexStart = rangeStart.toString(16)
+        const hexEnd = rangeEnd.toString(16)
+
+        if (rangeStart === rangeEnd) {
+          return `\\u{${hexStart}}`
         }
-        return `[\\u{${range[0].toString(16)}}-\\u{${range[1].toString(16)}}]`
+        return `[\\u{${hexStart}}-\\u{${hexEnd}}]`
       })
       .join('|')
 
@@ -43,9 +57,6 @@ const isChinese = (str, includePunctuation = true) => {
     [0x2ceb0, 0x2ebef],
     [0x30000, 0x3134f],
     [0x31350, 0x323af]
-    // 兼容象形文字符：[0xf900, 0xfaff],（https://en.wikipedia.org/wiki/CJK_Compatibility_Ideographs）和
-    // 兼容表意文字增补字符：[0x2f800, 0x2fa1f]（https://en.wikipedia.org/wiki/CJK_Compatibility_Ideographs_Supplement）
-    // 只是看上去像汉字，因此在 isChinese() 方法中也没有纳入到汉字字符
   ]
   // 标点符号
   const chinesePunctuations = [
