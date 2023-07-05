@@ -9,7 +9,7 @@ section.section
         a(href="https://en.wikipedia.org/wiki/CJK_Compatibility_Ideographs") 兼容象形文字符：[0xf900, 0xfaff];
       li
         a(href="https://en.wikipedia.org/wiki/CJK_Compatibility_Ideographs_Supplement") 兼容表意文字增补字符：[0x2f800, 0x2fa1f];
-    p 只是看上去像汉字，因此在 isChinese() 方法中也没有纳入到汉字字符。
+    p 只是看上去像汉字，因此在 isChinese() 方法中没有纳入到汉字字符。
     h4.section__h4 Parameters
     h5.section__h4 str
     dl.section__dl
@@ -52,7 +52,7 @@ section.section
 
         // 标点符号
         Types.isChinese('标点符号：。，、；：×·—…（）『』【】《》？！‘’“”～') // -> true
-        Types.isChinese('标点符号：。，、；：×·—…（）『』【】《》？！‘’“”～') // -> true
+        Types.isChinese('兼容标点符号：︰︱︲︳︴︵︶︷︸︹︺︻︼︽︾︿﹀﹁﹂﹃﹄﹅﹆﹇﹈﹉﹊﹋﹌﹍﹎﹏') // -> true
 
         // 不包含标点符号，则以下检测无法通过
         Types.isChinese('标点符号：。，、；：×·—…（）『』【】《》？！‘’“”～', false) // -> false
