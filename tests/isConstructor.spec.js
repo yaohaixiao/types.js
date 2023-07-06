@@ -57,5 +57,9 @@ describe('isConstructor() 方法：', () => {
     it(`isConstructor(Object), 返回：true`, () => {
       expect(isConstructor(Object)).toBe(true)
     })
+
+    it(`isConstructor(Promise), 返回：true`, () => {
+      expect(isConstructor(Promise)).toBe(true)
+    })
   })
 })

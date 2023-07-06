@@ -105,6 +105,9 @@ const _type = (val) => {
     case OBJECTS.FLOAT64_ARRAY:
       return TYPES.FLOAT64_ARRAY
     /* ===== 其它类型（Others） ===== */
+    case OBJECTS.PROMISE:
+      // 检测是否为 Promise 对象
+      return TYPES.PROMISE
     case OBJECTS.ARGUMENTS:
       // 检测是否为 arguments 对象
       return TYPES.ARGUMENTS

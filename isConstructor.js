@@ -1,5 +1,5 @@
 import isFunction from './isFunction'
-import isPromise from './isPromise'
+import isNativeFunction from './isNativeFunction'
 
 /**
  * 检测测试函数是否为构造函数
@@ -9,6 +9,7 @@ import isPromise from './isPromise'
  * @returns {Boolean} - fn 是构造函数返回 true，否则返回 false;
  */
 const isConstructor = (fn) => {
+  const proto = fn.prototype
   let instance
 
   if (!isFunction(fn)) {
@@ -16,7 +17,11 @@ const isConstructor = (fn) => {
   }
 
   try {
-    instance = new fn()
+    if (isNativeFunction(fn) && proto?.then) {
+      instance = new fn((resolve, reject) => {})
+    } else {
+      instance = new fn()
+    }
   } catch (err) {
     /* istanbul ignore else */
     if (err.message.indexOf('is not a constructor')) {

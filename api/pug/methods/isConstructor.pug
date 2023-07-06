@@ -23,9 +23,11 @@ section.section
 
         const fn = function(){};
         const ff = class {};
+        const callback = () => {}
 
         Types.isConstructor(fn) // -> true
         Types.isConstructor(ff) // -> true
+        Types.isConstructor(callback) // -> false
         Types.isConstructor(console.log) // -> false
 
         Types.isConstructor(Math) // -> false
@@ -35,3 +37,4 @@ section.section
         Types.isConstructor(Date) // -> true
         Types.isConstructor(RegExp) // -> true
         Types.isConstructor(Object) // -> true
+        Types.isConstructor(Promise)
