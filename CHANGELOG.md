@@ -1,3 +1,17 @@
+# [1.3.0](https://github.com/yaohaixiao/types.js/compare/1.2.0...1.3.0) (2023-07-06)
+
+
+### Bug Fixes
+
+* 修复 isConstructor() 方法判断 Promise 构造函数错误的问题 ([af8e419](https://github.com/yaohaixiao/types.js/commit/af8e41983d49a3bd8d67d25f55cb9e90d964a43b))
+
+
+### Features
+
+* 添加 isPromise() 方法 ([a1bdbc6](https://github.com/yaohaixiao/types.js/commit/a1bdbc63e4587bc8f862c2f7ca09030efa306c47))
+
+
+
 # [1.2.0](https://github.com/yaohaixiao/types.js/compare/1.1.0...1.2.0) (2023-07-05)
 
 
