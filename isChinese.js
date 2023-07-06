@@ -20,6 +20,7 @@ import isString from './isString'
  * 只是看上去像汉字，因此在 isChinese() 方法中也没有纳入到汉字字符
  * ========================================================================
  * @method isChinese
+ * @since 1.2.0
  * @param {String} str - （必须）检测字符串
  * @param {Boolean} [includePunctuation] - （可选）是否包含标点符号：默认值：true
  * @returns {boolean}
