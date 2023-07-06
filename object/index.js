@@ -12,6 +12,7 @@ import isRegExp from '../isRegExp'
 import isElement from '../isElement'
 import isHTMLCollection from '../isHTMLCollection'
 import isFragment from '../isFragment'
+import isPromise from '../isPromise'
 import isTextNode from '../isTextNode'
 import isVNode from '../isVNode'
 
@@ -30,6 +31,7 @@ const ObjectTypes = {
   isElement,
   isHTMLCollection,
   isFragment,
+  isPromise,
   isTextNode,
   isVNode
 }

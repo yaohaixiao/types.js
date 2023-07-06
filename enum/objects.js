@@ -9,6 +9,7 @@ const OBJECTS = {
   NULL: '[object Null]',
   UNDEFINED: '[object Undefined]',
   OBJECT: '[object Object]',
+  PROMISE: '[object Promise]',
   ARGUMENTS: '[object Arguments]',
   ARRAY: '[object Array]',
   ARRAY_BUFFER: '[object ArrayBuffer]',

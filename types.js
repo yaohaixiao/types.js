@@ -52,6 +52,7 @@ import isOdd from './isOdd'
 import isChinese from './isChinese'
 import isPhoneNumber from './isPhoneNumber'
 import isPlainObject from './isPlainObject'
+import isPromise from './isPromise'
 import isPrototype from './isPrototype'
 import isRegExp from './isRegExp'
 import isSet from './isSet'
@@ -122,6 +123,7 @@ const Types = {
   isChinese,
   isPhoneNumber,
   isPlainObject,
+  isPromise,
   isPrototype,
   isRegExp,
   isSet,

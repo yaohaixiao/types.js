@@ -1,4 +1,5 @@
 import isFunction from './isFunction'
+import isPromise from './isPromise'
 
 /**
  * 检测测试函数是否为构造函数

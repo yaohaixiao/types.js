@@ -12,6 +12,7 @@ const TYPES = {
   DATA_VIEW: 'dataview',
   DATE: 'date',
   ERROR: 'error',
+  PROMISE: 'promise',
   ARGUMENTS: 'arguments',
   FUNCTION: 'function',
   ELEMENT: 'element',
