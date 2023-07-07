@@ -19,6 +19,9 @@ describe('isHTML() 方法：', () => {
     expect(isHTML('<html lang="en"></html>')).toBe(true)
     expect(isHTML('<html><body></html>')).toBe(true)
     expect(isHTML('<html><body class="no-js"></html>')).toBe(true)
+    expect(isHTML('<br>')).toBe(true)
+    expect(isHTML('<br/>')).toBe(true)
+    expect(isHTML('<br />')).toBe(true)
     expect(isHTML('<x-unicorn>')).toBe(true)
   })
 

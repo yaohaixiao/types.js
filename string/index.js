@@ -1,4 +1,5 @@
 import is from '../is'
+import isValue from '../isValue'
 import isString from '../isString'
 import isBase64 from '../isBase64'
 import isBlank from '../isBlank'
@@ -15,21 +16,22 @@ import isHTML from '../isHTML'
 import isXML from '../isXML'
 
 const StringTypes = {
-  is,
-  isString,
-  isBase64,
-  isBlank,
-  isEmpty,
-  isChinese,
-  isGuid,
-  isHex,
-  isPhoneNumber,
-  isIPAddress,
-  isURL,
-  isEmail,
-  isJSON,
-  isHTML,
-  isXML
+    is,
+    isValue,
+    isString,
+    isBase64,
+    isBlank,
+    isEmpty,
+    isChinese,
+    isGuid,
+    isHex,
+    isPhoneNumber,
+    isIPAddress,
+    isURL,
+    isEmail,
+    isJSON,
+    isHTML,
+    isXML
 }
 
 export default StringTypes

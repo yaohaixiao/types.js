@@ -12,23 +12,18 @@ const isConstructor = (fn) => {
   const proto = fn.prototype
   let instance
 
-  if (!isFunction(fn)) {
+  if (!isFunction(fn) || !proto) {
     return false
   }
 
-  try {
-    if (isNativeFunction(fn) && proto?.then) {
-      instance = new fn((resolve, reject) => {})
-    } else {
-      instance = new fn()
-    }
-  } catch (err) {
-    /* istanbul ignore else */
-    if (err.message.indexOf('is not a constructor')) {
-      return false
-    }
+  // 判断 fn 是否为 Promise 构造函数
+  if (isNativeFunction(fn) && proto?.then) {
+    instance = new fn((resolve, reject) => {})
+  } else {
+    instance = new fn()
   }
 
+  // 判断 constructor
   return (
     (instance.constructor === fn && instance instanceof fn) ||
     (instance.constructor === Object && instance instanceof Object)

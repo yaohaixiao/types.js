@@ -1,4 +1,5 @@
 import is from '../is'
+import isValue from '../isValue'
 import isObject from '../isObject'
 import isObjectLike from '../isObjectLike'
 import isEmptyObject from '../isEmptyObject'
@@ -18,6 +19,7 @@ import isVNode from '../isVNode'
 
 const ObjectTypes = {
   is,
+  isValue,
   isObject,
   isObjectLike,
   isEmptyObject,

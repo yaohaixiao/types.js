@@ -53,6 +53,10 @@ describe('isChinese() 方法：', () => {
       expect(isChinese('标点符号：。，、；：×·—…（）『』【】《》？！‘’“”～')).toBe(true)
     })
 
+    it(`isChinese('标点符号：。，、；：×·—…（）『』【】《》？！‘’“”～', false), 返回：false`, () => {
+      expect(isChinese('标点符号：。，、；：×·—…（）『』【】《》？！‘’“”～', false)).toBe(false)
+    })
+
     it(`isChinese('兼容标点符号：︰︱︲︳︴︵︶︷︸︹︺︻︼︽︾︿﹀﹁﹂﹃﹄﹅﹆﹇﹈﹉﹊﹋﹌﹍﹎﹏'), 返回：true`, () => {
       expect(isChinese('兼容标点符号：︱︲︳︴︵︶︷︸︹︺︻︼︽︾︿﹀﹁﹂﹃﹄﹅﹆﹇﹈﹉﹊﹋﹌﹍﹎﹏')).toBe(true)
     })

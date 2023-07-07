@@ -1,4 +1,5 @@
 import is from '../is'
+import isValue from '../isValue'
 import isNumber from '../isNumber'
 import isNumeric from '../isNumeric'
 import isInteger from '../isInteger'
@@ -10,6 +11,7 @@ import isLength from '../isLength'
 
 const NumberTypes = {
   is,
+  isValue,
   isNumber,
   isNumeric,
   isInteger,
