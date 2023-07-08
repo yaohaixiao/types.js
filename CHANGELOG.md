@@ -1,3 +1,12 @@
+# [1.4.0](https://github.com/yaohaixiao/types.js/compare/1.3.0...1.4.0) (2023-07-08)
+
+
+### Features
+
+* 添加 isTime() 方法
+
+
+
 # [1.3.0](https://github.com/yaohaixiao/types.js/compare/1.2.0...1.3.0) (2023-07-06)
 
 
