@@ -1,3 +1,11 @@
+# [1.6.0](https://github.com/yaohaixiao/types.js/compare/1.5.1...1.6.0) (2023-07-10)
+
+### Features
+
+* 添加 isBuffer() 方法
+
+
+
 ## [1.5.1](https://github.com/yaohaixiao/types.js/compare/1.5.0...1.5.1) (2023-07-10)
 
 
