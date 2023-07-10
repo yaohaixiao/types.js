@@ -1,3 +1,12 @@
+# [1.5.0](https://github.com/yaohaixiao/types.js/compare/1.4.1...1.5.0) (2023-07-10)
+
+
+### Features
+
+* 1. 重构 _typeof() 方法，降低代码复杂度，提高可维护新；2. 给 lang 模块添加新方法（isPromise、isEmail、isURL、isHTML 、isGuid、isIPAddress 和 isPhoneNumber 方法 ([417c4aa](https://github.com/yaohaixiao/types.js/commit/417c4aacc41ef5c3b25e7f4856c6f054ac6f54cd))
+
+
+
 ## [1.4.1](https://github.com/yaohaixiao/types.js/compare/1.4.0...1.4.1) (2023-07-10)
 
 
