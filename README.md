@@ -79,6 +79,7 @@ Types.isArray([]) // -> true
 // is,
 // isValue,
 // isObject,
+// isBuffer,
 // isHash,
 // isArray,
 // isArrayLike,

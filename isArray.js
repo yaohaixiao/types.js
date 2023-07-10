@@ -5,6 +5,7 @@ import TYPES from './enum/types'
  * 检测测试数据是否为 Array 类型
  * ========================================================================
  * @method isArray
+ * @category Lang
  * @param {*} val - 要检测的数据
  * @returns {Boolean} - 'val' 是 Array 则返回 true，否则返回 false
  */

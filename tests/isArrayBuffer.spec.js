@@ -6,7 +6,7 @@ describe('isArrayBuffer() 方法：', () => {
     expect(isArrayBuffer([])).toBe(false)
   })
 
-  it(`isArrayBuffer(new ArrayBuffer([8)), 返回：true`, () => {
+  it(`isArrayBuffer(new ArrayBuffer(8)), 返回：true`, () => {
     const buffer = new ArrayBuffer(8)
 
     expect(is(buffer)).toBe('arraybuffer')

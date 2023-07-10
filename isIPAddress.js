@@ -1,11 +1,12 @@
 import isString from './isString'
 
 /**
- * 验证是否为（v4） IP 地址
+ * 验证是否为（v4 or v6） IP 地址
  * ========================================================================
  * @method isIPAddress
- * @param {String} str
- * @returns {Boolean}
+ * @category Lang
+ * @param {String} str - 待检测的数据（字符串）
+ * @returns {Boolean} 'val' 是 IP 地址返回 true，否则返回 false
  */
 const isIPAddress = (str) => {
   const ipV6 =

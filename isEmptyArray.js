@@ -5,8 +5,8 @@ import isArray from './isArray'
  * ========================================================================
  * @method isEmptyArray
  * @since 0.5.0
- * @param {Array} val
- * @returns {Boolean}
+ * @param {Array} val - （必须）待检测的数据
+ * @returns {Boolean} 'val' 是空数组，返回 true，否则返回 false
  */
 const isEmptyArray = (val) => {
   return isArray(val) && val.length === 0

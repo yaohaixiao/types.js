@@ -7,8 +7,9 @@ import TYPES from './enum/types'
  * ========================================================================
  * @method isPromise
  * @since 1.3.0
+ * @category Lang
  * @param {Object} val - 测试数据
- * @returns {Boolean}
+ * @returns {Boolean} 'val' 是 Promise 对象，返回 true，否则返回 false
  */
 const isPromise = (val) => {
   return isObject(val) && _type(val) === TYPES.PROMISE

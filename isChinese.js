@@ -23,7 +23,7 @@ import isString from './isString'
  * @since 1.2.0
  * @param {String} str - （必须）检测字符串
  * @param {Boolean} [includePunctuation] - （可选）是否包含标点符号：默认值：true
- * @returns {boolean}
+ * @returns {boolean} - ‘val’ 是中文字符，返回 true，否则返回 false;
  */
 const isChinese = (str, includePunctuation = true) => {
   // 转换成正则表达式

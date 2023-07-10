@@ -7,6 +7,7 @@ import TAGS from './enum/tags'
  * ========================================================================
  * @method isHTML
  * @since 0.5.0
+ * @category Lang
  * @see https://github.com/sindresorhus/html-tags
  * @see https://github.com/sindresorhus/is-html
  * @param {String} str - 要检测的数据

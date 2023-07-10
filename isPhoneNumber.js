@@ -4,8 +4,9 @@ import isString from './isString'
  * 检测是否为电话号码
  * ========================================================================
  * @method isPhoneNumber
- * @param {String} str
- * @returns {Boolean}
+ * @category Lang
+ * @param {String} str - 要检测的数据
+ * @returns {Boolean} 'val' 是 电话号码 格式，返回 true，否则返回 false
  *
  * @example
  * // 移动电话号码
