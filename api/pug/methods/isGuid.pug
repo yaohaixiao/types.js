@@ -28,6 +28,7 @@ section.section
         Types.isGuid(2) // -> false
         Types.isGuid('C8021B0-423D-475D-BECF-63ED5ED34563') // -> false
 
+        /* 带连接符 */
         // 大写字母
         Types.isGuid('{3C8021B0-423D-475D-BECF-63ED5ED34563}') // -> true
         Types.isGuid('3C8021B0-423D-475D-BECF-63ED5ED34563') // -> true
@@ -35,3 +36,12 @@ section.section
         // 小写字母
         Types.isGuid('{3c8021b0-423d-475d-becf-63ed5ed34563}') // -> true
         Types.isGuid('3c8021b0-423d-475d-becf-63ed5ed34563') // -> true
+
+        /* 不带连接符 */
+        // 大写字母
+        Types.isGuid('{3C8021B0423D475DBECF63ED5ED34563}') // -> true
+        Types.isGuid('3C8021B0423D475DBECF63ED5ED34563') // -> true
+
+        // 小写字母
+        Types.isGuid('{3c8021b0423d475dbecf63ed5ed34563}') // -> true
+        Types.isGuid('3c8021b0423d475dbecf63ed5ed34563') // -> true

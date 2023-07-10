@@ -1,4 +1,5 @@
-import isString from './isString'
+import _isTime from './_isTime'
+import _isDate from './_isDate'
 
 /**
  * 检测测试数据是否为有效的时间（字符串）
@@ -13,25 +14,13 @@ import isString from './isString'
  * @returns {boolean|boolean}
  */
 const isTime = (str, type) => {
-  const pattern12Hours = /^(0?[1-9]|1[0-2]):[0-5]\d(\s(am|pm|AM|PM))?$/
-  const pattern24Hours = /^(0?[1-9]|2[0-3]):([0-5]\d){1,2}$/
-  let date
-
-  if (!isString(str)) {
-    return false
-  }
-
-  date = Date.parse(str)
-
   switch (type) {
     case 'time':
-      return pattern12Hours.test(str) || pattern24Hours.test(str)
+      return _isTime(str)
     case 'date':
-      return !isNaN(date)
+      return _isDate(str)
     default:
-      return (
-        pattern12Hours.test(str) || pattern24Hours.test(str) || !isNaN(date)
-      )
+      return _isTime(str) || _isDate(str)
   }
 }
 
