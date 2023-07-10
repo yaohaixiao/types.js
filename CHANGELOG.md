@@ -1,3 +1,12 @@
+## [1.4.1](https://github.com/yaohaixiao/types.js/compare/1.4.0...1.4.1) (2023-07-10)
+
+
+### Bug Fixes
+
+* 修复 isGuid() 无法识别 windows 系统中的无连接符的 guid 格式，并调整 isTime() 方法 ([3fa0959](https://github.com/yaohaixiao/types.js/commit/3fa09592246f1696ce4912ad880ba1555d17bdf7))
+
+
+
 # [1.4.0](https://github.com/yaohaixiao/types.js/compare/1.3.0...1.4.0) (2023-07-08)
 
 
