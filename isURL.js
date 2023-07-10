@@ -8,15 +8,32 @@ import isString from './isString'
  * @returns {Boolean}
  */
 const isURL = (str) => {
-  let pattern = new RegExp(
-    '^(https?:\\/\\/)?' + // protocol
-      '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|' + // domain name
-      '((\\d{1,3}\\.){3}\\d{1,3}))' + // OR ip (v4) address
-      '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*' + // port and path
-      '(\\?[;&a-z\\d%_.~+=-]*)?' + // query string
-      '(\\#[-a-z\\d_]*)?$', // hash
-    'i'
-  ) // fragment locator
+  const protocol = '(https?:)?'
+  const user = '([^\\/\\?\\#\\:]+)'
+  const password = '(.+)'
+  const auth = '(' + user + ':' + password + '@)?'
+  const domain = '(([a-z\\d]([a-z\\d-]*[a-z\\d])*(\\.)?)+[a-z]{2,})'
+  const ip = '((\\d{1,3}\\.){3}\\d{1,3})'
+  const port = '(\\:\\d+)?'
+  const path = '(\\/[-a-z\\d%_.~+]*)*'
+  const search = '(\\?[;&a-z\\d%_.~+=-]*)?'
+  const hash = '(\\#[-a-z\\d_]*)?'
+  const url =
+    '^' +
+    protocol +
+    '\\/\\/' +
+    auth +
+    '(' +
+    domain +
+    '|' +
+    ip +
+    ')' +
+    port +
+    path +
+    search +
+    hash +
+    '$'
+  const pattern = new RegExp(url, 'i')
 
   return isString(str) && !!pattern.test(str)
 }

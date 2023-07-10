@@ -36,8 +36,8 @@ describe('isURL() 方法：', () => {
   })
 
   describe('域名访问：', () => {
-    it(`isURL('http://localhost'), 返回：false`, () => {
-      expect(isURL('http://localhost')).toBe(false)
+    it(`isURL('http://localhost'), 返回：true`, () => {
+      expect(isURL('http://localhost')).toBe(true)
     })
 
     it(`isURL('ftp://www.yaohaixiao.com'), 返回：false`, () => {

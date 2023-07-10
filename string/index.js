@@ -8,6 +8,7 @@ import isChinese from '../isChinese'
 import isGuid from '../isGuid'
 import isHex from '../isHex'
 import isPhoneNumber from '../isPhoneNumber'
+import isTime from '../isTime'
 import isIPAddress from '../isIPAddress'
 import isURL from '../isURL'
 import isEmail from '../isEmail'
@@ -26,6 +27,7 @@ const StringTypes = {
     isGuid,
     isHex,
     isPhoneNumber,
+    isTime,
     isIPAddress,
     isURL,
     isEmail,
