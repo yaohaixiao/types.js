@@ -99,6 +99,13 @@ Types.isArray([]) // -> true
 // isDate,
 // isElement,
 // isEmpty
+// isPromise
+// isEmail
+// isURL
+// isHTML
+// isGuid
+// isIPAddress
+// isPhoneNumber
 import Types from '@yaohaixiao/types.js/lang'
 // 另外有 string, number 和 object 模块(具体包含方法，见 API 文档)
 import Types from '@yaohaixiao/types.js/string'

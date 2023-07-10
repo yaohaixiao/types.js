@@ -21,6 +21,13 @@ import isSymbol from '../isSymbol'
 import isDate from '../isDate'
 import isElement from '../isElement'
 import isEmpty from '../isEmpty'
+import isPromise from '../isPromise'
+import isEmail from '../isEmail'
+import isURL from '../isURL'
+import isHTML from '../isHTML'
+import isGuid from '../isGuid'
+import isIPAddress from '../isIPAddress'
+import isPhoneNumber from '../isPhoneNumber'
 
 const Types = {
   is,
@@ -45,7 +52,14 @@ const Types = {
   isSymbol,
   isDate,
   isElement,
-  isEmpty
+  isEmpty,
+  isPromise,
+  isEmail,
+  isURL,
+  isHTML,
+  isGuid,
+  isIPAddress,
+  isPhoneNumber
 }
 
 export default Types
