@@ -1,3 +1,12 @@
+## [1.5.1](https://github.com/yaohaixiao/types.js/compare/1.5.0...1.5.1) (2023-07-10)
+
+
+### Bug Fixes
+
+* 修复 isURL() 方法无法判断有授权信息和类似 http://localhost 地址的问题 ([7d3baf7](https://github.com/yaohaixiao/types.js/commit/7d3baf78ae88b004fea7890deac9c57dd6b50e3e))
+
+
+
 # [1.5.0](https://github.com/yaohaixiao/types.js/compare/1.4.1...1.5.0) (2023-07-10)
 
 
