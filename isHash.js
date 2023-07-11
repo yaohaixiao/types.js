@@ -8,7 +8,7 @@ import isPlainObject from './isPlainObject'
  * @since 0.4.0
  * @category Lang
  * @param {Object} obj - 要检测的数据
- * @returns {Boolean} 'val' 是普通对象返回 true，否则返回 false
+ * @returns {Boolean} 'val' 是普通对象，返回 true，否则返回 false
  */
 const isHash = (obj) => {
   return isPlainObject(obj)

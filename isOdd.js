@@ -5,7 +5,7 @@ import isInteger from './isInteger'
  * ========================================================================
  * @method isOdd
  * @param {Number} val - 要检测的数据
- * @returns {Boolean} 'val' 是奇数返回 true，否则返回 false
+ * @returns {Boolean} 'val' 是奇数，返回 true，否则返回 false
  */
 const isOdd = (val) => {
   return isInteger(val) && val % 2 !== 0

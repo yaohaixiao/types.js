@@ -7,7 +7,7 @@ import TYPES from './enum/types'
  * @method isFunction
  * @category Lang
  * @param {*} val - （必须）待检测的数据
- * @returns {Boolean} 'val' 是 Function 类型返回 true，否则返回 false
+ * @returns {Boolean} 'val' 是 Function 类型，返回 true，否则返回 false
  */
 const isFunction = (val) => {
   const type = _type(val)

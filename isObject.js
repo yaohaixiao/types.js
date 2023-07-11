@@ -7,7 +7,7 @@ import TYPES from './enum/types'
  * @method isObject
  * @category Lang
  * @param {*} val - 要检测的数据
- * @returns {Boolean} 'val' 为对象返回 true，否则返回 false
+ * @returns {Boolean} 'val' 为对象，返回 true，否则返回 false
  */
 const isObject = (val) => {
   const type = typeof val

@@ -6,7 +6,7 @@ import isString from './isString'
  * @method isURL
  * @category Lang
  * @param {String} str - 要检测的字符串
- * @returns {Boolean}
+ * @returns {Boolean} 'val' 是有效的 URL 字符串格式，返回 true，否则返回 false
  */
 const isURL = (str) => {
   const protocol = '(https?:)?'

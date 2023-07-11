@@ -90,7 +90,7 @@ Types.isArray([]) // -> true
 // isNumeric,
 // isFloat,
 // isInteger,
-// isString,
+// isString（blank、float、infinite）,
 // isBigInt,
 // isBoolean,
 // isUndefined,
@@ -133,7 +133,18 @@ types.js 提供了很多实用的数据类型判断的方法，以下是一些�
 is(val) 方法返回检测数据的数据类型字符串：
 
 * 'number' - 数字
+  * integer
+  * float
+  * infinite 
 * 'string' - 字符串
+  * blank
+  * chinese
+  * email
+  * empty
+  * guid
+  * html
+  * json
+  * time
 * 'boolean' - 布尔值
 * 'null' - 空值
 * 'undefined' - 未定义
@@ -157,6 +168,8 @@ is(val) 方法返回检测数据的数据类型字符串：
 * 'bigint64array' - bigint64array 数组
 * 'biguint64array' - biguint64array 数组
 * 'object' - 对象
+  * prototype
+  * xml
 * 'arguments' - （函数的）参数对象
 * 'dataview' - DataView 视图
 * 'date' - 日期
@@ -187,11 +200,20 @@ Type: `Boolean`
 import Types from '@yaohaixiao/types.js/types'
 // 或者单独引用 is() 方法
 // import is from '@yaohaixiao/types.js/is'
+import { DOMParser } from 'xmldom'
 
 let Example
 let args
 const buffer = new ArrayBuffer(8)
 const dv = new DataView(buffer)
+const XML = new DOMParser().parseFromString(
+        '<xml xmlns="a" xmlns:c="./lite">\n' +
+        '\t<child>test</child>\n' +
+        '\t<child></child>\n' +
+        '\t<child/>\n' +
+        '</xml>',
+        'text/xml'
+)
 
 function test(age){
   args = arguments
@@ -202,7 +224,20 @@ test(40)
 
 // 基础值类型
 Types.is('types.js') // -> string
-Types.is(2023) // -> number
+Types.is(' ') // -> blank
+Types.is('中国梦') // -> chinese
+Types.is('type.js@gmail.com') // -> email
+Types.is('') // -> empty
+Types.is('3C8021B0-423D-475D-BECF-63ED5ED34563') // -> guid
+Types.is('3C8021B0423D475DBECF63ED5ED34563') // -> guid
+Types.is('<h2>中国梦</h2>') // -> html
+Types.is('{"prop":"JSON"}') // -> json
+Types.is('11:23 am') // -> time
+Types.is('Jul 08 2023') // -> time
+Types.is(2023) // -> integer
+Types.is(3.0) // -> integer
+Types.is(3.01) // -> float
+Types.is(Infinity) // -> infinite
 Types.is(true) // -> boolean
 Types.is(null) // -> null
 Types.is(Example) // -> undefined
@@ -218,6 +253,8 @@ Types.is(new WeakMap()) // -> weakmap
 // Object 对象相关
 Types.is({}) // -> object
 Types.is(new Object()) // -> object
+Types.is(Object.prototype) // -> prototype
+Types.is(XML) // -> xml
 Types.is(Object.create(null)) // -> object
 Types.is(new String()) // -> object
 Types.is(new Number()) // -> object
@@ -1009,7 +1046,7 @@ import Types from '@yaohaixiao/types.js/types'
 
 Types.isArrayBuffer([]) // -> false
 Types.isArrayBuffer(new ArrayBuffer(8)) // -> true
-``
+```
 
 
 ### [isEmptyObject](https://yaohaixiao.github.io/types.js/#method-isEmptyObject)

@@ -7,7 +7,7 @@ import TYPES from './enum/types'
  * @method isNumber
  * @category Lang
  * @param {*} val - 要检测的数据
- * @returns {Boolean} 'val' 是 Number 类型返回 true，否则返回 false
+ * @returns {Boolean} 'val' 是 Number 类型，返回 true，否则返回 false
  */
 const isNumber = (val) => {
   return _type(val) === TYPES.NUMBER

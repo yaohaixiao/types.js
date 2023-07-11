@@ -7,7 +7,7 @@ import TYPES from './enum/types'
  * @method isSymbol
  * @category Lang
  * @param {*} val - 要检测的数据
- * @returns {Boolean} 'val' 是 Symbol 类型返回 true，否则返回 false
+ * @returns {Boolean} 'val' 是 Symbol 类型，返回 true，否则返回 false
  */
 const isSymbol = (val) => {
   return _type(val) === TYPES.SYMBOL

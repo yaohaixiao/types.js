@@ -11,7 +11,7 @@ import _isDate from './_isDate'
  *                          time - 时间；
  *                          date - 日期；
  *                          不传 - 时间或者日期皆可
- * @returns {boolean|boolean}
+ * @returns {Boolean} 'val' 是有效的时间（字符串），返回 true，否则返回 false
  */
 const isTime = (str, type) => {
   switch (type) {

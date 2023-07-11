@@ -6,7 +6,7 @@ import TYPES from './enum/types'
  * ========================================================================
  * @method isTextNode
  * @param {*} val - 要检测的数据
- * @returns {Boolean} 'val' 是文本节点返回 true，否则返回 false
+ * @returns {Boolean} 'val' 是文本节点，返回 true，否则返回 false
  */
 const isTextNode = (val) => {
   const type = _type(val)

@@ -6,7 +6,7 @@ import isString from './isString'
  * @method isEmpty
  * @category Lang
  * @param {String} val - 要检测的数据
- * @returns {Boolean} 'val' 是空字符串返回 true，否则返回 false
+ * @returns {Boolean} 'val' 是空字符串，返回 true，否则返回 false
  */
 const isEmpty = (val) => {
   return isString(val) && val === ''

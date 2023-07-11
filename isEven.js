@@ -5,7 +5,7 @@ import isInteger from './isInteger'
  * ========================================================================
  * @method isEven
  * @param {Number} val - 要检测的数据
- * @returns {Boolean} 'val' 是偶数返回 true，否则返回 false
+ * @returns {Boolean} 'val' 是偶数，返回 true，否则返回 false
  */
 const isEven = (val) => {
   return isInteger(val) && val % 2 === 0

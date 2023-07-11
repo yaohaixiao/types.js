@@ -7,7 +7,7 @@ import TYPES from './enum/types'
  * @method isString
  * @category Lang
  * @param {*} obj - 要检测的数据
- * @returns {Boolean} 'val' 是字符串返回 true，否则返回 false
+ * @returns {Boolean} 'val' 是字符串，返回 true，否则返回 false
  */
 const isString = (obj) => {
   return _type(obj) === TYPES.STRING

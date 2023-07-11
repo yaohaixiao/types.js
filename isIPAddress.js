@@ -6,7 +6,7 @@ import isString from './isString'
  * @method isIPAddress
  * @category Lang
  * @param {String} str - 待检测的数据（字符串）
- * @returns {Boolean} 'val' 是 IP 地址返回 true，否则返回 false
+ * @returns {Boolean} 'val' 是 IP 地址，返回 true，否则返回 false
  */
 const isIPAddress = (str) => {
   const ipV6 =

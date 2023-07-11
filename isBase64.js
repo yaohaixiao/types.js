@@ -5,7 +5,7 @@ import isString from './isString'
  * ========================================================================
  * @method isBase64
  * @param {String} val - 要检测的数据
- * @return {Boolean} 'val' 是 base64 编码的字符串返回 true，否则返回 false
+ * @return {Boolean} 'val' 是 base64 编码的字符串，返回 true，否则返回 false
  */
 const isBase64 = (val) => {
   const REGEXP_BASE64 =

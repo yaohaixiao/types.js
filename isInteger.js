@@ -6,7 +6,7 @@ import isNumber from './isNumber'
  * @method isInteger
  * @category Lang
  * @param {Number} val - 要检测的数据
- * @returns {Boolean} 'val' 是整数返回 true，否则返回 false
+ * @returns {Boolean} 'val' 是整数，返回 true，否则返回 false
  */
 const isInteger = (val) => {
   return isNumber(val) && !isNaN(val) && Number(val) === val && val % 1 === 0

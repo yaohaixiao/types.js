@@ -6,7 +6,7 @@ import TYPES from './enum/types'
  * ========================================================================
  * @method isHTMLCollection
  * @param {*} val - 要检测的数据
- * @returns {Boolean} 'val' 是 HTMLNodeList 对象返回 true，否则返回 false
+ * @returns {Boolean} 'val' 是 HTMLNodeList 对象，返回 true，否则返回 false
  */
 const isHTMLCollection = (val) => {
   return _type(val) === TYPES.COLLECTION

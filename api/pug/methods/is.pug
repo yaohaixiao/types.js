@@ -23,11 +23,20 @@ section.section
         import Types from '@yaohaixiao/types.js/types'
         // 或者单独引用 is() 方法
         // import is from '@yaohaixiao/types.js/is'
+        import { DOMParser } from 'xmldom'
 
         let Example
         let args
         const buffer = new ArrayBuffer(8)
         const dv = new DataView(buffer)
+        const XML = new DOMParser().parseFromString(
+                '&lt;xml xmlns="a" xmlns:c="./lite"&gt;\n' +
+                '\t&lt;child&gt;test&lt;/child&gt;\n' +
+                '\t&lt;child&gt;&lt;/child&gt;\n' +
+                '\t&lt;child/&gt;\n' +
+                '&lt;/xml&gt;',
+                'text/xml'
+        )
 
         function test(age){
           args = arguments
@@ -37,50 +46,65 @@ section.section
         test(40)
 
         // 基础值类型
-        Types.is('types.js') // -> string
-        Types.is(2023) // -> number
-        Types.is(true) // -> boolean
-        Types.is(null) // -> null
-        Types.is(Example) // -> undefined
-        Types.is(Symbol()) // -> symbol
-        Types.is(BigInt(42)) // -> bigint
+        Types.is('types.js') // -&gt; string
+        Types.is(' ') // -&gt; blank
+        Types.is('中国梦') // -&gt; chinese
+        Types.is('type.js@gmail.com') // -&gt; email
+        Types.is('') // -&gt; empty
+        Types.is('3C8021B0-423D-475D-BECF-63ED5ED34563') // -&gt; guid
+        Types.is('3C8021B0423D475DBECF63ED5ED34563') // -&gt; guid
+        Types.is('&lt;h2&gt;中国梦&lt;/h2&gt;') // -&gt; html
+        Types.is('{"prop":"JSON"}') // -&gt; json
+        Types.is('11:23 am') // -&gt; time
+        Types.is('Jul 08 2023') // -&gt; time
+        Types.is(2023) // -&gt; integer
+        Types.is(3.0) // -&gt; integer
+        Types.is(3.01) // -&gt; float
+        Types.is(Infinity) // -&gt; infinite
+        Types.is(true) // -&gt; boolean
+        Types.is(null) // -&gt; null
+        Types.is(Example) // -&gt; undefined
+        Types.is(Symbol()) // -&gt; symbol
+        Types.is(BigInt(42)) // -&gt; bigint
 
         // Set/WeakSet/Map/WeakMap
-        Types.is(new Set()) // -> set
-        Types.is(new WeakSet()) // -> weakset
-        Types.is(new Map()) // -> map
-        Types.is(new WeakMap()) // -> weakmap
+        Types.is(new Set()) // -&gt; set
+        Types.is(new WeakSet()) // -&gt; weakset
+        Types.is(new Map()) // -&gt; map
+        Types.is(new WeakMap()) // -&gt; weakmap
 
         // Object 对象相关
-        Types.is({}) // -> object
-        Types.is(new Object()) // -> object
-        Types.is(Object.create(null)) // -> object
-        Types.is(new String()) // -> object
-        Types.is(new Number()) // -> object
-        Types.is(new Boolean()) // -> object
-        Types.is(new Error()) // -> error
-        Types.is(new Date()) // -> data
-        Types.is(new RegExp('/s/')) // -> regexp
-        Types.is(/\s+/ig) // -> regexp
-        Types.is(() => {}) // -> function
-        Types.is(args) // -> arguments
-        Types.is(dv) // -> dataview
-        Types.is(document.querySelector('#list')) // -> element
-        Types.is(document.querySelectorAll('.item')) // -> collection
-        Types.is(document.createTextNode('text')) // -> text
-        Types.is(document.createDocumentFragment()) // -> fragment
+        Types.is({}) // -&gt; object
+        Types.is(new Object()) // -&gt; object
+        Types.is(Object.prototype) // -&gt; prototype
+        Types.is(XML) // -&gt; xml
+        Types.is(Object.create(null)) // -&gt; object
+        Types.is(new String()) // -&gt; object
+        Types.is(new Number()) // -&gt; object
+        Types.is(new Boolean()) // -&gt; object
+        Types.is(new Error()) // -&gt; error
+        Types.is(new Date()) // -&gt; data
+        Types.is(new RegExp('/s/')) // -&gt; regexp
+        Types.is(/\s+/ig) // -&gt; regexp
+        Types.is(() =&gt; {}) // -&gt; function
+        Types.is(args) // -&gt; arguments
+        Types.is(dv) // -&gt; dataview
+        Types.is(document.querySelector('#list')) // -&gt; element
+        Types.is(document.querySelectorAll('.item')) // -&gt; coolection
+        Types.is(document.createTextNode('text')) // -&gt; text
+        Types.is(document.createDocumentFragment()) // -&gt; fragment
 
         // Array 相关
-        Types.is([]) // -> array
-        Types.is(new ArrayBuffer(8)) // -> arraybubber
-        Types.is(new Int8Array([])) // -> int8array
-        Types.is(new Int16Array([])) // -> int16array
-        Types.is(new Int32Array([])) // -> int32array
-        Types.is(new Uint8Array([])) // -> uint8array
-        Types.is(new Uint8ClampedArray([])) // -> uint8clampedarray
-        Types.is(new Uint16Array([])) // -> uint16array
-        Types.is(new Uint32Array([])) // -> uint32array
-        Types.is(new Float32Array([])) // -> float32array
-        Types.is(new Float64Array([])) // -> float64array
-        Types.is(new BigInt64Array(64)) // -> bigint64array
-        Types.is(new BigUint64Array(64)) // -> biguint64array
+        Types.is([]) // -&gt; array
+        Types.is(new ArrayBuffer(8)) // -&gt; arraybubber
+        Types.is(new Int8Array([])) // -&gt; int8array
+        Types.is(new Int16Array([])) // -&gt; int16array
+        Types.is(new Int32Array([])) // -&gt; int32array
+        Types.is(new Uint8Array([])) // -&gt; uint8array
+        Types.is(new Uint8ClampedArray([])) // -&gt; uint8clampedarray
+        Types.is(new Uint16Array([])) // -&gt; uint16array
+        Types.is(new Uint32Array([])) // -&gt; uint32array
+        Types.is(new Float32Array([])) // -&gt; float32array
+        Types.is(new Float64Array([])) // -&gt; float64array
+        Types.is(new BigInt64Array(64)) // -&gt; bigint64array
+        Types.is(new BigUint64Array(64)) // -&gt; biguint64array

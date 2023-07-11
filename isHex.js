@@ -5,7 +5,7 @@ import isString from './isString'
  * ========================================================================
  * @method isHex
  * @param {String} val - 要检测的数据
- * @returns {Boolean} 'val' 是 16 进制编码的字符串返回 true，否则返回 false
+ * @returns {Boolean} 'val' 是 16 进制编码的字符串，返回 true，否则返回 false
  */
 const isHex = (val) => {
   const REGEXP_HEX = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i

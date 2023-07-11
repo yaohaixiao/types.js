@@ -2,6 +2,8 @@
  * @jest-environment jsdom
  */
 import is from '../is'
+import isNumber from '../isNumber'
+import { DOMParser } from 'xmldom'
 
 describe('is() 方法：', () => {
   // Set up our document body
@@ -28,17 +30,70 @@ describe('is() 方法：', () => {
       expect(is('types.js')).toBe('string')
     })
 
-    it('is(2023), 返回：number', () => {
-      expect(is(2023)).toBe('number')
+    it(`is('  '), 返回：blank`, () => {
+      expect(is('  ')).toBe('blank')
+    })
+
+    it(`is('中国梦'), 返回：chinese`, () => {
+      expect(is('中国梦')).toBe('chinese')
+    })
+
+    it(`is('type.js@gmail.com'), 返回：email`, () => {
+      expect(is('type.js@gmail.com')).toBe('email')
+    })
+
+    it(`is(''), 返回：empty`, () => {
+      expect(is('')).toBe('empty')
+    })
+
+    it(`is('3C8021B0-423D-475D-BECF-63ED5ED34563'), 返回：guid`, () => {
+      expect(is('3C8021B0-423D-475D-BECF-63ED5ED34563')).toBe('guid')
+    })
+
+    it(`is('3C8021B0423D475DBECF63ED5ED34563'), 返回：guid`, () => {
+      expect(is('3C8021B0423D475DBECF63ED5ED34563')).toBe('guid')
+    })
+
+    it(`is('<h2>中国梦</h2>'), 返回：html`, () => {
+      expect(is(`<h2>中国梦</h2>`)).toBe('html')
+    })
+
+    it(`is('{"prop":"JSON"}'), 返回：json`, () => {
+      expect(is('{"prop":"JSON"}')).toBe('json')
+    })
+
+    it(`is('11:23 am'), 返回：time`, () => {
+      expect(is('11:23 am')).toBe('time')
+    })
+
+    it(`is('Jul 08 2023'), 返回：time`, () => {
+      expect(is('Jul 08 2023')).toBe('time')
     })
 
     it('is(NaN), 返回：number', () => {
+      expect(isNumber(NaN)).toBe(true)
       expect(is(NaN)).toBe('number')
     })
 
-    it('is(Infinity), 返回：number', () => {
-      expect(is(Infinity)).toBe('number')
-      expect(is(-Infinity)).toBe('number')
+    it('is(2023), 返回：integer', () => {
+      expect(isNumber(2023)).toBe(true)
+      expect(is(2023)).toBe('integer')
+    })
+
+    it('is(3.0), 返回：integer', () => {
+      expect(is(3.0)).toBe('integer')
+    })
+
+    it('is(3.01), 返回：float', () => {
+      expect(is(3.01)).toBe('float')
+    })
+
+    it('is(Infinity), 返回：infinite', () => {
+      expect(isNumber(Infinity)).toBe(true)
+      expect(is(Infinity)).toBe('infinite')
+
+      expect(isNumber(-Infinity)).toBe(true)
+      expect(is(-Infinity)).toBe('infinite')
     })
 
     it('is(true), 返回：boolean', () => {
@@ -179,6 +234,22 @@ describe('is() 方法：', () => {
 
     it(`is(new Error('error'))), 返回：error`, () => {
       expect(is(new Error('error'))).toBe('error')
+    })
+
+    it(`is(Object.prototype), 返回：prototype`, () => {
+      expect(is(Object.prototype)).toBe('prototype')
+    })
+
+    it(`is(<xml xmlns="a" xmlns:c="./lite"><child>test</child></xml>), 返回：xml`, () => {
+      const XML = new DOMParser().parseFromString(
+          '<xml xmlns="a" xmlns:c="./lite">\n' +
+          '\t<child>test</child>\n' +
+          '\t<child></child>\n' +
+          '\t<child/>\n' +
+          '</xml>',
+          'text/xml'
+      )
+      expect(is(XML)).toBe('xml')
     })
   })
 

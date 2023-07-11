@@ -7,7 +7,7 @@ import isString from './isString'
  * @method isNumeric
  * @category Lang
  * @param {Number|String} val - 要检测的数据
- * @returns {Boolean} 'val' 是一个数字返回 true，否则返回false
+ * @returns {Boolean} 'val' 是一个数字，返回 true，否则返回false
  */
 const isNumeric = (val) => {
   return (isNumber(val) || isString(val)) && !isNaN(val - parseFloat(val))
