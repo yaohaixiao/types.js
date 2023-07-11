@@ -1,3 +1,12 @@
+# [1.7.0](https://github.com/yaohaixiao/types.js/compare/1.6.0...1.7.0) (2023-07-11)
+
+
+### Features
+
+* 1. 增加 is() 方法输出类型的数量；2. 将 isXML() 方法调整到 object 子模块； ([a01c1ba](https://github.com/yaohaixiao/types.js/commit/a01c1ba24177572d8b7a5e80538aab1bf969565a))
+
+
+
 # [1.6.0](https://github.com/yaohaixiao/types.js/compare/1.5.1...1.6.0) (2023-07-10)
 
 ### Features
