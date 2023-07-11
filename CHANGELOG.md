@@ -1,3 +1,12 @@
+# [1.8.0](https://github.com/yaohaixiao/types.js/compare/1.7.0...1.8.0) (2023-07-11)
+
+
+### Features
+
+* 调整 is() 代码结构，添加新的类型输出：base64、IP address、hex、vnode ([c3e77b9](https://github.com/yaohaixiao/types.js/commit/c3e77b980167b84e011793d9594a8acfa4e62ece))
+
+
+
 # [1.7.0](https://github.com/yaohaixiao/types.js/compare/1.6.0...1.7.0) (2023-07-11)
 
 
