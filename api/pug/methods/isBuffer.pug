@@ -4,6 +4,7 @@ section.section
   div.section__content
     h4.section__h4 Description
     p isBuffer(val) 方法用来检测测试数据是否为 Buffer 类型（运行环境：Node.js）。
+    p 注意：Node.js 中实现的 Buffer 对象，实际的数据格式是：Uint8Array 类型的数组。
     dl.section__dl
       dt.section__dt Since：
       dd.section__dd 1.6.0
@@ -27,6 +28,10 @@ section.section
         // 或者单独引用 isBuffer() 方法
         // import isBuffer from '@yaohaixiao/types.js/isBuffer'
 
-        Types.isBuffer(new Buffer(2)) // -> true
+        const buffer = Buffer.alloc(15)
+
+        Types.isBuffer(new ArrayBuffer(8)) // -> false
         Types.isBuffer(new Uint8Array(2)) // -> false
-        Types.isBuffer(Buffer.alloc(15)) // -> false
+
+        Types.is(buffer) => 'uint8array'
+        Types.isBuffer(buffer) // -> true

@@ -34,6 +34,10 @@ describe('is() 方法：', () => {
       expect(is('  ')).toBe('blank')
     })
 
+    it(`is('Z29vZA=='), 返回：base64`, () => {
+      expect(is('Z29vZA==')).toBe('base64')
+    })
+
     it(`is('中国梦'), 返回：chinese`, () => {
       expect(is('中国梦')).toBe('chinese')
     })
@@ -54,8 +58,16 @@ describe('is() 方法：', () => {
       expect(is('3C8021B0423D475DBECF63ED5ED34563')).toBe('guid')
     })
 
+    it(`is('#ffffff'), 返回：hex`, () => {
+      expect(is('#ffffff')).toBe('hex')
+    })
+
     it(`is('<h2>中国梦</h2>'), 返回：html`, () => {
       expect(is(`<h2>中国梦</h2>`)).toBe('html')
+    })
+
+    it(`is('126.11.15.255'), 返回：IP address`, () => {
+      expect(is(`126.11.15.255`)).toBe('IP address')
     })
 
     it(`is('{"prop":"JSON"}'), 返回：json`, () => {

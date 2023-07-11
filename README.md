@@ -133,18 +133,21 @@ types.js 提供了很多实用的数据类型判断的方法，以下是一些�
 is(val) 方法返回检测数据的数据类型字符串：
 
 * 'number' - 数字
-  * integer
-  * float
-  * infinite 
+  * integer - 整数
+  * float - 浮点数
+  * infinite - 正负无穷大
 * 'string' - 字符串
-  * blank
-  * chinese
-  * email
-  * empty
-  * guid
-  * html
-  * json
-  * time
+  * blank - 空格
+  * base64 - Base64 编码字符
+  * chinese - 中文字符
+  * email - 电子邮箱地址
+  * empty - 空字符串
+  * guid - guid 字符串
+  * hex - 十六进制编码字符
+  * html - html 字符串
+  * IP address - IP 地址
+  * json - json 字符串
+  * time - 表示时间地字符串（时间和日期）
 * 'boolean' - 布尔值
 * 'null' - 空值
 * 'undefined' - 未定义
@@ -168,8 +171,10 @@ is(val) 方法返回检测数据的数据类型字符串：
 * 'bigint64array' - bigint64array 数组
 * 'biguint64array' - biguint64array 数组
 * 'object' - 对象
-  * prototype
-  * xml
+  * buffer - buffer 对象
+  * prototype - 原型对象（prototype 和 \_\_proto\_\_）
+  * vnode - vue 中地 VNode 对象
+  * xml - XML DOM 对象
 * 'arguments' - （函数的）参数对象
 * 'dataview' - DataView 视图
 * 'date' - 日期
@@ -225,12 +230,15 @@ test(40)
 // 基础值类型
 Types.is('types.js') // -> string
 Types.is(' ') // -> blank
+Types.is('Z29vZA==') // -> base64
 Types.is('中国梦') // -> chinese
 Types.is('type.js@gmail.com') // -> email
 Types.is('') // -> empty
 Types.is('3C8021B0-423D-475D-BECF-63ED5ED34563') // -> guid
 Types.is('3C8021B0423D475DBECF63ED5ED34563') // -> guid
+Types.is('#ffffff') // -> hex
 Types.is('<h2>中国梦</h2>') // -> html
+Types.isIPAddress('126.11.15.255') // -> IP address
 Types.is('{"prop":"JSON"}') // -> json
 Types.is('11:23 am') // -> time
 Types.is('Jul 08 2023') // -> time

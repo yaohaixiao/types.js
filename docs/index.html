@@ -26,12 +26,15 @@ test(40)
 // 基础值类型
 Types.is('types.js') // -&gt; string
 Types.is(' ') // -&gt; blank
+Types.is('Z29vZA==') // -> base64
 Types.is('中国梦') // -&gt; chinese
 Types.is('type.js@gmail.com') // -&gt; email
 Types.is('') // -&gt; empty
 Types.is('3C8021B0-423D-475D-BECF-63ED5ED34563') // -&gt; guid
 Types.is('3C8021B0423D475DBECF63ED5ED34563') // -&gt; guid
+Types.is('#ffffff') // -&gt; hex
 Types.is('&lt;h2&gt;中国梦&lt;/h2&gt;') // -&gt; html
+Types.isIPAddress('126.11.15.255') // -> IP address
 Types.is('{"prop":"JSON"}') // -&gt; json
 Types.is('11:23 am') // -&gt; time
 Types.is('Jul 08 2023') // -&gt; time
@@ -622,13 +625,17 @@ Types.isEmptyObject(new Function()) // false
 Types.isEmptyObject(['']) // false
 Types.isEmptyObject(null) // false
 Types.isEmptyObject({name:'type.js'}) // -> false
-Types.isEmptyObject(new Person('yaohaixiao',30)) // false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isBuffer">isBuffer(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isBuffer(val) 方法用来检测测试数据是否为 Buffer 类型（运行环境：Node.js）。</p><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">1.6.0</dd></dl><dl class="section__dl"><dt class="section__dt">Category：</dt><dd class="section__dd">Lang</dd></dl><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 Buffer 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/types'
+Types.isEmptyObject(new Person('yaohaixiao',30)) // false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isBuffer">isBuffer(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isBuffer(val) 方法用来检测测试数据是否为 Buffer 类型（运行环境：Node.js）。</p><p>注意：Node.js 中实现的 Buffer 对象，实际的数据格式是：Uint8Array 类型的数组。</p><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">1.6.0</dd></dl><dl class="section__dl"><dt class="section__dt">Category：</dt><dd class="section__dd">Lang</dd></dl><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 Buffer 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/types'
 // 或者单独引用 isBuffer() 方法
 // import isBuffer from '@yaohaixiao/types.js/isBuffer'
 
-Types.isBuffer(new Buffer(2)) // -> true
+const buffer = Buffer.alloc(15)
+
+Types.isBuffer(new ArrayBuffer(8)) // -> false
 Types.isBuffer(new Uint8Array(2)) // -> false
-Types.isBuffer(Buffer.alloc(15)) // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isHash">isHash(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isHash(val) 方法（isPlainObject()方法的别名）用来检测测试数据是否为普通对象。</p><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">0.4.0</dd></dl><dl class="section__dl"><dt class="section__dt">Category：</dt><dd class="section__dd">Lang</dd></dl><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是普通对象，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/types'
+
+Types.is(buffer) => 'uint8array'
+Types.isBuffer(buffer) // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isHash">isHash(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isHash(val) 方法（isPlainObject()方法的别名）用来检测测试数据是否为普通对象。</p><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">0.4.0</dd></dl><dl class="section__dl"><dt class="section__dt">Category：</dt><dd class="section__dd">Lang</dd></dl><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是普通对象，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/types'
 // 或者单独引用 isHash() 方法
 // import isHash from '@yaohaixiao/types.js/isHash'
 

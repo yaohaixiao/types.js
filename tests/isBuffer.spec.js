@@ -4,6 +4,7 @@ import is from '../is'
 describe('isBuffer() 方法：', () => {
     it(`isBuffer(new Uint8Array(8)), 返回：false`, () => {
         const arr = new Uint8Array(8)
+
         expect(is(arr)).toBe('uint8array')
         expect(isBuffer(arr)).toBe(false)
     })
@@ -18,6 +19,7 @@ describe('isBuffer() 方法：', () => {
     it(`isBuffer(Buffer.alloc(15)), 返回：true`, () => {
         const buffer = Buffer.alloc(15)
 
+        expect(is(buffer)).toBe('uint8array')
         expect(isBuffer(buffer)).toBe(true)
     })
 })
