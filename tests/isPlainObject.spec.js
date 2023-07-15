@@ -66,8 +66,8 @@ describe('isPlainObject() 方法：', () => {
       expect(isPlainObject([])).toBe(true)
     })
 
-    it(`isPlainObject(/\s+/ig), 返回：true`, () => {
-      const pattern = /s+/ig
+    it(`isPlainObject(/\\s+/ig), 返回：true`, () => {
+      const pattern = /\s+/ig
       expect(isPlainObject(pattern)).toBe(true)
     })
 
