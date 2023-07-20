@@ -1,3 +1,12 @@
+## [1.8.1](https://github.com/yaohaixiao/types.js/compare/1.8.0...1.8.1) (2023-07-15)
+
+
+### Bug Fixes
+
+* 调整 isPlainObject() 方法的校验逻辑 ([34634e3](https://github.com/yaohaixiao/types.js/commit/34634e39da03186ad5b9a5675446715a550686be))
+
+
+
 # [1.8.0](https://github.com/yaohaixiao/types.js/compare/1.7.0...1.8.0) (2023-07-11)
 
 
