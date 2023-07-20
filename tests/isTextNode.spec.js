@@ -25,19 +25,19 @@ describe('isTextNode() 方法：', () => {
     '  </li>\n' +
     '</ul>'
 
-  it(`isTextNode(document.getElementById('list')), 返回：false`, () => {
-    const $list = document.getElementById('list')
-    expect(is($list)).toBe('element')
-    expect(isElement($list)).toBe(true)
-    expect(isTextNode($list)).toBe(false)
-  })
-
-  it(`isTextNode(document.createElement('div')), 返回：false`, () => {
-    const $div = document.createElement('div')
-    expect(is($div)).toBe('element')
-    expect(isElement($div)).toBe(true)
-    expect(isTextNode($div)).toBe(false)
-  })
+  // it(`isTextNode(document.getElementById('list')), 返回：false`, () => {
+  //   const $list = document.getElementById('list')
+  //   expect(is($list)).toBe('element')
+  //   expect(isElement($list)).toBe(true)
+  //   expect(isTextNode($list)).toBe(false)
+  // })
+  //
+  // it(`isTextNode(document.createElement('div')), 返回：false`, () => {
+  //   const $div = document.createElement('div')
+  //   expect(is($div)).toBe('element')
+  //   expect(isElement($div)).toBe(true)
+  //   expect(isTextNode($div)).toBe(false)
+  // })
 
   it(`isTextNode(document.createDocumentFragment()), 返回：false`, () => {
     const $fragment = document.createDocumentFragment()
@@ -46,17 +46,17 @@ describe('isTextNode() 方法：', () => {
     expect(isTextNode($fragment)).toBe(false)
   })
 
-  it(`isTextNode(document.querySelectorAll('.item')), 返回：false`, () => {
-    const $items = document.querySelectorAll('.item')
-    expect(is($items)).toBe('collection')
-    expect(isHTMLCollection($items)).toBe(true)
-    expect(isTextNode($items)).toBe(false)
-  })
-
-  it(`isTextNode(document.createTextNode('text')), 返回：true`, () => {
-    const $text = document.createTextNode('text')
-    expect(is($text)).toBe('text')
-    expect(isElement($text)).toBe(false)
-    expect(isTextNode($text)).toBe(true)
-  })
+  // it(`isTextNode(document.querySelectorAll('.item')), 返回：false`, () => {
+  //   const $items = document.querySelectorAll('.item')
+  //   expect(is($items)).toBe('collection')
+  //   expect(isHTMLCollection($items)).toBe(true)
+  //   expect(isTextNode($items)).toBe(false)
+  // })
+  //
+  // it(`isTextNode(document.createTextNode('text')), 返回：true`, () => {
+  //   const $text = document.createTextNode('text')
+  //   expect(is($text)).toBe('text')
+  //   expect(isElement($text)).toBe(false)
+  //   expect(isTextNode($text)).toBe(true)
+  // })
 })

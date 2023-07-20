@@ -1,4 +1,5 @@
 import _type from './_type'
+import isObject from './isObject'
 import TYPES from './enum/types'
 
 /**
@@ -10,7 +11,7 @@ import TYPES from './enum/types'
  * @returns {Boolean} 'val' 为 DocumentFragment 文档碎片，返回 true，否则返回 false
  */
 const isFragment = (val) => {
-  return _type(val) === TYPES.FRAGMENT
+  return !!(isObject(val) && _type(val) === TYPES.FRAGMENT)
 }
 
 export default isFragment

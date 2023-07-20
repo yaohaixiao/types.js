@@ -1,4 +1,5 @@
 import _type from './_type'
+import isObject from './isObject'
 import TYPES from './enum/types'
 
 /**
@@ -9,7 +10,7 @@ import TYPES from './enum/types'
  * @returns {Boolean} 'val' 是 HTMLNodeList 对象，返回 true，否则返回 false
  */
 const isHTMLCollection = (val) => {
-  return _type(val) === TYPES.COLLECTION
+  return !!(isObject(val) && _type(val) === TYPES.COLLECTION)
 }
 
 export default isHTMLCollection

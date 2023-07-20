@@ -1,4 +1,5 @@
 import _type from './_type'
+import isObject from './isObject'
 import TYPES from './enum/types'
 
 /**
@@ -9,8 +10,10 @@ import TYPES from './enum/types'
  * @returns {Boolean} 'val' 是文本节点，返回 true，否则返回 false
  */
 const isTextNode = (val) => {
-  const type = _type(val)
-  return type === TYPES.TEXT
+  return !!(
+    isObject(val) &&
+    (_type(val) === TYPES.TEXT || (val.tagName && val.nodeType === 3))
+  )
 }
 
 export default isTextNode

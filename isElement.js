@@ -1,4 +1,5 @@
 import _type from './_type'
+import isObject from './isObject'
 import TYPES from './enum/types'
 
 /**
@@ -10,7 +11,7 @@ import TYPES from './enum/types'
  * @returns {Boolean} 'val' 为 HTML 元素节点，返回 true，否则返回 false
  */
 const isElement = (val) => {
-  return _type(val) === TYPES.ELEMENT
+  return !!(isObject(val) && _type(val) === TYPES.ELEMENT)
 }
 
 export default isElement

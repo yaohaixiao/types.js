@@ -22,6 +22,7 @@ import isBoolean from './isBoolean'
 import isConstructor from './isConstructor'
 import isDataView from './isDataView'
 import isDate from './isDate'
+import isDOM from './isDOM'
 import isElement from './isElement'
 import isEmail from './isEmail'
 import isEmpty from './isEmpty'
@@ -93,6 +94,7 @@ const Types = {
   isConstructor,
   isDataView,
   isDate,
+  isDOM,
   isElement,
   isEmail,
   isEmpty,

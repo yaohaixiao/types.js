@@ -5,6 +5,7 @@ import isArrayLike from '../isArrayLike'
 import isArguments from '../isArguments'
 import isObject from '../isObject'
 import isObjectLike from '../isObjectLike'
+import isDOM from '../isDOM'
 import isEmptyObject from '../isEmptyObject'
 import isHash from '../isHash'
 import isPlainObject from '../isPlainObject'
@@ -31,6 +32,7 @@ const ObjectTypes = {
   isArguments,
   isObject,
   isObjectLike,
+  isDOM,
   isEmptyObject,
   isHash,
   isPlainObject,
