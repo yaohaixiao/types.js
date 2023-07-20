@@ -1,3 +1,12 @@
+# [1.9.0](https://github.com/yaohaixiao/types.js/compare/1.8.1...1.9.0) (2023-07-20)
+
+
+### Features
+
+* 添加 isDOM() 方法 ([4901433](https://github.com/yaohaixiao/types.js/commit/4901433fadbaf9b4c1423ec2a7407d6cfbbcf2fc))
+
+
+
 ## [1.8.1](https://github.com/yaohaixiao/types.js/compare/1.8.0...1.8.1) (2023-07-15)
 
 
