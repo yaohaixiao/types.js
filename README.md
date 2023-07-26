@@ -2,6 +2,7 @@
 
 [![npm version](https://img.shields.io/npm/v/@yaohaixiao/types.js)](https://www.npmjs.com/package/@yaohaixiao/types.js)
 [![Github file size](https://img.shields.io/github/size/yaohaixiao/types.js/types.min.js.svg)](https://github.com/yaohaixiao/types.js/blob/master/types.min.js)
+![Gzip size](http://img.badgesize.io/https://cdn.jsdelivr.net/gh/yaohaixiao/types.js/types.min.js?compression=gzip&label=gzip%20size)
 [![prettier code style](https://img.shields.io/badge/code_style-prettier-07b759.svg)](https://prettier.io)
 [![Coverage](https://codecov.io/gh/yaohaixiao/types.js/branch/main/graph/badge.svg)](https://codecov.io/gh/yaohaixiao/types.js)
 [![npm downloads](https://img.shields.io/npm/dm/@yaohaixiao/types.js)](https://npmcharts.com/compare/@yaohaixiao/types.js?minimal=true)
