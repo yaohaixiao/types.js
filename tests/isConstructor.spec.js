@@ -1,3 +1,6 @@
+/**
+ * @jest-environment jsdom
+ */
 import isConstructor from '../isConstructor'
 
 describe('isConstructor() 方法：', () => {

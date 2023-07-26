@@ -11,18 +11,22 @@ import isNativeFunction from './isNativeFunction'
  */
 const isConstructor = (fn) => {
   const proto = fn.prototype
+  const constructor = fn.constructor
   let instance
 
   if (!isFunction(fn) || !proto) {
     return false
   }
 
-  // 判断 fn 是否为 Promise 构造函数
-  if (isNativeFunction(fn) && proto?.then) {
-    instance = new fn((resolve, reject) => {})
-  } else {
-    instance = new fn()
+  if (
+    isNativeFunction(fn) &&
+    (constructor === Function || constructor === fn)
+  ) {
+    return true
   }
+
+  // 判断 fn 是否为 Promise 构造函数
+  instance = new fn()
 
   // 判断 constructor
   return (
