@@ -1,3 +1,12 @@
+## [1.9.1](https://github.com/yaohaixiao/types.js/compare/1.9.0...1.9.1) (2023-07-26)
+
+
+### Bug Fixes
+
+* 修复 isConstructor() 判断一些 JavaScript 内置对象报错的问题，调整判断逻辑；调整 isURL() 方法针对URL地址的正则表达式，使检测更加准确； ([2137ff4](https://github.com/yaohaixiao/types.js/commit/2137ff433e53f5872308b281a34f2f34693298af))
+
+
+
 # [1.9.0](https://github.com/yaohaixiao/types.js/compare/1.8.1...1.9.0) (2023-07-20)
 
 
