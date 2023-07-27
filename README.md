@@ -1,18 +1,17 @@
 # types.js
 
 [![npm version](https://img.shields.io/npm/v/@yaohaixiao/types.js)](https://www.npmjs.com/package/@yaohaixiao/types.js)
-[![Github file size](https://img.shields.io/github/size/yaohaixiao/types.js/types.min.js.svg)](https://github.com/yaohaixiao/types.js/blob/master/types.min.js)
 ![Gzip size](http://img.badgesize.io/https://cdn.jsdelivr.net/gh/yaohaixiao/types.js/types.min.js?compression=gzip&label=gzip%20size)
 [![prettier code style](https://img.shields.io/badge/code_style-prettier-07b759.svg)](https://prettier.io)
 [![Coverage](https://codecov.io/gh/yaohaixiao/types.js/branch/main/graph/badge.svg)](https://codecov.io/gh/yaohaixiao/types.js)
-[![npm downloads](https://img.shields.io/npm/dm/@yaohaixiao/types.js)](https://npmcharts.com/compare/@yaohaixiao/types.js?minimal=true)
+[![npm downloads](https://img.shields.io/npm/dt/@yaohaixiao/types.js)](https://npmcharts.com/compare/@yaohaixiao/types.js?minimal=true)
 [![MIT License](https://img.shields.io/github/license/yaohaixiao/types.js.svg)](https://github.com/yaohaixiao/types.js/blob/master/LICENSE)
 
 types.js 专注于检测 JavaScript 数据类型的工具库。
 
 ## 项目初衷
 
-编写 types.js 主要是为初学 JavaScript 的朋友了解在 JavaScript 如何进行数据类型检测。当然，types.js 也完全可以胜任在实际产品开发的应用。
+编写 types.js 主要是为初学 JavaScript 的朋友了解在 [JavaScript 如何进行数据类型检测](http://www.yaohaixiao.com/blog/data-types-detect-in-javascript/)。当然，types.js 也完全可以胜任在实际产品开发的应用。
 
 ## 特点
 
