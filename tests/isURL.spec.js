@@ -40,8 +40,8 @@ describe('isURL() 方法：', () => {
       expect(isURL('http://localhost')).toBe(true)
     })
 
-    it(`isURL('ftp://www.yaohaixiao.com'), 返回：false`, () => {
-      expect(isURL('ftp://www.yaohaixiao.com')).toBe(false)
+    it(`isURL('ftp://www.yaohaixiao.com'), 返回：true`, () => {
+      expect(isURL('ftp://www.yaohaixiao.com')).toBe(true)
     })
 
     it(`isURL('http://www.yaohaixiao.'), 返回：false`, () => {
