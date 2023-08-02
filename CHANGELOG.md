@@ -1,3 +1,12 @@
+# [1.10.0](https://github.com/yaohaixiao/types.js/compare/1.9.1...1.10.0) (2023-08-02)
+
+
+### Features
+
+* 调整 isURL() 方法的正则表达式，以支持除 http(s) 以外的其它协议的 URL 地址 ([31b9051](https://github.com/yaohaixiao/types.js/commit/31b9051119640ee60e3715b17679368bc2384d8c))
+
+
+
 ## [1.9.1](https://github.com/yaohaixiao/types.js/compare/1.9.0...1.9.1) (2023-07-26)
 
 
