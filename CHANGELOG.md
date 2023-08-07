@@ -1,3 +1,12 @@
+# [1.11.0](https://github.com/yaohaixiao/types.js/compare/1.10.0...1.11.0) (2023-08-07)
+
+
+### Features
+
+* 添加 isBinary() 方法和 isSVG() 方法 ([83a291e](https://github.com/yaohaixiao/types.js/commit/83a291e847650a74e275b7d46da778c8bf91d1a0))
+
+
+
 # [1.10.0](https://github.com/yaohaixiao/types.js/compare/1.9.1...1.10.0) (2023-08-02)
 
 
