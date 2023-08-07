@@ -1,6 +1,6 @@
 {
   "name": "@yaohaixiao/types.js",
-  "version": "1.10.0",
+  "version": "1.11.0",
   "description": "types.js - 专注于检测 JavaScript 数据类型的工具库。",
   "main": "types.min.js",
   "scripts": {
@@ -45,6 +45,7 @@
     "@yaohaixiao/delegate.js": "^2.0.0",
     "@yaohaixiao/subscribers.js": "^1.1.0",
     "babel-jest": "^29.5.0",
+    "buffer": "^6.0.3",
     "commitlint": "^17.4.4",
     "conventional-changelog-cli": "^2.2.2",
     "eslint": "^8.34.0",

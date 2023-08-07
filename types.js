@@ -17,8 +17,10 @@ import isBigInt64Array from './isBigInt64Array'
 import isBigUint64Array from './isBigUint64Array'
 import isBigInt from './isBigInt'
 import isBase64 from './isBase64'
+import isBinary from './isBinary'
 import isBlank from './isBlank'
 import isBoolean from './isBoolean'
+import isBuffer from './isBuffer'
 import isConstructor from './isConstructor'
 import isDataView from './isDataView'
 import isDate from './isDate'
@@ -58,6 +60,7 @@ import isPrototype from './isPrototype'
 import isRegExp from './isRegExp'
 import isSet from './isSet'
 import isString from './isString'
+import isSVG from './isSVG'
 import isSymbol from './isSymbol'
 import isTextNode from './isTextNode'
 import isTypedArray from './isTypedArray'
@@ -89,8 +92,10 @@ const Types = {
   isBigUint64Array,
   isBigInt,
   isBase64,
+  isBinary,
   isBlank,
   isBoolean,
+  isBuffer,
   isConstructor,
   isDataView,
   isDate,
@@ -130,6 +135,7 @@ const Types = {
   isRegExp,
   isSet,
   isString,
+  isSVG,
   isSymbol,
   isTextNode,
   isTypedArray,

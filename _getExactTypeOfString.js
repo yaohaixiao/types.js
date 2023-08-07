@@ -7,6 +7,7 @@ import isGuid from './isGuid'
 import isIPAddress from './isIPAddress'
 import isHex from './isHex'
 import isHTML from './isHTML'
+import isSVG from './isSVG'
 import isJSON from './isJSON'
 import isTime from './isTime'
 
@@ -38,7 +39,11 @@ const _getExactTypeOfString = (val) => {
   } else if (isHex(val)) {
     name = 'hex'
   } else if (isHTML(val)) {
-    name = 'html'
+    if (isSVG(val)) {
+      name = 'svg'
+    } else {
+      name = 'html'
+    }
   } else if (isJSON(val)) {
     name = 'json'
   } else if (isTime(val)) {

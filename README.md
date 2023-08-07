@@ -146,6 +146,7 @@ is(val) 方法返回检测数据的数据类型字符串：
   * guid - guid 字符串
   * hex - 十六进制编码字符
   * html - html 字符串
+  * svg - svg 字符串
   * IP address - IP 地址
   * json - json 字符串
   * time - 表示时间地字符串（时间和日期）
@@ -172,7 +173,6 @@ is(val) 方法返回检测数据的数据类型字符串：
 * 'bigint64array' - bigint64array 数组
 * 'biguint64array' - biguint64array 数组
 * 'object' - 对象
-  * buffer - buffer 对象
   * prototype - 原型对象（prototype 和 \_\_proto\_\_）
   * vnode - vue 中地 VNode 对象
   * xml - XML DOM 对象
