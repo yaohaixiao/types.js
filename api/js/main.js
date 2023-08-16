@@ -18,5 +18,8 @@ defaults.print = {
   element: '#article',
   title: 'Types.js'
 }
+defaults.chapterTextFilter = (text) => {
+  return text.replace(/\(.*?\)/, '()')
+}
 
 outline = new Outline(Outline.DEFAULTS)
