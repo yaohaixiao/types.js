@@ -33,12 +33,15 @@ import isNumeric from '../isNumeric'
 import isEmpty from '../isEmpty'
 import isEmail from '../isEmail'
 import isURL from '../isURL'
-import isHTML from '../isHTML'
+import isSVG from '../isHTML'
+import isHTML from '../isSVG'
 import isGuid from '../isGuid'
 import isIPAddress from '../isIPAddress'
 import isPhoneNumber from '../isPhoneNumber'
+// _getTypes
+import _getTypes from '../_getTypes'
 
-const Types = {
+const METHODS = {
   is,
   isValue,
   isNumber,
@@ -67,9 +70,12 @@ const Types = {
   isEmail,
   isURL,
   isHTML,
+  isSVG,
   isGuid,
   isIPAddress,
   isPhoneNumber
 }
+
+const Types = _getTypes(METHODS)
 
 export default Types

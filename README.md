@@ -56,6 +56,8 @@ npm i -S @yaohaixiao/types.js --registry=https://npm.pkg.github.com
 ```html
 <script src="/path/to/types.min.js"></script>
 <script src="/path/to/types.core.min.js"></script>
+<script src="/path/to/types.number.min.js"></script>
+<script src="/path/to/types.object.min.js"></script>
 ```
 
 ### Node.js 中调用
@@ -74,6 +76,14 @@ import Types from '@yaohaixiao/types.js/types'
 
 Types.is([]) // -> array
 Types.isArray([]) // -> true
+
+// 2.0.0 开始也支持这样调用
+const types = Types([])
+types.is() // -> array
+types.isArray() // -> true
+// 或者直接
+Types('2.0.0 开始也支持这样调用').is() // -> string
+Types('2.0.0 开始也支持这样调用').isHTML() // -> false
 
 // 如果不希望一次加载所有方法，可以考虑 lang 模块
 // 即 type.core.min.js 中的所有方法：
@@ -109,10 +119,70 @@ Types.isArray([]) // -> true
 // isIPAddress
 // isPhoneNumber
 import Types from '@yaohaixiao/types.js/lang'
-// 另外有 string, number 和 object 模块(具体包含方法，见 API 文档)
-import Types from '@yaohaixiao/types.js/string'
+
+// 针对 number 相关类型的模块
+// 即 type.number.min.js 中的所有方法：
+// is,
+// isValue,
+// isNumber,
+// isNumeric,
+// isInteger,
+// isFloat,
+// isOdd,
+// isEven,
+// isInfinite,
+// isLength
 import Types from '@yaohaixiao/types.js/number'
+
+// 针对 object 相关类型的模块
+// 即 type.object.min.js 中的所有方法：
+// is,
+// isValue,
+// isArray,
+// isArrayLike,
+// isArguments,
+// isObject,
+// isObjectLike,
+// isDOM,
+// isEmptyObject,
+// isHash,
+// isPlainObject,
+// isPrototype,
+// isFunction,
+// isConstructor,
+// isDate,
+// isDataView,
+// isError,
+// isRegExp,
+// isElement,
+// isHTMLCollection,
+// isFragment,
+// isPromise,
+// isTextNode,
+// isVNode,
+// isXML
 import Types from '@yaohaixiao/types.js/object'
+
+// 针对 string 相关类型的模块
+// 即 type.string.min.js 中的所有方法：
+// is,
+// isValue,
+// isString,
+// isBase64,
+// isBlank,
+// isEmail,
+// isEmpty,
+// isChinese,
+// isGuid,
+// isHex,
+// isPhoneNumber,
+// isTime,
+// isIPAddress,
+// isURL,
+// isJSON,
+// isHTML,
+// isSVG
+import Types from '@yaohaixiao/types.js/string'
 
 Types.is([]) // -> array
 Types.isArray([]) // -> true

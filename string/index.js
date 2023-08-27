@@ -14,24 +14,30 @@ import isIPAddress from '../isIPAddress'
 import isURL from '../isURL'
 import isJSON from '../isJSON'
 import isHTML from '../isHTML'
+import isSVG from '../isSVG'
+// _getTypes
+import _getTypes from '../_getTypes'
 
-const StringTypes = {
-    is,
-    isValue,
-    isString,
-    isBase64,
-    isBlank,
-    isEmail,
-    isEmpty,
-    isChinese,
-    isGuid,
-    isHex,
-    isPhoneNumber,
-    isTime,
-    isIPAddress,
-    isURL,
-    isJSON,
-    isHTML
+const METHODS = {
+  is,
+  isValue,
+  isString,
+  isBase64,
+  isBlank,
+  isEmail,
+  isEmpty,
+  isChinese,
+  isGuid,
+  isHex,
+  isPhoneNumber,
+  isTime,
+  isIPAddress,
+  isURL,
+  isJSON,
+  isHTML,
+  isSVG
 }
 
-export default StringTypes
+const Types = _getTypes(METHODS)
+
+export default Types
