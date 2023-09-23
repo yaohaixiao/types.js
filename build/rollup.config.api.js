@@ -15,6 +15,7 @@ export default [
   {
     input: 'api/js/main.js',
     output: {
+      name: 'outline',
       file: 'docs/js/docs.min.js',
       format: 'iife',
       sourcemap: true
