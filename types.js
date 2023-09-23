@@ -38,6 +38,7 @@ import isFunction from './isFunction'
 import isGuid from './isGuid'
 import isHash from './isHash'
 import isHex from './isHex'
+import isHTML from './isHTML'
 import isHTMLCollection from './isHTMLCollection'
 import isInfinite from './isInfinite'
 import isInteger from './isInteger'
@@ -63,6 +64,7 @@ import isString from './isString'
 import isSVG from './isSVG'
 import isSymbol from './isSymbol'
 import isTextNode from './isTextNode'
+import isTime from './isTime'
 import isTypedArray from './isTypedArray'
 import isUndefined from './isUndefined'
 import isURL from './isURL'
@@ -71,8 +73,10 @@ import isVNode from './isVNode'
 import isWeakMap from './isWeakMap'
 import isWeakSet from './isWeakSet'
 import isXML from './isXML'
+// _getTypes
+import _getTypes from './_getTypes'
 
-const Types = {
+const METHODS = {
   is,
   isArray,
   isArrayLike,
@@ -138,6 +142,7 @@ const Types = {
   isSVG,
   isSymbol,
   isTextNode,
+  isTime,
   isTypedArray,
   isUndefined,
   isURL,
@@ -145,7 +150,10 @@ const Types = {
   isVNode,
   isWeakMap,
   isWeakSet,
-  isXML
+  isXML,
+  isHTML
 }
+
+const Types = _getTypes(METHODS)
 
 export default Types

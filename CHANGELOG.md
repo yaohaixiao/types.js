@@ -1,3 +1,12 @@
+# [2.0.0](https://github.com/yaohaixiao/types.js/compare/1.11.0...2.0.0) (2023-08-27)
+
+
+### Features
+
+* 2.0.0 版本调整 API 接口模式，将 Types 改造为函数，返回检车 Types(val) 数据的方法，以前的方法调整为 Types 函数对象的静态方法 ([f41dd3f](https://github.com/yaohaixiao/types.js/commit/f41dd3f1d6252720ac0f50f39eca5eec30ebadec))
+
+
+
 # [1.11.0](https://github.com/yaohaixiao/types.js/compare/1.10.0...1.11.0) (2023-08-07)
 
 

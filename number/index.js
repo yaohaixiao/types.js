@@ -8,8 +8,10 @@ import isOdd from '../isOdd'
 import isEven from '../isEven'
 import isInfinite from '../isInfinite'
 import isLength from '../isLength'
+// _getTypes
+import _getTypes from '../_getTypes'
 
-const NumberTypes = {
+const METHODS = {
   is,
   isValue,
   isNumber,
@@ -22,4 +24,6 @@ const NumberTypes = {
   isLength
 }
 
-export default NumberTypes
+const Types = _getTypes(METHODS)
+
+export default Types

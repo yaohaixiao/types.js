@@ -23,8 +23,10 @@ import isPromise from '../isPromise'
 import isTextNode from '../isTextNode'
 import isVNode from '../isVNode'
 import isXML from '../isXML'
+// _getTypes
+import _getTypes from '../_getTypes'
 
-const ObjectTypes = {
+const METHODS = {
   is,
   isValue,
   isArray,
@@ -52,4 +54,6 @@ const ObjectTypes = {
   isXML
 }
 
-export default ObjectTypes
+const Types = _getTypes(METHODS)
+
+export default Types
