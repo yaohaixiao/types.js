@@ -1,3 +1,12 @@
+## [2.0.1](https://github.com/yaohaixiao/types.js/compare/2.0.0...2.0.1) (2023-12-04)
+
+
+### Bug Fixes
+
+* 修复 isURL() 方法判断可能出现的错误 ([5b1cacb](https://github.com/yaohaixiao/types.js/commit/5b1cacbf0936cdae3ccbf44b2ae5da57d642ad85))
+
+
+
 # [2.0.0](https://github.com/yaohaixiao/types.js/compare/1.11.0...2.0.0) (2023-08-27)
 
 
