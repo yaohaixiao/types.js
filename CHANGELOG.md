@@ -1,3 +1,12 @@
+# [2.1.0](https://github.com/yaohaixiao/types.js/compare/2.0.1...2.1.0) (2024-01-23)
+
+
+### Features
+
+* 1. 添加 isAlpha() 和 isPrime() 方法；2. 添加 isUUID() 方法，将 isGuid() 方法调整为 isUUID() 方法的别名； ([1880053](https://github.com/yaohaixiao/types.js/commit/18800535db13031ed1a6eb377bf1687d122d1b6f))
+
+
+
 ## [2.0.1](https://github.com/yaohaixiao/types.js/compare/2.0.0...2.0.1) (2023-12-04)
 
 
