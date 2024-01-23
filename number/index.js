@@ -8,6 +8,7 @@ import isOdd from '../isOdd'
 import isEven from '../isEven'
 import isInfinite from '../isInfinite'
 import isLength from '../isLength'
+import isPrime from '../isPrime'
 // _getTypes
 import _getTypes from '../_getTypes'
 
@@ -21,7 +22,8 @@ const METHODS = {
   isOdd,
   isEven,
   isInfinite,
-  isLength
+  isLength,
+  isPrime
 }
 
 const Types = _getTypes(METHODS)

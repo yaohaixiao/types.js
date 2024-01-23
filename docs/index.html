@@ -1105,7 +1105,26 @@ Types.isLength(9007199254740991) // -> true
 // False
 Types.isLength(9007199254740992) // -> false
 Types.isLength(Infinity) // -> false
-Types.isLength(-1) // -> false</code></pre></div></section><header class="section__header"><h2 class="section__title">String</h2></header><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isBase64">isBase64(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isBase64(val) 方法用来检测测试数据是否为 Base64 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">String</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 Base64 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/types'
+Types.isLength(-1) // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isPrime">isPrime(num)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isPrime(num) 方法用来检测测试数据是否为质(素)数。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">num</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Number</dd></dl><p>（必须）num 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据(数值)为奇数，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/types'
+// 或者单独引用 isPrime() 方法
+// import isPrime from '@yaohaixiao/types.js/isPrime'
+
+Types.isPrime(3) // -> true
+Types.isPrime(7) // -> true
+Types.isPrime(11) // -> true
+
+Types.isPrime(0) // -> false
+Types.isPrime(1) // -> false
+Types.isPrime(2) // -> false
+Types.isPrime(9) // -> false</code></pre></div></section><header class="section__header"><h2 class="section__title">String</h2></header><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isAlpha">isAlpha(str)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isAlpha(str) 方法用来检测测试数据是否仅包含英文字符。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">str</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">String</dd></dl><p>（必须）str 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据仅包含英文字符，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/types'
+// 或者单独引用 isAlpha() 方法
+// import isAlpha from '@yaohaixiao/types.js/isAlpha'
+
+Types.isAlpha('aaa') // -> true
+Types.isAlpha('good') // -> true
+
+Types.isAlpha('ok!') // -> false
+Types.isAlpha('is alpha') // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isBase64">isBase64(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isBase64(val) 方法用来检测测试数据是否为 Base64 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">String</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 Base64 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/types'
 // 或者单独引用 isBase64() 方法
 // import isBase64 from '@yaohaixiao/types.js/isBase64'
 
@@ -1150,31 +1169,7 @@ Types.isChinese('标点符号：。，、；：×·—…（）『』【】《�
 Types.isChinese('兼容标点符号：︰︱︲︳︴︵︶︷︸︹︺︻︼︽︾︿﹀﹁﹂﹃﹄﹅﹆﹇﹈﹉﹊﹋﹌﹍﹎﹏') // -> true
 
 // 不包含标点符号，则以下检测无法通过
-Types.isChinese('标点符号：。，、；：×·—…（）『』【】《》？！‘’“”～', false) // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isGuid">isGuid(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isGuid(val) 方法用来检测测试数据的是否为 guid 格式字符串。</p><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">1.2.0</dd></dl><dl class="section__dl"><dt class="section__dt">Category：</dt><dd class="section__dd">Lang</dd></dl><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">String</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据(数值)为 guid 格式字符串，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/types'
-// 或者单独引用 isGuid() 方法
-// import isGuid from '@yaohaixiao/types.js/isGuid'
-
-Types.isGuid('#ffffff') // -> false
-Types.isGuid(2) // -> false
-Types.isGuid('C8021B0-423D-475D-BECF-63ED5ED34563') // -> false
-
-/* 带连接符 */
-// 大写字母
-Types.isGuid('{3C8021B0-423D-475D-BECF-63ED5ED34563}') // -> true
-Types.isGuid('3C8021B0-423D-475D-BECF-63ED5ED34563') // -> true
-
-// 小写字母
-Types.isGuid('{3c8021b0-423d-475d-becf-63ed5ed34563}') // -> true
-Types.isGuid('3c8021b0-423d-475d-becf-63ed5ed34563') // -> true
-
-/* 不带连接符 */
-// 大写字母
-Types.isGuid('{3C8021B0423D475DBECF63ED5ED34563}') // -> true
-Types.isGuid('3C8021B0423D475DBECF63ED5ED34563') // -> true
-
-// 小写字母
-Types.isGuid('{3c8021b0423d475dbecf63ed5ed34563}') // -> true
-Types.isGuid('3c8021b0423d475dbecf63ed5ed34563') // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isHex">isHex(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isHex(val) 方法用来检测测试数据的(数值)是否为 16 进制数值。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">String</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据(数值)为16 进制数值，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/types'
+Types.isChinese('标点符号：。，、；：×·—…（）『』【】《》？！‘’“”～', false) // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isHex">isHex(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isHex(val) 方法用来检测测试数据的(数值)是否为 16 进制数值。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">String</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据(数值)为16 进制数值，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/types'
 // 或者单独引用 isHex() 方法
 // import isHex from '@yaohaixiao/types.js/isHex'
 
@@ -1334,33 +1329,20 @@ const patternW3C = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-
 const patternJs = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
 
 // RFC 5322 Official Standard
-const patternRFC5322 = /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isJSON">isJSON(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isJSON(val) 方法用来检测测试数据是否为合法的 JSON 格式。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">String</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是合法的 JSON 格式，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/types'
-// 或者单独引用 isJSON() 方法
-// import isJSON from '@yaohaixiao/types.js/isJSON'
+const patternRFC5322 = /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isGuid">isGuid(str)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isGuid(str) 方法用来检测测试数据是否为合法的 UUID 字符串。</p><dl class="section__dl"><dt class="section__dt">Alias：</dt><dd class="section__dd">isUUID</dd></dl><h4 class="section__h4">Parameters</h4><h5 class="section__h4">str</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">String</dd></dl><p>（必须）str 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据(数值)为合法的 UUID 字符串，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/types'
+// 或者单独引用 isGuid() 方法
+// import isGuid from '@yaohaixiao/types.js/isGuid'
 
-// String
-Types.isJSON('') // -> false
-Types.isJSON("") // -> false
-Types.isJSON("json") // -> true
+Types.isGuid('749d0000-0194-1005-2e05-08d61613bf2f') // -> true
+Types.isGuid('d3aa88e2-c754-41e0-8ba6-4198a34aa0a2') // -> true
+Types.isGuid('00000000-0000-0000-0000-000000000000') // -> true
+Types.isGuid('{0e40c5ab-1d9b-ee11-983e-e0be0335d021}') // -> true
+Types.isGuid('08dbe0f11c8641cf8afe6b2824e8f8f5') // -> true
 
-// Number
-Types.isJSON(3) // -> false
-Types.isJSON("3") // -> true
-
-// Boolean
-Types.isJSON(false) // -> false
-Types.isJSON("false") // -> true
-
-// Object
-Types.isJSON(null) // -> false
-Types.isJSON("null") // -> true
-
-Types.isJSON({ prop: 'JSON' }) // -> false
-Types.isJSON("{\"prop\":\"JSON\"}") // -> true
-
-// Array
-Types.isJSON([1, 2, 3]) // -> false
-Types.isJSON("[1, 2, 3]") // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isHTML">isHTML(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isHTML(val) 方法用来检测测试数据是否为合法的 HTML 代码。</p><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">0.5.0</dd></dl><dl class="section__dl"><dt class="section__dt">Category：</dt><dd class="section__dd">Lang</dd></dl><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">String</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据为合法的 HTML 代码，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/types'
+Types.isGuid('') // -> false
+Types.isGuid('xxxA987FBC9-4BED-3078-CF07-9141BA07C9F3') // -> false
+Types.isGuid('934859') // -> false
+Types.isGuid('A987FBC94BED3078CF079141BA07C9F') // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isHTML">isHTML(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isHTML(val) 方法用来检测测试数据是否为合法的 HTML 代码。</p><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">0.5.0</dd></dl><dl class="section__dl"><dt class="section__dt">Category：</dt><dd class="section__dd">Lang</dd></dl><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">String</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据为合法的 HTML 代码，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/types'
 // 或者单独引用 isHTML() 方法
 // import isHTML from '@yaohaixiao/types.js/isHTML'
 
@@ -1386,7 +1368,33 @@ Types.isHTML('&lt;attribute&gt;address&lt;/attribute&gt;') // -&gt; false
 Types.isHTML('&lt;address&gt;Wuhan City&lt;/address&gt;') // -&gt; false
 Types.isHTML('&lt;age&gt;20&lt;/age&gt;') // -&gt; false
 Types.isHTML('&lt;gender&gt;mail&lt;/gender&gt;') // -&gt; false
-Types.isHTML('&lt;career&gt;programmer&lt;/career&gt;') // -&gt; false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isSVG">isSVG(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isSVG(val) 方法用来检测测试数据是否为合法的 SVG 代码。</p><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">1.11.0</dd></dl><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">String</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据为合法的 SVG 代码，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/types'
+Types.isHTML('&lt;career&gt;programmer&lt;/career&gt;') // -&gt; false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isJSON">isJSON(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isJSON(val) 方法用来检测测试数据是否为合法的 JSON 格式。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">String</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是合法的 JSON 格式，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/types'
+// 或者单独引用 isJSON() 方法
+// import isJSON from '@yaohaixiao/types.js/isJSON'
+
+// String
+Types.isJSON('') // -> false
+Types.isJSON("") // -> false
+Types.isJSON("json") // -> true
+
+// Number
+Types.isJSON(3) // -> false
+Types.isJSON("3") // -> true
+
+// Boolean
+Types.isJSON(false) // -> false
+Types.isJSON("false") // -> true
+
+// Object
+Types.isJSON(null) // -> false
+Types.isJSON("null") // -> true
+
+Types.isJSON({ prop: 'JSON' }) // -> false
+Types.isJSON("{\"prop\":\"JSON\"}") // -> true
+
+// Array
+Types.isJSON([1, 2, 3]) // -> false
+Types.isJSON("[1, 2, 3]") // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isSVG">isSVG(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isSVG(val) 方法用来检测测试数据是否为合法的 SVG 代码。</p><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">1.11.0</dd></dl><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">String</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据为合法的 SVG 代码，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/types'
 // 或者单独引用 isHTML() 方法
 // import isSVG from '@yaohaixiao/types.js/isSVG'
 
@@ -1412,5 +1420,18 @@ const svg = '&lt;svg xmlns="http://www.w3.org/2000/svg" width="200" height="200"
             '&lt;/svg>'
 expect(is(svg)).toBe('svg')
 // 仅包含 SVG 标签：
-expect(isSVG(svg)).toBe(true)</code></pre></div></section></section></article><div class="main__footer" id="footer"><p>Copyright &copy; 2023 <a href="https://github.com/yaohaixiao">Robert Yao</a>, all right reserved.</p><p>Code licensed under&nbsp;<a href="http://opensource.org/licenses/mit-license.html">MIT License</a></p><p>Documentation licensed under&nbsp;<a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a></p><p><a href="https://github.com/yaohaixiao/types.js">View on GitHub</a> ·
+expect(isSVG(svg)).toBe(true)</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isUUID">isUUID(str)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isUUID(str) 方法用来检测测试数据是否为合法的 UUID 字符串。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">str</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">String</dd></dl><p>（必须）str 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据(数值)为合法的 UUID 字符串，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/types'
+// 或者单独引用 isUUID() 方法
+// import isUUID from '@yaohaixiao/types.js/isUUID'
+
+Types.isUUID('749d0000-0194-1005-2e05-08d61613bf2f') // -> true
+Types.isUUID('d3aa88e2-c754-41e0-8ba6-4198a34aa0a2') // -> true
+Types.isUUID('00000000-0000-0000-0000-000000000000') // -> true
+Types.isUUID('{0e40c5ab-1d9b-ee11-983e-e0be0335d021}') // -> true
+Types.isUUID('08dbe0f11c8641cf8afe6b2824e8f8f5') // -> true
+
+Types.isOdd('') // -> false
+Types.isOdd('xxxA987FBC9-4BED-3078-CF07-9141BA07C9F3') // -> false
+Types.isOdd('934859') // -> false
+Types.isOdd('A987FBC94BED3078CF079141BA07C9F') // -> false</code></pre></div></section></section></article><div class="main__footer" id="footer"><p>Copyright &copy; 2023 <a href="https://github.com/yaohaixiao">Robert Yao</a>, all right reserved.</p><p>Code licensed under&nbsp;<a href="http://opensource.org/licenses/mit-license.html">MIT License</a></p><p>Documentation licensed under&nbsp;<a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a></p><p><a href="https://github.com/yaohaixiao/types.js">View on GitHub</a> ·
 <a href="https://github.com/yaohaixiao/types.js/issues">Issues</a></p></div></main></div><script src="js/types.min.js"></script><script src="js/docs.min.js"></script></body></html>

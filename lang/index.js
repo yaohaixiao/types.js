@@ -35,7 +35,7 @@ import isEmail from '../isEmail'
 import isURL from '../isURL'
 import isSVG from '../isHTML'
 import isHTML from '../isSVG'
-import isGuid from '../isGuid'
+import isUUID from '../isUUID'
 import isIPAddress from '../isIPAddress'
 import isPhoneNumber from '../isPhoneNumber'
 // _getTypes
@@ -71,7 +71,8 @@ const METHODS = {
   isURL,
   isHTML,
   isSVG,
-  isGuid,
+  isGuid: isUUID,
+  isUUID,
   isIPAddress,
   isPhoneNumber
 }

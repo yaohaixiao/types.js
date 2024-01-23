@@ -3,7 +3,7 @@ import isBase64 from './isBase64'
 import isChinese from './isChinese'
 import isEmail from './isEmail'
 import isEmpty from './isEmpty'
-import isGuid from './isGuid'
+import isUUID from './isUUID'
 import isIPAddress from './isIPAddress'
 import isHex from './isHex'
 import isHTML from './isHTML'
@@ -26,7 +26,7 @@ const _getExactTypeOfString = (val) => {
     name = 'empty'
   } else if (isBlank(val)) {
     name = 'blank'
-  } else if (isGuid(val)) {
+  } else if (isUUID(val)) {
     name = 'guid'
   } else if (isBase64(val)) {
     name = 'base64'

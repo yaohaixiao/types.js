@@ -1,0 +1,28 @@
+section.section
+  header.section__header
+    h3#method-isAlpha.section__h3 isAlpha(str)
+  div.section__content
+    h4.section__h4 Description
+    p isAlpha(str) 方法用来检测测试数据是否仅包含英文字符。
+    h4.section__h4 Parameters
+    h5.section__h4 str
+    dl.section__dl
+      dt.section__dt Type：
+      dd.section__dd String
+    p （必须）str 待检测的数据。
+    h4.section__h4 Returns
+    dl.section__dl
+      dt.section__dt Type：
+      dd.section__dd Boolean。
+    p true - 表示检测数据仅包含英文字符，false 则表示不是。
+    pre.section__pre
+      code.section__code.
+        import Types from '@yaohaixiao/types.js/types'
+        // 或者单独引用 isAlpha() 方法
+        // import isAlpha from '@yaohaixiao/types.js/isAlpha'
+
+        Types.isAlpha('aaa') // -> true
+        Types.isAlpha('good') // -> true
+
+        Types.isAlpha('ok!') // -> false
+        Types.isAlpha('is alpha') // -> false

@@ -1,6 +1,6 @@
 {
   "name": "@yaohaixiao/types.js",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "description": "types.js - 专注于检测 JavaScript 数据类型的工具库。",
   "main": "types.min.js",
   "scripts": {
@@ -42,7 +42,7 @@
     "@rollup/plugin-commonjs": "^25.0.2",
     "@rollup/plugin-node-resolve": "^15.1.0",
     "@rollup/plugin-terser": "^0.4.3",
-    "@yaohaixiao/outline.js": "^3.30.0",
+    "@yaohaixiao/outline.js": "^3.30.4",
     "babel-jest": "^29.5.0",
     "buffer": "^6.0.3",
     "commitlint": "^17.4.4",

@@ -115,7 +115,7 @@ Types('2.0.0 开始也支持这样调用').isHTML() // -> false
 // isEmail
 // isURL
 // isHTML
-// isGuid
+// isUUID
 // isIPAddress
 // isPhoneNumber
 import Types from '@yaohaixiao/types.js/lang'
@@ -173,7 +173,7 @@ import Types from '@yaohaixiao/types.js/object'
 // isEmail,
 // isEmpty,
 // isChinese,
-// isGuid,
+// isUUID,
 // isHex,
 // isPhoneNumber,
 // isTime,

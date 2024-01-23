@@ -1,0 +1,33 @@
+section.section
+  header.section__header
+    h3#method-isUUID.section__h3 isUUID(str)
+  div.section__content
+    h4.section__h4 Description
+    p isUUID(str) 方法用来检测测试数据是否为合法的 UUID 字符串。
+    h4.section__h4 Parameters
+    h5.section__h4 str
+    dl.section__dl
+      dt.section__dt Type：
+      dd.section__dd String
+    p （必须）str 待检测的数据。
+    h4.section__h4 Returns
+    dl.section__dl
+      dt.section__dt Type：
+      dd.section__dd Boolean。
+    p true - 表示检测数据(数值)为合法的 UUID 字符串，false 则表示不是。
+    pre.section__pre
+      code.section__code.
+        import Types from '@yaohaixiao/types.js/types'
+        // 或者单独引用 isUUID() 方法
+        // import isUUID from '@yaohaixiao/types.js/isUUID'
+
+        Types.isUUID('749d0000-0194-1005-2e05-08d61613bf2f') // -> true
+        Types.isUUID('d3aa88e2-c754-41e0-8ba6-4198a34aa0a2') // -> true
+        Types.isUUID('00000000-0000-0000-0000-000000000000') // -> true
+        Types.isUUID('{0e40c5ab-1d9b-ee11-983e-e0be0335d021}') // -> true
+        Types.isUUID('08dbe0f11c8641cf8afe6b2824e8f8f5') // -> true
+
+        Types.isOdd('') // -> false
+        Types.isOdd('xxxA987FBC9-4BED-3078-CF07-9141BA07C9F3') // -> false
+        Types.isOdd('934859') // -> false
+        Types.isOdd('A987FBC94BED3078CF079141BA07C9F') // -> false

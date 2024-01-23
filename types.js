@@ -1,4 +1,5 @@
 import is from './is'
+import isAlpha from './isAlpha'
 import isArray from './isArray'
 import isArrayLike from './isArrayLike'
 import isArrayLikeObject from './isArrayLikeObject'
@@ -35,7 +36,6 @@ import isEven from './isEven'
 import isFloat from './isFloat'
 import isFragment from './isFragment'
 import isFunction from './isFunction'
-import isGuid from './isGuid'
 import isHash from './isHash'
 import isHex from './isHex'
 import isHTML from './isHTML'
@@ -56,6 +56,7 @@ import isOdd from './isOdd'
 import isChinese from './isChinese'
 import isPhoneNumber from './isPhoneNumber'
 import isPlainObject from './isPlainObject'
+import isPrime from './isPrime'
 import isPromise from './isPromise'
 import isPrototype from './isPrototype'
 import isRegExp from './isRegExp'
@@ -68,6 +69,7 @@ import isTime from './isTime'
 import isTypedArray from './isTypedArray'
 import isUndefined from './isUndefined'
 import isURL from './isURL'
+import isUUID from './isUUID'
 import isValue from './isValue'
 import isVNode from './isVNode'
 import isWeakMap from './isWeakMap'
@@ -78,6 +80,7 @@ import _getTypes from './_getTypes'
 
 const METHODS = {
   is,
+  isAlpha,
   isArray,
   isArrayLike,
   isArrayLikeObject,
@@ -114,7 +117,7 @@ const METHODS = {
   isFloat,
   isFragment,
   isFunction,
-  isGuid,
+  isGuid: isUUID,
   isHash,
   isHex,
   isHTMLCollection,
@@ -134,6 +137,7 @@ const METHODS = {
   isChinese,
   isPhoneNumber,
   isPlainObject,
+  isPrime,
   isPromise,
   isPrototype,
   isRegExp,
@@ -146,6 +150,7 @@ const METHODS = {
   isTypedArray,
   isUndefined,
   isURL,
+  isUUID,
   isValue,
   isVNode,
   isWeakMap,
