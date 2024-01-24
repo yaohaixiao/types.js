@@ -1,7 +1,7 @@
 // Base
 import is from '../is'
 import isValue from '../isValue'
-// Primitive Values
+// Primitive
 import isNumber from '../isNumber'
 import isString from '../isString'
 import isBigInt from '../isBigInt'
@@ -9,7 +9,7 @@ import isBoolean from '../isBoolean'
 import isUndefined from '../isUndefined'
 import isNull from '../isNull'
 import isSymbol from '../isSymbol'
-// Keyed Collections
+// Collections
 import isSet from '../isSet'
 import isMap from '../isMap'
 // Array

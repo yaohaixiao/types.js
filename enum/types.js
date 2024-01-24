@@ -8,7 +8,7 @@ const TYPES = {
   UNDEFINED: 'undefined',
   STRING: 'string',
   SYMBOL: 'symbol',
-  /* ===== Keyed Collections ===== */
+  /* ===== Collections ===== */
   SET: 'set',
   WEAK_SET: 'weakset',
   MAP: 'map',
@@ -16,7 +16,7 @@ const TYPES = {
   /* ===== Array ===== */
   ARRAY: 'array',
   ARGUMENTS: 'arguments',
-  /* ===== Typed Arrays ===== */
+  /* ===== Typed ===== */
   DATA_VIEW: 'dataview',
   ARRAY_BUFFER: 'arraybuffer',
   INT8_ARRAY: 'int8array',

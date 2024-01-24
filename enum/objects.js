@@ -4,7 +4,7 @@ import TYPES from './types'
 const OBJECTS = {
   /* ===== Primitive data types ===== */
   '[object Null]': TYPES.NULL,
-  /* ===== Keyed Collections ===== */
+  /* ===== Collections ===== */
   '[object Set]': TYPES.SET,
   '[object WeakSet]': TYPES.WEAK_SET,
   '[object Map]': TYPES.MAP,
@@ -12,7 +12,7 @@ const OBJECTS = {
   /* ===== Array ===== */
   '[object Array]': TYPES.ARRAY,
   '[object Arguments]': TYPES.ARGUMENTS,
-  /* ===== Typed Arrays ===== */
+  /* ===== Typed ===== */
   '[object DataView]': TYPES.DATA_VIEW,
   '[object ArrayBuffer]': TYPES.ARRAY_BUFFER,
   '[object Int8Array]': TYPES.INT8_ARRAY,
