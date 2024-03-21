@@ -1,3 +1,12 @@
+# [2.2.0](https://github.com/yaohaixiao/types.js/compare/2.1.0...2.2.0) (2024-03-21)
+
+
+### Features
+
+* 将 object 分类中关于 DOM 检测的方法提取到 DOM 分类 ([8866c95](https://github.com/yaohaixiao/types.js/commit/8866c951ed90a054c1ac1164e33b099c3a07652b))
+
+
+
 # [2.1.0](https://github.com/yaohaixiao/types.js/compare/2.0.1...2.1.0) (2024-01-23)
 
 
