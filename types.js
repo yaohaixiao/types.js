@@ -75,6 +75,7 @@ import isVNode from './isVNode'
 import isWeakMap from './isWeakMap'
 import isWeakSet from './isWeakSet'
 import isXML from './isXML'
+
 // _getTypes
 import _getTypes from './_getTypes'
 

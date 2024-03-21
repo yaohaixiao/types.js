@@ -21,6 +21,6 @@ defaults.chapterTextFilter = (text) => {
   return text.replace(/\(.*?\)/, '()')
 }
 
-outline = new Outline(Outline.DEFAULTS)
+outline = new Outline(defaults)
 
 export default outline

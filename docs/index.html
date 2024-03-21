@@ -592,49 +592,7 @@ const time = new Date()
 
 Types.isDate(time) // -> true
 Types.isDate('2017-07-06') // -> false
-Types.isDate(time.getFullYear()) // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isDOM">isDOM(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isDOM(val) 方法用来检测测试数据是否为 DOM 类型数据：DOM 节点，TextNode，NodeList 和 DocumentFragment）。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 DOM 类型数据，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/types'
-// 或者单独引用 isTextNode() 方法
-// import isDOM from '@yaohaixiao/types.js/isDOM'
-
-const $list = document.getElementById('list')
-const $fragment = document.createDocumentFragment()
-const $items = document.querySelectorAll('.item')
-const $text = document.createTextNode('text')
-
-Types.is($list) // -> 'element'
-Types.isDOM($list) // -> true
-
-Types.is($fragment) // -> 'fragment'
-Types.isDOM($fragment) // -> true
-
-Types.is($items) // -> 'collection'
-Types.isElement($items) // -> true
-
-Types.is($text) // -> 'text'
-Types.isTextNode($text) // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isElement">isElement(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isElement(val) 方法用来检测测试数据是否为 HTMLElement (元素节点)类型。</p><dl class="section__dl"><dt class="section__dt">Category：</dt><dd class="section__dd">Lang</dd></dl><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 HTMLElement (元素节点)类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/types'
-// 或者单独引用 isElement() 方法
-// import isElement from '@yaohaixiao/types.js/isElement'
-
-const $list = document.getElementById('list')
-const $div = document.createElement('div')
-const $text = document.createTextNode('text')
-const $items = document.querySelectorAll('.item')
-const $fragment = document.createDocumentFragment()
-
-Types.is($list) // -> 'element'
-Types.isElement($list) // -> true
-
-Types.is($div) // -> 'element'
-Types.isElement($div) // -> true
-
-Types.is($text) // -> 'text'
-Types.isElement($text) // -> false
-
-Types.is($items) // -> 'collection'
-Types.isElement($items) // -> false
-
-Types.is($fragment) // -> 'collection'
-Types.isElement($fragment) // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isEmptyObject">isEmptyObject(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isEmptyObject(val) 方法用来检测测试数据是否为空（单体）对象。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据为空（单体）对象，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/types'
+Types.isDate(time.getFullYear()) // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isEmptyObject">isEmptyObject(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isEmptyObject(val) 方法用来检测测试数据是否为空（单体）对象。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据为空（单体）对象，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/types'
 // 或者单独引用 isEmptyObject() 方法
 // import isEmptyObject from '@yaohaixiao/types.js/isEmptyObject'
 
@@ -664,35 +622,7 @@ Types.isEmptyObject(new Person('yaohaixiao',30)) // false</code></pre></div></se
 const error = function Error(){}
 
 Types.isError(new error()) // -> false
-Types.isError(new Error()) // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isElement">isFragment(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isFragment(val) 方法用来检测测试数据是否为 DocumentFragment 文档碎片。</p><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">0.6.0</dd></dl><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 DocumentFragment 文档碎片，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/types'
-// 或者单独引用 isFragment() 方法
-// import isFragment from '@yaohaixiao/types.js/isFragment'
-
-const $list = document.getElementById('list')
-const $div = document.createElement('div')
-const $text = document.createTextNode('text')
-const $items = document.querySelectorAll('.item')
-const $fragment = document.createDocumentFragment()
-
-Types.is($list) // -> 'element'
-Types.isElement($list) // -> true
-Types.isFragment($list) // -> false
-
-Types.is($div) // -> 'element'
-Types.isElement($div) // -> true
-Types.isFragment($div) // -> false
-
-Types.is($text) // -> 'text'
-Types.isElement($text) // -> false
-Types.isFragment($text) // -> false
-
-Types.is($items) // -> 'collection'
-Types.isElement($items) // -> false
-Types.isFragment($items) // -> false
-
-Types.is($fragment) // -> 'fragment'
-Types.isElement($fragment) // -> false
-Types.isFragment($items) // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isHash">isHash(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isHash(val) 方法（isPlainObject()方法的别名）用来检测测试数据是否为普通对象。</p><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">0.4.0</dd></dl><dl class="section__dl"><dt class="section__dt">Category：</dt><dd class="section__dd">Lang</dd></dl><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是普通对象，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/types'
+Types.isError(new Error()) // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isHash">isHash(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isHash(val) 方法（isPlainObject()方法的别名）用来检测测试数据是否为普通对象。</p><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">0.4.0</dd></dl><dl class="section__dl"><dt class="section__dt">Category：</dt><dd class="section__dd">Lang</dd></dl><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是普通对象，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/types'
 // 或者单独引用 isHash() 方法
 // import isHash from '@yaohaixiao/types.js/isHash'
 
@@ -721,35 +651,7 @@ Types.isHash(new String()) // -> true
 Types.isHash(new Number()) // -> true
 Types.isHash(new Boolean()) // -> true
 Types.isHash(new Array()) // -> true
-Types.isHash(new Date()) // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isHTMLCollection">isHTMLCollection(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isHTMLCollection(val) 方法用来检测测试数据是否为 HTMLNodeList (元素集合)类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 HTMLNodeList (元素集合)类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/types'
-// 或者单独引用 isHTMLCollection() 方法
-// import isHTMLCollection from '@yaohaixiao/types.js/isHTMLCollection'
-
-const $list = document.getElementById('list')
-const $div = document.createElement('div')
-const $text = document.createTextNode('text')
-const $items = document.querySelectorAll('.item')
-const $fragment = document.createDocumentFragment()
-
-Types.is($list) // -> 'element'
-Types.isElement($list) // -> true
-Types.isHTMLCollection($list) // -> false
-
-Types.is($div) // -> 'element'
-Types.isElement($div) // -> true
-Types.isHTMLCollection($div) // -> false
-
-Types.is($text) // -> 'text'
-Types.isElement($text) // -> false
-Types.isHTMLCollection($text) // -> false
-
-Types.is($items) // -> 'collection'
-Types.isElement($items) // -> false
-Types.isHTMLCollection($items) // -> true
-
-Types.is($fragment) // -> 'fragment'
-Types.isElement($fragment) // -> false
-Types.isHTMLCollection($items) // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isObject">isObject(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isObject(val) 方法用来检测测试数据是否为 Object 类型。</p><dl class="section__dl"><dt class="section__dt">Category：</dt><dd class="section__dd">Lang</dd></dl><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 Object 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/types'
+Types.isHash(new Date()) // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isObject">isObject(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isObject(val) 方法用来检测测试数据是否为 Object 类型。</p><dl class="section__dl"><dt class="section__dt">Category：</dt><dd class="section__dd">Lang</dd></dl><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 Object 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/types'
 // 或者单独引用 isObject() 方法
 // import isObject from '@yaohaixiao/types.js/isObject'
 
@@ -889,52 +791,7 @@ Types.is(patternTwo) // -> 'regexp'
 Types.isRegExp(patternTwo) // -> true
 
 Types.is(patternStr) // -> 'string'
-Types.isRegExp(patternStr) // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isTextNode">isTextNode(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isTextNode(val) 方法用来检测测试数据是否为 HTMLTextNode (文本节点)类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 HTMLTextNode (文本节点)类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/types'
-// 或者单独引用 isTextNode() 方法
-// import isTextNode from '@yaohaixiao/types.js/isTextNode'
-
-const $list = document.getElementById('list')
-const $div = document.createElement('div')
-const $fragment = document.createDocumentFragment()
-const $items = document.querySelectorAll('.item')
-const $text = document.createTextNode('text')
-
-Types.is($list) // -> 'element'
-Types.isElement($list) // -> true
-Types.isTextNode($list) // -> false
-
-Types.is($div) // -> 'element'
-Types.isElement($div) // -> true
-Types.isTextNode($div) // -> false
-
-Types.is($fragment) // -> 'fragment'
-Types.isFragment($fragment) // -> true
-Types.isTextNode($fragment) // -> false
-
-Types.is($items) // -> 'collection'
-Types.isHTMLCollection($items) // -> true
-Types.isTextNode($items) // -> false
-
-Types.is($text) // -> 'collection'
-Types.isElement($text) // -> false
-Types.isTextNode($text) // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isVNode">isVNode(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isVNode(val) 方法用来检测测试数据是否为 VNode (VUE虚拟节点)类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 VNode (VUE虚拟节点)类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">&lt;template&gt;
-   &lt;dev-header ref="header"&gt;&lt;/dev-header&gt;
-&lt;/template&gt;
-
-&lt;script&gt;
-import Types from '@yaohaixiao/types.js/types'
-// 或者单独引用 isVNode() 方法
-// import isVNode from '@yaohaixiao/types.js/isVNode'
-
-export default {
-  name: 'PageHeader',
-  mounted() {
-    const $header = this.$refs.header
-
-    Types.isVNode($header) // -> true
-  }
-}
-&lt;/script&gt;</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isXML">isXML(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isXML(val) 方法用来检测测试数据是否为合法的 XML 格式。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是合法的 XML 格式，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/types'
+Types.isRegExp(patternStr) // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isXML">isXML(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isXML(val) 方法用来检测测试数据是否为合法的 XML 格式。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是合法的 XML 格式，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/types'
 // 或者单独引用 isXML() 方法
 // import isXML from '@yaohaixiao/types.js/isXML'
 
@@ -1433,5 +1290,148 @@ Types.isUUID('08dbe0f11c8641cf8afe6b2824e8f8f5') // -> true
 Types.isOdd('') // -> false
 Types.isOdd('xxxA987FBC9-4BED-3078-CF07-9141BA07C9F3') // -> false
 Types.isOdd('934859') // -> false
-Types.isOdd('A987FBC94BED3078CF079141BA07C9F') // -> false</code></pre></div></section></section></article><div class="main__footer" id="footer"><p>Copyright &copy; 2023 <a href="https://github.com/yaohaixiao">Robert Yao</a>, all right reserved.</p><p>Code licensed under&nbsp;<a href="http://opensource.org/licenses/mit-license.html">MIT License</a></p><p>Documentation licensed under&nbsp;<a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a></p><p><a href="https://github.com/yaohaixiao/types.js">View on GitHub</a> ·
+Types.isOdd('A987FBC94BED3078CF079141BA07C9F') // -> false</code></pre></div></section></section><section class="section"><header class="section__header"><h2 class="section__title">DOM</h2></header><div class="section__content"><p>types.js 提供以下方法来检测 DOM 相关的数据类型。</p></div><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isDOM">isDOM(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isDOM(val) 方法用来检测测试数据是否为 DOM 类型数据：DOM 节点，TextNode，NodeList 和 DocumentFragment）。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 DOM 类型数据，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/types'
+// 或者单独引用 isTextNode() 方法
+// import isDOM from '@yaohaixiao/types.js/isDOM'
+
+const $list = document.getElementById('list')
+const $fragment = document.createDocumentFragment()
+const $items = document.querySelectorAll('.item')
+const $text = document.createTextNode('text')
+
+Types.is($list) // -> 'element'
+Types.isDOM($list) // -> true
+
+Types.is($fragment) // -> 'fragment'
+Types.isDOM($fragment) // -> true
+
+Types.is($items) // -> 'collection'
+Types.isElement($items) // -> true
+
+Types.is($text) // -> 'text'
+Types.isTextNode($text) // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isElement">isElement(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isElement(val) 方法用来检测测试数据是否为 HTMLElement (元素节点)类型。</p><dl class="section__dl"><dt class="section__dt">Category：</dt><dd class="section__dd">Lang</dd></dl><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 HTMLElement (元素节点)类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/types'
+// 或者单独引用 isElement() 方法
+// import isElement from '@yaohaixiao/types.js/isElement'
+
+const $list = document.getElementById('list')
+const $div = document.createElement('div')
+const $text = document.createTextNode('text')
+const $items = document.querySelectorAll('.item')
+const $fragment = document.createDocumentFragment()
+
+Types.is($list) // -> 'element'
+Types.isElement($list) // -> true
+
+Types.is($div) // -> 'element'
+Types.isElement($div) // -> true
+
+Types.is($text) // -> 'text'
+Types.isElement($text) // -> false
+
+Types.is($items) // -> 'collection'
+Types.isElement($items) // -> false
+
+Types.is($fragment) // -> 'collection'
+Types.isElement($fragment) // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isElement">isFragment(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isFragment(val) 方法用来检测测试数据是否为 DocumentFragment 文档碎片。</p><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">0.6.0</dd></dl><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 DocumentFragment 文档碎片，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/types'
+// 或者单独引用 isFragment() 方法
+// import isFragment from '@yaohaixiao/types.js/isFragment'
+
+const $list = document.getElementById('list')
+const $div = document.createElement('div')
+const $text = document.createTextNode('text')
+const $items = document.querySelectorAll('.item')
+const $fragment = document.createDocumentFragment()
+
+Types.is($list) // -> 'element'
+Types.isElement($list) // -> true
+Types.isFragment($list) // -> false
+
+Types.is($div) // -> 'element'
+Types.isElement($div) // -> true
+Types.isFragment($div) // -> false
+
+Types.is($text) // -> 'text'
+Types.isElement($text) // -> false
+Types.isFragment($text) // -> false
+
+Types.is($items) // -> 'collection'
+Types.isElement($items) // -> false
+Types.isFragment($items) // -> false
+
+Types.is($fragment) // -> 'fragment'
+Types.isElement($fragment) // -> false
+Types.isFragment($items) // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isHTMLCollection">isHTMLCollection(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isHTMLCollection(val) 方法用来检测测试数据是否为 HTMLNodeList (元素集合)类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 HTMLNodeList (元素集合)类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/types'
+// 或者单独引用 isHTMLCollection() 方法
+// import isHTMLCollection from '@yaohaixiao/types.js/isHTMLCollection'
+
+const $list = document.getElementById('list')
+const $div = document.createElement('div')
+const $text = document.createTextNode('text')
+const $items = document.querySelectorAll('.item')
+const $fragment = document.createDocumentFragment()
+
+Types.is($list) // -> 'element'
+Types.isElement($list) // -> true
+Types.isHTMLCollection($list) // -> false
+
+Types.is($div) // -> 'element'
+Types.isElement($div) // -> true
+Types.isHTMLCollection($div) // -> false
+
+Types.is($text) // -> 'text'
+Types.isElement($text) // -> false
+Types.isHTMLCollection($text) // -> false
+
+Types.is($items) // -> 'collection'
+Types.isElement($items) // -> false
+Types.isHTMLCollection($items) // -> true
+
+Types.is($fragment) // -> 'fragment'
+Types.isElement($fragment) // -> false
+Types.isHTMLCollection($items) // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isTextNode">isTextNode(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isTextNode(val) 方法用来检测测试数据是否为 HTMLTextNode (文本节点)类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 HTMLTextNode (文本节点)类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js/types'
+// 或者单独引用 isTextNode() 方法
+// import isTextNode from '@yaohaixiao/types.js/isTextNode'
+
+const $list = document.getElementById('list')
+const $div = document.createElement('div')
+const $fragment = document.createDocumentFragment()
+const $items = document.querySelectorAll('.item')
+const $text = document.createTextNode('text')
+
+Types.is($list) // -> 'element'
+Types.isElement($list) // -> true
+Types.isTextNode($list) // -> false
+
+Types.is($div) // -> 'element'
+Types.isElement($div) // -> true
+Types.isTextNode($div) // -> false
+
+Types.is($fragment) // -> 'fragment'
+Types.isFragment($fragment) // -> true
+Types.isTextNode($fragment) // -> false
+
+Types.is($items) // -> 'collection'
+Types.isHTMLCollection($items) // -> true
+Types.isTextNode($items) // -> false
+
+Types.is($text) // -> 'collection'
+Types.isElement($text) // -> false
+Types.isTextNode($text) // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isVNode">isVNode(val)</h3></header><div class="section__content"><h4 class="section__h4">Description</h4><p>isVNode(val) 方法用来检测测试数据是否为 VNode (VUE虚拟节点)类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 VNode (VUE虚拟节点)类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">&lt;template&gt;
+   &lt;dev-header ref="header"&gt;&lt;/dev-header&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+import Types from '@yaohaixiao/types.js/types'
+// 或者单独引用 isVNode() 方法
+// import isVNode from '@yaohaixiao/types.js/isVNode'
+
+export default {
+  name: 'PageHeader',
+  mounted() {
+    const $header = this.$refs.header
+
+    Types.isVNode($header) // -> true
+  }
+}
+&lt;/script&gt;</code></pre></div></section></section></article><div class="main__footer" id="footer"><p>Copyright &copy; 2023 <a href="https://github.com/yaohaixiao">Robert Yao</a>, all right reserved.</p><p>Code licensed under&nbsp;<a href="http://opensource.org/licenses/mit-license.html">MIT License</a></p><p>Documentation licensed under&nbsp;<a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a></p><p><a href="https://github.com/yaohaixiao/types.js">View on GitHub</a> ·
 <a href="https://github.com/yaohaixiao/types.js/issues">Issues</a></p></div></main></div><script src="js/types.min.js"></script><script src="js/docs.min.js"></script></body></html>

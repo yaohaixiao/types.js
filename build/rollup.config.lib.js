@@ -53,6 +53,26 @@ export default [
     plugins: PLUGIN_CONFIG
   },
   {
+    input: 'string/index.js',
+    output: {
+      name: 'Types',
+      file: './types.string.min.js',
+      format: 'umd',
+      sourcemap: true
+    },
+    plugins: PLUGIN_CONFIG
+  },
+  {
+    input: 'dom/index.js',
+    output: {
+      name: 'Types',
+      file: './types.dom.min.js',
+      format: 'umd',
+      sourcemap: true
+    },
+    plugins: PLUGIN_CONFIG
+  },
+  {
     input: 'types.js',
     output: {
       name: 'Types',

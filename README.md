@@ -58,6 +58,8 @@ npm i -S @yaohaixiao/types.js --registry=https://npm.pkg.github.com
 <script src="/path/to/types.core.min.js"></script>
 <script src="/path/to/types.number.min.js"></script>
 <script src="/path/to/types.object.min.js"></script>
+<script src="/path/to/types.string.min.js"></script>
+<script src="/path/to/types.dom.min.js"></script>
 ```
 
 ### Node.js 中调用
