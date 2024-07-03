@@ -13,70 +13,10 @@ const PLUGIN_CONFIG = [
 export default [
   // For full functions module
   {
-    input: 'types.js',
+    input: 'index.js',
     output: {
       name: 'Types',
       file: './types.min.js',
-      format: 'umd',
-      sourcemap: true
-    },
-    plugins: PLUGIN_CONFIG
-  },
-  {
-    input: 'lang/index.js',
-    output: {
-      name: 'Types',
-      file: './types.core.min.js',
-      format: 'umd',
-      sourcemap: true
-    },
-    plugins: PLUGIN_CONFIG
-  },
-  {
-    input: 'number/index.js',
-    output: {
-      name: 'Types',
-      file: './types.number.min.js',
-      format: 'umd',
-      sourcemap: true
-    },
-    plugins: PLUGIN_CONFIG
-  },
-  {
-    input: 'object/index.js',
-    output: {
-      name: 'Types',
-      file: './types.object.min.js',
-      format: 'umd',
-      sourcemap: true
-    },
-    plugins: PLUGIN_CONFIG
-  },
-  {
-    input: 'string/index.js',
-    output: {
-      name: 'Types',
-      file: './types.string.min.js',
-      format: 'umd',
-      sourcemap: true
-    },
-    plugins: PLUGIN_CONFIG
-  },
-  {
-    input: 'dom/index.js',
-    output: {
-      name: 'Types',
-      file: './types.dom.min.js',
-      format: 'umd',
-      sourcemap: true
-    },
-    plugins: PLUGIN_CONFIG
-  },
-  {
-    input: 'types.js',
-    output: {
-      name: 'Types',
-      file: './docs/js/types.min.js',
       format: 'umd',
       sourcemap: true
     },

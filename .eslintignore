@@ -1,3 +1,4 @@
-/config/
-/docs/
-/*.min.js
+/report
+/docs
+/dist
+*.min.js

@@ -1,8 +1,8 @@
 {
   "name": "@yaohaixiao/types.js",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "description": "types.js - 专注于检测 JavaScript 数据类型的工具库。",
-  "main": "types.min.js",
+  "main": "index.js",
   "scripts": {
     "start": "gulp start",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
@@ -73,8 +73,7 @@
     "lint-staged": "^13.1.2",
     "os": "^0.1.2",
     "prettier": "^2.8.4",
-    "rollup": "^3.25.2",
-    "xmldom": "^0.6.0"
+    "rollup": "^3.25.2"
   },
   "gitHooks": {
     "pre-commit": "lint-staged",

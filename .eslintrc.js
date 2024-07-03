@@ -9,19 +9,19 @@ module.exports = {
   // 环境定义了预定义的全局变量。
   env: {
     //环境定义了预定义的全局变量。更多在官网查看
-    browser: true,
-    node: true,
-    commonjs: true,
     amd: true,
+    browser: true,
+    commonjs: true,
     es6: true,
-    jest: true
+    jest: true,
+    node: true
   },
-  extends: ['prettier', 'eslint:recommended', 'plugin:import/errors'],
-  plugins: ['import'],
   globals: {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly'
   },
+  extends: ['prettier', 'eslint:recommended', 'plugin:import/errors'],
+  plugins: ['prettier', 'import'],
   // JavaScript 语言选项
   parserOptions: {
     // ECMAScript 版本

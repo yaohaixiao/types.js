@@ -2,7 +2,7 @@
  * jest.config.js - jest 配置
  * =============================================================
  * Created By: Yaohaixiao
- * Update: 2023.6.27
+ * Update: 2024.7.3
  */
 module.exports = {
   moduleFileExtensions: ['js'],

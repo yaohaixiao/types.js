@@ -9,10 +9,6 @@
 
 types.js 专注于检测 JavaScript 数据类型的工具库。
 
-## 项目初衷
-
-编写 types.js 主要是为初学 JavaScript 的朋友了解在 [JavaScript 如何进行数据类型检测](http://www.yaohaixiao.com/blog/data-types-detect-in-javascript/)。当然，types.js 也完全可以胜任在实际产品开发的应用。
-
 ## 特点
 
 - 原生 JavaScript 编写，无任何依赖；
@@ -27,11 +23,11 @@ types.js 专注于检测 JavaScript 数据类型的工具库。
 |--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | IE11, Edge                                                                                                                                                                                             | last 10 versions                                                                                                                                                                                         | last 10 versions                                                                                                                                                                                     | last 10 versions                                                                                                                                                                                     | last 10 versions                                                                                                                                                                                 |
 
-## 安装说明
+## Installation
 
 types.js 支持 UMD 规范和 ES6 的模块调用方式，既可以在 Node.js 环境中使用 npm 安装，也可以在浏览器中使用 script 标签引入到页面。
 
-### npm 安装
+### npm install
 
 ```sh
 # install from npmjs.com
@@ -41,25 +37,20 @@ npm i -S @yaohaixiao/types.js
 npm i -S @yaohaixiao/types.js --registry=https://npm.pkg.github.com
 ```
 
-### 浏览器中调用
+### In a browser
 
 在浏览器中调用 types.js，可以选择调用 jsdelivr 提供的 CDN 服务中的文件，也可以使用本地的 types.js 文件。
 
-#### CDN 调用 JS 文件
+#### CDN
 
 ```html
 <script src="https://cdn.jsdelivr.net/gh/yaohaixiao/types.js/types.min.js"></script>
 ```
 
-#### 本地调用 JS 文件
+#### Local file
 
 ```html
 <script src="/path/to/types.min.js"></script>
-<script src="/path/to/types.core.min.js"></script>
-<script src="/path/to/types.number.min.js"></script>
-<script src="/path/to/types.object.min.js"></script>
-<script src="/path/to/types.string.min.js"></script>
-<script src="/path/to/types.dom.min.js"></script>
 ```
 
 ### Node.js 中调用
@@ -74,127 +65,28 @@ Types.is([]) // -> array
 
 ```js
 // 调用 Types 对象
-import Types from '@yaohaixiao/types.js/types'
+import Types from '@yaohaixiao/types.js'
 
 Types.is([]) // -> array
 Types.isArray([]) // -> true
 
 // 2.0.0 开始也支持这样调用
 const types = Types([])
+
 types.is() // -> array
 types.isArray() // -> true
+
 // 或者直接
 Types('2.0.0 开始也支持这样调用').is() // -> string
 Types('2.0.0 开始也支持这样调用').isHTML() // -> false
+```
 
-// 如果不希望一次加载所有方法，可以考虑 lang 模块
-// 即 type.core.min.js 中的所有方法：
-// is,
-// isValue,
-// isObject,
-// isBuffer,
-// isHash,
-// isArray,
-// isArrayLike,
-// isFunction,
-// isConstructor,
-// isNull,
-// isNumber,
-// isNumeric,
-// isFloat,
-// isInteger,
-// isString（blank、float、infinite）,
-// isBigInt,
-// isBoolean,
-// isUndefined,
-// isSet,
-// isMap,
-// isSymbol,
-// isDate,
-// isElement,
-// isEmpty
-// isPromise
-// isEmail
-// isURL
-// isHTML
-// isUUID
-// isIPAddress
-// isPhoneNumber
-import Types from '@yaohaixiao/types.js/lang'
-
-// 针对 number 相关类型的模块
-// 即 type.number.min.js 中的所有方法：
-// is,
-// isValue,
-// isNumber,
-// isNumeric,
-// isInteger,
-// isFloat,
-// isOdd,
-// isEven,
-// isInfinite,
-// isLength
-import Types from '@yaohaixiao/types.js/number'
-
-// 针对 object 相关类型的模块
-// 即 type.object.min.js 中的所有方法：
-// is,
-// isValue,
-// isArray,
-// isArrayLike,
-// isArguments,
-// isObject,
-// isObjectLike,
-// isDOM,
-// isEmptyObject,
-// isHash,
-// isPlainObject,
-// isPrototype,
-// isFunction,
-// isConstructor,
-// isDate,
-// isDataView,
-// isError,
-// isRegExp,
-// isElement,
-// isHTMLCollection,
-// isFragment,
-// isPromise,
-// isTextNode,
-// isVNode,
-// isXML
-import Types from '@yaohaixiao/types.js/object'
-
-// 针对 string 相关类型的模块
-// 即 type.string.min.js 中的所有方法：
-// is,
-// isValue,
-// isString,
-// isBase64,
-// isBlank,
-// isEmail,
-// isEmpty,
-// isChinese,
-// isUUID,
-// isHex,
-// isPhoneNumber,
-// isTime,
-// isIPAddress,
-// isURL,
-// isJSON,
-// isHTML,
-// isSVG
-import Types from '@yaohaixiao/types.js/string'
-
-Types.is([]) // -> array
-Types.isArray([]) // -> true
-
+```js
 // 调用特定方法
 import isArray from '@yaohaixiao/types.js/isArray'
 
 isArray([]) // -> true
 ```
-
 
 ## [API Documentation](https://yaohaixiao.github.io/types.js/)
 
@@ -275,7 +167,7 @@ Type: `Boolean`
 #### Example
 
 ```js
-import Types from '@yaohaixiao/types.js/types'
+import Types from '@yaohaixiao/types.js'
 // 或者单独引用 is() 方法
 // import is from '@yaohaixiao/types.js/is'
 import { DOMParser } from 'xmldom'
@@ -391,7 +283,7 @@ Type: `Boolean`
 #### Example
 
 ```js
-import Types from '@yaohaixiao/types.js/types'
+import Types from '@yaohaixiao/types.js'
 // 或者单独引用 isValue() 方法
 // import isValue from '@yaohaixiao/types.js/isValue'
 
@@ -439,7 +331,7 @@ Type: `Boolean`
 #### Example
 
 ```js
-import Types from '@yaohaixiao/types.js/types'
+import Types from '@yaohaixiao/types.js'
 // 或者单独引用 isObject() 方法
 // import isObject from '@yaohaixiao/types.js/isObject'
 
@@ -489,7 +381,7 @@ Type: `Boolean`
 #### Example
 
 ```js
-import Types from '@yaohaixiao/types.js/types'
+import Types from '@yaohaixiao/types.js'
 // 或者单独引用 isFunction() 方法
 // import isFunction from '@yaohaixiao/types.js/isFunction'
 
@@ -537,7 +429,7 @@ Type: `Boolean`
 #### Example
 
 ```js
-import Types from '@yaohaixiao/types.js/types'
+import Types from '@yaohaixiao/types.js'
 // 或者单独引用 isArray() 方法
 // import isArray from '@yaohaixiao/types.js/isArray'
 
@@ -586,7 +478,7 @@ Type: `Boolean`
 #### Example
 
 ```js
-import Types from '@yaohaixiao/types.js/types'
+import Types from '@yaohaixiao/types.js'
 // 或者单独引用 isNumber() 方法
 // import isNumber from '@yaohaixiao/types.js/isNumber'
 
@@ -626,7 +518,7 @@ Type: `Boolean`
 #### Example
 
 ```js
-import Types from '@yaohaixiao/types.js/types'
+import Types from '@yaohaixiao/types.js'
 // 或者单独引用 isString() 方法
 // import isString from '@yaohaixiao/types.js/isString'
 
@@ -664,7 +556,7 @@ Type: `Boolean`
 #### Example
 
 ```js
-import Types from '@yaohaixiao/types.js/types'
+import Types from '@yaohaixiao/types.js'
 // 或者单独引用 isBoolean() 方法
 // import isBoolean from '@yaohaixiao/types.js/isBoolean'
 
@@ -709,7 +601,7 @@ Type: `Boolean`
 #### Example
 
 ```js
-import Types from '@yaohaixiao/types.js/types'
+import Types from '@yaohaixiao/types.js'
 // 或者单独引用 isNull() 方法
 // import isNull from '@yaohaixiao/types.js/isNull'
 
@@ -749,7 +641,7 @@ Type: `Boolean`
 #### Example
 
 ```js
-import Types from '@yaohaixiao/types.js/types'
+import Types from '@yaohaixiao/types.js'
 // 或者单独引用 isUndefined() 方法
 // import isUndefined from '@yaohaixiao/types.js/isUndefined'
 
@@ -788,7 +680,7 @@ Type: `Boolean`
 #### Example
 
 ```js
-import Types from '@yaohaixiao/types.js/types'
+import Types from '@yaohaixiao/types.js'
 // 或者单独引用 isSymbol() 方法
 // import isSymbol from '@yaohaixiao/types.js/isSymbol'
 
@@ -829,7 +721,7 @@ Type: `Boolean`
 #### Example
 
 ```js
-import Types from '@yaohaixiao/types.js/types'
+import Types from '@yaohaixiao/types.js'
 // 或者单独引用 isBigInt() 方法
 // import isBigInt from '@yaohaixiao/types.js/isBigInt'
 
@@ -865,7 +757,7 @@ Type: `Boolean`
 #### Example
 
 ```js
-import Types from '@yaohaixiao/types.js/types'
+import Types from '@yaohaixiao/types.js'
 // 或者单独引用 isMap() 方法
 // import isMap from '@yaohaixiao/types.js/isMap'
 
@@ -904,7 +796,7 @@ Type: `Boolean`
 #### Example
 
 ```js
-import Types from '@yaohaixiao/types.js/types'
+import Types from '@yaohaixiao/types.js'
 // 或者单独引用 isSet() 方法
 // import isSet from '@yaohaixiao/types.js/isSet'
 
@@ -941,7 +833,7 @@ Type: `Boolean`
 #### Example
 
 ```js
-import Types from '@yaohaixiao/types.js/types'
+import Types from '@yaohaixiao/types.js'
 // 或者单独引用 isWeakMap() 方法
 // import isWeakMap from '@yaohaixiao/types.js/isWeakMap'
 
@@ -984,7 +876,7 @@ Type: `Boolean`
 #### Example
 
 ```js
-import Types from '@yaohaixiao/types.js/types'
+import Types from '@yaohaixiao/types.js'
 // 或者单独引用 isWeakSet() 方法
 // import isWeakSet from '@yaohaixiao/types.js/isWeakSet'
 
@@ -1025,7 +917,7 @@ Type: `Boolean`
 #### Example
 
 ```js
-import Types from '@yaohaixiao/types.js/types'
+import Types from '@yaohaixiao/types.js'
 // 或者单独引用 isArguments() 方法
 // import isArguments from '@yaohaixiao/types.js/isArguments'
 
@@ -1073,7 +965,7 @@ Type: `Boolean`
 #### Example
 
 ```js
-import Types from '@yaohaixiao/types.js/types'
+import Types from '@yaohaixiao/types.js'
 // 或者单独引用 isArrayLike() 方法
 // import isArrayLike from '@yaohaixiao/types.js/isArrayLike'
 
@@ -1121,7 +1013,7 @@ Type: `Boolean`
 #### Example
 
 ```js
-import Types from '@yaohaixiao/types.js/types'
+import Types from '@yaohaixiao/types.js'
 // 或者单独引用 isArrayBuffer() 方法
 // import isArrayBuffer from '@yaohaixiao/types.js/isArrayBuffer'
 
@@ -1152,7 +1044,7 @@ Type: `Boolean`
 #### Example
 
 ```js
-import Types from '@yaohaixiao/types.js/types'
+import Types from '@yaohaixiao/types.js'
 // 或者单独引用 isEmptyObject() 方法
 // import isEmptyObject from '@yaohaixiao/types.js/isEmptyObject'
 
@@ -1205,7 +1097,7 @@ Type: `Boolean`
 #### Example
 
 ```js
-import Types from '@yaohaixiao/types.js/types'
+import Types from '@yaohaixiao/types.js'
 // 或者单独引用 isHash() 方法
 // import isHash from '@yaohaixiao/types.js/isHash'
 
@@ -1259,7 +1151,7 @@ Type: `Boolean`
 #### Example
 
 ```js
-import Types from '@yaohaixiao/types.js/types'
+import Types from '@yaohaixiao/types.js'
 // 或者单独引用 isPlainObject() 方法
 // import isPlainObject from '@yaohaixiao/types.js/isPlainObject'
 
@@ -1314,7 +1206,7 @@ Type: `Boolean`
 #### Example
 
 ```js
-import Types from '@yaohaixiao/types.js/types'
+import Types from '@yaohaixiao/types.js'
 // 或者单独引用 isError() 方法
 // import isError from '@yaohaixiao/types.js/isError'
 
@@ -1347,7 +1239,7 @@ Type: `Boolean`
 #### Example
 
 ```js
-import Types from '@yaohaixiao/types.js/types'
+import Types from '@yaohaixiao/types.js'
 // 或者单独引用 isRegExp() 方法
 // import isRegExp from '@yaohaixiao/types.js/isRegExp'
 
@@ -1388,7 +1280,7 @@ Type: `Boolean`
 #### Example
 
 ```js
-import Types from '@yaohaixiao/types.js/types'
+import Types from '@yaohaixiao/types.js'
 // 或者单独引用 isElement() 方法
 // import isElement from '@yaohaixiao/types.js/isElement'
 
@@ -1437,7 +1329,7 @@ Type: `Boolean`
 #### Example
 
 ```js
-import Types from '@yaohaixiao/types.js/types'
+import Types from '@yaohaixiao/types.js'
 // 或者单独引用 isTextNode() 方法
 // import isTextNode from '@yaohaixiao/types.js/isTextNode'
 
@@ -1491,7 +1383,7 @@ Type: `Boolean`
 #### Example
 
 ```js
-import Types from '@yaohaixiao/types.js/types'
+import Types from '@yaohaixiao/types.js'
 // 或者单独引用 isHTMLCollection() 方法
 // import isHTMLCollection from '@yaohaixiao/types.js/isHTMLCollection'
 
@@ -1544,7 +1436,7 @@ fn 是构造函数返回 true，否则返回 false。
 #### Example
 
 ```js
-import Types from '@yaohaixiao/types.js/types'
+import Types from '@yaohaixiao/types.js'
 // 或者单独引用 isConstructor() 方法
 // import isConstructor from '@yaohaixiao/types.js/isConstructor'
 
@@ -1586,7 +1478,7 @@ fn 是系统内置函数返回 true，否则返回 false。
 #### Example
 
 ```js
-import Types from '@yaohaixiao/types.js/types'
+import Types from '@yaohaixiao/types.js'
 // 或者单独引用 isNativeFunction() 方法
 // import isNativeFunction from '@yaohaixiao/types.js/isNativeFunction'
 
@@ -1630,7 +1522,7 @@ Type: `Boolean`
 #### Example
 
 ```js
-import Types from '@yaohaixiao/types.js/types'
+import Types from '@yaohaixiao/types.js'
 // 或者单独引用 isNumeric() 方法
 // import isNumeric from '@yaohaixiao/types.js/isNumeric'
 
@@ -1669,7 +1561,7 @@ Type: `Boolean`
 #### Example
 
 ```js
-import Types from '@yaohaixiao/types.js/types'
+import Types from '@yaohaixiao/types.js'
 // 或者单独引用 isInteger() 方法
 // import isInteger from '@yaohaixiao/types.js/isInteger'
 
@@ -1713,7 +1605,7 @@ Type: `Boolean`
 #### Example
 
 ```js
-import Types from '@yaohaixiao/types.js/types'
+import Types from '@yaohaixiao/types.js'
 // 或者单独引用 isFloat() 方法
 // import isFloat from '@yaohaixiao/types.js/isFloat'
 
@@ -1749,7 +1641,7 @@ Type: `Boolean`
 #### Example
 
 ```js
-import Types from '@yaohaixiao/types.js/types'
+import Types from '@yaohaixiao/types.js'
 // 或者单独引用 isEven() 方法
 // import isEven from '@yaohaixiao/types.js/isEven'
 
@@ -1781,7 +1673,7 @@ Type: `Boolean`
 #### Example
 
 ```js
-import Types from '@yaohaixiao/types.js/types'
+import Types from '@yaohaixiao/types.js'
 // 或者单独引用 isOdd() 方法
 // import isOdd from '@yaohaixiao/types.js/isOdd'
 
@@ -1821,7 +1713,7 @@ Type: `Boolean`
 #### Example
 
 ```js
-import Types from '@yaohaixiao/types.js/types'
+import Types from '@yaohaixiao/types.js'
 // 或者单独引用 isInfinite() 方法
 // import isInfinite from '@yaohaixiao/types.js/isInfinite'
 
@@ -1854,7 +1746,7 @@ Type: `Boolean`
 #### Example
 
 ```js
-import Types from '@yaohaixiao/types.js/types'
+import Types from '@yaohaixiao/types.js'
 // 或者单独引用 isBase64() 方法
 // import isBase64 from '@yaohaixiao/types.js/isBase64'
 
@@ -1885,7 +1777,7 @@ Type: `Boolean`
 #### Example
 
 ```js
-import Types from '@yaohaixiao/types.js/types'
+import Types from '@yaohaixiao/types.js'
 // 或者单独引用 isBlank() 方法
 // import isBlank from '@yaohaixiao/types.js/isBlank'
 
@@ -1917,7 +1809,7 @@ Type: `Boolean`
 #### Example
 
 ```js
-import Types from '@yaohaixiao/types.js/types'
+import Types from '@yaohaixiao/types.js'
 // 或者单独引用 isEmpty() 方法
 // import isEmpty from '@yaohaixiao/types.js/isEmpty'
 
@@ -1951,7 +1843,7 @@ Type: `Boolean`
 #### Example
 
 ```js
-import Types from '@yaohaixiao/types.js/types'
+import Types from '@yaohaixiao/types.js'
 // 或者单独引用 isHex() 方法
 // import isHex from '@yaohaixiao/types.js/isHex'
 
@@ -1988,7 +1880,7 @@ true - 表示检测数据为合法的 HTML 代码，false 则表示不是。
 #### Example
 
 ```js
-import Types from '@yaohaixiao/types.js/types'
+import Types from '@yaohaixiao/types.js'
 // 或者单独引用 isHTML() 方法
 // import isHTML from '@yaohaixiao/types.js/isHTML'
 
@@ -2040,7 +1932,7 @@ Type: `Boolean`
 #### Example
 
 ```js
-import Types from '@yaohaixiao/types.js/types'
+import Types from '@yaohaixiao/types.js'
 // 或者单独引用 isEmail() 方法
 // import isEmail from '@yaohaixiao/types.js/isEmail'
 
@@ -2091,7 +1983,7 @@ Type: `Boolean`
 #### Example
 
 ```js
-import Types from '@yaohaixiao/types.js/types'
+import Types from '@yaohaixiao/types.js'
 // 或者单独引用 isJSON() 方法
 // import isJSON from '@yaohaixiao/types.js/isJSON'
 
@@ -2143,7 +2035,7 @@ Type: `Boolean`
 #### Example
 
 ```js
-import Types from '@yaohaixiao/types.js/types'
+import Types from '@yaohaixiao/types.js'
 // 或者单独引用 isXML() 方法
 // import isXML from '@yaohaixiao/types.js/isXML'
 

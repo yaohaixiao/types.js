@@ -13,6 +13,16 @@ const PLUGIN_CONFIG = [
 export default [
   // For api docs IIFE
   {
+    input: 'index.js',
+    output: {
+      name: 'Types',
+      file: './docs/js/types.min.js',
+      format: 'umd',
+      sourcemap: true
+    },
+    plugins: PLUGIN_CONFIG
+  },
+  {
     input: 'api/js/main.js',
     output: {
       name: 'outline',
