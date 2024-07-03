@@ -1,3 +1,12 @@
+# [2.3.0](https://github.com/yaohaixiao/types.js/compare/2.2.0...2.3.0) (2024-07-03)
+
+
+### Features
+
+* 调整发布模块，只有 types.min.js 模块了 ([531f25c](https://github.com/yaohaixiao/types.js/commit/531f25ca37517fa551cc3c4d2f363c6fdb27c713))
+
+
+
 # [2.2.0](https://github.com/yaohaixiao/types.js/compare/2.1.0...2.2.0) (2024-03-21)
 
 
