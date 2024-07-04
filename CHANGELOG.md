@@ -1,3 +1,12 @@
+# [2.4.0](https://github.com/yaohaixiao/types.js/compare/2.3.0...2.4.0) (2024-07-04)
+
+
+### Features
+
+* 生成单独方法的 umd 模块 ([a8c3119](https://github.com/yaohaixiao/types.js/commit/a8c3119cd78b06a93a42e90f17cd4ef8b1c0ccbf))
+
+
+
 # [2.3.0](https://github.com/yaohaixiao/types.js/compare/2.2.0...2.3.0) (2024-07-03)
 
 
