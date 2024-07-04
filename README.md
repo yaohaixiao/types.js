@@ -56,9 +56,15 @@ npm i -S @yaohaixiao/types.js --registry=https://npm.pkg.github.com
 ### Node.js 中调用
 
 ```js
-const Types = require('@yaohaixiao/types.js')
+// 加载完整模块（包含所有方法）
+const Types = require('@yaohaixiao/types.js/lib/types')
 
 Types.is([]) // -> array
+```
+
+```js
+// 调用特定方法
+const isArray = '@yaohaixiao/types.js/lib/isArray'
 ```
 
 ### ES6 模块中调用

@@ -36,6 +36,7 @@ import isEven from './isEven'
 import isFloat from './isFloat'
 import isFragment from './isFragment'
 import isFunction from './isFunction'
+import isGuid from './isGuid'
 import isHash from './isHash'
 import isHex from './isHex'
 import isHTML from './isHTML'
@@ -118,7 +119,7 @@ const METHODS = {
   isFloat,
   isFragment,
   isFunction,
-  isGuid: isUUID,
+  isGuid,
   isHash,
   isHex,
   isHTMLCollection,
