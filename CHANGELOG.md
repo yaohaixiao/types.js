@@ -1,3 +1,12 @@
+# [2.5.0](https://github.com/yaohaixiao/types.js/compare/2.4.0...2.5.0) (2024-07-06)
+
+
+### Features
+
+* 添加 .d.ts 文件定义，支持 ts ([541f818](https://github.com/yaohaixiao/types.js/commit/541f818ba8934dab6702ea31308b117cebc2e98b))
+
+
+
 # [2.4.0](https://github.com/yaohaixiao/types.js/compare/2.3.0...2.4.0) (2024-07-04)
 
 

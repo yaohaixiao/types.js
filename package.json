@@ -6,7 +6,8 @@
   "scripts": {
     "start": "gulp start",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
-    "build:lib": "npm run prettier:write && rollup -c build/rollup.config.lib.js --bundleConfigAsCjs",
+    "build:lib": "npm run prettier:write && rollup -c build/rollup.config.lib.js --bundleConfigAsCjs && npm run build:.d.ts",
+    "build:.d.ts": "tsc",
     "build:api": "npm run prettier:write && rollup -c build/rollup.config.api.js --bundleConfigAsCjs",
     "build:docs": "gulp build",
     "build": "npm run build:lib && npm run build:docs",
@@ -47,7 +48,6 @@
     "buffer": "^6.0.3",
     "commitlint": "^17.4.4",
     "conventional-changelog-cli": "^2.2.2",
-    "dts-gen": "^0.10.3",
     "eslint": "^8.34.0",
     "eslint-config-prettier": "^8.6.0",
     "eslint-import-resolver-jest": "^3.0.2",
@@ -74,7 +74,8 @@
     "lint-staged": "^13.1.2",
     "os": "^0.1.2",
     "prettier": "^2.8.4",
-    "rollup": "^3.25.2"
+    "rollup": "^3.25.2",
+    "typescript": "^5.5.3"
   },
   "gitHooks": {
     "pre-commit": "lint-staged",
