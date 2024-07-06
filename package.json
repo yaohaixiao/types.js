@@ -1,6 +1,6 @@
 {
   "name": "@yaohaixiao/types.js",
-  "version": "2.4.0",
+  "version": "2.5.0",
   "description": "types.js - 专注于检测 JavaScript 数据类型的工具库。",
   "main": "index.js",
   "scripts": {
@@ -47,6 +47,7 @@
     "buffer": "^6.0.3",
     "commitlint": "^17.4.4",
     "conventional-changelog-cli": "^2.2.2",
+    "dts-gen": "^0.10.3",
     "eslint": "^8.34.0",
     "eslint-config-prettier": "^8.6.0",
     "eslint-import-resolver-jest": "^3.0.2",
