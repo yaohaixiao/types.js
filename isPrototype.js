@@ -1,4 +1,4 @@
-import isFunction from './isFunction'
+import isConstructor from './isConstructor'
 
 /**
  * 判断是否为 prototype 对象
@@ -10,7 +10,7 @@ import isFunction from './isFunction'
 const isPrototype = (val) => {
   const OP = Object.prototype
   const Ctor = val ? val.constructor : null
-  const proto = (isFunction(Ctor) && Ctor.prototype) || OP
+  const proto = (isConstructor(Ctor) && Ctor.prototype) || OP
 
   return val === proto
 }
