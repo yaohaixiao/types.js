@@ -13,9 +13,9 @@ defaults.articleElement = '#article'
 defaults.git = 'https://github.com/yaohaixiao/types.js'
 defaults.tags = 'https://github.com/yaohaixiao/types.js/tags'
 defaults.issues = 'https://github.com/yaohaixiao/types.js/issues'
-defaults.print = {
-  element: '#article',
-  title: 'Types.js'
+defaults.reader = {
+  target: '#article',
+  title: document.querySelector('.main__h1')
 }
 defaults.chapterTextFilter = (text) => {
   return text.replace(/\(.*?\)/, '()')
