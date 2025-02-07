@@ -1,3 +1,17 @@
+## [2.5.1](https://github.com/yaohaixiao/types.js/compare/2.5.0...2.5.1) (2025-02-07)
+
+
+### Bug Fixes
+
+* 修复 isConstructor() 方法验证 null 时检测报错的问题 ([d094ca1](https://github.com/yaohaixiao/types.js/commit/d094ca15c78e9b6ddf8697d1de672ef2a33aa94c))
+
+
+### Features
+
+* 调整 isPrototype.js ([fc48b21](https://github.com/yaohaixiao/types.js/commit/fc48b2140e2e79c213514183e98a96cf47eedf39))
+
+
+
 # [2.5.0](https://github.com/yaohaixiao/types.js/compare/2.4.0...2.5.0) (2024-07-06)
 
 
