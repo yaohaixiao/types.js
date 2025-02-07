@@ -34,8 +34,10 @@ import isFunction from '../isFunction'
 import isGuid from '../isGuid'
 import isHash from '../isHash'
 import isHex from '../isHex'
+import isHosted from '../isHosted'
 import isHTML from '../isHTML'
 import isHTMLCollection from '../isHTMLCollection'
+import isInstance from '../isInstance'
 import isInfinite from '../isInfinite'
 import isInt8Array from '../isInt8Array'
 import isInt16Array from '../isInt16Array'
@@ -116,8 +118,10 @@ const METHODS = {
   isGuid,
   isHash,
   isHex,
+  isHosted,
   isHTML,
   isHTMLCollection,
+  isInstance,
   isInfinite,
   isInt8Array,
   isInt16Array,
