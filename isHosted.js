@@ -2,10 +2,10 @@ import _type from './utils/_type'
 
 const isHosted = (val, host) => {
   const NON_HOST_TYPES = {
-    'boolean': 1,
-    'number': 1,
-    'string': 1,
-    'undefined': 1
+    boolean: 1,
+    number: 1,
+    string: 1,
+    undefined: 1
   }
   let type = ''
   let result

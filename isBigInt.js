@@ -14,10 +14,14 @@ const isBigInt = (val) => {
   let bigIntValueOf
 
   if (typeof BigInt === 'function') {
-    bigIntValueOf = BigInt.prototype.valueOf;
+    bigIntValueOf = BigInt.prototype.valueOf
   }
 
-  return _type(val) === TYPES.BIG_INT && bigIntValueOf && bigIntValueOf.call(val) === 'bigint'
+  return (
+    _type(val) === TYPES.BIG_INT &&
+    bigIntValueOf &&
+    bigIntValueOf.call(val) === 'bigint'
+  )
 }
 
 export default isBigInt

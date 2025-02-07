@@ -1,3 +1,4 @@
+export default isInstance;
 /**
  * 检测对象是否为另一个对象的实例
  * ========================================================================
@@ -6,8 +7,4 @@
  * @param {Object} constructor
  * @return {Boolean}
  */
-const isInstance = (val, constructor) => {
-  return val instanceof constructor
-}
-
-export default isInstance
+declare function isInstance(val: any, constructor: any): boolean;

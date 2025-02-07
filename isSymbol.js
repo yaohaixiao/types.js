@@ -13,10 +13,14 @@ const isSymbol = (val) => {
   let symbolValueOf
 
   if (typeof Symbol === 'function') {
-    symbolValueOf = Symbol.prototype.valueOf;
+    symbolValueOf = Symbol.prototype.valueOf
   }
 
-  return _type(val) === TYPES.SYMBOL && symbolValueOf && typeof symbolValueOf.call(val) === 'symbol'
+  return (
+    _type(val) === TYPES.SYMBOL &&
+    symbolValueOf &&
+    typeof symbolValueOf.call(val) === 'symbol'
+  )
 }
 
 export default isSymbol

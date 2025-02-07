@@ -6,7 +6,14 @@ import isSymbol from './isSymbol'
 import isBigInt from './isBigInt'
 
 const isPrimitive = (val) => {
-  return isBoolean(val) || isString(val) || isNumber(val) || isUndefined(val) || isSymbol(val) || isBigInt(val)
+  return (
+    isBoolean(val) ||
+    isString(val) ||
+    isNumber(val) ||
+    isUndefined(val) ||
+    isSymbol(val) ||
+    isBigInt(val)
+  )
 }
 
 export default isPrimitive
