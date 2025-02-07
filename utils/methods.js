@@ -37,8 +37,9 @@ import isHex from '../isHex'
 import isHosted from '../isHosted'
 import isHTML from '../isHTML'
 import isHTMLCollection from '../isHTMLCollection'
-import isInstance from '../isInstance'
+import isIDNumber from '../isIDNumber'
 import isInfinite from '../isInfinite'
+import isInstance from '../isInstance'
 import isInt8Array from '../isInt8Array'
 import isInt16Array from '../isInt16Array'
 import isInt32Array from '../isInt32Array'
@@ -121,8 +122,9 @@ const METHODS = {
   isHosted,
   isHTML,
   isHTMLCollection,
-  isInstance,
+  isIDNumber,
   isInfinite,
+  isInstance,
   isInt8Array,
   isInt16Array,
   isInt32Array,
