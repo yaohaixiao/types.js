@@ -1,6 +1,6 @@
 import _type from './utils/_type'
-import isObject from './isObject'
 import TYPES from './enum/types'
+import isObject from './isObject'
 
 /**
  * 检测测试数据的数据类型是否为 HTML 元素节点。

@@ -10,7 +10,13 @@ import TYPES from './enum/types'
  * @returns {Boolean} 'val' 是 Symbol 类型，返回 true，否则返回 false
  */
 const isSymbol = (val) => {
-  return _type(val) === TYPES.SYMBOL
+  let symbolValueOf
+
+  if (typeof Symbol === 'function') {
+    symbolValueOf = Symbol.prototype.valueOf;
+  }
+
+  return _type(val) === TYPES.SYMBOL && symbolValueOf && typeof symbolValueOf.call(val) === 'symbol'
 }
 
 export default isSymbol

@@ -11,7 +11,13 @@ import TYPES from './enum/types'
  * @returns {Boolean} 'val' 为 BigInt 类型，返回 true，否则返回 false
  */
 const isBigInt = (val) => {
-  return _type(val) === TYPES.BIG_INT
+  let bigIntValueOf
+
+  if (typeof BigInt === 'function') {
+    bigIntValueOf = BigInt.prototype.valueOf;
+  }
+
+  return _type(val) === TYPES.BIG_INT && bigIntValueOf && bigIntValueOf.call(val) === 'bigint'
 }
 
 export default isBigInt
