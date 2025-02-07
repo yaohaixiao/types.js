@@ -10,13 +10,21 @@ import isNativeFunction from './isNativeFunction'
  * @returns {Boolean} - fn 是构造函数，返回 true，否则返回 false;
  */
 const isConstructor = (fn) => {
-  const proto = fn.prototype
-  const constructor = fn.constructor
+  let proto = null
+  let constructor = null
   let instance
 
-  if (!isFunction(fn) || !proto) {
+  if (!isFunction(fn)) {
     return false
   }
+
+  proto = fn.prototype
+
+  if (!proto) {
+    return false
+  }
+
+  constructor = fn.constructor
 
   if (
     isNativeFunction(fn) &&
