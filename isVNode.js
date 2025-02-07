@@ -1,4 +1,4 @@
-import hasOwn from './hasOwn'
+import hasOwn from './utils/hasOwn'
 import isObject from './isObject'
 
 /**

@@ -44,13 +44,13 @@ npm i -S @yaohaixiao/types.js --registry=https://npm.pkg.github.com
 #### CDN
 
 ```html
-<script src="https://cdn.jsdelivr.net/gh/yaohaixiao/types.js/types.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/yaohaixiao/types.js/lib/types.js"></script>
 ```
 
 #### Local file
 
 ```html
-<script src="/path/to/types.min.js"></script>
+<script src="/path/to/types.js"></script>
 ```
 
 ### Node.js 中调用

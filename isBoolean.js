@@ -1,4 +1,4 @@
-import _type from './_type'
+import _type from './utils/_type'
 import TYPES from './enum/types'
 
 /**

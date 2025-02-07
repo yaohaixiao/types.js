@@ -1,7 +1,7 @@
-import _type from './_type'
-import _getExactTypeOfNumber from './_getExactTypeOfNumber'
-import _getExactTypeOfString from './_getExactTypeOfString'
-import _getExactTypeOfObject from './_getExactTypeOfObject'
+import _type from './utils/_type'
+import typeOfNumber from './utils/typeOfNumber'
+import typeOfString from './utils/typeOfString'
+import typeOfObject from './utils/typeOfObject'
 
 /**
  * 检测数据类型，返回检测数据类型的字符串
@@ -18,13 +18,13 @@ const is = (val) => {
 
   switch (type) {
     case 'number':
-      name = _getExactTypeOfNumber(val)
+      name = typeOfNumber(val)
       break
     case 'string':
-      name = _getExactTypeOfString(val)
+      name = typeOfString(val)
       break
     case 'object':
-      name = _getExactTypeOfObject(val)
+      name = typeOfObject(val)
       break
     default:
       name = type

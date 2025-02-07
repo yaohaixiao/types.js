@@ -1,4 +1,4 @@
-import isUndefined from './isUndefined'
+import isUndefined from '../isUndefined'
 
 /**
  * 检测对象自身属性中是否具有指定的属性。

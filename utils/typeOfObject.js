@@ -1,6 +1,6 @@
-import isPrototype from './isPrototype'
-import isVNode from './isVNode'
-import isXML from './isXML'
+import isPrototype from '../isPrototype'
+import isVNode from '../isVNode'
+import isXML from '../isXML'
 
 /**
  * （私有方法）获取确切的对象类型
@@ -10,7 +10,7 @@ import isXML from './isXML'
  * @param {String} val - 要检测的字符串
  * @returns {String} 返回对象类型：prototype、vnode、xml
  */
-const _getExactTypeOfObject = (val) => {
+const typeOfObject = (val) => {
   let name = 'object'
 
   if (isXML(val)) {
@@ -24,4 +24,4 @@ const _getExactTypeOfObject = (val) => {
   return name
 }
 
-export default _getExactTypeOfObject
+export default typeOfObject

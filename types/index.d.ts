@@ -1,2 +1,2 @@
-export default Types;
-declare const Types: (val: any) => {};
+export default METHODS;
+import METHODS from './utils/methods';

@@ -1,4 +1,4 @@
-import isString from './isString'
+import isString from '../isString'
 
 /**
  * 检测测试数据是否为有效的日期（字符串）

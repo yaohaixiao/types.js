@@ -1,5 +1,5 @@
-import TYPES from './enum/types'
-import OBJECTS from './enum/objects'
+import TYPES from '../enum/types'
+import OBJECTS from '../enum/objects'
 
 /**
  * 检测数据类型，返回检测数据类型的字符串

@@ -1,4 +1,4 @@
-import _type from './_type'
+import _type from './utils/_type'
 /**
  * 检测测试数据是否为 TypedArray 类型
  * ========================================================================

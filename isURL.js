@@ -1,5 +1,5 @@
 import isString from './isString'
-import _getURLPattern from './_getURLPattern'
+import getURLPattern from './utils/getURLPattern'
 
 /**
  * 判断字符串是否为有效的 URL 地址
@@ -10,7 +10,7 @@ import _getURLPattern from './_getURLPattern'
  * @returns {Boolean} 'val' 是有效的 URL 字符串格式，返回 true，否则返回 false
  */
 const isURL = (str) => {
-  const pattern = _getURLPattern()
+  const pattern = getURLPattern()
 
   return isString(str) && !!pattern.test(str)
 }

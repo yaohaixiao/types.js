@@ -1,25 +1,25 @@
-import isBlank from './isBlank'
-import isBase64 from './isBase64'
-import isChinese from './isChinese'
-import isEmail from './isEmail'
-import isEmpty from './isEmpty'
-import isUUID from './isUUID'
-import isIPAddress from './isIPAddress'
-import isHex from './isHex'
-import isHTML from './isHTML'
-import isSVG from './isSVG'
-import isJSON from './isJSON'
-import isTime from './isTime'
+import isBlank from '../isBlank'
+import isBase64 from '../isBase64'
+import isChinese from '../isChinese'
+import isEmail from '../isEmail'
+import isEmpty from '../isEmpty'
+import isUUID from '../isUUID'
+import isIPAddress from '../isIPAddress'
+import isHex from '../isHex'
+import isHTML from '../isHTML'
+import isSVG from '../isSVG'
+import isJSON from '../isJSON'
+import isTime from '../isTime'
 
 /**
  * （私有方法）获取确切的字符串类型
  * ========================================================================
- * @method _getExactTypeOfString
+ * @method typeOfString
  * @private
  * @param {String} val - 要检测的字符串
  * @returns {String} 返回字符串类型：blank、chinese、email、empty... 等等
  */
-const _getExactTypeOfString = (val) => {
+const typeOfString = (val) => {
   let name = 'string'
 
   if (isEmpty(val)) {
@@ -53,4 +53,4 @@ const _getExactTypeOfString = (val) => {
   return name
 }
 
-export default _getExactTypeOfString
+export default typeOfString

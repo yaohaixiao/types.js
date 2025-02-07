@@ -1,25 +1,10 @@
-import { nodeResolve } from '@rollup/plugin-node-resolve'
-import commonjs from '@rollup/plugin-commonjs'
-import terser from '@rollup/plugin-terser'
-import METHODS from '../enum/methods'
+import PLUGIN_CONFIG from './rollup.config.plugins'
+import METHODS from '../utils/methods'
 
-const PLUGIN_CONFIG = [
-  nodeResolve({
-    mainFields: [
-      'module',
-      'jsnext',
-      'main',
-      'browser'
-    ]
-  }),
-  commonjs(),
-  terser()
-]
-
-const PER_METHOD_CONFIG = (() => {
+const METHOD_CONFIGS = (() => {
   const CONFIGS = []
 
-  METHODS.forEach((method) => {
+  Object.keys(METHODS).forEach((method) => {
     CONFIGS.push({
       input: `${method}.js`,
       output: {
@@ -47,5 +32,5 @@ export default [
     },
     plugins: PLUGIN_CONFIG
   },
-  ...PER_METHOD_CONFIG
+  ...METHOD_CONFIGS
 ]

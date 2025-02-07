@@ -1,5 +1,5 @@
-import _isTime from './_isTime'
-import _isDate from './_isDate'
+import _isTime from './utils/_isTime'
+import _isDate from './utils/_isDate'
 
 /**
  * 检测测试数据是否为有效的时间（字符串）

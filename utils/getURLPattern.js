@@ -1,4 +1,4 @@
-const _getURLPattern = () => {
+const getURLPattern = () => {
   const protocol = '(\\w+:)?'
   const user = '([^\\/\\?\\#\\:]+)'
   const password = '(.+)'
@@ -17,4 +17,4 @@ const _getURLPattern = () => {
   return new RegExp(url, 'i')
 }
 
-export default _getURLPattern
+export default getURLPattern

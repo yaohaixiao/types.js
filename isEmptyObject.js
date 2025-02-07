@@ -1,5 +1,5 @@
 import isPlainObject from './isPlainObject'
-import hasOwn from './hasOwn'
+import hasOwn from './utils/hasOwn'
 
 /**
  * 检测测试数据是否为空（单体）对象
