@@ -21,6 +21,7 @@ import isDOM from '../isDOM'
 import isElement from '../isElement'
 import isEmail from '../isEmail'
 import isEmpty from '../isEmpty'
+import isEmptyArguments from '../isEmptyArguments'
 import isEmptyArray from '../isEmptyArray'
 import isEmptyObject from '../isEmptyObject'
 import isError from '../isError'
@@ -54,6 +55,7 @@ import isOdd from '../isOdd'
 import isPhoneNumber from '../isPhoneNumber'
 import isPlainObject from '../isPlainObject'
 import isPrime from '../isPrime'
+import isPrimitive from '../isPrimitive'
 import isPromise from '../isPromise'
 import isPrototype from '../isPrototype'
 import isRegExp from '../isRegExp'
@@ -101,6 +103,7 @@ const METHODS = {
   isElement,
   isEmail,
   isEmpty,
+  isEmptyArguments,
   isEmptyArray,
   isEmptyObject,
   isError,
@@ -134,6 +137,7 @@ const METHODS = {
   isPhoneNumber,
   isPlainObject,
   isPrime,
+  isPrimitive,
   isPromise,
   isPrototype,
   isRegExp,
