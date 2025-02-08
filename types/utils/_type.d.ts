@@ -4,6 +4,6 @@ export default _type;
  * ========================================================================
  * @method _type
  * @param {*} val - 要检测的任意值
- * @returns {String}
+ * @returns {String} - 返回检测数据类型的字符串
  */
 declare function _type(val: any): string;

@@ -6,7 +6,7 @@ import OBJECTS from '../enum/objects'
  * ========================================================================
  * @method _type
  * @param {*} val - 要检测的任意值
- * @returns {String}
+ * @returns {String} - 返回检测数据类型的字符串
  */
 const _type = (val) => {
   const type = Object.prototype.toString.apply(val)
