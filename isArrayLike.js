@@ -6,6 +6,8 @@ import TYPES from './enum/types'
  * HTMLNodeList 对象）类型。
  * ========================================================================
  * @method isArrayLike
+ * @since 0.2.0
+ * @category Array
  * @param {*} val - 要检测是的数据
  * @returns {Boolean} 'val' 是 array、arguments 或者 HTMLNodeList 类型返回 true，否则返回 false
  */
