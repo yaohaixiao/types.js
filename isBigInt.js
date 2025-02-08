@@ -13,14 +13,14 @@ import TYPES from './enum/types'
 const isBigInt = (val) => {
   let bigIntValueOf
 
-  if (typeof BigInt === 'function') {
+  if (typeof BigInt === TYPES.FUNCTION) {
     bigIntValueOf = BigInt.prototype.valueOf
   }
 
   return (
     _type(val) === TYPES.BIG_INT &&
     bigIntValueOf &&
-    bigIntValueOf.call(val) === 'bigint'
+    _type(bigIntValueOf.call(val)) === TYPES.BIG_INT
   )
 }
 
