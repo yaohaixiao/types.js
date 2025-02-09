@@ -1,6 +1,7 @@
 import isBoolean from './isBoolean'
 import isString from './isString'
 import isNumber from './isNumber'
+import isNull from './isNull'
 import isUndefined from './isUndefined'
 import isSymbol from './isSymbol'
 import isBigInt from './isBigInt'
@@ -19,6 +20,7 @@ import isBigInt from './isBigInt'
  * const MAX_SAFE_INTEGER = 9007199254740991
  * const bigint = BigInt(MAX_SAFE_INTEGER + 1)
  *
+ * // True
  * isPrimitive(1) // -> true
  * isPrimitive('num') // -> true
  * isPrimitive(false) // -> true
@@ -27,14 +29,17 @@ import isBigInt from './isBigInt'
  * isPrimitive(Symbol('foo')) // -> true
  * isPrimitive(bigint) // -> true
  *
+ * // False
  * isPrimitive([]) // -> false
  * isPrimitive({}) // -> false
+ * isPrimitive(()=>{}) // -> false
  */
 const isPrimitive = (val) => {
   return (
-    isBoolean(val) ||
     isString(val) ||
     isNumber(val) ||
+    isNull(val) ||
+    isBoolean(val) ||
     isUndefined(val) ||
     isSymbol(val) ||
     isBigInt(val)
