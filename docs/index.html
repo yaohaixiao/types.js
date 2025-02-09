@@ -1027,7 +1027,7 @@ Types.isBase64('aXNCYXNlNjQ=2') // -> false</code></pre></div></section><section
 
 Types.isBlank('  ') // -> true
 Types.isBlank(new String()) // -> false
-Types.isBlank('') // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isChinese">isChinese(val)</h3></header><div class="section__content"><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">1.2.0</dd></dl><h4 class="section__h4">Description</h4><p>isChinese(val) 方法用来检测测试数据(字符串)是否为中文字符。</p><p>Wiki 介绍中文字符（<a href="https://en.wikipedia.org/wiki/CJK_Compatibility_Ideographs">Unified Ideographs</a>）包含以下内容：</p><ol><li>中文汉字</li><li>象形文字扩展 A-H</li><li>兼容象形文字符</li><li>兼容表意文字增补字符</li><li>中文标点符号</li><li>兼容标点符号</li></ol><p>其中：</p><ul><li><a href="https://en.wikipedia.org/wiki/CJK_Compatibility_Ideographs">兼容象形文字符：[0xf900, 0xfaff];</a></li><li><a href="https://en.wikipedia.org/wiki/CJK_Compatibility_Ideographs_Supplement">兼容表意文字增补字符：[0x2f800, 0x2fa1f];</a></li></ul><p>只是看上去像汉字，因此在 isChinese() 方法中没有纳入到汉字字符。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h5 class="section__h4">includePunctuation</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean</dd></dl><p>（可选）是否包含标点符号：默认值：true</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据为中文字符，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js'
+Types.isBlank('') // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isChinese">isChinese(val, includePunctuation)</h3></header><div class="section__content"><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">1.2.0</dd></dl><h4 class="section__h4">Description</h4><p>isChinese(val, includePunctuation) 方法用来检测测试数据(字符串)是否为中文字符。</p><p>Wiki 介绍中文字符（<a href="https://en.wikipedia.org/wiki/CJK_Compatibility_Ideographs">Unified Ideographs</a>）包含以下内容：</p><ol><li>中文汉字</li><li>象形文字扩展 A-H</li><li>兼容象形文字符</li><li>兼容表意文字增补字符</li><li>中文标点符号</li><li>兼容标点符号</li></ol><p>其中：</p><ul><li><a href="https://en.wikipedia.org/wiki/CJK_Compatibility_Ideographs">兼容象形文字符：[0xf900, 0xfaff];</a></li><li><a href="https://en.wikipedia.org/wiki/CJK_Compatibility_Ideographs_Supplement">兼容表意文字增补字符：[0x2f800, 0x2fa1f];</a></li></ul><p>只是看上去像汉字，因此在 isChinese() 方法中没有纳入到汉字字符。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h5 class="section__h4">includePunctuation</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean</dd></dl><p>（可选）是否包含标点符号：默认值：true</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据为中文字符，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js'
 // 或者单独引用 isChinese() 方法
 // import isChinese from '@yaohaixiao/types.js/isChinese'
 
@@ -1128,7 +1128,7 @@ isEmpty(buffer) => true
 
 buffer = Buffer.alloc(10)
 
-isEmpty(buffer) => false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isGuid">isGuid(val)</h3></header><div class="section__content"><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">0.2.0</dd></dl><dl class="section__dl"><dt class="section__dt">Alias：</dt><dd class="section__dd">isUUID</dd></dl><h4 class="section__h4">Description</h4><p>isGuid(val) 方法用来检测测试数据是否为合法的 UUID 字符串。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）str 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据(数值)为合法的 UUID 字符串，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js'
+isEmpty(buffer) => false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isGuid">isGuid(val)</h3></header><div class="section__content"><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">0.2.0</dd></dl><dl class="section__dl"><dt class="section__dt">Alias：</dt><dd class="section__dd">isUUID</dd></dl><h4 class="section__h4">Description</h4><p>isGuid(val) 方法用来检测测试数据是否为合法的 UUID 字符串。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>必须，待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据(数值)为合法的 UUID 字符串，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js'
 // 或者单独引用 isGuid() 方法
 // import isGuid from '@yaohaixiao/types.js/isGuid'
 
@@ -1174,7 +1174,7 @@ Types.isHTML('&lt;attribute&gt;address&lt;/attribute&gt;') // -&gt; false
 Types.isHTML('&lt;address&gt;Wuhan City&lt;/address&gt;') // -&gt; false
 Types.isHTML('&lt;age&gt;20&lt;/age&gt;') // -&gt; false
 Types.isHTML('&lt;gender&gt;mail&lt;/gender&gt;') // -&gt; false
-Types.isHTML('&lt;career&gt;programmer&lt;/career&gt;') // -&gt; false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isIDNumber">isIDNumber(val)</h3></header><div class="section__content"><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">2.6.0</dd></dl><h4 class="section__h4">Description</h4><p>isIDNumber(val) 方法用来检测测试数据是否为（中国）身份证号码。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据（身份证号码）。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是合法的神风证号码（格式），false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js'
+Types.isHTML('&lt;career&gt;programmer&lt;/career&gt;') // -&gt; false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isIDNumber">isIDNumber(val)</h3></header><div class="section__content"><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">2.6.0</dd></dl><h4 class="section__h4">Description</h4><p>isIDNumber(val) 方法用来检测测试数据是否为（中国）身份证号码。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据（身份证号码）。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是合法的（中国）身份证号码（格式），false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js'
 // 或者单独引用 isIDNumber() 方法
 // import isIDNumber from '@yaohaixiao/types.js/isIDNumber'
 
@@ -1272,13 +1272,13 @@ Types.isPhoneNumber('027-849-23296') // -> true</code></pre></div></section><sec
 // 或者单独引用 isHTML() 方法
 // import isSVG from '@yaohaixiao/types.js/isSVG'
 
-Types.isSVG('<!doctype html>') // -> false
+Types.isSVG('&lt;!doctype html&gt;') // -> false
 
-const svg = '<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 26 28">' +
-            '<path d="M22 15.5v7.5c0"></path>' +
-            '</svg>'
+const svg = '&lt;svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 26 28"&gt;' +
+            '&lt;path d="M22 15.5v7.5c0"&gt;&lt;/path&gt;' +
+            '&lt;/svg&gt;'
 
-Types.isSVG(svg) // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isTime">isTime(val)</h3></header><div class="section__content"><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">1.4.0</dd></dl><h4 class="section__h4">Description</h4><p>isTime(val) 方法用来检测测试数据是否为有效的时间（字符串）。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h5 class="section__h4">type</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">String</dd></dl><p>（可选）测试的时间类型:</p><ul><li>time - 时间；</li><li>date - 日期；</li><li>不传 - 时间或者日期皆可</li></ul><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据为有效的时间，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js'
+Types.isSVG(svg) // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isTime">isTime(val, type)</h3></header><div class="section__content"><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">1.4.0</dd></dl><h4 class="section__h4">Description</h4><p>isTime(val, type) 方法用来检测测试数据是否为有效的时间（字符串）。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h5 class="section__h4">type</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">String</dd></dl><p>（可选）测试的时间类型:</p><ul><li>time - 时间；</li><li>date - 日期；</li><li>不传 - 时间或者日期皆可</li></ul><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据为有效的时间，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js'
 // 或者单独引用 isTime() 方法
 // import isTime from '@yaohaixiao/types.js/isTime'
 
@@ -1370,29 +1370,10 @@ Types.isUUID('00000000-0000-0000-0000-000000000000') // -> true
 Types.isUUID('{0e40c5ab-1d9b-ee11-983e-e0be0335d021}') // -> true
 Types.isUUID('08dbe0f11c8641cf8afe6b2824e8f8f5') // -> true
 
-Types.isOdd('') // -> false
-Types.isOdd('xxxA987FBC9-4BED-3078-CF07-9141BA07C9F3') // -> false
-Types.isOdd('934859') // -> false
-Types.isOdd('A987FBC94BED3078CF079141BA07C9F') // -> false</code></pre></div></section></section><section class="section"><header class="section__header"><h2 class="section__title">DOM</h2></header><div class="section__content"><p>types.js 提供以下方法来检测 DOM 相关的数据类型。</p></div><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isDOM">isDOM(val)</h3></header><div class="section__content"><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">1.9.0</dd></dl><h4 class="section__h4">Description</h4><p>isDOM(val) 方法用来检测测试数据是否为 DOM 类型数据：DOM 节点，TextNode，NodeList 和 DocumentFragment）。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 DOM 类型数据，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js'
-// 或者单独引用 isTextNode() 方法
-// import isDOM from '@yaohaixiao/types.js/isDOM'
-
-const $list = document.getElementById('list')
-const $fragment = document.createDocumentFragment()
-const $items = document.querySelectorAll('.item')
-const $text = document.createTextNode('text')
-
-Types.is($list) // -> 'element'
-Types.isDOM($list) // -> true
-
-Types.is($fragment) // -> 'fragment'
-Types.isDOM($fragment) // -> true
-
-Types.is($items) // -> 'collection'
-Types.isElement($items) // -> true
-
-Types.is($text) // -> 'text'
-Types.isTextNode($text) // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isElement">isElement(val)</h3></header><div class="section__content"><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">0.2.0</dd></dl><h4 class="section__h4">Description</h4><p>isElement(val) 方法用来检测测试数据是否为 HTMLElement (元素节点)类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 HTMLElement (元素节点)类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js'
+Types.isUUID('') // -> false
+Types.isUUID('xxxA987FBC9-4BED-3078-CF07-9141BA07C9F3') // -> false
+Types.isUUID('934859') // -> false
+Types.isUUID('A987FBC94BED3078CF079141BA07C9F') // -> false</code></pre></div></section></section><section class="section"><header class="section__header"><h2 class="section__title">DOM</h2></header><div class="section__content"><p>types.js 提供以下方法来检测 DOM 相关的数据类型。</p></div><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isElement">isElement(val)</h3></header><div class="section__content"><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">0.2.0</dd></dl><h4 class="section__h4">Description</h4><p>isElement(val) 方法用来检测测试数据是否为 HTMLElement (元素节点)类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 HTMLElement (元素节点)类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js'
 // 或者单独引用 isElement() 方法
 // import isElement from '@yaohaixiao/types.js/isElement'
 
@@ -1516,5 +1497,24 @@ export default {
     Types.isVNode($header) // -> true
   }
 }
-&lt;/script&gt;</code></pre></div></section></section></article><div class="main__footer" id="footer"><p>Copyright &copy; 2023 <a href="https://github.com/yaohaixiao">Robert Yao</a>, all right reserved.</p><p>Code licensed under&nbsp;<a href="http://opensource.org/licenses/mit-license.html">MIT License</a></p><p>Documentation licensed under&nbsp;<a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a></p><p><a href="https://github.com/yaohaixiao/types.js">View on GitHub</a> ·
+&lt;/script&gt;</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isDOM">isDOM(val)</h3></header><div class="section__content"><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">1.9.0</dd></dl><h4 class="section__h4">Description</h4><p>isDOM(val) 方法用来检测测试数据是否为 DOM 类型数据：DOM 节点，TextNode，NodeList 和 DocumentFragment）。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 DOM 类型数据，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js'
+// 或者单独引用 isTextNode() 方法
+// import isDOM from '@yaohaixiao/types.js/isDOM'
+
+const $list = document.getElementById('list')
+const $fragment = document.createDocumentFragment()
+const $items = document.querySelectorAll('.item')
+const $text = document.createTextNode('text')
+
+Types.is($list) // -> 'element'
+Types.isDOM($list) // -> true
+
+Types.is($fragment) // -> 'fragment'
+Types.isDOM($fragment) // -> true
+
+Types.is($items) // -> 'collection'
+Types.isDOM($items) // -> true
+
+Types.is($text) // -> 'text'
+Types.isDOM($text) // -> true</code></pre></div></section></section></article><div class="main__footer" id="footer"><p>Copyright &copy; 2023 <a href="https://github.com/yaohaixiao">Robert Yao</a>, all right reserved.</p><p>Code licensed under&nbsp;<a href="http://opensource.org/licenses/mit-license.html">MIT License</a></p><p>Documentation licensed under&nbsp;<a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a></p><p><a href="https://github.com/yaohaixiao/types.js">View on GitHub</a> ·
 <a href="https://github.com/yaohaixiao/types.js/issues">Issues</a></p></div></main></div><script src="js/types.min.js"></script><script src="js/docs.min.js"></script></body></html>

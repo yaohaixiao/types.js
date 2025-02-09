@@ -24,11 +24,11 @@ section.section
         // 或者单独引用 isHTML() 方法
         // import isSVG from '@yaohaixiao/types.js/isSVG'
 
-        Types.isSVG('<!doctype html>') // -> false
+        Types.isSVG('&lt;!doctype html&gt;') // -> false
 
-        const svg = '<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 26 28">' +
-                    '<path d="M22 15.5v7.5c0"></path>' +
-                    '</svg>'
+        const svg = '&lt;svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 26 28"&gt;' +
+                    '&lt;path d="M22 15.5v7.5c0"&gt;&lt;/path&gt;' +
+                    '&lt;/svg&gt;'
 
         Types.isSVG(svg) // -> true
 

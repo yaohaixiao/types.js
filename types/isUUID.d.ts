@@ -16,9 +16,9 @@ export default isUUID;
  * isUUID('{0e40c5ab-1d9b-ee11-983e-e0be0335d021}') // -> true
  * isUUID('08dbe0f11c8641cf8afe6b2824e8f8f5') // -> true
  *
- * isOdd('') // -> false
- * isOdd('xxxA987FBC9-4BED-3078-CF07-9141BA07C9F3') // -> false
- * isOdd('934859') // -> false
- * isOdd('A987FBC94BED3078CF079141BA07C9F') // -> false
+ * isUUID('') // -> false
+ * isUUID('xxxA987FBC9-4BED-3078-CF07-9141BA07C9F3') // -> false
+ * isUUID('934859') // -> false
+ * isUUID('A987FBC94BED3078CF079141BA07C9F') // -> false
  */
 declare function isUUID(str: string): boolean;
