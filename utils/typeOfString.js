@@ -1,6 +1,7 @@
 import isBlank from '../isBlank'
 import isBase64 from '../isBase64'
 import isChinese from '../isChinese'
+import isIDNumber from '../isIDNumber'
 import isEmail from '../isEmail'
 import isEmpty from '../isEmpty'
 import isUUID from '../isUUID'
@@ -32,6 +33,8 @@ const typeOfString = (val) => {
     name = 'base64'
   } else if (isChinese(val)) {
     name = 'chinese'
+  } else if (isIDNumber(val)) {
+    name = 'ID number'
   } else if (isEmail(val)) {
     name = 'email'
   } else if (isIPAddress(val)) {

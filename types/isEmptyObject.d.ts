@@ -5,7 +5,7 @@ export default isEmptyObject;
  * @method isEmptyObject
  * @since 0.2.0
  * @category Object
- * @param {Object} obj - 要检测的数据
+ * @param {*} obj - 要检测的数据
  * @returns {Boolean} 'val' 是空对象，返回 true，否则返回 false
  * @example
  *

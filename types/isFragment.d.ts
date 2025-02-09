@@ -5,7 +5,7 @@ export default isFragment;
  * @method isFragment
  * @since 0.6.0
  * @category DOM
- * @param {DocumentFragment} val - 要检测的数据
+ * @param {*} val - 要检测的数据
  * @returns {Boolean} 'val' 为 DocumentFragment 文档碎片，返回 true，否则返回 false
  * @example
  *
@@ -25,4 +25,4 @@ export default isFragment;
  *
  * isFragment($items) // -> true
  */
-declare function isFragment(val: DocumentFragment): boolean;
+declare function isFragment(val: any): boolean;

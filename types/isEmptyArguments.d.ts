@@ -5,7 +5,7 @@ export default isEmptyArguments;
  * @method isEmptyArguments
  * @since 2.6.0
  * @category Array
- * @param {Object} val
+ * @param {*} val
  * @returns {Boolean}
  * @example
  *

@@ -5,7 +5,7 @@ export default isFloat32Array;
  * @method isFloat32Array
  * @since 0.2.0
  * @category Typed Arrays
- * @param {Float32Array} val - （必须）待检测的数据
+ * @param {*} val - （必须）待检测的数据
  * @returns {Boolean} 'val' 是 Float64Array 类型，返回 true，否则返回 false
  * @example
  *
@@ -24,4 +24,4 @@ export default isFloat32Array;
  * isFloat32Array(args) // -> false
  * isFloat32Array(new Float32Array()) => true
  */
-declare function isFloat32Array(val: Float32Array): boolean;
+declare function isFloat32Array(val: any): boolean;

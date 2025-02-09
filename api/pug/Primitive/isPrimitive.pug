@@ -1,0 +1,43 @@
+section.section
+  header.section__header
+    h3#method-isPrimitive.section__h3 isPrimitive(val)
+  div.section__content
+    dl.section__dl
+      dt.section__dt Since：
+      dd.section__dd 2.6.0
+    h4.section__h4 Description
+    p isPrimitive(val) 方法用来检测测试数据是否为原始值类型。
+    h4.section__h4 Parameters
+    h5.section__h4 val
+    dl.section__dl
+      dt.section__dt Type：
+      dd.section__dd Any
+    p （必须）val 待检测的数据。
+    h4.section__h4 Returns
+    dl.section__dl
+      dt.section__dt Type：
+      dd.section__dd Boolean。
+    p 'val' 是原始值类型，返回 true，否则返回 false。
+    pre.section__pre
+      code.section__code.
+        import Types from '@yaohaixiao/types.js'
+        // 或者单独引用 isPrimitive() 方法
+        // import isPrimitive from '@yaohaixiao/types.js/isPrimitive'
+
+        let num
+        const MAX_SAFE_INTEGER = 9007199254740991
+        const bigint = BigInt(MAX_SAFE_INTEGER + 1)
+
+        // True
+        Types.isPrimitive(1) // -> true
+        Types.isPrimitive('num') // -> true
+        Types.isPrimitive(false) // -> true
+        Types.isPrimitive(null) // -> true
+        Types.isPrimitive(num) // -> true
+        Types.isPrimitive(Symbol('foo')) // -> true
+        Types.isPrimitive(bigint) // -> true
+
+        // False
+        Types.isPrimitive([]) // -> false
+        Types.isPrimitive({}) // -> false
+        Types.isPrimitive(()=>{}) // -> false

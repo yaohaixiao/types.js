@@ -4,8 +4,35 @@ export default isPromise;
  * ========================================================================
  * @method isPromise
  * @since 1.3.0
- * @category Lang
- * @param {Object} val - 测试数据
+ * @category Object
+ * @param {*} val - 测试数据
  * @returns {Boolean} 'val' 是 Promise 对象，返回 true，否则返回 false
+ * @example
+ *
+ * const resolve = Promise.resolve
+ * const reject = Promise.reject
+ * const request = new Promise((resolve, reject) => {})
+ * let val
+ *
+ * // 非对象参数
+ * isPrototype(null) // => false
+ * isPrototype(val) // => false
+ * isPrototype('') // => false
+ * isPrototype(12) // => false
+ * isPrototype(false) // => false
+ * isPrototype(BigInt(12)) // => false
+ * isPrototype(Symbol('prop')) // => false
+ *
+ *
+ * // 对象参数
+ * isPrototype([]]) // => false
+ * isPrototype({}) // => false
+ * isPrototype(class {}) // => false
+ * isPrototype(() => {}) // => false
+ *
+ * isPrototype(request) // => true
+ * isPrototype(Promise.all([resolve, resolve]) // => true
+ * isPrototype(Promise.any([resolve, reject]) // => true
+ * isPrototype(resolve) // => true
  */
 declare function isPromise(val: any): boolean;

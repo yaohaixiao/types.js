@@ -7,5 +7,21 @@ export default isUint32Array;
  * @category Typed Arrays
  * @param {*} val - 要检测的数据
  * @returns {Boolean} 'val' 是 Uint32Array 类型，返回 true，否则返回 false
+ * @example
+ *
+ * const numbers = [ 2, 4 ]
+ * let args
+ *
+ * function test(a){
+ *   args = arguments
+ *   return a === 'test'
+ * }
+ *
+ * test()
+ *
+ * isInt32Array(numbers) // -> false
+ * isInt32Array(new Array(32)) // -> false
+ * isInt32Array(args) // -> false
+ * isInt32Array(new Int32Array()) => true
  */
 declare function isUint32Array(val: any): boolean;

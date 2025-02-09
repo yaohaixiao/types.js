@@ -5,7 +5,7 @@ export default isBuffer;
  * @method isBuffer
  * @since 1.6.0
  * @category Object
- * @param {Buffer} val - 待检测的数据
+ * @param {*} val - 待检测的数据
  * @returns {Boolean} 'val' 是 Buffer 类型返回 true，否则返回 false
  * @example
  *
@@ -16,4 +16,4 @@ export default isBuffer;
  *
  * isBuffer(buffer) // -> true
  */
-declare function isBuffer(val: Buffer): boolean;
+declare function isBuffer(val: any): boolean;

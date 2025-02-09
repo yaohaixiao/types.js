@@ -5,7 +5,7 @@ export default isElement;
  * @method isElement
  * @since 0.2.0
  * @category DOM
- * @param {HTMLElement} val - 要检测的数据
+ * @param {*} val - 要检测的数据
  * @returns {Boolean} 'val' 为 HTML 元素节点，返回 true，否则返回 false
  * @example
  *
@@ -25,4 +25,4 @@ export default isElement;
  *
  * isElement($fragment) // -> false
  */
-declare function isElement(val: HTMLElement): boolean;
+declare function isElement(val: any): boolean;

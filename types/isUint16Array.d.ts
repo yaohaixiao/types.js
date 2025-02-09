@@ -7,5 +7,21 @@ export default isUint16Array;
  * @category Typed Arrays
  * @param {*} val - 要检测的数据
  * @returns {Boolean} 'val' 是 Uint16Array 类型，返回 true，否则返回 false
+ * @example
+ *
+ * const numbers = [ 2, 4 ]
+ * let args
+ *
+ * function test(a){
+ *   args = arguments
+ *   return a === 'test'
+ * }
+ *
+ * test()
+ *
+ * isUint16Array(numbers) // -> false
+ * isUint16Array(new Array(32)) // -> false
+ * isUint16Array(args) // -> false
+ * isUint16Array(new Uint16Array()) // -> true
  */
 declare function isUint16Array(val: any): boolean;

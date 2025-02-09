@@ -5,7 +5,7 @@ export default isEven;
  * @method isEven
  * @since 0.2.0
  * @category Number
- * @param {Number} val - 要检测的数据
+ * @param {*} val - 要检测的数据
  * @returns {Boolean} 'val' 是偶数，返回 true，否则返回 false
  * @example
  *
@@ -16,4 +16,4 @@ export default isEven;
  * isEven(3) // -> false
  * isEven(2.2) // -> false
  */
-declare function isEven(val: number): boolean;
+declare function isEven(val: any): boolean;

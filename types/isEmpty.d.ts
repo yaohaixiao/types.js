@@ -5,7 +5,7 @@ export default isEmpty;
  * @method isEmpty
  * @since 0.2.0
  * @category String
- * @param {String|Array|Object|Buffer|HTMLCollection|null} val - 要检测的数据
+ * @param {*} val - 要检测的数据
  * @returns {Boolean} 'val' 是空字符串，返回 true，否则返回 false
  * @example
  *
@@ -49,4 +49,4 @@ export default isEmpty;
  *
  * isEmpty(buffer) => false
  */
-declare function isEmpty(val: string | any[] | any | Buffer | HTMLCollection | null): boolean;
+declare function isEmpty(val: any): boolean;

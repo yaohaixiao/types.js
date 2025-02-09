@@ -5,7 +5,7 @@ export default isEmail;
  * @method isEmail
  * @since 0.2.0
  * @category String
- * @param {String} val - 要检测的数据
+ * @param {*} val - 要检测的数据
  * @returns {Boolean} 'val' 是 Email 邮箱地址格式，返回 true，否则返回 false
  * @example
  *
@@ -30,4 +30,4 @@ export default isEmail;
  * isEmail('yao\haixiao@gmail.com') // => false
  * isEmail('yao[haixiao@gmail.com') // => false
  */
-declare function isEmail(val: string): boolean;
+declare function isEmail(val: any): boolean;

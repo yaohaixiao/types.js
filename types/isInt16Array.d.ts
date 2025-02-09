@@ -7,5 +7,21 @@ export default isInt16Array;
  * @category Typed Arrays
  * @param {*} val - 要检测的数据
  * @returns {Boolean} 'val' 是 Int32Array 类型，返回 true，否则返回 false
+ * @example
+ *
+ * const numbers = [ 2, 4 ]
+ * let args
+ *
+ * function test(a){
+ *   args = arguments
+ *   return a === 'test'
+ * }
+ *
+ * test()
+ *
+ * isInt16Array(numbers) // -> false
+ * isInt16Array(new Array(16)) // -> false
+ * isInt16Array(args) // -> false
+ * isInt16Array(new Int16Array()) => true
  */
 declare function isInt16Array(val: any): boolean;

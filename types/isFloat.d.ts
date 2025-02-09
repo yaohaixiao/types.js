@@ -5,7 +5,7 @@ export default isFloat;
  * @method isFloat
  * @since 0.2.0
  * @category Number
- * @param {Number} val - 要检测的数据
+ * @param {*} val - 要检测的数据
  * @returns {Boolean} 'val' 是整数，返回 true，否则返回 false
  * @example
  *
@@ -18,4 +18,4 @@ export default isFloat;
  * isFloat(NaN) // -> false
  * isFloat(Infinity) // -> false
  */
-declare function isFloat(val: number): boolean;
+declare function isFloat(val: any): boolean;

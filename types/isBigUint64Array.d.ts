@@ -5,7 +5,7 @@ export default isBigUint64Array;
  * @method isBigUint64Array
  * @since 0.6.0
  * @category Typed Arrays
- * @param {BigUint64Array} val - 要检测的数据
+ * @param {*} val - 要检测的数据
  * @returns {Boolean} 'val' 为 BigUint64Array 类型，返回 true，否则返回 false
  * @example
  *
@@ -15,4 +15,4 @@ export default isBigUint64Array;
  * isBigUint64Array(arr) // -> false
  * isBigUint64Array(bigint64) // -> true
  */
-declare function isBigUint64Array(val: BigUint64Array): boolean;
+declare function isBigUint64Array(val: any): boolean;

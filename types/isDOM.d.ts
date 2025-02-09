@@ -5,7 +5,7 @@ export default isDOM;
  * @method isDOM
  * @since 1.9.0
  * @category DOM
- * @param {HTMLElement|DocumentFragment|HTMLCollection|Text} el
+ * @param {*} el
  * @returns {Boolean}
  * @example
  *
@@ -22,4 +22,4 @@ export default isDOM;
  *
  * isDOM($text) // -> true
  */
-declare function isDOM(el: HTMLElement | DocumentFragment | HTMLCollection | Text): boolean;
+declare function isDOM(el: any): boolean;

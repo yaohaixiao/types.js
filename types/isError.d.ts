@@ -5,7 +5,7 @@ export default isError;
  * @method isError
  * @since 0.2.0
  * @category Object
- * @param {Error} val - 要检测的数据
+ * @param {*} val - 要检测的数据
  * @returns {Boolean} 'val' 是 Error 类型，返回 true，否则返回 false
  * @example
  *
@@ -14,4 +14,4 @@ export default isError;
  * isError(new error()) // -> false
  * isError(new Error()) // -> true
  */
-declare function isError(val: Error): boolean;
+declare function isError(val: any): boolean;

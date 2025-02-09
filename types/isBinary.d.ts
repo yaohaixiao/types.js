@@ -4,7 +4,7 @@ export default isBinary;
  * ========================================================================
  * @method isBinary
  * @since 1.11.0
- * @param {Buffer | String} buffer
+ * @param {*} buffer
  * @returns {Boolean}
  * @example
  *
@@ -16,4 +16,4 @@ export default isBinary;
  * isBinary(buffer) // -> true
  * isBinary(buffer.toString()) // -> true
  */
-declare function isBinary(buffer: Buffer | string): boolean;
+declare function isBinary(buffer: any): boolean;

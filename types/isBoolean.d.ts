@@ -5,7 +5,7 @@ export default isBoolean;
  * @method isBoolean
  * @since 0.2.0
  * @category Primitive Values
- * @param {Boolean} val - 要检测的数据
+ * @param {*} val - 要检测的数据
  * @returns {Boolean} 'val' 是 Boolean 类型，则返回 true，否则返回 false
  * @example
  *
@@ -26,4 +26,4 @@ export default isBoolean;
  * isBoolean(new Boolean('')) // -> false
  * isBoolean(!!projects) // -> true
  */
-declare function isBoolean(val: boolean): boolean;
+declare function isBoolean(val: any): boolean;

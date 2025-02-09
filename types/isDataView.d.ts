@@ -5,7 +5,7 @@ export default isDataView;
  * @method isDataView
  * @since 0.2.0
  * @category Typed Arrays
- * @param {DataView} val - 要检测的数据
+ * @param {*} val - 要检测的数据
  * @return {Boolean} 'val' 是 DataView 类型，返回 true，否则返回 false
  * @example
  *
@@ -15,4 +15,4 @@ export default isDataView;
  * isDataView(buffer) // -> false
  * isDataView(dv) // -> true
  */
-declare function isDataView(val: DataView): boolean;
+declare function isDataView(val: any): boolean;

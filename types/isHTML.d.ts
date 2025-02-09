@@ -7,7 +7,7 @@ export default isHTML;
  * @category String
  * @see https://github.com/sindresorhus/html-tags
  * @see https://github.com/sindresorhus/is-html
- * @param {String} str - 要检测的数据
+ * @param {*} str - 要检测的数据
  * @returns {Boolean} 'val' 为合法的 HTML 代码，返回 true，否则返回 false
  * @example
  *
@@ -35,4 +35,4 @@ export default isHTML;
  * isHTML('<gender>mail</gender>') // -> false
  * isHTML('<career>programmer</career>') // -> false
  */
-declare function isHTML(str: string): boolean;
+declare function isHTML(str: any): boolean;

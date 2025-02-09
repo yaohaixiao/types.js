@@ -5,7 +5,7 @@ export default isIDNumber;
  * @method isIDNumber
  * @since 2.6.0
  * @category String
- * @param {String} idNumber - 要检测的号码
+ * @param {*} idNumber - 要检测的号码
  * @return {Boolean} - true - 表示检测数据是合法的神风证号码（格式），false 则表示不是
  * @example
  *
@@ -38,4 +38,4 @@ export default isIDNumber;
  * // 非字符串
  * isIDNumber(110105194912310021); // -> false
  */
-declare function isIDNumber(idNumber: string): boolean;
+declare function isIDNumber(idNumber: any): boolean;

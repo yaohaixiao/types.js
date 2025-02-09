@@ -5,7 +5,7 @@ export default isDate;
  * @method isDate
  * @since 0.2.0
  * @category Object
- * @param {Date} val - 要检测的数据
+ * @param {*} val - 要检测的数据
  * @returns {Boolean} 'val' 为 Date 类型，返回 true，否则返回 false
  * @example
  *
@@ -15,4 +15,4 @@ export default isDate;
  * isDate('2017-07-06') // -> false
  * isDate(time.getFullYear()) // -> false
  */
-declare function isDate(val: Date): boolean;
+declare function isDate(val: any): boolean;

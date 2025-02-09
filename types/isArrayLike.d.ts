@@ -6,7 +6,7 @@ export default isArrayLike;
  * @method isArrayLike
  * @since 0.2.0
  * @category Array
- * @param {Object|Array|HTMLCollection} val - 要检测是的数据
+ * @param {*} val - 要检测是的数据
  * @returns {Boolean} 'val' 是 array、arguments 或者 HTMLNodeList 类型返回 true，
  * 否则返回 false
  * @example
@@ -31,4 +31,4 @@ export default isArrayLike;
  * isArrayLike({ '0': 1, '1': 2, length: 2 }) // -> false
  * isArrayLike( new Int8Array() ) // -> false
  */
-declare function isArrayLike(val: any | any[] | HTMLCollection): boolean;
+declare function isArrayLike(val: any): boolean;

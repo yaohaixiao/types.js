@@ -7,5 +7,10 @@ export default isInt8Array;
  * @category Typed Arrays
  * @param {*} val - 要检测的数据
  * @returns {Boolean} 'val' 是 Int32Array 类型，返回 true，否则返回 false
+ * @example
+ *
+ * isInt8Array([]) // -> false
+ * isInt8Array(new Array(8)) // -> false
+ * isInt8Array(new Int8Array([])) // -> true
  */
 declare function isInt8Array(val: any): boolean;

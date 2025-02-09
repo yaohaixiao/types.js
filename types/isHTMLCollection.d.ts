@@ -5,7 +5,7 @@ export default isHTMLCollection;
  * @method isHTMLCollection
  * @since 0.2.0
  * @category DOM
- * @param {HTMLCollection} val - 要检测的数据
+ * @param {*} val - 要检测的数据
  * @returns {Boolean} 'val' 是 HTMLNodeList 对象，返回 true，否则返回 false
  * @example
  *
@@ -25,4 +25,4 @@ export default isHTMLCollection;
  *
  * isHTMLCollection($items) // -> false
  */
-declare function isHTMLCollection(val: HTMLCollection): boolean;
+declare function isHTMLCollection(val: any): boolean;

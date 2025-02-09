@@ -5,7 +5,7 @@ export default isBigInt;
  * @method isBigInt
  * @since 0.6.0
  * @category Primitive Values
- * @param {BigInteger} val - 要检测的数据
+ * @param {*} val - 要检测的数据
  * @returns {Boolean} 'val' 为 BigInt 类型，返回 true，否则返回 false
  * @example
  *
@@ -15,4 +15,4 @@ export default isBigInt;
  * isBigInt(MAX_SAFE_INTEGER) // -> false
  * isBigInt(bigint) // -> true
  */
-declare function isBigInt(val: BigInteger): boolean;
+declare function isBigInt(val: any): boolean;

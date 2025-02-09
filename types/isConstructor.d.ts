@@ -5,7 +5,7 @@ export default isConstructor;
  * @method isConstructor
  * @since 0.2.0
  * @category Function
- * @param {Function|Object} fn - 要测试的（构造）函数
+ * @param {*} fn - 要测试的（构造）函数
  * @returns {Boolean} - fn 是构造函数，返回 true，否则返回 false;
  * @example
  *
@@ -27,4 +27,4 @@ export default isConstructor;
  * isConstructor(Object) // -> true
  * isConstructor(Promise) // -> true
  */
-declare function isConstructor(fn: Function | any): boolean;
+declare function isConstructor(fn: any): boolean;
