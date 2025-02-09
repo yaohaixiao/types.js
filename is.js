@@ -22,9 +22,11 @@ import typeOfObject from './utils/typeOfObject'
  * is('') // -> empty
  * is('3C8021B0-423D-475D-BECF-63ED5ED34563') // -> guid
  * is('3C8021B0423D475DBECF63ED5ED34563') // -> guid
+ * is('110105491231002') // -> ID number
+ * is('11010519491231002X') // -> ID number
  * is('#ffffff') // -> hex
  * is('<h2>中国梦</h2>') // -> html
- * isIPAddress('126.11.15.255') // -> IP address
+ * is('126.11.15.255') // -> IP address
  * is('{"prop":"JSON"}') // -> json
  * is('11:23 am') // -> time
  * is('Jul 08 2023') // -> time
