@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="keywords" content="JavaScript,typeof,types.js"><meta name="description" content="types.js 专注于检测 JavaScript 数据类型的工具库。"><link rel="shortcut icon" href="./favicon.ico"><link rel="preload" href="css/docs.min.css" as="style"><link rel="preload" href="js/types.min.js" as="script"><link rel="preload" href="js/docs.min.js" as="script"><title>types.js | 专注于检测 JavaScript 数据类型的工具库</title><link href="css/docs.min.css" rel="stylesheet" type="text/css"></head><body><div class="docs" id="docs"><aside class="aside" id="aside"><header class="aside__header"><h2 class="aside__h2">API Documentation</h2></header></aside><main class="main" id="main"><div class="main__header" id="header"><h1 class="main__h1"><strong class="main__name">types.</strong>js</h1><p class="main__tagline">types.js - 专注于检测 JavaScript 数据类型的工具库。</p></div><div class="main__cdn" id="cdn"><pre class="main__pre"><code>&lt;script src="https://cdn.jsdelivr.net/gh/yaohaixiao/types.js/types.min.js"&gt;&lt;/script&gt;</code></pre></div><div class="main__download" id="download"><a class="main__button" href="https://github.com/yaohaixiao/types.js/archive/refs/heads/main.zip" target="_blank">Download Zip</a></div><article id="article"><section class="section"><header class="section__header"><h2 class="section__title">Base</h2></header><div class="section__content"><p>types.js 提供以下基础的数据类型检测方法。</p></div><section class="section"><header class="section__header"><h3 class="section__h3" id="method-is">is(val)</h3></header><div class="section__content"><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">0.2.0</dd></dl><h4 class="section__h4">Description</h4><p>is(val) 方法返回检测 val 数据类型的字符串（名称）。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">String。</dd></dl><p>数据类型的字符串（名称）。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js'
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="keywords" content="JavaScript,typeof,detect,types,types.js"><meta name="description" content="types.js - A library of tools focused on detecting JavaScript data types."><link rel="shortcut icon" href="./favicon.ico"><link rel="preload" href="css/docs.min.css" as="style"><link rel="preload" href="js/types.min.js" as="script"><link rel="preload" href="js/docs.min.js" as="script"><title>types.js | 专注于检测 JavaScript 数据类型的工具库</title><link href="css/docs.min.css" rel="stylesheet" type="text/css"></head><body><div class="docs" id="docs"><aside class="aside" id="aside"><header class="aside__header"><h2 class="aside__h2">API Documentation</h2></header></aside><main class="main" id="main"><div class="main__header" id="header"><h1 class="main__h1"><strong class="main__name">types.</strong>js</h1><p class="main__tagline">types.js - 专注于检测 JavaScript 数据类型的工具库。</p></div><div class="main__cdn" id="cdn"><pre class="main__pre"><code>&lt;script src="https://cdn.jsdelivr.net/gh/yaohaixiao/types.js/types.min.js"&gt;&lt;/script&gt;</code></pre></div><div class="main__download" id="download"><a class="main__button" href="https://github.com/yaohaixiao/types.js/archive/refs/heads/main.zip" target="_blank">Download Zip</a></div><article id="article"><section class="section"><header class="section__header"><h2 class="section__title">Base</h2></header><div class="section__content"><p>types.js 提供以下基础的数据类型检测方法。</p></div><section class="section"><header class="section__header"><h3 class="section__h3" id="method-is">is(val)</h3></header><div class="section__content"><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">0.2.0</dd></dl><h4 class="section__h4">Description</h4><p>is(val) 方法返回检测 val 数据类型的字符串（名称）。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">String。</dd></dl><p>数据类型的字符串（名称）。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js'
 // 或者单独引用 is() 方法
 // import is from '@yaohaixiao/types.js/is'
 import { DOMParser } from 'xmldom'
@@ -34,7 +34,9 @@ Types.is('3C8021B0-423D-475D-BECF-63ED5ED34563') // -&gt; guid
 Types.is('3C8021B0423D475DBECF63ED5ED34563') // -&gt; guid
 Types.is('#ffffff') // -&gt; hex
 Types.is('&lt;h2&gt;中国梦&lt;/h2&gt;') // -&gt; html
-Types.isIPAddress('126.11.15.255') // -> IP address
+Types.is('126.11.15.255') // -> IP address
+Types.is('110105491231002') // -> ID number
+Types.is('11010519491231002X') // -> ID number
 Types.is('{"prop":"JSON"}') // -&gt; json
 Types.is('11:23 am') // -&gt; time
 Types.is('Jul 08 2023') // -&gt; time
@@ -369,15 +371,7 @@ Types.isArrayLikeObject($items) // -> true
 Types.isArrayLikeObject(args) // -> true
 
 Types.isArrayLikeObject(obj) // -> false
-Types.isArrayLikeObject({}) // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isEmptyArray">isEmptyArray(val)</h3></header><div class="section__content"><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">0.6.0</dd></dl><h4 class="section__h4">Description</h4><p>isEmptyArray(val) 方法用来检测测试数据是否为空字符串。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据为空字数组，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js'
-// 或者单独引用 isEmptyArray() 方法
-// import isEmptyArray from '@yaohaixiao/types.js/isEmptyArray'
-
-Types.isEmptyArray([]) // -> true
-Types.isEmptyArray(['']) // -> true
-Types.isEmptyArray(new Array()) // -> true
-
-Types.isEmptyArray(new Array(8)) // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isEmptyArguments">isEmptyArguments(val)</h3></header><div class="section__content"><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">2.6.0</dd></dl><h4 class="section__h4">Description</h4><p>isEmptyArguments(val) 方法用来检测测试 arguments 对象长度为 0。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测 arguments 对象长度为 0，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js'
+Types.isArrayLikeObject({}) // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isEmptyArguments">isEmptyArguments(val)</h3></header><div class="section__content"><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">2.6.0</dd></dl><h4 class="section__h4">Description</h4><p>isEmptyArguments(val) 方法用来检测测试 arguments 对象长度为 0。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测 arguments 对象长度为 0，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js'
 // 或者单独引用 isEmptyArguments() 方法
 // import isEmptyArguments from '@yaohaixiao/types.js/isEmptyArguments'
 
@@ -390,38 +384,15 @@ Types.isEmptyArguments(args) // -> true
 
 fn(1)
 
-Types.isEmptyArguments(args) // -> false</code></pre></div></section></section><section class="section"><header class="section__header"><h2 class="section__title">Typed Arrays</h2></header><div class="section__content"><p>types.js 提供以下方法来检测 Typed Arrays 相关的数据类型。</p></div><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isTypedArray">isTypedArray(val)</h3></header><div class="section__content"><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">0.2.0</dd></dl><h4 class="section__h4">Description</h4><p>isTypedArray(val) 方法用来检测测试数据是否为 TypedArray 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 TypedArray 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js'
-// 或者单独引用 isTypedArray() 方法
-// import isTypedArray from '@yaohaixiao/types.js/isTypedArray'
+Types.isEmptyArguments(args) // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isEmptyArray">isEmptyArray(val)</h3></header><div class="section__content"><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">0.6.0</dd></dl><h4 class="section__h4">Description</h4><p>isEmptyArray(val) 方法用来检测测试数据是否为空字符串。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据为空字数组，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js'
+// 或者单独引用 isEmptyArray() 方法
+// import isEmptyArray from '@yaohaixiao/types.js/isEmptyArray'
 
-const numbers = [ 2, 4 ]
-let args
+Types.isEmptyArray([]) // -> true
+Types.isEmptyArray(['']) // -> true
+Types.isEmptyArray(new Array()) // -> true
 
-function test(str) {
-  args = arguments
-  return str
-}
-
-test('str')
-
-Types.isTypedArray( args ) // -> false
-Types.isTypedArray( numbers ) // -> false
-Types.isTypedArray( new Array() ) // -> false
-
-Types.isTypedArray(new Int8Array([])) // -> true
-Types.isTypedArray(new Int16Array([])) // -> true
-Types.isTypedArray(new Int32Array([])) // -> true
-
-Types.isTypedArray(new Uint8ClampedArray([])) // -> true
-Types.isTypedArray(new Uint8Array([])) // -> true
-Types.isTypedArray(new Uint16Array([])) // -> true
-Types.isTypedArray(new Uint32Array([])) // -> true
-
-Types.isTypedArray(new Float32Array([])) // -> true
-Types.isTypedArray(new Float64Array([])) // -> true
-
-Types.isTypedArray(new BigInt64Array(42)) // -> true
-Types.isTypedArray(new BigUint64Array(42)) // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isArrayBuffer">isArrayBuffer(val)</h3></header><div class="section__content"><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">0.2.0</dd></dl><h4 class="section__h4">Description</h4><p>isArrayBuffer(val) 方法用来检测测试数据是否为 ArrayBuffer 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 ArrayBuffer 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js'
+Types.isEmptyArray(new Array(8)) // -> false</code></pre></div></section></section><section class="section"><header class="section__header"><h2 class="section__title">Typed Arrays</h2></header><div class="section__content"><p>types.js 提供以下方法来检测 Typed Arrays 相关的数据类型。</p></div><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isArrayBuffer">isArrayBuffer(val)</h3></header><div class="section__content"><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">0.2.0</dd></dl><h4 class="section__h4">Description</h4><p>isArrayBuffer(val) 方法用来检测测试数据是否为 ArrayBuffer 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 ArrayBuffer 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js'
 // 或者单独引用 isArrayBuffer() 方法
 // import isArrayBuffer from '@yaohaixiao/types.js/isArrayBuffer'
 
@@ -596,7 +567,38 @@ cong bigint64 = new BigInt64Array(42)
 Type.is(bigint) // -> 'bigint64array'
 
 Types.isBigUint64Array(arr) // -> false
-Types.isBigUint64Array(bigint64) // -> true</code></pre></div></section></section><section class="section"><header class="section__header"><h2 class="section__title">Object</h2></header><div class="section__content"><p>types.js 提供以下方法来检测 Object 相关的数据类型。</p></div><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isBinary">isBinary(val)</h3></header><div class="section__content"><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">1.11.0</dd></dl><h4 class="section__h4">Description</h4><p>isBinary(val) 方法用来检测测试数据是二进制（字符串）数据。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是二进制（字符串）数据，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js'
+Types.isBigUint64Array(bigint64) // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isTypedArray">isTypedArray(val)</h3></header><div class="section__content"><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">0.2.0</dd></dl><h4 class="section__h4">Description</h4><p>isTypedArray(val) 方法用来检测测试数据是否为 TypedArray 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 TypedArray 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js'
+// 或者单独引用 isTypedArray() 方法
+// import isTypedArray from '@yaohaixiao/types.js/isTypedArray'
+
+const numbers = [ 2, 4 ]
+let args
+
+function test(str) {
+  args = arguments
+  return str
+}
+
+test('str')
+
+Types.isTypedArray( args ) // -> false
+Types.isTypedArray( numbers ) // -> false
+Types.isTypedArray( new Array() ) // -> false
+
+Types.isTypedArray(new Int8Array([])) // -> true
+Types.isTypedArray(new Int16Array([])) // -> true
+Types.isTypedArray(new Int32Array([])) // -> true
+
+Types.isTypedArray(new Uint8ClampedArray([])) // -> true
+Types.isTypedArray(new Uint8Array([])) // -> true
+Types.isTypedArray(new Uint16Array([])) // -> true
+Types.isTypedArray(new Uint32Array([])) // -> true
+
+Types.isTypedArray(new Float32Array([])) // -> true
+Types.isTypedArray(new Float64Array([])) // -> true
+
+Types.isTypedArray(new BigInt64Array(42)) // -> true
+Types.isTypedArray(new BigUint64Array(42)) // -> true</code></pre></div></section></section><section class="section"><header class="section__header"><h2 class="section__title">Object</h2></header><div class="section__content"><p>types.js 提供以下方法来检测 Object 相关的数据类型。</p></div><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isBinary">isBinary(val)</h3></header><div class="section__content"><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">1.11.0</dd></dl><h4 class="section__h4">Description</h4><p>isBinary(val) 方法用来检测测试数据是二进制（字符串）数据。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是二进制（字符串）数据，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js'
 // 或者单独引用 isUint16Array() 方法
 // import isBinary from '@yaohaixiao/types.js/isBinary'
 

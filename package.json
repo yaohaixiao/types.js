@@ -1,8 +1,9 @@
 {
   "name": "@yaohaixiao/types.js",
   "version": "2.5.1",
-  "description": "types.js - 专注于检测 JavaScript 数据类型的工具库。",
+  "description": "types.js - A library of tools focused on detecting JavaScript data types.",
   "main": "index.js",
+  "types": "types/index.d.ts",
   "scripts": {
     "start": "gulp start",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
@@ -10,7 +11,8 @@
     "build:.d.ts": "tsc",
     "build:api": "npm run prettier:write && rollup -c build/rollup.config.api.js --bundleConfigAsCjs",
     "build:docs": "gulp build",
-    "build": "npm run build:lib && npm run build:docs",
+    "build:only": "npm run build:lib && npm run build:docs",
+    "build": "npm run test:unit && npm run build:lib && npm run build:docs",
     "lint": "eslint",
     "lint:fix": "npm run lint --cache --fix",
     "prettier:check": "npx prettier --check \"./*.js\"",
@@ -26,6 +28,8 @@
   },
   "keywords": [
     "JavaScript",
+    "typeof",
+    "detect",
     "types",
     "types.js"
   ],
