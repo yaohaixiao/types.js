@@ -1,3 +1,17 @@
+# [2.6.0](https://github.com/yaohaixiao/types.js/compare/2.5.1...2.6.0) (2025-02-09)
+
+
+### Features
+
+* 更新 is() 方法，可以判断 ID number 格式的字符串； ([dbfe95f](https://github.com/yaohaixiao/types.js/commit/dbfe95f01b0e0ce6c458303e434f35a8b3347a49))
+* 更新 isEmpty() 方法，扩展功能，可以检测空数组，空对象，空的 arguments 对象等； ([b1e934f](https://github.com/yaohaixiao/types.js/commit/b1e934f08c81615ded6a5dc5d19912587a958b09))
+* 更新 isSymbol() 和 isBigInt() 方法的校验方法 ([a5de32a](https://github.com/yaohaixiao/types.js/commit/a5de32a2349ea6254c0812c3ac749f4ce25d324a))
+* 添加 isEmptyArguments() 和 isPrimitive() 方法 ([6479452](https://github.com/yaohaixiao/types.js/commit/64794523c3b5ddfcaebe94f7a3510b0757279c0a))
+* 添加 isHosted() 和 isInstance() 方法； ([7e25408](https://github.com/yaohaixiao/types.js/commit/7e25408567e5024b1c387f9cff648f23562d4129))
+* 添加 isIDNumber() 方法; ([4b68801](https://github.com/yaohaixiao/types.js/commit/4b68801dda27344d41b175b1ad26257ff614ace3))
+
+
+
 ## [2.5.1](https://github.com/yaohaixiao/types.js/compare/2.5.0...2.5.1) (2025-02-07)
 
 
