@@ -6,8 +6,12 @@ import isString from './isString'
  * @method isBase64
  * @since 0.2.0
  * @category String
- * @param {String} val - 要检测的数据
+ * @param {*} val - 要检测的数据
  * @return {Boolean} 'val' 是 base64 编码的字符串，返回 true，否则返回 false
+ * @example
+ *
+ * isBase64('Z29vZA==') // -> true
+ * isBase64('aXNCYXNlNjQ=2') // -> false
  */
 const isBase64 = (val) => {
   const REGEXP_BASE64 =

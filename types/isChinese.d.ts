@@ -20,8 +20,35 @@ export default isChinese;
  * ========================================================================
  * @method isChinese
  * @since 1.2.0
+ * @category String
  * @param {String} str - （必须）检测字符串
  * @param {Boolean} [includePunctuation] - （可选）是否包含标点符号：默认值：true
  * @returns {boolean} - ‘val’ 是中文字符，返回 true，否则返回 false;
+ * @example
+ *
+ * let chinese
+ *
+ * // 非字符串
+ * isChinese(null) // -> false
+ * isChinese(chinese) // -> false
+ * isChinese({}) // -> false
+ * isChinese([]) // -> false
+ * isChinese(Symbol('symbol')) // -> false
+ *
+ * // Ascii 字符
+ * isChinese(12) // -> false
+ * isChinese('chinese') // -> false
+ * isChinese('+=*\/') // -> false
+ *
+ * // 汉字字符
+ * isChinese('汉字字符：尅靈') // -> true
+ * isChinese('扩展字符：㐥𠁜𪝹𫞺𫡡𭀔𭍓') // -> true
+ *
+ * // 标点符号
+ * isChinese('标点符号：。，、；：×·—…（）『』【】《》？！‘’“”～') // -> true
+ * isChinese('兼容标点符号：︰︱︲︳︴︵︶︷︸︹︺︻︼︽︾︿﹀﹁﹂﹃﹄﹅﹆﹇﹈﹉﹊﹋﹌﹍﹎﹏') // -> true
+ *
+ * // 不包含标点符号，则以下检测无法通过
+ * isChinese('标点符号：。，、；：×·—…（）『』【】《》？！‘’“”～', false) // -> false
  */
 declare function isChinese(str: string, includePunctuation?: boolean): boolean;

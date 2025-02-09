@@ -6,8 +6,13 @@ import isString from './isString'
  * @method isBlank
  * @since 0.2.0
  * @category String
- * @param {String} val - 要检测的数据
+ * @param {*} val - 要检测的数据
  * @returns {Boolean} 'val' 只包含空格，返回 true，否则返回 false
+ * @example
+ *
+ * isBlank('  ') // -> true
+ * isBlank(new String()) // -> false
+ * isBlank('') // -> true
  */
 function isBlank(val) {
   if (!isString(val)) {

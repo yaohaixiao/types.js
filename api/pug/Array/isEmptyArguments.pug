@@ -1,0 +1,36 @@
+section.section
+  header.section__header
+    h3#method-isEmptyArguments.section__h3 isEmptyArguments(val)
+  div.section__content
+    dl.section__dl
+      dt.section__dt Since：
+      dd.section__dd 2.6.0
+    h4.section__h4 Description
+    p isEmptyArguments(val) 方法用来检测测试 arguments 对象长度为 0。
+    h4.section__h4 Parameters
+    h5.section__h4 val
+    dl.section__dl
+      dt.section__dt Type：
+      dd.section__dd Any
+    p （必须）val 待检测的数据。
+    h4.section__h4 Returns
+    dl.section__dl
+      dt.section__dt Type：
+      dd.section__dd Boolean。
+    p true - 表示检测 arguments 对象长度为 0，false 则表示不是。
+    pre.section__pre
+      code.section__code.
+        import Types from '@yaohaixiao/types.js'
+        // 或者单独引用 isEmptyArguments() 方法
+        // import isEmptyArguments from '@yaohaixiao/types.js/isEmptyArguments'
+
+        let args
+        const fn = function () {arg = arguments}
+
+        fn()
+
+        Types.isEmptyArguments(args) // -> true
+
+        fn(1)
+
+        Types.isEmptyArguments(args) // -> false

@@ -3,7 +3,7 @@ section.section
     h3#method-isEmpty.section__h3 isEmpty(val)
   div.section__content
     h4.section__h4 Description
-    p isEmpty(val) 方法用来检测测试数据是否为空字符串。
+    p isEmpty(val) 方法用来检测测试数据是否为空字符串、数组、对象或者空的 arguments 参数。
     dl.section__dl
       dt.section__dt Category：
       dd.section__dd Lang
@@ -24,7 +24,40 @@ section.section
         // 或者单独引用 isEmpty() 方法
         // import isEmpty from '@yaohaixiao/types.js/isEmpty'
 
+        Types.isEmpty(null) // -> true
+
+        // 字符串
         Types.isEmpty('') // -> true
         Types.isEmpty(String()) // -> true
-        Types.isEmpty(new String()) // -> false
         Types.isEmpty(' ') // -> false
+
+        // 数组
+        Types.isEmpty([]) // -> true
+        Types.isEmpty([1]) // -> false
+
+        // 对象
+        Types.isEmpty(new String()) // -> true
+        Types.isEmpty({}) // -> true
+        Types.isEmpty({a: 1}) // -> false
+
+        // arguments 参数
+        let args
+        const fn = function () {arg = arguments}
+
+        fn()
+
+        Types.isEmpty(fn.prototype) // -> false
+        Types.isEmpty(args) // -> true
+
+        fn(1)
+
+        Types.isEmpty(args) // -> false
+
+        // buffer
+        left buffer = Buffer.alloc(0)
+
+        isEmpty(buffer) => true
+
+        buffer = Buffer.alloc(10)
+
+        isEmpty(buffer) => false

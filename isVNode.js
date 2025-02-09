@@ -5,11 +5,23 @@ import isObject from './isObject'
  * 判断是否未 VNode 对象
  * =============================================================
  * @method isVNode
- * @param {Object} node - 要检测的数据
+ * @since 0.2.0
+ * @category DOM
+ * @param {*} val - 要检测的数据
  * @returns {Boolean} 'val' 是 VNode 类型，返回 true，否则返回 false
+ * @example
+ *
+ * export default {
+ *   name: 'PageHeader',
+ *   mounted() {
+ *     const $header = this.$refs.header
+ *
+ *     isVNode($header) // -> true
+ *   }
+ * }
  */
-const isVNode = (node) => {
-  return node !== null && isObject(node) && hasOwn(node, 'componentOptions')
+const isVNode = (val) => {
+  return val !== null && isObject(val) && hasOwn(val, 'componentOptions')
 }
 
 export default isVNode

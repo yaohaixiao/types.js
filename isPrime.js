@@ -5,14 +5,25 @@ import isNumber from './isNumber'
  * ========================================================================
  * @method isPrime
  * @since 2.1.0
- * @param {Number} num - 要检测的数据
- * @returns {Boolean} 'num' 是质(素)数，返回 true，否则返回 false
+ * @cagetory Number
+ * @param {*} val - 要检测的数据
+ * @returns {Boolean} 'val' 是质(素)数，返回 true，否则返回 false
+ * @example
+ *
+ * isPrime(3) // -> true
+ * isPrime(7) // -> true
+ * isPrime(11) // -> true
+ *
+ * isPrime(0) // -> false
+ * isPrime(1) // -> false
+ * isPrime(2) // -> false
+ * isPrime(9) // -> false
  */
-const isPrime = (num) => {
+const isPrime = (val) => {
   let boundary
   let i
 
-  if (!isNumber(num)) {
+  if (!isNumber(val)) {
     return false
   }
 
