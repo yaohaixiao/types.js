@@ -16,7 +16,7 @@ types.js - A library of tools focused on detecting JavaScript data types.
 - 支持 ES6 模块；
 - 支持 TypeScript；
 - 支持按需加载；
-- 丰富的数据类型检测方法，且调用方面简单；
+- 丰富的数据类型检测方法（80+），且调用方面简单；
 - 文件体积小(Gzip：4.2KB)，加载速度快；
 
 ## Browsers support
