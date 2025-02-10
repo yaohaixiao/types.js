@@ -397,7 +397,27 @@ Types.isEmptyArray(new Array(8)) // -> false</code></pre></div></section></secti
 // import isArrayBuffer from '@yaohaixiao/types.js/isArrayBuffer'
 
 Types.isArrayBuffer([]) // -> false
-Types.isArrayBuffer(new ArrayBuffer(8)) // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isDataView">isDataView(val)</h3></header><div class="section__content"><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">0.2.0</dd></dl><h4 class="section__h4">Description</h4><p>isDataView(val) 方法用来检测测试数据是否为 DataView 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 DataView 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js'
+Types.isArrayBuffer(new ArrayBuffer(8)) // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isBigInt64Array">isBigInt64Array(val)</h3></header><div class="section__content"><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">0.6.0</dd></dl><h4 class="section__h4">Description</h4><p>isBigInt64Array(val) 方法用来检测测试数据是否为 BigInt64Array 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 BigInt64Array 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js'
+// 或者单独引用 isBigInt64Array() 方法
+// import isBigInt64Array from '@yaohaixiao/types.js/isBigInt64Array'
+
+const arr = [9007199254740992]
+cong bigint64 = new BigInt64Array(42)
+
+Type.is(bigint) // -> 'bigint64array'
+
+Types.isBigInt64Array(arr) // -> false
+Types.isBigInt64Array(bigint64) // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isBigUint64Array">isBigUint64Array(val)</h3></header><div class="section__content"><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">0.6.0</dd></dl><h4 class="section__h4">Description</h4><p>isBigUint64Array(val) 方法用来检测测试数据是否为 BigUint64Array 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 BigUint64Array 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js'
+// 或者单独引用 isBigUint64Array() 方法
+// import isBigUint64Array from '@yaohaixiao/types.js/isBigUint64Array'
+
+const arr = [9007199254740992]
+cong bigint64 = new BigInt64Array(42)
+
+Type.is(bigint) // -> 'bigint64array'
+
+Types.isBigUint64Array(arr) // -> false
+Types.isBigUint64Array(bigint64) // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isDataView">isDataView(val)</h3></header><div class="section__content"><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">0.2.0</dd></dl><h4 class="section__h4">Description</h4><p>isDataView(val) 方法用来检测测试数据是否为 DataView 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 DataView 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js'
 // 或者单独引用 isDataView() 方法
 // import isDataView from '@yaohaixiao/types.js/isDataView'
 
@@ -405,7 +425,41 @@ const buffer = new ArrayBuffer(8)
 const dv = new DataView(buffer)
 
 Types.isDataView(buffer) // -> false
-Types.isDataView(dv) // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isInt8Array">isInt8Array(val)</h3></header><div class="section__content"><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">0.2.0</dd></dl><h4 class="section__h4">Description</h4><p>isInt8Array(val) 方法用来检测测试数据是否为 Int8Array 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 Int8Array 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js'
+Types.isDataView(dv) // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isFloat32Array">isFloat32Array(val)</h3></header><div class="section__content"><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">0.2.0</dd></dl><h4 class="section__h4">Description</h4><p>isFloat32Array(val) 方法用来检测测试数据是否为 Float32Array 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 Float32Array 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js'
+// 或者单独引用 isFloat32Array() 方法
+// import isFloat32Array from '@yaohaixiao/types.js/isFloat32Array'
+
+const numbers = [ 2, 4 ]
+let args
+
+function test(a){
+  args = arguments
+  return a === 'test'
+}
+
+test()
+
+Types.isFloat32Array(numbers) // -> false
+Types.isFloat32Array(new Array(32)) // -> false
+Types.isFloat32Array(args) // -> false
+Types.isFloat32Array(new Float32Array()) // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isFloat64Array">isFloat64Array(val)</h3></header><div class="section__content"><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">0.2.0</dd></dl><h4 class="section__h4">Description</h4><p>isFloat64Array(val) 方法用来检测测试数据是否为 Float64Array 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 Float64Array 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js'
+// 或者单独引用 isFloat64Array() 方法
+// import isFloat64Array from '@yaohaixiao/types.js/isFloat64Array'
+
+const numbers = [ 2, 4 ]
+let args
+
+function test(a){
+  args = arguments
+  return a === 'test'
+}
+
+test()
+
+Types.isFloat64Array(numbers) // -> false
+Types.isFloat64Array(new Array(32)) // -> false
+Types.isFloat64Array(args) // -> false
+Types.isFloat64Array(new Float64Array()) // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isInt8Array">isInt8Array(val)</h3></header><div class="section__content"><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">0.2.0</dd></dl><h4 class="section__h4">Description</h4><p>isInt8Array(val) 方法用来检测测试数据是否为 Int8Array 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 Int8Array 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js'
 // 或者单独引用 isInt8Array() 方法
 // import isInt8Array from '@yaohaixiao/types.js/isInt8Array'
 
@@ -428,7 +482,7 @@ test()
 Types.isInt16Array(numbers) // -> false
 Types.isInt16Array(new Array(16)) // -> false
 Types.isInt16Array(args) // -> false
-Types.isInt16Array(new Int16Array()) => true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isInt32Array">isInt32Array(val)</h3></header><div class="section__content"><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">0.2.0</dd></dl><h4 class="section__h4">Description</h4><p>isInt32Array(val) 方法用来检测测试数据是否为 Int32Array 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 Int32Array 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js'
+Types.isInt16Array(new Int16Array()) // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isInt32Array">isInt32Array(val)</h3></header><div class="section__content"><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">0.2.0</dd></dl><h4 class="section__h4">Description</h4><p>isInt32Array(val) 方法用来检测测试数据是否为 Int32Array 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 Int32Array 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js'
 // 或者单独引用 isInt32Array() 方法
 // import isInt32Array from '@yaohaixiao/types.js/isInt32Array'
 
@@ -445,7 +499,7 @@ test()
 Types.isInt32Array(numbers) // -> false
 Types.isInt32Array(new Array(32)) // -> false
 Types.isInt32Array(args) // -> false
-Types.isInt32Array(new Int32Array()) => true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isUint8Array">isUint8Array(val)</h3></header><div class="section__content"><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">0.2.0</dd></dl><h4 class="section__h4">Description</h4><p>isUint8Array(val) 方法用来检测测试数据是否为 Uint8Array 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 Uint8Array 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js'
+Types.isInt32Array(new Int32Array()) // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isUint8Array">isUint8Array(val)</h3></header><div class="section__content"><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">0.2.0</dd></dl><h4 class="section__h4">Description</h4><p>isUint8Array(val) 方法用来检测测试数据是否为 Uint8Array 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 Uint8Array 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js'
 // 或者单独引用 isUint8Array() 方法
 // import isUint8Array from '@yaohaixiao/types.js/isUint8Array'
 
@@ -513,61 +567,7 @@ test()
 Types.isUint32Array(numbers) // -> false
 Types.isUint32Array(new Array(32)) // -> false
 Types.isUint32Array(args) // -> false
-Types.isUint32Array(new Uint32Array()) // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isFloat32Array">isFloat32Array(val)</h3></header><div class="section__content"><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">0.2.0</dd></dl><h4 class="section__h4">Description</h4><p>isFloat32Array(val) 方法用来检测测试数据是否为 Float32Array 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 Float32Array 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js'
-// 或者单独引用 isFloat32Array() 方法
-// import isFloat32Array from '@yaohaixiao/types.js/isFloat32Array'
-
-const numbers = [ 2, 4 ]
-let args
-
-function test(a){
-  args = arguments
-  return a === 'test'
-}
-
-test()
-
-Types.isFloat32Array(numbers) // -> false
-Types.isFloat32Array(new Array(32)) // -> false
-Types.isFloat32Array(args) // -> false
-Types.isFloat32Array(new Float32Array()) => true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isFloat64Array">isFloat64Array(val)</h3></header><div class="section__content"><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">0.2.0</dd></dl><h4 class="section__h4">Description</h4><p>isFloat64Array(val) 方法用来检测测试数据是否为 Float64Array 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 Float64Array 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js'
-// 或者单独引用 isFloat64Array() 方法
-// import isFloat64Array from '@yaohaixiao/types.js/isFloat64Array'
-
-const numbers = [ 2, 4 ]
-let args
-
-function test(a){
-  args = arguments
-  return a === 'test'
-}
-
-test()
-
-Types.isFloat64Array(numbers) // -> false
-Types.isFloat64Array(new Array(32)) // -> false
-Types.isFloat64Array(args) // -> false
-Types.isFloat64Array(new Float64Array()) => true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isBigInt64Array">isBigInt64Array(val)</h3></header><div class="section__content"><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">0.6.0</dd></dl><h4 class="section__h4">Description</h4><p>isBigInt64Array(val) 方法用来检测测试数据是否为 BigInt64Array 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 BigInt64Array 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js'
-// 或者单独引用 isBigInt64Array() 方法
-// import isBigInt64Array from '@yaohaixiao/types.js/isBigInt64Array'
-
-const arr = [9007199254740992]
-cong bigint64 = new BigInt64Array(42)
-
-Type.is(bigint) // -> 'bigint64array'
-
-Types.isBigInt64Array(arr) // -> false
-Types.isBigInt64Array(bigint64) // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isBigUint64Array">isBigUint64Array(val)</h3></header><div class="section__content"><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">0.6.0</dd></dl><h4 class="section__h4">Description</h4><p>isBigUint64Array(val) 方法用来检测测试数据是否为 BigUint64Array 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 BigUint64Array 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js'
-// 或者单独引用 isBigUint64Array() 方法
-// import isBigUint64Array from '@yaohaixiao/types.js/isBigUint64Array'
-
-const arr = [9007199254740992]
-cong bigint64 = new BigInt64Array(42)
-
-Type.is(bigint) // -> 'bigint64array'
-
-Types.isBigUint64Array(arr) // -> false
-Types.isBigUint64Array(bigint64) // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isTypedArray">isTypedArray(val)</h3></header><div class="section__content"><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">0.2.0</dd></dl><h4 class="section__h4">Description</h4><p>isTypedArray(val) 方法用来检测测试数据是否为 TypedArray 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 TypedArray 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js'
+Types.isUint32Array(new Uint32Array()) // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isTypedArray">isTypedArray(val)</h3></header><div class="section__content"><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">0.2.0</dd></dl><h4 class="section__h4">Description</h4><p>isTypedArray(val) 方法用来检测测试数据是否为 TypedArray 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 TypedArray 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js'
 // 或者单独引用 isTypedArray() 方法
 // import isTypedArray from '@yaohaixiao/types.js/isTypedArray'
 
@@ -764,25 +764,25 @@ const request = new Promise((resolve, reject) => {})
 let val
 
 // 非对象参数
-Types.isPrototype(null) // => false
-Types.isPrototype(val) // => false
-Types.isPrototype('') // => false
-Types.isPrototype(12) // => false
-Types.isPrototype(false) // => false
-Types.isPrototype(BigInt(12)) // => false
-Types.isPrototype(Symbol('prop')) // => false
+Types.isPromise(null) // => false
+Types.isPromise(val) // => false
+Types.isPromise('') // => false
+Types.isPromise(12) // => false
+Types.isPromise(false) // => false
+Types.isPromise(BigInt(12)) // => false
+Types.isPromise(Symbol('prop')) // => false
 
 
 // 对象参数
-Types.isPrototype([]]) // => false
-Types.isPrototype({}) // => false
-Types.isPrototype(class {}) // => false
-Types.isPrototype(() => {}) // => false
+Types.isPromise([]]) // => false
+Types.isPromise({}) // => false
+Types.isPromise(class {}) // => false
+Types.isPromise(() => {}) // => false
 
-Types.isPrototype(request) // => true
-Types.isPrototype(Promise.all([resolve, resolve]) // => true
-Types.isPrototype(Promise.any([resolve, reject]) // => true
-Types.isPrototype(resolve) // => true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isPrototype">isPrototype(val)</h3></header><div class="section__content"><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">0.2.0</dd></dl><h4 class="section__h4">Description</h4><p>isPrototype(val) 方法用来检测测试数据是否为构造函数。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是构造函数，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js'
+Types.isPromise(request) // => true
+Types.isPromise(Promise.all([resolve, resolve]) // => true
+Types.isPromise(Promise.any([resolve, reject]) // => true
+Types.isPromise(resolve) // => true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isPrototype">isPrototype(val)</h3></header><div class="section__content"><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">0.2.0</dd></dl><h4 class="section__h4">Description</h4><p>isPrototype(val) 方法用来检测测试数据是否为构造函数。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 Prototype 对象，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js'
 // 或者单独引用 isPrototype() 方法
 // import isPrototype from '@yaohaixiao/types.js/isPrototype'
 

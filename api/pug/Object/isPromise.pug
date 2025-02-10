@@ -30,22 +30,22 @@ section.section
         let val
 
         // 非对象参数
-        Types.isPrototype(null) // => false
-        Types.isPrototype(val) // => false
-        Types.isPrototype('') // => false
-        Types.isPrototype(12) // => false
-        Types.isPrototype(false) // => false
-        Types.isPrototype(BigInt(12)) // => false
-        Types.isPrototype(Symbol('prop')) // => false
+        Types.isPromise(null) // => false
+        Types.isPromise(val) // => false
+        Types.isPromise('') // => false
+        Types.isPromise(12) // => false
+        Types.isPromise(false) // => false
+        Types.isPromise(BigInt(12)) // => false
+        Types.isPromise(Symbol('prop')) // => false
 
 
         // 对象参数
-        Types.isPrototype([]]) // => false
-        Types.isPrototype({}) // => false
-        Types.isPrototype(class {}) // => false
-        Types.isPrototype(() => {}) // => false
+        Types.isPromise([]]) // => false
+        Types.isPromise({}) // => false
+        Types.isPromise(class {}) // => false
+        Types.isPromise(() => {}) // => false
 
-        Types.isPrototype(request) // => true
-        Types.isPrototype(Promise.all([resolve, resolve]) // => true
-        Types.isPrototype(Promise.any([resolve, reject]) // => true
-        Types.isPrototype(resolve) // => true
+        Types.isPromise(request) // => true
+        Types.isPromise(Promise.all([resolve, resolve]) // => true
+        Types.isPromise(Promise.any([resolve, reject]) // => true
+        Types.isPromise(resolve) // => true

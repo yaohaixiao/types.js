@@ -273,7 +273,6 @@ Types.is(new BigInt64Array(64)) // -> bigint64array
 Types.is(new BigUint64Array(64)) // -> biguint64array
 ```
 
-
 ### [isValue(val)](https://yaohaixiao.github.io/types.js/#method-isValue)
 
 isValue(val) 方法用来检测测试数据是否为有效的数据。
@@ -1047,6 +1046,7 @@ Types.isEmptyArray(new Array()) // -> true
 Types.isEmptyArray(new Array(8)) // -> false
 ```
 
+
 ### [Typed Arrays](https://yaohaixiao.github.io/types.js/#heading-22)
 
 types.js 提供以下方法来检测 Typed Arrays 相关的数据类型。
@@ -1080,9 +1080,626 @@ Types.isArrayBuffer([]) // -> false
 Types.isArrayBuffer(new ArrayBuffer(8)) // -> true
 ```
 
+### [isBigInt64Array(val)](https://yaohaixiao.github.io/types.js/#method-isBigInt64Array)
+
+isBigInt64Array(val) 方法用来检测测试数据是否为 BigInt64Array 类型。
+
+#### Parameters
+
+##### val
+
+Type: `Any`
+
+必选，要检测的数据。
+
+#### Returns
+
+Type: `Boolean`
+
+'val' 是 BigInt64Array 类型返回 true，否则返回 false
+
+#### Example
+
+```js
+import Types from '@yaohaixiao/types.js'
+// 或者单独引用 isBigInt64Array() 方法
+// import isBigInt64Array from '@yaohaixiao/types.js/isBigInt64Array'
+
+const arr = [9007199254740992]
+cong bigint64 = new BigInt64Array(42)
+
+Type.is(bigint) // -> 'bigint64array'
+
+Types.isBigInt64Array(arr) // -> false
+Types.isBigInt64Array(bigint64) // -> true
+```
+
+### [isBigUint64Array(val)](https://yaohaixiao.github.io/types.js/#method-isBigUint64Array)
+
+isBigUint64Array(val) 方法用来检测测试数据是否为 BigUint64Array 类型。
+
+#### Parameters
+
+##### val
+
+Type: `Any`
+
+必选，要检测的数据。
+
+#### Returns
+
+Type: `Boolean`
+
+'val' 是 BigUint64Array 类型返回 true，否则返回 false
+
+#### Example
+
+```js
+import Types from '@yaohaixiao/types.js'
+// 或者单独引用 isBigUint64Array() 方法
+// import isBigUint64Array from '@yaohaixiao/types.js/isBigUint64Array'
+
+const arr = [9007199254740992]
+cong bigint64 = new BigInt64Array(42)
+
+Type.is(bigint) // -> 'bigint64array'
+
+Types.isBigUint64Array(arr) // -> false
+Types.isBigUint64Array(bigint64) // -> true
+```
+
+### [isDataView(val)](https://yaohaixiao.github.io/types.js/#method-isDataView)
+
+isDataView(val) 方法用来检测测试数据是否为 DataView 类型。
+
+#### Parameters
+
+##### val
+
+Type: `Any`
+
+必选，要检测的数据。
+
+#### Returns
+
+Type: `Boolean`
+
+true - 表示检测数据是 DataView 类型，false 则表示不是。
+
+#### Example
+
+```js
+import Types from '@yaohaixiao/types.js'
+// 或者单独引用 isDataView() 方法
+// import isDataView from '@yaohaixiao/types.js/isDataView'
+
+const buffer = new ArrayBuffer(8)
+const dv = new DataView(buffer)
+
+Types.isDataView(buffer) // -> false
+Types.isDataView(dv) // -> true
+```
+
+### [isFloat32Array(val)](https://yaohaixiao.github.io/types.js/#method-isFloat32Array)
+
+isFloat32Array(val) 方法用来检测测试数据是否为 Float32Array 类型。
+
+#### Parameters
+
+##### val
+
+Type: `Any`
+
+必选，要检测的数据。
+
+#### Returns
+
+Type: `Boolean`
+
+true - 表示检测数据是 Float32Array 类型，false 则表示不是。
+
+#### Example
+
+```js
+import Types from '@yaohaixiao/types.js'
+// 或者单独引用 isFloat32Array() 方法
+// import isFloat32Array from '@yaohaixiao/types.js/isFloat32Array'
+
+const numbers = [ 2, 4 ]
+let args
+
+function test(a){
+  args = arguments
+  return a === 'test'
+}
+
+test()
+
+Types.isFloat32Array(numbers) // -> false
+Types.isFloat32Array(new Array(32)) // -> false
+Types.isFloat32Array(args) // -> false
+Types.isFloat32Array(new Float32Array()) // -> true
+```
+
+### [isFloat64Array(val)](https://yaohaixiao.github.io/types.js/#method-isFloat64Array)
+
+isFloat64Array(val) 方法用来检测测试数据是否为 Float64Array 类型。
+
+#### Parameters
+
+##### val
+
+Type: `Any`
+
+必选，要检测的数据。
+
+#### Returns
+
+Type: `Boolean`
+
+true - 表示检测数据是 Float64Array 类型，false 则表示不是。
+
+#### Example
+
+```js
+import Types from '@yaohaixiao/types.js'
+// 或者单独引用 isFloat64Array() 方法
+// import isFloat64Array from '@yaohaixiao/types.js/isFloat64Array'
+
+const numbers = [ 2, 4 ]
+let args
+
+function test(a){
+  args = arguments
+  return a === 'test'
+}
+
+test()
+
+Types.isFloat64Array(numbers) // -> false
+Types.isFloat64Array(new Array(32)) // -> false
+Types.isFloat64Array(args) // -> false
+Types.isFloat64Array(new Float64Array()) // -> true
+```
+
+### [isInt8Array(val)](https://yaohaixiao.github.io/types.js/#method-isInt8Array)
+
+isInt8Array(val) 方法用来检测测试数据是否为 Int8Array 类型。
+
+#### Parameters
+
+##### val
+
+Type: `Any`
+
+必选，要检测的数据。
+
+#### Returns
+
+Type: `Boolean`
+
+true - 表示检测数据是 Int8Array 类型，false 则表示不是。
+
+#### Example
+
+```js
+import Types from '@yaohaixiao/types.js'
+// 或者单独引用 isInt8Array() 方法
+// import isInt8Array from '@yaohaixiao/types.js/isInt8Array'
+
+Types.isInt8Array([]) // -> false
+Types.isInt8Array(new Array(8)) // -> false
+Types.isInt8Array(new Int8Array([])) // -> true
+```
+
+### [isInt16Array(val)](https://yaohaixiao.github.io/types.js/#method-isInt16Array)
+
+isInt16Array(val) 方法用来检测测试数据是否为 Int16Array 类型。
+
+#### Parameters
+
+##### val
+
+Type: `Any`
+
+必选，要检测的数据。
+
+#### Returns
+
+Type: `Boolean`
+
+true - 表示检测数据是 Int16Array 类型，false 则表示不是。
+
+#### Example
+
+```js
+import Types from '@yaohaixiao/types.js'
+// 或者单独引用 isInt16Array() 方法
+// import isInt16Array from '@yaohaixiao/types.js/isInt16Array'
+
+const numbers = [ 2, 4 ]
+let args
+
+function test(a){
+  args = arguments
+  return a === 'test'
+}
+
+test()
+
+Types.isInt16Array(numbers) // -> false
+Types.isInt16Array(new Array(16)) // -> false
+Types.isInt16Array(args) // -> false
+Types.isInt16Array(new Int16Array()) // -> true
+```
+
+### [isInt32Array(val)](https://yaohaixiao.github.io/types.js/#method-isInt32Array)
+
+isInt32Array(val) 方法用来检测测试数据是否为 Int32Array 类型。
+
+#### Parameters
+
+##### val
+
+Type: `Any`
+
+必选，要检测的数据。
+
+#### Returns
+
+Type: `Boolean`
+
+true - 表示检测数据是 Int32Array 类型，false 则表示不是。
+
+#### Example
+
+```js
+import Types from '@yaohaixiao/types.js'
+// 或者单独引用 isInt32Array() 方法
+// import isInt32Array from '@yaohaixiao/types.js/isInt32Array'
+
+const numbers = [ 2, 4 ]
+let args
+
+function test(a){
+  args = arguments
+  return a === 'test'
+}
+
+test()
+
+Types.isInt32Array(numbers) // -> false
+Types.isInt32Array(new Array(32)) // -> false
+Types.isInt32Array(args) // -> false
+Types.isInt32Array(new Int32Array()) // -> true
+```
+
+### [isUint8Array(val)](https://yaohaixiao.github.io/types.js/#method-isUint8Array)
+
+isUint8Array(val) 方法用来检测测试数据是否为 Uint8Array 类型。
+
+#### Parameters
+
+##### val
+
+Type: `Any`
+
+必选，要检测的数据。
+
+#### Returns
+
+Type: `Boolean`
+
+true - 表示检测数据是 Uint8Array 类型，false 则表示不是。
+
+#### Example
+
+```js
+import Types from '@yaohaixiao/types.js'
+// 或者单独引用 isUint8Array() 方法
+// import isUint8Array from '@yaohaixiao/types.js/isUint8Array'
+
+const numbers = [ 2, 4 ]
+let args
+
+function test(a){
+  args = arguments
+  return a === 'test'
+}
+
+test()
+
+Types.isUint8Array(numbers) // -> false
+Types.isUint8Array(new Array(32)) // -> false
+Types.isUint8Array(args) // -> false
+Types.isUint8Array(new Uint8Array()) // -> true
+```
+
+### [isUint8ClampedArray(val)](https://yaohaixiao.github.io/types.js/#method-isUint8ClampedArray)
+
+isUint8ClampedArray(val) 方法用来检测测试数据是否为 Uint8ClampedArray 类型。
+
+#### Parameters
+
+##### val
+
+Type: `Any`
+
+必选，要检测的数据。
+
+#### Returns
+
+Type: `Boolean`
+
+true - 表示检测数据是 Uint8ClampedArray 类型，false 则表示不是。
+
+#### Example
+
+```js
+import Types from '@yaohaixiao/types.js'
+// 或者单独引用 isUint8ClampedArray() 方法
+// import isUint8ClampedArray from '@yaohaixiao/types.js/isUint8ClampedArray'
+
+const numbers = [ 2, 4 ]
+let args
+
+function test(a){
+  args = arguments
+  return a === 'test'
+}
+
+test()
+
+Types.isUint8ClampedArray(numbers) // -> false
+Types.isUint8ClampedArray(new Array(32)) // -> false
+Types.isUint8ClampedArray(args) // -> false
+Types.isUint8ClampedArray(new Uint8ClampedArray()) // -> true
+```
+
+### [isUint16Array(val)](https://yaohaixiao.github.io/types.js/#method-isUint16Array)
+
+isUint16Array(val) 方法用来检测测试数据是否为 Uint16Array 类型。
+
+#### Parameters
+
+##### val
+
+Type: `Any`
+
+必选，要检测的数据。
+
+#### Returns
+
+Type: `Boolean`
+
+true - 表示检测数据是 Uint16Array 类型，false 则表示不是。
+
+#### Example
+
+```js
+import Types from '@yaohaixiao/types.js'
+// 或者单独引用 isUint16Array() 方法
+// import isUint16Array from '@yaohaixiao/types.js/isUint16Array'
+
+const numbers = [ 2, 4 ]
+let args
+
+function test(a){
+  args = arguments
+  return a === 'test'
+}
+
+test()
+
+Types.isUint16Array(numbers) // -> false
+Types.isUint16Array(new Array(32)) // -> false
+Types.isUint16Array(args) // -> false
+Types.isUint16Array(new Uint16Array()) // -> true
+```
+
+### [isUint32Array(val)](https://yaohaixiao.github.io/types.js/#method-isUint32Array)
+
+isUint32Array(val) 方法用来检测测试数据是否为 Uint32Array 类型。
+
+#### Parameters
+
+##### val
+
+Type: `Any`
+
+必选，要检测的数据。
+
+#### Returns
+
+Type: `Boolean`
+
+true - 表示检测数据是 Uint32Array 类型，false 则表示不是。
+
+#### Example
+
+```js
+import Types from '@yaohaixiao/types.js'
+// 或者单独引用 isUint32Array() 方法
+// import isUint32Array from '@yaohaixiao/types.js/isUint32Array'
+
+const numbers = [ 2, 4 ]
+let args
+
+function test(a){
+  args = arguments
+  return a === 'test'
+}
+
+test()
+
+Types.isUint32Array(numbers) // -> false
+Types.isUint32Array(new Array(32)) // -> false
+Types.isUint32Array(args) // -> false
+Types.isUint32Array(new Uint32Array()) // -> true
+```
+
+### [isTypedArray(val)](https://yaohaixiao.github.io/types.js/#method-isTypedArray)
+
+isTypedArray(val) 方法用来检测测试数据是否为 TypedArray 类型。
+
+#### Parameters
+
+##### val
+
+Type: `Any`
+
+必选，要检测的数据。
+
+#### Returns
+
+Type: `Boolean`
+
+true - 表示检测数据是 TypedArray 类型，false 则表示不是。
+
+#### Example
+
+```js
+import Types from '@yaohaixiao/types.js'
+// 或者单独引用 isTypedArray() 方法
+// import isTypedArray from '@yaohaixiao/types.js/isTypedArray'
+
+const numbers = [ 2, 4 ]
+let args
+
+function test(str) {
+  args = arguments
+  return str
+}
+
+test('str')
+
+Types.isTypedArray( args ) // -> false
+Types.isTypedArray( numbers ) // -> false
+Types.isTypedArray( new Array() ) // -> false
+
+Types.isTypedArray(new Int8Array([])) // -> true
+Types.isTypedArray(new Int16Array([])) // -> true
+Types.isTypedArray(new Int32Array([])) // -> true
+
+Types.isTypedArray(new Uint8ClampedArray([])) // -> true
+Types.isTypedArray(new Uint8Array([])) // -> true
+Types.isTypedArray(new Uint16Array([])) // -> true
+Types.isTypedArray(new Uint32Array([])) // -> true
+
+Types.isTypedArray(new Float32Array([])) // -> true
+Types.isTypedArray(new Float64Array([])) // -> true
+
+Types.isTypedArray(new BigInt64Array(42)) // -> true
+Types.isTypedArray(new BigUint64Array(42)) // -> true
+```
+
+
 ### [Object](https://yaohaixiao.github.io/types.js/#heading-37)
 
 types.js 提供以下方法来检测 Object 相关的数据类型。
+
+### [isBinary(val)](https://yaohaixiao.github.io/types.js/#method-isBinary)
+
+isBinary(val) 方法用来检测测试数据是二进制（字符串）数据。
+
+#### Parameters
+
+##### val
+
+Type: `Any`
+
+必选，要检测的数据。
+
+#### Returns
+
+Type: `Boolean`
+
+true - 表示检测数据是二进制（字符串）数据，false 则表示不是。
+
+#### Example
+
+```js
+import Types from '@yaohaixiao/types.js'
+// 或者单独引用 isUint16Array() 方法
+// import isBinary from '@yaohaixiao/types.js/isBinary'
+
+const buffer = Buffer.alloc(15)
+
+Types.isBinary('Z29vZA==') // -> false
+Types.isBinary(isArrayBuffer(8) // -> false
+
+Types.is(buffer) // -> 'uint8array'
+isBinary(buffer) // -> true
+isBinary(buffer.toString()) // -> true
+```
+
+### [isBuffer(val)](https://yaohaixiao.github.io/types.js/#method-isBuffer)
+
+isBuffer(val) 方法用来检测测试数据是否为 Buffer 类型（运行环境：Node.js）。
+
+注意：Node.js 中实现的 Buffer 对象，实际的数据格式是：Uint8Array 类型的数组。
+
+#### Parameters
+
+##### val
+
+Type: `Any`
+
+必选，要检测的数据。
+
+#### Returns
+
+Type: `Boolean`
+
+true - 表示检测数据是 Buffer 类型，false 则表示不是。
+
+#### Example
+
+```js
+import Types from '@yaohaixiao/types.js'
+// 或者单独引用 isBuffer() 方法
+// import isBuffer from '@yaohaixiao/types.js/isBuffer'
+
+const buffer = Buffer.alloc(15)
+
+Types.isBuffer(new ArrayBuffer(8)) // -> false
+Types.isBuffer(new Uint8Array(2)) // -> false
+
+Types.is(buffer) => 'uint8array'
+Types.isBuffer(buffer) // -> true
+```
+
+### [isDate(val)](https://yaohaixiao.github.io/types.js/#method-isDate)
+
+isDate(val) 方法用来检测测试数据是否为 Date 类型。
+
+#### Parameters
+
+##### val
+
+Type: `Any`
+
+必选，要检测的数据。
+
+#### Returns
+
+Type: `Boolean`
+
+true - 表示检测数据是 Date 类型，false 则表示不是。
+
+#### Example
+
+```js
+import Types from '@yaohaixiao/types.js'
+// 或者单独引用 isDate() 方法
+// import isDate from '@yaohaixiao/types.js/isDate'
+
+const time = new Date()
+
+Types.isDate(time) // -> true
+Types.isDate('2017-07-06') // -> false
+Types.isDate(time.getFullYear()) // -> false
+```
 
 ### [isEmptyObject(val)](https://yaohaixiao.github.io/types.js/#method-isEmptyObject)
 
@@ -1267,6 +1884,44 @@ Types.isObject(Symbol('ok')) // => false
 Types.isObject(null) // => false
 ```
 
+### [isObjectLike(val)](https://yaohaixiao.github.io/types.js/#method-isObjectLike)
+
+isObjectLike(val) 方法用来检测测试数据是否为类似 Object 类型。
+
+#### Parameters
+
+##### val
+
+Type: `Any`
+
+必选，要检测的数据。
+
+#### Returns
+
+Type: `Boolean`
+
+true - 表示检测数据是类似 Object 类型，false 则表示不是
+
+#### Example
+
+```js
+import Types from '@yaohaixiao/types.js'
+// 或者单独引用 isObjectLike() 方法
+// import isObjectLike from '@yaohaixiao/types.js/isObjectLike'
+
+// True
+Types.isObjectLike(function empty(){}) // -> true
+Types.isObjectLike({}) // -> true
+Types.isObjectLike(Object.create(null)) // -> true
+Types.isObjectLike(Object.create({})) // -> true
+Types.isObjectLike(new Function()) // -> true
+
+// False
+Types.isObjectLike([]) // -> false
+Types.isObjectLike(null) // -> false
+Types.isObjectLike(document.getElementById('wrap')) // -> false
+```
+
 ### [isPlainObject(val)](https://yaohaixiao.github.io/types.js/#method-isPlainObject)
 
 isPlainObject(val) 方法用来检测测试数据是否为普通对象。
@@ -1318,6 +1973,111 @@ Types.isPlainObject(new Number()) // -> true
 Types.isPlainObject(new Boolean()) // -> true
 Types.isPlainObject(new Array()) // -> true
 Types.isPlainObject(new Date()) // -> true
+```
+
+### [isPromise(val)](https://yaohaixiao.github.io/types.js/#method-isPromise)
+
+isPromise(val) 方法用来检测测试数据是否为 Promise 对象。
+
+#### Parameters
+
+##### val
+
+Type: `Any`
+
+必选，要检测的数据。
+
+#### Returns
+
+Type: `Boolean`
+
+true - 表示检测数据是 Promise 对象，false 则表示不是。
+
+#### Example
+
+```js
+import Types from '@yaohaixiao/types.js'
+// 或者单独引用 isPromise() 方法
+// import isPromise from '@yaohaixiao/types.js/isPromise'
+
+const resolve = Promise.resolve
+const reject = Promise.reject
+const request = new Promise((resolve, reject) => {})
+let val
+
+// 非对象参数
+Types.isPromise(null) // => false
+Types.isPromise(val) // => false
+Types.isPromise('') // => false
+Types.isPromise(12) // => false
+Types.isPromise(false) // => false
+Types.isPromise(BigInt(12)) // => false
+Types.isPromise(Symbol('prop')) // => false
+
+
+// 对象参数
+Types.isPromise([]]) // => false
+Types.isPromise({}) // => false
+Types.isPromise(class {}) // => false
+Types.isPromise(() => {}) // => false
+
+Types.isPromise(request) // => true
+Types.isPromise(Promise.all([resolve, resolve]) // => true
+Types.isPromise(Promise.any([resolve, reject]) // => true
+Types.isPromise(resolve) // => true
+```
+
+### [isPrototype(val)](https://yaohaixiao.github.io/types.js/#method-isPrototype)
+
+isPrototype(val) 方法用来检测测试数据是否为构造函数。
+
+#### Parameters
+
+##### val
+
+Type: `Any`
+
+必选，要检测的数据。
+
+#### Returns
+
+Type: `Boolean`
+
+true - 表示检测数据是 Prototype 对象，false 则表示不是。
+
+#### Example
+
+```js
+import Types from '@yaohaixiao/types.js'
+// 或者单独引用 isPrototype() 方法
+// import isPrototype from '@yaohaixiao/types.js/isPrototype'
+
+const Yao= {
+  age: 40,
+  career: 'programmer'
+}
+
+const Programmer = function(name, age) {
+  this.name = name
+  this.age = age
+  this.isDead = false
+
+  return this
+}
+
+Programmer.prototype.career = 'programmer'
+Programmer.prototype.getWorkDone = function() {
+  this.isDead = true
+  return this
+}
+
+Types.isPrototype(null) // => false
+
+Types.isPrototype(Object) // => false
+Types.isPrototype(Object.prototype) // => true
+
+Types.isPrototype(Programmer) // => false
+Types.isPrototype(Yao.__proto__) // => true
 ```
 
 ### [isRegExp(val)](https://yaohaixiao.github.io/types.js/#method-isRegExp)
