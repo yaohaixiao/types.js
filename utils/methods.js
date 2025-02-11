@@ -26,6 +26,7 @@ import isEmptyArray from '../isEmptyArray'
 import isEmptyObject from '../isEmptyObject'
 import isError from '../isError'
 import isEven from '../isEven'
+import isFalsy from '../isFalsy'
 import isFloat from '../isFloat'
 import isFloat32Array from '../isFloat32Array'
 import isFloat64Array from '../isFloat64Array'
@@ -47,7 +48,10 @@ import isIPAddress from '../isIPAddress'
 import isJSON from '../isJSON'
 import isLength from '../isLength'
 import isMap from '../isMap'
+import isNaN from '../isNaN'
 import isNativeFunction from '../isNativeFunction'
+import isNil from '../isNil'
+import isNode from '../isNode'
 import isNull from '../isNull'
 import isNumber from '../isNumber'
 import isNumeric from '../isNumeric'
@@ -61,7 +65,10 @@ import isPrimitive from '../isPrimitive'
 import isPromise from '../isPromise'
 import isPrototype from '../isPrototype'
 import isRegExp from '../isRegExp'
+import isSafeInteger from '../isSafeInteger'
 import isSet from '../isSet'
+import isShadowRoot from '../isShadowRoot'
+import isStream from '../isStream'
 import isString from '../isString'
 import isSVG from '../isSVG'
 import isSymbol from '../isSymbol'
@@ -111,6 +118,7 @@ const METHODS = {
   isEmptyObject,
   isError,
   isEven,
+  isFalsy,
   isFloat,
   isFloat32Array,
   isFloat64Array,
@@ -132,7 +140,10 @@ const METHODS = {
   isJSON,
   isLength,
   isMap,
+  isNaN,
   isNativeFunction,
+  isNil,
+  isNode,
   isNull,
   isNumber,
   isNumeric,
@@ -146,7 +157,10 @@ const METHODS = {
   isPromise,
   isPrototype,
   isRegExp,
+  isSafeInteger,
   isSet,
+  isShadowRoot,
+  isStream,
   isString,
   isSVG,
   isSymbol,
