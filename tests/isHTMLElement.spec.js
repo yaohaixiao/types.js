@@ -1,10 +1,10 @@
 /**
  * @jest-environment jsdom
  */
-import isElement from '../isElement'
+import isHTMLElement from '../isHTMLElement'
 import is from '../is'
 
-describe('isElement() 方法：', () => {
+describe('isHTMLElement() 方法：', () => {
   // Set up our document body
   document.body.innerHTML =
     '<ul id="list" class="list">\n' +
@@ -22,37 +22,33 @@ describe('isElement() 方法：', () => {
     '  </li>\n' +
     '</ul>'
 
-  it(`isElement(document.getElementById('list')), 返回：true`, () => {
+  it(`isHTMLElement(document.getElementById('list')), 返回：true`, () => {
     const $list = document.getElementById('list')
     expect(is($list)).toBe('element')
-    expect(isElement($list)).toBe(true)
+    expect(isHTMLElement($list)).toBe(true)
   })
 
-  it(`isElement(document.createElement('div')), 返回：true`, () => {
+  it(`isHTMLElement(document.createElement('div')), 返回：true`, () => {
     const $div = document.createElement('div')
     expect(is($div)).toBe('element')
-    expect(isElement($div)).toBe(true)
+    expect(isHTMLElement($div)).toBe(true)
   })
 
-  it(`isElement(document.createTextNode('text')), 返回：false`, () => {
+  it(`isHTMLElement(document.createTextNode('text')), 返回：false`, () => {
     const $text = document.createTextNode('text')
     expect(is($text)).toBe('text')
-    expect(isElement($text)).toBe(false)
+    expect(isHTMLElement($text)).toBe(false)
   })
 
-  it(`isElement(document.createDocumentFragment()), 返回：false`, () => {
+  it(`isHTMLElement(document.createDocumentFragment()), 返回：false`, () => {
     const $fragment = document.createDocumentFragment()
     expect(is($fragment)).toBe('fragment')
-    expect(isElement($fragment)).toBe(false)
+    expect(isHTMLElement($fragment)).toBe(false)
   })
 
-  it(`isElement(document.querySelectorAll('.item')), 返回：false`, () => {
+  it(`isHTMLElement(document.querySelectorAll('.item')), 返回：false`, () => {
     const $items = document.querySelectorAll('.item')
     expect(is($items)).toBe('collection')
-    expect(isElement($items)).toBe(false)
-  })
-
-  it(`isElement([]), 返回：false`, () => {
-    expect(isElement([])).toBe(false)
+    expect(isHTMLElement($items)).toBe(false)
   })
 })

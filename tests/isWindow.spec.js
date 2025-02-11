@@ -1,10 +1,10 @@
 /**
  * @jest-environment jsdom
  */
-import isElement from '../isElement'
+import isWindow from '../isWindow'
 import is from '../is'
 
-describe('isElement() 方法：', () => {
+describe('isWindow() 方法：', () => {
   // Set up our document body
   document.body.innerHTML =
     '<ul id="list" class="list">\n' +
@@ -22,37 +22,52 @@ describe('isElement() 方法：', () => {
     '  </li>\n' +
     '</ul>'
 
-  it(`isElement(document.getElementById('list')), 返回：true`, () => {
+  it(`isWindow(document.getElementById('list')), 返回：false`, () => {
     const $list = document.getElementById('list')
     expect(is($list)).toBe('element')
-    expect(isElement($list)).toBe(true)
+    expect(isWindow($list)).toBe(false)
   })
 
-  it(`isElement(document.createElement('div')), 返回：true`, () => {
+  it(`isWindow(document.createElement('div')), 返回：false`, () => {
     const $div = document.createElement('div')
     expect(is($div)).toBe('element')
-    expect(isElement($div)).toBe(true)
+    expect(isWindow($div)).toBe(false)
   })
 
-  it(`isElement(document.createTextNode('text')), 返回：false`, () => {
+  it(`isWindow(document.createTextNode('text')), 返回：false`, () => {
     const $text = document.createTextNode('text')
     expect(is($text)).toBe('text')
-    expect(isElement($text)).toBe(false)
+    expect(isWindow($text)).toBe(false)
   })
 
-  it(`isElement(document.createDocumentFragment()), 返回：false`, () => {
+  it(`isWindow(document.createDocumentFragment()), 返回：false`, () => {
     const $fragment = document.createDocumentFragment()
     expect(is($fragment)).toBe('fragment')
-    expect(isElement($fragment)).toBe(false)
+    expect(isWindow($fragment)).toBe(false)
   })
 
-  it(`isElement(document.querySelectorAll('.item')), 返回：false`, () => {
+  it(`isWindow(document.querySelectorAll('.item')), 返回：false`, () => {
     const $items = document.querySelectorAll('.item')
     expect(is($items)).toBe('collection')
-    expect(isElement($items)).toBe(false)
+    expect(isWindow($items)).toBe(false)
   })
 
-  it(`isElement([]), 返回：false`, () => {
-    expect(isElement([])).toBe(false)
+  it(`isWindow(window), 返回：true`, () => {
+    expect(isWindow(window)).toBe(true)
+  })
+
+
+  it(`isWindow({document: {}}), 返回：true`, () => {
+    const nonWindowObject = {
+      // 模拟部分 Window 对象的属性，但不完整
+      document: {},
+      location: {},
+      // 故意缺少 alert 和 setInterval 属性
+    }
+    expect(isWindow(nonWindowObject)).toBe(false)
+  })
+
+  it(`isWindow(null), 返回：false`, () => {
+    expect(isWindow(null)).toBe(false)
   })
 })

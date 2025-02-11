@@ -52,6 +52,7 @@
     "./isHex.js",
     "./isHTML.js",
     "./isHTMLCollection.js",
+    "./isHTMLElement",
     "./isIDNumber.js",
     "./isInfinite.js",
     "./isInt8Array.js",
@@ -94,6 +95,7 @@
     "./isVNode.js",
     "./isWeakMap.js",
     "./isWeakSet.js",
+    "./isWindow.js",
     "./isXML.js"
   ]
 }

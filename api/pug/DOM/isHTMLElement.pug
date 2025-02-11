@@ -1,12 +1,12 @@
 section.section
   header.section__header
-    h3#method-isElement.section__h3 isElement(val)
+    h3#method-isHTMLElement.section__h3 isHTMLElement(val)
   div.section__content
     dl.section__dl
       dt.section__dt Since：
-      dd.section__dd 0.2.0
+      dd.section__dd 2.7.0
     h4.section__h4 Description
-    p isElement(val) 方法用来检测测试数据是否为 Element 实例。
+    p isHTMLElement(val) 方法用来检测测试数据是否为 HTMLElement (元素节点)类型。
     h4.section__h4 Parameters
     h5.section__h4 val
     dl.section__dl
@@ -17,12 +17,12 @@ section.section
     dl.section__dl
       dt.section__dt Type：
       dd.section__dd Boolean。
-    p true - 表示检测数据是 Element 实例，false 则表示不是。
+    p true - 表示检测数据是 HTMLElement (元素节点)类型，false 则表示不是。
     pre.section__pre
       code.section__code.
         import Types from '@yaohaixiao/types.js'
-        // 或者单独引用 isElement() 方法
-        // import isElement from '@yaohaixiao/types.js/isElement'
+        // 或者单独引用 isHTMLElement() 方法
+        // import isHTMLElement from '@yaohaixiao/types.js/isHTMLElement'
 
         const $list = document.getElementById('list')
         const $div = document.createElement('div')
@@ -31,18 +31,16 @@ section.section
         const $fragment = document.createDocumentFragment()
 
         Types.is($list) // -> 'element'
-        Types.isElement($list) // -> true
+        Types.isHTMLElement($list) // -> true
 
         Types.is($div) // -> 'element'
-        Types.isElement($div) // -> true
+        Types.isHTMLElement($div) // -> true
 
         Types.is($text) // -> 'text'
-        Types.isElement($text) // -> false
+        Types.isHTMLElement($text) // -> false
 
         Types.is($items) // -> 'collection'
-        Types.isElement($items) // -> false
+        Types.isHTMLElement($items) // -> false
 
         Types.is($fragment) // -> 'collection'
-        Types.isElement($fragment) // -> false
-
-        Types.isElement([]) // -> false
+        Types.isHTMLElement($fragment) // -> false

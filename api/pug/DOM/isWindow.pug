@@ -1,0 +1,45 @@
+section.section
+  header.section__header
+    h3#method-isWindow.section__h3 isWindow(val)
+  div.section__content
+    dl.section__dl
+      dt.section__dt Since：
+      dd.section__dd 2.7.0
+    h4.section__h4 Description
+    p isHTMLElement(val) 方法用来检测测试数据是否为 Window 对象。
+    h4.section__h4 Parameters
+    h5.section__h4 val
+    dl.section__dl
+      dt.section__dt Type：
+      dd.section__dd Any
+    p （必须）val 待检测的数据。
+    h4.section__h4 Returns
+    dl.section__dl
+      dt.section__dt Type：
+      dd.section__dd Boolean。
+    p 'val' 是 Window 对象，返回 true，否则返回 false。
+    pre.section__pre
+      code.section__code.
+        import Types from '@yaohaixiao/types.js'
+        // 或者单独引用 isWindow() 方法
+        // import isWindow from '@yaohaixiao/types.js/isWindow'
+
+        const $list = document.getElementById('list')
+
+        Types.is($list) // -> 'element'
+        Types.isWindow($list) // -> false
+
+        Types.isWindow(window) // -> true
+
+        const nonWindowObject = {
+          // 模拟部分 Window 对象的属性，但不完整
+          document: {},
+          location: {},
+          // 缺少 alert 和 setInterval 属性
+        }
+
+        Types.isWindow(nonWindowObject) // -> false
+
+        Types.isWindow(null) // -> false
+
+

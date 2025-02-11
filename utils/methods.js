@@ -36,6 +36,7 @@ import isHash from '../isHash'
 import isHex from '../isHex'
 import isHTML from '../isHTML'
 import isHTMLCollection from '../isHTMLCollection'
+import isHTMLElement from '../isHTMLElement'
 import isIDNumber from '../isIDNumber'
 import isInfinite from '../isInfinite'
 import isInt8Array from '../isInt8Array'
@@ -78,6 +79,7 @@ import isValue from '../isValue'
 import isVNode from '../isVNode'
 import isWeakMap from '../isWeakMap'
 import isWeakSet from '../isWeakSet'
+import isWindow from '../isWindow'
 import isXML from '../isXML'
 
 const METHODS = {
@@ -119,6 +121,7 @@ const METHODS = {
   isHex,
   isHTML,
   isHTMLCollection,
+  isHTMLElement,
   isIDNumber,
   isInfinite,
   isInt8Array,
@@ -161,6 +164,7 @@ const METHODS = {
   isVNode,
   isWeakMap,
   isWeakSet,
+  isWindow,
   isXML
 }
 

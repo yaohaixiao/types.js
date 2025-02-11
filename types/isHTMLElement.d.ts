@@ -1,13 +1,12 @@
-import getWindow from './utils/getWindow'
-
+export default isHTMLElement;
 /**
- * 检测测试数据的数据类型是否为 Element 实例。
+ * 检测测试数据的数据类型是否为 HTML 元素节点。
  * ========================================================================
- * @method isElement
- * @since 0.2.0
+ * @method isHTMLElement
+ * @since 2.7.0
  * @category DOM
  * @param {*} val - 要检测的数据
- * @returns {Boolean} 'val' 为 Element 实例，返回 true，否则返回 false
+ * @returns {Boolean} 'val' 为 HTML 元素节点，返回 true，否则返回 false
  * @example
  *
  * const $list = document.getElementById('list')
@@ -25,11 +24,5 @@ import getWindow from './utils/getWindow'
  * isElement($items) // -> false
  *
  * isElement($fragment) // -> false
- *
- * isElement([]) // -> false
  */
-const isElement = (val) => {
-  return val instanceof getWindow(val).Element
-}
-
-export default isElement
+declare function isHTMLElement(val: any): boolean;

@@ -3384,6 +3384,8 @@ Types.isFragment($items) // -> false
 Types.is($fragment) // -> 'fragment'
 Types.isElement($fragment) // -> false
 Types.isFragment($items) // -> true
+
+Types.isElement([]) // -> false
 ```
 
 ### [isHTMLCollection(val)](https://yaohaixiao.github.io/types.js/#method-isHTMLCollection)
@@ -3438,6 +3440,53 @@ Types.isElement($fragment) // -> false
 Types.isHTMLCollection($items) // -> false
 ```
 
+### [isHTMLElement(val)](https://yaohaixiao.github.io/types.js/#method-isHTMLElement)
+
+isHTMLElement(val) 方法用来检测测试数据的数据类型是否为 HTML 元素节点。
+
+#### Parameters
+
+##### val
+
+Type: `Any`
+
+必选，要检测的数据。
+
+#### Returns
+
+Type: `Boolean`
+
+'val' 为 HTML 元素节点返回 true，否则返回 false。
+
+#### Example
+
+```js
+import Types from '@yaohaixiao/types.js'
+// 或者单独引用 isHTMLElement() 方法
+// import isHTMLElement from '@yaohaixiao/types.js/isHTMLElement'
+
+const $list = document.getElementById('list')
+const $div = document.createElement('div')
+const $text = document.createTextNode('text')
+const $items = document.querySelectorAll('.item')
+const $fragment = document.createDocumentFragment()
+
+Types.is($list) // -> 'element'
+Types.isHTMLElement($list) // -> true
+
+Types.is($div) // -> 'element'
+Types.isHTMLElement($div) // -> true
+
+Types.is($text) // -> 'text'
+Types.isHTMLElement($text) // -> false
+
+Types.is($items) // -> 'collection'
+Types.isHTMLElement($items) // -> false
+
+Types.is($fragment) // -> 'collection'
+Types.isHTMLElement($fragment) // -> false
+```
+
 ### [isTextNode(val)](https://yaohaixiao.github.io/types.js/#method-isTextNode)
 
 isTextNode(val) 方法用来检测测试数据是否为文本节点。
@@ -3490,6 +3539,46 @@ Types.isElement($text) // -> false
 Types.isTextNode($text) // -> true
 ```
 
+### [isWindow(val)](https://yaohaixiao.github.io/types.js/#method-isWindow)
+
+isDOM(val) 方法用来检测测试数据是否为 Window 对象。
+
+#### Parameters
+
+##### val
+
+Type: `Any`
+
+必选，要检测的数据。
+
+#### Returns
+
+Type: `Boolean`
+
+'val' 是 Window 对象，返回 true，否则返回 false。
+
+#### Example
+
+```js
+const $list = document.getElementById('list')
+
+Types.is($list) // -> 'element'
+Types.isWindow($list) // -> false
+
+Types.isWindow(window) // -> true
+
+const nonWindowObject = {
+  // 模拟部分 Window 对象的属性，但不完整
+  document: {},
+  location: {},
+  // 缺少 alert 和 setInterval 属性
+}
+
+Types.isWindow(nonWindowObject) // -> false
+
+Types.isWindow(null) // -> false
+```
+
 ### [isDOM(val)](https://yaohaixiao.github.io/types.js/#method-isDOM)
 
 isDOM(val) 方法用来检测测试数据是否为 DOM 类型数据：DOM 节点，TextNode，NodeList 和 DocumentFragment）。
@@ -3532,6 +3621,7 @@ Types.isDOM($items) // -> true
 Types.is($text) // -> 'text'
 Types.isDOM($text) // -> true
 ```
+
 
 ## License
 
