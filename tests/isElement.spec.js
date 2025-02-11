@@ -22,6 +22,12 @@ describe('isElement() 方法：', () => {
     '  </li>\n' +
     '</ul>'
 
+  it(`isElement(svgElement), 返回：true`, () => {
+    const svgElement = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
+
+    expect(isElement(svgElement)).toBe(true)
+  })
+
   it(`isElement(document.getElementById('list')), 返回：true`, () => {
     const $list = document.getElementById('list')
     expect(is($list)).toBe('element')

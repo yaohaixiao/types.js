@@ -15,6 +15,10 @@ import getWindow from './utils/getWindow'
  * const $text = document.createTextNode('text')
  * const $items = document.querySelectorAll('.item')
  * const $fragment = document.createDocumentFragment()
+ * const svgElement = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
+ *
+ * Types.isElement(svgElement) // -> true
+ * Types.isHTMLElement(svgElement) // -> false
  *
  * isElement($list) // -> true
  *

@@ -1401,7 +1401,7 @@ Types.isFragment($items) // -> false
 
 Types.is($fragment) // -> 'fragment'
 Types.isElement($fragment) // -> false
-Types.isFragment($items) // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isElement">isElement(val)</h3></header><div class="section__content"><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">0.2.0</dd></dl><h4 class="section__h4">Description</h4><p>isElement(val) 方法用来检测测试数据是否为 Element 实例。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 Element 实例，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js'
+Types.isFragment($items) // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isElement">isElement(val)</h3></header><div class="section__content"><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">0.2.0</dd></dl><h4 class="section__h4">Description</h4><p>isElement(val) 方法用来检测测试数据是否为 Element 实例。</p><p>注意：isElement 调整后，是一个更通用的接口，它可以表示任何类型的元素节点，不仅包括 HTML 元素，还包括 SVG（可缩放矢量图形）元素、MathML（数学标记语言）元素等。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 Element 实例，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js'
 // 或者单独引用 isElement() 方法
 // import isElement from '@yaohaixiao/types.js/isElement'
 
@@ -1410,6 +1410,10 @@ const $div = document.createElement('div')
 const $text = document.createTextNode('text')
 const $items = document.querySelectorAll('.item')
 const $fragment = document.createDocumentFragment()
+const svgElement = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
+
+Types.isElement(svgElement) // -> true
+Types.isHTMLElement(svgElement) // -> false
 
 Types.is($list) // -> 'element'
 Types.isElement($list) // -> true

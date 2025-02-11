@@ -7,6 +7,7 @@ section.section
       dd.section__dd 0.2.0
     h4.section__h4 Description
     p isElement(val) 方法用来检测测试数据是否为 Element 实例。
+    p 注意：isElement 调整后，是一个更通用的接口，它可以表示任何类型的元素节点，不仅包括 HTML 元素，还包括 SVG（可缩放矢量图形）元素、MathML（数学标记语言）元素等。
     h4.section__h4 Parameters
     h5.section__h4 val
     dl.section__dl
@@ -29,6 +30,10 @@ section.section
         const $text = document.createTextNode('text')
         const $items = document.querySelectorAll('.item')
         const $fragment = document.createDocumentFragment()
+        const svgElement = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
+
+        Types.isElement(svgElement) // -> true
+        Types.isHTMLElement(svgElement) // -> false
 
         Types.is($list) // -> 'element'
         Types.isElement($list) // -> true
