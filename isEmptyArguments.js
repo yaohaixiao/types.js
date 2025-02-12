@@ -5,7 +5,7 @@ import isArguments from './isArguments'
  * ========================================================================
  * @method isEmptyArguments
  * @since 2.6.0
- * @category Array
+ * @category Object
  * @param {*} val
  * @returns {Boolean}
  * @example

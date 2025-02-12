@@ -395,7 +395,7 @@ Types.isValue(fn) // -> true
 ```
 
 
-### [Primitive Values](https://yaohaixiao.github.io/types.js/#heading-3)
+### [Primitive Values](https://yaohaixiao.github.io/types.js/#heading-5)
 
 types.js 提供以下方法来检测 Primitive Values（基础值类型） 相关的数据类型。
 
@@ -706,7 +706,7 @@ Types.isPrimitive(()=>{}) // -> false
 ```
 
 
-### [Keyed Collections](https://yaohaixiao.github.io/types.js/#heading-11)
+### [Keyed Collections](https://yaohaixiao.github.io/types.js/#heading-14)
 
 types.js 提供以下方法来检测 Keyed Collections 相关的数据类型。
 
@@ -862,56 +862,9 @@ Types.isSet(weakset) // -> false
 Types.isWeakSet(weakset) // -> true
 ```
 
-
-### [Array](https://yaohaixiao.github.io/types.js/#heading-16)
+### [Array](https://yaohaixiao.github.io/types.js/#heading-19)
 
 types.js 提供以下方法来检测 Array 相关的数据类型。
-
-### [isArguments(val)](https://yaohaixiao.github.io/types.js/#method-isArguments)
-
-isArguments(val) 方法用来检测测试数据是否为 arguments 对象。
-
-#### Parameters
-
-##### val
-
-Type: `Any`
-
-必选，要检测的数据。
-
-#### Returns
-
-Type: `Boolean`
-
-'val' 是 arguments 对象返回 true，否则返回 false
-
-#### Example
-
-```js
-import Types from '@yaohaixiao/types.js'
-// 或者单独引用 isArguments() 方法
-// import isArguments from '@yaohaixiao/types.js/isArguments'
-
-const argsLike = { '0': 3, '1': 4, length: 2 }
-const $items = document.querySelectorAll('.item')
-let args
-
-function sum(a, b){
-  args = arguments
-
-  return a + b
-}
-
-sum(3, 5)
-
-Types.isArguments(argsLike) // -> false
-Types.isArguments([]) // -> false
-Types.isArguments(items) // -> false
-
-Types.is(args) // -> 'arguments'
-Types.isArguments(args) // -> true
-
-```
 
 ### [isArray(val)](https://yaohaixiao.github.io/types.js/#method-isArray)
 
@@ -1052,43 +1005,6 @@ Types.isArrayLikeObject(obj) // -> false
 Types.isArrayLikeObject({}) // -> false
 ```
 
-### [isEmptyArguments(val)](https://yaohaixiao.github.io/types.js/#method-isEmptyArguments)
-
-isEmptyArguments(val) 方法用来检测测试 arguments 对象长度为 0。
-
-#### Parameters
-
-##### val
-
-Type: `Any`
-
-必选，要检测的数据。
-
-#### Returns
-
-Type: `Boolean`
-
-true - 表示检测 arguments 对象长度为 0，false 则表示不是。
-
-#### Example
-
-```js
-import Types from '@yaohaixiao/types.js'
-// 或者单独引用 isEmptyArguments() 方法
-// import isEmptyArguments from '@yaohaixiao/types.js/isEmptyArguments'
-
-let args
-const fn = function () {arg = arguments}
-
-fn()
-
-Types.isEmptyArguments(args) // -> true
-
-fn(1)
-
-Types.isEmptyArguments(args) // -> false
-```
-
 ### [isEmptyArray(val)](https://yaohaixiao.github.io/types.js/#method-isEmptyArray)
 
 isEmptyArray(val) 方法用来检测测试数据是否为空字符串。
@@ -1122,7 +1038,7 @@ Types.isEmptyArray(new Array(8)) // -> false
 ```
 
 
-### [Typed Arrays](https://yaohaixiao.github.io/types.js/#heading-22)
+### [Typed Arrays](https://yaohaixiao.github.io/types.js/#heading-24)
 
 types.js 提供以下方法来检测 Typed Arrays 相关的数据类型。
 
@@ -1669,9 +1585,55 @@ Types.isTypedArray(new BigUint64Array(42)) // -> true
 ```
 
 
-### [Object](https://yaohaixiao.github.io/types.js/#heading-37)
+### [Object](https://yaohaixiao.github.io/types.js/#heading-39)
 
 types.js 提供以下方法来检测 Object 相关的数据类型。
+
+### [isArguments(val)](https://yaohaixiao.github.io/types.js/#method-isArguments)
+
+isArguments(val) 方法用来检测测试数据是否为 arguments 对象。
+
+#### Parameters
+
+##### val
+
+Type: `Any`
+
+必选，要检测的数据。
+
+#### Returns
+
+Type: `Boolean`
+
+'val' 是 arguments 对象返回 true，否则返回 false
+
+#### Example
+
+```js
+import Types from '@yaohaixiao/types.js'
+// 或者单独引用 isArguments() 方法
+// import isArguments from '@yaohaixiao/types.js/isArguments'
+
+const argsLike = { '0': 3, '1': 4, length: 2 }
+const $items = document.querySelectorAll('.item')
+let args
+
+function sum(a, b){
+  args = arguments
+
+  return a + b
+}
+
+sum(3, 5)
+
+Types.isArguments(argsLike) // -> false
+Types.isArguments([]) // -> false
+Types.isArguments(items) // -> false
+
+Types.is(args) // -> 'arguments'
+Types.isArguments(args) // -> true
+
+```
 
 ### [isBinary(val)](https://yaohaixiao.github.io/types.js/#method-isBinary)
 
@@ -1774,6 +1736,43 @@ const time = new Date()
 Types.isDate(time) // -> true
 Types.isDate('2017-07-06') // -> false
 Types.isDate(time.getFullYear()) // -> false
+```
+
+### [isEmptyArguments(val)](https://yaohaixiao.github.io/types.js/#method-isEmptyArguments)
+
+isEmptyArguments(val) 方法用来检测测试 arguments 对象长度为 0。
+
+#### Parameters
+
+##### val
+
+Type: `Any`
+
+必选，要检测的数据。
+
+#### Returns
+
+Type: `Boolean`
+
+true - 表示检测 arguments 对象长度为 0，false 则表示不是。
+
+#### Example
+
+```js
+import Types from '@yaohaixiao/types.js'
+// 或者单独引用 isEmptyArguments() 方法
+// import isEmptyArguments from '@yaohaixiao/types.js/isEmptyArguments'
+
+let args
+const fn = function () {arg = arguments}
+
+fn()
+
+Types.isEmptyArguments(args) // -> true
+
+fn(1)
+
+Types.isEmptyArguments(args) // -> false
 ```
 
 ### [isEmptyObject(val)](https://yaohaixiao.github.io/types.js/#method-isEmptyObject)
@@ -2292,7 +2291,8 @@ Types.isXML(XML) // -> true
 Types.isXML(HTML) // -> false
 ```
 
-### [Function](https://yaohaixiao.github.io/types.js/#heading-51)
+
+### [Function](https://yaohaixiao.github.io/types.js/#heading-56)
 
 types.js 提供以下方法来检测 Function 相关的数据类型。
 
@@ -2425,7 +2425,8 @@ Types.isNativeFunction(RegExp) // -> true
 Types.isNativeFunction(Object) // -> true
 ```
 
-### [Number](https://yaohaixiao.github.io/types.js/#heading-55)
+
+### [Number](https://yaohaixiao.github.io/types.js/#heading-60)
 
 types.js 提供以下方法来检测 Number 相关的数据类型。
 
@@ -2641,7 +2642,8 @@ Types.isOdd(NaN) // -> false
 Types.isOdd(Infinity) // -> false
 ```
 
-### [String](https://yaohaixiao.github.io/types.js/#heading-64)
+
+### [String](https://yaohaixiao.github.io/types.js/#heading-70)
 
 types.js 提供以下方法来检测 String 相关的数据类型。
 
@@ -3416,7 +3418,7 @@ Types.isUUID('A987FBC94BED3078CF079141BA07C9F') // -> false
 ```
 
 
-### [DOM](https://yaohaixiao.github.io/types.js/#heading-81)
+### [DOM](https://yaohaixiao.github.io/types.js/#heading-88)
 
 types.js 提供以下方法来检测 DOM 相关的数据类型。
 

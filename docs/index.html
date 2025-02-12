@@ -310,28 +310,7 @@ Types.isWeakSet(set) // -> false
 
 Types.is(weakset) // -> 'weakset'
 Types.isSet(weakset) // -> false
-Types.isWeakSet(weakset) // -> true</code></pre></div></section></section><section class="section"><header class="section__header"><h2 class="section__title">Array</h2></header><div class="section__content"><p>types.js 提供以下方法来检测 Array 相关的数据类型。</p></div><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isArguments">isArguments(val)</h3></header><div class="section__content"><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">0.2.0</dd></dl><h4 class="section__h4">Description</h4><p>isArguments(val) 方法用来检测测试数据是否为 arguments 对象。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 arguments 对象，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js'
-// 或者单独引用 isArguments() 方法
-// import isArguments from '@yaohaixiao/types.js/isArguments'
-
-const argsLike = { '0': 3, '1': 4, length: 2 }
-const $items = document.querySelectorAll('.item')
-let args
-
-function sum(a, b){
-  args = arguments
-
-  return a + b
-}
-
-sum(3, 5)
-
-Types.isArguments(argsLike) // -> false
-Types.isArguments([]) // -> false
-Types.isArguments(items) // -> false
-
-Types.is(args) // -> 'arguments'
-Types.isArguments(args) // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isArray">isArray(val)</h3></header><div class="section__content"><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">0.2.0</dd></dl><h4 class="section__h4">Description</h4><p>isArray(val) 方法用来检测测试数据是否为 Array （数组）类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 Array 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js'
+Types.isWeakSet(weakset) // -> true</code></pre></div></section></section><section class="section"><header class="section__header"><h2 class="section__title">Array</h2></header><div class="section__content"><p>types.js 提供以下方法来检测 Array 相关的数据类型。</p></div><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isArray">isArray(val)</h3></header><div class="section__content"><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">0.2.0</dd></dl><h4 class="section__h4">Description</h4><p>isArray(val) 方法用来检测测试数据是否为 Array （数组）类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 Array 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js'
 // 或者单独引用 isArguments() 方法
 // import isArray from '@yaohaixiao/types.js/isArray'
 
@@ -398,20 +377,7 @@ Types.isArrayLikeObject($items) // -> true
 Types.isArrayLikeObject(args) // -> true
 
 Types.isArrayLikeObject(obj) // -> false
-Types.isArrayLikeObject({}) // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isEmptyArguments">isEmptyArguments(val)</h3></header><div class="section__content"><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">2.6.0</dd></dl><h4 class="section__h4">Description</h4><p>isEmptyArguments(val) 方法用来检测测试 arguments 对象长度为 0。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测 arguments 对象长度为 0，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js'
-// 或者单独引用 isEmptyArguments() 方法
-// import isEmptyArguments from '@yaohaixiao/types.js/isEmptyArguments'
-
-let args
-const fn = function () {arg = arguments}
-
-fn()
-
-Types.isEmptyArguments(args) // -> true
-
-fn(1)
-
-Types.isEmptyArguments(args) // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isEmptyArray">isEmptyArray(val)</h3></header><div class="section__content"><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">0.6.0</dd></dl><h4 class="section__h4">Description</h4><p>isEmptyArray(val) 方法用来检测测试数据是否为空字符串。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据为空字数组，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js'
+Types.isArrayLikeObject({}) // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isEmptyArray">isEmptyArray(val)</h3></header><div class="section__content"><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">0.6.0</dd></dl><h4 class="section__h4">Description</h4><p>isEmptyArray(val) 方法用来检测测试数据是否为空字符串。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据为空字数组，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js'
 // 或者单独引用 isEmptyArray() 方法
 // import isEmptyArray from '@yaohaixiao/types.js/isEmptyArray'
 
@@ -625,7 +591,28 @@ Types.isTypedArray(new Float32Array([])) // -> true
 Types.isTypedArray(new Float64Array([])) // -> true
 
 Types.isTypedArray(new BigInt64Array(42)) // -> true
-Types.isTypedArray(new BigUint64Array(42)) // -> true</code></pre></div></section></section><section class="section"><header class="section__header"><h2 class="section__title">Object</h2></header><div class="section__content"><p>types.js 提供以下方法来检测 Object 相关的数据类型。</p></div><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isBinary">isBinary(val)</h3></header><div class="section__content"><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">1.11.0</dd></dl><h4 class="section__h4">Description</h4><p>isBinary(val) 方法用来检测测试数据是二进制（字符串）数据。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是二进制（字符串）数据，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js'
+Types.isTypedArray(new BigUint64Array(42)) // -> true</code></pre></div></section></section><section class="section"><header class="section__header"><h2 class="section__title">Object</h2></header><div class="section__content"><p>types.js 提供以下方法来检测 Object 相关的数据类型。</p></div><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isArguments">isArguments(val)</h3></header><div class="section__content"><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">0.2.0</dd></dl><h4 class="section__h4">Description</h4><p>isArguments(val) 方法用来检测测试数据是否为 arguments 对象。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 arguments 对象，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js'
+// 或者单独引用 isArguments() 方法
+// import isArguments from '@yaohaixiao/types.js/isArguments'
+
+const argsLike = { '0': 3, '1': 4, length: 2 }
+const $items = document.querySelectorAll('.item')
+let args
+
+function sum(a, b){
+  args = arguments
+
+  return a + b
+}
+
+sum(3, 5)
+
+Types.isArguments(argsLike) // -> false
+Types.isArguments([]) // -> false
+Types.isArguments(items) // -> false
+
+Types.is(args) // -> 'arguments'
+Types.isArguments(args) // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isBinary">isBinary(val)</h3></header><div class="section__content"><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">1.11.0</dd></dl><h4 class="section__h4">Description</h4><p>isBinary(val) 方法用来检测测试数据是二进制（字符串）数据。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是二进制（字符串）数据，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js'
 // 或者单独引用 isUint16Array() 方法
 // import isBinary from '@yaohaixiao/types.js/isBinary'
 
@@ -654,7 +641,20 @@ const time = new Date()
 
 Types.isDate(time) // -> true
 Types.isDate('2017-07-06') // -> false
-Types.isDate(time.getFullYear()) // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isEmptyObject">isEmptyObject(val)</h3></header><div class="section__content"><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">0.2.0</dd></dl><h4 class="section__h4">Description</h4><p>isEmptyObject(val) 方法用来检测测试数据是否为空（单体）对象。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据为空（单体）对象，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js'
+Types.isDate(time.getFullYear()) // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isEmptyArguments">isEmptyArguments(val)</h3></header><div class="section__content"><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">2.6.0</dd></dl><h4 class="section__h4">Description</h4><p>isEmptyArguments(val) 方法用来检测测试 arguments 对象长度为 0。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测 arguments 对象长度为 0，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js'
+// 或者单独引用 isEmptyArguments() 方法
+// import isEmptyArguments from '@yaohaixiao/types.js/isEmptyArguments'
+
+let args
+const fn = function () {arg = arguments}
+
+fn()
+
+Types.isEmptyArguments(args) // -> true
+
+fn(1)
+
+Types.isEmptyArguments(args) // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isEmptyObject">isEmptyObject(val)</h3></header><div class="section__content"><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">0.2.0</dd></dl><h4 class="section__h4">Description</h4><p>isEmptyObject(val) 方法用来检测测试数据是否为空（单体）对象。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据为空（单体）对象，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js'
 // 或者单独引用 isEmptyObject() 方法
 // import isEmptyObject from '@yaohaixiao/types.js/isEmptyObject'
 
@@ -1062,7 +1062,17 @@ Types.isPrime(11) // -> true
 Types.isPrime(0) // -> false
 Types.isPrime(1) // -> false
 Types.isPrime(2) // -> false
-Types.isPrime(9) // -> false</code></pre></div></section></section><section class="section"><header class="section__header"><h2 class="section__title">String</h2></header><div class="section__content"><p>types.js 提供以下方法来检测 String 相关的数据类型。</p></div><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isAlpha">isAlpha(val)</h3></header><div class="section__content"><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">2.1.0</dd></dl><h4 class="section__h4">Description</h4><p>isAlpha(val) 方法用来检测测试数据是否仅包含英文字符。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据仅包含英文字符，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js'
+Types.isPrime(9) // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isSafeInteger">isSafeInteger(val)</h3></header><div class="section__content"><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">2.7.0</dd></dl><h4 class="section__h4">Description</h4><p>isSafeInteger(val) 方法用来检测测试数据的(数值)是否为整数。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>'val' 是安全的 Integer 值，返回 true，否则返回 false。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js'
+// 或者单独引用 isSafeInteger() 方法
+// import isSafeInteger from '@yaohaixiao/types.js/isSafeInteger'
+
+isSafeInteger(3) // => true
+
+isSafeInteger(Number.MIN_VALUE) // => false
+
+isSafeInteger(Infinity) // => false
+
+isSafeInteger('3') // => false</code></pre></div></section></section><section class="section"><header class="section__header"><h2 class="section__title">String</h2></header><div class="section__content"><p>types.js 提供以下方法来检测 String 相关的数据类型。</p></div><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isAlpha">isAlpha(val)</h3></header><div class="section__content"><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">2.1.0</dd></dl><h4 class="section__h4">Description</h4><p>isAlpha(val) 方法用来检测测试数据是否仅包含英文字符。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据仅包含英文字符，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js'
 // 或者单独引用 isAlpha() 方法
 // import isAlpha from '@yaohaixiao/types.js/isAlpha'
 
@@ -1427,35 +1437,7 @@ Types.isUUID('08dbe0f11c8641cf8afe6b2824e8f8f5') // -> true
 Types.isUUID('') // -> false
 Types.isUUID('xxxA987FBC9-4BED-3078-CF07-9141BA07C9F3') // -> false
 Types.isUUID('934859') // -> false
-Types.isUUID('A987FBC94BED3078CF079141BA07C9F') // -> false</code></pre></div></section></section><section class="section"><header class="section__header"><h2 class="section__title">DOM</h2></header><div class="section__content"><p>types.js 提供以下方法来检测 DOM 相关的数据类型。</p></div><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isElement">isFragment(val)</h3></header><div class="section__content"><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">0.6.0</dd></dl><h4 class="section__h4">Description</h4><p>isFragment(val) 方法用来检测测试数据是否为 DocumentFragment 文档碎片。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 DocumentFragment 文档碎片，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js'
-// 或者单独引用 isFragment() 方法
-// import isFragment from '@yaohaixiao/types.js/isFragment'
-
-const $list = document.getElementById('list')
-const $div = document.createElement('div')
-const $text = document.createTextNode('text')
-const $items = document.querySelectorAll('.item')
-const $fragment = document.createDocumentFragment()
-
-Types.is($list) // -> 'element'
-Types.isElement($list) // -> true
-Types.isFragment($list) // -> false
-
-Types.is($div) // -> 'element'
-Types.isElement($div) // -> true
-Types.isFragment($div) // -> false
-
-Types.is($text) // -> 'text'
-Types.isElement($text) // -> false
-Types.isFragment($text) // -> false
-
-Types.is($items) // -> 'collection'
-Types.isElement($items) // -> false
-Types.isFragment($items) // -> false
-
-Types.is($fragment) // -> 'fragment'
-Types.isElement($fragment) // -> false
-Types.isFragment($items) // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isElement">isElement(val)</h3></header><div class="section__content"><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">0.2.0</dd></dl><h4 class="section__h4">Description</h4><p>isElement(val) 方法用来检测测试数据是否为 Element 实例。</p><p>注意：isElement 调整后，是一个更通用的接口，它可以表示任何类型的元素节点，不仅包括 HTML 元素，还包括 SVG（可缩放矢量图形）元素、MathML（数学标记语言）元素等。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 Element 实例，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js'
+Types.isUUID('A987FBC94BED3078CF079141BA07C9F') // -> false</code></pre></div></section></section><section class="section"><header class="section__header"><h2 class="section__title">DOM</h2></header><div class="section__content"><p>types.js 提供以下方法来检测 DOM 相关的数据类型。</p></div><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isElement">isElement(val)</h3></header><div class="section__content"><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">0.2.0</dd></dl><h4 class="section__h4">Description</h4><p>isElement(val) 方法用来检测测试数据是否为 Element 实例。</p><p>注意：isElement 调整后，是一个更通用的接口，它可以表示任何类型的元素节点，不仅包括 HTML 元素，还包括 SVG（可缩放矢量图形）元素、MathML（数学标记语言）元素等。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 Element 实例，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js'
 // 或者单独引用 isElement() 方法
 // import isElement from '@yaohaixiao/types.js/isElement'
 
@@ -1484,7 +1466,35 @@ Types.isElement($items) // -> false
 Types.is($fragment) // -> 'collection'
 Types.isElement($fragment) // -> false
 
-Types.isElement([]) // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isHTMLCollection">isHTMLCollection(val)</h3></header><div class="section__content"><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">0.2.0</dd></dl><h4 class="section__h4">Description</h4><p>isHTMLCollection(val) 方法用来检测测试数据是否为 HTMLNodeList (元素集合)类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 HTMLNodeList (元素集合)类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js'
+Types.isElement([]) // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isElement">isFragment(val)</h3></header><div class="section__content"><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">0.6.0</dd></dl><h4 class="section__h4">Description</h4><p>isFragment(val) 方法用来检测测试数据是否为 DocumentFragment 文档碎片。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 DocumentFragment 文档碎片，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js'
+// 或者单独引用 isFragment() 方法
+// import isFragment from '@yaohaixiao/types.js/isFragment'
+
+const $list = document.getElementById('list')
+const $div = document.createElement('div')
+const $text = document.createTextNode('text')
+const $items = document.querySelectorAll('.item')
+const $fragment = document.createDocumentFragment()
+
+Types.is($list) // -> 'element'
+Types.isElement($list) // -> true
+Types.isFragment($list) // -> false
+
+Types.is($div) // -> 'element'
+Types.isElement($div) // -> true
+Types.isFragment($div) // -> false
+
+Types.is($text) // -> 'text'
+Types.isElement($text) // -> false
+Types.isFragment($text) // -> false
+
+Types.is($items) // -> 'collection'
+Types.isElement($items) // -> false
+Types.isFragment($items) // -> false
+
+Types.is($fragment) // -> 'fragment'
+Types.isElement($fragment) // -> false
+Types.isFragment($items) // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isHTMLCollection">isHTMLCollection(val)</h3></header><div class="section__content"><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">0.2.0</dd></dl><h4 class="section__h4">Description</h4><p>isHTMLCollection(val) 方法用来检测测试数据是否为 HTMLNodeList (元素集合)类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 HTMLNodeList (元素集合)类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js'
 // 或者单独引用 isHTMLCollection() 方法
 // import isHTMLCollection from '@yaohaixiao/types.js/isHTMLCollection'
 
