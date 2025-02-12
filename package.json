@@ -1,6 +1,6 @@
 {
   "name": "@yaohaixiao/types.js",
-  "version": "2.6.0",
+  "version": "2.7.0",
   "description": "types.js - A library of tools focused on detecting JavaScript data types.",
   "main": "index.js",
   "types": "types/index.d.ts",

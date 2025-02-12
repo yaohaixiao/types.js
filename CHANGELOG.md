@@ -1,3 +1,20 @@
+# [2.7.0](https://github.com/yaohaixiao/types.js/compare/2.6.0...2.7.0) (2025-02-12)
+
+
+### Features
+
+* 添加 isFalsy() 方法； ([dd8a48b](https://github.com/yaohaixiao/types.js/commit/dd8a48b545d6f6539a7f85c6703fc96baf2e572d))
+* 添加 isHTMLElement() 方法 ([0819e57](https://github.com/yaohaixiao/types.js/commit/0819e57a872bc4b65dd4b3f4a2a9c43d2a3874a2))
+* 添加 isNaN() 方法； ([1c43923](https://github.com/yaohaixiao/types.js/commit/1c439235ed728684095261120db060ef66b1116e))
+* 添加 isNil() 方法； ([9d11c1a](https://github.com/yaohaixiao/types.js/commit/9d11c1ad85286b89a93871dc23cdd3cd0b3e69e0))
+* 添加 isNode() 方法； ([38bdc71](https://github.com/yaohaixiao/types.js/commit/38bdc71f8b342e2baee9e9a2892c90c8e4dd9a1c))
+* 添加 isSafeInteger() 方法； ([8cf1aeb](https://github.com/yaohaixiao/types.js/commit/8cf1aeb4ac0140f1b29ab2338886dad9fcf43d20))
+* 添加 isShadowRoot() 方法； ([3a96608](https://github.com/yaohaixiao/types.js/commit/3a96608f949183c3b316cde282e2150f89602c7d))
+* 添加 isStream() 方法； ([86e1e1c](https://github.com/yaohaixiao/types.js/commit/86e1e1cd773c8cd5bb77a3e522233c4cc74a0fbe))
+* 添加 isWindow() 方法； ([d80d099](https://github.com/yaohaixiao/types.js/commit/d80d0992f43ff232fe39e6c4777afebe799cd1ee))
+
+
+
 # [2.6.0](https://github.com/yaohaixiao/types.js/compare/2.5.1...2.6.0) (2025-02-09)
 
 
