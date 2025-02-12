@@ -1,0 +1,58 @@
+section.section
+  header.section__header
+    h3#method-isStream.section__h3 isStream(val)
+  div.section__content
+    dl.section__dl
+      dt.section__dt Since：
+      dd.section__dd 2.7.0
+    h4.section__h4 Description
+    p isStream(val) 方法用来检测测试数据是否为 Stream 类型。
+    h4.section__h4 Parameters
+    h5.section__h4 val
+    dl.section__dl
+      dt.section__dt Type：
+      dd.section__dd Any
+    p （必须）val 待检测的数据。
+    h5.section__h4 options
+    dl.section__dl
+      dt.section__dt Type：
+      dd.section__dd Object
+    dl.section__dl
+      dt.section__dt Default：
+      dd.section__dd {}
+    p （可选）options 这是一个解构赋值的参数。它是一个对象，默认值为空对象 {}。 对象中有一个属性 checkOpen，其默认值为 true。checkOpen 用于控制是否检查流的打开状态（即可读或可写状态）。
+    h4.section__h4 Returns
+    dl.section__dl
+      dt.section__dt Type：
+      dd.section__dd Boolean。
+    p 'val' 是 Stream 类型，返回 true，否则返回 false。
+    pre.section__pre
+      code.section__code.
+        import Types from '@yaohaixiao/types.js'
+        // 或者单独引用 isStream() 方法
+        // import isStream from '@yaohaixiao/types.js/isStream'
+
+        // 测试流对象
+        const validStream = {
+          writable: true,
+          pipe: () => {}
+        }
+
+        Types.isStream(validStream) // -> true
+
+        // 测试非流对象
+        const nonStream = {
+          notAStreamProperty: 'value'
+        }
+
+        Types.isStream(nonStream) // -> false
+
+        // 测试 null
+        Types.isStream(null) // -> false
+
+        // 测试 checkOpen 为 false 的情况
+        const obj = {
+          pipe: () => {}
+        }
+
+        Types.isStream(obj, { checkOpen: false }) // -> true

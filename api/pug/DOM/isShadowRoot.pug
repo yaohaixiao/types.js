@@ -1,0 +1,46 @@
+section.section
+  header.section__header
+    h3#method-isShadowRoot.section__h3 isShadowRoot(val)
+  div.section__content
+    dl.section__dl
+      dt.section__dt Since：
+      dd.section__dd 2.7.0
+    h4.section__h4 Description
+    p isShadowRoot(val) 方法用来检测测试数据是否为 ShadowRoot 对象。
+    h4.section__h4 Parameters
+    h5.section__h4 val
+    dl.section__dl
+      dt.section__dt Type：
+      dd.section__dd Any
+    p （必须）val 待检测的数据。
+    h4.section__h4 Returns
+    dl.section__dl
+      dt.section__dt Type：
+      dd.section__dd Boolean。
+    p 'val' 是 ShadowRoot 对象，返回 true，否则返回 false。
+    pre.section__pre
+      code.section__code.
+        import Types from '@yaohaixiao/types.js'
+        // 或者单独引用 isShadowRoot() 方法
+        // import isShadowRoot from '@yaohaixiao/types.js/isShadowRoot'
+
+        // 测试 ShadowRoot 未定义的情况
+        const originalShadowRoot = global.ShadowRoot
+
+        // 临时将 ShadowRoot 设置为 undefined
+        global.ShadowRoot = undefined
+        Types.isShadowRoot({}) // -> false
+
+        // 恢复原始的 ShadowRoot
+        global.ShadowRoot = originalShadowRoot
+
+        // 测试传入真正的 ShadowRoot 实例
+        const div = document.createElement('div')
+        const shadowRoot = div.attachShadow({ mode: 'open' })
+
+        Types.isShadowRoot(shadowRoot) // -> true
+
+        // 测试传入非 ShadowRoot 实例
+        Types.isShadowRoot({}) // -> false
+
+

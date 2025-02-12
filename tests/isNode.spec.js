@@ -13,6 +13,30 @@ describe('isNode', () => {
     }
   })
 
+  it('isNode(document.createTextNode(\'div\'))，返回：true', () => {
+    if (typeof document !== 'undefined') {
+      const text = document.createTextNode('div')
+      const result = isNode(text)
+      expect(result).toBe(true)
+    }
+  })
+
+  it('isNode(document.createDocumentFragment())，返回：true', () => {
+    if (typeof document !== 'undefined') {
+      const fragment = document.createDocumentFragment()
+      const result = isNode(fragment)
+      expect(result).toBe(true)
+    }
+  })
+
+  it('isNode(document.createElementNS(\'http://www.w3.org/2000/svg\', \'svg\'))，返回：true', () => {
+    if (typeof document !== 'undefined') {
+      const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
+      const result = isNode(svg)
+      expect(result).toBe(true)
+    }
+  })
+
   // 测试传入非 Node 实例
   it('isNode({})，返回：false', () => {
     const nonNode = {}

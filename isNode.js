@@ -8,9 +8,20 @@ import getWindow from './utils/getWindow'
  * @category DOM
  * @param {*} val - 要检测的数据
  * @return {Boolean} 'val' 是 Node 实例，返回 true，否则返回 false
+ * @example
+ *
+ * isNode(document.createElement('div')) // -> true
+ *
+ * isNode(document.createTextNode('text')) // -> true
+ *
+ * isNode(document.createDocumentFragment()) // -> true
+ *
+ * isNode(document.createElementNS('http://www.w3.org/2000/svg', 'svg')) // -> true
+ *
+ * isNode({}) // -> false
  */
 const isNode = (val) => {
-  return val instanceof getWindow(val).Node;
+  return val instanceof getWindow(val).Node
 }
 
 export default isNode

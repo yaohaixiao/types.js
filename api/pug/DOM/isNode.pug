@@ -1,0 +1,55 @@
+section.section
+  header.section__header
+    h3#method-isNode.section__h3 isNode(val)
+  div.section__content
+    dl.section__dl
+      dt.section__dt Since：
+      dd.section__dd 2.7.0
+    h4.section__h4 Description
+    p isNode(val) 方法用来检测测试数据是否为 Node 实例。
+    p 注意：在 JavaScript 的 DOM（文档对象模型）中，Node、Element 和 HTMLElement 是非常重要的概念，它们代表了不同层次的抽象，用于描述和操作 HTML 文档中的各种元素和节点。以下是它们之间的区别：
+    h5 继承关系
+    p 它们之间存在着明确的继承层次结构，具体如下：
+    ul
+      li Node 是所有节点类型的基类，它处于继承层次的最顶层。
+      li Element 继承自 Node，是所有元素节点的基类。
+      li HTMLElement 继承自 Element，专门用于表示 HTML 元素。
+    p 因此，isNode() 方法可以检测任何类型的 Node 元素。
+    h4.section__h4 Parameters
+    h5.section__h4 val
+    dl.section__dl
+      dt.section__dt Type：
+      dd.section__dd Any
+    p （必须）val 待检测的数据。
+    h4.section__h4 Returns
+    dl.section__dl
+      dt.section__dt Type：
+      dd.section__dd Boolean。
+    p 'val' 是 Node 实例，返回 true，否则返回 false。
+    pre.section__pre
+      code.section__code.
+        import Types from '@yaohaixiao/types.js'
+        // 或者单独引用 isNode() 方法
+        // import isNode from '@yaohaixiao/types.js/isNode'
+
+        const div = document.createElement('div')
+        Types.isNode(div) // -> true
+        Types.isElement(div) // -> true
+        Types.isHTMLElement(div) // -> true
+
+        const text = document.createTextNode('text')
+        Types.isNode(text) // -> true
+        Types.isElement(text) // -> false
+        Types.isHTMLElement(text) // -> false
+
+        const fragment = document.createDocumentFragment()
+        Types.isNode(fragment) // -> true
+        Types.isElement(fragment) // -> false
+        Types.isHTMLElement(fragment) // -> false
+
+        const svgElement = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
+        Types.isNode(svgElement) // -> true
+        Types.isElement(svgElement) // -> true
+        Types.isHTMLElement(svgElement) // -> false
+
+        Types.isNode({}) // -> false

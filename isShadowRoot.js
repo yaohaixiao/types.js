@@ -1,13 +1,13 @@
 import getWindow from './utils/getWindow'
 
 /**
- * 检测测试数据是否为 isShadowRoot 对象
+ * 检测测试数据是否为 ShadowRoot 对象
  * ========================================================================
  * @method isShadowRoot
  * @since 2.7.0
  * @category DOM
  * @param {*} val - 要检测的数据
- * @return {Boolean} 'val' 是 isShadowRoot 对象，返回 true，否则返回 false
+ * @return {Boolean} 'val' 是 ShadowRoot 对象，返回 true，否则返回 false
  * @example
  *
  * // 测试 ShadowRoot 未定义的情况

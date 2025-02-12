@@ -1,0 +1,35 @@
+section.section
+  header.section__header
+    h3#method-isNil.section__h3 isNil(val)
+  div.section__content
+    dl.section__dl
+      dt.section__dt Since：
+      dd.section__dd 2.7.0
+    h4.section__h4 Description
+    p isNil(val) 方法用来检测测试数据是否为在布尔上下文中被视为 false 的值。
+    h4.section__h4 Parameters
+    h5.section__h4 val
+    dl.section__dl
+      dt.section__dt Type：
+      dd.section__dd Any
+    p （必须）val 待检测的数据。
+    h4.section__h4 Returns
+    dl.section__dl
+      dt.section__dt Type：
+      dd.section__dd String。
+    p 'val' 是 Null 或者 undefined，返回 true，否则返回 false。。
+    pre.section__pre
+      code.section__code.
+        import Types from '@yaohaixiao/types.js'
+        // 或者单独引用 isNil() 方法
+        // import isNil from '@yaohaixiao/types.js/isNil'
+
+        Types.isNil(null) // => true
+
+        Types.isNil(void 0) // => true
+
+        Types.isNil(undefined) // => true
+
+        Types.isNil(NaN) // => false
+
+        Types.isNil('') // => false

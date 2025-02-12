@@ -90,7 +90,34 @@ Types.is(new Uint32Array([])) // -&gt; uint32array
 Types.is(new Float32Array([])) // -&gt; float32array
 Types.is(new Float64Array([])) // -&gt; float64array
 Types.is(new BigInt64Array(64)) // -&gt; bigint64array
-Types.is(new BigUint64Array(64)) // -&gt; biguint64array</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isValue">isValue(val)</h3></header><div class="section__content"><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">0.2.0</dd></dl><h4 class="section__h4">Description</h4><p>isValue(val) 方法用来检测测试数据是否有效的数据（非null、undefined、NaN或者正负无穷数值）。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是否有效的数据（非null、undefined或者正负无穷数值），false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js'
+Types.is(new BigUint64Array(64)) // -&gt; biguint64array</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isFalsy">isFalsy(val)</h3></header><div class="section__content"><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">2.7.0</dd></dl><h4 class="section__h4">Description</h4><p>isFalsy(val) 方法用来检测测试数据是否为在布尔上下文中被视为 false 的值。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">String。</dd></dl><p>'val' 是 NaN，返回 true，否则返回 false。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js'
+// 或者单独引用 isFalsy() 方法
+// import isFalsy from '@yaohaixiao/types.js/isFalsy'
+
+Types.isFalsy(false) // true
+Types.isFalsy(0) // true
+Types.isFalsy('') // true
+Types.isFalsy(null) // true
+Types.isFalsy(undefined) // true
+Types.isFalsy(NaN) // true
+
+Types.isFalsy(true) // false
+Types.isFalsy(1) // false
+Types.isFalsy('hello') // false
+Types.isFalsy({}) // false
+Types.isFalsy([]) // false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isNil">isNil(val)</h3></header><div class="section__content"><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">2.7.0</dd></dl><h4 class="section__h4">Description</h4><p>isNil(val) 方法用来检测测试数据是否为在布尔上下文中被视为 false 的值。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">String。</dd></dl><p>'val' 是 Null 或者 undefined，返回 true，否则返回 false。。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js'
+// 或者单独引用 isNil() 方法
+// import isNil from '@yaohaixiao/types.js/isNil'
+
+Types.isNil(null) // => true
+
+Types.isNil(void 0) // => true
+
+Types.isNil(undefined) // => true
+
+Types.isNil(NaN) // => false
+
+Types.isNil('') // => false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isValue">isValue(val)</h3></header><div class="section__content"><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">0.2.0</dd></dl><h4 class="section__h4">Description</h4><p>isValue(val) 方法用来检测测试数据是否有效的数据（非null、undefined、NaN或者正负无穷数值）。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是否有效的数据（非null、undefined或者正负无穷数值），false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js'
 // 或者单独引用 isValue() 方法
 // import isValue from '@yaohaixiao/types.js/isValue'
 
@@ -826,7 +853,34 @@ Types.is(patternTwo) // -> 'regexp'
 Types.isRegExp(patternTwo) // -> true
 
 Types.is(patternStr) // -> 'string'
-Types.isRegExp(patternStr) // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isXML">isXML(val)</h3></header><div class="section__content"><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">0.2.0</dd></dl><h4 class="section__h4">Description</h4><p>isXML(val) 方法用来检测测试数据是否为合法的 XML 格式。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是合法的 XML 格式，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js'
+Types.isRegExp(patternStr) // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isStream">isStream(val)</h3></header><div class="section__content"><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">2.7.0</dd></dl><h4 class="section__h4">Description</h4><p>isStream(val) 方法用来检测测试数据是否为 Stream 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h5 class="section__h4">options</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Object</dd></dl><dl class="section__dl"><dt class="section__dt">Default：</dt><dd class="section__dd">{}</dd></dl><p>（可选）options 这是一个解构赋值的参数。它是一个对象，默认值为空对象 {}。 对象中有一个属性 checkOpen，其默认值为 true。checkOpen 用于控制是否检查流的打开状态（即可读或可写状态）。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>'val' 是 Stream 类型，返回 true，否则返回 false。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js'
+// 或者单独引用 isStream() 方法
+// import isStream from '@yaohaixiao/types.js/isStream'
+
+// 测试流对象
+const validStream = {
+  writable: true,
+  pipe: () => {}
+}
+
+Types.isStream(validStream) // -> true
+
+// 测试非流对象
+const nonStream = {
+  notAStreamProperty: 'value'
+}
+
+Types.isStream(nonStream) // -> false
+
+// 测试 null
+Types.isStream(null) // -> false
+
+// 测试 checkOpen 为 false 的情况
+const obj = {
+  pipe: () => {}
+}
+
+Types.isStream(obj, { checkOpen: false }) // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isXML">isXML(val)</h3></header><div class="section__content"><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">0.2.0</dd></dl><h4 class="section__h4">Description</h4><p>isXML(val) 方法用来检测测试数据是否为合法的 XML 格式。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是合法的 XML 格式，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js'
 // 或者单独引用 isXML() 方法
 // import isXML from '@yaohaixiao/types.js/isXML'
 
@@ -1481,7 +1535,28 @@ Types.is($items) // -> 'collection'
 Types.isHTMLElement($items) // -> false
 
 Types.is($fragment) // -> 'collection'
-Types.isHTMLElement($fragment) // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isTextNode">isTextNode(val)</h3></header><div class="section__content"><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">0.2.0</dd></dl><h4 class="section__h4">Description</h4><p>isTextNode(val) 方法用来检测测试数据是否为 HTMLTextNode (文本节点)类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 HTMLTextNode (文本节点)类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js'
+Types.isHTMLElement($fragment) // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isShadowRoot">isShadowRoot(val)</h3></header><div class="section__content"><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">2.7.0</dd></dl><h4 class="section__h4">Description</h4><p>isShadowRoot(val) 方法用来检测测试数据是否为 ShadowRoot 对象。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>'val' 是 ShadowRoot 对象，返回 true，否则返回 false。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js'
+// 或者单独引用 isShadowRoot() 方法
+// import isShadowRoot from '@yaohaixiao/types.js/isShadowRoot'
+
+// 测试 ShadowRoot 未定义的情况
+const originalShadowRoot = global.ShadowRoot
+
+// 临时将 ShadowRoot 设置为 undefined
+global.ShadowRoot = undefined
+Types.isShadowRoot({}) // -> false
+
+// 恢复原始的 ShadowRoot
+global.ShadowRoot = originalShadowRoot
+
+// 测试传入真正的 ShadowRoot 实例
+const div = document.createElement('div')
+const shadowRoot = div.attachShadow({ mode: 'open' })
+
+Types.isShadowRoot(shadowRoot) // -> true
+
+// 测试传入非 ShadowRoot 实例
+Types.isShadowRoot({}) // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isTextNode">isTextNode(val)</h3></header><div class="section__content"><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">0.2.0</dd></dl><h4 class="section__h4">Description</h4><p>isTextNode(val) 方法用来检测测试数据是否为 HTMLTextNode (文本节点)类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 HTMLTextNode (文本节点)类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js'
 // 或者单独引用 isTextNode() 方法
 // import isTextNode from '@yaohaixiao/types.js/isTextNode'
 
@@ -1526,7 +1601,7 @@ export default {
     Types.isVNode($header) // -> true
   }
 }
-&lt;/script&gt;</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isWindow">isWindow(val)</h3></header><div class="section__content"><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">2.7.0</dd></dl><h4 class="section__h4">Description</h4><p>isHTMLElement(val) 方法用来检测测试数据是否为 Window 对象。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>'val' 是 Window 对象，返回 true，否则返回 false。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js'
+&lt;/script&gt;</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isWindow">isWindow(val)</h3></header><div class="section__content"><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">2.7.0</dd></dl><h4 class="section__h4">Description</h4><p>isWindow(val) 方法用来检测测试数据是否为 Window 对象。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>'val' 是 Window 对象，返回 true，否则返回 false。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js'
 // 或者单独引用 isWindow() 方法
 // import isWindow from '@yaohaixiao/types.js/isWindow'
 
@@ -1547,7 +1622,7 @@ const nonWindowObject = {
 Types.isWindow(nonWindowObject) // -> false
 
 Types.isWindow(null) // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isDOM">isDOM(val)</h3></header><div class="section__content"><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">1.9.0</dd></dl><h4 class="section__h4">Description</h4><p>isDOM(val) 方法用来检测测试数据是否为 DOM 类型数据：DOM 节点，TextNode，NodeList 和 DocumentFragment）。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 DOM 类型数据，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js'
-// 或者单独引用 isTextNode() 方法
+// 或者单独引用 isDOM() 方法
 // import isDOM from '@yaohaixiao/types.js/isDOM'
 
 const $list = document.getElementById('list')
@@ -1565,5 +1640,29 @@ Types.is($items) // -> 'collection'
 Types.isDOM($items) // -> true
 
 Types.is($text) // -> 'text'
-Types.isDOM($text) // -> true</code></pre></div></section></section></article><div class="main__footer" id="footer"><p>Copyright &copy; 2023 <a href="https://github.com/yaohaixiao">Robert Yao</a>, all right reserved.</p><p>Code licensed under&nbsp;<a href="http://opensource.org/licenses/mit-license.html">MIT License</a></p><p>Documentation licensed under&nbsp;<a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a></p><p><a href="https://github.com/yaohaixiao/types.js">View on GitHub</a> ·
+Types.isDOM($text) // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isNode">isNode(val)</h3></header><div class="section__content"><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">2.7.0</dd></dl><h4 class="section__h4">Description</h4><p>isNode(val) 方法用来检测测试数据是否为 Node 实例。</p><p>注意：在 JavaScript 的 DOM（文档对象模型）中，Node、Element 和 HTMLElement 是非常重要的概念，它们代表了不同层次的抽象，用于描述和操作 HTML 文档中的各种元素和节点。以下是它们之间的区别：</p><h5>继承关系</h5><p>它们之间存在着明确的继承层次结构，具体如下：</p><ul><li>Node 是所有节点类型的基类，它处于继承层次的最顶层。</li><li>Element 继承自 Node，是所有元素节点的基类。</li><li>HTMLElement 继承自 Element，专门用于表示 HTML 元素。</li></ul><p>因此，isNode() 方法可以检测任何类型的 Node 元素。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>'val' 是 Node 实例，返回 true，否则返回 false。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js'
+// 或者单独引用 isNode() 方法
+// import isNode from '@yaohaixiao/types.js/isNode'
+
+const div = document.createElement('div')
+Types.isNode(div) // -> true
+Types.isElement(div) // -> true
+Types.isHTMLElement(div) // -> true
+
+const text = document.createTextNode('text')
+Types.isNode(text) // -> true
+Types.isElement(text) // -> false
+Types.isHTMLElement(text) // -> false
+
+const fragment = document.createDocumentFragment()
+Types.isNode(fragment) // -> true
+Types.isElement(fragment) // -> false
+Types.isHTMLElement(fragment) // -> false
+
+const svgElement = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
+Types.isNode(svgElement) // -> true
+Types.isElement(svgElement) // -> true
+Types.isHTMLElement(svgElement) // -> false
+
+Types.isNode({}) // -> false</code></pre></div></section></section></article><div class="main__footer" id="footer"><p>Copyright &copy; 2023 <a href="https://github.com/yaohaixiao">Robert Yao</a>, all right reserved.</p><p>Code licensed under&nbsp;<a href="http://opensource.org/licenses/mit-license.html">MIT License</a></p><p>Documentation licensed under&nbsp;<a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a></p><p><a href="https://github.com/yaohaixiao/types.js">View on GitHub</a> ·
 <a href="https://github.com/yaohaixiao/types.js/issues">Issues</a></p></div></main></div><script src="js/types.min.js"></script><script src="js/docs.min.js"></script></body></html>

@@ -273,6 +273,81 @@ Types.is(new BigInt64Array(64)) // -> bigint64array
 Types.is(new BigUint64Array(64)) // -> biguint64array
 ```
 
+### [isFalsy(val)](https://yaohaixiao.github.io/types.js/#method-isFalsy)
+
+isFalsy(val) 方法用来检测测试数据是否为在布尔上下文中被视为 false 的值
+
+#### Parameters
+
+##### val
+
+Type: `Any`
+
+必选，要检测的数据。
+
+#### Returns
+
+Type: `Boolean`
+
+'val' 是 NaN，返回 true，否则返回 false。
+
+#### Example
+
+```js
+import Types from '@yaohaixiao/types.js'
+// 或者单独引用 isFalsy() 方法
+// import isFalsy from '@yaohaixiao/types.js/isFalsy'
+
+Types.isFalsy(false) // true
+Types.isFalsy(0) // true
+Types.isFalsy('') // true
+Types.isFalsy(null) // true
+Types.isFalsy(undefined) // true
+Types.isFalsy(NaN) // true
+
+Types.isFalsy(true) // false
+Types.isFalsy(1) // false
+Types.isFalsy('hello') // false
+Types.isFalsy({}) // false
+Types.isFalsy([]) // false
+```
+
+### [isNil(val)](https://yaohaixiao.github.io/types.js/#method-isNil)
+
+isNil(val) 方法用来检测测试数据是否为 Null 或者 undefined。
+
+#### Parameters
+
+##### val
+
+Type: `Any`
+
+必选，要检测的数据。
+
+#### Returns
+
+Type: `Boolean`
+
+'val' 是 Null 或者 undefined，返回 true，否则返回 false。
+
+#### Example
+
+```js
+import Types from '@yaohaixiao/types.js'
+// 或者单独引用 isNil() 方法
+// import isNil from '@yaohaixiao/types.js/isNil'
+
+Types.isNil(null) // => true
+
+Types.isNil(void 0) // => true
+
+Types.isNil(undefined) // => true
+
+Types.isNil(NaN) // => false
+
+Types.isNil('') // => false
+```
+
 ### [isValue(val)](https://yaohaixiao.github.io/types.js/#method-isValue)
 
 isValue(val) 方法用来检测测试数据是否为有效的数据。
@@ -2119,6 +2194,64 @@ Types.is(patternStr) // -> 'string'
 Types.isRegExp(patternStr) // -> false
 ```
 
+### [isStream(val)](https://yaohaixiao.github.io/types.js/#method-isStream)
+
+isStream(val) 方法用来检测测试数据是否为 Stream 类型。
+
+#### Parameters
+
+##### val
+
+Type: `Any`
+
+必选，要检测的数据。
+
+##### options
+
+Type: `Object`
+Default: `{}`
+
+这是一个解构赋值的参数。它是一个对象，默认值为空对象 {}。 对象中有一个属性 checkOpen，其默认值为 true。checkOpen 用于控制是否检查流的打开状态（即可读或可写状态）。
+
+#### Returns
+
+Type: `Boolean`
+
+'val' 是 Stream 类型，返回 true，否则返回 false。
+
+#### Example
+
+```js
+import Types from '@yaohaixiao/types.js'
+// 或者单独引用 isStream() 方法
+// import isStream from '@yaohaixiao/types.js/isStream'
+
+// 测试流对象
+const validStream = {
+  writable: true,
+  pipe: () => {}
+}
+
+Types.isStream(validStream) // -> true
+
+// 测试非流对象
+const nonStream = {
+  notAStreamProperty: 'value'
+}
+
+Types.isStream(nonStream) // -> false
+
+// 测试 null
+Types.isStream(null) // -> false
+
+// 测试 checkOpen 为 false 的情况
+const obj = {
+  pipe: () => {}
+}
+
+Types.isStream(obj, { checkOpen: false }) // -> true
+```
+
 ### [isXML(val)](https://yaohaixiao.github.io/types.js/#method-isXML)
 
 isXML(val) 方法返回检测数据的是否为 XML 格式数据。
@@ -3543,9 +3676,54 @@ Types.isElement($text) // -> false
 Types.isTextNode($text) // -> true
 ```
 
+### [isShadowRoot(val)](https://yaohaixiao.github.io/types.js/#method-isShadowRoot)
+
+isShadowRoot(val) 方法用来检测测试数据是否为 ShadowRoot 对象。
+
+#### Parameters
+
+##### val
+
+Type: `Any`
+
+必选，要检测的数据。
+
+#### Returns
+
+Type: `Boolean`
+
+'val' 是 ShadowRoot 对象，返回 true，否则返回 false。
+
+#### Example
+
+```js
+import Types from '@yaohaixiao/types.js'
+// 或者单独引用 isShadowRoot() 方法
+// import isShadowRoot from '@yaohaixiao/types.js/isShadowRoot'
+
+// 测试 ShadowRoot 未定义的情况
+const originalShadowRoot = global.ShadowRoot
+
+// 临时将 ShadowRoot 设置为 undefined
+global.ShadowRoot = undefined
+Types.isShadowRoot({}) // -> false
+
+// 恢复原始的 ShadowRoot
+global.ShadowRoot = originalShadowRoot
+
+// 测试传入真正的 ShadowRoot 实例
+const div = document.createElement('div')
+const shadowRoot = div.attachShadow({ mode: 'open' })
+
+Types.isShadowRoot(shadowRoot) // -> true
+
+// 测试传入非 ShadowRoot 实例
+Types.isShadowRoot({}) // -> false
+```
+
 ### [isWindow(val)](https://yaohaixiao.github.io/types.js/#method-isWindow)
 
-isDOM(val) 方法用来检测测试数据是否为 Window 对象。
+isWindow(val) 方法用来检测测试数据是否为 Window 对象。
 
 #### Parameters
 
@@ -3564,6 +3742,10 @@ Type: `Boolean`
 #### Example
 
 ```js
+import Types from '@yaohaixiao/types.js'
+// 或者单独引用 isWindow() 方法
+// import isWindow from '@yaohaixiao/types.js/isWindow'
+
 const $list = document.getElementById('list')
 
 Types.is($list) // -> 'element'
@@ -3605,7 +3787,7 @@ true - 表示检测数据是 DOM 类型数据，false 则表示不是。
 
 ```js
 import Types from '@yaohaixiao/types.js'
-// 或者单独引用 isTextNode() 方法
+// 或者单独引用 isDOM() 方法
 // import isDOM from '@yaohaixiao/types.js/isDOM'
 
 const $list = document.getElementById('list')
@@ -3624,6 +3806,66 @@ Types.isDOM($items) // -> true
 
 Types.is($text) // -> 'text'
 Types.isDOM($text) // -> true
+```
+
+### [isNode(val)](https://yaohaixiao.github.io/types.js/#method-isNode)
+
+isNode(val) 方法用来检测测试数据是否为 Node 实例。
+
+注意：在 JavaScript 的 DOM（文档对象模型）中，Node、Element 和 HTMLElement 是非常重要的概念，它们代表了不同层次的抽象，用于描述和操作 HTML 文档中的各种元素和节点。以下是它们之间的区别：
+
+#### 继承关系
+
+它们之间存在着明确的继承层次结构，具体如下：
+
+- Node 是所有节点类型的基类，它处于继承层次的最顶层；
+- Element 继承自 Node，是所有元素节点的基类；
+- HTMLElement 继承自 Element，专门用于表示 HTML 元素；
+
+因此，isNode() 方法可以检测任何类型的 Node 元素。
+
+#### Parameters
+
+##### val
+
+Type: `Any`
+
+必选，要检测的数据。
+
+#### Returns
+
+Type: `Boolean`
+
+'val' 是 Node 实例，返回 true，否则返回 false。
+
+#### Example
+
+```js
+import Types from '@yaohaixiao/types.js'
+// 或者单独引用 isNode() 方法
+// import isNode from '@yaohaixiao/types.js/isNode'
+
+const div = document.createElement('div')
+Types.isNode(div) // -> true
+Types.isElement(div) // -> true
+Types.isHTMLElement(div) // -> true
+
+const text = document.createTextNode('text')
+Types.isNode(text) // -> true
+Types.isElement(text) // -> false
+Types.isHTMLElement(text) // -> false
+
+const fragment = document.createDocumentFragment()
+Types.isNode(fragment) // -> true
+Types.isElement(fragment) // -> false
+Types.isHTMLElement(fragment) // -> false
+
+const svgElement = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
+Types.isNode(svgElement) // -> true
+Types.isElement(svgElement) // -> true
+Types.isHTMLElement(svgElement) // -> false
+
+isNode({}) // -> false
 ```
 
 

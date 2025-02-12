@@ -1,0 +1,38 @@
+section.section
+  header.section__header
+    h3#method-isFalsy.section__h3 isFalsy(val)
+  div.section__content
+    dl.section__dl
+      dt.section__dt Since：
+      dd.section__dd 2.7.0
+    h4.section__h4 Description
+    p isFalsy(val) 方法用来检测测试数据是否为在布尔上下文中被视为 false 的值。
+    h4.section__h4 Parameters
+    h5.section__h4 val
+    dl.section__dl
+      dt.section__dt Type：
+      dd.section__dd Any
+    p （必须）val 待检测的数据。
+    h4.section__h4 Returns
+    dl.section__dl
+      dt.section__dt Type：
+      dd.section__dd String。
+    p 'val' 是 NaN，返回 true，否则返回 false。
+    pre.section__pre
+      code.section__code.
+        import Types from '@yaohaixiao/types.js'
+        // 或者单独引用 isFalsy() 方法
+        // import isFalsy from '@yaohaixiao/types.js/isFalsy'
+
+        Types.isFalsy(false) // true
+        Types.isFalsy(0) // true
+        Types.isFalsy('') // true
+        Types.isFalsy(null) // true
+        Types.isFalsy(undefined) // true
+        Types.isFalsy(NaN) // true
+
+        Types.isFalsy(true) // false
+        Types.isFalsy(1) // false
+        Types.isFalsy('hello') // false
+        Types.isFalsy({}) // false
+        Types.isFalsy([]) // false

@@ -22,7 +22,7 @@
  * isFalsy([]) // false
  */
 const isFalsy = (val) => {
-  return !val;
+  return !val
 }
 
 export default isFalsy
