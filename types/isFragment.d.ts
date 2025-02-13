@@ -4,7 +4,7 @@ export default isFragment;
  * ========================================================================
  * @method isFragment
  * @since 0.6.0
- * @category DOM
+ * @category Element
  * @param {*} val - 要检测的数据
  * @returns {Boolean} 'val' 为 DocumentFragment 文档碎片，返回 true，否则返回 false
  * @example

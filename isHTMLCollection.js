@@ -7,7 +7,7 @@ import TYPES from './enum/types'
  * ========================================================================
  * @method isHTMLCollection
  * @since 0.2.0
- * @category DOM
+ * @category Element
  * @param {*} val - 要检测的数据
  * @returns {Boolean} 'val' 是 HTMLNodeList 对象，返回 true，否则返回 false
  * @example

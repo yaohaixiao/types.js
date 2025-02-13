@@ -1,10 +1,10 @@
 export default isDOM;
 /**
- * 检测测试数据是否为 DOM 类型数据：DOM 节点，TextNode，NodeList 和 DocumentFragment）。
+ * 检测测试数据是否为 Element 类型数据：Element 节点，TextNode，NodeList 和 DocumentFragment）。
  * ========================================================================
  * @method isDOM
  * @since 1.9.0
- * @category DOM
+ * @category Element
  * @param {*} el
  * @returns {Boolean}
  * @example

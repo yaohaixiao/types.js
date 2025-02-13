@@ -7,7 +7,7 @@ import isObjectLike from './isObjectLike'
  * ========================================================================
  * @method isHTMLElement
  * @since 2.7.0
- * @category DOM
+ * @category Element
  * @param {*} val - 要检测的数据
  * @returns {Boolean} 'val' 为 HTML 元素节点，返回 true，否则返回 false
  * @example

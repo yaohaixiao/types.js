@@ -4,7 +4,7 @@ export default isTextNode;
  * ========================================================================
  * @method isTextNode
  * @since 0.2.0
- * @category DOM
+ * @category Element
  * @param {*} val - 要检测的数据
  * @returns {Boolean} 'val' 是文本节点，返回 true，否则返回 false
  * @example

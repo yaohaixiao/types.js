@@ -90,6 +90,7 @@
     "./isSymbol.js",
     "./isTextNode.js",
     "./isTime.js",
+    "./isTruly.js",
     "./isTypedArray.js",
     "./isUint8Array.js",
     "./isUint8ClampedArray.js",

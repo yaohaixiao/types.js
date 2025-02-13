@@ -74,6 +74,7 @@ import isSVG from '../isSVG'
 import isSymbol from '../isSymbol'
 import isTextNode from '../isTextNode'
 import isTime from '../isTime'
+import isTruly from '../isTruly'
 import isTypedArray from '../isTypedArray'
 import isUint8Array from '../isUint8Array'
 import isUint8ClampedArray from '../isUint8ClampedArray'
@@ -166,6 +167,7 @@ const METHODS = {
   isSymbol,
   isTextNode,
   isTime,
+  isTruly,
   isTypedArray,
   isUint8Array,
   isUint8ClampedArray,

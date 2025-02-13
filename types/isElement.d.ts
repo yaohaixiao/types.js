@@ -4,7 +4,7 @@ export default isElement;
  * ========================================================================
  * @method isElement
  * @since 0.2.0
- * @category DOM
+ * @category Element
  * @param {*} val - 要检测的数据
  * @returns {Boolean} 'val' 为 Element 实例，返回 true，否则返回 false
  * @example

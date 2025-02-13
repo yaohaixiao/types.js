@@ -76,6 +76,7 @@ declare namespace METHODS {
     export { isSymbol };
     export { isTextNode };
     export { isTime };
+    export { isTruly };
     export { isTypedArray };
     export { isUint8Array };
     export { isUint8ClampedArray };
@@ -167,6 +168,7 @@ import isSVG from '../isSVG';
 import isSymbol from '../isSymbol';
 import isTextNode from '../isTextNode';
 import isTime from '../isTime';
+import isTruly from '../isTruly';
 import isTypedArray from '../isTypedArray';
 import isUint8Array from '../isUint8Array';
 import isUint8ClampedArray from '../isUint8ClampedArray';

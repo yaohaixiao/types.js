@@ -6,7 +6,7 @@ import isObject from './isObject'
  * =============================================================
  * @method isVNode
  * @since 0.2.0
- * @category DOM
+ * @category Element
  * @param {*} val - 要检测的数据
  * @returns {Boolean} 'val' 是 VNode 类型，返回 true，否则返回 false
  * @example

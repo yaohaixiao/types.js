@@ -5,7 +5,7 @@ import getWindow from './utils/getWindow'
  * ========================================================================
  * @method isShadowRoot
  * @since 2.7.0
- * @category DOM
+ * @category Element
  * @param {*} val - 要检测的数据
  * @return {Boolean} 'val' 是 ShadowRoot 对象，返回 true，否则返回 false
  * @example

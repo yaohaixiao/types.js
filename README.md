@@ -289,7 +289,7 @@ Type: `Any`
 
 Type: `Boolean`
 
-'val' 是 NaN，返回 true，否则返回 false。
+'val' 在布尔上下文中被视为 true 的值，返回 true，否则返回 false。
 
 #### Example
 
@@ -346,6 +346,45 @@ Types.isNil(undefined) // => true
 Types.isNil(NaN) // => false
 
 Types.isNil('') // => false
+```
+
+### [isTruly(val)](https://yaohaixiao.github.io/types.js/#method-isTruly)
+
+isTruly(val) 方法用来检测测试数据是否为在布尔上下文中被视为 true 的值。
+
+#### Parameters
+
+##### val
+
+Type: `Any`
+
+必选，要检测的数据。
+
+#### Returns
+
+Type: `Boolean`
+
+'val' 在布尔上下文中被视为 true 的值，返回 true，否则返回 false。
+
+#### Example
+
+```js
+import Types from '@yaohaixiao/types.js'
+// 或者单独引用 isTruly() 方法
+// import isTruly from '@yaohaixiao/types.js/isTruly'
+
+Types.isTruly(true); // -> true
+Types.isTruly(1); // -> true
+Types.isTruly("hello"); // -> true
+Types.isTruly({}); // -> true
+Types.isTruly([]); // -> true
+
+Types.isTruly(false); // -> false
+Types.isTruly(0); // -> false
+Types.isTruly(''); // -> false
+Types.isTruly(null); // -> false
+Types.isTruly(undefined); // -> false
+Types.isTruly(NaN); // -> false
 ```
 
 ### [isValue(val)](https://yaohaixiao.github.io/types.js/#method-isValue)
@@ -3418,7 +3457,7 @@ Types.isUUID('A987FBC94BED3078CF079141BA07C9F') // -> false
 ```
 
 
-### [DOM](https://yaohaixiao.github.io/types.js/#heading-88)
+### [Element](https://yaohaixiao.github.io/types.js/#heading-88)
 
 types.js 提供以下方法来检测 DOM 相关的数据类型。
 
