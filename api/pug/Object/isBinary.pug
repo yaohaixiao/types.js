@@ -27,7 +27,7 @@ section.section
         const buffer = Buffer.alloc(15)
 
         Types.isBinary('Z29vZA==') // -> false
-        Types.isBinary(isArrayBuffer(8) // -> false
+        Types.isBinary(isArrayBuffer(8)) // -> false
 
         Types.is(buffer) // -> 'uint8array'
         isBinary(buffer) // -> true

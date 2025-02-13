@@ -5,9 +5,9 @@ import isArguments from './isArguments'
  * ========================================================================
  * @method isEmptyArguments
  * @since 2.6.0
- * @category Object
- * @param {*} val
- * @returns {Boolean}
+ * @category Arguments
+ * @param {*} val - val 待检测的数据。
+ * @returns {Boolean} true - 表示检测 arguments 对象长度为 0，false 则表示不是。
  * @example
  *
  * let args
