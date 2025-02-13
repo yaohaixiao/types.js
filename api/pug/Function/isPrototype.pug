@@ -1,0 +1,52 @@
+section.section
+  header.section__header
+    h3#method-isPrototype.section__h3 isPrototype(val)
+  div.section__content
+    dl.section__dl
+      dt.section__dt Since：
+      dd.section__dd 0.2.0
+    h4.section__h4 Description
+    p isPrototype(val) 方法用来检测测试数据是否为构造函数。
+    h4.section__h4 Parameters
+    h5.section__h4 val
+    dl.section__dl
+      dt.section__dt Type：
+      dd.section__dd Any
+    p （必须）val 待检测的数据。
+    h4.section__h4 Returns
+    dl.section__dl
+      dt.section__dt Type：
+      dd.section__dd Boolean。
+    p true - 表示检测数据是 Prototype 对象，false 则表示不是。
+    pre.section__pre
+      code.section__code.
+        import Types from '@yaohaixiao/types.js'
+        // 或者单独引用 isPrototype() 方法
+        // import isPrototype from '@yaohaixiao/types.js/isPrototype'
+
+        const Yao= {
+          age: 40,
+          career: 'programmer'
+        }
+
+        const Programmer = function(name, age) {
+          this.name = name
+          this.age = age
+          this.isDead = false
+
+          return this
+        }
+
+        Programmer.prototype.career = 'programmer'
+        Programmer.prototype.getWorkDone = function() {
+          this.isDead = true
+          return this
+        }
+
+        Types.isPrototype(null) // => false
+
+        Types.isPrototype(Object) // => false
+        Types.isPrototype(Object.prototype) // => true
+
+        Types.isPrototype(Programmer) // => false
+        Types.isPrototype(Yao.__proto__) // => true

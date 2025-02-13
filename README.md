@@ -2238,6 +2238,59 @@ Types.isNativeFunction(RegExp) // -> true
 Types.isNativeFunction(Object) // -> true
 ```
 
+### [isPrototype(val)](https://yaohaixiao.github.io/types.js/#method-isPrototype)
+
+isPrototype(val) 方法用来检测测试数据是否为构造函数。
+
+#### Parameters
+
+##### val
+
+Type: `Any`
+
+必选，要检测的数据。
+
+#### Returns
+
+Type: `Boolean`
+
+true - 表示检测数据是 Prototype 对象，false 则表示不是。
+
+#### Example
+
+```js
+import Types from '@yaohaixiao/types.js'
+// 或者单独引用 isPrototype() 方法
+// import isPrototype from '@yaohaixiao/types.js/isPrototype'
+
+const Yao= {
+  age: 40,
+  career: 'programmer'
+}
+
+const Programmer = function(name, age) {
+  this.name = name
+  this.age = age
+  this.isDead = false
+
+  return this
+}
+
+Programmer.prototype.career = 'programmer'
+Programmer.prototype.getWorkDone = function() {
+  this.isDead = true
+  return this
+}
+
+Types.isPrototype(null) // => false
+
+Types.isPrototype(Object) // => false
+Types.isPrototype(Object.prototype) // => true
+
+Types.isPrototype(Programmer) // => false
+Types.isPrototype(Yao.__proto__) // => true
+```
+
 
 ### [Keyed Collections](https://yaohaixiao.github.io/types.js/#heading-14)
 
@@ -3046,58 +3099,6 @@ Types.isPromise(Promise.any([resolve, reject]) // => true
 Types.isPromise(resolve) // => true
 ```
 
-### [isPrototype(val)](https://yaohaixiao.github.io/types.js/#method-isPrototype)
-
-isPrototype(val) 方法用来检测测试数据是否为构造函数。
-
-#### Parameters
-
-##### val
-
-Type: `Any`
-
-必选，要检测的数据。
-
-#### Returns
-
-Type: `Boolean`
-
-true - 表示检测数据是 Prototype 对象，false 则表示不是。
-
-#### Example
-
-```js
-import Types from '@yaohaixiao/types.js'
-// 或者单独引用 isPrototype() 方法
-// import isPrototype from '@yaohaixiao/types.js/isPrototype'
-
-const Yao= {
-  age: 40,
-  career: 'programmer'
-}
-
-const Programmer = function(name, age) {
-  this.name = name
-  this.age = age
-  this.isDead = false
-
-  return this
-}
-
-Programmer.prototype.career = 'programmer'
-Programmer.prototype.getWorkDone = function() {
-  this.isDead = true
-  return this
-}
-
-Types.isPrototype(null) // => false
-
-Types.isPrototype(Object) // => false
-Types.isPrototype(Object.prototype) // => true
-
-Types.isPrototype(Programmer) // => false
-Types.isPrototype(Yao.__proto__) // => true
-```
 
 ### [isRegExp(val)](https://yaohaixiao.github.io/types.js/#method-isRegExp)
 

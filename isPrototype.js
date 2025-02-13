@@ -5,7 +5,7 @@ import isConstructor from './isConstructor'
  * ========================================================================
  * @method isPrototype
  * @since 0.2.0
- * @category Object
+ * @category Function
  * @param {*} val - 要检测的数据
  * @returns {Boolean} 'val' 是 prototype 对象，返回 true，否则返回 false
  * @example

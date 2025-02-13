@@ -938,7 +938,36 @@ Types.isNativeFunction(RegExp) // -> true
 Types.isNativeFunction(Error) // -> true
 Types.isNativeFunction(Math.floor) // -> true
 Types.isNativeFunction(console.log) // -> true
-Types.isNativeFunction(alert) // -> true</code></pre></div></section></section><section class="section"><header class="section__header"><h2 class="section__title">Keyed Collections</h2></header><div class="section__content"><p>types.js 提供以下方法来检测 Keyed Collections 相关的数据类型。</p></div><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isMap">isMap(val)</h3></header><div class="section__content"><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">0.2.0</dd></dl><h4 class="section__h4">Description</h4><p>isMap(val) 方法用来检测测试数据是否为 Map 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 Map 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js'
+Types.isNativeFunction(alert) // -> true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isPrototype">isPrototype(val)</h3></header><div class="section__content"><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">0.2.0</dd></dl><h4 class="section__h4">Description</h4><p>isPrototype(val) 方法用来检测测试数据是否为构造函数。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 Prototype 对象，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js'
+// 或者单独引用 isPrototype() 方法
+// import isPrototype from '@yaohaixiao/types.js/isPrototype'
+
+const Yao= {
+  age: 40,
+  career: 'programmer'
+}
+
+const Programmer = function(name, age) {
+  this.name = name
+  this.age = age
+  this.isDead = false
+
+  return this
+}
+
+Programmer.prototype.career = 'programmer'
+Programmer.prototype.getWorkDone = function() {
+  this.isDead = true
+  return this
+}
+
+Types.isPrototype(null) // => false
+
+Types.isPrototype(Object) // => false
+Types.isPrototype(Object.prototype) // => true
+
+Types.isPrototype(Programmer) // => false
+Types.isPrototype(Yao.__proto__) // => true</code></pre></div></section></section><section class="section"><header class="section__header"><h2 class="section__title">Keyed Collections</h2></header><div class="section__content"><p>types.js 提供以下方法来检测 Keyed Collections 相关的数据类型。</p></div><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isMap">isMap(val)</h3></header><div class="section__content"><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">0.2.0</dd></dl><h4 class="section__h4">Description</h4><p>isMap(val) 方法用来检测测试数据是否为 Map 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 Map 类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js'
 // 或者单独引用 isMap() 方法
 // import isMap from '@yaohaixiao/types.js/isMap'
 
@@ -1285,36 +1314,7 @@ Types.isPromise(() => {}) // => false
 Types.isPromise(request) // => true
 Types.isPromise(Promise.all([resolve, resolve]) // => true
 Types.isPromise(Promise.any([resolve, reject]) // => true
-Types.isPromise(resolve) // => true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isPrototype">isPrototype(val)</h3></header><div class="section__content"><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">0.2.0</dd></dl><h4 class="section__h4">Description</h4><p>isPrototype(val) 方法用来检测测试数据是否为构造函数。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 Prototype 对象，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js'
-// 或者单独引用 isPrototype() 方法
-// import isPrototype from '@yaohaixiao/types.js/isPrototype'
-
-const Yao= {
-  age: 40,
-  career: 'programmer'
-}
-
-const Programmer = function(name, age) {
-  this.name = name
-  this.age = age
-  this.isDead = false
-
-  return this
-}
-
-Programmer.prototype.career = 'programmer'
-Programmer.prototype.getWorkDone = function() {
-  this.isDead = true
-  return this
-}
-
-Types.isPrototype(null) // => false
-
-Types.isPrototype(Object) // => false
-Types.isPrototype(Object.prototype) // => true
-
-Types.isPrototype(Programmer) // => false
-Types.isPrototype(Yao.__proto__) // => true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isRegExp">isRegExp(val)</h3></header><div class="section__content"><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">0.2.0</dd></dl><h4 class="section__h4">Description</h4><p>isRegExp(val) 方法用来检测测试数据是否为 RegExp (正则表达式)类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 RegExp (正则表达式)类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js'
+Types.isPromise(resolve) // => true</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isRegExp">isRegExp(val)</h3></header><div class="section__content"><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">0.2.0</dd></dl><h4 class="section__h4">Description</h4><p>isRegExp(val) 方法用来检测测试数据是否为 RegExp (正则表达式)类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）val 待检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>true - 表示检测数据是 RegExp (正则表达式)类型，false 则表示不是。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js'
 // 或者单独引用 isRegExp() 方法
 // import isRegExp from '@yaohaixiao/types.js/isRegExp'
 
