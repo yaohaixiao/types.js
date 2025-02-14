@@ -2039,72 +2039,6 @@ isNode({}) // -> false
 ```
 
 
-### [Encoded Binary](https://yaohaixiao.github.io/types.js/#heading-58)
-
-types.js 提供以下 Encoded Binary 数据相关检测方法。
-
-### [isBase64(val)](https://yaohaixiao.github.io/types.js/#method-isBase64)
-
-isBase64(val) 方法用来检测测试数据是否为一个基于 base64 编码的字符串。
-
-#### Parameters
-
-##### val
-
-Type: `Any`
-
-必选，要检测的数据。
-
-#### Returns
-
-Type: `Boolean`
-
-'val' 是 base64 编码的字符串返回 true，否则返回 false。
-
-#### Example
-
-```js
-import Types from '@yaohaixiao/types.js'
-// 或者单独引用 isBase64() 方法
-// import isBase64 from '@yaohaixiao/types.js/isBase64'
-
-Types.isBase64('Z29vZA==') // -> true
-Types.isBase64('aXNCYXNlNjQ=2') // -> false
-```
-
-### [isHex(val)](https://yaohaixiao.github.io/types.js/#method-isHex)
-
-isHex(val) 方法用来检测测试数据是否为 16 进制编码的字符串。
-
-#### Parameters
-
-##### val
-
-Type: `String`
-Default: ``
-
-必选，要检测的数据。
-
-#### Returns
-
-Type: `Boolean`
-
-'val' 是 16 进制编码的字符串返回 true，否则返回 false。
-
-#### Example
-
-```js
-import Types from '@yaohaixiao/types.js'
-// 或者单独引用 isHex() 方法
-// import isHex from '@yaohaixiao/types.js/isHex'
-
-Types.isHex('#ffffff') // -> true
-Types.isHex('f3f3f3') // -> true
-Types.isHex('#h1f1f1') // -> false
-Types.isHex('sdadfa') // -> false
-```
-
-
 ### [Function](https://yaohaixiao.github.io/types.js/#heading-56)
 
 types.js 提供以下方法来检测 Function 相关的数据类型。
@@ -3274,6 +3208,35 @@ Types.isAlpha('ok!') // -> false
 Types.isAlpha('is alpha') // -> false
 ```
 
+### [isBase64(val)](https://yaohaixiao.github.io/types.js/#method-isBase64)
+
+isBase64(val) 方法用来检测测试数据是否为一个基于 base64 编码的字符串。
+
+#### Parameters
+
+##### val
+
+Type: `Any`
+
+必选，要检测的数据。
+
+#### Returns
+
+Type: `Boolean`
+
+'val' 是 base64 编码的字符串返回 true，否则返回 false。
+
+#### Example
+
+```js
+import Types from '@yaohaixiao/types.js'
+// 或者单独引用 isBase64() 方法
+// import isBase64 from '@yaohaixiao/types.js/isBase64'
+
+Types.isBase64('Z29vZA==') // -> true
+Types.isBase64('aXNCYXNlNjQ=2') // -> false
+```
+
 ### [isBlank(val)](https://yaohaixiao.github.io/types.js/#method-isBlank)
 
 isBlank(val) 方法用来检测测试数据是否只包空格。
@@ -3465,6 +3428,37 @@ Types.isGuid('934859') // -> false
 Types.isGuid('A987FBC94BED3078CF079141BA07C9F') // -> false
 ```
 
+### [isHex(val)](https://yaohaixiao.github.io/types.js/#method-isHex)
+
+isHex(val) 方法用来检测测试数据是否为 16 进制编码的字符串。
+
+#### Parameters
+
+##### val
+
+Type: `String`
+Default: ``
+
+必选，要检测的数据。
+
+#### Returns
+
+Type: `Boolean`
+
+'val' 是 16 进制编码的字符串返回 true，否则返回 false。
+
+#### Example
+
+```js
+import Types from '@yaohaixiao/types.js'
+// 或者单独引用 isHex() 方法
+// import isHex from '@yaohaixiao/types.js/isHex'
+
+Types.isHex('#ffffff') // -> true
+Types.isHex('f3f3f3') // -> true
+Types.isHex('#h1f1f1') // -> false
+Types.isHex('sdadfa') // -> false
+```
 
 ### [isHTML(val)](https://yaohaixiao.github.io/types.js/#method-isHTML)
 
