@@ -24,8 +24,13 @@ section.section
         // 或者单独引用 isAlpha() 方法
         // import isAlpha from '@yaohaixiao/types.js/isAlpha'
 
+        // String 类型
         Types.isAlpha('aaa') // -> true
         Types.isAlpha('good') // -> true
 
         Types.isAlpha('ok!') // -> false
         Types.isAlpha('is alpha') // -> false
+
+        // 非 String 类型
+        Types.isAlpha([]) // -> false
+        Types.isAlpha(null) // -> false

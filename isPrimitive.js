@@ -11,7 +11,7 @@ import isBigInt from './isBigInt'
  * ========================================================================
  * @method isPrimitive
  * @since 2.6.0
- * @category Base
+ * @category Primitive Values
  * @param {*} val - 要检测的数据
  * @returns {Boolean} - 'val' 是原始值类型，返回 true，否则返回 false
  * @exammple

@@ -21,6 +21,7 @@ import TYPES from './enum/types'
 const isSymbol = (val) => {
   let symbolValueOf
 
+  /* istanbul ignore else */
   if (typeof Symbol === 'function') {
     symbolValueOf = Symbol.prototype.valueOf
   }

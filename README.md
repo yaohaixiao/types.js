@@ -670,6 +670,41 @@ Types.isNumber(2 + '1') // -> false
 Types.isNumber(new Number()) // -> false
 ```
 
+### [isPrime(val)](https://yaohaixiao.github.io/types.js/#method-isPrime)
+
+isPrime(val) 方法用来检测测试数据是否为质(素)数。
+
+#### Parameters
+
+##### val
+
+Type: `Any`
+
+必选，要检测的数据。
+
+#### Returns
+
+Type: `Boolean`
+
+'val' 是质数，返回 true，否则返回 false。
+
+#### Example
+
+```js
+import Types from '@yaohaixiao/types.js'
+// 或者单独引用 isPrime() 方法
+// import isPrime from '@yaohaixiao/types.js/isPrime'
+
+Types.isPrime(3) // -> true
+Types.isPrime(7) // -> true
+Types.isPrime(11) // -> true
+
+Types.isPrime(0) // -> false
+Types.isPrime(1) // -> false
+Types.isPrime(2) // -> false
+Types.isPrime(9) // -> false
+```
+
 ### [isString(val)](https://yaohaixiao.github.io/types.js/#method-isString)
 
 isString(val) 方法用来检测测试数据是否为字符串。
@@ -2736,41 +2771,6 @@ Types.isOdd(NaN) // -> false
 Types.isOdd(Infinity) // -> false
 ```
 
-### [isPrime(val)](https://yaohaixiao.github.io/types.js/#method-isPrime)
-
-isPrime(val) 方法用来检测测试数据是否为质(素)数。
-
-#### Parameters
-
-##### val
-
-Type: `Any`
-
-必选，要检测的数据。
-
-#### Returns
-
-Type: `Boolean`
-
-'val' 是质数，返回 true，否则返回 false。
-
-#### Example
-
-```js
-import Types from '@yaohaixiao/types.js'
-// 或者单独引用 isPrime() 方法
-// import isPrime from '@yaohaixiao/types.js/isPrime'
-
-Types.isPrime(3) // -> true
-Types.isPrime(7) // -> true
-Types.isPrime(11) // -> true
-
-Types.isPrime(0) // -> false
-Types.isPrime(1) // -> false
-Types.isPrime(2) // -> false
-Types.isPrime(9) // -> false
-```
-
 ### [isSafeInteger(val)](https://yaohaixiao.github.io/types.js/#method-isSafeInteger)
 
 isSafeInteger(val) 方法用来检测测试数据的(数值)是否为整数。
@@ -3459,11 +3459,16 @@ import Types from '@yaohaixiao/types.js'
 // 或者单独引用 isAlpha() 方法
 // import isAlpha from '@yaohaixiao/types.js/isAlpha'
 
+// String 类型
 Types.isAlpha('aaa') // -> true
 Types.isAlpha('good') // -> true
 
 Types.isAlpha('ok!') // -> false
 Types.isAlpha('is alpha') // -> false
+
+// 非 String 类型
+Types.isAlpha([]) // -> false
+Types.isAlpha(null) // -> false
 ```
 
 ### [isBase64(val)](https://yaohaixiao.github.io/types.js/#method-isBase64)

@@ -20,6 +20,7 @@ import TYPES from './enum/types'
 const isBigInt = (val) => {
   let bigIntValueOf
 
+  /* istanbul ignore else */
   if (BigInt && typeof BigInt === TYPES.FUNCTION) {
     bigIntValueOf = BigInt.prototype.valueOf
   }

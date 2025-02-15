@@ -29,10 +29,7 @@ import TYPES from './enum/types'
  * isTextNode($text) // -> true
  */
 const isTextNode = (val) => {
-  return !!(
-    isObject(val) &&
-    (_type(val) === TYPES.TEXT || (val.tagName && val.nodeType === 3))
-  )
+  return !!(isObject(val) && _type(val) === TYPES.TEXT && val.nodeType === 3)
 }
 
 export default isTextNode

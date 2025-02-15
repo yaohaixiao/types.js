@@ -13,8 +13,10 @@ module.exports = {
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/$1'
   },
+  testTimeout: 5000,
   collectCoverage: true,
   coverageDirectory: 'report/coverage',
+  testEnvironment: 'node',
   reporters: [
     'default',
     [
