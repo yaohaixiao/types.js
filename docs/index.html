@@ -157,27 +157,7 @@ Types.isNil(undefined) // => true
 
 Types.isNil(NaN) // => false
 
-Types.isNil('') // => false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isPrimitive">isPrimitive(val)</h3></header><div class="section__content"><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">2.6.0</dd></dl><h4 class="section__h4">Description</h4><p>isPrimitive(val) 方法用来检测测试数据是否为原始值类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）要检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>'val' 是原始值类型，返回 true，否则返回 false。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js'
-// 或者单独引用 isPrimitive() 方法
-// import isPrimitive from '@yaohaixiao/types.js/isPrimitive'
-
-let num
-const MAX_SAFE_INTEGER = 9007199254740991
-const bigint = BigInt(MAX_SAFE_INTEGER + 1)
-
-// True
-Types.isPrimitive(1) // -> true
-Types.isPrimitive('num') // -> true
-Types.isPrimitive(false) // -> true
-Types.isPrimitive(null) // -> true
-Types.isPrimitive(num) // -> true
-Types.isPrimitive(Symbol('foo')) // -> true
-Types.isPrimitive(bigint) // -> true
-
-// False
-Types.isPrimitive([]) // -> false
-Types.isPrimitive({}) // -> false
-Types.isPrimitive(()=>{}) // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isTruly">isTruly(val)</h3></header><div class="section__content"><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">2.8.0</dd></dl><h4 class="section__h4">Description</h4><p>isTruly(val) 方法用来检测测试数据是否为在布尔上下文中被视为 true 的值。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）要检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">String。</dd></dl><p>'val' 在布尔上下文中被视为 true 的值，返回 true，否则返回 false。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js'
+Types.isNil('') // => false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isTruly">isTruly(val)</h3></header><div class="section__content"><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">2.8.0</dd></dl><h4 class="section__h4">Description</h4><p>isTruly(val) 方法用来检测测试数据是否为在布尔上下文中被视为 true 的值。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）要检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">String。</dd></dl><p>'val' 在布尔上下文中被视为 true 的值，返回 true，否则返回 false。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js'
 // 或者单独引用 isTruly() 方法
 // import isTruly from '@yaohaixiao/types.js/isTruly'
 
@@ -274,7 +254,27 @@ Types.isNumber(-Infinity) // -> true
 // False
 Types.isNumber('2') // -> false
 Types.isNumber(2 + '1') // -> false
-Types.isNumber(new Number()) // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isString">isString(val)</h3></header><div class="section__content"><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">0.2.0</dd></dl><h4 class="section__h4">Description</h4><p>isString(val) 方法用来检测测试数据是否为 String 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）要检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>'val' 是字符串返回 true，否则返回 false。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js'
+Types.isNumber(new Number()) // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isPrimitive">isPrimitive(val)</h3></header><div class="section__content"><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">2.6.0</dd></dl><h4 class="section__h4">Description</h4><p>isPrimitive(val) 方法用来检测测试数据是否为原始值类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）要检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>'val' 是原始值类型，返回 true，否则返回 false。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js'
+// 或者单独引用 isPrimitive() 方法
+// import isPrimitive from '@yaohaixiao/types.js/isPrimitive'
+
+let num
+const MAX_SAFE_INTEGER = 9007199254740991
+const bigint = BigInt(MAX_SAFE_INTEGER + 1)
+
+// True
+Types.isPrimitive(1) // -> true
+Types.isPrimitive('num') // -> true
+Types.isPrimitive(false) // -> true
+Types.isPrimitive(null) // -> true
+Types.isPrimitive(num) // -> true
+Types.isPrimitive(Symbol('foo')) // -> true
+Types.isPrimitive(bigint) // -> true
+
+// False
+Types.isPrimitive([]) // -> false
+Types.isPrimitive({}) // -> false
+Types.isPrimitive(()=>{}) // -> false</code></pre></div></section><section class="section"><header class="section__header"><h3 class="section__h3" id="method-isString">isString(val)</h3></header><div class="section__content"><dl class="section__dl"><dt class="section__dt">Since：</dt><dd class="section__dd">0.2.0</dd></dl><h4 class="section__h4">Description</h4><p>isString(val) 方法用来检测测试数据是否为 String 类型。</p><h4 class="section__h4">Parameters</h4><h5 class="section__h4">val</h5><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Any</dd></dl><p>（必须）要检测的数据。</p><h4 class="section__h4">Returns</h4><dl class="section__dl"><dt class="section__dt">Type：</dt><dd class="section__dd">Boolean。</dd></dl><p>'val' 是字符串返回 true，否则返回 false。</p><pre class="section__pre"><code class="section__code">import Types from '@yaohaixiao/types.js'
 // 或者单独引用 isString() 方法
 // import isString from '@yaohaixiao/types.js/isString'
 

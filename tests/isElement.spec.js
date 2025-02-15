@@ -23,7 +23,10 @@ describe('isElement() 方法：', () => {
     '</ul>'
 
   it(`isElement(svgElement), 返回：true`, () => {
-    const svgElement = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
+    const svgElement = document.createElementNS(
+      'http://www.w3.org/2000/svg',
+      'svg'
+    )
 
     expect(isElement(svgElement)).toBe(true)
   })
@@ -60,5 +63,13 @@ describe('isElement() 方法：', () => {
 
   it(`isElement([]), 返回：false`, () => {
     expect(isElement([])).toBe(false)
+  })
+
+  it(`isElement({ ownerDocument: { defaultView: null } }), 返回：false`, () => {
+    expect(isElement({ ownerDocument: { defaultView: null } })).toBe(false)
+  })
+
+  it(`isElement(String), 返回：false`, () => {
+    expect(isElement(String)).toBe(false)
   })
 })

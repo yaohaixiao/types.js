@@ -6,11 +6,11 @@ import isConstructor from '../isConstructor'
 describe('isConstructor() 方法：', () => {
   describe('自定义（构造）函数：', () => {
     it(`isConstructor(Constructor.prototype = {}), 返回：true`, () => {
-      const Yao = function(age) {
+      const Yao = function (age) {
         this.age = age
       }
 
-      Yao.prototype =  {
+      Yao.prototype = {
         say() {
           console.log(this.age)
         }
@@ -18,8 +18,13 @@ describe('isConstructor() 方法：', () => {
       expect(isConstructor(Yao)).toBe(true)
     })
 
+    it(`isConstructor(function(){}), 返回：true`, () => {
+      const ff = function () {}
+      expect(isConstructor(ff)).toBe(true)
+    })
+
     it(`isConstructor(class {}), 返回：true`, () => {
-      const ff = class {};
+      const ff = class {}
       expect(isConstructor(ff)).toBe(true)
     })
 

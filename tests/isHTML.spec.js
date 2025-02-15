@@ -9,7 +9,7 @@ describe('isHTML() 方法：', () => {
   })
 
   it('包含 doctype 标签：', () => {
-    expect(isHTML('<!doctype html>')).toBe(true)
+    expect(isHTML('<!doctype html> ')).toBe(true)
     expect(isHTML('\n\n<!doctype html><html>')).toBe(true)
   })
 
@@ -31,6 +31,7 @@ describe('isHTML() 方法：', () => {
   })
 
   it(`无法匹配 XML 标签：`, () => {
+    String.prototype.trim = null
     expect(isHTML('<cake>foo</cake>')).toBe(false)
     expect(isHTML('<any>rocks</any>')).toBe(false)
     expect(isHTML('<htmly>not</htmly>')).toBe(false)

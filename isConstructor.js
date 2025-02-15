@@ -48,7 +48,7 @@ const isConstructor = (fn) => {
 
   if (
     isNativeFunction(fn) &&
-    (constructor === Function || constructor === fn)
+    (constructor === fn || constructor === Function)
   ) {
     return true
   }

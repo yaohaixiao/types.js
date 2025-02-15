@@ -46,6 +46,13 @@ describe('is() 方法：', () => {
       expect(is('type.js@gmail.com')).toBe('email')
     })
 
+    it(`is(vnode), 返回：vnode`, () => {
+      const vnode = {
+        componentOptions: []
+      }
+      expect(is(vnode)).toBe('vnode')
+    })
+
     it(`is(''), 返回：empty`, () => {
       expect(is('')).toBe('empty')
     })
