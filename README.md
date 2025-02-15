@@ -169,11 +169,13 @@ is(val) 方法返回检测数据的数据类型字符串：
 
 Type: `Any`
 
-必选，要检测的数据。
+必选，待检测的数据。
 
 #### Returns
 
-Type: `Boolean`
+Type: `String`
+
+返回确切的数据类型名称。
 
 #### Example
 
@@ -289,7 +291,7 @@ Type: `Any`
 
 Type: `Boolean`
 
-'val' 是空字符串返回 true，否则返回 false。
+'val' 是空值（空字符串、空对象、空数组等），返回 true，否则返回 false。
 
 #### Example
 
@@ -479,7 +481,7 @@ Type: `Any`
 
 Type: `Boolean`
 
-'val' 是有效的数据返回 true，否则返回 false。
+'val' 是有效的数据（非null、undefined或者正负无穷数值），返回 true，否则返回 false。
 
 #### Example
 
@@ -842,7 +844,7 @@ Type: `Any`
 
 Type: `Boolean`
 
-true - 表示检测 arguments 对象长度为 0，false 则表示不是。
+'val' 是长度为 0 的 arguments 对象，返回 true，否则返回 false。
 
 #### Example
 
@@ -977,7 +979,7 @@ Type: `Any`
 
 Type: `Boolean`
 
-true - 表示检测数据是 ArrayLike 的对象数据，false 则表示不是。
+'val' 是 ArrayLike 的对象数据，返回 true，否则返回 false。
 
 #### Example
 
@@ -1023,7 +1025,7 @@ Type: `Any`
 
 Type: `Boolean`
 
-true - 表示检测数据为空字数组，false 则表示不是。
+'val' 是数据空数组，返回 true，否则 false。
 
 #### Example
 
@@ -1060,7 +1062,7 @@ Type: `Any`
 
 Type: `Boolean`
 
-'val' 是 ArrayBuffer 类型返回 true，否则返回 false
+'val' 是 ArrayBuffer 类型，返回 true，否则返回 false。
 
 #### Example
 
@@ -1089,7 +1091,7 @@ Type: `Any`
 
 Type: `Boolean`
 
-'val' 是 BigInt64Array 类型返回 true，否则返回 false
+'val' 是 BigInt64Array 类型，返回 true，否则返回 false。
 
 #### Example
 
@@ -1123,7 +1125,7 @@ Type: `Any`
 
 Type: `Boolean`
 
-'val' 是 BigUint64Array 类型返回 true，否则返回 false
+'val' 是 BigUint64Array 类型，返回 true，否则返回 false
 
 #### Example
 
@@ -1157,7 +1159,7 @@ Type: `Any`
 
 Type: `Boolean`
 
-true - 表示检测数据是 DataView 类型，false 则表示不是。
+'val' 是 isDataView 类型，返回 true，否则返回 false。
 
 #### Example
 
@@ -1189,7 +1191,7 @@ Type: `Any`
 
 Type: `Boolean`
 
-true - 表示检测数据是 Float32Array 类型，false 则表示不是。
+'val' 是 Float32Array 类型，返回 true，否则返回 false。
 
 #### Example
 
@@ -1230,7 +1232,7 @@ Type: `Any`
 
 Type: `Boolean`
 
-true - 表示检测数据是 Float64Array 类型，false 则表示不是。
+'val' 是 Float64Array 类型，返回 true，否则返回 false。
 
 #### Example
 
@@ -1271,7 +1273,7 @@ Type: `Any`
 
 Type: `Boolean`
 
-true - 表示检测数据是 Int8Array 类型，false 则表示不是。
+'val' 是 Int8Array 类型，返回 true，否则返回 false。
 
 #### Example
 
@@ -1301,7 +1303,7 @@ Type: `Any`
 
 Type: `Boolean`
 
-true - 表示检测数据是 Int16Array 类型，false 则表示不是。
+'val' 是 Int16Array 类型，返回 true，否则返回 false。
 
 #### Example
 
@@ -1383,7 +1385,7 @@ Type: `Any`
 
 Type: `Boolean`
 
-true - 表示检测数据是 Uint8Array 类型，false 则表示不是。
+'val' 是 Uint8Array 类型，返回 true，否则返回 false。
 
 #### Example
 
@@ -1424,7 +1426,7 @@ Type: `Any`
 
 Type: `Boolean`
 
-true - 表示检测数据是 Uint8ClampedArray 类型，false 则表示不是。
+'val' 是 Uint8ClampedArray 类型，返回 true，否则返回 false。
 
 #### Example
 
@@ -1465,7 +1467,7 @@ Type: `Any`
 
 Type: `Boolean`
 
-true - 表示检测数据是 Uint16Array 类型，false 则表示不是。
+'val' 是 Uint16Array 类型，返回 true，否则返回 false。
 
 #### Example
 
@@ -1506,7 +1508,7 @@ Type: `Any`
 
 Type: `Boolean`
 
-true - 表示检测数据是 Uint32Array 类型，false 则表示不是。
+'val' 是 Uint32Array 类型，返回 true，否则返回 false。
 
 #### Example
 
@@ -1547,7 +1549,7 @@ Type: `Any`
 
 Type: `Boolean`
 
-true - 表示检测数据是 TypedArray 类型，false 则表示不是。
+'val' 是 TypedArray 类型，返回 true，否则返回 false。
 
 #### Example
 
@@ -1589,6 +1591,49 @@ Types.isTypedArray(new BigUint64Array(42)) // -> true
 ### [Element](https://yaohaixiao.github.io/types.js/#heading-88)
 
 types.js 提供以下方法来检测 DOM 相关的数据类型。
+
+### [isDOM(val)](https://yaohaixiao.github.io/types.js/#method-isDOM)
+
+isDOM(val) 方法用来检测测试数据是否为 DOM 类型数据：DOM 节点，TextNode，NodeList 和 DocumentFragment）。
+
+#### Parameters
+
+##### val
+
+Type: `Any`
+
+必选，要检测的数据。
+
+#### Returns
+
+Type: `Boolean`
+
+'val' 是 DOM 类型数据，返回 true，否则返回 false。
+
+#### Example
+
+```js
+import Types from '@yaohaixiao/types.js'
+// 或者单独引用 isDOM() 方法
+// import isDOM from '@yaohaixiao/types.js/isDOM'
+
+const $list = document.getElementById('list')
+const $fragment = document.createDocumentFragment()
+const $items = document.querySelectorAll('.item')
+const $text = document.createTextNode('text')
+
+Types.is($list) // -> 'element'
+Types.isDOM($list) // -> true
+
+Types.is($fragment) // -> 'fragment'
+Types.isDOM($fragment) // -> true
+
+Types.is($items) // -> 'collection'
+Types.isDOM($items) // -> true
+
+Types.is($text) // -> 'text'
+Types.isDOM($text) // -> true
+```
 
 ### [isElement(val)](https://yaohaixiao.github.io/types.js/#method-isElement)
 
@@ -1657,7 +1702,7 @@ Type: `Any`
 
 Type: `Boolean`
 
-true - 表示检测数据是 DocumentFragment 文档碎片，false 则表示不是。
+'val' 是 DocumentFragment 文档碎片，返回 true，否则返回 false。
 
 #### Example
 
@@ -1763,7 +1808,7 @@ Type: `Any`
 
 Type: `Boolean`
 
-'val' 为 HTML 元素节点返回 true，否则返回 false。
+'val' 为 HTML 元素节点，返回 true，否则返回 false。
 
 #### Example
 
@@ -1792,6 +1837,66 @@ Types.isHTMLElement($items) // -> false
 
 Types.is($fragment) // -> 'collection'
 Types.isHTMLElement($fragment) // -> false
+```
+
+### [isNode(val)](https://yaohaixiao.github.io/types.js/#method-isNode)
+
+isNode(val) 方法用来检测测试数据是否为 Node 实例。
+
+注意：在 JavaScript 的 DOM（文档对象模型）中，Node、Element 和 HTMLElement 是非常重要的概念，它们代表了不同层次的抽象，用于描述和操作 HTML 文档中的各种元素和节点。以下是它们之间的区别：
+
+#### 继承关系
+
+它们之间存在着明确的继承层次结构，具体如下：
+
+- Node 是所有节点类型的基类，它处于继承层次的最顶层；
+- Element 继承自 Node，是所有元素节点的基类；
+- HTMLElement 继承自 Element，专门用于表示 HTML 元素；
+
+因此，isNode() 方法可以检测任何类型的 Node 元素。
+
+#### Parameters
+
+##### val
+
+Type: `Any`
+
+必选，要检测的数据。
+
+#### Returns
+
+Type: `Boolean`
+
+'val' 是 Node 实例，返回 true，否则返回 false。
+
+#### Example
+
+```js
+import Types from '@yaohaixiao/types.js'
+// 或者单独引用 isNode() 方法
+// import isNode from '@yaohaixiao/types.js/isNode'
+
+const div = document.createElement('div')
+Types.isNode(div) // -> true
+Types.isElement(div) // -> true
+Types.isHTMLElement(div) // -> true
+
+const text = document.createTextNode('text')
+Types.isNode(text) // -> true
+Types.isElement(text) // -> false
+Types.isHTMLElement(text) // -> false
+
+const fragment = document.createDocumentFragment()
+Types.isNode(fragment) // -> true
+Types.isElement(fragment) // -> false
+Types.isHTMLElement(fragment) // -> false
+
+const svgElement = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
+Types.isNode(svgElement) // -> true
+Types.isElement(svgElement) // -> true
+Types.isHTMLElement(svgElement) // -> false
+
+isNode({}) // -> false
 ```
 
 ### [isTextNode(val)](https://yaohaixiao.github.io/types.js/#method-isTextNode)
@@ -1891,6 +1996,99 @@ Types.isShadowRoot(shadowRoot) // -> true
 Types.isShadowRoot({}) // -> false
 ```
 
+### [isTextNode(val)](https://yaohaixiao.github.io/types.js/#method-isTextNode)
+
+isTextNode(val) 方法用来检测测试数据是否为 HTMLTextNode (文本节点)类型。
+
+#### Parameters
+
+##### val
+
+Type: `Any`
+
+必选，要检测的数据。
+
+#### Returns
+
+Type: `Boolean`
+
+'val' 是 HTMLTextNode (文本节点)类型，返回 true，否则返回 false。
+
+#### Example
+
+```js
+import Types from '@yaohaixiao/types.js'
+// 或者单独引用 isTextNode() 方法
+// import isTextNode from '@yaohaixiao/types.js/isTextNode'
+
+const $list = document.getElementById('list')
+const $div = document.createElement('div')
+const $fragment = document.createDocumentFragment()
+const $items = document.querySelectorAll('.item')
+const $text = document.createTextNode('text')
+
+Types.is($list) // -> 'element'
+Types.isElement($list) // -> true
+Types.isTextNode($list) // -> false
+
+Types.is($div) // -> 'element'
+Types.isElement($div) // -> true
+Types.isTextNode($div) // -> false
+
+Types.is($fragment) // -> 'fragment'
+Types.isFragment($fragment) // -> true
+Types.isTextNode($fragment) // -> false
+
+Types.is($items) // -> 'collection'
+Types.isHTMLCollection($items) // -> true
+Types.isTextNode($items) // -> false
+
+Types.is($text) // -> 'collection'
+Types.isElement($text) // -> false
+Types.isTextNode($text) // -> true
+```
+
+### [isVNode(val)](https://yaohaixiao.github.io/types.js/#method-isVNode)
+
+isVNode(val) 方法用来检测测试数据是否为 VNode (VUE虚拟节点)类型。
+
+#### Parameters
+
+##### val
+
+Type: `Any`
+
+必选，要检测的数据。
+
+#### Returns
+
+Type: `Boolean`
+
+'val' 是 VNode (VUE虚拟节点)类型，返回 true，否则返回 false。
+
+#### Example
+
+```js
+&lt;template&gt;
+  &lt;dev-header ref="header"&gt;&lt;/dev-header&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+import Types from '@yaohaixiao/types.js'
+// 或者单独引用 isVNode() 方法
+// import isVNode from '@yaohaixiao/types.js/isVNode'
+
+export default {
+  name: 'PageHeader',
+  mounted() {
+    const $header = this.$refs.header
+
+    Types.isVNode($header) // -> true
+  }
+}
+&lt;/script&gt;
+```
+
 ### [isWindow(val)](https://yaohaixiao.github.io/types.js/#method-isWindow)
 
 isWindow(val) 方法用来检测测试数据是否为 Window 对象。
@@ -1935,109 +2133,6 @@ Types.isWindow(nonWindowObject) // -> false
 Types.isWindow(null) // -> false
 ```
 
-### [isDOM(val)](https://yaohaixiao.github.io/types.js/#method-isDOM)
-
-isDOM(val) 方法用来检测测试数据是否为 DOM 类型数据：DOM 节点，TextNode，NodeList 和 DocumentFragment）。
-
-#### Parameters
-
-##### val
-
-Type: `Any`
-
-必选，要检测的数据。
-
-#### Returns
-
-Type: `Boolean`
-
-true - 表示检测数据是 DOM 类型数据，false 则表示不是。
-
-#### Example
-
-```js
-import Types from '@yaohaixiao/types.js'
-// 或者单独引用 isDOM() 方法
-// import isDOM from '@yaohaixiao/types.js/isDOM'
-
-const $list = document.getElementById('list')
-const $fragment = document.createDocumentFragment()
-const $items = document.querySelectorAll('.item')
-const $text = document.createTextNode('text')
-
-Types.is($list) // -> 'element'
-Types.isDOM($list) // -> true
-
-Types.is($fragment) // -> 'fragment'
-Types.isDOM($fragment) // -> true
-
-Types.is($items) // -> 'collection'
-Types.isDOM($items) // -> true
-
-Types.is($text) // -> 'text'
-Types.isDOM($text) // -> true
-```
-
-### [isNode(val)](https://yaohaixiao.github.io/types.js/#method-isNode)
-
-isNode(val) 方法用来检测测试数据是否为 Node 实例。
-
-注意：在 JavaScript 的 DOM（文档对象模型）中，Node、Element 和 HTMLElement 是非常重要的概念，它们代表了不同层次的抽象，用于描述和操作 HTML 文档中的各种元素和节点。以下是它们之间的区别：
-
-#### 继承关系
-
-它们之间存在着明确的继承层次结构，具体如下：
-
-- Node 是所有节点类型的基类，它处于继承层次的最顶层；
-- Element 继承自 Node，是所有元素节点的基类；
-- HTMLElement 继承自 Element，专门用于表示 HTML 元素；
-
-因此，isNode() 方法可以检测任何类型的 Node 元素。
-
-#### Parameters
-
-##### val
-
-Type: `Any`
-
-必选，要检测的数据。
-
-#### Returns
-
-Type: `Boolean`
-
-'val' 是 Node 实例，返回 true，否则返回 false。
-
-#### Example
-
-```js
-import Types from '@yaohaixiao/types.js'
-// 或者单独引用 isNode() 方法
-// import isNode from '@yaohaixiao/types.js/isNode'
-
-const div = document.createElement('div')
-Types.isNode(div) // -> true
-Types.isElement(div) // -> true
-Types.isHTMLElement(div) // -> true
-
-const text = document.createTextNode('text')
-Types.isNode(text) // -> true
-Types.isElement(text) // -> false
-Types.isHTMLElement(text) // -> false
-
-const fragment = document.createDocumentFragment()
-Types.isNode(fragment) // -> true
-Types.isElement(fragment) // -> false
-Types.isHTMLElement(fragment) // -> false
-
-const svgElement = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
-Types.isNode(svgElement) // -> true
-Types.isElement(svgElement) // -> true
-Types.isHTMLElement(svgElement) // -> false
-
-isNode({}) // -> false
-```
-
 
 ### [Function](https://yaohaixiao.github.io/types.js/#heading-56)
 
@@ -2053,13 +2148,13 @@ isConstructor(val) 方法用来检测测试函数是否为构造函数
 
 Type: `Any`
 
-必选，要测试的（构造）函数。
+必选，要检测的数据。
 
 #### Returns
 
 Type: `Boolean`
 
-fn 是构造函数返回 true，否则返回 false。
+'val' 是 Constructor 构造函数，返回 true，否则返回 false。
 
 #### Example
 
@@ -2146,7 +2241,7 @@ Type: `Any`
 
 Type: `Boolean`
 
-fn 是系统内置函数返回 true，否则返回 false。
+val 是系统内置函数，返回 true，否则返回 false。
 
 #### Example
 
@@ -2188,7 +2283,7 @@ Type: `Any`
 
 Type: `Boolean`
 
-true - 表示检测数据是 Prototype 对象，false 则表示不是。
+'val' 是 Prototype 对象，返回 true，否则返回 false。
 
 #### Example
 
@@ -2382,6 +2477,7 @@ Types.isSet(weakset) // -> false
 Types.isWeakSet(weakset) // -> true
 ```
 
+
 ### [Number](https://yaohaixiao.github.io/types.js/#heading-60)
 
 types.js 提供以下方法来检测 Number 相关的数据类型。
@@ -2402,7 +2498,7 @@ Type: `Any`
 
 Type: `Boolean`
 
-'val' 是偶数返回 true，否则返回 false。
+'val' 是偶数，返回 true，否则返回 false。
 
 #### Example
 
@@ -2432,7 +2528,7 @@ Type: `Any`
 
 Type: `Boolean`
 
-'val' 是浮点数返回 true，否则返回 false。
+'val' 是浮点数，返回 true，否则返回 false。
 
 #### Example
 
@@ -2466,7 +2562,7 @@ Type: `Any`
 
 Type: `Boolean`
 
-'val' 是正无穷或者负无穷返回 true，否则返回 false。
+'val' 是正无穷或者负无穷，返回 true，否则返回 false。
 
 #### Example
 
@@ -2523,6 +2619,47 @@ Types.isInteger(parseInt('1.0', 10)) // -> true
 Types.isInteger(Math.ceil(2.6)) // -> true
 ```
 
+### [isLength(val)](https://yaohaixiao.github.io/types.js/#method-isLength)
+
+isLength(val) 方法用来检测测试数据是否为有效 length 值。
+
+#### Parameters
+
+##### val
+
+Type: `Any`
+
+必选，要检测的数据。
+
+#### Returns
+
+Type: `Boolean`
+
+'val' 是有效 length 值，返回 true，否则返回 false。
+
+#### Example
+
+```js
+import Types from '@yaohaixiao/types.js'
+// 或者单独引用 isInteger() 方法
+// import isInteger from '@yaohaixiao/types.js/isInteger'
+
+Types.isInteger(2.4) // -> false
+Types.isInteger(3.4234E3) // -> false
+Types.isInteger('1') // -> false
+Types.isInteger(Number('3.4556645445E7')) // -> false
+Types.isInteger(NaN) // -> false
+Types.isInteger(Infinity) // -> false
+Types.isInteger(-Infinity) // -> false
+
+Types.isInteger(2) // -> true
+Types.isInteger(2.0) // -> true
+Types.isInteger(3.4234E4) // -> true
+Types.isInteger(0xffffff) // -> true
+Types.isInteger(Number('1')) // -> true
+Types.isInteger(parseInt('1.0', 10)) // -> true
+Types.isInteger(Math.ceil(2.6)) // -> true
+```
 
 ### [isNumeric(val)](https://yaohaixiao.github.io/types.js/#method-isNumeric)
 
@@ -2540,7 +2677,7 @@ Type: `Any`
 
 Type: `Boolean`
 
-'val' 是一个数字返回 true，否则返回false。
+'val' 是一个数字，返回 true，否则返回false。
 
 #### Example
 
@@ -2577,7 +2714,7 @@ Type: `Any`
 
 Type: `Boolean`
 
-'val' 是奇数返回 true，否则返回 false。
+'val' 是奇数，返回 true，否则返回 false。
 
 #### Example
 
@@ -2599,6 +2736,74 @@ Types.isOdd(NaN) // -> false
 Types.isOdd(Infinity) // -> false
 ```
 
+### [isPrime(val)](https://yaohaixiao.github.io/types.js/#method-isPrime)
+
+isPrime(val) 方法用来检测测试数据是否为质(素)数。
+
+#### Parameters
+
+##### val
+
+Type: `Any`
+
+必选，要检测的数据。
+
+#### Returns
+
+Type: `Boolean`
+
+'val' 是质数，返回 true，否则返回 false。
+
+#### Example
+
+```js
+import Types from '@yaohaixiao/types.js'
+// 或者单独引用 isPrime() 方法
+// import isPrime from '@yaohaixiao/types.js/isPrime'
+
+Types.isPrime(3) // -> true
+Types.isPrime(7) // -> true
+Types.isPrime(11) // -> true
+
+Types.isPrime(0) // -> false
+Types.isPrime(1) // -> false
+Types.isPrime(2) // -> false
+Types.isPrime(9) // -> false
+```
+
+### [isSafeInteger(val)](https://yaohaixiao.github.io/types.js/#method-isSafeInteger)
+
+isSafeInteger(val) 方法用来检测测试数据的(数值)是否为整数。
+
+#### Parameters
+
+##### val
+
+Type: `Any`
+
+必选，要检测的数据。
+
+#### Returns
+
+Type: `Boolean`
+
+'val' 是安全的 Integer 值，返回 true，否则返回 false。
+
+#### Example
+
+```js
+import Types from '@yaohaixiao/types.js'
+// 或者单独引用 isSafeInteger() 方法
+// import isSafeInteger from '@yaohaixiao/types.js/isSafeInteger'
+
+isSafeInteger(3) // => true
+
+isSafeInteger(Number.MIN_VALUE) // => false
+
+isSafeInteger(Infinity) // => false
+
+isSafeInteger('3') // => false
+```
 
 ### [Object](https://yaohaixiao.github.io/types.js/#heading-39)
 
@@ -2620,7 +2825,7 @@ Type: `Any`
 
 Type: `Boolean`
 
-true - 表示检测数据是二进制（字符串）数据，false 则表示不是。
+'val' 是二进制（字符串）数据，返回 true，否则返回 false。
 
 #### Example
 
@@ -2657,7 +2862,7 @@ Type: `Any`
 
 Type: `Boolean`
 
-true - 表示检测数据是 Buffer 类型，false 则表示不是。
+'val' 是 Buffer 类型，返回 true，否则返回 false。
 
 #### Example
 
@@ -2691,7 +2896,7 @@ Type: `Any`
 
 Type: `Boolean`
 
-true - 表示检测数据是 Date 类型，false 则表示不是。
+'val' 是 Date 类型，返回 true，否则返回 false。
 
 #### Example
 
@@ -2723,7 +2928,7 @@ Type: `Any`
 
 Type: `Boolean`
 
-'val' 是空对象返回 true，否则返回 false。
+'val' 是空（单体）对象，返回 true，否则返回 false。
 
 #### Example
 
@@ -2906,7 +3111,7 @@ Type: `Any`
 
 Type: `Boolean`
 
-true - 表示检测数据是类似 Object 类型，false 则表示不是
+'val' 是普通对象，返回 true，否则返回 false。
 
 #### Example
 
@@ -2997,7 +3202,7 @@ Type: `Any`
 
 Type: `Boolean`
 
-true - 表示检测数据是 Promise 对象，false 则表示不是。
+'val' 是 Promise 对象，返回 true，否则返回 false。
 
 #### Example
 
@@ -3022,7 +3227,7 @@ Types.isPromise(Symbol('prop')) // => false
 
 
 // 对象参数
-Types.isPromise([]]) // => false
+Types.isPromise([]) // => false
 Types.isPromise({}) // => false
 Types.isPromise(class {}) // => false
 Types.isPromise(() => {}) // => false
@@ -3031,6 +3236,59 @@ Types.isPromise(request) // => true
 Types.isPromise(Promise.all([resolve, resolve]) // => true
 Types.isPromise(Promise.any([resolve, reject]) // => true
 Types.isPromise(resolve) // => true
+```
+
+### [isPrototype(val)](https://yaohaixiao.github.io/types.js/#method-isPrototype)
+
+isPrototype(val) 方法用来检测测试数据是否为 Prototype 对象。
+
+#### Parameters
+
+##### val
+
+Type: `Any`
+
+必选，要检测的数据。
+
+#### Returns
+
+Type: `Boolean`
+
+'val' 是 Prototype 对象，返回 true，否则返回 false。
+
+#### Example
+
+```js
+import Types from '@yaohaixiao/types.js'
+// 或者单独引用 isPrototype() 方法
+// import isPrototype from '@yaohaixiao/types.js/isPrototype'
+
+const Yao= {
+  age: 40,
+  career: 'programmer'
+}
+
+const Programmer = function(name, age) {
+  this.name = name
+  this.age = age
+  this.isDead = false
+
+  return this
+}
+
+Programmer.prototype.career = 'programmer'
+Programmer.prototype.getWorkDone = function() {
+  this.isDead = true
+  return this
+}
+
+Types.isPrototype(null) // => false
+
+Types.isPrototype(Object) // => false
+Types.isPrototype(Object.prototype) // => true
+
+Types.isPrototype(Programmer) // => false
+Types.isPrototype(Yao.__proto__) // => true
 ```
 
 
@@ -3050,7 +3308,7 @@ Type: `Any`
 
 Type: `Boolean`
 
-'val' 是正则表达式返回 true，否则返回 false。
+'val' 是正则表达式，返回 true，否则返回 false。
 
 #### Example
 
@@ -3192,7 +3450,7 @@ Type: `Any`
 
 Type: `Boolean`
 
-true - 表示检测数据仅包含英文字符，false 则表示不是。
+'val' 是仅包含英文字符，返回 true，否则返回 false。
 
 #### Example
 
@@ -3304,7 +3562,7 @@ Type: `Boolean`
 
 Type: `Boolean`
 
-true - 表示检测数据为中文字符，false 则表示不是。
+'val' 是 Chinese 中文字符，返回 true，否则返回 false。
 
 #### Example
 
@@ -3355,7 +3613,7 @@ Type: `Any`
 
 Type: `Boolean`
 
-'val' 是 Boolean 类型返回 true，否则返回 false
+'val' 是正确 Email 格式字符串，返回 true，否则返回 false。
 
 #### Example
 
@@ -3407,7 +3665,7 @@ Type: `Any`
 
 Type: `Boolean`
 
-true - 表示检测数据(数值)为合法的 UUID 字符串，false 则表示不是。
+'val' 是合法的 UUID 字符串，返回 true，否则返回 false。
 
 #### Example
 
@@ -3480,7 +3738,7 @@ Type: `Any`
 
 Type: `Boolean`
 
-true - 表示检测数据为合法的 HTML 代码，false 则表示不是。
+'val' 是合法的 HTML 代码，返回 true，否则返回 false。
 
 #### Example
 
@@ -3530,7 +3788,7 @@ Type: `Any`
 
 Type: `Boolean`
 
-true - 表示检测数据是合法的（中国）身份证号码（格式），false 则表示不是。
+'val' 是合法的（中国）身份证号码（格式），返回 true，否则返回 false。
 
 #### Example
 
@@ -3585,7 +3843,7 @@ Type: `Any`
 
 Type: `Boolean`
 
-true - 表示检测数据是合法的 IP 地址格式，false 则表示不是。
+'val' 是合法的 IP 地址格式字符串，返回 true，否则返回 false。
 
 #### Example
 
@@ -3675,7 +3933,7 @@ Type: `Any`
 
 Type: `Boolean`
 
-true - 表示检测数据是合法的电话号码格式，false 则表示不是。
+'val' 是合法的电话号码格式字符串，返回 true，否则返回 false。
 
 #### Example
 
@@ -3720,7 +3978,7 @@ Type: `Any`
 
 Type: `Boolean`
 
-true - 表示检测数据为合法的 SVG 代码，false 则表示不是。
+'val' 是合法的 SVG 代码（字符串），返回 true，否则返回 false。
 
 #### Example
 
@@ -3764,7 +4022,7 @@ Type: `String`
 
 Type: `Boolean`
 
-true - 表示检测数据为有效的时间，false 则表示不是。
+'val' 是有效的时间（字符串），返回 true，否则返回 false。
 
 #### Example
 
@@ -3842,7 +4100,7 @@ Type: `Any`
 
 Type: `Boolean`
 
-true - 表示检测数据是合法的 URL 格式，false 则表示不是。
+'val' 是合法的 URL 格式（字符串），返回 true，否则返回。
 
 #### Example
 
@@ -3894,7 +4152,7 @@ Type: `Any`
 
 Type: `Boolean`
 
-true - 表示检测数据(数值)为合法的 UUID 字符串，false 则表示不是。
+'val' 是合法的 UUID 格式（字符串），返回 true，否则返回。
 
 #### Example
 

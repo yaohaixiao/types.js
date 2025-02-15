@@ -6,7 +6,7 @@ export default isFalsy;
  * @since 2.7.0
  * @category Base
  * @param {*} val - 要检测的数据
- * @return {Boolean} 'val' 是 NaN，返回 true，否则返回 false
+ * @return {Boolean} 'val' 在布尔上下文中被视为 true 的值，返回 true，否则返回 false
  * @example
  *
  * isFalsy(false) // true

@@ -6,7 +6,7 @@ export default isEmpty;
  * @since 0.2.0
  * @category Base
  * @param {*} val - 要检测的数据
- * @returns {Boolean} 'val' 是空字符串，返回 true，否则返回 false
+ * @returns {Boolean} 'val' 是空值（空字符串、空对象、空数组等），返回 true，否则返回 false
  * @example
  *
  * isEmpty(null);

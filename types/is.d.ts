@@ -5,7 +5,7 @@ export default is;
  * @method is
  * @since 0.2.0
  * @category Base
- * @param {*} val - 要检测的任意值
+ * @param {*} val - 待检测的数据
  * @returns {String} 返回确切的数据类型名称
  * @example
  *

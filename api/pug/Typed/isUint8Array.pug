@@ -12,13 +12,12 @@ section.section
     dl.section__dl
       dt.section__dt Type：
       dd.section__dd Any
-    p （必须）val 待检测的数据。
+    p （必须）要检测的数据。
     h4.section__h4 Returns
     dl.section__dl
       dt.section__dt Type：
       dd.section__dd Boolean。
-    p true - 表示检测数据是 Uint8Array 类型，false 则表示不是。
-    pre.section__pre
+    p 'val' 是 Uint8Array 类型，返回 true，否则返回 false。
       code.section__code.
         import Types from '@yaohaixiao/types.js'
         // 或者单独引用 isUint8Array() 方法

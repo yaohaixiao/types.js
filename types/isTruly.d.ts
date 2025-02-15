@@ -5,7 +5,7 @@ export default isTruly;
  * @method isTruly
  * @since 2.8.0
  * @category Base
- * @param {*} val - val 待检测的数据。
+ * @param {*} val - 要检测的数据。
  * @returns {Boolean} 'val' 在布尔上下文中被视为 true 的值，返回 true，否则返回 false。
  * @example
  *
